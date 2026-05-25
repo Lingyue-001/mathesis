@@ -1052,6 +1052,7 @@ body.home-floating-nav main {
 }
 
 .contact-pill {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1060,7 +1061,8 @@ body.home-floating-nav main {
   text-decoration: none;
   color: #3b2f22;
   background: transparent;
-  transition: none;
+  outline-offset: 8px;
+  transition: transform 0.2s ease;
 }
 
 .contact-pill img {
@@ -1071,10 +1073,44 @@ body.home-floating-nav main {
   transition: var(--accent-fade-transition);
 }
 
+.contact-pill::after {
+  content: attr(aria-label);
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.55rem);
+  z-index: 2;
+  padding: 0.28rem 0.48rem 0.32rem;
+  color: #f8f5f2;
+  background: rgba(49, 45, 45, 0.92);
+  border-radius: 7px;
+  box-shadow: 0 8px 18px rgba(45, 34, 24, 0.16);
+  font-family: Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.15;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -0.18rem);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.contact-pill:hover,
+.contact-pill:focus-visible {
+  transform: translateY(-1px);
+}
+
 .contact-pill:hover img,
 .contact-pill:focus-visible img {
   opacity: var(--accent-fade-opacity-active);
   filter: var(--accent-fade-filter-active);
+}
+
+.contact-pill:hover::after,
+.contact-pill:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 @media (max-width: 900px) {

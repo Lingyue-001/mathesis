@@ -34,7 +34,10 @@ layout: base
     <i>Manuscripts and Digital Humanities: Editing, Encoding, and Analyzing Ancient Texts</i>.
     </p>
     <p>
-    I’m always happy to exchange ideas, feel free to get in touch!
+    I keep a fuller record of my academic background, research interests, and related work on my <a href="https://lingyue-001.github.io/cv/" target="_blank" rel="noopener">personal website</a>.
+    </p>
+    <p>
+    Whether you’re working on similar questions or simply curious about the project, feel free to get in touch!
     </p>
 
   </section>
@@ -42,10 +45,13 @@ layout: base
   <div class="about-divider"></div>
 
   <div class="about-contact">
-    <a class="contact-pill" href="https://github.com/Lingyue-001" target="_blank" rel="noopener">
+    <a class="contact-pill" href="https://lingyue-001.github.io/cv/" target="_blank" rel="noopener" aria-label="Personal website">
+      <img src="{{ '/assets/website.svg' | url }}" alt="Personal website" />
+    </a>
+    <a class="contact-pill" href="https://github.com/Lingyue-001" target="_blank" rel="noopener" aria-label="GitHub">
       <img src="{{ '/assets/github-mark.svg' | url }}" alt="GitHub" />
     </a>
-    <a class="contact-pill" href="mailto:Lingyue_M@outlook.com">
+    <a class="contact-pill" href="mailto:Lingyue_M@outlook.com" aria-label="Email">
       <img src="{{ '/assets/email.svg' | url }}" alt="Email" />
     </a>
   </div>
