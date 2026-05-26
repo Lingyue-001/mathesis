@@ -7,7 +7,7 @@ This project now supports a long-running CText proxy (`server/ctextProxyServer.j
 Use Render Blueprint from this repo (`render.yaml`):
 
 1. Open:
-   - `https://render.com/deploy?repo=https://github.com/Lingyue-001/MATHesis`
+   - `https://render.com/deploy?repo=https://github.com/Lingyue-001/mathesis`
 2. Select the `mathesis-ctext-proxy` web service.
 3. Set env var:
    - `CTEXT_PROXY_ALLOW_ORIGIN=https://<your-netlify-site>.netlify.app`

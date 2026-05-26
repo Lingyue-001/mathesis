@@ -1501,7 +1501,8 @@
                     const span = el("span", "tei-pb");
                     const n = node.getAttribute("n");
                     const facs = node.getAttribute("facs");
-                    span.setAttribute("title", n ? `Page break: ${n}` : "Page break");
+                    span.classList.add("hover-tooltip");
+                    span.dataset.tooltip = n ? `Page break: ${n}` : "Page break";
                     // 显示中性符号，避免和 verse bar 混淆
                     span.textContent = n ? ` [${n}] ` : " [pb] ";
                     return span;
@@ -1512,7 +1513,6 @@
                     // —— A 类：内联注释（inline） ——
                     if (place === "inline") {
                         const span = el("span", "tei-note-inline");
-                        span.title = "inline note";   // hover tooltip
                         span.appendChild(renderChildren());
                         return span;
                     }

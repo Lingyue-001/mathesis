@@ -29,36 +29,38 @@ layout: base
       <option value="number">Number</option>
       <option value="sanskritsymbol">Sanskrit Symbol</option>
     </select>
-    <select id="relationSelect" style="width: 150px; padding: 0.25rem; text-align: center; text-align-last: center;">
-      <option value="All">All Relations</option>
-      <option value="IS_UNIT_IN" title="This item is a constituent unit within a symbolic or structural system.">is unit in</option>
-      <option value="PART_OF_STRUCTURE" title="This item is a component in a symbolic or conceptual structure.">part of structure</option>
-      <option value="PRODUCES" title="This item generates or gives rise to another through operation or logic.">produces</option>
-      <option value="REPRESENTS" title="This item acts as a name, alias, or identity of a concept.">represents</option>
-      <option value="RESULTS_IN" title="This item results from symbolic or algorithmic operations.">results in</option>
-      <option value="SUPPORTS" title="This item provides structural or logical foundation for another.">supports</option>
-      <option value="SYMBOLIZES" title="This item expresses an abstract cosmological or philosophical idea.">symbolizes</option>
-    </select>
+    <span class="hover-tooltip" data-tooltip="Filter results by symbolic, structural, or operational relationship type.">
+      <select id="relationSelect" style="width: 150px; padding: 0.25rem; text-align: center; text-align-last: center;">
+        <option value="All">All Relations</option>
+        <option value="IS_UNIT_IN">is unit in</option>
+        <option value="PART_OF_STRUCTURE">part of structure</option>
+        <option value="PRODUCES">produces</option>
+        <option value="REPRESENTS">represents</option>
+        <option value="RESULTS_IN">results in</option>
+        <option value="SUPPORTS">supports</option>
+        <option value="SYMBOLIZES">symbolizes</option>
+      </select>
+    </span>
   </div>
 
   <h3 class="section-title is-small">Filter Fields</h3>
-  <label title="Supports searching Chinese (Simplified/Traditional), English, Sanskrit, and numbers">
+  <label class="hover-tooltip" data-tooltip="Supports searching Chinese (Simplified/Traditional), English, Sanskrit, and numbers.">
   <input type="checkbox" class="field-type" value="entry" /> Entry Name
 </label><br />
 
-<label title="Includes definitions, symbolic meanings, explanations, and related concepts">
+<label class="hover-tooltip" data-tooltip="Includes definitions, symbolic meanings, explanations, and related concepts.">
   <input type="checkbox" class="field-type" value="meaning" /> Meaning
 </label><br />
 
-<label title="Includes symbolic systems like Yin-Yang, image-number systems, calendar logic, etc.">
+<label class="hover-tooltip" data-tooltip="Includes symbolic systems like Yin-Yang, image-number systems, calendar logic, etc.">
   <input type="checkbox" class="field-type" value="system" /> System
 </label><br />
 
-<label title="Includes references from primary and secondary sources">
+<label class="hover-tooltip" data-tooltip="Includes references from primary and secondary sources.">
   <input type="checkbox" class="field-type" value="source" /> Source
 </label><br />
 
-<label title="Matches terms connected to this one via symbolic relationships">
+<label class="hover-tooltip" data-tooltip="Matches terms connected to this one via symbolic relationships.">
   <input type="checkbox" class="field-type" value="related" /> Related Nodes
 </label>
   

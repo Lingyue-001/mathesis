@@ -135,11 +135,12 @@ export function bindTranscriptionSplitLayout(options = {}) {
   if (!(handle instanceof HTMLButtonElement)) {
     handle = document.createElement("button");
     handle.type = "button";
-    handle.className = "transcription-splitter-handle";
+    handle.className = "transcription-splitter-handle hover-tooltip";
     handle.setAttribute("aria-label", "Resize transcription panels");
-    handle.title = "Drag to resize panels";
     layout.appendChild(handle);
   }
+  handle.classList.add("hover-tooltip");
+  handle.dataset.tooltip = "Drag to resize panels";
 
   function isDesktopActive() {
     if (mobileQuery?.matches) return false;

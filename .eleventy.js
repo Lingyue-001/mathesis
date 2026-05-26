@@ -15,11 +15,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
 
   // === 环境变量判断 ===
-  // Only GitHub Actions project-site builds should use /MATHesis pathPrefix.
+  // Only GitHub Actions project-site builds should use /mathesis pathPrefix.
   const isProduction = process.env.NODE_ENV === "production";
   const isNetlifyBuild = String(process.env.NETLIFY || "").toLowerCase() === "true";
   const isGitHubActionsBuild = String(process.env.GITHUB_ACTIONS || "").toLowerCase() === "true";
-  const pathPrefix = isGitHubActionsBuild ? "/MATHesis/" : "/";
+  const pathPrefix = isGitHubActionsBuild ? "/mathesis/" : "/";
 
   const ctextMiddleware = createCtextSearchMiddleware();
   const ctextProxyOrigin = String(process.env.CTEXT_PROXY_ORIGIN || "").trim();

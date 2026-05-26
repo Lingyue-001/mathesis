@@ -45,13 +45,13 @@ layout: base
   <div class="about-divider"></div>
 
   <div class="about-contact">
-    <a class="contact-pill" href="https://lingyue-001.github.io/cv/" target="_blank" rel="noopener" aria-label="Personal website">
+    <a class="contact-pill hover-tooltip" href="https://lingyue-001.github.io/cv/" target="_blank" rel="noopener" aria-label="Personal website" data-tooltip="Personal website">
       <img src="{{ '/assets/website.svg' | url }}" alt="Personal website" />
     </a>
-    <a class="contact-pill" href="https://github.com/Lingyue-001" target="_blank" rel="noopener" aria-label="GitHub">
+    <a class="contact-pill hover-tooltip" href="https://github.com/Lingyue-001" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="GitHub">
       <img src="{{ '/assets/github-mark.svg' | url }}" alt="GitHub" />
     </a>
-    <a class="contact-pill" href="mailto:Lingyue_M@outlook.com" aria-label="Email">
+    <a class="contact-pill hover-tooltip" href="mailto:Lingyue_M@outlook.com" aria-label="Email" data-tooltip="Email">
       <img src="{{ '/assets/email.svg' | url }}" alt="Email" />
     </a>
   </div>

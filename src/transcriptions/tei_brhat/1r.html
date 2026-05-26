@@ -698,7 +698,7 @@
                     <iframe id="cudlFrame" class="cudl-frame" loading="lazy" src="about:blank" hidden
                         data-src="https://cudl.lib.cam.ac.uk/view/MS-ADD-02329/1"
                         referrerpolicy="no-referrer-when-downgrade"
-                        title="CUDL viewer for Cambridge University Library MS Add.2329 f.1r"></iframe>
+                        aria-label="CUDL viewer for Cambridge University Library MS Add.2329 f.1r"></iframe>
                     <div class="cudl-link">
                         <a href="https://cudl.lib.cam.ac.uk/view/MS-ADD-02329/1" target="_blank"
                             rel="noopener noreferrer">
@@ -993,7 +993,8 @@
                     const span = el("span", "tei-pb");
                     const n = node.getAttribute("n");
                     const facs = node.getAttribute("facs");
-                    span.setAttribute("title", n ? `Page break: ${n}` : "Page break");
+                    span.classList.add("hover-tooltip");
+                    span.dataset.tooltip = n ? `Page break: ${n}` : "Page break";
                     // 显示中性符号，避免和 verse bar 混淆
                     span.textContent = n ? ` [${n}] ` : " [pb] ";
                     return span;
@@ -1010,7 +1011,6 @@
                     // —— A 类：内联注释（inline） ——
                     if (place === "inline") {
                         const span = el("span", "tei-note-inline");
-                        span.title = "inline note";   // hover tooltip
                         span.appendChild(renderChildren());
                         return span;
                     }
@@ -1066,7 +1066,8 @@
                     if (reason === "ornamental") {
                         const span = el("span", "tei-gap-ornamental");
                         span.textContent = "◊";
-                        span.setAttribute("title", "Ornamental manuscript gap (layout space, not a word break)");
+                        span.classList.add("hover-tooltip");
+                        span.dataset.tooltip = "Ornamental manuscript gap (layout space, not a word break)";
                         span.setAttribute("aria-label", "ornamental gap");
                         span.setAttribute("tabindex", "0");
                         return span;
@@ -1092,7 +1093,8 @@
                         // 没有unclear子节点时，保留原逻辑
                         span.textContent = "<" + text + ">";
                     }
-                    span.setAttribute("title", "Editorially supplied text");
+                    span.classList.add("hover-tooltip");
+                    span.dataset.tooltip = "Editorially supplied text";
                     return span;
                 }
 
@@ -1104,7 +1106,8 @@
                     const displayValue = orig || corrected;
                     const span = el("span", "tei-corr-marker");
                     span.setAttribute("tabindex", "0");
-                    span.setAttribute("title", note);
+                    span.classList.add("hover-tooltip");
+                    span.dataset.tooltip = note;
                     span.textContent = `†${displayValue}†`;
                     return span;
                 }
@@ -1122,7 +1125,8 @@
                     } else {
                         span.textContent = `<${text}>`;
                     }
-                    span.setAttribute("title", "Unclear manuscript reading");
+                    span.classList.add("hover-tooltip");
+                    span.dataset.tooltip = "Unclear manuscript reading";
 
                     return span;
                 }
@@ -1459,9 +1463,9 @@
                     frag.appendChild(document.createTextNode(text.slice(cursor, seg.start)));
                 }
                 const mark = document.createElement("span");
-                mark.className = "tei-node-hit";
+                mark.className = "tei-node-hit hover-tooltip";
                 mark.textContent = text.slice(seg.start, seg.end);
-                mark.title = "Matched node term";
+                mark.dataset.tooltip = "Matched node term";
                 if (seg.stem) mark.dataset.nodeStem = seg.stem;
                 frag.appendChild(mark);
                 const form = (mark.textContent || "").trim();
@@ -2278,7 +2282,10 @@
                     strong.textContent = "Chapter span: ";
                     const text = document.createElement("span");
                     text.textContent = folio.chapterSpanCompact;
-                    if (folio.chapterSpanTitle) text.title = folio.chapterSpanTitle;
+                    if (folio.chapterSpanTitle) {
+                        text.classList.add("hover-tooltip");
+                        text.dataset.tooltip = folio.chapterSpanTitle;
+                    }
                     folioChapterSpan.replaceChildren(strong, text);
                     folioChapterSpan.hidden = false;
                 } else {

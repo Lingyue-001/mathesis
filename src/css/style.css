@@ -74,6 +74,43 @@ mark {
   letter-spacing: 0.1em;
 }
 
+.hover-tooltip {
+  position: relative;
+}
+
+.hover-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.55rem);
+  z-index: 20;
+  width: max-content;
+  max-width: min(24rem, calc(100vw - 2rem));
+  padding: 0.28rem 0.48rem 0.32rem;
+  color: #f8f5f2;
+  background: rgba(49, 45, 45, 0.92);
+  border-radius: 7px;
+  box-shadow: 0 8px 18px rgba(45, 34, 24, 0.16);
+  font-family: Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.15;
+  text-align: left;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -0.18rem);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.hover-tooltip:hover::after,
+.hover-tooltip:focus-within::after,
+.hover-tooltip:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 /* === Header / Navigation === */
 .site-header {
   display: flex;
@@ -988,21 +1025,6 @@ body.home-floating-nav main {
 .about-section {
   margin-top: 2.5rem;
   padding: 0 0.5rem;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: aboutFade 0.6s ease forwards;
-}
-
-.about-section:nth-of-type(2) {
-  animation-delay: 0.05s;
-}
-
-.about-section:nth-of-type(3) {
-  animation-delay: 0.12s;
-}
-
-.about-section:nth-of-type(4) {
-  animation-delay: 0.2s;
 }
 
 .about-section h2 {
@@ -1026,6 +1048,24 @@ body.home-floating-nav main {
   margin: 0 0 1rem;
 }
 
+.about-section a {
+  color: #6f4a12;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(111, 74, 18, 0.35);
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.about-section a:visited {
+  color: #6f4a12;
+}
+
+.about-section a:hover,
+.about-section a:focus-visible {
+  color: var(--editorial-mark-brown-strong);
+  border-bottom-color: rgba(var(--editorial-mark-brown-rgb), 0.72);
+}
+
 .about-list {
   margin: 1rem 0 1.2rem 1.2rem;
   padding: 0;
@@ -1038,13 +1078,6 @@ body.home-floating-nav main {
   background: linear-gradient(90deg, transparent, rgba(90, 74, 56, 0.4), transparent);
 }
 
-@keyframes aboutFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .about-contact {
   display: flex;
   gap: 1rem;
@@ -1052,7 +1085,6 @@ body.home-floating-nav main {
 }
 
 .contact-pill {
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1073,29 +1105,6 @@ body.home-floating-nav main {
   transition: var(--accent-fade-transition);
 }
 
-.contact-pill::after {
-  content: attr(aria-label);
-  position: absolute;
-  left: 50%;
-  top: calc(100% + 0.55rem);
-  z-index: 2;
-  padding: 0.28rem 0.48rem 0.32rem;
-  color: #f8f5f2;
-  background: rgba(49, 45, 45, 0.92);
-  border-radius: 7px;
-  box-shadow: 0 8px 18px rgba(45, 34, 24, 0.16);
-  font-family: Georgia, serif;
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.15;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -0.18rem);
-  transition: opacity 0.18s ease, transform 0.18s ease;
-}
-
 .contact-pill:hover,
 .contact-pill:focus-visible {
   transform: translateY(-1px);
@@ -1105,12 +1114,6 @@ body.home-floating-nav main {
 .contact-pill:focus-visible img {
   opacity: var(--accent-fade-opacity-active);
   filter: var(--accent-fade-filter-active);
-}
-
-.contact-pill:hover::after,
-.contact-pill:focus-visible::after {
-  opacity: 1;
-  transform: translate(-50%, 0);
 }
 
 @media (max-width: 900px) {

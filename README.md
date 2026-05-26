@@ -108,6 +108,6 @@ A research website built with Eleventy to explore symbolic math, calendrical sys
 ## Deployment checklist (GitHub Pages)
 1) Pages source set to **GitHub Actions** (not `/docs` branch).
 2) Build output matches workflow artifact path (`dist`).
-3) `pathPrefix` set for project site (`/MATHesis/`) in production.
+3) `pathPrefix` set for project site (`/mathesis/`) in production.
 4) All asset/route links use Eleventy `| url` filter or base-aware fetch.
 5) Push a change and verify CSS/JS/network requests in the deployed site.
