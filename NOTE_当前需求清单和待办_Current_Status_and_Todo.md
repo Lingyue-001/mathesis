@@ -19,6 +19,7 @@
 - CText 统计页解析现状：已按当前 CText live `reqtype=stats` 表格结构修复文本/章节提取，并移除前端对主结果页标题的误 fallback；当前 localhost 可恢复正确显示文本名与章节名。
 - CText 静态缓存现状：已建立“localhost 正确结果 -> candidate/report -> promote -> `static/ctext-cache.json`”的独立导出链路；默认 `refresh=1`、全量重建、不合并旧正式缓存，避免旧/错缓存污染线上发布文件。
 - Brhat 本地编辑器现状：`src/transcriptions/tei_brhat/1r.html` 支持本地草稿编辑模式，仅在 `localhost/127.0.0.1` 且 URL 带 `?edit=1` 时显示 `Editor` 按钮；编辑结果仅写入浏览器 `localStorage`，不会改动 XML 源文件。
+- Brhat Netlify 渲染现状：`src/transcriptions/tei_brhat/1r.html` 已将 TEI/XML 主渲染与梵语高亮、节点浮窗、分栏等增强逻辑拆分容错；线上若增强逻辑失败，应保留已渲染正文并在 console 输出诊断信息。
 
 ## 紧急 TODO（下次继续）
 - [ ] `Matched terms` 展示增强：

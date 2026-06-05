@@ -849,10 +849,11 @@
         async function loadTEI(fileName, targetSelector) {
             const target = document.querySelector(targetSelector);
             if (!target) throw new Error("Target element not found: " + targetSelector);
+            const xmlUrl = new URL(`../${fileName}`, window.location.href);
 
             try {
-                const res = await fetch(`../${fileName}`, { headers: { "Accept": "application/xml" } });
-                if (!res.ok) throw new Error(`HTTP ${res.status} for ${fileName}`);
+                const res = await fetch(xmlUrl.href, { headers: { "Accept": "application/xml" } });
+                if (!res.ok) throw new Error(`HTTP ${res.status} for ${xmlUrl.pathname}`);
                 const xmlText = await res.text();
 
                 // Parse XML (TEI usually uses a default namespace)
@@ -872,6 +873,19 @@
                 const html = teiNodeToHTML(xml.documentElement);
                 target.innerHTML = "";
                 target.appendChild(html);
+            } catch (err) {
+                console.error(err);
+                // Fallback: show raw XML safely
+                target.textContent = "Failed to render TEI. Showing raw XML:\n\n" + (err?.message || "");
+                try {
+                    const res2 = await fetch(xmlUrl.href);
+                    const raw = await res2.text();
+                    target.textContent += "\n\n" + raw;
+                } catch { }
+                return false;
+            }
+
+            try {
                 applyEditorDraftToContainer(target);
                 placeLineInteractionHint(target);
                 syncViewerPlacementByViewport();
@@ -880,18 +894,19 @@
                 bindLineHighlightSuppression(target);
                 captureTranscriptionTextNodes(target);
                 applyTranscriptionScriptMode(transcriptionScriptMode);
-                return true;
             } catch (err) {
-                console.error(err);
-                // Fallback: show raw XML safely
-                target.textContent = "Failed to render TEI. Showing raw XML:\n\n" + (err?.message || "");
+                console.warn("[Brhat transcription] TEI rendered, but enhancement failed:", err);
                 try {
-                    const res2 = await fetch(`../${fileName}`);
-                    const raw = await res2.text();
-                    target.textContent += "\n\n" + raw;
-                } catch { }
-                return false;
+                    placeLineInteractionHint(target);
+                    syncViewerPlacementByViewport();
+                    captureTranscriptionTextNodes(target);
+                    applyTranscriptionScriptMode(transcriptionScriptMode);
+                } catch (fallbackErr) {
+                    console.warn("[Brhat transcription] Enhancement fallback failed:", fallbackErr);
+                }
             }
+
+            return true;
         }
 
         // Minimal TEI → HTML mapping

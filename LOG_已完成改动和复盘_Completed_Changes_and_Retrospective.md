@@ -5,6 +5,26 @@
 - 每条记录按事件组织，结构固定为：需求明确 -> 操作 -> 解决 -> 复盘。
 - 待办与优先级不写在这里；请查 `NOTE_当前需求清单和待办_Current_Status_and_Todo.md`。
 
+## [2026-06-03] Brhat Netlify TEI 渲染容错修复
+0. Tags / 标签
+   - transcriptions, infra
+1. Time
+   - 2026-06-03
+2. 需求明确 / Goal
+   - 排查 Netlify 上 `src/transcriptions/tei_brhat/1r.html` 梵语转写区域显示 `Failed to render TEI`，但中文转写页面正常的问题。
+   - 降低 Brhat 页面在生产环境中因增强逻辑失败而误判为 XML/TEI 主渲染失败的风险。
+3. 操作 / Actions
+   - 检查 Netlify、Eleventy passthrough、Brhat HTML/XML 资源链路与目录路由差异。
+   - 将 Brhat 页 XML 加载改为基于 `new URL("../<file>", window.location.href)` 的明确 URL 解析。
+   - 将 XML fetch/parse/TEI 正文渲染与后续增强逻辑分离为两段容错流程。
+   - 对 Sanskrit node highlight、line preview、layout sync、script mode 等增强逻辑增加独立降级，避免增强失败时清空已渲染正文。
+4. 解决 / Outcome
+   - Brhat 页即使在线上增强逻辑失败，也应保留已成功渲染的 TEI 正文，只在 console 输出增强失败诊断。
+   - `Failed to render TEI` 现在更接近真实 XML 加载或解析失败，不再覆盖后处理错误。
+5. 复盘 / Retrospective
+   - 转写页的主内容渲染和交互增强应分层容错；增强层失败不应破坏正文可读性。
+   - 生产环境排障信息要避免误导，应让错误提示对应真实失败阶段。
+
 ## [2025-01-26] GitHub Pages 部署问题修复
 ### 需求明确
 - 解决 GitHub Pages 上样式丢失、子页面 404、渲染不完整。
