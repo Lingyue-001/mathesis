@@ -25,6 +25,25 @@
    - 转写页的主内容渲染和交互增强应分层容错；增强层失败不应破坏正文可读性。
    - 生产环境排障信息要避免误导，应让错误提示对应真实失败阶段。
 
+## [2026-06-05] Brhat Netlify XML 路径修复
+0. Tags / 标签
+   - transcriptions, infra
+1. Time
+   - 2026-06-05
+2. 需求明确 / Goal
+   - 修复 Netlify 上 Brhat 转写页请求 `1r.xml` 时落到 `/transcriptions/1r.xml` 并返回 404，导致梵语 TEI 正文无法渲染的问题。
+   - 保持 localhost 与 Netlify 在不同 URL 尾斜杠形态下的 XML 资源解析一致。
+3. 操作 / Actions
+   - 根据线上错误信息确认实际失败请求为 `/transcriptions/1r.xml`。
+   - 将 Brhat 页 XML URL 从相对路径解析改为基于站点前缀拼接 `/transcriptions/tei_brhat/<fileName>`。
+   - 保留 GitHub Pages 项目路径前缀兼容逻辑，避免未来带 `/mathesis` 前缀时再次错位。
+4. 解决 / Outcome
+   - `1r.xml` 加载路径固定为 Brhat 转写目录下的 XML 文件，不再受当前页面是否带尾斜杠影响。
+   - Netlify 自动部署后应请求 `/transcriptions/tei_brhat/1r.xml`，而不是 `/transcriptions/1r.xml`。
+5. 复盘 / Retrospective
+   - 生产环境 URL canonicalization 与本地开发服务器不一定一致；转写资源不应依赖脆弱的 `../` 相对路径。
+   - 页面内关键数据资源应优先使用 base-aware 的绝对站内路径，避免部署平台路由差异影响正文渲染。
+
 ## [2025-01-26] GitHub Pages 部署问题修复
 ### 需求明确
 - 解决 GitHub Pages 上样式丢失、子页面 404、渲染不完整。

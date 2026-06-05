@@ -4,7 +4,7 @@ Auto-generated from `LOG_已完成改动和复盘_Completed_Changes_and_Retrospe
 
 Tag set: `ctext`, `transcriptions`, `search`, `data`, `infra`, `project-docs`.
 
-Total events: 56
+Total events: 57
 
 ## ctext
 
@@ -24,6 +24,7 @@ Total events: 56
 ## transcriptions
 
 - [2026-06-03] Brhat Netlify TEI 渲染容错修复
+- [2026-06-05] Brhat Netlify XML 路径修复
 - [2026-03-03] 文档与转写入口同步（1a 替换 + 脚本可移植性 + Editor 草稿回填修正）
 - [2026-03-05] CText 前端代理注入兜底与转写路由规范化
 
@@ -42,6 +43,7 @@ Total events: 56
 ## infra
 
 - [2026-06-03] Brhat Netlify TEI 渲染容错修复
+- [2026-06-05] Brhat Netlify XML 路径修复
 - [2026-03-03] 文档与转写入口同步（1a 替换 + 脚本可移植性 + Editor 草稿回填修正）
 - [2026-03-04] 日志体系精简与根目录收敛（Timeline + Tag）
 - [2026-03-04] 回滚全部 test ctext api 提交并重置基线

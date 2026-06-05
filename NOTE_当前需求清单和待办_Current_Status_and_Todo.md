@@ -20,6 +20,7 @@
 - CText 静态缓存现状：已建立“localhost 正确结果 -> candidate/report -> promote -> `static/ctext-cache.json`”的独立导出链路；默认 `refresh=1`、全量重建、不合并旧正式缓存，避免旧/错缓存污染线上发布文件。
 - Brhat 本地编辑器现状：`src/transcriptions/tei_brhat/1r.html` 支持本地草稿编辑模式，仅在 `localhost/127.0.0.1` 且 URL 带 `?edit=1` 时显示 `Editor` 按钮；编辑结果仅写入浏览器 `localStorage`，不会改动 XML 源文件。
 - Brhat Netlify 渲染现状：`src/transcriptions/tei_brhat/1r.html` 已将 TEI/XML 主渲染与梵语高亮、节点浮窗、分栏等增强逻辑拆分容错；线上若增强逻辑失败，应保留已渲染正文并在 console 输出诊断信息。
+- Brhat Netlify 路径现状：`src/transcriptions/tei_brhat/1r.html` 已将 `1r.xml` 加载改为基于站点前缀的固定转写资源路径，避免 Netlify 无尾斜杠路由把 XML 请求误解析为 `/transcriptions/1r.xml`。
 
 ## 紧急 TODO（下次继续）
 - [ ] `Matched terms` 展示增强：

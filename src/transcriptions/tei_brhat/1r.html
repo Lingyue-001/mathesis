@@ -849,7 +849,7 @@
         async function loadTEI(fileName, targetSelector) {
             const target = document.querySelector(targetSelector);
             if (!target) throw new Error("Target element not found: " + targetSelector);
-            const xmlUrl = new URL(`../${fileName}`, window.location.href);
+            const xmlUrl = resolveBrhatTranscriptionResourceUrl(fileName);
 
             try {
                 const res = await fetch(xmlUrl.href, { headers: { "Accept": "application/xml" } });
@@ -1267,6 +1267,12 @@
         function getBasePrefixForData() {
             const path = window.location.pathname || "";
             return path.includes("/transcriptions/") ? path.split("/transcriptions/")[0] : "";
+        }
+
+        function resolveBrhatTranscriptionResourceUrl(fileName) {
+            const cleanName = String(fileName || "").replace(/^\/+/, "");
+            const basePrefix = getBasePrefixForData();
+            return new URL(`${basePrefix}/transcriptions/tei_brhat/${cleanName}`, window.location.origin);
         }
 
         function escapeHtml(input) {
