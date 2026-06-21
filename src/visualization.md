@@ -97,7 +97,7 @@ async function drawGraph() {
       // 拼接 label：中文优先，其次梵文或值，英文在后缀
       let label = "";
       if (zh || sa || val) {
-        label = `${zh || sa || val}${en ? " / " + en : ""}`;
+        label = `${zh || sa || val}${en ? " " + en : ""}`;
       } else if (en) {
         label = en;
       } else {

@@ -1,3 +1,5 @@
+import { formatBilingualLabel } from "./formatters/text.js";
+
 export const FIELD_LABELS = {
   name_sa: "Entry Name (Sanskrit)",
   transliteration: "Entry Name (Transliteration)",
@@ -79,7 +81,7 @@ export function buildUnifiedEntryName(properties) {
   const zh = String(p.name_zh || "").trim();
   const en = String(p.name_en || "").trim();
   const left = [sa, tr].filter(Boolean).join(" ");
-  const right = [zh, en].filter(Boolean).join(" ");
+  const right = formatBilingualLabel(zh, en);
   if (left && right) return `${left} / ${right}`;
   if (left) return left;
   if (right) return right;

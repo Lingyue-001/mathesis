@@ -6,6 +6,8 @@ module.exports = function(eleventyConfig) {
   // === 静态资源复制 ===
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/map-data");
+  eleventyConfig.addPassthroughCopy({ "node_modules/leaflet/dist": "vendor/leaflet" });
   eleventyConfig.addPassthroughCopy("assets/fonts");
   eleventyConfig.addPassthroughCopy("static");
   eleventyConfig.addPassthroughCopy("src/transcriptions/tei_hanshu");

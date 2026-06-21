@@ -1513,6 +1513,7 @@
                     // —— A 类：内联注释（inline） ——
                     if (place === "inline") {
                         const span = el("span", "tei-note-inline");
+                        span.title = "inline note";   // hover tooltip
                         span.appendChild(renderChildren());
                         return span;
                     }

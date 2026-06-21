@@ -1,0 +1,125 @@
+[
+  {
+    "_schemaNote": "placeNames.json：历史地名 / 朝代 / 原文名称。边界规则：placeNames 不存观测数据。"
+  },
+  {
+    "placeNameId": "pn-tang-linyi",
+    "siteId": "site-linyi",
+    "name": "林邑",
+    "transliteration": "Linyi",
+    "nameType": "historical",
+    "period": "Tang",
+    "startYear": 618,
+    "endYear": 907,
+    "source": "舊唐書",
+    "note": "大衍曆測影點之一"
+  },
+  {
+    "placeNameId": "pn-tang-annan",
+    "siteId": "site-annan",
+    "name": "安南",
+    "transliteration": "Annan",
+    "nameType": "historical",
+    "period": "Tang",
+    "startYear": 618,
+    "endYear": 907,
+    "source": "舊唐書",
+    "note": "大衍曆測影點之一"
+  },
+  {
+    "placeNameId": "pn-tang-langzhou",
+    "siteId": "site-langzhou",
+    "name": "朗州",
+    "transliteration": "Langzhou",
+    "nameType": "historical",
+    "period": "Tang",
+    "startYear": 618,
+    "endYear": 907,
+    "source": "舊唐書",
+    "note": "大衍曆測影點之一"
+  },
+  {
+    "placeNameId": "pn-tang-wujin",
+    "siteId": "site-wujin",
+    "name": "武津",
+    "transliteration": "Wujin",
+    "nameType": "historical",
+    "period": "Tang",
+    "startYear": 618,
+    "endYear": 907,
+    "source": "舊唐書",
+    "note": "唐書為蔡州上蔡縣武津館"
+  },
+  {
+    "placeNameId": "pn-tang-fugou",
+    "siteId": "site-fugou",
+    "name": "扶溝",
+    "transliteration": "Fugou",
+    "nameType": "historical",
+    "period": "Tang",
+    "startYear": 618,
+    "endYear": 907,
+    "source": "舊唐書",
+    "note": "大衍曆測影點之一"
+  },
+  {
+    "placeNameId": "pn-tang-yangcheng",
+    "siteId": "site-yangcheng",
+    "name": "陽城",
+    "transliteration": "Yangcheng",
+    "nameType": "historical",
+    "period": "Tang",
+    "startYear": 618,
+    "endYear": 907,
+    "source": "舊唐書",
+    "note": "核心基準點"
+  },
+  {
+    "placeNameId": "pn-tang-junyi",
+    "siteId": "site-junyi",
+    "name": "浚儀",
+    "transliteration": "Junyi",
+    "nameType": "historical",
+    "period": "Tang",
+    "startYear": 618,
+    "endYear": 907,
+    "source": "舊唐書",
+    "note": "唐書為汴州浚儀太嶽臺"
+  },
+  {
+    "placeNameId": "pn-tang-huazhou",
+    "siteId": "site-huazhou",
+    "name": "滑州",
+    "transliteration": "Huazhou",
+    "nameType": "historical",
+    "period": "Tang",
+    "startYear": 618,
+    "endYear": 907,
+    "source": "舊唐書",
+    "note": "唐書為滑州白馬"
+  },
+  {
+    "placeNameId": "pn-tang-yuzhou",
+    "siteId": "site-yuzhou",
+    "name": "蔚州",
+    "transliteration": "Yuzhou",
+    "nameType": "historical",
+    "period": "Tang",
+    "startYear": 618,
+    "endYear": 907,
+    "source": "舊唐書",
+    "note": "大衍曆測影點之一"
+  },
+  {
+    "placeNameId": "pn-tang-tiele",
+    "siteId": "site-tiele",
+    "name": "鐵勒",
+    "transliteration": "Tiele",
+    "nameType": "historical",
+    "period": "Tang",
+    "startYear": 618,
+    "endYear": 907,
+    "source": "舊唐書",
+    "note": "推算點"
+  }
+]

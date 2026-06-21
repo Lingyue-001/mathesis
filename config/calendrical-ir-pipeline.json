@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "inputs": {
+    "cullen": {
+      "id": "cullen-foundations",
+      "title": "Cullen: The Foundations of Celestial Reckoning",
+      "path": "The Foundations of Celestial Reckoning. Three ancient Chinese astronomical systems (Christopher Cullen) (Z-Library).pdf",
+      "format": "pdf",
+      "status": "registered"
+    },
+    "source_texts": [
+      {
+        "id": "santong",
+        "title": "三统历原文",
+        "path": "calendars-三统历.md",
+        "scope": "full"
+      },
+      {
+        "id": "sifen",
+        "title": "四分历原文",
+        "path": "calendars-四分历.md",
+        "scope": "full"
+      },
+      {
+        "id": "jiuzhi",
+        "title": "九执历原文",
+        "path": "calendars-九执历.md",
+        "scope": "推积日及小馀章",
+        "include_patterns": [
+          "推积日及小馀章"
+        ],
+        "stop_patterns": [
+          "推中日章"
+        ]
+      }
+    ],
+    "future_scholarship": [
+      "Mak",
+      "Yabuuti",
+      "Xu",
+      "Kotyk"
+    ]
+  },
+  "outputs": {
+    "dir": "tmp/procedure-ir",
+    "artifacts": [
+      "cullen_oracle.json",
+      "source_spans.json",
+      "procedure_IR.json",
+      "validation_report.json",
+      "review_queue.json",
+      "procedure_vectors.json"
+    ]
+  }
+}

@@ -1,0 +1,344 @@
+/* === Map Page === */
+.map-page {
+  max-width: 1180px;
+  margin: 2.4rem auto 4rem;
+  padding: 0 2rem;
+  color: #2f2a25;
+  font-family: Georgia, serif;
+}
+
+.map-layout,
+.map-stage {
+  position: relative;
+}
+
+.map-floating-panel {
+  position: absolute;
+  top: 1.65rem;
+  right: 1.65rem;
+  z-index: 500;
+  display: grid;
+  width: min(172px, calc(100% - 3.3rem));
+  gap: 0.5rem;
+}
+
+.map-panel,
+.map-summary {
+  padding: 0.7rem;
+  background: rgba(255, 253, 249, 0.86);
+  border: 1px solid rgba(92, 82, 70, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(31, 31, 31, 0.08);
+  box-sizing: border-box;
+  backdrop-filter: blur(2px);
+}
+
+.map-panel h2 {
+  margin: 0 0 0.45rem;
+  color: #4c4034;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.map-panel select {
+  width: 100%;
+  min-height: 1.9rem;
+  border: 1px solid rgba(90, 74, 56, 0.22);
+  border-radius: 6px;
+  padding: 0.18rem 0.42rem;
+  background: rgba(255, 255, 255, 0.88);
+  color: #2f2a25;
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.map-check-list {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.map-check {
+  display: grid;
+  grid-template-columns: 0.85rem 0.7rem 1fr;
+  gap: 0.4rem;
+  align-items: center;
+  cursor: pointer;
+  line-height: 1.2;
+  font-size: 0.9rem;
+}
+
+.map-check input {
+  width: 0.86rem;
+  height: 0.86rem;
+  margin: 0;
+  accent-color: #63756f;
+}
+
+.map-swatch {
+  display: inline-block;
+  width: 0.68rem;
+  height: 0.68rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg,
+      var(--swatch-certain, #955539) 0 49%,
+      var(--swatch-uncertain, #cfa08e) 51% 100%);
+  box-shadow: 0 1px 4px rgba(56, 45, 37, 0.22);
+}
+
+.map-swatch-reference {
+  border-radius: 0;
+  background: #955539;
+  clip-path: polygon(50% 0, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0 50%, 39% 38%);
+}
+
+.map-swatch-measured {
+  background: #955539;
+}
+
+.map-swatch-hypothetical {
+  background: #cfa08e;
+  opacity: 0.82;
+}
+
+.map-canvas {
+  position: relative;
+  min-height: 620px;
+  border: 1px solid rgba(122, 96, 68, 0.16);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #e9ddc9;
+  touch-action: none;
+}
+
+.map-canvas .leaflet-container,
+.map-canvas.leaflet-container {
+  background: #e9ddc9;
+}
+
+.map-canvas .leaflet-bar {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(54, 43, 35, 0.16);
+  overflow: hidden;
+}
+
+.map-canvas .leaflet-bar a {
+  border-bottom-color: rgba(92, 82, 70, 0.16);
+  background: rgba(255, 253, 249, 0.9);
+  color: #2f2a25;
+}
+
+.map-canvas .leaflet-bar a:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.map-canvas .leaflet-bar a:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.map-observation-circle {
+  filter: drop-shadow(0 5px 3px rgba(54, 43, 35, 0.24));
+}
+
+.map-reference-star {
+  filter:
+    drop-shadow(0 0 2px rgba(255, 253, 249, 0.98))
+    drop-shadow(0 0 5px rgba(255, 253, 249, 0.82))
+    drop-shadow(0 5px 3px rgba(54, 43, 35, 0.28));
+}
+
+.map-reference-star-shape {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: rgba(149, 85, 57, 0.82);
+  border: 1px solid rgba(255, 253, 249, 0.62);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 0 0 1px rgba(82, 58, 43, 0.1);
+  clip-path: polygon(50% 0, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0 50%, 39% 38%);
+}
+
+.map-marker-enter {
+  animation: map-marker-enter 0.28s ease-out both;
+}
+
+.map-marker-exit {
+  animation: map-marker-exit 0.24s ease-in both;
+  pointer-events: none;
+}
+
+@keyframes map-marker-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes map-marker-exit {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.map-detail-dock {
+  display: contents;
+}
+
+.map-detail-dock[hidden] {
+  display: none;
+}
+
+.map-detail-panel {
+  top: 5.4rem;
+  width: clamp(300px, 26vw, 420px);
+}
+
+.map-detail-panel .detail-panel-body {
+  overflow: hidden;
+}
+
+.map-detail-content {
+  transition:
+    opacity 0.24s ease,
+    transform var(--ui-motion-standard);
+}
+
+.map-detail-content.is-entering {
+  opacity: 0;
+  transform: translateX(1rem);
+}
+
+.map-detail-content.is-exiting {
+  opacity: 0;
+  transform: translateX(-1rem);
+}
+
+.map-summary {
+  margin-top: 1rem;
+}
+
+.map-summary h2 {
+  margin: 0 0 calc(var(--heading-major-gap) * 0.45);
+  color: #4c4034;
+  font-size: 1rem;
+  line-height: var(--heading-major-line-height);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.map-summary ul {
+  margin: 0 0 0 var(--title-content-indent);
+  padding-left: 0;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.map-results-group {
+  margin-bottom: 0.7rem;
+}
+
+.map-results-group>strong {
+  display: block;
+  margin-bottom: 0.08rem;
+  color: #4c4034;
+}
+
+.map-results-group>span {
+  display: block;
+  margin: 0 0 0.35rem;
+  color: #6a5742;
+  font-size: 0.86rem;
+}
+
+.map-results-group .records-table {
+  margin-top: 0.2rem;
+}
+
+.map-results-content {
+  --split-detail-min: 260px;
+  --split-detail-size: 0.56fr;
+  --split-detail-gap: 1rem;
+  --split-detail-main-shift: -0.85rem;
+  --split-detail-enter-x: 1rem;
+  --split-detail-exit-x: -1rem;
+}
+
+.records-row-button {
+  display: inline;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.records-row-button:hover,
+.records-table tr.is-selected .records-row-button {
+  color: #955539;
+}
+
+.records-table tr.is-selected td {
+  background: rgba(149, 85, 57, 0.06);
+}
+
+.map-results-count {
+  margin: 0.25rem 0 0;
+  color: #6a5742;
+  font-size: 0.86rem;
+  text-align: right;
+}
+
+@media (max-width: 860px) {
+  .map-page {
+    padding: 0 1rem;
+  }
+
+  .map-floating-panel {
+    position: absolute;
+    top: 1.35rem;
+    right: 1.35rem;
+    width: min(150px, calc(100% - 2.7rem));
+  }
+
+  .map-floating-panel .map-panel {
+    padding: 0.58rem;
+  }
+
+  .map-floating-panel .map-panel h2,
+  .map-floating-panel .map-check,
+  .map-floating-panel .map-panel select {
+    font-size: 0.78rem;
+  }
+
+  .map-detail-panel {
+    top: 4.7rem;
+    width: clamp(260px, 44vw, 360px);
+  }
+
+  .map-canvas {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .map-results-content.is-open {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .map-results-detail {
+    --split-detail-enter-x: 0;
+  }
+}

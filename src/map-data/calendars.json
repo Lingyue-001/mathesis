@@ -1,0 +1,20 @@
+[
+  {
+    "_schemaNote": "calendars.json：历书本体 / 使用期 / 颁行期。边界规则：calendars 不存具体观测点。"
+  },
+  {
+    "calendarId": "dayanli",
+    "name": "大衍曆",
+    "nameEn": "Dayan li",
+    "period": "Tang",
+    "periodLabel": "Tang dynasty",
+    "periodStartYear": 618,
+    "periodEndYear": 907,
+    "observationYear": 724,
+    "promulgatedYear": 729,
+    "inUseStartYear": 729,
+    "inUseEndYear": 761,
+    "description": "A Tang calendar associated with the Kaiyuan 12 gnomon-shadow observations preserved in Jiu Tang shu, Tianwen zhi.",
+    "source": "Jiu Tang shu, Tianwen zhi; Xu 2018"
+  }
+]

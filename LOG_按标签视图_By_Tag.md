@@ -4,7 +4,7 @@ Auto-generated from `LOG_已完成改动和复盘_Completed_Changes_and_Retrospe
 
 Tag set: `ctext`, `transcriptions`, `search`, `data`, `infra`, `project-docs`.
 
-Total events: 57
+Total events: 58
 
 ## ctext
 
@@ -65,6 +65,7 @@ Total events: 57
 
 ## untagged
 
+- [2026-06-17] Naming display rules and CSS component governance
 - [2025-01-26] GitHub Pages 部署问题修复
 - [2026-01-30] 搜索/转写/可视化交互与本地构建修复
 - [2026-02-08] Transcriptions 旧项目（汉书律历志）复刻接入

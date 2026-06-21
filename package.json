@@ -8,6 +8,7 @@
     "verify:install": "node scripts/verify-install.mjs",
     "generate:debug-flags-doc": "node scripts/generate-debug-flags-doc.mjs",
     "generate:log-by-tag": "node scripts/generate-log-by-tag.mjs",
+    "build:procedure-ir": "node scripts/build-procedure-ir.mjs",
     "build:ctext-cache": "node scripts/build-ctext-cache.mjs",
     "promote:ctext-cache": "node scripts/build-ctext-cache.mjs --promote tmp/ctext-static-build/ctext-cache.candidate.json",
     "test:ctext-stats-parser": "node --test tests/ctext-stats-parser.test.mjs",
@@ -20,5 +21,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
     "playwright": "^1.58.2"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
   }
 }

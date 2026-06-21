@@ -1,0 +1,116 @@
+[
+  {
+    "_schemaNote": "sites.json：现代地理实体 / 坐标 / GIS可信度。边界规则：sites 不存历史解释。",
+    "compiledFromIds": [
+      "xu-2018-table-5-12",
+      "xu-2018-table-5-14"
+    ]
+  },
+  {
+    "siteId": "site-linyi",
+    "modernName": "越南順化",
+    "modernNameEn": "Huế, Vietnam",
+    "lat": 16.46,
+    "lng": 107.58,
+    "modernCountry": "Vietnam",
+    "note": "南端實測點",
+    "coordinateSourceType": "modern-georeference"
+  },
+  {
+    "siteId": "site-annan",
+    "modernName": "越南河內",
+    "modernNameEn": "Hanoi, Vietnam",
+    "lat": 21.03,
+    "lng": 105.85,
+    "modernCountry": "Vietnam",
+    "note": "北極高有異文",
+    "coordinateSourceType": "modern-georeference"
+  },
+  {
+    "siteId": "site-langzhou",
+    "modernName": "湖南常德",
+    "modernNameEn": "Changde, Hunan, China",
+    "lat": 29.05,
+    "lng": 111.69,
+    "modernCountry": "China",
+    "modernProvince": "Hunan",
+    "note": "穩定",
+    "coordinateSourceType": "modern-georeference"
+  },
+  {
+    "siteId": "site-wujin",
+    "modernName": "河南汝南",
+    "modernNameEn": "Runan, Henan, China",
+    "lat": 33.27,
+    "lng": 114.27,
+    "modernCountry": "China",
+    "modernProvince": "Henan",
+    "note": "唐書為蔡州上蔡縣武津館",
+    "coordinateSourceType": "modern-georeference"
+  },
+  {
+    "siteId": "site-fugou",
+    "modernName": "河南扶溝",
+    "modernNameEn": "Fugou, Henan, China",
+    "lat": 34.05,
+    "lng": 114.38,
+    "modernCountry": "China",
+    "modernProvince": "Henan",
+    "note": "接近地中/陽城體系",
+    "coordinateSourceType": "modern-georeference"
+  },
+  {
+    "siteId": "site-yangcheng",
+    "modernName": "河南登封",
+    "modernNameEn": "Dengfeng, Henan, China",
+    "lat": 34.46,
+    "lng": 113.02,
+    "modernCountry": "China",
+    "modernProvince": "Henan",
+    "note": "核心基準點",
+    "coordinateSourceType": "modern-georeference"
+  },
+  {
+    "siteId": "site-junyi",
+    "modernName": "河南浚縣",
+    "modernNameEn": "Xun County, Henan, China",
+    "lat": 35.67,
+    "lng": 114.54,
+    "modernCountry": "China",
+    "modernProvince": "Henan",
+    "note": "唐書為汴州浚儀太嶽臺",
+    "coordinateSourceType": "modern-georeference"
+  },
+  {
+    "siteId": "site-huazhou",
+    "modernName": "河南滑縣",
+    "modernNameEn": "Hua County, Henan, China",
+    "lat": 35.57,
+    "lng": 114.52,
+    "modernCountry": "China",
+    "modernProvince": "Henan",
+    "note": "唐書為滑州白馬",
+    "coordinateSourceType": "modern-georeference"
+  },
+  {
+    "siteId": "site-yuzhou",
+    "modernName": "河北蔚縣",
+    "modernNameEn": "Yu County, Hebei, China",
+    "lat": 39.85,
+    "lng": 114.57,
+    "modernCountry": "China",
+    "modernProvince": "Hebei",
+    "note": "北端實測點",
+    "coordinateSourceType": "modern-georeference"
+  },
+  {
+    "siteId": "site-tiele",
+    "modernName": "貝加爾湖",
+    "modernNameEn": "Lake Baikal, Russia",
+    "lat": 51.0,
+    "lng": 107.59,
+    "modernCountry": "Russia",
+    "note": "推算點，不能與實測點同級",
+    "coordinateSourceType": "modern-georeference"
+  }
+]

@@ -38,6 +38,18 @@ Allowed tags:
 - Suggestions are encouraged, but any visible UI appearance change that is not a direct functional bug fix must be explicitly communicated to the user and confirmed before code is changed.
 - Do not silently add or adjust visual effects, decorative styles, layout changes, or debug-facing UI text without prior user confirmation.
 
+## UI Reuse and CSS Governance Rule
+- Reuse existing global UI classes, shared JS helpers, and formatter functions before adding page-specific classes or one-off code.
+- For repeated UI patterns such as cards, panels, tables, detail panes, animations, naming formats, and measurement displays, create or extend a reusable component/class/helper first; page-specific CSS should only set layout variables, behavior hooks, or genuinely local constraints.
+- Keep implementation minimal and classified: design tokens and reusable components belong in global CSS/JS; page-specific files should not duplicate card layouts, popup content templates, animation systems, or formatter logic.
+- If a new style or interaction seems useful beyond one page, name it generically and document it through reusable classes instead of creating a single-use selector.
+- Preserve interaction state when possible. If a UI pattern is already open or partially transitioned, continue from the current state instead of re-rendering from zero or replaying the full entrance animation. For master/detail interactions, the first open may shift the whole layout, but subsequent record switches should reuse the open layout and animate only the outgoing/incoming detail content.
+
+## Human-Readable Data Rule
+- For project-authored JSON, Markdown, and source data files, write Chinese, Sanskrit, romanization, names, titles, and other scholarly text directly in human-readable form whenever the file encoding supports it.
+- Do not intentionally write non-ASCII text as JSON Unicode escape sequences such as `\u820a\u5510\u66f8` unless the escape form is required by an external tool or data interchange constraint.
+- Prefer readable source data such as `"舊唐書"` over escaped equivalents, because these files are edited and reviewed by humans.
+
 ## Transcription HTML UI Guardrail
 For any newly imported transcription HTML page under `src/transcriptions/tei_hanshu/`:
 1. Keep the project top header/navigation bar visible at the top.

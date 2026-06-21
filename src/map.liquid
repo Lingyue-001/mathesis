@@ -1,0 +1,47 @@
+---
+layout: base
+title: MATHesis - Map
+permalink: /map/
+---
+
+<link rel="stylesheet" href="{{ '/vendor/leaflet/leaflet.css' | url }}" />
+<link rel="stylesheet" href="{{ '/css/map.css' | url }}" />
+
+<section class="map-page">
+  <header class="map-header">
+    <p class="page-kicker">Calendar Observation Sites</p>
+  </header>
+
+  <div class="map-layout">
+    <div class="map-stage cudl-panel">
+      <div id="map" class="map-canvas"></div>
+
+      <aside class="map-floating-panel" aria-label="Map filters">
+        <section class="map-panel">
+          <h2>Calendar</h2>
+          <div id="calendar-filter-list" class="map-check-list"></div>
+        </section>
+
+        <section class="map-panel">
+          <h2>Period</h2>
+          <select id="period-filter"></select>
+        </section>
+
+        <section class="map-panel">
+          <h2>Site Type</h2>
+          <div id="site-type-filter-list" class="map-check-list"></div>
+        </section>
+      </aside>
+
+      <div id="map-detail-dock" class="map-detail-dock" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div class="map-summary" aria-live="polite">
+    <h2>Observation records</h2>
+    <ul id="map-results"></ul>
+  </div>
+</section>
+
+<script src="{{ '/vendor/leaflet/leaflet.js' | url }}"></script>
+<script type="module" src="{{ '/js/map/app.js' | url }}"></script>

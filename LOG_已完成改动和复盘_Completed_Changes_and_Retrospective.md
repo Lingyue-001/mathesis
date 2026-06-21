@@ -5,6 +5,28 @@
 - 每条记录按事件组织，结构固定为：需求明确 -> 操作 -> 解决 -> 复盘。
 - 待办与优先级不写在这里；请查 `NOTE_当前需求清单和待办_Current_Status_and_Todo.md`。
 
+## [2026-06-17] Naming display rules and CSS component governance
+0. Tags / Labels
+   - project-docs, infra
+1. Time
+   - 2026-06-17
+2. Goal
+   - Establish semantic naming display rules for historical names, modern locations, calendar names, periods, and measurement units.
+   - Establish the CSS governance direction: shared visual components first, page-specific styles only for genuinely page-specific behavior.
+3. Actions
+   - Added semantic text formatters: historical names use original-script slash romanization; calendar names use romanization followed by original script; modern locations use English only; periods use English labels with CE/BCE year ranges.
+   - Updated map calendar labels, historical-place labels, modern-location labels, records list rendering, map detail cards, and visualization node labels to follow the naming rules.
+   - Kept measurement units in structured data and rendered them automatically through the shared measurement formatter.
+   - Recorded the CSS component split now in use: detail-panel for floating detail panels, entry-card for entry cards, with page-specific classes limited to behavior hooks such as position, drag, and resize.
+4. Outcome
+   - Display logic now distinguishes historical names from modern locations instead of mixing them in one line.
+   - Calendar labels now follow the romanization-plus-original pattern; modern map locations render in English only; periods render with English dynasty labels and CE/BCE date ranges.
+   - Node Details and map detail cards share the same detail-panel / entry-card component layer; map-specific CSS lives in src/css/map.css.
+5. Retrospective
+   - Naming display rules should follow the semantic type of the object, not a single generic bilingual ordering rule. New display logic should first identify whether the object is a historical name, modern location, calendar name, period, or measurement, then call the appropriate formatter.
+   - CSS governance should move toward Design tokens -> base styles -> layout -> reusable components -> page-specific overrides. The practical path is gradual: split long CSS by section first, then extract variables.css, shared components, and page-specific files.
+   - Future UI should reuse existing global components first. Only behavior such as map markers, Leaflet controls, transcription viewer splits, dragging, and resizing should stay in page-specific CSS or JS hooks.
+
 ## [2026-06-03] Brhat Netlify TEI 渲染容错修复
 0. Tags / 标签
    - transcriptions, infra

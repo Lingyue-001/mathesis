@@ -1,0 +1,21 @@
+[
+  {
+    "_schemaNote": "sources.json：二手文献 / 整理来源 / 表格或数据出处。边界规则：sources 存文献本体，不存具体观测点。"
+  },
+  {
+    "sourceId": "xu-2018-table-5-12",
+    "author": "Xu Peiying",
+    "year": 2018,
+    "table": "Table 5.12",
+    "pages": "123",
+    "sourceType": "scholarly-reconstruction"
+  },
+  {
+    "sourceId": "xu-2018-table-5-14",
+    "author": "Xu Peiying",
+    "year": 2018,
+    "table": "Table 5.14",
+    "pages": "126",
+    "sourceType": "scholarly-reconstruction"
+  }
+]
