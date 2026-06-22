@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "santong-day-factor-81",
+      "label": "三统历 日法 = 81",
+      "source_id": "santong",
+      "source_terms": ["日法"],
+      "expected_value": 81,
+      "cullen_expected": true,
+      "cullen_terms": ["Day Factor", "81"]
+    },
+    {
+      "id": "santong-intercalation-factor-19",
+      "label": "三统历 闰法 = 19",
+      "source_id": "santong",
+      "source_terms": ["闰法"],
+      "expected_value": 19,
+      "cullen_expected": true,
+      "cullen_terms": ["Intercalation", "19"]
+    },
+    {
+      "id": "santong-tong-factor",
+      "label": "三统历 统法 = 闰法 × 日法 = 1539",
+      "source_id": "santong",
+      "source_terms": ["闰法", "日法", "统法"],
+      "validation_expression_terms": ["闰法", "日法", "统法"],
+      "expected_value": 1539,
+      "cullen_expected": true,
+      "cullen_terms": ["Intercalation", "Day Factor", "Tong", "1539"]
+    },
+    {
+      "id": "santong-origin-cycle",
+      "label": "三统历 元法 = 三 × 统法 = 4617",
+      "source_id": "santong",
+      "source_terms": ["元法", "统法"],
+      "expected_value": 4617,
+      "cullen_expected": true,
+      "cullen_terms": ["Origin", "Tong", "4617"]
+    },
+    {
+      "id": "santong-zhou-tian",
+      "label": "三统历 周天 = 章月 × 月法",
+      "source_id": "santong",
+      "source_terms": ["周天", "章月", "月法"],
+      "validation_expression_terms": ["章月", "月法", "周天"],
+      "cullen_expected": true,
+      "cullen_terms": ["Months", "Lunation", "562120"]
+    },
+    {
+      "id": "sifen-new-moon-day-remainder",
+      "label": "四分历 推天正朔日：积日 / 小馀",
+      "source_id": "sifen",
+      "procedure_title_terms": ["推天正朔日"],
+      "operation_terms": ["積日", "小餘"],
+      "expected_ops": ["divide", "remainder"],
+      "cullen_expected": true,
+      "cullen_terms": ["Lesser Remainder", "Accumulated Days"]
+    },
+    {
+      "id": "sifen-new-moon-mod-60",
+      "label": "四分历 推天正朔日：积日 mod 60 -> 大馀",
+      "source_id": "sifen",
+      "procedure_title_terms": ["推天正朔日"],
+      "operation_terms": ["積日", "大餘"],
+      "expected_ops": ["divide", "remainder"],
+      "cullen_expected": true,
+      "cullen_terms": ["Greater Remainder", "60"]
+    },
+    {
+      "id": "sifen-mei-mie",
+      "label": "四分历 推没灭：没数 / 没法 / 积没 / 没馀",
+      "source_id": "sifen",
+      "procedure_title_terms": ["推沒滅術", "推没灭术"],
+      "operation_terms": ["沒數", "沒法", "積沒", "沒餘"],
+      "expected_ops": ["multiply", "divide", "remainder"],
+      "cullen_expected": true,
+      "cullen_terms": ["Extinction", "Remainder", "days"]
+    },
+    {
+      "id": "jiuzhi-mod-60-sexagenary",
+      "label": "九执历 积日 mod 60 -> 甲子次",
+      "source_id": "jiuzhi",
+      "source_terms": ["積日", "甲子之次"],
+      "expected_ops": ["divide", "remainder"],
+      "cullen_expected": false,
+      "cullen_terms": []
+    },
+    {
+      "id": "jiuzhi-mod-7-weekday-star",
+      "label": "九执历 积日 mod 7 -> 七曜直日次",
+      "source_id": "jiuzhi",
+      "source_terms": ["積日", "七曜直日次"],
+      "expected_ops": ["divide", "remainder"],
+      "cullen_expected": false,
+      "cullen_terms": []
+    }
+  ]
+}

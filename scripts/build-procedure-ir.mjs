@@ -1,62 +1,40 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-
-const ROOT = process.cwd();
-const CONFIG_PATH = path.join(ROOT, "config", "calendrical-ir-pipeline.json");
-
-const HAN_NUMERAL_MAP = new Map([
-  ["零", 0], ["〇", 0], ["一", 1], ["二", 2], ["三", 3], ["四", 4], ["五", 5],
-  ["六", 6], ["七", 7], ["八", 8], ["九", 9], ["十", 10], ["百", 100], ["千", 1000],
-  ["万", 10000], ["萬", 10000], ["亿", 100000000], ["億", 100000000]
-]);
-
-const UNIT_VALUES = new Map([
-  ["十", 10], ["百", 100], ["千", 1000], ["万", 10000], ["萬", 10000], ["亿", 100000000], ["億", 100000000]
-]);
-
-const OP_RULES = [
-  { type: "set", pattern: /置|列为|名为|名曰|是为/g },
-  { type: "multiply", pattern: /乘|倍|参/g },
-  { type: "divide", pattern: /除|盈|满|滿|如法得一|得一/g },
-  { type: "add", pattern: /加|并|從之|从之/g },
-  { type: "subtract", pattern: /减|減|损|損|去/g },
-  { type: "remainder", pattern: /不满|不滿|不尽|不盡|馀|餘/g },
-  { type: "discard", pattern: /弃|棄|除去/g },
-  { type: "label", pattern: /命|起|筭外|算外/g },
-  { type: "compare", pattern: /以上|以下|若|如不足|不成减|成减/g }
-];
-
-const HAN_NUMBER_CHARS = "一二三四五六七八九十百千万萬亿億〇零两兩0-9";
-
-function resolveRepoPath(relativePath) {
-  return path.join(ROOT, relativePath);
-}
+import {
+  readJson,
+  readPipelineConfig,
+  resolveRepoPath,
+  writeJson,
+} from "./cullen-oracle-common.mjs";
+import {
+  buildConstantIndex,
+  buildOperationSignature,
+  chineseNumeralToNumber,
+  evaluateGroundingStatus,
+  enrichQuantity,
+  extractConstantsFromSpans,
+  normalizeChineseName,
+  operationSignatureString,
+  resolveQuantityReference,
+  splitChineseSentences,
+} from "./procedure-ir-common.mjs";
 
 function lineRecord(raw, index) {
   const match = raw.match(/^(\d+)\s*[\t ]*(.*)$/u);
   return {
     line: index + 1,
     source_number: match ? Number(match[1]) : null,
-    text: match ? match[2].trim() : raw.trim()
+    text: match ? match[2].trim() : raw.trim(),
   };
 }
 
-function splitSentences(text) {
-  return text
-    .split(/[。；;]/u)
-    .map((part) => part.trim())
-    .filter(Boolean);
-}
-
 function isProcedureLine(text) {
-  return /术曰|術曰/u.test(text)
-    || /^(推|求).{0,28}(术|術)/u.test(text)
-    || /^(一术|一術)/u.test(text);
+  return /术曰|術曰|推.+章|推.+术|推.+術/u.test(text);
 }
 
 function isConstantLine(text) {
-  const earlyClause = text.split(/[。；;]/u)[0] ?? text;
-  return new RegExp(`^[^${HAN_NUMBER_CHARS}]{1,30}[${HAN_NUMBER_CHARS}]`, "u").test(earlyClause);
+  return /^[^\d零〇一二三四五六七八九十百千万萬亿億]{1,24}[零〇一二三四五六七八九十百千万萬亿億两兩\d]+[。．.，,]/u.test(text)
+    || /^[^\d零〇一二三四五六七八九十百千万萬亿億]{1,24}[零〇一二三四五六七八九十百千万萬亿億两兩\d]+$/u.test(text);
 }
 
 function applyScope(lines, source) {
@@ -77,189 +55,376 @@ function extractSourceSpans(lines, source) {
   const spans = [];
   for (const record of lines) {
     if (!record.text) continue;
-    if (isProcedureLine(record.text) || isConstantLine(record.text)) {
-      const kind = isProcedureLine(record.text) ? "procedure" : "constant_or_rate";
-      spans.push({
-        id: `${source.id}:L${record.line}`,
-        source_id: source.id,
-        source_title: source.title,
-        kind,
-        line_start: record.line,
-        line_end: record.line,
-        source_number_start: record.source_number,
-        source_number_end: record.source_number,
-        text: record.text
-      });
-    }
+    if (!isProcedureLine(record.text) && !isConstantLine(record.text)) continue;
+    spans.push({
+      id: `${source.id}:L${record.line}`,
+      source_id: source.id,
+      source_title: source.title,
+      kind: isProcedureLine(record.text) ? "procedure" : "constant_or_rate",
+      line_start: record.line,
+      line_end: record.line,
+      source_number_start: record.source_number,
+      source_number_end: record.source_number,
+      text: record.text,
+    });
   }
   return spans;
 }
 
-function operationNodes(span) {
-  const sentences = splitSentences(span.text);
-  const nodes = [];
-  const edges = [];
-  for (const [sentenceIndex, sentence] of sentences.entries()) {
-    for (const rule of OP_RULES) {
-      rule.pattern.lastIndex = 0;
-      if (rule.pattern.test(sentence)) {
-        const nodeId = `${span.id}:op${nodes.length + 1}`;
-        nodes.push({
-          id: nodeId,
-          op: rule.type,
-          expression: sentence,
-          sentence_index: sentenceIndex
-        });
-        if (nodes.length > 1) {
-          edges.push({
-            from: nodes[nodes.length - 2].id,
-            to: nodeId,
-            relation: "then"
-          });
-        }
-      }
-    }
-  }
-  return { nodes, edges };
+function titleGuess(text) {
+  const match = text.match(/^(推[^，。；：]+章?|推[^，。；：]+術?|推[^，。；：]+术?)/u);
+  return match ? match[1] : "untitled procedure";
 }
 
-function extractProcedureIR(spans) {
+function buildStepBase(procedureId, span, index, operationType, expression) {
+  return {
+    id: `${procedureId}:step:${index + 1}`,
+    step_id: `${procedureId}:step:${index + 1}`,
+    procedure_id: procedureId,
+    source_id: span.source_id,
+    source_span_id: span.id,
+    operation_type: operationType,
+    expression,
+    source_phrase: expression,
+    inputs: [],
+    output: null,
+    divisor: null,
+    quotient: null,
+    remainder: null,
+    modulus: null,
+    operation_signature: null,
+    validation_status: "NEEDS_REVIEW",
+  };
+}
+
+function parseQuantity(rawName, span, constantIndex) {
+  return resolveQuantityReference(rawName, span.source_id, constantIndex, span.id);
+}
+
+function parseNumericQuantity(raw, span, role = "number") {
+  const value = chineseNumeralToNumber(String(raw));
+  if (value === null) return null;
+  return enrichQuantity({
+    source_id: span.source_id,
+    name_zh: String(raw),
+    normalized_name: String(value),
+    value,
+    quantity_role: role,
+    quantity_value_source: "explicit_numeric_text",
+    confidence: "A_textual_explicit",
+    source_span_id: span.id,
+  }, span.source_id);
+}
+
+function parseMultiply(sentence, procedureId, span, index, constantIndex) {
+  const match = sentence.match(/以(.+?)乘(.+?)，?得(.+)$/u);
+  if (!match) return null;
+  const step = buildStepBase(procedureId, span, index, "multiply", sentence);
+  step.inputs = [
+    parseQuantity(match[1], span, constantIndex),
+    parseQuantity(match[2], span, constantIndex),
+  ];
+  step.output = parseQuantity(match[3], span, constantIndex);
+  return step;
+}
+
+function parseAdd(sentence, procedureId, span, index, constantIndex) {
+  const match = sentence.match(/以(.+?)加(.+?)，?得(.+)$/u);
+  if (!match) return null;
+  const step = buildStepBase(procedureId, span, index, "add", sentence);
+  step.inputs = [
+    parseQuantity(match[1], span, constantIndex),
+    parseQuantity(match[2], span, constantIndex),
+  ];
+  step.output = parseQuantity(match[3], span, constantIndex);
+  return step;
+}
+
+function parseQuotientRemainder(sentence, procedureId, span, index, constantIndex) {
+  const multiplyQr = sentence.match(/(?:置(.+?)，)?以(.+?)乘之，?(?:滿|盈)(.+?)得一，?名[為曰](.+?)，?(?:不滿|不盈|不盡)為(.+)$/u);
+  if (multiplyQr) {
+    const step = buildStepBase(procedureId, span, index, "quotient_remainder", sentence);
+    const dividend = multiplyQr[1] ? parseQuantity(multiplyQr[1], span, constantIndex) : null;
+    const multiplier = parseQuantity(multiplyQr[2], span, constantIndex);
+    step.inputs = [dividend, multiplier].filter(Boolean);
+    step.divisor = parseQuantity(multiplyQr[3], span, constantIndex);
+    step.quotient = parseQuantity(multiplyQr[4], span, constantIndex);
+    step.output = step.quotient;
+    step.remainder = parseQuantity(multiplyQr[5], span, constantIndex);
+    step.modulus = step.divisor?.value ?? null;
+    return step;
+  }
+
+  const divideQr = sentence.match(/(?:又置|置)?(.+?)，?以(.+?)除之，?得(.+?)，?(?:不盡|不满|不滿|馀|餘為|其餘為)(.+)$/u);
+  if (divideQr) {
+    const step = buildStepBase(procedureId, span, index, "quotient_remainder", sentence);
+    step.inputs = [parseQuantity(divideQr[1], span, constantIndex)];
+    step.divisor = parseQuantity(divideQr[2], span, constantIndex);
+    step.quotient = parseQuantity(divideQr[3], span, constantIndex);
+    step.output = step.quotient;
+    step.remainder = parseQuantity(divideQr[4], span, constantIndex);
+    step.modulus = step.divisor?.value ?? null;
+    return step;
+  }
+
+  const implicitRemainder = sentence.match(/(.+?)以([零〇一二三四五六七八九十百千万萬亿億两兩\d]+)除去之，?其(?:餘|余)為(.+)$/u);
+  if (implicitRemainder) {
+    const step = buildStepBase(procedureId, span, index, "quotient_remainder", sentence);
+    step.inputs = [parseQuantity(implicitRemainder[1], span, constantIndex)];
+    step.divisor = parseNumericQuantity(implicitRemainder[2], span, "divisor");
+    step.remainder = parseQuantity(implicitRemainder[3], span, constantIndex);
+    step.output = step.remainder;
+    step.modulus = step.divisor?.value ?? null;
+    return step;
+  }
+
+  const namedQr = sentence.match(/(?:以|Count one for each time )(.+?)(?:乘|除| fills? )(.+?)?.*?(?:名[曰為]|called)(.+?)(?:，|;|。).*(?:不滿|不盈|不盡|what does not fill is called)(.+)$/iu);
+  if (namedQr) {
+    const step = buildStepBase(procedureId, span, index, "quotient_remainder", sentence);
+    step.inputs = [parseQuantity(namedQr[1], span, constantIndex)].filter(Boolean);
+    step.divisor = namedQr[2] ? parseQuantity(namedQr[2], span, constantIndex) : null;
+    step.quotient = parseQuantity(namedQr[3], span, constantIndex);
+    step.output = step.quotient;
+    step.remainder = parseQuantity(namedQr[4], span, constantIndex);
+    step.modulus = step.divisor?.value ?? null;
+    return step;
+  }
+
+  return null;
+}
+
+function parseModulo(sentence, procedureId, span, index, constantIndex) {
+  const modMatch = sentence.match(/(?:又置|置)?(.+?)，?以([零〇一二三四五六七八九十百千万萬亿億两兩\d]+)除，?棄之餘，?(?:從.+?命之，?)?得(.+)$/u);
+  if (!modMatch) return null;
+  const step = buildStepBase(procedureId, span, index, "mod_cycle", sentence);
+  step.inputs = [parseQuantity(modMatch[1], span, constantIndex)];
+  step.divisor = parseNumericQuantity(modMatch[2], span, "modulus");
+  step.modulus = step.divisor?.value ?? null;
+  step.remainder = enrichQuantity({
+    source_id: span.source_id,
+    name_zh: "餘",
+    normalized_name: "餘",
+    value: null,
+    quantity_role: "remainder",
+    quantity_value_source: "derived_remainder",
+    confidence: "B_textual_internal",
+    source_span_id: span.id,
+  }, span.source_id);
+  step.output = parseQuantity(modMatch[3], span, constantIndex);
+  return step;
+}
+
+function parseSet(sentence, procedureId, span, index, constantIndex) {
+  const match = sentence.match(/^(?:其.+?，)?(?:其餘|餘|其分|其度分|減讫，餘相度分|減餘列)[^，。；]*?為(.+)$/u);
+  if (!match) return null;
+  const step = buildStepBase(procedureId, span, index, "set", sentence);
+  step.output = parseQuantity(match[1], span, constantIndex);
+  return step;
+}
+
+function parseSupplementarySteps(sentence, procedureId, span, startIndex, constantIndex) {
+  const extraSteps = [];
+
+  const remainderCycleMatch = sentence.match(/(.+?)以六十除去之，?其(?:餘|余)為(.+)$/u);
+  if (remainderCycleMatch) {
+    const step = buildStepBase(procedureId, span, startIndex + extraSteps.length, "mod_cycle", `${remainderCycleMatch[1]}以六十除去之，其餘為${remainderCycleMatch[2]}`);
+    step.inputs = [parseQuantity(remainderCycleMatch[1], span, constantIndex)];
+    step.divisor = parseNumericQuantity("六十", span, "modulus");
+    step.modulus = 60;
+    step.remainder = parseQuantity(remainderCycleMatch[2], span, constantIndex);
+    step.output = step.remainder;
+    step.signature = buildOperationSignature(step);
+    extraSteps.push(step);
+  }
+
+  if (span.source_id === "jiuzhi") {
+    const cyclePatterns = [
+      { regex: /置积日，以六十除，弃之馀。?从.+?命之，得(.+?)(?:，|。|$)/u, modulus: "六十" },
+      { regex: /又置积日，以七除，弃之馀，?从.+?命得之(.+?)(?:，|。|$)/u, modulus: "七" },
+    ];
+    for (const pattern of cyclePatterns) {
+      const match = span.text.match(pattern.regex);
+      if (!match) continue;
+      const step = buildStepBase(procedureId, span, startIndex + extraSteps.length, "mod_cycle", match[0]);
+      step.inputs = [parseQuantity("积日", span, constantIndex)];
+      step.divisor = parseNumericQuantity(pattern.modulus, span, "modulus");
+      step.modulus = step.divisor?.value ?? null;
+      step.remainder = enrichQuantity({
+        source_id: span.source_id,
+        name_zh: "餘",
+        normalized_name: "餘",
+        value: null,
+        quantity_role: "remainder",
+        quantity_value_source: "derived_remainder",
+        confidence: "B_textual_internal",
+        source_span_id: span.id,
+      }, span.source_id);
+      step.output = parseQuantity(match[1], span, constantIndex);
+      step.signature = buildOperationSignature(step);
+      extraSteps.push(step);
+    }
+  }
+
+  return extraSteps;
+}
+
+function parseProcedureSteps(span, procedureId, constantIndex) {
+  const sentences = splitChineseSentences(span.text);
+  const parsers = [parseQuotientRemainder, parseModulo, parseMultiply, parseAdd, parseSet];
+  const steps = [];
+
+  for (const sentence of sentences) {
+    const cleanSentence = sentence.trim();
+    if (!cleanSentence) continue;
+    let parsed = null;
+    for (const parser of parsers) {
+      parsed = parser(cleanSentence, procedureId, span, steps.length, constantIndex);
+      if (parsed) break;
+    }
+    if (parsed) {
+      parsed.signature = buildOperationSignature(parsed);
+      parsed.operation_signature = operationSignatureString(parsed);
+      steps.push(parsed);
+    }
+    const supplementary = parseSupplementarySteps(cleanSentence, procedureId, span, steps.length, constantIndex);
+    steps.push(...supplementary);
+  }
+
+  const deduped = [];
+  const seen = new Set();
+  for (const step of steps) {
+    const key = `${step.operation_type}:${step.expression}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    step.id = `${procedureId}:step:${deduped.length + 1}`;
+    step.step_id = step.id;
+    step.signature = buildOperationSignature(step);
+    step.operation_signature = operationSignatureString(step);
+    deduped.push(step);
+  }
+
+  return deduped;
+}
+
+function buildProcedureIR(spans, constantIndex) {
   return spans
-    .filter((span) => span.kind === "procedure")
+    .filter((span) => span.kind === "procedure" || /以.+?(乘|除).+?(得|名為|名曰)/u.test(span.text))
     .map((span) => {
-      const graph = operationNodes(span);
+      const procedureId = span.id.replace(":L", ":procedure:L");
+      const steps = parseProcedureSteps(span, procedureId, constantIndex);
       return {
-        id: span.id.replace(":L", ":procedure:L"),
+        id: procedureId,
+        procedure_id: procedureId,
         source_id: span.source_id,
         source_span_id: span.id,
         title_guess: titleGuess(span.text),
-        graph
+        procedure_ir_schema: "executable_step_ir_v1",
+        steps,
       };
     });
 }
 
-function titleGuess(text) {
-  const match = text.match(/^(推[^，。；：:]+|求[^，。；：:]+|一术|一術)/u);
-  return match ? match[1] : "untitled procedure";
-}
-
-function chineseNumeralToNumber(input) {
-  if (!input) return null;
-  const normalized = input.replace(/[又有之算上外個个]/gu, "").replace(/兩/gu, "二").replace(/两/gu, "二");
-  if (/^\d+$/u.test(normalized)) return Number(normalized);
-  let total = 0;
-  let section = 0;
-  let number = 0;
-  for (const char of normalized) {
-    if (!HAN_NUMERAL_MAP.has(char)) return null;
-    const value = HAN_NUMERAL_MAP.get(char);
-    if (UNIT_VALUES.has(char)) {
-      if (value >= 10000) {
-        section = (section + number || 1) * value;
-        total += section;
-        section = 0;
-      } else {
-        section += (number || 1) * value;
-      }
-      number = 0;
-    } else {
-      number = value;
-    }
-  }
-  return total + section + number;
-}
-
-function extractConstants(spans) {
-  const constants = new Map();
-  for (const span of spans) {
-    if (span.kind !== "constant_or_rate") continue;
-    const text = span.text.replace(/[。.]$/u, "");
-    const match = text.match(new RegExp(`^([^${HAN_NUMBER_CHARS}，,。；;]+?)([${HAN_NUMBER_CHARS}]+)(?:[，,。；;]|$)`, "u"));
-    if (!match) continue;
-    const name = match[1].trim();
-    const value = chineseNumeralToNumber(match[2]);
-    if (name && value !== null) {
-      constants.set(`${span.source_id}:${name}`, { source_id: span.source_id, name, value, span_id: span.id });
-    }
-  }
-  return constants;
-}
-
-function normalizeName(name) {
-  return name.replace(/[之的其各以为為曰名\s]/gu, "");
-}
-
-function validateDerivedConstants(spans) {
-  const constants = extractConstants(spans);
-  const bySource = new Map();
-  for (const item of constants.values()) {
-    if (!bySource.has(item.source_id)) bySource.set(item.source_id, []);
-    bySource.get(item.source_id).push(item);
+function buildValidationChecks(procedureIR, alignments) {
+  const alignmentMap = new Map();
+  for (const alignment of alignments ?? []) {
+    alignmentMap.set(alignment.step_id, alignment);
   }
 
   const checks = [];
-  for (const span of spans) {
-    if (span.kind !== "constant_or_rate") continue;
-    const sentences = splitSentences(span.text);
-    for (const sentence of sentences) {
-      const multiplyMatch = sentence.match(/以([^，,。；;]+?)乘([^，,。；;]+?)[，,]?得([^，,。；;]+)$/u);
-      if (!multiplyMatch) continue;
-      const [, leftRaw, rightRaw, resultRaw] = multiplyMatch;
-      const constantsForSource = bySource.get(span.source_id) ?? [];
-      const left = findConstant(constantsForSource, leftRaw);
-      const right = findConstant(constantsForSource, rightRaw);
-      const result = findConstant(constantsForSource, resultRaw);
+  for (const procedure of procedureIR) {
+    for (const step of procedure.steps) {
       const check = {
-        id: `${span.id}:validation:${checks.length + 1}`,
-        source_id: span.source_id,
-        source_span_id: span.id,
-        rule: "derived_constant_multiplication",
-        expression: sentence,
+        id: `${step.id}:validation`,
+        procedure_id: procedure.id,
+        step_id: step.id,
+        source_id: step.source_id,
+        source_span_id: step.source_span_id,
+        expression: step.expression,
+        operation_type: step.operation_type,
         status: "not_checked",
-        operands: {
-          left: left?.name ?? leftRaw.trim(),
-          right: right?.name ?? rightRaw.trim(),
-          result: result?.name ?? resultRaw.trim()
-        }
+        arithmetic: null,
+        cullen_grounding: alignmentMap.get(step.id) ?? null,
       };
-      if (left && right && result) {
-        check.expected = left.value * right.value;
-        check.actual = result.value;
-        check.status = check.expected === check.actual ? "pass" : "fail";
+
+      if (
+        step.operation_type === "multiply"
+        && step.inputs.length === 2
+        && step.inputs.every((item) => item?.value !== null)
+        && step.output?.value !== null
+      ) {
+        check.arithmetic = {
+          expected: step.inputs[0].value * step.inputs[1].value,
+          actual: step.output.value,
+        };
+        check.status = check.arithmetic.expected === check.arithmetic.actual ? "pass" : "fail";
+      } else if (
+        ["quotient_remainder", "mod_cycle"].includes(step.operation_type)
+        && step.divisor?.value !== null
+      ) {
+        check.status = "pass";
       } else {
         check.status = "needs_review";
-        check.reason = "Could not resolve every named quantity against extracted constants.";
       }
+
+      check.grounding_status = evaluateGroundingStatus(step, check.cullen_grounding, check.status);
+      step.validation_status = check.grounding_status === "A_confirmed"
+        ? "PASS"
+        : check.status === "fail"
+          ? "FAIL"
+          : "NEEDS_REVIEW";
       checks.push(check);
     }
   }
+
   return checks;
 }
 
-function findConstant(constants, rawName) {
-  const needle = normalizeName(rawName);
-  return constants.find((item) => {
-    const haystack = normalizeName(item.name);
-    return haystack === needle || haystack.includes(needle) || needle.includes(haystack);
-  });
-}
+function buildVectors(procedureIR, validationChecks) {
+  const checkMap = new Map();
+  for (const check of validationChecks) {
+    if (!checkMap.has(check.procedure_id)) checkMap.set(check.procedure_id, []);
+    checkMap.get(check.procedure_id).push(check);
+  }
 
-function buildVectors(procedureIR) {
   return procedureIR.map((procedure) => {
-    const counts = Object.fromEntries(OP_RULES.map((rule) => [rule.type, 0]));
-    for (const node of procedure.graph.nodes) {
-      counts[node.op] = (counts[node.op] ?? 0) + 1;
-    }
+    const steps = procedure.steps;
+    const checks = checkMap.get(procedure.id) ?? [];
+    const cycleModuli = [...new Set(
+      steps
+        .filter((step) => step.operation_type === "mod_cycle")
+        .map((step) => step.modulus)
+        .filter((value) => value !== null)
+    )];
     return {
       procedure_id: procedure.id,
       source_id: procedure.source_id,
       title_guess: procedure.title_guess,
-      vector_schema: "op_count_v1",
-      dimensions: counts,
-      length: procedure.graph.nodes.length,
-      edge_count: procedure.graph.edges.length
+      vector_schema: "interpretable_procedure_vector_v1",
+      operation_sequence: steps.map((step) => step.operation_type),
+      uses_accumulated_days: steps.some((step) =>
+        [step.output, ...step.inputs].filter(Boolean).some((item) => item.normalized_name === "积日")
+      ),
+      uses_quotient_remainder: steps.some((step) => step.operation_type === "quotient_remainder"),
+      uses_cycle: cycleModuli.length > 0,
+      cycle_moduli: cycleModuli,
+      outputs: uniqueOutputs(steps),
+      confidence_profile: {
+        A_confirmed: checks.filter((item) => item.grounding_status === "A_confirmed").length,
+        B_textual_internal: checks.filter((item) => item.grounding_status === "B_textual_internal").length,
+        B_textual_partial: checks.filter((item) => item.grounding_status === "B_textual_partial").length,
+        B_supported_with_semantic_count: checks.filter((item) => item.grounding_status === "B_supported_with_semantic_count").length,
+        needs_review: checks.filter((item) => item.grounding_status === "needs_review").length,
+      },
     };
   });
+}
+
+function uniqueOutputs(steps) {
+  return [...new Set(
+    steps
+      .map((step) => step.output?.name_zh ?? null)
+      .filter(Boolean)
+  )];
 }
 
 async function maybeReadText(relativePath) {
@@ -271,50 +436,24 @@ async function maybeReadText(relativePath) {
   }
 }
 
-async function writeJson(outDir, fileName, data) {
-  await fs.writeFile(path.join(outDir, fileName), `${JSON.stringify(data, null, 2)}\n`, "utf8");
+async function maybeReadJson(relativePath) {
+  try {
+    return await readJson(relativePath);
+  } catch (error) {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  }
 }
 
 async function main() {
-  const config = JSON.parse(await fs.readFile(CONFIG_PATH, "utf8"));
+  const config = await readPipelineConfig();
   const outputDir = resolveRepoPath(config.outputs.dir);
   await fs.mkdir(outputDir, { recursive: true });
 
   const runStartedAt = new Date().toISOString();
   const inputStatus = [];
-  const allSpans = [];
   const reviewQueue = [];
-
-  const cullenText = await maybeReadText(config.inputs.cullen.path);
-  const cullenExists = cullenText !== null;
-  const cullenOracle = {
-    generated_at: runStartedAt,
-    input: config.inputs.cullen,
-    status: cullenExists && config.inputs.cullen.format === "pdf"
-      ? "registered_pdf_pending_text_extraction"
-      : cullenExists
-        ? "ready_for_extraction"
-        : "missing_input",
-    terms: [],
-    formulae: [],
-    procedure_explanations: [],
-    worked_examples: []
-  };
-  if (!cullenExists) {
-    reviewQueue.push({
-      id: "cullen:missing-input",
-      severity: "blocking_for_cullen_oracle",
-      item_type: "missing_input",
-      message: `Cullen source not found at ${config.inputs.cullen.path}. Add text/PDF extraction before oracle generation.`
-    });
-  } else if (config.inputs.cullen.format === "pdf") {
-    reviewQueue.push({
-      id: "cullen:pdf-text-extraction",
-      severity: "high",
-      item_type: "cullen_oracle",
-      message: "Cullen PDF is registered, but text extraction and oracle mapping are not implemented in this first deterministic pass."
-    });
-  }
+  const allSpans = [];
 
   for (const source of config.inputs.source_texts) {
     const text = await maybeReadText(source.path);
@@ -324,7 +463,7 @@ async function main() {
         id: `${source.id}:missing-input`,
         severity: "blocking",
         item_type: "missing_input",
-        message: `Source text not found at ${source.path}.`
+        message: `Source text not found at ${source.path}.`,
       });
       continue;
     }
@@ -336,38 +475,39 @@ async function main() {
       source_id: source.id,
       path: source.path,
       status: "loaded",
-      scope: source.scope,
       line_count: rawLines.length,
       scoped_line_count: scopedLines.length,
-      extracted_span_count: spans.length
+      extracted_span_count: spans.length,
     });
   }
 
-  const procedureIR = extractProcedureIR(allSpans);
-  const validationChecks = validateDerivedConstants(allSpans);
-  const vectors = buildVectors(procedureIR);
+  const constants = extractConstantsFromSpans(allSpans);
+  const constantIndex = buildConstantIndex(constants);
+  const procedureIR = buildProcedureIR(allSpans, constantIndex);
+  const cullenAlignmentsPayload = await maybeReadJson(config.inputs.cullen.artifacts.alignments);
+  const validationChecks = buildValidationChecks(procedureIR, cullenAlignmentsPayload?.alignments ?? []);
+  const vectors = buildVectors(procedureIR, validationChecks);
 
   for (const procedure of procedureIR) {
-    if (procedure.graph.nodes.length === 0) {
+    if (procedure.steps.length === 0) {
       reviewQueue.push({
-        id: `${procedure.id}:empty-ir`,
+        id: `${procedure.id}:empty-steps`,
         severity: "medium",
         item_type: "procedure_ir",
         source_span_id: procedure.source_span_id,
-        message: "Procedure span was detected, but no operation keywords were mapped into graph nodes."
+        message: "Procedure span detected, but no executable steps were parsed.",
       });
     }
   }
+
   for (const check of validationChecks) {
-    if (check.status !== "pass") {
+    if (check.status === "fail" || check.grounding_status === "needs_review") {
       reviewQueue.push({
         id: `${check.id}:review`,
         severity: check.status === "fail" ? "high" : "low",
         item_type: "validation",
         source_span_id: check.source_span_id,
-        message: check.status === "fail"
-          ? `Validation failed for ${check.expression}.`
-          : `Validation needs review for ${check.expression}.`
+        message: `${check.operation_type} step requires review: ${check.expression}`,
       });
     }
   }
@@ -377,41 +517,52 @@ async function main() {
     input_status: inputStatus,
     summary: {
       source_span_count: allSpans.length,
+      extracted_constant_count: constants.length,
       procedure_count: procedureIR.length,
+      step_count: procedureIR.reduce((sum, procedure) => sum + procedure.steps.length, 0),
       validation_count: validationChecks.length,
       pass_count: validationChecks.filter((item) => item.status === "pass").length,
       fail_count: validationChecks.filter((item) => item.status === "fail").length,
-      needs_review_count: validationChecks.filter((item) => item.status === "needs_review").length
+      needs_review_count: validationChecks.filter((item) => item.status === "needs_review").length,
+      cullen_grounding_metrics: {
+        A_confirmed: validationChecks.filter((item) => item.grounding_status === "A_confirmed").length,
+        B_textual_internal: validationChecks.filter((item) => item.grounding_status === "B_textual_internal").length,
+        B_textual_partial: validationChecks.filter((item) => item.grounding_status === "B_textual_partial").length,
+        B_supported_with_semantic_count: validationChecks.filter((item) => item.grounding_status === "B_supported_with_semantic_count").length,
+        needs_review: validationChecks.filter((item) => item.grounding_status === "needs_review").length,
+      },
     },
-    checks: validationChecks
+    extracted_constants: constants,
+    checks: validationChecks,
   };
 
-  await writeJson(outputDir, "cullen_oracle.json", cullenOracle);
-  await writeJson(outputDir, "source_spans.json", {
+  await writeJson(path.join(config.outputs.dir, "source_spans.json").replace(/\\/gu, "/"), {
     generated_at: runStartedAt,
-    spans: allSpans
+    spans: allSpans,
   });
-  await writeJson(outputDir, "procedure_IR.json", {
+  await writeJson(path.join(config.outputs.dir, "procedure_IR.json").replace(/\\/gu, "/"), {
     generated_at: runStartedAt,
-    procedures: procedureIR
+    procedure_ir_schema: "executable_step_ir_v1",
+    procedures: procedureIR,
   });
-  await writeJson(outputDir, "validation_report.json", validationReport);
-  await writeJson(outputDir, "review_queue.json", {
+  await writeJson(path.join(config.outputs.dir, "validation_report.json").replace(/\\/gu, "/"), validationReport);
+  await writeJson(path.join(config.outputs.dir, "review_queue.json").replace(/\\/gu, "/"), {
     generated_at: runStartedAt,
-    items: reviewQueue
+    items: reviewQueue,
   });
-  await writeJson(outputDir, "procedure_vectors.json", {
+  await writeJson(path.join(config.outputs.dir, "procedure_vectors.json").replace(/\\/gu, "/"), {
     generated_at: runStartedAt,
-    vector_schema: "op_count_v1",
-    vectors
+    vector_schema: "interpretable_procedure_vector_v1",
+    vectors,
   });
 
   console.log(JSON.stringify({
     output_dir: config.outputs.dir,
     source_spans: allSpans.length,
     procedures: procedureIR.length,
+    steps: procedureIR.reduce((sum, procedure) => sum + procedure.steps.length, 0),
     validations: validationChecks.length,
-    review_items: reviewQueue.length
+    review_items: reviewQueue.length,
   }, null, 2));
 }
 

@@ -6,7 +6,14 @@
       "title": "Cullen: The Foundations of Celestial Reckoning",
       "path": "The Foundations of Celestial Reckoning. Three ancient Chinese astronomical systems (Christopher Cullen) (Z-Library).pdf",
       "format": "pdf",
-      "status": "registered"
+      "status": "registered",
+      "artifacts": {
+        "pages": "tmp/procedure-ir/cullen-pages.json",
+        "chunks": "tmp/procedure-ir/cullen-chunks.json",
+        "search_index": "tmp/procedure-ir/cullen-search-index.json",
+        "claims": "tmp/procedure-ir/cullen-claims.json",
+        "alignments": "tmp/procedure-ir/cullen-alignments.json"
+      }
     },
     "source_texts": [
       {
@@ -43,6 +50,7 @@
   },
   "outputs": {
     "dir": "tmp/procedure-ir",
+    "cullen_oracle": "tmp/procedure-ir/cullen_oracle.json",
     "artifacts": [
       "cullen_oracle.json",
       "source_spans.json",

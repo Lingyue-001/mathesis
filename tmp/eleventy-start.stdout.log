@@ -1,0 +1,4 @@
+
+> eleventy-symbolic-math@1.0.0 prestart
+> npm run generate:debug-flags-doc && npm run generate:log-by-tag
+

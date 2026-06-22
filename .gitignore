@@ -7,6 +7,7 @@ node_modules/
 # Eleventy build output
 _site/
 dist/
+dist/**
 
 # Logs and temporary files
 npm-debug.log*
@@ -15,7 +16,11 @@ yarn-error.log*
 .env
 .env.local
 .cache
-tmp/
+tmp/procedure-ir/*.json
+tmp/procedure-ir/*.md
+tmp/procedure-ir/stabilization-checkpoint/**
+tmp/ctext_cache/**
+tmp/ctext-static-build/**
 
 # Local Netlify folder
 .netlify

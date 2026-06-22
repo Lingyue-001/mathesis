@@ -60,6 +60,80 @@ For any newly imported transcription HTML page under `src/transcriptions/tei_han
 - Do **not** modify or delete canonical data source files such as `src/data.json` unless the user explicitly asks for data-layer edits in that turn.
 - Search matching behavior may evolve in code, but underlying JSON records must be preserved as source of truth.
 
+## Current-Stage Cullen Rules
+These rules apply specifically to the current Cullen-led calibration stage for `三统历` and `四分历`. They are stage-specific, not repository-wide defaults for all future materials.
+
+### Cullen-first Principle
+- This stage is an open-book calibration stage anchored on Cullen, not a stage for blind discovery of structure from source text alone.
+- Cullen `Proc` blocks, quoted Chinese, English translations, commentary, constant explanations, and algorithm notes are the primary authority for this stage.
+- Reconstruction, alignment, audit, and writeback planning must follow this order:
+
+```text
+Cullen Proc block
+-> Cullen quoted Chinese / translation / commentary
+-> source span reconstruction
+-> evidence audit
+-> conservative writeback plan
+```
+
+- Do not degrade or rewrite canonical Cullen text in order to increase match rate.
+- Cullen quote is evidence, not a loose search keyword bundle.
+- If cleaning is needed for matching, generate derived fields such as `match_key`; do not overwrite the canonical Cullen quote with cleaned content.
+- If Cullen evidence, source matching, and heuristic output conflict, prefer Cullen evidence plus human-auditable provenance.
+- Do not let source-side keyword scanning reverse or overwrite Cullen-led structure.
+
+### Stage Red Lines
+Unless explicitly requested, do not:
+
+```text
+write back anchors
+change A_confirmed judgment
+change claims rules
+overwrite human_* fields
+generate final/gold/locked gold
+return to source-side blind keyword scan
+add duplicate commands or duplicate output files
+```
+
+- Important changes in this stage must be explained through existing audit outputs, including:
+
+```text
+what changed
+why it changed
+which Proc blocks were affected
+which results improved
+which risks remain
+whether regression stayed stable
+```
+
+## Clean Code / Minimal Change Rule
+- Prefer reusing, replacing, and simplifying existing code paths.
+- Do not keep adding scripts, fields, branches, naming systems, or patch layers when the same goal can be achieved by cleaning up the existing path.
+- Before each change, check in this order:
+
+```text
+Can an existing command be reused?
+Can an existing function be extended?
+Can old logic be replaced directly?
+Can duplicate logic be deleted or merged?
+```
+
+- Only add a new command or file when the work is truly a new standalone stage or a genuinely separate artifact.
+- Otherwise, modify the existing pipeline so the codebase stays clean, auditable, and regression-friendly.
+- Do not allow multiple parallel logic stacks to accumulate for the same task, such as:
+
+```text
+old heuristic path
+refined heuristic path
+cullen-led path
+special-case patch path
+temporary fallback path
+```
+
+- If new logic replaces old logic, replace it clearly instead of keeping both paths producing similar outputs.
+- Every added field or output must have a clear downstream use.
+- Temporary debug fields should be removed when finished or kept strictly audit-only.
+
 ## Commit Message Convention (Codex Auto Push)
 - For Codex-generated auto-push commits, do **not** use `feat:` as the message prefix.
 - End commit messages with: `Implemented with Codex assistance.`
