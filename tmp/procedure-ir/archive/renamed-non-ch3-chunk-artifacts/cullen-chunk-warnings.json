@@ -1,0 +1,1265 @@
+{
+  "generated_at": "2026-06-26T15:39:24.653Z",
+  "schema_version": "cullen_ch3_minimal_v1",
+  "artifact_scope": {
+    "chapter_id": "3",
+    "system_id": "sifen",
+    "book_page_start": 138,
+    "book_page_end": 234,
+    "note": "Chapter 3 / Sifen chunks only; this replaces the earlier broad Cullen chunk output."
+  },
+  "source_pages_artifact": "tmp/procedure-ir/cullen-ch3-table-neutralized-pages.json",
+  "chunks_artifact": "tmp/procedure-ir/cullen-chunks.json",
+  "chunking_method": "ch3_section_heading_and_source_translation_group",
+  "warning_count": 101,
+  "warning_counts_by_code": {
+    "page_artifact_line_removed_from_chunk_stream": 18,
+    "unexpected_source_or_section_marker_in_3_1": 3,
+    "source_interrupted_by_heading": 11,
+    "source_text_without_section_marker": 7,
+    "english_group_does_not_start_with_section_marker": 42,
+    "section_marker_before_source": 19,
+    "proc_like_line_treated_as_body": 1
+  },
+  "unit_sequence": {
+    "observed_count": 260,
+    "min_observed": 1,
+    "max_observed": 260,
+    "duplicate_count": 0,
+    "missing_count": 0,
+    "order_problem_count": 0
+  },
+  "warnings": [
+    {
+      "id": "cullen:ch3:warning:0001",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 154,
+      "book_page_number": "141",
+      "raw_line_index": 28,
+      "text": "– 3055 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0002",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 157,
+      "book_page_number": "144",
+      "raw_line_index": 19,
+      "text": "– 3056 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0003",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 160,
+      "book_page_number": "147",
+      "raw_line_index": 20,
+      "text": "– 3057 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0004",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 164,
+      "book_page_number": "151",
+      "raw_line_index": 20,
+      "text": "– 3058 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0005",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 167,
+      "book_page_number": "154",
+      "raw_line_index": 16,
+      "text": "– 3059 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0006",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 179,
+      "book_page_number": "166",
+      "raw_line_index": 18,
+      "text": "– 3063 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0007",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 186,
+      "book_page_number": "173",
+      "raw_line_index": 1,
+      "text": "– 3064 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0008",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 190,
+      "book_page_number": "177",
+      "raw_line_index": 21,
+      "text": "– 3065 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0009",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 194,
+      "book_page_number": "181",
+      "raw_line_index": 5,
+      "text": "– 3066 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0010",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 199,
+      "book_page_number": "186",
+      "raw_line_index": 16,
+      "text": "– 3067 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0011",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 207,
+      "book_page_number": "194",
+      "raw_line_index": 9,
+      "text": "– 3068 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0012",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 209,
+      "book_page_number": "196",
+      "raw_line_index": 21,
+      "text": "– 1889 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0013",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 212,
+      "book_page_number": "199",
+      "raw_line_index": 18,
+      "text": "– 3069 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0014",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 218,
+      "book_page_number": "205",
+      "raw_line_index": 12,
+      "text": "– 3070 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0015",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 222,
+      "book_page_number": "209",
+      "raw_line_index": 1,
+      "text": "– 3071 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0016",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 226,
+      "book_page_number": "213",
+      "raw_line_index": 13,
+      "text": "– 3072 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0017",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 230,
+      "book_page_number": "217",
+      "raw_line_index": 11,
+      "text": "– 3073 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0018",
+      "code": "page_artifact_line_removed_from_chunk_stream",
+      "message": "High-confidence page artifact line was excluded from chunks.",
+      "pdf_page_number": 237,
+      "book_page_number": "224",
+      "raw_line_index": 18,
+      "text": "– 3076 –"
+    },
+    {
+      "id": "cullen:ch3:warning:0019",
+      "code": "unexpected_source_or_section_marker_in_3_1",
+      "message": "Chinese-like source text or § marker appeared inside 3.1 background.",
+      "section_path": [
+        "3",
+        "3.1",
+        "3.1.2"
+      ],
+      "heading": "3.1.2 Authorship of the text",
+      "pdf_page_number": 152,
+      "book_page_number": "139",
+      "text": "光和元年中， 議郎蔡邕、 郎中劉洪補續律曆志， 邕能著文， 清濁鍾律， 洪"
+    },
+    {
+      "id": "cullen:ch3:warning:0020",
+      "code": "unexpected_source_or_section_marker_in_3_1",
+      "message": "Chinese-like source text or § marker appeared inside 3.1 background.",
+      "section_path": [
+        "3",
+        "3.1",
+        "3.1.2"
+      ],
+      "heading": "3.1.2 Authorship of the text",
+      "pdf_page_number": 152,
+      "book_page_number": "139",
+      "text": "能為筭， 述敘三光． 今考論其業， 義指博通， 術數略舉， 是以集錄為上下"
+    },
+    {
+      "id": "cullen:ch3:warning:0021",
+      "code": "unexpected_source_or_section_marker_in_3_1",
+      "message": "Chinese-like source text or § marker appeared inside 3.1 background.",
+      "section_path": [
+        "3",
+        "3.1",
+        "3.1.2"
+      ],
+      "heading": "3.1.2 Authorship of the text",
+      "pdf_page_number": 152,
+      "book_page_number": "139",
+      "text": "篇， 放續前志， 以備一家．"
+    },
+    {
+      "id": "cullen:ch3:warning:0022",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2"
+      ],
+      "heading": "3.2 TEXT , TRANSLATION AND COMMENTS",
+      "preview": "後漢書志第三 律曆下"
+    },
+    {
+      "id": "cullen:ch3:warning:0023",
+      "code": "source_text_without_section_marker",
+      "message": "A Chinese source block was chunked without a following § marker.",
+      "chunk_id": "cullen:ch3:chunk:0007",
+      "section_path": [
+        "3",
+        "3.2"
+      ],
+      "heading": "3.2 TEXT , TRANSLATION AND COMMENTS",
+      "preview": "後漢書志第三 律曆下"
+    },
+    {
+      "id": "cullen:ch3:warning:0024",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0007",
+      "section_path": [
+        "3",
+        "3.2"
+      ],
+      "heading": "3.2 TEXT , TRANSLATION AND COMMENTS",
+      "preview": "History of the Later Han dynasty: monograph 3 Pitchpipes and [astronomical] systems: B 曆法"
+    },
+    {
+      "id": "cullen:ch3:warning:0025",
+      "code": "source_text_without_section_marker",
+      "message": "A Chinese source block was chunked without a following § marker.",
+      "chunk_id": "cullen:ch3:chunk:0011",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.1"
+      ],
+      "heading": "3.2.1 Methods for [astronomical] systems",
+      "preview": "日往則月來， 月往則日來， 日月相推而明生焉. 《易經》《繫辭下》"
+    },
+    {
+      "id": "cullen:ch3:warning:0026",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0011",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.1"
+      ],
+      "heading": "3.2.1 Methods for [astronomical] systems",
+      "preview": "The sun departs and the moon comes, the moon departs and the sun comes, the sun and moon push one another on, and brilliance is produced by them. (Zhou yi 周易, 8, 169A in Shi san jing zhu shu edn. [Ruan Yuan 阮元 1973 reprint of original of 18"
+    },
+    {
+      "id": "cullen:ch3:warning:0027",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0020",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.1"
+      ],
+      "heading": "3.2.1 Methods for [astronomical] systems",
+      "preview": "知也． §12 The Great Task sustains it, and good and evil fortune come forth from it. Therefore, when the gentleman is to undertake some new matter, he looks into it in order to be able to carry on his work; he accepts the Mandate and does not "
+    },
+    {
+      "id": "cullen:ch3:warning:0028",
+      "code": "source_text_without_section_marker",
+      "message": "A Chinese source block was chunked without a following § marker.",
+      "chunk_id": "cullen:ch3:chunk:0022",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.1"
+      ],
+      "heading": "3.2.1 Methods for [astronomical] systems",
+      "preview": "古黃帝、夏、殷、周、魯冬至日在建星， 建星即今斗星也．"
+    },
+    {
+      "id": "cullen:ch3:warning:0029",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0022",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.1"
+      ],
+      "heading": "3.2.1 Methods for [astronomical] systems",
+      "preview": "At the winter solstice of the ancient Yellow Emperor, Xia, Yin, Zhou and Lu systems,[^9] the sun is at the Establishment Star, and the Establishment Star is our modern Dipper Star. (Hou Han shu, zhi 2, 3027) See the continuation of the disc"
+    },
+    {
+      "id": "cullen:ch3:warning:0030",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0025",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.1"
+      ],
+      "heading": "3.2.1 Methods for [astronomical] systems",
+      "preview": "歲[大]． §16 If one examines the sun and moon as together they leave the starting point for du, when the sun has travelled 19 circuits, and the moon has travelled 254 circuits, they meet once more at the starting point. When this [happens], it"
+    },
+    {
+      "id": "cullen:ch3:warning:0031",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.1"
+      ],
+      "heading": "3.2.1 Methods for [astronomical] systems",
+      "preview": "月分成閏， 閏七而盡， 其歲十九， 名之曰章． 章首分盡， 四之俱終， 名之曰蔀. 以一歲日乘之， 為蔀之日數也． 以甲子命之， 二十而復其初， 是以二十蔀為 紀 ．紀歲青龍未終， 三終歲後復青龍為元．"
+    },
+    {
+      "id": "cullen:ch3:warning:0032",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.2"
+      ],
+      "heading": "3.2.2 [Basic solar and lunar constants]",
+      "preview": "月周千一十六．"
+    },
+    {
+      "id": "cullen:ch3:warning:0033",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.3"
+      ],
+      "heading": "3.2.3 [Lunar eclipse constants]",
+      "preview": "食法， 二十(二)[三]．"
+    },
+    {
+      "id": "cullen:ch3:warning:0034",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0052",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.4"
+      ],
+      "heading": "3.2.4 [Pr ocedures for sun and moon]",
+      "preview": "所在． Obscuration: §43 Cast out Origin Factor [4560] from accumulated years from Grand Origin. Cast out Era Factor [1520] from the remainder. Number from the Heaven Era by how many you obtain, then outside the count is the Era you are enterin"
+    },
+    {
+      "id": "cullen:ch3:warning:0035",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0053",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.4"
+      ],
+      "heading": "3.2.4 [Pr ocedures for sun and moon]",
+      "preview": "eclipse: §44 From the distance from High Origin cast out Origin Coincidence [41,040]. From the remainder, cast out Obscuration Coincidence [2052], and multiply what you obtain by 27. Cast out what fills 60, and from the number you obtain ca"
+    },
+    {
+      "id": "cullen:ch3:warning:0036",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0064",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.4"
+      ],
+      "heading": "3.2.4 [Pr ocedures for sun and moon]",
+      "preview": "[九]分． §56 Set out the number of Accumulated Days entered into the Obscuration, and multiply it by Obscuration Factor [76]. Cast out and discard Obscuration Days [27,759], and obtain 1 for each time the remainder fills Obscuration Factor [76"
+    },
+    {
+      "id": "cullen:ch3:warning:0037",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0067",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.4"
+      ],
+      "heading": "3.2.4 [Pr ocedures for sun and moon]",
+      "preview": "度也． §59 Cast out Obscuration Factor [76] from the Lesser Remainder for the con - junction, and by what you obtain subtract from the midnight du of the sun. Subtract the remainder from the parts, then that is the du where the moon is located"
+    },
+    {
+      "id": "cullen:ch3:warning:0038",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0072",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.4"
+      ],
+      "heading": "3.2.4 [Pr ocedures for sun and moon]",
+      "preview": "full moon: §64 Set out the number of the du and parts at conjunction, and add 7 du and (359 + ¾) parts. Cast out the Lodges in succession, and that is the du and parts of the Lodge entered by the sun at the first crescent. Since a month con"
+    },
+    {
+      "id": "cullen:ch3:warning:0039",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0074",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.4"
+      ],
+      "heading": "3.2.4 [Pr ocedures for sun and moon]",
+      "preview": "full moon: §66 Method: set out the number of du and parts for the moon at conjunction, and add 98 du and 653 and a half parts. Cast out the lodges in succession, and that if the du and parts of the Lodge entered by the moon at the first cre"
+    },
+    {
+      "id": "cullen:ch3:warning:0040",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0081",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.4"
+      ],
+      "heading": "3.2.4 [Pr ocedures for sun and moon]",
+      "preview": "a lunar eclipse: §73 Set out the number of Accumulated Months of the eclipse, multiply it by 29, to make Accumulated Days. Further, multiply Accumulated Months by 499, and count one for each filling of Obscuration Months [940], adding this "
+    },
+    {
+      "id": "cullen:ch3:warning:0041",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0082",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.4"
+      ],
+      "heading": "3.2.4 [Pr ocedures for sun and moon]",
+      "preview": "日也． §74 Add to the Greater Remainder 14, and to the Lesser Remainder 719 and ½. As the Lesser Remainder fills Obscuration Months [940] let that count as Greater Remainder, and counting off the Greater Remainder as before, then that is the d"
+    },
+    {
+      "id": "cullen:ch3:warning:0042",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0083",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.4"
+      ],
+      "heading": "3.2.4 [Pr ocedures for sun and moon]",
+      "preview": "日． the [actual] day: §75 In each case add 27 to the Greater Remainder, and 615 to the Lesser Remain - der. Where the parts for the month do not fill 20, further add 29 to the Greater Remainder and 499 to the Lesser Remainder. The Lesser Rem"
+    },
+    {
+      "id": "cullen:ch3:warning:0043",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.4"
+      ],
+      "heading": "3.2.4 [Pr ocedures for sun and moon]",
+      "preview": "推諸上水漏刻： 以百乘其小餘， 滿其法得一刻；不滿法(法)什之， 滿法得一分． 積刻先 減所入節氣夜漏之半， 其餘為晝上水之數． 過晝漏去之， 餘為夜上水數． 其刻 不滿夜漏半者， 乃減之， 餘為昨夜未(晝)[盡]， 其弦望其日．"
+    },
+    {
+      "id": "cullen:ch3:warning:0044",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.5"
+      ],
+      "heading": "3.2.5 [Planetary constants]",
+      "preview": "度餘四萬四千八百五．"
+    },
+    {
+      "id": "cullen:ch3:warning:0045",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0137",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.6"
+      ],
+      "heading": "3.2.6 [Planetary pr ocedures]",
+      "preview": "二年. §154 As for Conjunctions Remainder, cast out Cycle Rate from it. (When one does not get [a conjunction] there, then one steps back a year [to find it].)[^19] If nothing is obtained, the planet has a conjunction in that year. If 1 is obt"
+    },
+    {
+      "id": "cullen:ch3:warning:0046",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0141",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.6"
+      ],
+      "heading": "3.2.6 [Planetary pr ocedures]",
+      "preview": "閏餘． §158 As Accumulated Months fills Era Months cast them out, and the remain - der makes months entered into the Era. In each case multiply this by Rule Intercalations [7], and as this fills Rule Months [235] get one, to make an intercalat"
+    },
+    {
+      "id": "cullen:ch3:warning:0047",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0147",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.6"
+      ],
+      "heading": "3.2.6 [Planetary pr ocedures]",
+      "preview": "冬至． §164 By Cycle Rate multiply the Lesser Remainder , and add it to Du Remainder, and let the number of times this [combined] Remainder fills Day and Du Factor go with the Du. Then this is the number of days after the solstice that the pla"
+    },
+    {
+      "id": "cullen:ch3:warning:0048",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.6"
+      ],
+      "heading": "3.2.6 [Planetary pr ocedures]",
+      "preview": "求合度， 以積度度餘加今所得， 餘滿日度法得一從度， 命如前， 經斗除如周率矣．"
+    },
+    {
+      "id": "cullen:ch3:warning:0049",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "In what follows, I have added brief notes to show the internal consistency of the"
+    },
+    {
+      "id": "cullen:ch3:warning:0050",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0152",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "In what follows, I have added brief notes to show the internal consistency of the"
+    },
+    {
+      "id": "cullen:ch3:warning:0051",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "figures given for the duration of the various phases of each planet, and the"
+    },
+    {
+      "id": "cullen:ch3:warning:0052",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0153",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "figures given for the duration of the various phases of each planet, and the"
+    },
+    {
+      "id": "cullen:ch3:warning:0053",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "movement of the planet during the phases."
+    },
+    {
+      "id": "cullen:ch3:warning:0054",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0154",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "movement of the planet during the phases."
+    },
+    {
+      "id": "cullen:ch3:warning:0055",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "The data given here are in general different from those given in the Triple Concor-"
+    },
+    {
+      "id": "cullen:ch3:warning:0056",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0155",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "The data given here are in general different from those given in the Triple Concor-"
+    },
+    {
+      "id": "cullen:ch3:warning:0057",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "dance system. Single phases in the Triple Concordance are here often divided into"
+    },
+    {
+      "id": "cullen:ch3:warning:0058",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0156",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "dance system. Single phases in the Triple Concordance are here often divided into"
+    },
+    {
+      "id": "cullen:ch3:warning:0059",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "two phases, each with a different rate of motion. I have indicated the smaller number"
+    },
+    {
+      "id": "cullen:ch3:warning:0060",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0157",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "two phases, each with a different rate of motion. I have indicated the smaller number"
+    },
+    {
+      "id": "cullen:ch3:warning:0061",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "of cases where the data of the Triple Concordance have been adopted unchanged."
+    },
+    {
+      "id": "cullen:ch3:warning:0062",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0158",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "of cases where the data of the Triple Concordance have been adopted unchanged."
+    },
+    {
+      "id": "cullen:ch3:warning:0063",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "Overall, however, the differences are such as to suggest a conscious effort to con-"
+    },
+    {
+      "id": "cullen:ch3:warning:0064",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0159",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "Overall, however, the differences are such as to suggest a conscious effort to con-"
+    },
+    {
+      "id": "cullen:ch3:warning:0065",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "struct a system that gave a better representation of the planets’ observed motions."
+    },
+    {
+      "id": "cullen:ch3:warning:0066",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0160",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "struct a system that gave a better representation of the planets’ observed motions."
+    },
+    {
+      "id": "cullen:ch3:warning:0067",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "The Uranic Manifestation system, on the other hand, adopts the planetary data"
+    },
+    {
+      "id": "cullen:ch3:warning:0068",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0161",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "The Uranic Manifestation system, on the other hand, adopts the planetary data"
+    },
+    {
+      "id": "cullen:ch3:warning:0069",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "of the Han Quarter Remainder almost entirely, with minor adjustments to the"
+    },
+    {
+      "id": "cullen:ch3:warning:0070",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0162",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "of the Han Quarter Remainder almost entirely, with minor adjustments to the"
+    },
+    {
+      "id": "cullen:ch3:warning:0071",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "motion in the invisible phases to adapt them to the different basic constants of"
+    },
+    {
+      "id": "cullen:ch3:warning:0072",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0163",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "motion in the invisible phases to adapt them to the different basic constants of"
+    },
+    {
+      "id": "cullen:ch3:warning:0073",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "the system."
+    },
+    {
+      "id": "cullen:ch3:warning:0074",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0164",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "the system."
+    },
+    {
+      "id": "cullen:ch3:warning:0075",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "木，"
+    },
+    {
+      "id": "cullen:ch3:warning:0076",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0165",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "木，"
+    },
+    {
+      "id": "cullen:ch3:warning:0077",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "procedure_ids": [],
+      "preview": "Wood [Jupiter]"
+    },
+    {
+      "id": "cullen:ch3:warning:0078",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0166",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "Wood [Jupiter]"
+    },
+    {
+      "id": "cullen:ch3:warning:0079",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0178",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "日合． §180 On becoming invisible, during a further 16 days and 7320 and ½ parts, it moves 2 du and 13,811 parts, and has conjunction with the Sun."
+    },
+    {
+      "id": "cullen:ch3:warning:0080",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0191",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "日合． §193 It moves while invisible, and in 71 days and 2694 parts, it moves 55 du and 2254½ parts, then is in conjunction with the sun."
+    },
+    {
+      "id": "cullen:ch3:warning:0081",
+      "code": "proc_like_line_treated_as_body",
+      "message": "A Proc-like line did not match the conservative Proc heading rules and was kept as body text.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "pdf_page_number": 233,
+      "book_page_number": "220",
+      "text": "Proc. 3.50. The reference here gives the impression that a simple change of"
+    },
+    {
+      "id": "cullen:ch3:warning:0082",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.7"
+      ],
+      "heading": "3.2.7 [Planetary motions]",
+      "preview": "其以赤道命度， 進加退減之． 其步以黃道．"
+    },
+    {
+      "id": "cullen:ch3:warning:0083",
+      "code": "source_text_without_section_marker",
+      "message": "A Chinese source block was chunked without a following § marker.",
+      "chunk_id": "cullen:ch3:chunk:0251",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.8"
+      ],
+      "heading": "3.2.8 [Months, qi and lodges]",
+      "preview": "(日)[月]名[^22]"
+    },
+    {
+      "id": "cullen:ch3:warning:0084",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0251",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.8"
+      ],
+      "heading": "3.2.8 [Months, qi and lodges]",
+      "preview": "[TABLE_3_4]\n\n[TABLE_3_5]\n\n[TABLE_3_5] Table 3.5 above tells us which medial qi should fall in any given month, if intercala- tions have been properly inserted; a month is intercalary if it contains no medial qi."
+    },
+    {
+      "id": "cullen:ch3:warning:0085",
+      "code": "source_text_without_section_marker",
+      "message": "A Chinese source block was chunked without a following § marker.",
+      "chunk_id": "cullen:ch3:chunk:0252",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.8"
+      ],
+      "heading": "3.2.8 [Months, qi and lodges]",
+      "preview": "[赤道度][^23]"
+    },
+    {
+      "id": "cullen:ch3:warning:0086",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0252",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.8"
+      ],
+      "heading": "3.2.8 [Months, qi and lodges]",
+      "preview": "[TABLE_3_6]\n\n[TABLE_3_6]"
+    },
+    {
+      "id": "cullen:ch3:warning:0087",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.8"
+      ],
+      "heading": "3.2.8 [Months, qi and lodges]",
+      "preview": "黃道度"
+    },
+    {
+      "id": "cullen:ch3:warning:0088",
+      "code": "source_text_without_section_marker",
+      "message": "A Chinese source block was chunked without a following § marker.",
+      "chunk_id": "cullen:ch3:chunk:0253",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.8"
+      ],
+      "heading": "3.2.8 [Months, qi and lodges]",
+      "preview": "黃道度"
+    },
+    {
+      "id": "cullen:ch3:warning:0089",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0253",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.8"
+      ],
+      "heading": "3.2.8 [Months, qi and lodges]",
+      "preview": "[TABLE_3_7]\n\n[TABLE_3_8] The ‘advances and retardations’ numbers given in Table 3.8 are intended to enable us to convert between motion with reference to the equator and motion with reference to the ecliptic: see section §252 They do not, h"
+    },
+    {
+      "id": "cullen:ch3:warning:0090",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.9"
+      ],
+      "heading": "3.2.9 [The solar table]",
+      "preview": "中星以日所在為正， 日行四歲乃終， 置所求年二十四氣小餘四之， 如法為少、大， 餘不盡， 三之， 如法為強、弱， 以減節氣昏明中星， 而各定矣． 強， 正；弱， (直)[負]也． 其強弱相減， 同名相去， 異名從之． 從強進少為弱， 從弱退少而強．"
+    },
+    {
+      "id": "cullen:ch3:warning:0091",
+      "code": "source_interrupted_by_heading",
+      "message": "A Chinese source block was interrupted by a section heading before a § marker appeared.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.10"
+      ],
+      "heading": "3.2.10 [The system origin]",
+      "preview": "從上元太歲在庚辰以來， 盡熹平三年，歲在甲寅， 積九千四百五十五歲也．"
+    },
+    {
+      "id": "cullen:ch3:warning:0092",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.11"
+      ],
+      "heading": "3.2.11 Discussion",
+      "procedure_ids": [],
+      "preview": "The material that follows appears to be by the compiler of the monograph now"
+    },
+    {
+      "id": "cullen:ch3:warning:0093",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0257",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.11"
+      ],
+      "heading": "3.2.11 Discussion",
+      "preview": "The material that follows appears to be by the compiler of the monograph now"
+    },
+    {
+      "id": "cullen:ch3:warning:0094",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.11"
+      ],
+      "heading": "3.2.11 Discussion",
+      "procedure_ids": [],
+      "preview": "included in the Hou Han shu, Sima Biao. He gives a brief outline of the changing"
+    },
+    {
+      "id": "cullen:ch3:warning:0095",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0258",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.11"
+      ],
+      "heading": "3.2.11 Discussion",
+      "preview": "included in the Hou Han shu, Sima Biao. He gives a brief outline of the changing"
+    },
+    {
+      "id": "cullen:ch3:warning:0096",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.11"
+      ],
+      "heading": "3.2.11 Discussion",
+      "procedure_ids": [],
+      "preview": "system origins used in the past, and explains his decision to include the work of"
+    },
+    {
+      "id": "cullen:ch3:warning:0097",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0259",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.11"
+      ],
+      "heading": "3.2.11 Discussion",
+      "preview": "system origins used in the past, and explains his decision to include the work of"
+    },
+    {
+      "id": "cullen:ch3:warning:0098",
+      "code": "section_marker_before_source",
+      "message": "A § marker appeared before a matching Chinese source block.",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.11"
+      ],
+      "heading": "3.2.11 Discussion",
+      "procedure_ids": [],
+      "preview": "Cai Yong and Liu Hong in his text."
+    },
+    {
+      "id": "cullen:ch3:warning:0099",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0260",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.11"
+      ],
+      "heading": "3.2.11 Discussion",
+      "preview": "Cai Yong and Liu Hong in his text."
+    },
+    {
+      "id": "cullen:ch3:warning:0100",
+      "code": "source_text_without_section_marker",
+      "message": "A Chinese source block was chunked without a following § marker.",
+      "chunk_id": "cullen:ch3:chunk:0263",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.11"
+      ],
+      "heading": "3.2.11 Discussion",
+      "preview": "曇悉達 c. 725"
+    },
+    {
+      "id": "cullen:ch3:warning:0101",
+      "code": "english_group_does_not_start_with_section_marker",
+      "message": "A 3.2 English group does not start with §N.",
+      "chunk_id": "cullen:ch3:chunk:0263",
+      "section_path": [
+        "3",
+        "3.2",
+        "3.2.11"
+      ],
+      "heading": "3.2.11 Discussion",
+      "preview": "ce: chapter 105), but the year more commonly given for Xia is yichou.2. I do not know of another early statement of the system origin ascribed to Emperor Shun. Whatever these systems may have been, there is general agree- ment that all of t"
+    }
+  ]
+}

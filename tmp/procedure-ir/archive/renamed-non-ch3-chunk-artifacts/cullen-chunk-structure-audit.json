@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-06-26T15:39:24.653Z",
+  "schema_version": "cullen_ch3_minimal_v1",
+  "artifact_scope": {
+    "chapter_id": "3",
+    "system_id": "sifen",
+    "book_page_start": 138,
+    "book_page_end": 234,
+    "note": "Chapter 3 / Sifen chunks only; this replaces the earlier broad Cullen chunk output."
+  },
+  "source_pages_artifact": "tmp/procedure-ir/cullen-ch3-table-neutralized-pages.json",
+  "chunks_artifact": "tmp/procedure-ir/cullen-chunks.json",
+  "warnings_artifact": "tmp/procedure-ir/cullen-chunk-warnings.json",
+  "chunking_method": "ch3_section_heading_and_source_translation_group",
+  "field_policy": {
+    "omitted_redundant_fields": [
+      "chunk_type",
+      "chapter_id",
+      "section_id",
+      "source_page_refs",
+      "char_count",
+      "page_start",
+      "page_end",
+      "translation_en",
+      "commentary_en"
+    ],
+    "page_range_policy": "pdf_pages/book_pages store [start,end]; per-page expansion is intentionally omitted.",
+    "text_policy": "text is authoritative; source_text_zh and english_text are best-effort splits for 3.2 source/translation groups."
+  },
+  "chunk_count": 265,
+  "background_chunk_count": 6,
+  "source_translation_chunk_count": 259,
+  "chunks_by_section": {
+    "3.1.1": 1,
+    "3.1.2": 1,
+    "3.1.3": 1,
+    "3.1.4": 1,
+    "3.1.5": 1,
+    "3.1.6": 1,
+    "3.2": 1,
+    "3.2.1": 20,
+    "3.2.2": 17,
+    "3.2.3": 7,
+    "3.2.4": 35,
+    "3.2.5": 47,
+    "3.2.6": 18,
+    "3.2.7": 99,
+    "3.2.8": 3,
+    "3.2.9": 2,
+    "3.2.10": 1,
+    "3.2.11": 9
+  },
+  "chunks_with_warnings": 51,
+  "unit_sequence": {
+    "observed_count": 260,
+    "min_observed": 1,
+    "max_observed": 260,
+    "duplicate_count": 0,
+    "missing_count": 0,
+    "order_problem_count": 0
+  },
+  "warning_count": 101,
+  "warning_counts_by_code": {
+    "page_artifact_line_removed_from_chunk_stream": 18,
+    "unexpected_source_or_section_marker_in_3_1": 3,
+    "source_interrupted_by_heading": 11,
+    "source_text_without_section_marker": 7,
+    "english_group_does_not_start_with_section_marker": 42,
+    "section_marker_before_source": 19,
+    "proc_like_line_treated_as_body": 1
+  }
+}

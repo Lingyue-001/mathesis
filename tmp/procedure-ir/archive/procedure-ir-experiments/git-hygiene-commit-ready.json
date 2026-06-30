@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-06-22",
+  "recommended_git_add_source_code": [
+    "scripts/align-cullen-procedure-ir.mjs",
+    "scripts/assimilate-cullen.mjs",
+    "scripts/audit-cullen-anchor-quality.mjs",
+    "scripts/audit-cullen-chapter-coverage.mjs",
+    "scripts/audit-cullen-led-source-reconstruction.mjs",
+    "scripts/audit-cullen-oracle.mjs",
+    "scripts/audit-cullen-procedure-anchors.mjs",
+    "scripts/audit-cullen-procedure-completeness.mjs",
+    "scripts/audit-cullen-target-span-alignment.mjs",
+    "scripts/audit-sifen-target-family-candidates.mjs",
+    "scripts/audit-source-cullen-alignment.mjs",
+    "scripts/build-cullen-chunks.mjs",
+    "scripts/build-cullen-search-index.mjs",
+    "scripts/cullen-oracle-common.mjs",
+    "scripts/cullen-procedure-anchor-common.mjs",
+    "scripts/cullen-procedure-inventory-common.mjs",
+    "scripts/extract-cullen-claims.mjs",
+    "scripts/extract-cullen-pages.mjs",
+    "scripts/extract_cullen_pages.py",
+    "scripts/procedure-ir-common.mjs",
+    "scripts/query-cullen-page.mjs",
+    "scripts/query-cullen-proc.mjs",
+    "scripts/query-cullen-source.mjs",
+    "scripts/source-cullen-alignment-common.mjs"
+  ],
+  "recommended_git_add_config": [
+    "config/cullen-mini-gold-benchmark.json",
+    "config/sifen-target-family-gold.candidate.json"
+  ],
+  "recommended_git_add_docs": [
+    "scripts/scripts-note.md"
+  ],
+  "do_not_add_generated_tmp": [
+    "tmp/procedure-ir/cullen-led-source-reconstruction.json",
+    "tmp/procedure-ir/cullen-led-source-reconstruction.md",
+    "tmp/procedure-ir/cullen-led-source-alignment-candidates.json",
+    "tmp/procedure-ir/cullen-led-source-alignment-review-packet.md",
+    "tmp/procedure-ir/cullen-led-source-reconstruction-audit.json",
+    "tmp/procedure-ir/cullen-led-source-reconstruction-audit.md",
+    "tmp/procedure-ir/phase1-cullen-led-calibration-baseline.json",
+    "tmp/procedure-ir/phase1-cullen-led-calibration-baseline.md",
+    "tmp/procedure-ir/pipeline-architecture-snapshot.json",
+    "tmp/procedure-ir/pipeline-architecture-snapshot.md",
+    "tmp/procedure-ir/git-hygiene-plan.json",
+    "tmp/procedure-ir/git-hygiene-plan.md",
+    "tmp/procedure-ir/git-hygiene-commit-ready.json",
+    "tmp/procedure-ir/git-hygiene-commit-ready.md"
+  ],
+  "do_not_add_large_binary": [
+    "The Foundations of Celestial Reckoning. Three ancient Chinese astronomical systems (Christopher Cullen) (Z-Library).pdf"
+  ],
+  "needs_human_review_before_add": [
+    "AGENTS.md",
+    "package.json",
+    "config/calendrical-ir-pipeline.json",
+    "scripts/build-procedure-ir.mjs",
+    "The Foundations of Celestial Reckoning. Three ancient Chinese astronomical systems (Christopher Cullen) (Z-Library).pdf"
+  ],
+  "human_review_diff_summary": {
+    "AGENTS.md": {
+      "change_type": "tracked_text_file_modified",
+      "summary": "Adds stage-specific Cullen-first rules, red lines, and clean-code/minimal-change governance."
+    },
+    "package.json": {
+      "change_type": "tracked_text_file_modified",
+      "summary": "Adds many Cullen pipeline npm scripts across extract/build/align/audit/query categories."
+    },
+    "config/calendrical-ir-pipeline.json": {
+      "change_type": "tracked_text_file_modified",
+      "summary": "Registers Cullen artifact paths under the Cullen input and adds a cullen_oracle output entry."
+    },
+    "scripts/build-procedure-ir.mjs": {
+      "change_type": "tracked_text_file_modified_large",
+      "summary": "Large refactor toward shared helpers, executable step IR parsing, validation grounding, and expanded output semantics."
+    },
+    "The Foundations of Celestial Reckoning. Three ancient Chinese astronomical systems (Christopher Cullen) (Z-Library).pdf": {
+      "change_type": "binary_changed",
+      "summary": "Binary changed; no content-level summary performed."
+    }
+  },
+  "command_suggestions_only": [
+    "git add .gitignore",
+    "git add scripts/align-cullen-procedure-ir.mjs scripts/assimilate-cullen.mjs scripts/audit-cullen-anchor-quality.mjs scripts/audit-cullen-chapter-coverage.mjs scripts/audit-cullen-led-source-reconstruction.mjs scripts/audit-cullen-oracle.mjs scripts/audit-cullen-procedure-anchors.mjs scripts/audit-cullen-procedure-completeness.mjs scripts/audit-cullen-target-span-alignment.mjs scripts/audit-sifen-target-family-candidates.mjs scripts/audit-source-cullen-alignment.mjs scripts/build-cullen-chunks.mjs scripts/build-cullen-search-index.mjs scripts/cullen-oracle-common.mjs scripts/cullen-procedure-anchor-common.mjs scripts/cullen-procedure-inventory-common.mjs scripts/extract-cullen-claims.mjs scripts/extract-cullen-pages.mjs scripts/extract_cullen_pages.py scripts/procedure-ir-common.mjs scripts/query-cullen-page.mjs scripts/query-cullen-proc.mjs scripts/query-cullen-source.mjs scripts/source-cullen-alignment-common.mjs",
+    "git add config/cullen-mini-gold-benchmark.json config/sifen-target-family-gold.candidate.json",
+    "git add scripts/scripts-note.md"
+  ]
+}

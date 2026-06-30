@@ -1,0 +1,693 @@
+{
+  "generated_at": "2026-06-24T09:09:33.489Z",
+  "inputs": {
+    "chunks": "tmp/procedure-ir/cullen-chunks.json",
+    "template_discovery": "tmp/procedure-ir/sifen-template-discovery.json",
+    "candidate_evidence_audit": "tmp/procedure-ir/sifen-candidate-evidence-audit.json",
+    "clause_alignments": "tmp/procedure-ir/sifen-clause-alignments.json"
+  },
+  "outputs": {
+    "json": "tmp/procedure-ir/sifen-proc35-mini-pipeline.json",
+    "markdown": "tmp/procedure-ir/sifen-proc35-mini-pipeline.md"
+  },
+  "pilot_scope": {
+    "proc_id": "Proc. 3.5",
+    "unit_id": "§46",
+    "chunk_id": "cullen:chunk:62",
+    "scope_control": "single_proc_only",
+    "purpose": "test whether current chunk/template/evidence outputs can support Proc-level algorithm reconstruction candidates",
+    "not_gold": true,
+    "do_not_writeback": true
+  },
+  "source_chunk": {
+    "id": "cullen:chunk:62",
+    "proc_id": "Proc. 3.5",
+    "unit_id": "§46",
+    "section_path": [
+      "3",
+      "3.2",
+      "3.2.4"
+    ],
+    "book_page_start": "164",
+    "book_page_end": "165",
+    "source_text_zh": "推天正術， 置入蔀年減一， 以章月乘之， 滿章法得一， 名為積月， 不滿為閏餘， 十二以上, 其歲有閏．",
+    "translation_en": "§46 Set out the years into the Obscuration and subtract one. Multiply by Rule Months [235]. Count one for each Rule Factor [19] filled. Call this Accu- mulated Months. The remainder is the Intercalation Remainder. If it is 12 or more, this year has an intercalation.",
+    "commentary_excerpt": "This section and the next aim to predict the sexagenary day name of the first day of the first month of the current year according to the Celestial count. We start from the beginning of the current Obscuration, at which we are guaranteed that midnight, conjunction beginning the first Celestial month and winter solstice coin- cide. We already know (from Proc. 3.3) the sexagenary day name with which the Obscuration begins. Here we aim to find how many whole months have elapsed since the start of the Obscuration, and to predict whether the current civil year has an intercalary month or not. The first procedure deals with the fact that ‘years into the obscuration’ 入 蔀 年 means the ordinal number of year in the Obscuration. Since we want the number of years from the start of the Obscuration to the start of the current year, we have to subtract one from this number. Then we use the fact that 2…",
+    "source_clauses": [
+      "推天正術",
+      "置入蔀年減一",
+      "以章月乘之",
+      "滿章法得一",
+      "名為積月",
+      "不滿為閏餘",
+      "十二以上, 其歲有閏"
+    ],
+    "translation_sentences": [
+      "§46 Set out the years into the Obscuration and subtract one.",
+      "Multiply by Rule Months [235].",
+      "Count one for each Rule Factor [19] filled.",
+      "Call this Accu- mulated Months.",
+      "The remainder is the Intercalation Remainder.",
+      "If it is 12 or more, this year has an intercalation."
+    ]
+  },
+  "method": {
+    "name": "curated_single_proc_evidence_assembly",
+    "description": "Uses fixed local source/translation anchors for Proc. 3.5 and gathers support from Cullen commentary plus exploratory template/audit/alignment outputs.",
+    "why_not_direct_alignment": "The exploratory clause alignment for this chunk is shifted by the source title phrase 推天正術, so this pilot treats alignment output as risk evidence rather than primary binding authority."
+  },
+  "summary": {
+    "proc_id": "Proc. 3.5",
+    "unit_id": "§46",
+    "chunk_id": "cullen:chunk:62",
+    "book_page_start": "164",
+    "book_page_end": "165",
+    "step_count": 8,
+    "operation_step_count": 3,
+    "output_or_condition_step_count": 3,
+    "high_confidence_step_count": 7,
+    "alignment_risk_count": 6,
+    "average_evidence_score": 0.74,
+    "arithmetic_validation_ready_now": false,
+    "algorithm_reconstruction_readiness": "proc_level_candidate_ready_for_human_review",
+    "verdict": "Supports a curated Proc-level mini pipeline, but does not yet support fully automatic reconstruction or arithmetic validation."
+  },
+  "step_candidates": [
+    {
+      "step_id": "Proc.3.5.step.0",
+      "step_role": "procedure_title",
+      "operation_id": "procedure_scope_title",
+      "source_phrase": "推天正術",
+      "source_clause": "推天正術",
+      "translation_phrase": "",
+      "translation_sentence_context": "",
+      "commentary_support": [
+        "Here we aim to find how many whole months have elapsed since the start of the Obscuration, and to predict whether the current civil year has an intercalary month or not."
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "evidence_level": "scope_phrase_not_operation",
+      "evidence_score": 0.48,
+      "formal_expression": null,
+      "variables": [],
+      "constants": [],
+      "input_bindings": [],
+      "output_bindings": [],
+      "validation_rule": null,
+      "formalization_status": "not_formalizable_yet",
+      "confidence": "medium",
+      "alignment_risks": [],
+      "machine_verifiability": {
+        "symbolic_relation_ready": false,
+        "arithmetic_validation_ready_now": false,
+        "reason": "Proc. 3.5 chunk gives explicit procedure relations but no concrete Cullen worked-example input value for 入蔀年."
+      },
+      "do_not_writeback": true,
+      "notes": [
+        "Treat as the procedure title/scope phrase, not as an arithmetic operation."
+      ]
+    },
+    {
+      "step_id": "Proc.3.5.step.1",
+      "step_role": "input_binding",
+      "operation_id": "set_out_years_into_obscuration",
+      "source_phrase": "置入蔀年",
+      "source_clause": "置入蔀年減一",
+      "translation_phrase": "Set out the years into the Obscuration",
+      "translation_sentence_context": "§46 Set out the years into the Obscuration and subtract one.",
+      "commentary_support": [
+        "The first procedure deals with the fact that ‘years into the obscuration’ 入 蔀 年 means the ordinal number of year in the Obscuration."
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "evidence_level": "translation_and_commentary_explicit",
+      "evidence_score": 0.74,
+      "formal_expression": "years_into_obscuration = input(\"入蔀年\")",
+      "variables": [
+        "years_into_obscuration"
+      ],
+      "constants": [],
+      "input_bindings": [
+        {
+          "name": "years_into_obscuration",
+          "source": "source_text_zh + Cullen translation",
+          "value": "入蔀年 / years into the Obscuration"
+        }
+      ],
+      "output_bindings": [
+        {
+          "name": "years_into_obscuration",
+          "role": "input variable"
+        }
+      ],
+      "validation_rule": "Check that the procedure starts by binding the ordinal year within the Obscuration before subtraction.",
+      "formalization_status": "formalizable_with_caveat",
+      "confidence": "high",
+      "alignment_risks": [
+        {
+          "alignment_id": "cullen:chunk:62:align:2",
+          "confidence": "medium",
+          "score": 53,
+          "source_text_zh_clauses": [
+            "置入蔀年減一"
+          ],
+          "translation_en_clauses": [
+            "Multiply by Rule Months [235]."
+          ],
+          "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+        }
+      ],
+      "machine_verifiability": {
+        "symbolic_relation_ready": true,
+        "arithmetic_validation_ready_now": false,
+        "reason": "Proc. 3.5 chunk gives explicit procedure relations but no concrete Cullen worked-example input value for 入蔀年."
+      },
+      "do_not_writeback": true,
+      "notes": [
+        "This is a variable-binding step, not an arithmetic calculation."
+      ]
+    },
+    {
+      "step_id": "Proc.3.5.step.2",
+      "step_role": "operation",
+      "operation_id": "subtract_one_to_elapsed_years",
+      "source_phrase": "減一",
+      "source_clause": "置入蔀年減一",
+      "translation_phrase": "subtract one",
+      "translation_sentence_context": "§46 Set out the years into the Obscuration and subtract one.",
+      "commentary_support": [
+        "Since we want the number of years from the start of the Obscuration to the start of the current year, we have to subtract one from this number."
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "evidence_level": "translation_and_commentary_explicit",
+      "evidence_score": 0.74,
+      "formal_expression": "elapsed_years = years_into_obscuration - 1",
+      "variables": [
+        "years_into_obscuration",
+        "elapsed_years"
+      ],
+      "constants": [
+        {
+          "name": "one",
+          "value": 1,
+          "source": "source_text_zh + Cullen translation + Cullen commentary"
+        }
+      ],
+      "input_bindings": [
+        {
+          "name": "years_into_obscuration",
+          "source": "Proc.3.5.step.1"
+        }
+      ],
+      "output_bindings": [
+        {
+          "name": "elapsed_years",
+          "role": "years elapsed from start of Obscuration"
+        }
+      ],
+      "validation_rule": "For any supplied ordinal year n, verify elapsed_years = n - 1.",
+      "formalization_status": "formalizable_now",
+      "confidence": "high",
+      "alignment_risks": [
+        {
+          "alignment_id": "cullen:chunk:62:align:2",
+          "confidence": "medium",
+          "score": 53,
+          "source_text_zh_clauses": [
+            "置入蔀年減一"
+          ],
+          "translation_en_clauses": [
+            "Multiply by Rule Months [235]."
+          ],
+          "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+        }
+      ],
+      "machine_verifiability": {
+        "symbolic_relation_ready": true,
+        "arithmetic_validation_ready_now": false,
+        "reason": "Proc. 3.5 chunk gives explicit procedure relations but no concrete Cullen worked-example input value for 入蔀年."
+      },
+      "do_not_writeback": true,
+      "notes": [
+        "Cullen commentary explicitly explains why one is subtracted."
+      ]
+    },
+    {
+      "step_id": "Proc.3.5.step.3",
+      "step_role": "operation",
+      "operation_id": "multiply_by_rule_months",
+      "source_phrase": "以章月乘之",
+      "source_clause": "以章月乘之",
+      "translation_phrase": "Multiply by Rule Months [235].",
+      "translation_sentence_context": "Multiply by Rule Months [235].",
+      "commentary_support": [
+        "Then we use the fact that 235 months are exactly equivalent to 19 years to find how many whole months have elapsed since the start of the Obscuration.",
+        "Here we aim to find how many whole months have elapsed since the start of the Obscuration, and to predict whether the current civil year has an intercalary month or not."
+      ],
+      "template_support": [
+        {
+          "zh_template": "以[OBJECT]乘之",
+          "en_template": "Multiply [OBJECT] by [OBJECT]",
+          "count": 7,
+          "distinct_chunks": 7,
+          "best_alignment_strength": "targeted_prespecified_same_unit",
+          "example": {
+            "source_text_zh_clause": "以章月乘之",
+            "translation_en_clause": "Multiply by Rule Months [235].",
+            "alignment_strength": "targeted_prespecified_same_unit",
+            "pairing_mode": "targeted_prespecified_same_unit"
+          }
+        }
+      ],
+      "candidate_audit_support": [
+        {
+          "candidate_id": "operation_template_pair:以乘之__Multiply_by",
+          "candidate_type": "operation_template_pair",
+          "status": "medium_candidate_needs_human_confirmation",
+          "overall_score": 0.7144,
+          "failed_checks": [
+            "weak_or_ambiguous_alignment",
+            "overgeneral_template"
+          ],
+          "examples": [
+            {
+              "source_text_zh_clause": "以章月乘之",
+              "translation_en_clause": "Multiply by Rule Months [235].",
+              "alignment_strength": "targeted_prespecified_same_unit"
+            }
+          ]
+        }
+      ],
+      "evidence_level": "translation_commentary_template_supported",
+      "evidence_score": 0.92,
+      "formal_expression": "product = elapsed_years × 章月",
+      "variables": [
+        "elapsed_years",
+        "product"
+      ],
+      "constants": [
+        {
+          "name": "章月 / Rule Months",
+          "value": 235,
+          "source": "Cullen translation + Cullen commentary"
+        }
+      ],
+      "input_bindings": [
+        {
+          "name": "elapsed_years",
+          "source": "Proc.3.5.step.2"
+        }
+      ],
+      "output_bindings": [
+        {
+          "name": "product",
+          "role": "months-at-rule-scale numerator before Rule Factor division"
+        }
+      ],
+      "validation_rule": "Given elapsed_years, verify product = elapsed_years × 235.",
+      "formalization_status": "formalizable_now",
+      "confidence": "high",
+      "alignment_risks": [
+        {
+          "alignment_id": "cullen:chunk:62:align:3",
+          "confidence": "low",
+          "score": 45,
+          "source_text_zh_clauses": [
+            "以章月乘之"
+          ],
+          "translation_en_clauses": [
+            "Count one for each Rule Factor [19] filled."
+          ],
+          "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+        }
+      ],
+      "machine_verifiability": {
+        "symbolic_relation_ready": true,
+        "arithmetic_validation_ready_now": false,
+        "reason": "Proc. 3.5 chunk gives explicit procedure relations but no concrete Cullen worked-example input value for 入蔀年."
+      },
+      "do_not_writeback": true,
+      "notes": [
+        "Global template support exists for 以[OBJECT]乘之 ↔ Multiply by [OBJECT], but local binding comes from this Proc."
+      ]
+    },
+    {
+      "step_id": "Proc.3.5.step.4",
+      "step_role": "operation",
+      "operation_id": "count_one_for_each_rule_factor_filled",
+      "source_phrase": "滿章法得一",
+      "source_clause": "滿章法得一",
+      "translation_phrase": "Count one for each Rule Factor [19] filled.",
+      "translation_sentence_context": "Count one for each Rule Factor [19] filled.",
+      "commentary_support": [
+        "Then we use the fact that 235 months are exactly equivalent to 19 years to find how many whole months have elapsed since the start of the Obscuration.",
+        "The remainder will be a fraction of a month at a scale of Rule Factor [19].",
+        "Here we aim to find how many whole months have elapsed since the start of the Obscuration, and to predict whether the current civil year has an intercalary month or not."
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "evidence_level": "translation_and_commentary_explicit",
+      "evidence_score": 0.74,
+      "formal_expression": "quotient = floor(product / 章法)",
+      "variables": [
+        "product",
+        "quotient"
+      ],
+      "constants": [
+        {
+          "name": "章法 / Rule Factor",
+          "value": 19,
+          "source": "Cullen translation + Cullen commentary"
+        }
+      ],
+      "input_bindings": [
+        {
+          "name": "product",
+          "source": "Proc.3.5.step.3"
+        }
+      ],
+      "output_bindings": [
+        {
+          "name": "quotient",
+          "role": "count of filled Rule Factors"
+        }
+      ],
+      "validation_rule": "Given product, verify quotient = floor(product / 19).",
+      "formalization_status": "formalizable_with_caveat",
+      "confidence": "high",
+      "alignment_risks": [
+        {
+          "alignment_id": "cullen:chunk:62:align:4",
+          "confidence": "low",
+          "score": 44,
+          "source_text_zh_clauses": [
+            "滿章法得一"
+          ],
+          "translation_en_clauses": [
+            "Call this Accu- mulated Months."
+          ],
+          "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+        }
+      ],
+      "machine_verifiability": {
+        "symbolic_relation_ready": true,
+        "arithmetic_validation_ready_now": false,
+        "reason": "Proc. 3.5 chunk gives explicit procedure relations but no concrete Cullen worked-example input value for 入蔀年."
+      },
+      "do_not_writeback": true,
+      "notes": [
+        "Cullen gives the operation as counting filled Rule Factors; floor division is the modern formalization of that count."
+      ]
+    },
+    {
+      "step_id": "Proc.3.5.step.5",
+      "step_role": "output_label",
+      "operation_id": "name_quotient_accumulated_months",
+      "source_phrase": "名為積月",
+      "source_clause": "名為積月",
+      "translation_phrase": "Call this Accu- mulated Months.",
+      "translation_sentence_context": "Call this Accu- mulated Months.",
+      "commentary_support": [
+        "Here we aim to find how many whole months have elapsed since the start of the Obscuration, and to predict whether the current civil year has an intercalary month or not."
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "evidence_level": "translation_and_commentary_explicit",
+      "evidence_score": 0.74,
+      "formal_expression": "積月 = quotient",
+      "variables": [
+        "quotient",
+        "積月"
+      ],
+      "constants": [],
+      "input_bindings": [
+        {
+          "name": "quotient",
+          "source": "Proc.3.5.step.4"
+        }
+      ],
+      "output_bindings": [
+        {
+          "name": "積月 / Accumulated Months",
+          "role": "named quotient"
+        }
+      ],
+      "validation_rule": "Check that the quotient produced by filled Rule Factors is the value named Accumulated Months.",
+      "formalization_status": "formalizable_with_caveat",
+      "confidence": "high",
+      "alignment_risks": [
+        {
+          "alignment_id": "cullen:chunk:62:align:5",
+          "confidence": "medium",
+          "score": 54,
+          "source_text_zh_clauses": [
+            "名為積月"
+          ],
+          "translation_en_clauses": [
+            "The remainder is the Intercalation Remainder."
+          ],
+          "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+        }
+      ],
+      "machine_verifiability": {
+        "symbolic_relation_ready": true,
+        "arithmetic_validation_ready_now": false,
+        "reason": "Proc. 3.5 chunk gives explicit procedure relations but no concrete Cullen worked-example input value for 入蔀年."
+      },
+      "do_not_writeback": true,
+      "notes": [
+        "This is a naming/binding step rather than a new arithmetic operation."
+      ]
+    },
+    {
+      "step_id": "Proc.3.5.step.6",
+      "step_role": "output_label",
+      "operation_id": "name_remainder_intercalation_remainder",
+      "source_phrase": "不滿為閏餘",
+      "source_clause": "不滿為閏餘",
+      "translation_phrase": "The remainder is the Intercalation Remainder.",
+      "translation_sentence_context": "The remainder is the Intercalation Remainder.",
+      "commentary_support": [
+        "The remainder will be a fraction of a month at a scale of Rule Factor [19].",
+        "This is the Intercalation Remainder, and may be taken as the pending fraction of a new intercalary month representing the amount by which the start of the new year is in advance of its ideal date, which should coincide with winter solstice."
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "evidence_level": "translation_and_commentary_explicit",
+      "evidence_score": 0.74,
+      "formal_expression": "閏餘 = product mod 章法",
+      "variables": [
+        "product",
+        "閏餘"
+      ],
+      "constants": [
+        {
+          "name": "章法 / Rule Factor",
+          "value": 19,
+          "source": "Cullen commentary relation to remainder scale"
+        }
+      ],
+      "input_bindings": [
+        {
+          "name": "product",
+          "source": "Proc.3.5.step.3"
+        },
+        {
+          "name": "章法",
+          "source": "Proc.3.5.step.4"
+        }
+      ],
+      "output_bindings": [
+        {
+          "name": "閏餘 / Intercalation Remainder",
+          "role": "named remainder"
+        }
+      ],
+      "validation_rule": "Given product, verify 閏餘 = product mod 19.",
+      "formalization_status": "formalizable_with_caveat",
+      "confidence": "high",
+      "alignment_risks": [
+        {
+          "alignment_id": "cullen:chunk:62:align:6",
+          "confidence": "high",
+          "score": 79,
+          "source_text_zh_clauses": [
+            "不滿為閏餘",
+            "十二以上, 其歲有閏"
+          ],
+          "translation_en_clauses": [
+            "If it is 12 or more, this year has an intercalation."
+          ],
+          "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+        }
+      ],
+      "machine_verifiability": {
+        "symbolic_relation_ready": true,
+        "arithmetic_validation_ready_now": false,
+        "reason": "Proc. 3.5 chunk gives explicit procedure relations but no concrete Cullen worked-example input value for 入蔀年."
+      },
+      "do_not_writeback": true,
+      "notes": [
+        "The modulo expression is a modern formalization of the named remainder after counting filled Rule Factors."
+      ]
+    },
+    {
+      "step_id": "Proc.3.5.step.7",
+      "step_role": "condition",
+      "operation_id": "threshold_intercalary_year",
+      "source_phrase": "十二以上, 其歲有閏",
+      "source_clause": "十二以上, 其歲有閏",
+      "translation_phrase": "If it is 12 or more, this year has an intercalation.",
+      "translation_sentence_context": "If it is 12 or more, this year has an intercalation.",
+      "commentary_support": [
+        "So if at the start of the current year this Remainder is 12 or more, the Remainder will at least have reached 19 by the end of the year, calling for a delay of a whole month before the next year starts – which requires an intercalary month to be inserted in t…"
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "evidence_level": "translation_and_commentary_explicit",
+      "evidence_score": 0.82,
+      "formal_expression": "has_intercalary_month = 閏餘 >= 12",
+      "variables": [
+        "閏餘",
+        "has_intercalary_month"
+      ],
+      "constants": [
+        {
+          "name": "intercalation threshold",
+          "value": 12,
+          "source": "source_text_zh + Cullen translation + Cullen commentary"
+        }
+      ],
+      "input_bindings": [
+        {
+          "name": "閏餘",
+          "source": "Proc.3.5.step.6"
+        }
+      ],
+      "output_bindings": [
+        {
+          "name": "has_intercalary_month",
+          "role": "boolean condition for current year"
+        }
+      ],
+      "validation_rule": "Given 閏餘, verify has_intercalary_month is true exactly when 閏餘 >= 12.",
+      "formalization_status": "formalizable_now",
+      "confidence": "high",
+      "alignment_risks": [],
+      "machine_verifiability": {
+        "symbolic_relation_ready": true,
+        "arithmetic_validation_ready_now": false,
+        "reason": "Proc. 3.5 chunk gives explicit procedure relations but no concrete Cullen worked-example input value for 入蔀年."
+      },
+      "do_not_writeback": true,
+      "notes": [
+        "This is a threshold condition, not a lookup table."
+      ]
+    }
+  ],
+  "alignment_risks": [
+    {
+      "step_id": "Proc.3.5.step.1",
+      "source_phrase": "置入蔀年",
+      "expected_translation_phrase": "Set out the years into the Obscuration",
+      "alignment_id": "cullen:chunk:62:align:2",
+      "confidence": "medium",
+      "score": 53,
+      "source_text_zh_clauses": [
+        "置入蔀年減一"
+      ],
+      "translation_en_clauses": [
+        "Multiply by Rule Months [235]."
+      ],
+      "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+    },
+    {
+      "step_id": "Proc.3.5.step.2",
+      "source_phrase": "減一",
+      "expected_translation_phrase": "subtract one",
+      "alignment_id": "cullen:chunk:62:align:2",
+      "confidence": "medium",
+      "score": 53,
+      "source_text_zh_clauses": [
+        "置入蔀年減一"
+      ],
+      "translation_en_clauses": [
+        "Multiply by Rule Months [235]."
+      ],
+      "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+    },
+    {
+      "step_id": "Proc.3.5.step.3",
+      "source_phrase": "以章月乘之",
+      "expected_translation_phrase": "Multiply by Rule Months [235].",
+      "alignment_id": "cullen:chunk:62:align:3",
+      "confidence": "low",
+      "score": 45,
+      "source_text_zh_clauses": [
+        "以章月乘之"
+      ],
+      "translation_en_clauses": [
+        "Count one for each Rule Factor [19] filled."
+      ],
+      "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+    },
+    {
+      "step_id": "Proc.3.5.step.4",
+      "source_phrase": "滿章法得一",
+      "expected_translation_phrase": "Count one for each Rule Factor [19] filled.",
+      "alignment_id": "cullen:chunk:62:align:4",
+      "confidence": "low",
+      "score": 44,
+      "source_text_zh_clauses": [
+        "滿章法得一"
+      ],
+      "translation_en_clauses": [
+        "Call this Accu- mulated Months."
+      ],
+      "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+    },
+    {
+      "step_id": "Proc.3.5.step.5",
+      "source_phrase": "名為積月",
+      "expected_translation_phrase": "Call this Accu- mulated Months.",
+      "alignment_id": "cullen:chunk:62:align:5",
+      "confidence": "medium",
+      "score": 54,
+      "source_text_zh_clauses": [
+        "名為積月"
+      ],
+      "translation_en_clauses": [
+        "The remainder is the Intercalation Remainder."
+      ],
+      "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+    },
+    {
+      "step_id": "Proc.3.5.step.6",
+      "source_phrase": "不滿為閏餘",
+      "expected_translation_phrase": "The remainder is the Intercalation Remainder.",
+      "alignment_id": "cullen:chunk:62:align:6",
+      "confidence": "high",
+      "score": 79,
+      "source_text_zh_clauses": [
+        "不滿為閏餘",
+        "十二以上, 其歲有閏"
+      ],
+      "translation_en_clauses": [
+        "If it is 12 or more, this year has an intercalation."
+      ],
+      "reason": "Existing exploratory clause alignment pairs this source phrase with a different translation phrase."
+    }
+  ],
+  "conclusion": {
+    "improves_machine_verifiability": true,
+    "how": "The pilot converts one Cullen-backed Proc into ordered, source-bound symbolic relations with explicit constants, variables, validation rules, and evidence scores.",
+    "still_human_readable_only": [
+      "No worked example input value is available here, so arithmetic validation cannot run yet.",
+      "The mapping from counting filled Rule Factors to floor division/modulo is a modern formalization and should remain caveated until human review.",
+      "Global templates support operation families but do not by themselves prove local variable bindings."
+    ],
+    "recommended_next_step": "Have a human review this single Proc output; if acceptable, generalize the same evidence-assembly pattern to the next Proc with strong commentary support."
+  },
+  "do_not_writeback": true
+}

@@ -1,0 +1,12 @@
+# Source Procedure Segmentation Audit
+
+Generated: 2026-06-22T04:57:28.654Z
+
+- old_source_proc_count: 27
+- refined_source_proc_count: 41
+- new_candidate_source_proc_count: 14
+- santong_refined_source_proc_count: 14
+- sifen_refined_source_proc_count: 27
+- possible_heading_body_split_count: 0
+- refined_candidates: santong:refined-source-proc:santong:L16, santong:refined-source-proc:santong:L41, santong:refined-source-proc:santong:L127, santong:refined-source-proc:santong:L181, sifen:refined-source-proc:sifen:L44, sifen:refined-source-proc:sifen:L82, sifen:refined-source-proc:sifen:L130, sifen:refined-source-proc:sifen:L132, sifen:refined-source-proc:sifen:L142, sifen:refined-source-proc:sifen:L144, sifen:refined-source-proc:sifen:L146, sifen:refined-source-proc:sifen:L148, sifen:refined-source-proc:sifen:L150, sifen:refined-source-proc:sifen:L166
+

@@ -1,0 +1,498 @@
+{
+  "generated_at": "2026-06-26T13:56:33.393217+00:00",
+  "source_pages_artifact": "tmp\\procedure-ir\\cullen-pages.json",
+  "clean_pages_artifact": "tmp\\procedure-ir\\clean_pages.json",
+  "method": "page_bottom_expected_sequence_suffix",
+  "scope": {
+    "book_page_start": 138,
+    "book_page_end": 234,
+    "max_footnote": 27,
+    "bottom_chars": 4000
+  },
+  "footnote_count": 27,
+  "complete_expected_sequence": true,
+  "footnotes": {
+    "1": {
+      "footnote_number": 1,
+      "footnote_ref": "[^1]",
+      "text": "For a discussion of this table, see Christopher Cullen (2007a) “Huo Rong’s Observation Programme \nof ad 102 and the Han li solar table.” Journal for the History of Astronomy 38 (1): 75–98.",
+      "pdf_page_number": 154,
+      "book_page_number": "141",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "2": {
+      "footnote_number": 2,
+      "footnote_ref": "[^2]",
+      "text": "See B. J. Mansvelt Beck (1990) The treatises of later Han: their author, sources, contents, and place \nin Chinese historiography. Leiden, Brill.",
+      "pdf_page_number": 154,
+      "book_page_number": "141",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "3": {
+      "footnote_number": 3,
+      "footnote_ref": "[^3]",
+      "text": "On these terms, see again Christopher Cullen and Anne S. L. Farrer (1983) “On the term ‘Hsüan \nChi’ and the flanged trilobate jade discs.” Bulletin of the School of Oriental and African Studies, \nUniversity of London 46 (1): 52–76. If the reference is to the stars, the reference would be to the \nPole Star and the ‘handle’ of the Dipper.",
+      "pdf_page_number": 158,
+      "book_page_number": "145",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "4": {
+      "footnote_number": 4,
+      "footnote_ref": "[^4]",
+      "text": "See also Cullen (forthcoming), chapter 5.",
+      "pdf_page_number": 159,
+      "book_page_number": "146",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "5": {
+      "footnote_number": 5,
+      "footnote_ref": "[^5]",
+      "text": "The text of the Book of Change, from which this quotation is drawn, has 類 here: see Zhou yi, Xi \nci A, 7, 22b–23a in edition of Ruan Yuan 阮元 (1973 reprint of original of 1815) Shi san jing zhu \nshu 十三經註疏 (The thirteen classics with commentaries and subcommentaries) . Taipei, Yiwen \nPress, 153–154.",
+      "pdf_page_number": 160,
+      "book_page_number": "147",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "6": {
+      "footnote_number": 6,
+      "footnote_ref": "[^6]",
+      "text": "By Han times, Metal and Fire were thought to be the phases whose sequential rise in the cosmic \ncycle were associated with the rise of the Shang and Zhou dynasties, whose first rulers were kings \nTang and Wu.",
+      "pdf_page_number": 161,
+      "book_page_number": "148",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "7": {
+      "footnote_number": 7,
+      "footnote_ref": "[^7]",
+      "text": "This is a conventional spelling to distinguish this ruler from the name of the Zhou dynasty, which \nis written differently.",
+      "pdf_page_number": 161,
+      "book_page_number": "148",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "8": {
+      "footnote_number": 8,
+      "footnote_ref": "[^8]",
+      "text": "T exts under the name of Yue ling 月令 ‘Monthly Ordinances’ are known from the pre-imperial age. \nSee for instance Lü shi chun qiu 呂氏春秋 (Mr. Lü’ s Spring and Autumn [Annals]), where a series \nof chapters give ritual observances appropriate to the 12 lunar months of the civil year, preceded \nby statements of astronomical conditions, including the lodge in which the sun is to be found in \nthat month, and which lodges are ‘centred’ at dawn and dusk. If the prescribed observances are not \nfollowed, we are told, misfortune for the state will follow. Since a lunar month can shift by up to 30 \ndays in relation to the seasons (hence the necessity for intercalation), the stated astronomical conditions will only apply approximately to any given month.",
+      "pdf_page_number": 162,
+      "book_page_number": "149",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "9": {
+      "footnote_number": 9,
+      "footnote_ref": "[^9]",
+      "text": "Thes e are five of the ‘six ancient systems’ that by the end of Western Han were thought to have \nbeen in use in pre-imperial times, together with the Zhuan Xu system. The latter was named after \nsupposed ancestor of the Qin royal house, who was the grandson of the mythical Yellow Emperor. \nHowever it is unlikely that these systems date back to pre-imperial times, rather than being more \nrecent creations. See Cullen (forthcoming), chapter 3.",
+      "pdf_page_number": 163,
+      "book_page_number": "150",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "10": {
+      "footnote_number": 10,
+      "footnote_ref": "[^10]",
+      "text": "I t would be possible to take yi biao 儀表 as a single expression ‘instrumental gnomons’, rather than \npunctuating to produce two separate things that are to be ‘set up’, since nothing else but a gnomon \nis required for the purpose in hand. At one point the Zhou bi book, assembled around the end of the \nWestern Han, refers to a movable gnomon used to establish a sight line as a you yi 游儀 ‘movable \ninstrument’; see Christopher Cullen (1996) Astronomy and mathematics in ancient China: the Zhou \nbi suan jing. Cambridge; New York, Cambridge University Press, 103. But in Proc. 3.51, the same \nexpression occurs in a context where north polar distance is to be measured, which does require an \narmillary instrument; hence the rendering chosen here.",
+      "pdf_page_number": 164,
+      "book_page_number": "151",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "11": {
+      "footnote_number": 11,
+      "footnote_ref": "[^11]",
+      "text": "I follow the Zhonghua editors in omitting the bracketed characters, which mean ‘for Rule Intercalations’. In fact Extinction Number has no connection with intercalation.",
+      "pdf_page_number": 169,
+      "book_page_number": "156",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "12": {
+      "footnote_number": 12,
+      "footnote_ref": "[^12]",
+      "text": "As above, I omit the bracketed characters, which mean ‘taken as the basis for Rule Intercalations’.",
+      "pdf_page_number": 169,
+      "book_page_number": "156",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "13": {
+      "footnote_number": 13,
+      "footnote_ref": "[^13]",
+      "text": "I emend xing 星 ‘star’ in the original to xiu 宿 ‘lodge’, which is graphically plausible and suits the \nsense of the passage better.",
+      "pdf_page_number": 186,
+      "book_page_number": "173",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "14": {
+      "footnote_number": 14,
+      "footnote_ref": "[^14]",
+      "text": "See Li Rui 李銳 (1768–1817) (1993) 763.",
+      "pdf_page_number": 197,
+      "book_page_number": "184",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "15": {
+      "footnote_number": 15,
+      "footnote_ref": "[^15]",
+      "text": "W e may recall that at this period the sun’s winter solstice position was assumed to be fixed with \nrespect to the background of the stars, so that (in modern terms) the tropical and sidereal years \nwere taken as equal.",
+      "pdf_page_number": 203,
+      "book_page_number": "190",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "16": {
+      "footnote_number": 16,
+      "footnote_ref": "[^16]",
+      "text": "Emended following Qian Daxin.",
+      "pdf_page_number": 210,
+      "book_page_number": "197",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "17": {
+      "footnote_number": 17,
+      "footnote_ref": "[^17]",
+      "text": "Emended following Qian Daxin.",
+      "pdf_page_number": 210,
+      "book_page_number": "197",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "18": {
+      "footnote_number": 18,
+      "footnote_ref": "[^18]",
+      "text": "Emended following Qian Daxin.",
+      "pdf_page_number": 210,
+      "book_page_number": "197",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "19": {
+      "footnote_number": 19,
+      "footnote_ref": "[^19]",
+      "text": "This bracketed portion may be intruded, since it breaks the obvious sequence of the rest of the text.",
+      "pdf_page_number": 211,
+      "book_page_number": "198",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "20": {
+      "footnote_number": 20,
+      "footnote_ref": "[^20]",
+      "text": "The Zhonghua text is mispunctuated as 日行十七分度之一百二， 日退六度．That implies Saturn moves \n6 du in one day, which is impossible, as well as giving the wrong total of days of visibility. It is clear \nthat Li Rui (1993), 771A is reading as I do, since he counts 102 du of solar motion during this phase.",
+      "pdf_page_number": 224,
+      "book_page_number": "211",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "21": {
+      "footnote_number": 21,
+      "footnote_ref": "[^21]",
+      "text": "The Academia Sinica online version has 得 for 行; Zhonghua has 行.",
+      "pdf_page_number": 229,
+      "book_page_number": "216",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "22": {
+      "footnote_number": 22,
+      "footnote_ref": "[^22]",
+      "text": "In the original text the month names are listed first, followed by the sequence of corresponding qi.\n(Continued)",
+      "pdf_page_number": 233,
+      "book_page_number": "220",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "23": {
+      "footnote_number": 23,
+      "footnote_ref": "[^23]",
+      "text": "In the original text from which this and the following table are constructed, the lodge names are \nlisted in sequence, each followed by the number of du in the lodge, and then the amount of advance \nor retardation given in small characters. The lodges are arranged in groups of four, one for each of \nthe quarters of the heavens, each followed by a total of du, with an overall total at the foot of the \ntable. I have followed the emendations of the Zhonghua editors.\nTable 3.5 (Continued)\n(Continued)",
+      "pdf_page_number": 234,
+      "book_page_number": "221",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "24": {
+      "footnote_number": 24,
+      "footnote_ref": "[^24]",
+      "text": "This is a quotation from the Book of Odes, Shi jing 世經 , a collection of ancient poems, some of \nwhich may date from around 1000 bce. The reference is to the fall of the last king of the Shang (or \nYin) dynasty who was overthrown by the Zhou. See Mao shi 毛詩 in the edition of Ruan Yuan 阮",
+      "pdf_page_number": 245,
+      "book_page_number": "232",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "25": {
+      "footnote_number": 25,
+      "footnote_ref": "[^25]",
+      "text": "The civil year that began in spring 161 bce was a gengchen.17 year, 45 years from the start of the \nHan dynasty. According to the Triple Concordance System, the winter solstice of late 162 bce fell on \nDecember 25, a jiazi.1 day, at about 17:45 local Chang’an time, while the conjunction beginning the \nfirst Celestial month fell at 18:00. The Han Quarter Remainder system simply moved both winter \nsolstice and conjunction back to the midnight beginning that day – not quite one day, but close \nenough. At that moment the sun was about 50 minutes past winter solstice, so the correspondence \nwas not bad. An estimate of the mean conjunction suggests that it fell close to 15:00 on December 25, \n so the Triple Concordance made things worse rather than better in that regard. However, what \nactually mattered was the accuracy of predictions around 85 \nce, when the system was adopted, and \nthis was much better. See Cullen (forthcoming), chapter 6.",
+      "pdf_page_number": 247,
+      "book_page_number": "234",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "26": {
+      "footnote_number": 26,
+      "footnote_ref": "[^26]",
+      "text": "These are the apocryphal texts much studied in the Western Han: they are frequently mentioned in \nCai Yong and Liu Hong’s documentary collection: see Chapter 5.",
+      "pdf_page_number": 247,
+      "book_page_number": "234",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    },
+    "27": {
+      "footnote_number": 27,
+      "footnote_ref": "[^27]",
+      "text": "Literally ‘to [give] a complete school of thought’. The word jia 家 ‘house, family’ is the usual word \nfor an intellectual lineage and its doctrine. For a discussion of the background and contents of Cai \nand Liu’s documentary collection, see the Introduction to Chapter 5 of this book. The document \nwhose translation concludes at this point is the ‘second chapter’ referred to in the text.",
+      "pdf_page_number": 247,
+      "book_page_number": "234",
+      "extraction_method": "page_bottom_expected_sequence_suffix"
+    }
+  },
+  "audit": {
+    "items": [
+      {
+        "footnote_number": 1,
+        "pdf_page_number": 154,
+        "book_page_number": "141",
+        "start": 1986,
+        "end": 2177
+      },
+      {
+        "footnote_number": 2,
+        "pdf_page_number": 154,
+        "book_page_number": "141",
+        "start": 2177,
+        "end": 2324
+      },
+      {
+        "footnote_number": 3,
+        "pdf_page_number": 158,
+        "book_page_number": "145",
+        "start": 2113,
+        "end": 2456
+      },
+      {
+        "footnote_number": 4,
+        "pdf_page_number": 159,
+        "book_page_number": "146",
+        "start": 2428,
+        "end": 2472
+      },
+      {
+        "footnote_number": 5,
+        "pdf_page_number": 160,
+        "book_page_number": "147",
+        "start": 1790,
+        "end": 2092
+      },
+      {
+        "footnote_number": 6,
+        "pdf_page_number": 161,
+        "book_page_number": "148",
+        "start": 2187,
+        "end": 2399
+      },
+      {
+        "footnote_number": 7,
+        "pdf_page_number": 161,
+        "book_page_number": "148",
+        "start": 2399,
+        "end": 2525
+      },
+      {
+        "footnote_number": 8,
+        "pdf_page_number": 162,
+        "book_page_number": "149",
+        "start": 2295,
+        "end": 3049
+      },
+      {
+        "footnote_number": 9,
+        "pdf_page_number": 163,
+        "book_page_number": "150",
+        "start": 2140,
+        "end": 2588
+      },
+      {
+        "footnote_number": 10,
+        "pdf_page_number": 164,
+        "book_page_number": "151",
+        "start": 1601,
+        "end": 2352
+      },
+      {
+        "footnote_number": 11,
+        "pdf_page_number": 169,
+        "book_page_number": "156",
+        "start": 642,
+        "end": 817
+      },
+      {
+        "footnote_number": 12,
+        "pdf_page_number": 169,
+        "book_page_number": "156",
+        "start": 817,
+        "end": 920
+      },
+      {
+        "footnote_number": 13,
+        "pdf_page_number": 186,
+        "book_page_number": "173",
+        "start": 2718,
+        "end": 2852
+      },
+      {
+        "footnote_number": 14,
+        "pdf_page_number": 197,
+        "book_page_number": "184",
+        "start": 2087,
+        "end": 2128
+      },
+      {
+        "footnote_number": 15,
+        "pdf_page_number": 203,
+        "book_page_number": "190",
+        "start": 1276,
+        "end": 1499
+      },
+      {
+        "footnote_number": 16,
+        "pdf_page_number": 210,
+        "book_page_number": "197",
+        "start": 777,
+        "end": 810
+      },
+      {
+        "footnote_number": 17,
+        "pdf_page_number": 210,
+        "book_page_number": "197",
+        "start": 810,
+        "end": 843
+      },
+      {
+        "footnote_number": 18,
+        "pdf_page_number": 210,
+        "book_page_number": "197",
+        "start": 843,
+        "end": 876
+      },
+      {
+        "footnote_number": 19,
+        "pdf_page_number": 211,
+        "book_page_number": "198",
+        "start": 1570,
+        "end": 1675
+      },
+      {
+        "footnote_number": 20,
+        "pdf_page_number": 224,
+        "book_page_number": "211",
+        "start": 728,
+        "end": 1024
+      },
+      {
+        "footnote_number": 21,
+        "pdf_page_number": 229,
+        "book_page_number": "216",
+        "start": 853,
+        "end": 920
+      },
+      {
+        "footnote_number": 22,
+        "pdf_page_number": 233,
+        "book_page_number": "220",
+        "start": 1045,
+        "end": 1161
+      },
+      {
+        "footnote_number": 23,
+        "pdf_page_number": 234,
+        "book_page_number": "221",
+        "start": 692,
+        "end": 1197
+      },
+      {
+        "footnote_number": 24,
+        "pdf_page_number": 245,
+        "book_page_number": "232",
+        "start": 2116,
+        "end": 2407
+      },
+      {
+        "footnote_number": 25,
+        "pdf_page_number": 247,
+        "book_page_number": "234",
+        "start": 1735,
+        "end": 2687
+      },
+      {
+        "footnote_number": 26,
+        "pdf_page_number": 247,
+        "book_page_number": "234",
+        "start": 2687,
+        "end": 2851
+      },
+      {
+        "footnote_number": 27,
+        "pdf_page_number": 247,
+        "book_page_number": "234",
+        "start": 2851,
+        "end": 3245
+      }
+    ],
+    "rejected_candidate_count": 10,
+    "rejected_candidates_preview": [
+      {
+        "number": 27,
+        "expected_at_page": 13,
+        "pdf_page_number": 171,
+        "book_page_number": "158",
+        "text_preview": "Obscurations is 27 × 76 = 27 × 4 × 19 = 2052 years. This is an Obscura -\ntion Coincidence.\nHowever 2052 mod 60 = 12, so the sexagenary year number of successive \nObscuration Coinci"
+      },
+      {
+        "number": 10,
+        "expected_at_page": 24,
+        "pdf_page_number": 242,
+        "book_page_number": "229",
+        "text_preview": "Stomach\n1 17/32 −1 4 15/100 83 2/12 58 3/10 41 7/10 18 Star 4 10/12 −1 1 Dipper 21 6/12 −2\n 9 grain rains 11 Mane 2 24/32 −2 3 20/100 77 10/12 60 5/10 39 5/10 19 Spread 17 1 2 Ox 6"
+      },
+      {
+        "number": 12,
+        "expected_at_page": 24,
+        "pdf_page_number": 242,
+        "book_page_number": "229",
+        "text_preview": "Net\n6 31/32 −3 2 52/100 73 2/12 62 4/10 37 6/10 20 Wing 17 9/12 2 3 Woman 10 3/12 1\n11 grain fills 14 Triaster 4 6/32 −4 1 98/100 69 8/12 63 9/10 36 1/10 22 Horn 8/12 0 5 Rooftop 8"
+      },
+      {
+        "number": 15,
+        "expected_at_page": 24,
+        "pdf_page_number": 242,
+        "book_page_number": "229",
+        "text_preview": "Well\n10 13/32 −3 1 68/100 67 2/12 64 9/10 35 1/10 23 Gullet 5 9/12 −1 5 Rooftop 14 1/12 2\n(Continued)"
+      },
+      {
+        "number": 15,
+        "expected_at_page": 24,
+        "pdf_page_number": 243,
+        "book_page_number": "230",
+        "text_preview": "Well\n25 20/32 −3 1 50/100 67 1/12 65 35 24 Base 12 2/12 −2 6 House 12 2/12 3\n14 little heat 17 Willow 3 27/32 0 1 70/100 67 10/12 64 7/10 35 3/10 27 Tail 1 10/12 −3 8 Straddler 2 1"
+      },
+      {
+        "number": 19,
+        "expected_at_page": 24,
+        "pdf_page_number": 243,
+        "book_page_number": "230",
+        "text_preview": "Spread 12 9/32 1 2 55/100 73 7/12 62 3/10 37 7/10 28 Winnower 9 10/12 −3 10 Stomach 9 8/12 −1\n17 limit of \nheat"
+      },
+      {
+        "number": 20,
+        "expected_at_page": 24,
+        "pdf_page_number": 243,
+        "book_page_number": "230",
+        "text_preview": "Wing 9 16/32 2 3 33/100 78 7/12 60 2/10 39 8/10 1 Dipper 10 3/12 −2 12 Net 3 9/12 −3\n18 white dew 21 Axletree 6 23/32 1 4 35/100 84 4/12 57 8/10 42 2/10 1 Dipper 21 1/12 −2 14 Tria"
+      },
+      {
+        "number": 22,
+        "expected_at_page": 24,
+        "pdf_page_number": 243,
+        "book_page_number": "230",
+        "text_preview": "Horn\n4 30/32 0 5 50/100 90 7/12 55 2/10 44 8/10 2 Ox 5 3/12 0 15 Well 16 4/12 −3\n20 cold dew 23 Gullet 8 5/32 −1 6 85/100 96 10/12 52 6/10 47 4/10 3 Woman 7 9/12 1 16 Ghost 3 4/12 "
+      },
+      {
+        "number": 27,
+        "expected_at_page": 24,
+        "pdf_page_number": 243,
+        "book_page_number": "230",
+        "text_preview": "Tail\n4 19/32 −3 10 107 4/12 48 2/10 51 8/10 5 Rooftop 8 1/12 2 19 Spread 15 10/12 1\n23 little snow 28 Winnower 1 26/32 −3 11 40/100 110 11/12 46 7/10 53 3/10 6 House 3 7/12 3 20 Wi"
+      },
+      {
+        "number": 1,
+        "expected_at_page": 24,
+        "pdf_page_number": 243,
+        "book_page_number": "230",
+        "text_preview": "Dipper\n6 1/32 −2 12 56/100 113 10/12 45 5/10 54 5/10 7 Wall 7/12 1 21 Axletree 14 11/12 1\nTable 3.11 (Continued)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,922 @@
+{
+  "generated_at": "2026-06-24T09:37:48.095Z",
+  "inputs": {
+    "chunks": "tmp/procedure-ir/cullen-chunks.json",
+    "template_discovery": "tmp/procedure-ir/sifen-template-discovery.json",
+    "candidate_evidence_audit": "tmp/procedure-ir/sifen-candidate-evidence-audit.json",
+    "clause_alignments_for_comparison_only": "tmp/procedure-ir/sifen-clause-alignments.json"
+  },
+  "outputs": {
+    "json": "tmp/procedure-ir/sifen-proc35-auto-reconstruction.json",
+    "markdown": "tmp/procedure-ir/sifen-proc35-auto-reconstruction.md"
+  },
+  "target": {
+    "proc_id": "Proc. 3.5",
+    "unit_id": "§46",
+    "chunk_id": "cullen:chunk:62",
+    "book_page_start": "164",
+    "book_page_end": "165"
+  },
+  "method": {
+    "name": "generic_clause_operation_alignment_without_handwritten_steps",
+    "no_handwritten_step_specs": true,
+    "generation_rules": [
+      "split source by Chinese punctuation",
+      "split generic 置...減N clauses into set_out and subtract subclauses",
+      "split generic Set out ... and subtract ... translations into two subclauses",
+      "infer operation type from generic Chinese and English operation shapes",
+      "align source and translation by operation type plus order",
+      "infer provisional expressions from operation type and local constants",
+      "use commentary/template/audit outputs only as evidence support"
+    ],
+    "not_gold": true,
+    "do_not_writeback": true
+  },
+  "source_chunk": {
+    "source_text_zh": "推天正術， 置入蔀年減一， 以章月乘之， 滿章法得一， 名為積月， 不滿為閏餘， 十二以上, 其歲有閏．",
+    "translation_en": "§46 Set out the years into the Obscuration and subtract one. Multiply by Rule Months [235]. Count one for each Rule Factor [19] filled. Call this Accu- mulated Months. The remainder is the Intercalation Remainder. If it is 12 or more, this year has an intercalation.",
+    "commentary_excerpt": "This section and the next aim to predict the sexagenary day name of the first day of the first month of the current year according to the Celestial count. We start from the beginning of the current Obscuration, at which we are guaranteed that midnight, conjunction beginning the first Celestial month and winter solstice coin- cide. We already know (from Proc. 3.3) the sexagenary day name with which the Obscuration begins. Here we aim to find how many whole months have elapsed since the start of the Obscuration, and to predict whether the current civil year has an intercalary month or not. The first procedure deals with the fact that ‘years into the obscuration’ 入 蔀 年 means the ordinal number of year in the Obscuration. Since we want the number of years from the start of the Obscuration to the start of the current year, we have to subtract one from this number. Then we use the fact that 2…"
+  },
+  "parsed_units": {
+    "source_units": [
+      {
+        "raw_clause": "推天正術",
+        "parent_clause": "推天正術",
+        "parent_clause_index": 0,
+        "subclause_index": 0,
+        "generated_by": "source_subclause",
+        "source_unit_id": "cullen:chunk:62:auto:zh:1",
+        "unit_index": 0,
+        "operation_type": "procedure_scope_title",
+        "object_zh": "推天正術",
+        "value": null
+      },
+      {
+        "raw_clause": "置入蔀年",
+        "parent_clause": "置入蔀年減一",
+        "parent_clause_index": 1,
+        "subclause_index": 0,
+        "generated_by": "generic_split_set_then_subtract",
+        "source_unit_id": "cullen:chunk:62:auto:zh:2",
+        "unit_index": 1,
+        "operation_type": "set_out",
+        "object_zh": "入蔀年",
+        "value": null
+      },
+      {
+        "raw_clause": "減一",
+        "parent_clause": "置入蔀年減一",
+        "parent_clause_index": 1,
+        "subclause_index": 1,
+        "generated_by": "generic_split_set_then_subtract",
+        "source_unit_id": "cullen:chunk:62:auto:zh:3",
+        "unit_index": 2,
+        "operation_type": "subtract",
+        "object_zh": null,
+        "value": 1,
+        "value_raw": "一"
+      },
+      {
+        "raw_clause": "以章月乘之",
+        "parent_clause": "以章月乘之",
+        "parent_clause_index": 2,
+        "subclause_index": 0,
+        "generated_by": "source_subclause",
+        "source_unit_id": "cullen:chunk:62:auto:zh:4",
+        "unit_index": 3,
+        "operation_type": "multiply",
+        "object_zh": "章月",
+        "value": null
+      },
+      {
+        "raw_clause": "滿章法得一",
+        "parent_clause": "滿章法得一",
+        "parent_clause_index": 3,
+        "subclause_index": 0,
+        "generated_by": "source_subclause",
+        "source_unit_id": "cullen:chunk:62:auto:zh:5",
+        "unit_index": 4,
+        "operation_type": "count_filled",
+        "object_zh": "章法",
+        "value": 1
+      },
+      {
+        "raw_clause": "名為積月",
+        "parent_clause": "名為積月",
+        "parent_clause_index": 4,
+        "subclause_index": 0,
+        "generated_by": "source_subclause",
+        "source_unit_id": "cullen:chunk:62:auto:zh:6",
+        "unit_index": 5,
+        "operation_type": "name_output",
+        "object_zh": "積月",
+        "value": null
+      },
+      {
+        "raw_clause": "不滿為閏餘",
+        "parent_clause": "不滿為閏餘",
+        "parent_clause_index": 5,
+        "subclause_index": 0,
+        "generated_by": "source_subclause",
+        "source_unit_id": "cullen:chunk:62:auto:zh:7",
+        "unit_index": 6,
+        "operation_type": "remainder_output",
+        "object_zh": "閏餘",
+        "value": null
+      },
+      {
+        "raw_clause": "十二以上, 其歲有閏",
+        "parent_clause": "十二以上, 其歲有閏",
+        "parent_clause_index": 6,
+        "subclause_index": 0,
+        "generated_by": "source_subclause",
+        "source_unit_id": "cullen:chunk:62:auto:zh:8",
+        "unit_index": 7,
+        "operation_type": "threshold_condition",
+        "object_zh": "十二以上, 其歲有閏",
+        "value": 12,
+        "value_raw": "十二"
+      }
+    ],
+    "translation_units": [
+      {
+        "raw_clause": "Set out the years into the Obscuration.",
+        "parent_sentence": "§46 Set out the years into the Obscuration and subtract one.",
+        "parent_sentence_index": 0,
+        "subsentence_index": 0,
+        "generated_by": "generic_split_set_then_subtract",
+        "translation_unit_id": "cullen:chunk:62:auto:en:1",
+        "unit_index": 0,
+        "operation_type": "set_out",
+        "object_en": "the years into the Obscuration",
+        "value": null
+      },
+      {
+        "raw_clause": "subtract one.",
+        "parent_sentence": "§46 Set out the years into the Obscuration and subtract one.",
+        "parent_sentence_index": 0,
+        "subsentence_index": 1,
+        "generated_by": "generic_split_set_then_subtract",
+        "translation_unit_id": "cullen:chunk:62:auto:en:2",
+        "unit_index": 1,
+        "operation_type": "subtract",
+        "object_en": null,
+        "value": 1,
+        "value_raw": "one"
+      },
+      {
+        "raw_clause": "Multiply by Rule Months [235].",
+        "parent_sentence": "Multiply by Rule Months [235].",
+        "parent_sentence_index": 1,
+        "subsentence_index": 0,
+        "generated_by": "translation_subsentence",
+        "translation_unit_id": "cullen:chunk:62:auto:en:3",
+        "unit_index": 2,
+        "operation_type": "multiply",
+        "object_en": "Rule Months [235]",
+        "value": 235
+      },
+      {
+        "raw_clause": "Count one for each Rule Factor [19] filled.",
+        "parent_sentence": "Count one for each Rule Factor [19] filled.",
+        "parent_sentence_index": 2,
+        "subsentence_index": 0,
+        "generated_by": "translation_subsentence",
+        "translation_unit_id": "cullen:chunk:62:auto:en:4",
+        "unit_index": 3,
+        "operation_type": "count_filled",
+        "object_en": "Rule Factor [19]",
+        "value": 19
+      },
+      {
+        "raw_clause": "Call this Accumulated Months.",
+        "parent_sentence": "Call this Accumulated Months.",
+        "parent_sentence_index": 3,
+        "subsentence_index": 0,
+        "generated_by": "translation_subsentence",
+        "translation_unit_id": "cullen:chunk:62:auto:en:5",
+        "unit_index": 4,
+        "operation_type": "name_output",
+        "object_en": "Accumulated Months",
+        "value": null
+      },
+      {
+        "raw_clause": "The remainder is the Intercalation Remainder.",
+        "parent_sentence": "The remainder is the Intercalation Remainder.",
+        "parent_sentence_index": 4,
+        "subsentence_index": 0,
+        "generated_by": "translation_subsentence",
+        "translation_unit_id": "cullen:chunk:62:auto:en:6",
+        "unit_index": 5,
+        "operation_type": "remainder_output",
+        "object_en": "the Intercalation Remainder",
+        "value": null
+      },
+      {
+        "raw_clause": "If it is 12 or more, this year has an intercalation.",
+        "parent_sentence": "If it is 12 or more, this year has an intercalation.",
+        "parent_sentence_index": 5,
+        "subsentence_index": 0,
+        "generated_by": "translation_subsentence",
+        "translation_unit_id": "cullen:chunk:62:auto:en:7",
+        "unit_index": 6,
+        "operation_type": "threshold_condition",
+        "object_en": "If it is 12 or more, this year has an intercalation",
+        "value": 12
+      }
+    ]
+  },
+  "summary": {
+    "target_proc_id": "Proc. 3.5",
+    "target_unit_id": "§46",
+    "source_unit_count": 8,
+    "translation_unit_count": 7,
+    "candidate_count": 8,
+    "aligned_candidate_count": 7,
+    "unmatched_source_count": 0,
+    "unmatched_translation_count": 0,
+    "confidence_counts": {
+      "high": 7,
+      "medium": 0,
+      "low": 1
+    },
+    "operation_counts": {
+      "procedure_scope_title": 1,
+      "set_out": 1,
+      "subtract": 1,
+      "multiply": 1,
+      "count_filled": 1,
+      "name_output": 1,
+      "remainder_output": 1,
+      "threshold_condition": 1
+    },
+    "arithmetic_validation_ready_now": false,
+    "automation_verdict": "automatic_trial_partially_successful_but_requires_human_review",
+    "main_limitation": "Automatic rules can recover the local operation sequence, but semantic variable names and quotient/remainder formalization remain caveated."
+  },
+  "auto_candidates": [
+    {
+      "candidate_id": "Proc. 3.5.auto.1",
+      "source_unit": {
+        "source_unit_id": "cullen:chunk:62:auto:zh:1",
+        "raw_clause": "推天正術",
+        "parent_clause": "推天正術",
+        "operation_type": "procedure_scope_title",
+        "object_zh": "推天正術",
+        "value": null
+      },
+      "translation_unit": null,
+      "inferred_operation_id": "procedure_scope_title",
+      "alignment_status": "source_scope_only",
+      "alignment_method": "generic_title_detection",
+      "alignment_score": 0.55,
+      "matched_features": [
+        "source_matches_^推.+術$"
+      ],
+      "commentary_support": [],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "formal_expression_candidate": null,
+      "formalization_status": "not_formalizable_yet",
+      "bindings": [],
+      "evidence_score": 0.18,
+      "confidence": "low",
+      "caveats": [
+        "not_aligned",
+        "no_commentary_sentence_matched_by_keywords",
+        "no_same_chunk_template_support",
+        "not_formalizable_yet"
+      ],
+      "generated_without_handwritten_step_spec": true,
+      "do_not_writeback": true
+    },
+    {
+      "candidate_id": "Proc. 3.5.auto.2",
+      "source_unit": {
+        "source_unit_id": "cullen:chunk:62:auto:zh:2",
+        "raw_clause": "置入蔀年",
+        "parent_clause": "置入蔀年減一",
+        "operation_type": "set_out",
+        "object_zh": "入蔀年",
+        "value": null
+      },
+      "translation_unit": {
+        "translation_unit_id": "cullen:chunk:62:auto:en:1",
+        "raw_clause": "Set out the years into the Obscuration.",
+        "parent_sentence": "§46 Set out the years into the Obscuration and subtract one.",
+        "operation_type": "set_out",
+        "object_en": "the years into the Obscuration",
+        "value": null
+      },
+      "inferred_operation_id": "set_out",
+      "alignment_status": "aligned",
+      "alignment_method": "generic_operation_type_and_order",
+      "alignment_score": 95,
+      "matched_features": [
+        "same_operation_type",
+        "preserves_order",
+        "order_distance_0",
+        "set_out_object_match_obscuration_years"
+      ],
+      "commentary_support": [
+        {
+          "sentence": "The first procedure deals with the fact that ‘years into the obscuration’ 入 蔀 年 means the ordinal number of year in the Obscuration.",
+          "matched_keywords": [
+            "Obscuration",
+            "obscuration",
+            "years into the obscuration",
+            "ordinal number of year in the Obscuration"
+          ]
+        },
+        {
+          "sentence": "We start from the beginning of the current Obscuration, at which we are guaranteed that midnight, conjunction beginning the first Celestial month and winter solstice coincide.",
+          "matched_keywords": [
+            "Obscuration",
+            "obscuration"
+          ]
+        },
+        {
+          "sentence": "3.3) the sexagenary day name with which the Obscuration begins.",
+          "matched_keywords": [
+            "Obscuration",
+            "obscuration"
+          ]
+        }
+      ],
+      "template_support": [],
+      "candidate_audit_support": [
+        {
+          "candidate_id": "profile_seed:置X_Set_out_X",
+          "candidate_type": "profile_pattern_seed",
+          "status": "weak_candidate",
+          "overall_score": 0.574,
+          "failed_checks": [
+            "profile_seed_not_clause_aligned"
+          ]
+        }
+      ],
+      "formal_expression_candidate": "current_value = input(\"入蔀年\")",
+      "formalization_status": "formalizable_with_caveat",
+      "bindings": [
+        {
+          "role": "input",
+          "source_object_zh": "入蔀年",
+          "translation_object_en": "the years into the Obscuration"
+        }
+      ],
+      "evidence_score": 0.888,
+      "confidence": "high",
+      "caveats": [
+        "no_same_chunk_template_support",
+        "formalizable_with_caveat"
+      ],
+      "generated_without_handwritten_step_spec": true,
+      "do_not_writeback": true
+    },
+    {
+      "candidate_id": "Proc. 3.5.auto.3",
+      "source_unit": {
+        "source_unit_id": "cullen:chunk:62:auto:zh:3",
+        "raw_clause": "減一",
+        "parent_clause": "置入蔀年減一",
+        "operation_type": "subtract",
+        "object_zh": null,
+        "value": 1
+      },
+      "translation_unit": {
+        "translation_unit_id": "cullen:chunk:62:auto:en:2",
+        "raw_clause": "subtract one.",
+        "parent_sentence": "§46 Set out the years into the Obscuration and subtract one.",
+        "operation_type": "subtract",
+        "object_en": null,
+        "value": 1
+      },
+      "inferred_operation_id": "subtract",
+      "alignment_status": "aligned",
+      "alignment_method": "generic_operation_type_and_order",
+      "alignment_score": 97,
+      "matched_features": [
+        "same_operation_type",
+        "preserves_order",
+        "order_distance_0",
+        "numeric_value_match"
+      ],
+      "commentary_support": [
+        {
+          "sentence": "Since we want the number of years from the start of the Obscuration to the start of the current year, we have to subtract one from this number.",
+          "matched_keywords": [
+            "subtract one",
+            "subtract one from this number"
+          ]
+        },
+        {
+          "sentence": "Then we use the fact that 235 months are exactly equivalent to 19 years to find how many whole months have elapsed since the start of the Obscuration.",
+          "matched_keywords": [
+            "1"
+          ]
+        },
+        {
+          "sentence": "The remainder will be a fraction of a month at a scale of Rule Factor [19].",
+          "matched_keywords": [
+            "1"
+          ]
+        }
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "formal_expression_candidate": "current_value = current_value - 1",
+      "formalization_status": "formalizable_now",
+      "bindings": [
+        {
+          "role": "constant",
+          "value": 1,
+          "source_value_raw": "一",
+          "translation_value_raw": "one"
+        }
+      ],
+      "evidence_score": 0.833,
+      "confidence": "high",
+      "caveats": [
+        "no_same_chunk_template_support"
+      ],
+      "generated_without_handwritten_step_spec": true,
+      "do_not_writeback": true
+    },
+    {
+      "candidate_id": "Proc. 3.5.auto.4",
+      "source_unit": {
+        "source_unit_id": "cullen:chunk:62:auto:zh:4",
+        "raw_clause": "以章月乘之",
+        "parent_clause": "以章月乘之",
+        "operation_type": "multiply",
+        "object_zh": "章月",
+        "value": null
+      },
+      "translation_unit": {
+        "translation_unit_id": "cullen:chunk:62:auto:en:3",
+        "raw_clause": "Multiply by Rule Months [235].",
+        "parent_sentence": "Multiply by Rule Months [235].",
+        "operation_type": "multiply",
+        "object_en": "Rule Months [235]",
+        "value": 235
+      },
+      "inferred_operation_id": "multiply",
+      "alignment_status": "aligned",
+      "alignment_method": "generic_operation_type_and_order",
+      "alignment_score": 87,
+      "matched_features": [
+        "same_operation_type",
+        "preserves_order",
+        "order_distance_0"
+      ],
+      "commentary_support": [
+        {
+          "sentence": "Then we use the fact that 235 months are exactly equivalent to 19 years to find how many whole months have elapsed since the start of the Obscuration.",
+          "matched_keywords": [
+            "235",
+            "months",
+            "235",
+            "235 months",
+            "whole months have elapsed"
+          ]
+        },
+        {
+          "sentence": "Here we aim to find how many whole months have elapsed since the start of the Obscuration, and to predict whether the current civil year has an intercalary month or not.",
+          "matched_keywords": [
+            "months",
+            "whole months have elapsed"
+          ]
+        },
+        {
+          "sentence": "Now since 235/19 is 12 + 7/19, it is clear that by the end of the year we are now starting the Intercalation Remainder will have increased by 7.",
+          "matched_keywords": [
+            "235",
+            "235"
+          ]
+        }
+      ],
+      "template_support": [
+        {
+          "zh_template": "以[OBJECT]乘之",
+          "en_template": "Multiply [OBJECT] by [OBJECT]",
+          "count": 7,
+          "distinct_chunks": 7,
+          "best_alignment_strength": "targeted_prespecified_same_unit",
+          "source_text_zh_clause": "以章月乘之",
+          "translation_en_clause": "Multiply by Rule Months [235]."
+        }
+      ],
+      "candidate_audit_support": [
+        {
+          "candidate_id": "operation_template_pair:以乘之__Multiply_by",
+          "candidate_type": "operation_template_pair",
+          "status": "medium_candidate_needs_human_confirmation",
+          "overall_score": 0.7144,
+          "failed_checks": [
+            "weak_or_ambiguous_alignment",
+            "overgeneral_template"
+          ]
+        },
+        {
+          "candidate_id": "profile_seed:以X乘之_Multiply_by_X",
+          "candidate_type": "profile_pattern_seed",
+          "status": "medium_candidate_needs_human_confirmation",
+          "overall_score": 0.6231,
+          "failed_checks": [
+            "profile_seed_not_clause_aligned"
+          ]
+        }
+      ],
+      "formal_expression_candidate": "current_value = current_value * Rule Months [235]",
+      "formalization_status": "formalizable_now",
+      "bindings": [
+        {
+          "role": "multiplier",
+          "source_object_zh": "章月",
+          "translation_object_en": "Rule Months [235]",
+          "value": 235
+        }
+      ],
+      "evidence_score": 0.969,
+      "confidence": "high",
+      "caveats": [],
+      "generated_without_handwritten_step_spec": true,
+      "do_not_writeback": true
+    },
+    {
+      "candidate_id": "Proc. 3.5.auto.5",
+      "source_unit": {
+        "source_unit_id": "cullen:chunk:62:auto:zh:5",
+        "raw_clause": "滿章法得一",
+        "parent_clause": "滿章法得一",
+        "operation_type": "count_filled",
+        "object_zh": "章法",
+        "value": 1
+      },
+      "translation_unit": {
+        "translation_unit_id": "cullen:chunk:62:auto:en:4",
+        "raw_clause": "Count one for each Rule Factor [19] filled.",
+        "parent_sentence": "Count one for each Rule Factor [19] filled.",
+        "operation_type": "count_filled",
+        "object_en": "Rule Factor [19]",
+        "value": 19
+      },
+      "inferred_operation_id": "count_filled",
+      "alignment_status": "aligned",
+      "alignment_method": "generic_operation_type_and_order",
+      "alignment_score": 87,
+      "matched_features": [
+        "same_operation_type",
+        "preserves_order",
+        "order_distance_0"
+      ],
+      "commentary_support": [
+        {
+          "sentence": "The remainder will be a fraction of a month at a scale of Rule Factor [19].",
+          "matched_keywords": [
+            "19",
+            "Rule Factor",
+            "rule",
+            "factor",
+            "Rule Factor [19]",
+            "19",
+            "Rule Factor",
+            "scale of Rule Factor"
+          ]
+        },
+        {
+          "sentence": "This condition recurs at the beginning of the next Rule 19 years later, but the conjunction with which the first winter solstice of that Rule coincides is seven later than the one that would have been indicated if winter solstices were separated by exactly 12 lunations each.",
+          "matched_keywords": [
+            "19",
+            "rule",
+            "19"
+          ]
+        },
+        {
+          "sentence": "Then we use the fact that 235 months are exactly equivalent to 19 years to find how many whole months have elapsed since the start of the Obscuration.",
+          "matched_keywords": [
+            "19",
+            "19"
+          ]
+        }
+      ],
+      "template_support": [],
+      "candidate_audit_support": [
+        {
+          "candidate_id": "profile_seed:滿X得一_如X得一_Count_one_for_each_X_filled",
+          "candidate_type": "profile_pattern_seed",
+          "status": "medium_candidate_needs_human_confirmation",
+          "overall_score": 0.6804,
+          "failed_checks": [
+            "profile_seed_not_clause_aligned"
+          ]
+        }
+      ],
+      "formal_expression_candidate": "quotient = floor(current_value / Rule Factor [19])",
+      "formalization_status": "formalizable_with_caveat",
+      "bindings": [
+        {
+          "role": "divisor_or_count_unit",
+          "source_object_zh": "章法",
+          "translation_object_en": "Rule Factor [19]",
+          "value": 19
+        }
+      ],
+      "evidence_score": 0.869,
+      "confidence": "high",
+      "caveats": [
+        "no_same_chunk_template_support",
+        "formalizable_with_caveat",
+        "counting_filled_as_floor_division_is_modern_formalization"
+      ],
+      "generated_without_handwritten_step_spec": true,
+      "do_not_writeback": true
+    },
+    {
+      "candidate_id": "Proc. 3.5.auto.6",
+      "source_unit": {
+        "source_unit_id": "cullen:chunk:62:auto:zh:6",
+        "raw_clause": "名為積月",
+        "parent_clause": "名為積月",
+        "operation_type": "name_output",
+        "object_zh": "積月",
+        "value": null
+      },
+      "translation_unit": {
+        "translation_unit_id": "cullen:chunk:62:auto:en:5",
+        "raw_clause": "Call this Accumulated Months.",
+        "parent_sentence": "Call this Accumulated Months.",
+        "operation_type": "name_output",
+        "object_en": "Accumulated Months",
+        "value": null
+      },
+      "inferred_operation_id": "name_output",
+      "alignment_status": "aligned",
+      "alignment_method": "generic_operation_type_and_order",
+      "alignment_score": 87,
+      "matched_features": [
+        "same_operation_type",
+        "preserves_order",
+        "order_distance_0"
+      ],
+      "commentary_support": [
+        {
+          "sentence": "Here we aim to find how many whole months have elapsed since the start of the Obscuration, and to predict whether the current civil year has an intercalary month or not.",
+          "matched_keywords": [
+            "months",
+            "whole months have elapsed"
+          ]
+        },
+        {
+          "sentence": "Then we use the fact that 235 months are exactly equivalent to 19 years to find how many whole months have elapsed since the start of the Obscuration.",
+          "matched_keywords": [
+            "months",
+            "whole months have elapsed"
+          ]
+        }
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "formal_expression_candidate": "積月 = quotient",
+      "formalization_status": "formalizable_with_caveat",
+      "bindings": [
+        {
+          "role": "named_output",
+          "source_object_zh": "積月",
+          "translation_object_en": "Accumulated Months"
+        }
+      ],
+      "evidence_score": 0.809,
+      "confidence": "high",
+      "caveats": [
+        "no_same_chunk_template_support",
+        "formalizable_with_caveat"
+      ],
+      "generated_without_handwritten_step_spec": true,
+      "do_not_writeback": true
+    },
+    {
+      "candidate_id": "Proc. 3.5.auto.7",
+      "source_unit": {
+        "source_unit_id": "cullen:chunk:62:auto:zh:7",
+        "raw_clause": "不滿為閏餘",
+        "parent_clause": "不滿為閏餘",
+        "operation_type": "remainder_output",
+        "object_zh": "閏餘",
+        "value": null
+      },
+      "translation_unit": {
+        "translation_unit_id": "cullen:chunk:62:auto:en:6",
+        "raw_clause": "The remainder is the Intercalation Remainder.",
+        "parent_sentence": "The remainder is the Intercalation Remainder.",
+        "operation_type": "remainder_output",
+        "object_en": "the Intercalation Remainder",
+        "value": null
+      },
+      "inferred_operation_id": "remainder_output",
+      "alignment_status": "aligned",
+      "alignment_method": "generic_operation_type_and_order",
+      "alignment_score": 87,
+      "matched_features": [
+        "same_operation_type",
+        "preserves_order",
+        "order_distance_0"
+      ],
+      "commentary_support": [
+        {
+          "sentence": "This is the Intercalation Remainder, and may be taken as the pending fraction of a new intercalary month representing the amount by which the start of the new year is in advance of its ideal date, which should coincide with winter solstice.",
+          "matched_keywords": [
+            "Intercalation Remainder",
+            "intercalation",
+            "the Intercalation Remainder",
+            "the Intercalation Remainder",
+            "This is the Intercalation Remainder"
+          ]
+        },
+        {
+          "sentence": "Now since 235/19 is 12 + 7/19, it is clear that by the end of the year we are now starting the Intercalation Remainder will have increased by 7.",
+          "matched_keywords": [
+            "Intercalation Remainder",
+            "intercalation",
+            "the Intercalation Remainder",
+            "the Intercalation Remainder"
+          ]
+        },
+        {
+          "sentence": "The Intercalation Remainder will also be useful in later calculations.",
+          "matched_keywords": [
+            "Intercalation Remainder",
+            "intercalation",
+            "the Intercalation Remainder",
+            "the Intercalation Remainder"
+          ]
+        }
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "formal_expression_candidate": "閏餘 = current_value mod Rule Factor [19]",
+      "formalization_status": "formalizable_with_caveat",
+      "bindings": [
+        {
+          "role": "named_remainder",
+          "source_object_zh": "閏餘",
+          "translation_object_en": "the Intercalation Remainder",
+          "divisor": "Rule Factor [19]",
+          "divisor_value": 19
+        }
+      ],
+      "evidence_score": 0.809,
+      "confidence": "high",
+      "caveats": [
+        "no_same_chunk_template_support",
+        "formalizable_with_caveat",
+        "remainder_as_modulo_depends_on_previous_count_filled_step"
+      ],
+      "generated_without_handwritten_step_spec": true,
+      "do_not_writeback": true
+    },
+    {
+      "candidate_id": "Proc. 3.5.auto.8",
+      "source_unit": {
+        "source_unit_id": "cullen:chunk:62:auto:zh:8",
+        "raw_clause": "十二以上, 其歲有閏",
+        "parent_clause": "十二以上, 其歲有閏",
+        "operation_type": "threshold_condition",
+        "object_zh": "十二以上, 其歲有閏",
+        "value": 12
+      },
+      "translation_unit": {
+        "translation_unit_id": "cullen:chunk:62:auto:en:7",
+        "raw_clause": "If it is 12 or more, this year has an intercalation.",
+        "parent_sentence": "If it is 12 or more, this year has an intercalation.",
+        "operation_type": "threshold_condition",
+        "object_en": "If it is 12 or more, this year has an intercalation",
+        "value": 12
+      },
+      "inferred_operation_id": "threshold_condition",
+      "alignment_status": "aligned",
+      "alignment_method": "generic_operation_type_and_order",
+      "alignment_score": 97,
+      "matched_features": [
+        "same_operation_type",
+        "preserves_order",
+        "order_distance_0",
+        "numeric_value_match"
+      ],
+      "commentary_support": [
+        {
+          "sentence": "So if at the start of the current year this Remainder is 12 or more, the Remainder will at least have reached 19 by the end of the year, calling for a delay of a whole month before the next year starts – which requires an intercalary month to be inserted in the current year, as stated.",
+          "matched_keywords": [
+            "12",
+            "12 or more",
+            "intercalary month",
+            "Remainder is 12 or more"
+          ]
+        },
+        {
+          "sentence": "This is the Intercalation Remainder, and may be taken as the pending fraction of a new intercalary month representing the amount by which the start of the new year is in advance of its ideal date, which should coincide with winter solstice.",
+          "matched_keywords": [
+            "intercalation",
+            "intercalary month"
+          ]
+        },
+        {
+          "sentence": "Now since 235/19 is 12 + 7/19, it is clear that by the end of the year we are now starting the Intercalation Remainder will have increased by 7.",
+          "matched_keywords": [
+            "intercalation",
+            "12"
+          ]
+        }
+      ],
+      "template_support": [],
+      "candidate_audit_support": [],
+      "formal_expression_candidate": "condition = 閏餘 >= 12",
+      "formalization_status": "formalizable_now",
+      "bindings": [
+        {
+          "role": "threshold",
+          "value": 12,
+          "source_value_raw": "十二",
+          "condition_target": "閏餘"
+        }
+      ],
+      "evidence_score": 0.833,
+      "confidence": "high",
+      "caveats": [
+        "no_same_chunk_template_support"
+      ],
+      "generated_without_handwritten_step_spec": true,
+      "do_not_writeback": true
+    }
+  ],
+  "existing_exploratory_alignment": {
+    "found": true,
+    "source_clause_count": 7,
+    "translation_clause_count": 6,
+    "alignment_count": 6,
+    "high_count": 1,
+    "medium_count": 2,
+    "low_count": 3,
+    "note": "Existing exploratory alignment is recorded for comparison only; it is not used as binding authority by this automatic trial.",
+    "preview_non_high": [
+      {
+        "source_text_zh_clauses": [
+          "推天正術"
+        ],
+        "translation_en_clauses": [
+          "§46 Set out the years into the Obscuration and subtract one."
+        ],
+        "confidence": "low",
+        "score": 46
+      },
+      {
+        "source_text_zh_clauses": [
+          "置入蔀年減一"
+        ],
+        "translation_en_clauses": [
+          "Multiply by Rule Months [235]."
+        ],
+        "confidence": "medium",
+        "score": 53
+      },
+      {
+        "source_text_zh_clauses": [
+          "以章月乘之"
+        ],
+        "translation_en_clauses": [
+          "Count one for each Rule Factor [19] filled."
+        ],
+        "confidence": "low",
+        "score": 45
+      },
+      {
+        "source_text_zh_clauses": [
+          "滿章法得一"
+        ],
+        "translation_en_clauses": [
+          "Call this Accu- mulated Months."
+        ],
+        "confidence": "low",
+        "score": 44
+      },
+      {
+        "source_text_zh_clauses": [
+          "名為積月"
+        ],
+        "translation_en_clauses": [
+          "The remainder is the Intercalation Remainder."
+        ],
+        "confidence": "medium",
+        "score": 54
+      }
+    ]
+  },
+  "conclusion": {
+    "did_script_derive_steps_automatically": true,
+    "did_script_use_curated_step_specs": false,
+    "strongest_result": "The generic operation recognizers align the main sequence: set out, subtract, multiply, count filled, name quotient, name remainder, threshold condition.",
+    "weakest_result": "The generated expressions are intentionally generic and require human review for stable variables and modern floor/modulo interpretation.",
+    "suitable_next_use": "Use as an automated first-pass proposal for a human-reviewed Proc reconstruction sheet."
+  },
+  "do_not_writeback": true
+}

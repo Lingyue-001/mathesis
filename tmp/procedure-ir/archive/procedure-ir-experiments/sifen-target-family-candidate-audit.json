@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-21T23:57:48.619Z",
+  "input": "config/sifen-target-family-gold.candidate.json",
+  "counts": {
+    "target_span_count": 9,
+    "with_candidate_expected_family": 9,
+    "with_accepted_candidate_claims": 6,
+    "with_noisy_claims": 8,
+    "requiring_human_review": 9,
+    "top_noisy_display_limit": 3,
+    "generic_term_only_candidate_count": 0,
+    "strong_candidate_count": 25,
+    "medium_candidate_count": 0,
+    "weak_candidate_count": 24,
+    "generic_only_candidate_count": 0,
+    "accepted_candidate_claim_count": 25,
+    "omitted_noisy_candidate_count": 26
+  },
+  "no_final_gold_marked": true,
+  "forbidden_gold_markers_found": []
+}

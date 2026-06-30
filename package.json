@@ -26,6 +26,7 @@
     "query:cullen-page": "node scripts/query-cullen-page.mjs",
     "query:cullen-proc": "node scripts/query-cullen-proc.mjs",
     "query:cullen-source": "node scripts/query-cullen-source.mjs",
+    "build:cullen-pattern-index": "node scripts/build-cullen-pattern-index.mjs",
     "build:procedure-ir": "node scripts/build-procedure-ir.mjs",
     "build:ctext-cache": "node scripts/build-ctext-cache.mjs",
     "promote:ctext-cache": "node scripts/build-ctext-cache.mjs --promote tmp/ctext-static-build/ctext-cache.candidate.json",

@@ -11,24 +11,52 @@
 
 
 </head>
-<body{% if page.url == "/" %} class="home-floating-nav"{% endif %}>
+<body>
 
-<!-- Logo Header + Navigation -->
-<header class="site-header">
-  <div class="logo-container">
-    <img src="{{ '/assets/logo.png' | url }}" class="logo-icon" width="50" height="50" loading="eager" decoding="async" />
-    <img src="{{ '/assets/logotype.svg' | url }}" class="letter-logo" width="140" height="32" loading="eager" decoding="async" />
-  </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("homeMenuToggle");
+    const panel = document.getElementById("homeSideNav");
+    const backdrop = document.getElementById("homeNavBackdrop");
+    if (!toggle || !panel || !backdrop) return;
 
-  <nav class="site-nav">
-    <a href="{{ '/' | url }}">Home</a>
-    <a href="{{ '/search/' | url }}">Search</a>
-    <a href="{{ '/transcriptions/' | url }}">Transcriptions</a>
-    <a href="{{ '/visualization/' | url }}">Visualization</a>
-    <a href="{{ '/map/' | url }}">Map</a>
-    <a href="{{ '/about/' | url }}">About</a>
-  </nav>
-</header>
+    const close = () => {
+      panel.classList.remove("open");
+      backdrop.classList.remove("open");
+      backdrop.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "☰";
+    };
+    const open = () => {
+      panel.classList.add("open");
+      backdrop.hidden = false;
+      requestAnimationFrame(() => backdrop.classList.add("open"));
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.textContent = "×";
+    };
+
+    toggle.addEventListener("click", () => panel.classList.contains("open") ? close() : open());
+    backdrop.addEventListener("click", close);
+    panel.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") close();
+    });
+  });
+</script>
+
+<button id="homeMenuToggle" class="home-menu-toggle" type="button" aria-label="Open navigation"
+  aria-controls="homeSideNav" aria-expanded="false">☰</button>
+<div id="homeNavBackdrop" class="home-nav-backdrop" hidden></div>
+<nav id="homeSideNav" class="home-side-nav" aria-label="Primary">
+  <a href="{{ '/' | url }}">Home</a>
+  <a href="{{ '/search/' | url }}">Search</a>
+  <a href="{{ '/patterns/' | url }}">Pattern Lab</a>
+  <a href="{{ '/relation-atlas/' | url }}">Visual Grammar</a>
+  <a href="{{ '/transcriptions/' | url }}">Transcriptions</a>
+  <a href="{{ '/visualization/' | url }}">Visualization</a>
+  <a href="{{ '/map/' | url }}">Map</a>
+  <a href="{{ '/about/' | url }}">About</a>
+</nav>
 
 
   <main>

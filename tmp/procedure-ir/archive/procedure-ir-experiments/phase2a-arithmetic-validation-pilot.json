@@ -1,0 +1,240 @@
+{
+  "generated_at": "2026-06-23T09:07:38.772Z",
+  "stage": "phase2a_arithmetic_validation_pilot",
+  "source_whitelist_step_ids": [
+    "Proc.2.3.step.1",
+    "Proc.2.3.step.2",
+    "Proc.2.3.step.4",
+    "Proc.2.3.step.6",
+    "Proc.2.3.step.8",
+    "Proc.2.9.step.1"
+  ],
+  "results": [
+    {
+      "step_id": "Proc.2.3.step.1",
+      "expression": "24 * 2392 = 57408",
+      "input_values": {
+        "accumulated_months": 24,
+        "lunation_factor": 2392
+      },
+      "expected_result": {
+        "product": 57408
+      },
+      "computed_result": {
+        "product": 57408
+      },
+      "cullen_backup": "24 × 2392 = 57,408.",
+      "notes": "Direct Cullen worked-example multiplication.",
+      "pass": true
+    },
+    {
+      "step_id": "Proc.2.3.step.2",
+      "expression": "floor(57408 / 81) = 708",
+      "input_values": {
+        "product": 57408,
+        "day_factor": 81
+      },
+      "expected_result": {
+        "accumulated_days": 708
+      },
+      "computed_result": {
+        "accumulated_days": 708
+      },
+      "cullen_backup": "57,408/81 = 708 remainder 60.",
+      "notes": "Quotient component of the Cullen worked example.",
+      "pass": true
+    },
+    {
+      "step_id": "Proc.2.3.step.2",
+      "expression": "57408 mod 81 = 60",
+      "input_values": {
+        "product": 57408,
+        "day_factor": 81
+      },
+      "expected_result": {
+        "lesser_remainder": 60
+      },
+      "computed_result": {
+        "lesser_remainder": 60
+      },
+      "cullen_backup": "57,408/81 = 708 remainder 60.",
+      "notes": "Remainder component of the Cullen worked example.",
+      "pass": true
+    },
+    {
+      "step_id": "Proc.2.3.step.4",
+      "expression": "708 mod 60 = 48",
+      "input_values": {
+        "accumulated_days": 708,
+        "sexagenary_cycle": 60
+      },
+      "expected_result": {
+        "greater_remainder": 48
+      },
+      "computed_result": {
+        "greater_remainder": 48
+      },
+      "cullen_backup": "708/60 = 11 remainder 48.",
+      "notes": "Greater-remainder cast-out from Cullen's worked example.",
+      "pass": true
+    },
+    {
+      "step_id": "Proc.2.3.step.6",
+      "expression": "2392 = 29 * 81 + 43",
+      "input_values": {
+        "lunation_factor": 2392,
+        "day_factor": 81
+      },
+      "expected_result": {
+        "quotient": 29,
+        "remainder": 43
+      },
+      "computed_result": {
+        "quotient": 29,
+        "remainder": 43
+      },
+      "cullen_backup": "Since the mean interval between conjunctions will be 2392/81 days = 29 + 43/81 days it is clear that 29 and 43 are the amounts we must add to the Greater and Lesser Remainders to get to the next conjunction.",
+      "notes": "Very explicit B-level commentary relation supporting the 29/43 increment pair.",
+      "pass": true
+    },
+    {
+      "step_id": "Proc.2.3.step.8",
+      "expression": "2392 / 4 = 598",
+      "input_values": {
+        "lunation_factor": 2392,
+        "divisor": 4
+      },
+      "expected_result": {
+        "quarter_factor": 598
+      },
+      "computed_result": {
+        "quarter_factor": 598
+      },
+      "cullen_backup": "2392/4 = 598 and 598/81 = 7 remainder 31.",
+      "notes": "First-quarter factor from Cullen's worked example.",
+      "pass": true
+    },
+    {
+      "step_id": "Proc.2.3.step.8",
+      "expression": "598 = 7 * 81 + 31",
+      "input_values": {
+        "quarter_factor": 598,
+        "day_factor": 81
+      },
+      "expected_result": {
+        "quotient": 7,
+        "remainder": 31
+      },
+      "computed_result": {
+        "quotient": 7,
+        "remainder": 31
+      },
+      "cullen_backup": "2392/4 = 598 and 598/81 = 7 remainder 31.",
+      "notes": "Worked-example decomposition behind the 7/31 first-quarter increment.",
+      "pass": true
+    },
+    {
+      "step_id": "Proc.2.9.step.1",
+      "expression": "19 * 81 = 1539",
+      "input_values": {
+        "rule_years": 19,
+        "day_factor": 81
+      },
+      "expected_result": {
+        "concordance_factor": 1539
+      },
+      "computed_result": {
+        "concordance_factor": 1539
+      },
+      "cullen_backup": "Multiplying this by 19 converts to a scale of 19 × 81 = 1539, the Concordance Factor, used for fractions of a du.",
+      "notes": "Very explicit B-level commentary relation for scale conversion.",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "total_results": 8,
+    "all_pass": true
+  },
+  "excluded_from_auto_run": [
+    {
+      "step_id": "Proc.2.3.step.3",
+      "reason": "needs_cullen_page_check: current allowed inputs do not fully reconcile source threshold 38 with Cullen's 43/carry explanation, so keep out of arithmetic validation."
+    },
+    {
+      "step_id": "Proc.2.3.step.5",
+      "reason": "Counting-outside convention is explicitly excluded from run-now arithmetic validation."
+    },
+    {
+      "step_id": "Proc.2.3.step.7",
+      "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+    },
+    {
+      "step_id": "Proc.2.3.step.9",
+      "reason": "Only C-level translation backup is present, so this step must be downgraded from clean formalizable_now and excluded from run-now validation."
+    },
+    {
+      "step_id": "Proc.2.4.step.1",
+      "reason": "Although the multiplication itself is clear, Proc. 2.4 remains under a source/Cullen discrepancy and is not admitted to the run-now whitelist in this round."
+    },
+    {
+      "step_id": "Proc.2.4.step.2a",
+      "reason": "Source/Cullen discrepancy blocks deterministic arithmetic formalization."
+    },
+    {
+      "step_id": "Proc.2.4.step.2b",
+      "reason": "Worked-example arithmetic exists, but this round keeps all Proc. 2.4 steps out of run-now because the discrepancy and off-by-one naming risk remain open."
+    },
+    {
+      "step_id": "Proc.2.4.step.3",
+      "reason": "Counting-outside convention is excluded from arithmetic auto-run."
+    },
+    {
+      "step_id": "Proc.2.4.step.4",
+      "reason": "Calendrical placement logic still requires human review and discrepancy resolution."
+    },
+    {
+      "step_id": "Proc.2.5.step.1",
+      "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+    },
+    {
+      "step_id": "Proc.2.5.step.2",
+      "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+    },
+    {
+      "step_id": "Proc.2.5.step.3",
+      "reason": "As instructed, 如法 counting remains excluded from run-now arithmetic validation."
+    },
+    {
+      "step_id": "Proc.2.9.step.2",
+      "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+    },
+    {
+      "step_id": "Proc.2.9.step.3",
+      "reason": "Borrow bookkeeping is explicitly excluded from run-now arithmetic validation."
+    },
+    {
+      "step_id": "Proc.3.2.step.1",
+      "reason": "Proc. 3.2 is benchmark only and must not be promoted into the Santong run-now whitelist."
+    },
+    {
+      "step_id": "Proc.3.2.step.2",
+      "reason": "Proc. 3.2 is benchmark only and must not be promoted into the Santong run-now whitelist."
+    },
+    {
+      "step_id": "Proc.3.2.step.3",
+      "reason": "Proc. 3.2 remains benchmark only; C-level backup also blocks auto-run."
+    },
+    {
+      "step_id": "Proc.3.2.step.4",
+      "reason": "Benchmark-only table/counting convention remains human review."
+    },
+    {
+      "step_id": "Proc.3.2.step.5",
+      "reason": "Benchmark-only table/counting convention remains human review."
+    },
+    {
+      "step_id": "Proc.3.2.step.6",
+      "reason": "Benchmark-only labeling/counting convention remains human review."
+    }
+  ]
+}

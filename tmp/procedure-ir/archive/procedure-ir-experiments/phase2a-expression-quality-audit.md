@@ -1,0 +1,78 @@
+# Phase 2A-2 Expression Quality Audit
+
+## Summary
+
+- total_entries: 26
+- A/B backup entries: 19
+- C/D backup entries: 7
+- formalizable_now: 12
+- formalizable_with_caveat: 9
+- not_formalizable_yet: 1
+- needs_human_review: 4
+
+## A/B Backup
+
+- Proc.2.3.step.1 | A_worked_example_formula | multiply_accumulated_months_by_lunation_factor
+- Proc.2.3.step.2 | A_worked_example_formula | divide_product_by_day_factor_to_get_accumulated_days_and_lesser_remainder
+- Proc.2.3.step.3 | B_commentary_explicit_relation | classify_long_month_from_lesser_remainder_threshold
+- Proc.2.3.step.4 | A_worked_example_formula | cast_out_sixty_from_accumulated_days_to_get_greater_remainder
+- Proc.2.3.step.5 | B_commentary_explicit_relation | count_outside_from_concordance_head_to_conjunction_day
+- Proc.2.3.step.6 | B_commentary_explicit_relation | advance_remainder_pair_to_next_month
+- Proc.2.3.step.7 | B_commentary_explicit_relation | carry_lesser_remainder_into_greater_remainder_for_next_month
+- Proc.2.3.step.8 | A_worked_example_formula | advance_remainder_pair_to_first_quarter
+- Proc.2.4.step.1 | A_worked_example_formula | rescale_intercalation_surplus_by_twelve
+- Proc.2.4.step.2b | A_worked_example_formula | compute_number_of_sevens_needed_to_cross_rule_medial_qi_cycle
+- Proc.2.4.step.3 | B_commentary_explicit_relation | map_overflow_step_count_to_medial_qi_outside_the_count
+- Proc.2.4.step.4 | B_commentary_explicit_relation | classify_preceding_month_as_intercalary_from_medial_qi_timing
+- Proc.2.5.step.1 | B_commentary_explicit_relation | multiply_years_into_concordance_by_reckoning_surplus
+- Proc.2.9.step.1 | B_commentary_explicit_relation | convert_month_lesser_remainder_to_du_fraction_scale
+- Proc.2.9.step.2 | B_commentary_explicit_relation | subtract_midnight_offset_from_conjunction_mark_point
+- Proc.3.2.step.1 | B_commentary_explicit_relation | cast_out_whole_origins_from_accumulated_years
+- Proc.3.2.step.2 | B_commentary_explicit_relation | cast_out_era_factor_from_origin_remainder
+- Proc.3.2.step.4 | B_commentary_explicit_relation | map_era_quotient_to_heaven_era_counting_convention
+- Proc.3.2.step.6 | B_commentary_explicit_relation | count_forward_from_obscuration_entry_to_target_year_name
+
+## C/D Backup
+
+- Proc.2.3.step.9 | C_translation_explicit_operation | double_first_quarter_increment_to_get_full_moon_increment
+- Proc.2.4.step.2a | D_source_only_needs_human_review | source_increment_ten_discrepancy_before_medial_qi_fill
+- Proc.2.5.step.2 | C_translation_explicit_operation | divide_winter_solstice_product_by_concordance_factor
+- Proc.2.5.step.3 | C_translation_explicit_operation | recover_winter_solstice_day_by_prior_counting_method
+- Proc.2.9.step.3 | C_translation_explicit_operation | borrow_one_whole_du_into_parts_before_subtraction
+- Proc.3.2.step.3 | C_translation_explicit_operation | cast_out_obscuration_factor_from_years_into_era
+- Proc.3.2.step.5 | C_translation_explicit_operation | map_obscuration_quotient_to_jiazi_obscuration_counting_convention
+
+## Operation IDs Needing Rename
+
+- Proc.2.3.step.5 | count_outside_from_concordance_head_to_conjunction_day | convention-heavy or discrepancy-heavy naming should stay explicitly scoped
+- Proc.2.4.step.2a | source_increment_ten_discrepancy_before_medial_qi_fill | convention-heavy or discrepancy-heavy naming should stay explicitly scoped
+- Proc.3.2.step.4 | map_era_quotient_to_heaven_era_counting_convention | convention-heavy or discrepancy-heavy naming should stay explicitly scoped
+- Proc.3.2.step.5 | map_obscuration_quotient_to_jiazi_obscuration_counting_convention | convention-heavy or discrepancy-heavy naming should stay explicitly scoped
+
+## Evidence-Insufficient Formal Expressions
+
+- Proc.2.3.step.9 | backup=C_translation_explicit_operation | status=formalizable_now | expression=full_moon_increment = 2 × first_quarter_increment
+- Proc.2.4.step.2a | backup=D_source_only_needs_human_review | status=not_formalizable_yet | expression=null
+- Proc.2.5.step.2 | backup=C_translation_explicit_operation | status=formalizable_with_caveat | expression=大馀 = floor(winter_solstice_product / 统法); 小馀 = winter_solstice_product mod 统法
+- Proc.2.5.step.3 | backup=C_translation_explicit_operation | status=needs_human_review | expression=null
+- Proc.2.9.step.3 | backup=C_translation_explicit_operation | status=formalizable_with_caveat | expression=if midnight_offset_parts > conjunction_fractional_parts then borrow_du = 1 and conjunction_fractional_parts = conjunction_fractional_parts + 统法
+- Proc.3.2.step.3 | backup=C_translation_explicit_operation | status=formalizable_now | expression=entered_obscuration_index = floor(入纪年数 / 蔀法); 入蔀年数 = 入纪年数 mod 蔀法
+- Proc.3.2.step.4 | backup=B_commentary_explicit_relation | status=needs_human_review | expression=null
+- Proc.3.2.step.5 | backup=C_translation_explicit_operation | status=needs_human_review | expression=null
+- Proc.3.2.step.6 | backup=B_commentary_explicit_relation | status=needs_human_review | expression=null
+
+## Arithmetic Validation Readiness
+
+- Proc. 2.3 | core quotient/remainder and increment substeps are machine-checkable; counting convention step still caveated.
+- Proc. 2.5 | multiplier and quotient/remainder substeps can enter arithmetic validation once 如法 counting remains excluded.
+- Proc. 2.9 | scale-conversion and subtraction pilot can be checked on a common parts scale, with borrow logic caveated.
+
+## Human Review Only
+
+- Proc. 2.4 | source 加十 vs Cullen 加七 discrepancy blocks full arithmetic validation.
+- Proc. 3.2 | nested cast-out steps are arithmetic-ready, but table/counting behavior remains benchmark-only human review.
+
+## Schema Recommendation
+
+- No immediate regenerate required. The current Phase 2A pilot schema can stay as the human-readable layer, but a future step-level expression array should be added in a new artifact rather than overwriting the pilot schema.
+

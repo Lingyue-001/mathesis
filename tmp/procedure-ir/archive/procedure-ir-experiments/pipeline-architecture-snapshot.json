@@ -1,0 +1,399 @@
+{
+  "generated_at": "2026-06-22T20:18:30.157Z",
+  "pipeline_mainline": [
+    "raw sources / Cullen PDF",
+    "Cullen pages",
+    "Cullen chunks",
+    "Cullen claims",
+    "Cullen Proc anchors",
+    "Cullen-led source reconstruction",
+    "Phase 1 baseline",
+    "Phase 2A Procedure IR pilot"
+  ],
+  "npm_scripts": {
+    "setup": [
+      {
+        "script": "setup:mac",
+        "purpose": "Provision local Mac environment for the repo.",
+        "main_input": "Repository checkout plus host environment.",
+        "main_output": "Installed runtime/tooling on the machine.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": "usually_yes_host_side"
+      },
+      {
+        "script": "setup:windows",
+        "purpose": "Provision local Windows environment for the repo.",
+        "main_input": "Repository checkout plus host environment.",
+        "main_output": "Installed runtime/tooling on the machine.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": "usually_yes_host_side"
+      },
+      {
+        "script": "verify:install",
+        "purpose": "Validate local environment and key project prerequisites.",
+        "main_input": "Installed runtimes, repo files, local dependencies.",
+        "main_output": "Verification summary in terminal.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      }
+    ],
+    "extract": [
+      {
+        "script": "extract:cullen-pages",
+        "purpose": "Extract page-level text from the Cullen PDF into machine-usable page data.",
+        "main_input": "Cullen PDF.",
+        "main_output": "Page extraction artifacts under the Cullen pipeline outputs.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "extract:cullen-claims",
+        "purpose": "Extract structured claims from Cullen pages/chunks.",
+        "main_input": "Cullen pages/chunks.",
+        "main_output": "Claim extraction outputs used by later audits/alignment.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      }
+    ],
+    "build": [
+      {
+        "script": "build:cullen-chunks",
+        "purpose": "Convert extracted Cullen pages into chunk-level units for downstream processing.",
+        "main_input": "Cullen pages.",
+        "main_output": "Cullen chunk data.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "build:cullen-search-index",
+        "purpose": "Build lookup/search structures over Cullen material.",
+        "main_input": "Cullen pages/chunks/claims.",
+        "main_output": "Cullen search index artifacts.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "build:procedure-ir",
+        "purpose": "Build source-side Procedure IR artifacts.",
+        "main_input": "Source spans plus pipeline config and alignment inputs.",
+        "main_output": "Procedure IR artifacts and validation outputs.",
+        "modifies_canonical_files": "likely_no_but_script_scope_is_broad",
+        "safe_to_rerun": "unclear_without_finer_split"
+      },
+      {
+        "script": "build:ctext-cache",
+        "purpose": "Build frontend CText cache artifact.",
+        "main_input": "Local middleware/HTTP CText results and mapped text inputs.",
+        "main_output": "Candidate and/or published cache JSON.",
+        "modifies_canonical_files": "yes_when_promoted_to_static_cache",
+        "safe_to_rerun": "yes_with_care"
+      },
+      {
+        "script": "build",
+        "purpose": "Build the Eleventy site.",
+        "main_input": "Site source files and generated docs.",
+        "main_output": "Static site output.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      }
+    ],
+    "align": [
+      {
+        "script": "align:cullen-procedure-ir",
+        "purpose": "Align Cullen-derived structures with Procedure IR artifacts.",
+        "main_input": "Cullen claims/anchors/reconstruction plus Procedure IR.",
+        "main_output": "Alignment outputs and diagnostics.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "assimilate:cullen",
+        "purpose": "Assimilate Cullen-derived data into the calendrical IR pipeline staging layer.",
+        "main_input": "Cullen pages/chunks/claims and pipeline config.",
+        "main_output": "Integrated Cullen pipeline artifacts.",
+        "modifies_canonical_files": "likely_no_but_name_is_broad",
+        "safe_to_rerun": "unclear_without_tighter_contract"
+      },
+      {
+        "script": "promote:ctext-cache",
+        "purpose": "Promote built CText candidate cache into published frontend cache.",
+        "main_input": "Candidate cache JSON.",
+        "main_output": "Updated published static cache file.",
+        "modifies_canonical_files": true,
+        "safe_to_rerun": "yes_but_publishes_state"
+      }
+    ],
+    "audit": [
+      {
+        "script": "audit:cullen-chapter-coverage",
+        "purpose": "Audit Cullen chapter/page coverage.",
+        "main_input": "Cullen extraction outputs.",
+        "main_output": "Coverage reports.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "audit:cullen-procedure-completeness",
+        "purpose": "Audit completeness of Cullen procedure inventory/coverage.",
+        "main_input": "Cullen inventory plus extraction outputs.",
+        "main_output": "Completeness reports.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "audit:cullen-procedure-anchors",
+        "purpose": "Audit Proc anchor integrity and required coverage.",
+        "main_input": "Cullen Proc anchors and related chunk/source bindings.",
+        "main_output": "Anchor audit reports.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "audit:cullen-anchor-quality",
+        "purpose": "Audit quality tiers and warning signals for Proc anchors.",
+        "main_input": "Cullen Proc anchors and source candidate metadata.",
+        "main_output": "Anchor quality reports.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "audit:cullen-target-span-alignment",
+        "purpose": "Audit Cullen alignment against target source spans.",
+        "main_input": "Cullen anchor/alignment data and source spans.",
+        "main_output": "Target span alignment reports.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "audit:sifen-target-family-candidates",
+        "purpose": "Audit candidate target-family assignments for Sifen.",
+        "main_input": "Sifen source spans and family candidate data.",
+        "main_output": "Candidate audit reports.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "audit:source-cullen-alignment",
+        "purpose": "Audit source-to-Cullen alignment quality.",
+        "main_input": "Source spans plus Cullen alignment artifacts.",
+        "main_output": "Alignment audit reports.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "audit:cullen-led-source-reconstruction",
+        "purpose": "Build and audit the Cullen-led source reconstruction layer for Phase 1 calibration.",
+        "main_input": "Cullen anchors, chunks, and source spans.",
+        "main_output": "Reconstruction JSON/MD and audit JSON/MD under tmp/procedure-ir.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "audit:cullen-oracle",
+        "purpose": "Audit benchmark grounding, claims, and mini-gold/oracle consistency.",
+        "main_input": "Cullen pages/claims plus procedure IR and benchmark config.",
+        "main_output": "Oracle audit report.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "test:ctext-stats-parser",
+        "purpose": "Run parser tests for CText stats extraction.",
+        "main_input": "Test fixtures and parser code.",
+        "main_output": "Test pass/fail output.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      }
+    ],
+    "query": [
+      {
+        "script": "query:cullen-page",
+        "purpose": "Inspect extracted Cullen page content.",
+        "main_input": "Cullen page artifacts.",
+        "main_output": "Terminal query output.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "query:cullen-proc",
+        "purpose": "Inspect a specific Cullen Proc record.",
+        "main_input": "Cullen anchor/inventory artifacts.",
+        "main_output": "Terminal query output.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "query:cullen-source",
+        "purpose": "Inspect source-side matches/candidates related to Cullen material.",
+        "main_input": "Cullen/source alignment artifacts.",
+        "main_output": "Terminal query output.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      }
+    ],
+    "site_dev": [
+      {
+        "script": "generate:debug-flags-doc",
+        "purpose": "Generate debug flag documentation.",
+        "main_input": "Debug flag source definitions.",
+        "main_output": "Generated debug docs.",
+        "modifies_canonical_files": true,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "generate:log-by-tag",
+        "purpose": "Generate tag-grouped log view.",
+        "main_input": "Primary LOG markdown.",
+        "main_output": "Generated log-by-tag markdown.",
+        "modifies_canonical_files": true,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "start:ctext-proxy",
+        "purpose": "Run local CText proxy service.",
+        "main_input": "Local runtime and proxy server code.",
+        "main_output": "Running local server.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "prestart",
+        "purpose": "Generate docs before local dev serve.",
+        "main_input": "Debug/log sources.",
+        "main_output": "Generated docs, then start can use them.",
+        "modifies_canonical_files": true,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "start",
+        "purpose": "Run local Eleventy dev server.",
+        "main_input": "Site source tree.",
+        "main_output": "Running dev server.",
+        "modifies_canonical_files": false,
+        "safe_to_rerun": true
+      },
+      {
+        "script": "prebuild",
+        "purpose": "Generate docs before production build.",
+        "main_input": "Debug/log sources.",
+        "main_output": "Generated docs, then build can use them.",
+        "modifies_canonical_files": true,
+        "safe_to_rerun": true
+      }
+    ],
+    "unclear_or_overloaded": [
+      {
+        "script": "assimilate:cullen",
+        "reason": "Name suggests broad integration rather than one narrow stage."
+      },
+      {
+        "script": "build:procedure-ir",
+        "reason": "Current diff size and repo state suggest responsibilities may be too broad."
+      },
+      {
+        "script": "build:ctext-cache / promote:ctext-cache",
+        "reason": "Both build and publish behavior live close together."
+      },
+      {
+        "script": "prestart / prebuild",
+        "reason": "They perform generation side effects in site/dev entrypoints."
+      }
+    ]
+  },
+  "field_semantics": [
+    {
+      "field": "cullen_chinese_raw_bounded_text",
+      "category": "canonical_evidence",
+      "meaning": "Raw Cullen Chinese evidence bounded to the Proc block for preservation and audit."
+    },
+    {
+      "field": "cullen_chinese_quoted_text",
+      "category": "canonical_evidence",
+      "meaning": "Human-readable Cullen Chinese quote used as the canonical displayed evidence."
+    },
+    {
+      "field": "cullen_chinese_match_key",
+      "category": "derived_matching_field",
+      "meaning": "Derived matching key for source retrieval only; must not replace the quote."
+    },
+    {
+      "field": "quote_integrity_status",
+      "category": "gate_recommendation",
+      "meaning": "Integrity gate result for whether the displayed quote remains trustworthy after cleaning/bounding."
+    },
+    {
+      "field": "primary_source_span_id",
+      "category": "derived_matching_field",
+      "meaning": "Best current source span candidate from Cullen-led reconstruction."
+    },
+    {
+      "field": "context_source_span_ids",
+      "category": "derived_matching_field",
+      "meaning": "Adjacent context spans associated with the current primary span."
+    },
+    {
+      "field": "relationship_type",
+      "category": "audit_only_diagnostic",
+      "meaning": "Relationship classification between Cullen Proc and source candidates."
+    },
+    {
+      "field": "writeback_recommendation",
+      "category": "gate_recommendation",
+      "meaning": "Conservative recommendation for whether a reconstructed result is suitable for later writeback planning."
+    },
+    {
+      "field": "safe_with_context",
+      "category": "gate_recommendation",
+      "meaning": "A gated positive state: primary span is acceptable but context windows must stay attached."
+    },
+    {
+      "field": "safe_to_write_back",
+      "category": "gate_recommendation",
+      "meaning": "Strongest positive state for future writeback planning; still not automatic writeback."
+    },
+    {
+      "field": "blocker_reason",
+      "category": "audit_only_diagnostic",
+      "meaning": "Concrete reason why the current result remains blocked or review-only."
+    },
+    {
+      "field": "A_confirmed",
+      "category": "gate_recommendation",
+      "meaning": "High-confidence benchmark/oracle grounding status that should remain stable across regressions."
+    },
+    {
+      "field": "human_*",
+      "category": "manual_review_field",
+      "meaning": "Human-authored fields that must not be overwritten by automated pipeline stages."
+    },
+    {
+      "field": "final/gold",
+      "category": "manual_review_field",
+      "meaning": "Locked or gold-standard artifacts that should not be auto-generated in this stage."
+    }
+  ],
+  "gates": {
+    "quote_integrity_gate": {
+      "rule": "Quote must preserve Cullen evidence; failures or unresolved human-check cases must not be treated as clean positives."
+    },
+    "safe_with_context_gate": {
+      "rule": "Requires quote_integrity_status = pass and only adjacent-context non-competing windows around a clear primary span."
+    },
+    "phase_2A_entry_gate": {
+      "rule": "Reconstruction audit stable, translation bleed zero, Proc. 3.2 still matches sifen:L66, safe_with_context fully integrity-clean, A_confirmed stable, and at least four positive pilot examples available."
+    },
+    "A_confirmed_gate": {
+      "rule": "Do not change or degrade benchmark A_confirmed behavior during Phase 1 freeze or hygiene work."
+    },
+    "writeback_red_lines": {
+      "rule": "No anchor writeback, no changes to claims/human_*/final/gold, and no source-side blind keyword scan."
+    }
+  },
+  "architecture_assessment": {
+    "is_single_mainline": "mostly_yes",
+    "mainline_note": "The Cullen pipeline can be described as one mainline, but script responsibilities are still spread across many untracked stage-specific files with some overloaded build/integration entrypoints.",
+    "package_scripts_growth": "high",
+    "build_procedure_ir_overloaded": true,
+    "audit_build_query_mixing": "moderate_risk"
+  }
+}

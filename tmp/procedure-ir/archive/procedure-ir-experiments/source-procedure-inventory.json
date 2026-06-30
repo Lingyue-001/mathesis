@@ -1,0 +1,1214 @@
+{
+  "generated_at": "2026-06-22T04:57:28.609Z",
+  "items": [
+    {
+      "source_proc_id": "santong:procedure:L108",
+      "system": "santong",
+      "source_span_id": "santong:L108",
+      "line_start": 108,
+      "line_end": 108,
+      "title_or_heading": "推天正",
+      "heading_line_ids": [
+        "santong:L108"
+      ],
+      "body_line_ids": [
+        "santong:L108"
+      ],
+      "chinese_heading_excerpt": "推天正，以章月乘人统岁数，盈章岁得一，名曰积月，不盈者名曰闰馀。闰馀十二以上，岁有闰。求地正，加积月一；求人正，加二。",
+      "chinese_body_excerpt": "推天正，以章月乘人统岁数，盈章岁得一，名曰积月，不盈者名曰闰馀。闰馀十二以上，岁有闰。求地正，加积月一；求人正，加二。",
+      "combined_excerpt": "推天正，以章月乘人统岁数，盈章岁得一，名曰积月，不盈者名曰闰馀。闰馀十二以上，岁有闰。求地正，加积月一；求人正，加二。",
+      "nearby_context": {
+        "previous_span_id": "santong:L93",
+        "previous_text": "合太阴太阳之岁数而中分之，各万一千五百二十。阳施其气，阴成其物。",
+        "next_span_id": "santong:L109",
+        "next_text": "推正月朔，以月法乘积月，盈日法得一，名曰积日，不盈者名曰小馀。小馀三十八以上，其月大。积日盈六十，除之，不盈者名曰大馀。数从统首日起，算外，则朔日也。求其次月，加大馀二十九，小馀四十三。小馀盈日法得一，从大馀，数除如法。求弦，加大馀七，小馀三十一。求望，倍弦。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "天正"
+      ],
+      "constants": [
+        235,
+        13
+      ],
+      "operation_terms": [
+        "remainder",
+        "multiply",
+        "add"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "santong:procedure:L109",
+      "system": "santong",
+      "source_span_id": "santong:L109",
+      "line_start": 109,
+      "line_end": 109,
+      "title_or_heading": "推正月朔",
+      "heading_line_ids": [
+        "santong:L109"
+      ],
+      "body_line_ids": [
+        "santong:L109"
+      ],
+      "chinese_heading_excerpt": "推正月朔，以月法乘积月，盈日法得一，名曰积日，不盈者名曰小馀。小馀三十八以上，其月大。积日盈六十，除之，不盈者名曰大馀。数从统首日起，算外，则朔日也。求其次月，加大馀二十九，小馀四十三。小馀盈日法得一，从大馀，数除如法。求弦，加大馀七，小馀三十一。求望，倍弦。",
+      "chinese_body_excerpt": "推正月朔，以月法乘积月，盈日法得一，名曰积日，不盈者名曰小馀。小馀三十八以上，其月大。积日盈六十，除之，不盈者名曰大馀。数从统首日起，算外，则朔日也。求其次月，加大馀二十九，小馀四十三。小馀盈日法得一，从大馀，数除如法。求弦，加大馀七，小馀三十一。求望，倍弦。",
+      "combined_excerpt": "推正月朔，以月法乘积月，盈日法得一，名曰积日，不盈者名曰小馀。小馀三十八以上，其月大。积日盈六十，除之，不盈者名曰大馀。数从统首日起，算外，则朔日也。求其次月，加大馀二十九，小馀四十三。小馀盈日法得一，从大馀，数除如法。求弦，加大馀七，小馀三十一。求望，倍弦。",
+      "nearby_context": {
+        "previous_span_id": "santong:L108",
+        "previous_text": "推天正，以章月乘人统岁数，盈章岁得一，名曰积月，不盈者名曰闰馀。闰馀十二以上，岁有闰。求地正，加积月一；求人正，加二。",
+        "next_span_id": "santong:L110",
+        "next_text": "推闰馀所在，以十二乘闰馀，加十得一。盈章中，数所得，起冬至，算外，则中至终闰盈。中气在朔若二日，则前月闰也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "朔日",
+        "弦望"
+      ],
+      "constants": [
+        2392
+      ],
+      "operation_terms": [
+        "remainder",
+        "multiply",
+        "divide",
+        "add",
+        "count"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "santong:procedure:L110",
+      "system": "santong",
+      "source_span_id": "santong:L110",
+      "line_start": 110,
+      "line_end": 110,
+      "title_or_heading": "推闰馀所在",
+      "heading_line_ids": [
+        "santong:L110"
+      ],
+      "body_line_ids": [
+        "santong:L110"
+      ],
+      "chinese_heading_excerpt": "推闰馀所在，以十二乘闰馀，加十得一。盈章中，数所得，起冬至，算外，则中至终闰盈。中气在朔若二日，则前月闰也。",
+      "chinese_body_excerpt": "推闰馀所在，以十二乘闰馀，加十得一。盈章中，数所得，起冬至，算外，则中至终闰盈。中气在朔若二日，则前月闰也。",
+      "combined_excerpt": "推闰馀所在，以十二乘闰馀，加十得一。盈章中，数所得，起冬至，算外，则中至终闰盈。中气在朔若二日，则前月闰也。",
+      "nearby_context": {
+        "previous_span_id": "santong:L109",
+        "previous_text": "推正月朔，以月法乘积月，盈日法得一，名曰积日，不盈者名曰小馀。小馀三十八以上，其月大。积日盈六十，除之，不盈者名曰大馀。数从统首日起，算外，则朔日也。求其次月，加大馀二十九，小馀四十三。小馀盈日法得一，从大馀，数除如法。求弦，加大馀七，小馀三十一。求望，倍弦。",
+        "next_span_id": "santong:L111",
+        "next_text": "推冬至，以算馀乘人统岁数，盈统法得一，名曰大馀，不盈者名曰小馀。除数如法，则所求冬至日也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "冬至"
+      ],
+      "constants": [
+        10
+      ],
+      "operation_terms": [
+        "multiply",
+        "add",
+        "count",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "santong:procedure:L111",
+      "system": "santong",
+      "source_span_id": "santong:L111",
+      "line_start": 111,
+      "line_end": 111,
+      "title_or_heading": "推冬至",
+      "heading_line_ids": [
+        "santong:L111"
+      ],
+      "body_line_ids": [
+        "santong:L111"
+      ],
+      "chinese_heading_excerpt": "推冬至，以算馀乘人统岁数，盈统法得一，名曰大馀，不盈者名曰小馀。除数如法，则所求冬至日也。",
+      "chinese_body_excerpt": "推冬至，以算馀乘人统岁数，盈统法得一，名曰大馀，不盈者名曰小馀。除数如法，则所求冬至日也。",
+      "combined_excerpt": "推冬至，以算馀乘人统岁数，盈统法得一，名曰大馀，不盈者名曰小馀。除数如法，则所求冬至日也。",
+      "nearby_context": {
+        "previous_span_id": "santong:L110",
+        "previous_text": "推闰馀所在，以十二乘闰馀，加十得一。盈章中，数所得，起冬至，算外，则中至终闰盈。中气在朔若二日，则前月闰也。",
+        "next_span_id": "santong:L116",
+        "next_text": "推其日夜半所在星，以章岁乘月小馀，以减合晨度。小馀不足者，破全度。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "冬至",
+        "至日"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "remainder",
+        "multiply",
+        "divide"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "santong:procedure:L116",
+      "system": "santong",
+      "source_span_id": "santong:L116",
+      "line_start": 116,
+      "line_end": 116,
+      "title_or_heading": "推其日夜半所在星",
+      "heading_line_ids": [
+        "santong:L116"
+      ],
+      "body_line_ids": [
+        "santong:L116"
+      ],
+      "chinese_heading_excerpt": "推其日夜半所在星，以章岁乘月小馀，以减合晨度。小馀不足者，破全度。",
+      "chinese_body_excerpt": "推其日夜半所在星，以章岁乘月小馀，以减合晨度。小馀不足者，破全度。",
+      "combined_excerpt": "推其日夜半所在星，以章岁乘月小馀，以减合晨度。小馀不足者，破全度。",
+      "nearby_context": {
+        "previous_span_id": "santong:L111",
+        "previous_text": "推冬至，以算馀乘人统岁数，盈统法得一，名曰大馀，不盈者名曰小馀。除数如法，则所求冬至日也。",
+        "next_span_id": "santong:L121",
+        "next_text": "推星所一多“在”字见中次，以见中分乘定见复数，盈见中法得一，则积中法也。不盈者名曰中馀。以元中除积中，馀则中元馀也。以章中除之，馀则入章中数也。以十二除之，馀则星见中次也。中数从冬至起，次数从星纪起，算外，则星所见中次也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [],
+      "constants": [],
+      "operation_terms": [
+        "multiply"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "santong:procedure:L121",
+      "system": "santong",
+      "source_span_id": "santong:L121",
+      "line_start": 121,
+      "line_end": 121,
+      "title_or_heading": "推星所一多“在”字见中次",
+      "heading_line_ids": [
+        "santong:L121"
+      ],
+      "body_line_ids": [
+        "santong:L121"
+      ],
+      "chinese_heading_excerpt": "推星所一多“在”字见中次，以见中分乘定见复数，盈见中法得一，则积中法也。不盈者名曰中馀。以元中除积中，馀则中元馀也。以章中除之，馀则入章中数也。以十二除之，馀则星见中次也。中数从冬至起，次数从星纪起，算外，则星所见中次也。",
+      "chinese_body_excerpt": "推星所一多“在”字见中次，以见中分乘定见复数，盈见中法得一，则积中法也。不盈者名曰中馀。以元中除积中，馀则中元馀也。以章中除之，馀则入章中数也。以十二除之，馀则星见中次也。中数从冬至起，次数从星纪起，算外，则星所见中次也。",
+      "combined_excerpt": "推星所一多“在”字见中次，以见中分乘定见复数，盈见中法得一，则积中法也。不盈者名曰中馀。以元中除积中，馀则中元馀也。以章中除之，馀则入章中数也。以十二除之，馀则星见中次也。中数从冬至起，次数从星纪起，算外，则星所见中次也。",
+      "nearby_context": {
+        "previous_span_id": "santong:L116",
+        "previous_text": "推其日夜半所在星，以章岁乘月小馀，以减合晨度。小馀不足者，破全度。",
+        "next_span_id": "santong:L122",
+        "next_text": "推星见月，以闰分乘定见，以章岁乘中馀从之，盈见月法得一，并积中，则积月也。不盈者名曰月中馀。以元月除积月馀，名曰月元馀。以章月除月元馀，则入章月数也。以十二除之，至有闰之岁，除十三入章。三岁一闰，六岁二闰，九岁三闰，十一岁四闰，十四岁五闰，十七岁六闰，十九岁七闰。不盈者数起于天正，算外，则星所见月也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "冬至"
+      ],
+      "constants": [
+        20736,
+        1
+      ],
+      "operation_terms": [
+        "multiply",
+        "divide",
+        "count",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "santong:procedure:L122",
+      "system": "santong",
+      "source_span_id": "santong:L122",
+      "line_start": 122,
+      "line_end": 122,
+      "title_or_heading": "推星见月",
+      "heading_line_ids": [
+        "santong:L122"
+      ],
+      "body_line_ids": [
+        "santong:L122"
+      ],
+      "chinese_heading_excerpt": "推星见月，以闰分乘定见，以章岁乘中馀从之，盈见月法得一，并积中，则积月也。不盈者名曰月中馀。以元月除积月馀，名曰月元馀。以章月除月元馀，则入章月数也。以十二除之，至有闰之岁，除十三入章。三岁一闰，六岁二闰，九岁三闰，十一岁四闰，十四岁五闰，十七岁六闰，十九岁七闰。不盈者数起于天正，算外，则星所见月也。",
+      "chinese_body_excerpt": "推星见月，以闰分乘定见，以章岁乘中馀从之，盈见月法得一，并积中，则积月也。不盈者名曰月中馀。以元月除积月馀，名曰月元馀。以章月除月元馀，则入章月数也。以十二除之，至有闰之岁，除十三入章。三岁一闰，六岁二闰，九岁三闰，十一岁四闰，十四岁五闰，十七岁六闰，十九岁七闰。不盈者数起于天正，算外，则星所见月也。",
+      "combined_excerpt": "推星见月，以闰分乘定见，以章岁乘中馀从之，盈见月法得一，并积中，则积月也。不盈者名曰月中馀。以元月除积月馀，名曰月元馀。以章月除月元馀，则入章月数也。以十二除之，至有闰之岁，除十三入章。三岁一闰，六岁二闰，九岁三闰，十一岁四闰，十四岁五闰，十七岁六闰，十九岁七闰。不盈者数起于天正，算外，则星所见月也。",
+      "nearby_context": {
+        "previous_span_id": "santong:L121",
+        "previous_text": "推星所一多“在”字见中次，以见中分乘定见复数，盈见中法得一，则积中法也。不盈者名曰中馀。以元中除积中，馀则中元馀也。以章中除之，馀则入章中数也。以十二除之，馀则星见中次也。中数从冬至起，次数从星纪起，算外，则星所见中次也。",
+        "next_span_id": "santong:L123",
+        "next_text": "推至日，以中法乘中元馀，盈元法得一，名曰积日，不盈者名曰小馀。小馀盈二千五百九十七以上，中大。数除积日如法，算外，则冬至也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "天正"
+      ],
+      "constants": [
+        12096,
+        1
+      ],
+      "operation_terms": [
+        "multiply",
+        "divide",
+        "count",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "santong:procedure:L123",
+      "system": "santong",
+      "source_span_id": "santong:L123",
+      "line_start": 123,
+      "line_end": 123,
+      "title_or_heading": "推至日",
+      "heading_line_ids": [
+        "santong:L123"
+      ],
+      "body_line_ids": [
+        "santong:L123"
+      ],
+      "chinese_heading_excerpt": "推至日，以中法乘中元馀，盈元法得一，名曰积日，不盈者名曰小馀。小馀盈二千五百九十七以上，中大。数除积日如法，算外，则冬至也。",
+      "chinese_body_excerpt": "推至日，以中法乘中元馀，盈元法得一，名曰积日，不盈者名曰小馀。小馀盈二千五百九十七以上，中大。数除积日如法，算外，则冬至也。",
+      "combined_excerpt": "推至日，以中法乘中元馀，盈元法得一，名曰积日，不盈者名曰小馀。小馀盈二千五百九十七以上，中大。数除积日如法，算外，则冬至也。",
+      "nearby_context": {
+        "previous_span_id": "santong:L122",
+        "previous_text": "推星见月，以闰分乘定见，以章岁乘中馀从之，盈见月法得一，并积中，则积月也。不盈者名曰月中馀。以元月除积月馀，名曰月元馀。以章月除月元馀，则入章月数也。以十二除之，至有闰之岁，除十三入章。三岁一闰，六岁二闰，九岁三闰，十一岁四闰，十四岁五闰，十七岁六闰，十九岁七闰。不盈者数起于天正，算外，则星所见月也。",
+        "next_span_id": "santong:L124",
+        "next_text": "推朔日，以月法乘月元馀，盈日法得一，名曰积日，馀名曰小馀。小馀三十八以上，月大。数除积日如法，算外，则星见月朔日也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "冬至",
+        "至日"
+      ],
+      "constants": [
+        140530,
+        12
+      ],
+      "operation_terms": [
+        "remainder",
+        "multiply",
+        "divide"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "santong:procedure:L124",
+      "system": "santong",
+      "source_span_id": "santong:L124",
+      "line_start": 124,
+      "line_end": 124,
+      "title_or_heading": "推朔日",
+      "heading_line_ids": [
+        "santong:L124"
+      ],
+      "body_line_ids": [
+        "santong:L124"
+      ],
+      "chinese_heading_excerpt": "推朔日，以月法乘月元馀，盈日法得一，名曰积日，馀名曰小馀。小馀三十八以上，月大。数除积日如法，算外，则星见月朔日也。",
+      "chinese_body_excerpt": "推朔日，以月法乘月元馀，盈日法得一，名曰积日，馀名曰小馀。小馀三十八以上，月大。数除积日如法，算外，则星见月朔日也。",
+      "combined_excerpt": "推朔日，以月法乘月元馀，盈日法得一，名曰积日，馀名曰小馀。小馀三十八以上，月大。数除积日如法，算外，则星见月朔日也。",
+      "nearby_context": {
+        "previous_span_id": "santong:L123",
+        "previous_text": "推至日，以中法乘中元馀，盈元法得一，名曰积日，不盈者名曰小馀。小馀盈二千五百九十七以上，中大。数除积日如法，算外，则冬至也。",
+        "next_span_id": "santong:L127",
+        "next_text": "推后见中，加积中于中元馀，加后馀于中馀，盈其法得一，从中元馀，数如法，则见也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "朔日"
+      ],
+      "constants": [
+        2392,
+        1
+      ],
+      "operation_terms": [
+        "multiply",
+        "divide",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "santong:procedure:L180",
+      "system": "santong",
+      "source_span_id": "santong:L180",
+      "line_start": 180,
+      "line_end": 180,
+      "title_or_heading": "推章首朔旦冬至日",
+      "heading_line_ids": [
+        "santong:L180"
+      ],
+      "body_line_ids": [
+        "santong:L180"
+      ],
+      "chinese_heading_excerpt": "推章首朔旦冬至日，置大馀三十九，小馀六十一，数除如法，各从其统首起。求其后章，当加大馀三十九，小馀六十一，各尽其八十一章。",
+      "chinese_body_excerpt": "推章首朔旦冬至日，置大馀三十九，小馀六十一，数除如法，各从其统首起。求其后章，当加大馀三十九，小馀六十一，各尽其八十一章。",
+      "combined_excerpt": "推章首朔旦冬至日，置大馀三十九，小馀六十一，数除如法，各从其统首起。求其后章，当加大馀三十九，小馀六十一，各尽其八十一章。",
+      "nearby_context": {
+        "previous_span_id": "santong:L148",
+        "previous_text": "角十二。亢九。氐十五。房五。心五。尾十八。箕十一。东七十五度。斗二十六。牛八。女十二。虚十。危十七。营室十六。壁九。北九十八度。奎十六。娄十二。胃十四。昴十一。毕十六。觜二。参九。西八十度。井三十三。鬼四。柳十五。星七。张十八。翼十八。轸十七。南百一十二度。",
+        "next_span_id": "santong:L181",
+        "next_text": "推篇，大馀亦如之，小馀加一。求周至，加大馀五十九，小馀二十一。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "冬至",
+        "至日"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "set out",
+        "divide",
+        "add",
+        "count"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:source-proc:sifen:L4",
+      "system": "sifen",
+      "source_span_id": "sifen:L4",
+      "line_start": 4,
+      "line_end": 4,
+      "title_or_heading": "天之動也，一晝一夜而運過周，星從天而西，日違天而東。日之所行與運周，在天成度，在曆成日。居以列宿，終于四七，受以甲乙，終于六旬。日月相推，日舒月速，當其同，謂之...",
+      "heading_line_ids": [
+        "sifen:L4"
+      ],
+      "body_line_ids": [
+        "sifen:L4"
+      ],
+      "chinese_heading_excerpt": "天之動也，一晝一夜而運過周，星從天而西，日違天而東。日之所行與運周，在天成度，在曆成日。居以列宿，終于四七，受以甲乙，終于六旬。日月相推，日舒月速，當其同，謂之合朔。舒先速後，近一遠三，謂之弦。相與為衡，分天之中，謂之望。以速及舒，光盡體伏，謂之晦。晦朔合離，斗建移辰，謂之。日月之術，則有冬有夏；冬夏之閒，則有春有秋。是故日行北陸謂之冬，西陸謂之春，南陸謂之夏，東陸謂之秋。日道發南，去極彌遠，其景彌長，遠長乃極，冬乃至焉。日道斂北，去極彌近，其景彌短，近短乃極，夏乃至焉。二至之中，道齊景正，春秋分焉。",
+      "chinese_body_excerpt": "天之動也，一晝一夜而運過周，星從天而西，日違天而東。日之所行與運周，在天成度，在曆成日。居以列宿，終于四七，受以甲乙，終于六旬。日月相推，日舒月速，當其同，謂之合朔。舒先速後，近一遠三，謂之弦。相與為衡，分天之中，謂之望。以速及舒，光盡體伏，謂之晦。晦朔合離，斗建移辰，謂之。日月之術，則有冬有夏；冬夏之閒，則有春有秋。是故日行北陸謂之冬，西陸謂之春，南陸謂之夏，東陸謂之秋。日道發南，去極彌遠，其景彌長，遠長乃極，冬乃至焉。日道斂北，去極彌近，其景彌短，近短乃極，夏乃至焉。二至之中，道齊景正，春秋分焉。",
+      "combined_excerpt": "天之動也，一晝一夜而運過周，星從天而西，日違天而東。日之所行與運周，在天成度，在曆成日。居以列宿，終于四七，受以甲乙，終于六旬。日月相推，日舒月速，當其同，謂之合朔。舒先速後，近一遠三，謂之弦。相與為衡，分天之中，謂之望。以速及舒，光盡體伏，謂之晦。晦朔合離，斗建移辰，謂之。日月之術，則有冬有夏；冬夏之閒，則有春有秋。是故日行北陸謂之冬，西陸謂之春，南陸謂之夏，東陸謂之秋。日道發南，去極彌遠，其景彌長，遠長乃極，冬乃至焉。日道斂北，去極彌近，其景彌短，近短乃極，夏乃至焉。二至之中，道齊景正，春秋分焉。",
+      "nearby_context": {
+        "previous_span_id": null,
+        "previous_text": null,
+        "next_span_id": "sifen:L16",
+        "next_text": "曆數之生也，乃立儀、表，以校日景。景長則日遠，天度之端也。日發其端，周而為歲，然其景不復，四周千四百六十一日，而景復初，是則日行之終。以周除日，得三百六十五四分度之一，為歲之日數。日日行一度，亦為天度。察日月俱發度端，日行十九周，月行二百五十四周，復會于端，是則月行之終也。以日周除月周，得一歲周天之數。以日一周減之，餘十二十九分之七，則月行過周及日行之數也，為一歲之月。以除一歲日，為一月之數。月之餘分積滿其法，得一月，月成則其歲。月大四時推移，故置十二中以定月位。有朔而無中者為閏月。中之始日節，與中為二十四氣。以除一歲日，為一氣之日數也。其分積而成日為沒，并歲氣之分，如法為一歲沒。沒分于終中，中終于冬至，冬至之分積如其法得一日，四歲而終。月分成閏，閏七而盡，其歲十九，名之曰章。章首分盡，四之俱終，名之曰蔀。以一歲日乘之，為蔀之日數也。以甲子命之，二十而復其初，是以二十蔀為紀。紀歲青龍未終，三終歲後復青龍為元。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "弦望"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "count"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:source-proc:sifen:L16",
+      "system": "sifen",
+      "source_span_id": "sifen:L16",
+      "line_start": 16,
+      "line_end": 16,
+      "title_or_heading": "曆數之生也，乃立儀、表，以校日景。景長則日遠，天度之端也。日發其端，周而為歲，然其景不復，四周千四百六十一日，而景復初，是則日行之終。以周除日，得三百六十五四分...",
+      "heading_line_ids": [
+        "sifen:L16"
+      ],
+      "body_line_ids": [
+        "sifen:L16"
+      ],
+      "chinese_heading_excerpt": "曆數之生也，乃立儀、表，以校日景。景長則日遠，天度之端也。日發其端，周而為歲，然其景不復，四周千四百六十一日，而景復初，是則日行之終。以周除日，得三百六十五四分度之一，為歲之日數。日日行一度，亦為天度。察日月俱發度端，日行十九周，月行二百五十四周，復會于端，是則月行之終也。以日周除月周，得一歲周天之數。以日一周減之，餘十二十九分之七，則月行過周及日行之數也，為一歲之月。以除一歲日，為一月之數。月之餘分積滿其法，得一月，月成則其歲。月大四時推移，故置十二中以定月位。有朔而無中者為閏月。中之始日節，與中為二十四氣。以除一歲日，為一氣之日數也。其分積而成日為沒，并歲氣之分，如法為一歲沒。沒分于終中，中終于冬至，冬至之分積如其法得一日，四歲而終。月分成閏，閏七而盡，其歲十九，名之曰章。章首分盡，四之俱終，名之曰蔀。以一歲日乘之，為蔀之日數也。以甲子命之，二十而復其初，是以二十蔀為紀。紀歲青龍未終，三終歲後復青龍為元。",
+      "chinese_body_excerpt": "曆數之生也，乃立儀、表，以校日景。景長則日遠，天度之端也。日發其端，周而為歲，然其景不復，四周千四百六十一日，而景復初，是則日行之終。以周除日，得三百六十五四分度之一，為歲之日數。日日行一度，亦為天度。察日月俱發度端，日行十九周，月行二百五十四周，復會于端，是則月行之終也。以日周除月周，得一歲周天之數。以日一周減之，餘十二十九分之七，則月行過周及日行之數也，為一歲之月。以除一歲日，為一月之數。月之餘分積滿其法，得一月，月成則其歲。月大四時推移，故置十二中以定月位。有朔而無中者為閏月。中之始日節，與中為二十四氣。以除一歲日，為一氣之日數也。其分積而成日為沒，并歲氣之分，如法為一歲沒。沒分于終中，中終于冬至，冬至之分積如其法得一日，四歲而終。月分成閏，閏七而盡，其歲十九，名之曰章。章首分盡，四之俱終，名之曰蔀。以一歲日乘之，為蔀之日數也。以甲子命之，二十而復其初，是以二十蔀為紀。紀歲青龍未終，三終歲後復青龍為元。",
+      "combined_excerpt": "曆數之生也，乃立儀、表，以校日景。景長則日遠，天度之端也。日發其端，周而為歲，然其景不復，四周千四百六十一日，而景復初，是則日行之終。以周除日，得三百六十五四分度之一，為歲之日數。日日行一度，亦為天度。察日月俱發度端，日行十九周，月行二百五十四周，復會于端，是則月行之終也。以日周除月周，得一歲周天之數。以日一周減之，餘十二十九分之七，則月行過周及日行之數也，為一歲之月。以除一歲日，為一月之數。月之餘分積滿其法，得一月，月成則其歲。月大四時推移，故置十二中以定月位。有朔而無中者為閏月。中之始日節，與中為二十四氣。以除一歲日，為一氣之日數也。其分積而成日為沒，并歲氣之分，如法為一歲沒。沒分于終中，中終于冬至，冬至之分積如其法得一日，四歲而終。月分成閏，閏七而盡，其歲十九，名之曰章。章首分盡，四之俱終，名之曰蔀。以一歲日乘之，為蔀之日數也。以甲子命之，二十而復其初，是以二十蔀為紀。紀歲青龍未終，三終歲後復青龍為元。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L4",
+        "previous_text": "天之動也，一晝一夜而運過周，星從天而西，日違天而東。日之所行與運周，在天成度，在曆成日。居以列宿，終于四七，受以甲乙，終于六旬。日月相推，日舒月速，當其同，謂之合朔。舒先速後，近一遠三，謂之弦。相與為衡，分天之中，謂之望。以速及舒，光盡體伏，謂之晦。晦朔合離，斗建移辰，謂之。日月之術，則有冬有夏；冬夏之閒，則有春有秋。是故日行北陸謂之冬，西陸謂之春，南陸謂之夏，東陸謂之秋。日道發南，去極彌遠，其景彌長，遠長乃極，冬乃至焉。日道斂北，去極彌近，其景彌短，近短乃極，夏乃至焉。二至之中，道齊景正，春秋分焉。",
+        "next_span_id": "sifen:L18",
+        "next_text": "元法，四千五百六十。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "閏月",
+        "冬至"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "set out",
+        "multiply",
+        "divide",
+        "subtract",
+        "count",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L66",
+      "system": "sifen",
+      "source_span_id": "sifen:L66",
+      "line_start": 66,
+      "line_end": 66,
+      "title_or_heading": "推入蔀術曰",
+      "heading_line_ids": [
+        "sifen:L66"
+      ],
+      "body_line_ids": [
+        "sifen:L66"
+      ],
+      "chinese_heading_excerpt": "推入蔀術曰：以元法除去上元，其餘以紀法除之，所得數從天紀，筭外則所入紀也。不滿紀法者，入紀年數也。以蔀法除之，所得數從甲子蔀起，筭外，所入紀歲名命之，筭上，即所求年太歲所在。",
+      "chinese_body_excerpt": "推入蔀術曰：以元法除去上元，其餘以紀法除之，所得數從天紀，筭外則所入紀也。不滿紀法者，入紀年數也。以蔀法除之，所得數從甲子蔀起，筭外，所入紀歲名命之，筭上，即所求年太歲所在。",
+      "combined_excerpt": "推入蔀術曰：以元法除去上元，其餘以紀法除之，所得數從天紀，筭外則所入紀也。不滿紀法者，入紀年數也。以蔀法除之，所得數從甲子蔀起，筭外，所入紀歲名命之，筭上，即所求年太歲所在。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L64",
+        "previous_text": "食法，二十二。",
+        "next_span_id": "sifen:L74",
+        "next_text": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "入蔀"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "divide",
+        "count",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L74",
+      "system": "sifen",
+      "source_span_id": "sifen:L74",
+      "line_start": 74,
+      "line_end": 74,
+      "title_or_heading": "推天正術",
+      "heading_line_ids": [
+        "sifen:L74"
+      ],
+      "body_line_ids": [
+        "sifen:L74"
+      ],
+      "chinese_heading_excerpt": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏。",
+      "chinese_body_excerpt": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏。",
+      "combined_excerpt": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L66",
+        "previous_text": "推入蔀術曰：以元法除去上元，其餘以紀法除之，所得數從天紀，筭外則所入紀也。不滿紀法者，入紀年數也。以蔀法除之，所得數從甲子蔀起，筭外，所入紀歲名命之，筭上，即所求年太歲所在。",
+        "next_span_id": "sifen:L76",
+        "next_text": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也。小餘四百四十一以上，其月大。求後月朔，加大餘二十九，小餘四百九十〈九〉，小餘滿蔀月得一，上加大餘，命之如前。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "入蔀",
+        "天正"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "remainder",
+        "set out",
+        "multiply",
+        "subtract"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L76",
+      "system": "sifen",
+      "source_span_id": "sifen:L76",
+      "line_start": 76,
+      "line_end": 76,
+      "title_or_heading": "推天正朔日",
+      "heading_line_ids": [
+        "sifen:L76"
+      ],
+      "body_line_ids": [
+        "sifen:L76"
+      ],
+      "chinese_heading_excerpt": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也。小餘四百四十一以上，其月大。求後月朔，加大餘二十九，小餘四百九十〈九〉，小餘滿蔀月得一，上加大餘，命之如前。",
+      "chinese_body_excerpt": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也。小餘四百四十一以上，其月大。求後月朔，加大餘二十九，小餘四百九十〈九〉，小餘滿蔀月得一，上加大餘，命之如前。",
+      "combined_excerpt": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也。小餘四百四十一以上，其月大。求後月朔，加大餘二十九，小餘四百九十〈九〉，小餘滿蔀月得一，上加大餘，命之如前。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L74",
+        "previous_text": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏。",
+        "next_span_id": "sifen:L80",
+        "next_text": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "入蔀",
+        "天正",
+        "朔日"
+      ],
+      "constants": [
+        60
+      ],
+      "operation_terms": [
+        "remainder",
+        "count",
+        "set out",
+        "multiply",
+        "divide",
+        "add"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L80",
+      "system": "sifen",
+      "source_span_id": "sifen:L80",
+      "line_start": 80,
+      "line_end": 80,
+      "title_or_heading": "推二十四氣術曰",
+      "heading_line_ids": [
+        "sifen:L80"
+      ],
+      "body_line_ids": [
+        "sifen:L80"
+      ],
+      "chinese_heading_excerpt": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。",
+      "chinese_body_excerpt": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。",
+      "combined_excerpt": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L76",
+        "previous_text": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也。小餘四百四十一以上，其月大。求後月朔，加大餘二十九，小餘四百九十〈九〉，小餘滿蔀月得一，上加大餘，命之如前。",
+        "next_span_id": "sifen:L82",
+        "next_text": "求次氣，加大餘十五，小餘七，除命之如前，小寒日也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "入蔀",
+        "冬至"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "remainder",
+        "set out",
+        "multiply",
+        "divide",
+        "subtract",
+        "count"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L84",
+      "system": "sifen",
+      "source_span_id": "sifen:L84",
+      "line_start": 84,
+      "line_end": 84,
+      "title_or_heading": "推閏月所在",
+      "heading_line_ids": [
+        "sifen:L84"
+      ],
+      "body_line_ids": [
+        "sifen:L84"
+      ],
+      "chinese_heading_excerpt": "推閏月所在，以閏餘減章法，餘以十二乘之，滿章閏數得一，滿四以上亦得一筭之數，從前年十一月起，筭盡之外，閏月也。或進退，以中氣定之。",
+      "chinese_body_excerpt": "推閏月所在，以閏餘減章法，餘以十二乘之，滿章閏數得一，滿四以上亦得一筭之數，從前年十一月起，筭盡之外，閏月也。或進退，以中氣定之。",
+      "combined_excerpt": "推閏月所在，以閏餘減章法，餘以十二乘之，滿章閏數得一，滿四以上亦得一筭之數，從前年十一月起，筭盡之外，閏月也。或進退，以中氣定之。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L82",
+        "previous_text": "求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
+        "next_span_id": "sifen:L86",
+        "next_text": "推弦、望日，因其月朔大小餘之數，皆加大餘七，小餘三百五十九四分三，小餘滿蔀月得一，加大餘，大餘命如法，得上弦。又加得望，次下弦，又後月朔。其弦、望小餘二百六十以下，每以百刻乘之，滿蔀月得一刻，不滿其數近節氣夜漏之半者，以筭上為日。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "閏月"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "multiply",
+        "subtract",
+        "count",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L86",
+      "system": "sifen",
+      "source_span_id": "sifen:L86",
+      "line_start": 86,
+      "line_end": 86,
+      "title_or_heading": "推弦、望日",
+      "heading_line_ids": [
+        "sifen:L86"
+      ],
+      "body_line_ids": [
+        "sifen:L86"
+      ],
+      "chinese_heading_excerpt": "推弦、望日，因其月朔大小餘之數，皆加大餘七，小餘三百五十九四分三，小餘滿蔀月得一，加大餘，大餘命如法，得上弦。又加得望，次下弦，又後月朔。其弦、望小餘二百六十以下，每以百刻乘之，滿蔀月得一刻，不滿其數近節氣夜漏之半者，以筭上為日。",
+      "chinese_body_excerpt": "推弦、望日，因其月朔大小餘之數，皆加大餘七，小餘三百五十九四分三，小餘滿蔀月得一，加大餘，大餘命如法，得上弦。又加得望，次下弦，又後月朔。其弦、望小餘二百六十以下，每以百刻乘之，滿蔀月得一刻，不滿其數近節氣夜漏之半者，以筭上為日。",
+      "combined_excerpt": "推弦、望日，因其月朔大小餘之數，皆加大餘七，小餘三百五十九四分三，小餘滿蔀月得一，加大餘，大餘命如法，得上弦。又加得望，次下弦，又後月朔。其弦、望小餘二百六十以下，每以百刻乘之，滿蔀月得一刻，不滿其數近節氣夜漏之半者，以筭上為日。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L84",
+        "previous_text": "推閏月所在，以閏餘減章法，餘以十二乘之，滿章閏數得一，滿四以上亦得一筭之數，從前年十一月起，筭盡之外，閏月也。或進退，以中氣定之。",
+        "next_span_id": "sifen:L88",
+        "next_text": "推沒滅術，置入蔀年減一，以沒數乘之，滿日法得一，名為積沒，不盡為沒餘。以通法乘積沒，滿沒法得一，名為大餘，不盡為小餘。大餘滿六十除去之，其餘以蔀名命之，筭盡之外，前年冬至前沒日也。求後沒，加大餘六十九，小餘四，小餘滿沒法，從大餘，命之如前，無分為滅。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "弦望"
+      ],
+      "constants": [
+        1
+      ],
+      "operation_terms": [
+        "multiply",
+        "add",
+        "count",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L88",
+      "system": "sifen",
+      "source_span_id": "sifen:L88",
+      "line_start": 88,
+      "line_end": 88,
+      "title_or_heading": "推沒滅術",
+      "heading_line_ids": [
+        "sifen:L88"
+      ],
+      "body_line_ids": [
+        "sifen:L88"
+      ],
+      "chinese_heading_excerpt": "推沒滅術，置入蔀年減一，以沒數乘之，滿日法得一，名為積沒，不盡為沒餘。以通法乘積沒，滿沒法得一，名為大餘，不盡為小餘。大餘滿六十除去之，其餘以蔀名命之，筭盡之外，前年冬至前沒日也。求後沒，加大餘六十九，小餘四，小餘滿沒法，從大餘，命之如前，無分為滅。",
+      "chinese_body_excerpt": "推沒滅術，置入蔀年減一，以沒數乘之，滿日法得一，名為積沒，不盡為沒餘。以通法乘積沒，滿沒法得一，名為大餘，不盡為小餘。大餘滿六十除去之，其餘以蔀名命之，筭盡之外，前年冬至前沒日也。求後沒，加大餘六十九，小餘四，小餘滿沒法，從大餘，命之如前，無分為滅。",
+      "combined_excerpt": "推沒滅術，置入蔀年減一，以沒數乘之，滿日法得一，名為積沒，不盡為沒餘。以通法乘積沒，滿沒法得一，名為大餘，不盡為小餘。大餘滿六十除去之，其餘以蔀名命之，筭盡之外，前年冬至前沒日也。求後沒，加大餘六十九，小餘四，小餘滿沒法，從大餘，命之如前，無分為滅。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L86",
+        "previous_text": "推弦、望日，因其月朔大小餘之數，皆加大餘七，小餘三百五十九四分三，小餘滿蔀月得一，加大餘，大餘命如法，得上弦。又加得望，次下弦，又後月朔。其弦、望小餘二百六十以下，每以百刻乘之，滿蔀月得一刻，不滿其數近節氣夜漏之半者，以筭上為日。",
+        "next_span_id": "sifen:L108",
+        "next_text": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "入蔀",
+        "冬至",
+        "沒滅"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "remainder",
+        "set out",
+        "multiply",
+        "divide",
+        "subtract",
+        "add",
+        "count"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L108",
+      "system": "sifen",
+      "source_span_id": "sifen:L108",
+      "line_start": 108,
+      "line_end": 108,
+      "title_or_heading": "推日明所入度分術曰",
+      "heading_line_ids": [
+        "sifen:L108"
+      ],
+      "body_line_ids": [
+        "sifen:L108"
+      ],
+      "chinese_heading_excerpt": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。",
+      "chinese_body_excerpt": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。",
+      "combined_excerpt": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L88",
+        "previous_text": "推沒滅術，置入蔀年減一，以沒數乘之，滿日法得一，名為積沒，不盡為沒餘。以通法乘積沒，滿沒法得一，名為大餘，不盡為小餘。大餘滿六十除去之，其餘以蔀名命之，筭盡之外，前年冬至前沒日也。求後沒，加大餘六十九，小餘四，小餘滿沒法，從大餘，命之如前，無分為滅。",
+        "next_span_id": "sifen:L112",
+        "next_text": "推月明所入度分術曰：置其節氣夜半"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "日明"
+      ],
+      "constants": [
+        1
+      ],
+      "operation_terms": [
+        "multiply",
+        "set out",
+        "divide"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L112",
+      "system": "sifen",
+      "source_span_id": "sifen:L112",
+      "line_start": 112,
+      "line_end": 112,
+      "title_or_heading": "推月明所入度分術曰",
+      "heading_line_ids": [
+        "sifen:L112"
+      ],
+      "body_line_ids": [
+        "sifen:L112"
+      ],
+      "chinese_heading_excerpt": "推月明所入度分術曰：置其節氣夜半",
+      "chinese_body_excerpt": "推月明所入度分術曰：置其節氣夜半",
+      "combined_excerpt": "推月明所入度分術曰：置其節氣夜半",
+      "nearby_context": {
+        "previous_span_id": "sifen:L108",
+        "previous_text": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。",
+        "next_span_id": "sifen:L118",
+        "next_text": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "月明"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "set out"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L118",
+      "system": "sifen",
+      "source_span_id": "sifen:L118",
+      "line_start": 118,
+      "line_end": 118,
+      "title_or_heading": "推弦、望日所入星度術曰",
+      "heading_line_ids": [
+        "sifen:L118"
+      ],
+      "body_line_ids": [
+        "sifen:L118"
+      ],
+      "chinese_heading_excerpt": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。",
+      "chinese_body_excerpt": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。",
+      "combined_excerpt": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L112",
+        "previous_text": "推月明所入度分術曰：置其節氣夜半",
+        "next_span_id": "sifen:L122",
+        "next_text": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "弦望"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "set out",
+        "divide",
+        "add"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L122",
+      "system": "sifen",
+      "source_span_id": "sifen:L122",
+      "line_start": 122,
+      "line_end": 122,
+      "title_or_heading": "推弦、望月所入星度術曰",
+      "heading_line_ids": [
+        "sifen:L122"
+      ],
+      "body_line_ids": [
+        "sifen:L122"
+      ],
+      "chinese_heading_excerpt": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。",
+      "chinese_body_excerpt": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。",
+      "combined_excerpt": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L118",
+        "previous_text": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。",
+        "next_span_id": "sifen:L126",
+        "next_text": "推月食術曰：置入蔀會年數，減一，以食數乘之，滿歲數得一，名曰積食，不滿為食餘。以月數乘積，滿食法得一，名為積月，不滿為月餘分。積月以章月除去之，其餘為入章月數。當先除入章閏，乃以十二除去之，不滿者命以十一月，筭盡之外，則前年十一月前食月也。求入章閏者，置入章月，以章閏乘之，滿章月得一，則入章閏數也。餘分滿二百二十四以上至二百三十一，為食在閏月。閏或進退，以朔日定之。求後食，加五百二十分，滿法得一月數，命之如法，其分盡食筭上。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "弦望"
+      ],
+      "constants": [],
+      "operation_terms": [
+        "set out",
+        "divide",
+        "add"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L126",
+      "system": "sifen",
+      "source_span_id": "sifen:L126",
+      "line_start": 126,
+      "line_end": 126,
+      "title_or_heading": "推月食術曰",
+      "heading_line_ids": [
+        "sifen:L126"
+      ],
+      "body_line_ids": [
+        "sifen:L126"
+      ],
+      "chinese_heading_excerpt": "推月食術曰：置入蔀會年數，減一，以食數乘之，滿歲數得一，名曰積食，不滿為食餘。以月數乘積，滿食法得一，名為積月，不滿為月餘分。積月以章月除去之，其餘為入章月數。當先除入章閏，乃以十二除去之，不滿者命以十一月，筭盡之外，則前年十一月前食月也。求入章閏者，置入章月，以章閏乘之，滿章月得一，則入章閏數也。餘分滿二百二十四以上至二百三十一，為食在閏月。閏或進退，以朔日定之。求後食，加五百二十分，滿法得一月數，命之如法，其分盡食筭上。",
+      "chinese_body_excerpt": "推月食術曰：置入蔀會年數，減一，以食數乘之，滿歲數得一，名曰積食，不滿為食餘。以月數乘積，滿食法得一，名為積月，不滿為月餘分。積月以章月除去之，其餘為入章月數。當先除入章閏，乃以十二除去之，不滿者命以十一月，筭盡之外，則前年十一月前食月也。求入章閏者，置入章月，以章閏乘之，滿章月得一，則入章閏數也。餘分滿二百二十四以上至二百三十一，為食在閏月。閏或進退，以朔日定之。求後食，加五百二十分，滿法得一月數，命之如法，其分盡食筭上。",
+      "combined_excerpt": "推月食術曰：置入蔀會年數，減一，以食數乘之，滿歲數得一，名曰積食，不滿為食餘。以月數乘積，滿食法得一，名為積月，不滿為月餘分。積月以章月除去之，其餘為入章月數。當先除入章閏，乃以十二除去之，不滿者命以十一月，筭盡之外，則前年十一月前食月也。求入章閏者，置入章月，以章閏乘之，滿章月得一，則入章閏數也。餘分滿二百二十四以上至二百三十一，為食在閏月。閏或進退，以朔日定之。求後食，加五百二十分，滿法得一月數，命之如法，其分盡食筭上。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L122",
+        "previous_text": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。",
+        "next_span_id": "sifen:L128",
+        "next_text": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "入蔀",
+        "閏月",
+        "朔日",
+        "月食"
+      ],
+      "constants": [
+        1
+      ],
+      "operation_terms": [
+        "remainder",
+        "multiply",
+        "set out",
+        "divide",
+        "subtract",
+        "add",
+        "count"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L128",
+      "system": "sifen",
+      "source_span_id": "sifen:L128",
+      "line_start": 128,
+      "line_end": 128,
+      "title_or_heading": "推月食朔日術曰",
+      "heading_line_ids": [
+        "sifen:L128"
+      ],
+      "body_line_ids": [
+        "sifen:L128"
+      ],
+      "chinese_heading_excerpt": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。",
+      "chinese_body_excerpt": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。",
+      "combined_excerpt": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L126",
+        "previous_text": "推月食術曰：置入蔀會年數，減一，以食數乘之，滿歲數得一，名曰積食，不滿為食餘。以月數乘積，滿食法得一，名為積月，不滿為月餘分。積月以章月除去之，其餘為入章月數。當先除入章閏，乃以十二除去之，不滿者命以十一月，筭盡之外，則前年十一月前食月也。求入章閏者，置入章月，以章閏乘之，滿章月得一，則入章閏數也。餘分滿二百二十四以上至二百三十一，為食在閏月。閏或進退，以朔日定之。求後食，加五百二十分，滿法得一月數，命之如法，其分盡食筭上。",
+        "next_span_id": "sifen:L130",
+        "next_text": "求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "天正",
+        "朔日",
+        "月食"
+      ],
+      "constants": [
+        490,
+        1
+      ],
+      "operation_terms": [
+        "multiply",
+        "set out",
+        "divide",
+        "count",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L152",
+      "system": "sifen",
+      "source_span_id": "sifen:L152",
+      "line_start": 152,
+      "line_end": 152,
+      "title_or_heading": "推五星術",
+      "heading_line_ids": [
+        "sifen:L152"
+      ],
+      "body_line_ids": [
+        "sifen:L152"
+      ],
+      "chinese_heading_excerpt": "推五星術，置上元以來，盡所求年，以周率乘之，滿日率得一，名為積合；不盡名合餘。餘以周率除之，不得焉退歲；無所得，星合其年，得一合前年，二合前二年。金、水積合奇為晨，偶為夕。其不滿周率者反減之，餘為度分。",
+      "chinese_body_excerpt": "推五星術，置上元以來，盡所求年，以周率乘之，滿日率得一，名為積合；不盡名合餘。餘以周率除之，不得焉退歲；無所得，星合其年，得一合前年，二合前二年。金、水積合奇為晨，偶為夕。其不滿周率者反減之，餘為度分。",
+      "combined_excerpt": "推五星術，置上元以來，盡所求年，以周率乘之，滿日率得一，名為積合；不盡名合餘。餘以周率除之，不得焉退歲；無所得，星合其年，得一合前年，二合前二年。金、水積合奇為晨，偶為夕。其不滿周率者反減之，餘為度分。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L150",
+        "previous_text": "水，周率，萬一千九百八。日率，千八百八十九。合積月，一。月餘，二十一萬七千六百六十〈三〉。月法，二十二萬六千二百五十二。大餘，二十九。小餘，四百九十九。虛分，四百四十九〈一〉。入月日，二十七。日餘，四萬四千八百五。日度法，四萬七千六百三十一。積度，五十七。度餘四萬四千八百五。",
+        "next_span_id": "sifen:L154",
+        "next_text": "推星合月，以合積月乘積合為小積，又以月餘乘積合，滿其月法得一，從小積為月餘。積月滿紀月去之，餘為入紀月。每以章閏乘之，滿章月得一為閏；不盡為閏餘。以閏減入紀月，其餘以十二去之，餘為入歲月數，從天正十一月起，筭外，星合所在之月也。其閏滿二百二十四以上至二百三十一星合閏月。閏或進退，以朔制之。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "五星"
+      ],
+      "constants": [
+        1
+      ],
+      "operation_terms": [
+        "multiply",
+        "set out",
+        "divide",
+        "subtract",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    },
+    {
+      "source_proc_id": "sifen:procedure:L154",
+      "system": "sifen",
+      "source_span_id": "sifen:L154",
+      "line_start": 154,
+      "line_end": 154,
+      "title_or_heading": "推星合月",
+      "heading_line_ids": [
+        "sifen:L154"
+      ],
+      "body_line_ids": [
+        "sifen:L154"
+      ],
+      "chinese_heading_excerpt": "推星合月，以合積月乘積合為小積，又以月餘乘積合，滿其月法得一，從小積為月餘。積月滿紀月去之，餘為入紀月。每以章閏乘之，滿章月得一為閏；不盡為閏餘。以閏減入紀月，其餘以十二去之，餘為入歲月數，從天正十一月起，筭外，星合所在之月也。其閏滿二百二十四以上至二百三十一星合閏月。閏或進退，以朔制之。",
+      "chinese_body_excerpt": "推星合月，以合積月乘積合為小積，又以月餘乘積合，滿其月法得一，從小積為月餘。積月滿紀月去之，餘為入紀月。每以章閏乘之，滿章月得一為閏；不盡為閏餘。以閏減入紀月，其餘以十二去之，餘為入歲月數，從天正十一月起，筭外，星合所在之月也。其閏滿二百二十四以上至二百三十一星合閏月。閏或進退，以朔制之。",
+      "combined_excerpt": "推星合月，以合積月乘積合為小積，又以月餘乘積合，滿其月法得一，從小積為月餘。積月滿紀月去之，餘為入紀月。每以章閏乘之，滿章月得一為閏；不盡為閏餘。以閏減入紀月，其餘以十二去之，餘為入歲月數，從天正十一月起，筭外，星合所在之月也。其閏滿二百二十四以上至二百三十一星合閏月。閏或進退，以朔制之。",
+      "nearby_context": {
+        "previous_span_id": "sifen:L152",
+        "previous_text": "推五星術，置上元以來，盡所求年，以周率乘之，滿日率得一，名為積合；不盡名合餘。餘以周率除之，不得焉退歲；無所得，星合其年，得一合前年，二合前二年。金、水積合奇為晨，偶為夕。其不滿周率者反減之，餘為度分。",
+        "next_span_id": "sifen:L166",
+        "next_text": "求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。"
+      },
+      "detected_by": [
+        "procedure_ir_title"
+      ],
+      "segmentation_confidence": "high",
+      "possible_split_heading_body": false,
+      "possible_continuation": false,
+      "possible_one_to_many_cullen": false,
+      "distinctive_terms": [
+        "天正",
+        "閏月",
+        "星合月"
+      ],
+      "constants": [
+        1
+      ],
+      "operation_terms": [
+        "multiply",
+        "subtract",
+        "count",
+        "remainder"
+      ],
+      "candidate_cullen_proc_ids": [],
+      "alignment_status": "unmatched",
+      "notes": []
+    }
+  ]
+}

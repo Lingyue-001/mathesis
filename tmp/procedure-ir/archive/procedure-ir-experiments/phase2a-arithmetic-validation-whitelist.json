@@ -1,0 +1,735 @@
+{
+  "generated_at": "2026-06-23T09:07:38.755Z",
+  "stage": "phase2a_arithmetic_validation_whitelist",
+  "input_scope": {
+    "expression_map": "tmp/procedure-ir/phase2a-cullen-backed-expression-map.json",
+    "expression_quality_audit": "tmp/procedure-ir/phase2a-expression-quality-audit.json",
+    "phase2a_pilot": "tmp/procedure-ir/phase2a-procedure-ir-pilot.json",
+    "reconstruction": "tmp/procedure-ir/cullen-led-source-reconstruction.json",
+    "target_proc_ids": [
+      "Proc. 2.3",
+      "Proc. 2.4",
+      "Proc. 2.5",
+      "Proc. 2.9",
+      "Proc. 3.2"
+    ]
+  },
+  "items": [
+    {
+      "step_id": "Proc.2.3.step.1",
+      "proc_id": "Proc. 2.3",
+      "formal_expression": "product = 积月 × 月法",
+      "backup_level": "A_worked_example_formula",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen worked example: 24 × 2392 = 57,408.",
+      "expected_output_source": "Cullen worked example: 24 × 2392 = 57,408.",
+      "can_run_now": true,
+      "excluded_parts": [],
+      "reason": "Run now: direct Cullen worked-example arithmetic is available."
+    },
+    {
+      "step_id": "Proc.2.3.step.2",
+      "proc_id": "Proc. 2.3",
+      "formal_expression": "积日 = floor(product / 日法); 小馀 = product mod 日法",
+      "backup_level": "A_worked_example_formula",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen worked example: 57,408/81 = 708 remainder 60.",
+      "expected_output_source": "Cullen worked example: 57,408/81 = 708 remainder 60.",
+      "can_run_now": true,
+      "excluded_parts": [],
+      "reason": "Run now: direct Cullen worked-example arithmetic is available."
+    },
+    {
+      "step_id": "Proc.2.3.step.3",
+      "proc_id": "Proc. 2.3",
+      "formal_expression": "is_long_month = (小馀 >= 38)",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_with_caveat",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "Since 38 + 43 = 81 it is clear that if the Lesser Remainder at the start of this month is 43 or more, then a whole extra day will have to be counted before we get to the next conjunction.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "38-threshold predicate cannot be detached cleanly from the 43/carry commentary relation yet"
+      ],
+      "reason": "needs_cullen_page_check: current allowed inputs do not fully reconcile source threshold 38 with Cullen's 43/carry explanation, so keep out of arithmetic validation."
+    },
+    {
+      "step_id": "Proc.2.3.step.4",
+      "proc_id": "Proc. 2.3",
+      "formal_expression": "大馀 = 积日 mod 60",
+      "backup_level": "A_worked_example_formula",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen worked example: 708/60 = 11 remainder 48.",
+      "expected_output_source": "Cullen worked example: 708/60 = 11 remainder 48.",
+      "can_run_now": true,
+      "excluded_parts": [],
+      "reason": "Run now: direct Cullen worked-example arithmetic is available."
+    },
+    {
+      "step_id": "Proc.2.3.step.5",
+      "proc_id": "Proc. 2.3",
+      "formal_expression": "朔日_index = ((统首日起点_index - 1) + 大馀) mod 60 + 1",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_with_caveat",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "If the first day is number 1 and we are to count 48, the day 'outside the count', the day of conjunction, is number 49.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "算外 counting convention",
+        "external Concordance Head index"
+      ],
+      "reason": "Counting-outside convention is explicitly excluded from run-now arithmetic validation."
+    },
+    {
+      "step_id": "Proc.2.3.step.6",
+      "proc_id": "Proc. 2.3",
+      "formal_expression": "next_month_greater_raw = 大馀 + 29; next_month_lesser_raw = 小馀 + 43",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "Since the mean interval between conjunctions will be 2392/81 days = 29 + 43/81 days it is clear that 29 and 43 are the amounts we must add to the Greater and Lesser Remainders to get to the next conjunction.",
+      "can_run_now": true,
+      "excluded_parts": [],
+      "reason": "Run now: Cullen commentary states a sufficiently explicit arithmetic relation for minimal validation."
+    },
+    {
+      "step_id": "Proc.2.3.step.7",
+      "proc_id": "Proc. 2.3",
+      "formal_expression": "next_month_greater = next_month_greater_raw + floor(next_month_lesser_raw / 日法); next_month_lesser = next_month_lesser_raw mod 日法",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_with_caveat",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "If the Lesser Remainder at the start of this month is 43 or more, then a whole extra day will have to be counted before we get to the next conjunction.",
+      "can_run_now": false,
+      "excluded_parts": [],
+      "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+    },
+    {
+      "step_id": "Proc.2.3.step.8",
+      "proc_id": "Proc. 2.3",
+      "formal_expression": "first_quarter_greater_raw = 大馀 + 7; first_quarter_lesser_raw = 小馀 + 31",
+      "backup_level": "A_worked_example_formula",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen worked example: 2392/4 = 598 and 598/81 = 7 remainder 31.",
+      "expected_output_source": "Cullen worked example: 2392/4 = 598 and 598/81 = 7 remainder 31.",
+      "can_run_now": true,
+      "excluded_parts": [],
+      "reason": "Run now: direct Cullen worked-example arithmetic is available."
+    },
+    {
+      "step_id": "Proc.2.3.step.9",
+      "proc_id": "Proc. 2.3",
+      "formal_expression": "full_moon_increment = 2 × first_quarter_increment",
+      "backup_level": "C_translation_explicit_operation",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+      "expected_output_source": "It is assumed that the lunar phases are equally spaced.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "pair-level doubling interpretation",
+        "full-moon paired carry consequences"
+      ],
+      "reason": "Only C-level translation backup is present, so this step must be downgraded from clean formalizable_now and excluded from run-now validation."
+    },
+    {
+      "step_id": "Proc.2.4.step.1",
+      "proc_id": "Proc. 2.4",
+      "formal_expression": "rescaled_surplus = 闰馀 × 12",
+      "backup_level": "A_worked_example_formula",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen worked example: 14 × 12 = 168.",
+      "expected_output_source": "Cullen worked example: 14 × 12 = 168.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "proc-level discrepancy context"
+      ],
+      "reason": "Although the multiplication itself is clear, Proc. 2.4 remains under a source/Cullen discrepancy and is not admitted to the run-now whitelist in this round."
+    },
+    {
+      "step_id": "Proc.2.4.step.2a",
+      "proc_id": "Proc. 2.4",
+      "formal_expression": null,
+      "backup_level": "D_source_only_needs_human_review",
+      "formalization_status": "not_formalizable_yet",
+      "validation_input_source": "Cullen worked example: 14 × 12 = 168 and (228 − 168) / 7 = 8, remainder 4.",
+      "expected_output_source": "Cullen worked example: 14 × 12 = 168 and (228 − 168) / 7 = 8, remainder 4.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "source 加十 vs Cullen 加七 discrepancy"
+      ],
+      "reason": "Source/Cullen discrepancy blocks deterministic arithmetic formalization."
+    },
+    {
+      "step_id": "Proc.2.4.step.2b",
+      "proc_id": "Proc. 2.4",
+      "formal_expression": "steps_before_overflow = floor((章中 − rescaled_surplus) / 7)",
+      "backup_level": "A_worked_example_formula",
+      "formalization_status": "formalizable_with_caveat",
+      "validation_input_source": "Cullen worked example: (228 − 168) / 7 = 8, remainder 4.",
+      "expected_output_source": "Cullen worked example: (228 − 168) / 7 = 8, remainder 4.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "overflow-count naming certainty",
+        "source 加十 vs Cullen 加七 discrepancy"
+      ],
+      "reason": "Worked-example arithmetic exists, but this round keeps all Proc. 2.4 steps out of run-now because the discrepancy and off-by-one naming risk remain open."
+    },
+    {
+      "step_id": "Proc.2.4.step.3",
+      "proc_id": "Proc. 2.4",
+      "formal_expression": "overflow_qi_index = steps_before_overflow + 1",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_with_caveat",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "If 3 additions of 7 are required, the 4th qi will be the one 'outside the count' that has shifted onto or past the next mean conjunction.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "起冬至 / 算外 ordinal counting convention"
+      ],
+      "reason": "Counting-outside convention is excluded from arithmetic auto-run."
+    },
+    {
+      "step_id": "Proc.2.4.step.4",
+      "proc_id": "Proc. 2.4",
+      "formal_expression": "preceding_month_is_intercalary = (medial_qi_day == conjunction_day) or (medial_qi_day == conjunction_day + 1)",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_with_caveat",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "This qi could fall on the day after the day of the conjunction, if the conjunction falls more than 0.22 day after midnight on the first day of the month.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "calendar placement of medial qi",
+        "intercalary-month classification rule"
+      ],
+      "reason": "Calendrical placement logic still requires human review and discrepancy resolution."
+    },
+    {
+      "step_id": "Proc.2.5.step.1",
+      "proc_id": "Proc. 2.5",
+      "formal_expression": "winter_solstice_product = 入统岁数 × 算馀",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "The number 8080 is the number of days by which the days in a Concordance of 1539 years exceed a multiple of 360.",
+      "can_run_now": false,
+      "excluded_parts": [],
+      "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+    },
+    {
+      "step_id": "Proc.2.5.step.2",
+      "proc_id": "Proc. 2.5",
+      "formal_expression": "大馀 = floor(winter_solstice_product / 统法); 小馀 = winter_solstice_product mod 统法",
+      "backup_level": "C_translation_explicit_operation",
+      "formalization_status": "formalizable_with_caveat",
+      "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+      "expected_output_source": "The rest follows.",
+      "can_run_now": false,
+      "excluded_parts": [],
+      "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+    },
+    {
+      "step_id": "Proc.2.5.step.3",
+      "proc_id": "Proc. 2.5",
+      "formal_expression": null,
+      "backup_level": "C_translation_explicit_operation",
+      "formalization_status": "needs_human_review",
+      "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+      "expected_output_source": "The rest follows.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "如法 counting convention",
+        "winter-solstice day recovery"
+      ],
+      "reason": "As instructed, 如法 counting remains excluded from run-now arithmetic validation."
+    },
+    {
+      "step_id": "Proc.2.9.step.1",
+      "proc_id": "Proc. 2.9",
+      "formal_expression": "midnight_offset_parts = 月小馀 × 章岁",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "Multiplying this by 19 converts to a scale of 19 × 81 = 1539, the Concordance Factor, used for fractions of a du.",
+      "can_run_now": true,
+      "excluded_parts": [],
+      "reason": "Run now: Cullen commentary states a sufficiently explicit arithmetic relation for minimal validation."
+    },
+    {
+      "step_id": "Proc.2.9.step.2",
+      "proc_id": "Proc. 2.9",
+      "formal_expression": "日夜半所在度 = 合晨度 − (midnight_offset_parts / 统法)",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_with_caveat",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "Subtracting this amount from the du for the conjunction gives the du for the preceding midnight.",
+      "can_run_now": false,
+      "excluded_parts": [],
+      "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+    },
+    {
+      "step_id": "Proc.2.9.step.3",
+      "proc_id": "Proc. 2.9",
+      "formal_expression": "if midnight_offset_parts > conjunction_fractional_parts then borrow_du = 1 and conjunction_fractional_parts = conjunction_fractional_parts + 统法",
+      "backup_level": "C_translation_explicit_operation",
+      "formalization_status": "formalizable_with_caveat",
+      "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+      "expected_output_source": "The Lesser Remainder for a month is a fraction of a day at a scale of 81... used for fractions of a du.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "borrow bookkeeping",
+        "whole-du decomposition detail"
+      ],
+      "reason": "Borrow bookkeeping is explicitly excluded from run-now arithmetic validation."
+    },
+    {
+      "step_id": "Proc.3.2.step.1",
+      "proc_id": "Proc. 3.2",
+      "formal_expression": "origin_remainder = 上元积年 mod 元法",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "First we cast out whole Origins, since all relevant conditions repeat in an Origin.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "benchmark-only nested cycle step"
+      ],
+      "reason": "Proc. 3.2 is benchmark only and must not be promoted into the Santong run-now whitelist."
+    },
+    {
+      "step_id": "Proc.3.2.step.2",
+      "proc_id": "Proc. 3.2",
+      "formal_expression": "entered_era_index = floor(origin_remainder / 纪法); 入纪年数 = origin_remainder mod 纪法",
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "Since an Origin is three Eras, we then establish which of the three Eras of the current Origin we are in.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "benchmark-only nested cycle step"
+      ],
+      "reason": "Proc. 3.2 is benchmark only and must not be promoted into the Santong run-now whitelist."
+    },
+    {
+      "step_id": "Proc.3.2.step.3",
+      "proc_id": "Proc. 3.2",
+      "formal_expression": "entered_obscuration_index = floor(入纪年数 / 蔀法); 入蔀年数 = 入纪年数 mod 蔀法",
+      "backup_level": "C_translation_explicit_operation",
+      "formalization_status": "formalizable_now",
+      "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+      "expected_output_source": "Each column has 20 rows, containing the sexagenary numbers of the first year of each of the 20 Obscurations that make up the relevant Era.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "table/counting convention dependency",
+        "benchmark-only nested cycle step"
+      ],
+      "reason": "Proc. 3.2 remains benchmark only; C-level backup also blocks auto-run."
+    },
+    {
+      "step_id": "Proc.3.2.step.4",
+      "proc_id": "Proc. 3.2",
+      "formal_expression": null,
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "needs_human_review",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "That tells us which of the three main columns ... we should be using.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "Heaven Era counting convention",
+        "table lookup behavior"
+      ],
+      "reason": "Benchmark-only table/counting convention remains human review."
+    },
+    {
+      "step_id": "Proc.3.2.step.5",
+      "proc_id": "Proc. 3.2",
+      "formal_expression": null,
+      "backup_level": "C_translation_explicit_operation",
+      "formalization_status": "needs_human_review",
+      "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+      "expected_output_source": "Each column has 20 rows, containing the sexagenary numbers of the first year of each of the 20 Obscurations that make up the relevant Era.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "jiazi Obscuration counting convention",
+        "table lookup behavior"
+      ],
+      "reason": "Benchmark-only table/counting convention remains human review."
+    },
+    {
+      "step_id": "Proc.3.2.step.6",
+      "proc_id": "Proc. 3.2",
+      "formal_expression": null,
+      "backup_level": "B_commentary_explicit_relation",
+      "formalization_status": "needs_human_review",
+      "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+      "expected_output_source": "We do this by finding the sexagenary number of the first year of the current Obscuration, and then counting forward.",
+      "can_run_now": false,
+      "excluded_parts": [
+        "岁名命之 labeling",
+        "算上 counting-above convention"
+      ],
+      "reason": "Benchmark-only labeling/counting convention remains human review."
+    }
+  ],
+  "summary": {
+    "run_now": [
+      {
+        "step_id": "Proc.2.3.step.1",
+        "proc_id": "Proc. 2.3",
+        "formal_expression": "product = 积月 × 月法",
+        "backup_level": "A_worked_example_formula",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen worked example: 24 × 2392 = 57,408.",
+        "expected_output_source": "Cullen worked example: 24 × 2392 = 57,408.",
+        "can_run_now": true,
+        "excluded_parts": [],
+        "reason": "Run now: direct Cullen worked-example arithmetic is available."
+      },
+      {
+        "step_id": "Proc.2.3.step.2",
+        "proc_id": "Proc. 2.3",
+        "formal_expression": "积日 = floor(product / 日法); 小馀 = product mod 日法",
+        "backup_level": "A_worked_example_formula",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen worked example: 57,408/81 = 708 remainder 60.",
+        "expected_output_source": "Cullen worked example: 57,408/81 = 708 remainder 60.",
+        "can_run_now": true,
+        "excluded_parts": [],
+        "reason": "Run now: direct Cullen worked-example arithmetic is available."
+      },
+      {
+        "step_id": "Proc.2.3.step.4",
+        "proc_id": "Proc. 2.3",
+        "formal_expression": "大馀 = 积日 mod 60",
+        "backup_level": "A_worked_example_formula",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen worked example: 708/60 = 11 remainder 48.",
+        "expected_output_source": "Cullen worked example: 708/60 = 11 remainder 48.",
+        "can_run_now": true,
+        "excluded_parts": [],
+        "reason": "Run now: direct Cullen worked-example arithmetic is available."
+      },
+      {
+        "step_id": "Proc.2.3.step.6",
+        "proc_id": "Proc. 2.3",
+        "formal_expression": "next_month_greater_raw = 大馀 + 29; next_month_lesser_raw = 小馀 + 43",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "Since the mean interval between conjunctions will be 2392/81 days = 29 + 43/81 days it is clear that 29 and 43 are the amounts we must add to the Greater and Lesser Remainders to get to the next conjunction.",
+        "can_run_now": true,
+        "excluded_parts": [],
+        "reason": "Run now: Cullen commentary states a sufficiently explicit arithmetic relation for minimal validation."
+      },
+      {
+        "step_id": "Proc.2.3.step.8",
+        "proc_id": "Proc. 2.3",
+        "formal_expression": "first_quarter_greater_raw = 大馀 + 7; first_quarter_lesser_raw = 小馀 + 31",
+        "backup_level": "A_worked_example_formula",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen worked example: 2392/4 = 598 and 598/81 = 7 remainder 31.",
+        "expected_output_source": "Cullen worked example: 2392/4 = 598 and 598/81 = 7 remainder 31.",
+        "can_run_now": true,
+        "excluded_parts": [],
+        "reason": "Run now: direct Cullen worked-example arithmetic is available."
+      },
+      {
+        "step_id": "Proc.2.9.step.1",
+        "proc_id": "Proc. 2.9",
+        "formal_expression": "midnight_offset_parts = 月小馀 × 章岁",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "Multiplying this by 19 converts to a scale of 19 × 81 = 1539, the Concordance Factor, used for fractions of a du.",
+        "can_run_now": true,
+        "excluded_parts": [],
+        "reason": "Run now: Cullen commentary states a sufficiently explicit arithmetic relation for minimal validation."
+      }
+    ],
+    "candidate_but_not_run_now": [
+      {
+        "step_id": "Proc.2.3.step.7",
+        "proc_id": "Proc. 2.3",
+        "formal_expression": "next_month_greater = next_month_greater_raw + floor(next_month_lesser_raw / 日法); next_month_lesser = next_month_lesser_raw mod 日法",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_with_caveat",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "If the Lesser Remainder at the start of this month is 43 or more, then a whole extra day will have to be counted before we get to the next conjunction.",
+        "can_run_now": false,
+        "excluded_parts": [],
+        "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+      },
+      {
+        "step_id": "Proc.2.5.step.1",
+        "proc_id": "Proc. 2.5",
+        "formal_expression": "winter_solstice_product = 入统岁数 × 算馀",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "The number 8080 is the number of days by which the days in a Concordance of 1539 years exceed a multiple of 360.",
+        "can_run_now": false,
+        "excluded_parts": [],
+        "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+      },
+      {
+        "step_id": "Proc.2.5.step.2",
+        "proc_id": "Proc. 2.5",
+        "formal_expression": "大馀 = floor(winter_solstice_product / 统法); 小馀 = winter_solstice_product mod 统法",
+        "backup_level": "C_translation_explicit_operation",
+        "formalization_status": "formalizable_with_caveat",
+        "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+        "expected_output_source": "The rest follows.",
+        "can_run_now": false,
+        "excluded_parts": [],
+        "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+      },
+      {
+        "step_id": "Proc.2.9.step.2",
+        "proc_id": "Proc. 2.9",
+        "formal_expression": "日夜半所在度 = 合晨度 − (midnight_offset_parts / 统法)",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_with_caveat",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "Subtracting this amount from the du for the conjunction gives the du for the preceding midnight.",
+        "can_run_now": false,
+        "excluded_parts": [],
+        "reason": "Candidate but not run now: arithmetic core is partly formalized, but this round keeps it outside auto-run."
+      }
+    ],
+    "excluded": [
+      {
+        "step_id": "Proc.2.3.step.3",
+        "proc_id": "Proc. 2.3",
+        "formal_expression": "is_long_month = (小馀 >= 38)",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_with_caveat",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "Since 38 + 43 = 81 it is clear that if the Lesser Remainder at the start of this month is 43 or more, then a whole extra day will have to be counted before we get to the next conjunction.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "38-threshold predicate cannot be detached cleanly from the 43/carry commentary relation yet"
+        ],
+        "reason": "needs_cullen_page_check: current allowed inputs do not fully reconcile source threshold 38 with Cullen's 43/carry explanation, so keep out of arithmetic validation."
+      },
+      {
+        "step_id": "Proc.2.3.step.5",
+        "proc_id": "Proc. 2.3",
+        "formal_expression": "朔日_index = ((统首日起点_index - 1) + 大馀) mod 60 + 1",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_with_caveat",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "If the first day is number 1 and we are to count 48, the day 'outside the count', the day of conjunction, is number 49.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "算外 counting convention",
+          "external Concordance Head index"
+        ],
+        "reason": "Counting-outside convention is explicitly excluded from run-now arithmetic validation."
+      },
+      {
+        "step_id": "Proc.2.3.step.9",
+        "proc_id": "Proc. 2.3",
+        "formal_expression": "full_moon_increment = 2 × first_quarter_increment",
+        "backup_level": "C_translation_explicit_operation",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+        "expected_output_source": "It is assumed that the lunar phases are equally spaced.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "pair-level doubling interpretation",
+          "full-moon paired carry consequences"
+        ],
+        "reason": "Only C-level translation backup is present, so this step must be downgraded from clean formalizable_now and excluded from run-now validation."
+      },
+      {
+        "step_id": "Proc.2.4.step.1",
+        "proc_id": "Proc. 2.4",
+        "formal_expression": "rescaled_surplus = 闰馀 × 12",
+        "backup_level": "A_worked_example_formula",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen worked example: 14 × 12 = 168.",
+        "expected_output_source": "Cullen worked example: 14 × 12 = 168.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "proc-level discrepancy context"
+        ],
+        "reason": "Although the multiplication itself is clear, Proc. 2.4 remains under a source/Cullen discrepancy and is not admitted to the run-now whitelist in this round."
+      },
+      {
+        "step_id": "Proc.2.4.step.2a",
+        "proc_id": "Proc. 2.4",
+        "formal_expression": null,
+        "backup_level": "D_source_only_needs_human_review",
+        "formalization_status": "not_formalizable_yet",
+        "validation_input_source": "Cullen worked example: 14 × 12 = 168 and (228 − 168) / 7 = 8, remainder 4.",
+        "expected_output_source": "Cullen worked example: 14 × 12 = 168 and (228 − 168) / 7 = 8, remainder 4.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "source 加十 vs Cullen 加七 discrepancy"
+        ],
+        "reason": "Source/Cullen discrepancy blocks deterministic arithmetic formalization."
+      },
+      {
+        "step_id": "Proc.2.4.step.2b",
+        "proc_id": "Proc. 2.4",
+        "formal_expression": "steps_before_overflow = floor((章中 − rescaled_surplus) / 7)",
+        "backup_level": "A_worked_example_formula",
+        "formalization_status": "formalizable_with_caveat",
+        "validation_input_source": "Cullen worked example: (228 − 168) / 7 = 8, remainder 4.",
+        "expected_output_source": "Cullen worked example: (228 − 168) / 7 = 8, remainder 4.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "overflow-count naming certainty",
+          "source 加十 vs Cullen 加七 discrepancy"
+        ],
+        "reason": "Worked-example arithmetic exists, but this round keeps all Proc. 2.4 steps out of run-now because the discrepancy and off-by-one naming risk remain open."
+      },
+      {
+        "step_id": "Proc.2.4.step.3",
+        "proc_id": "Proc. 2.4",
+        "formal_expression": "overflow_qi_index = steps_before_overflow + 1",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_with_caveat",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "If 3 additions of 7 are required, the 4th qi will be the one 'outside the count' that has shifted onto or past the next mean conjunction.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "起冬至 / 算外 ordinal counting convention"
+        ],
+        "reason": "Counting-outside convention is excluded from arithmetic auto-run."
+      },
+      {
+        "step_id": "Proc.2.4.step.4",
+        "proc_id": "Proc. 2.4",
+        "formal_expression": "preceding_month_is_intercalary = (medial_qi_day == conjunction_day) or (medial_qi_day == conjunction_day + 1)",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_with_caveat",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "This qi could fall on the day after the day of the conjunction, if the conjunction falls more than 0.22 day after midnight on the first day of the month.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "calendar placement of medial qi",
+          "intercalary-month classification rule"
+        ],
+        "reason": "Calendrical placement logic still requires human review and discrepancy resolution."
+      },
+      {
+        "step_id": "Proc.2.5.step.3",
+        "proc_id": "Proc. 2.5",
+        "formal_expression": null,
+        "backup_level": "C_translation_explicit_operation",
+        "formalization_status": "needs_human_review",
+        "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+        "expected_output_source": "The rest follows.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "如法 counting convention",
+          "winter-solstice day recovery"
+        ],
+        "reason": "As instructed, 如法 counting remains excluded from run-now arithmetic validation."
+      },
+      {
+        "step_id": "Proc.2.9.step.3",
+        "proc_id": "Proc. 2.9",
+        "formal_expression": "if midnight_offset_parts > conjunction_fractional_parts then borrow_du = 1 and conjunction_fractional_parts = conjunction_fractional_parts + 统法",
+        "backup_level": "C_translation_explicit_operation",
+        "formalization_status": "formalizable_with_caveat",
+        "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+        "expected_output_source": "The Lesser Remainder for a month is a fraction of a day at a scale of 81... used for fractions of a du.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "borrow bookkeeping",
+          "whole-du decomposition detail"
+        ],
+        "reason": "Borrow bookkeeping is explicitly excluded from run-now arithmetic validation."
+      },
+      {
+        "step_id": "Proc.3.2.step.1",
+        "proc_id": "Proc. 3.2",
+        "formal_expression": "origin_remainder = 上元积年 mod 元法",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "First we cast out whole Origins, since all relevant conditions repeat in an Origin.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "benchmark-only nested cycle step"
+        ],
+        "reason": "Proc. 3.2 is benchmark only and must not be promoted into the Santong run-now whitelist."
+      },
+      {
+        "step_id": "Proc.3.2.step.2",
+        "proc_id": "Proc. 3.2",
+        "formal_expression": "entered_era_index = floor(origin_remainder / 纪法); 入纪年数 = origin_remainder mod 纪法",
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "Since an Origin is three Eras, we then establish which of the three Eras of the current Origin we are in.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "benchmark-only nested cycle step"
+        ],
+        "reason": "Proc. 3.2 is benchmark only and must not be promoted into the Santong run-now whitelist."
+      },
+      {
+        "step_id": "Proc.3.2.step.3",
+        "proc_id": "Proc. 3.2",
+        "formal_expression": "entered_obscuration_index = floor(入纪年数 / 蔀法); 入蔀年数 = 入纪年数 mod 蔀法",
+        "backup_level": "C_translation_explicit_operation",
+        "formalization_status": "formalizable_now",
+        "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+        "expected_output_source": "Each column has 20 rows, containing the sexagenary numbers of the first year of each of the 20 Obscurations that make up the relevant Era.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "table/counting convention dependency",
+          "benchmark-only nested cycle step"
+        ],
+        "reason": "Proc. 3.2 remains benchmark only; C-level backup also blocks auto-run."
+      },
+      {
+        "step_id": "Proc.3.2.step.4",
+        "proc_id": "Proc. 3.2",
+        "formal_expression": null,
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "needs_human_review",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "That tells us which of the three main columns ... we should be using.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "Heaven Era counting convention",
+          "table lookup behavior"
+        ],
+        "reason": "Benchmark-only table/counting convention remains human review."
+      },
+      {
+        "step_id": "Proc.3.2.step.5",
+        "proc_id": "Proc. 3.2",
+        "formal_expression": null,
+        "backup_level": "C_translation_explicit_operation",
+        "formalization_status": "needs_human_review",
+        "validation_input_source": "Cullen-backed relation from translation/commentary and step bindings",
+        "expected_output_source": "Each column has 20 rows, containing the sexagenary numbers of the first year of each of the 20 Obscurations that make up the relevant Era.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "jiazi Obscuration counting convention",
+          "table lookup behavior"
+        ],
+        "reason": "Benchmark-only table/counting convention remains human review."
+      },
+      {
+        "step_id": "Proc.3.2.step.6",
+        "proc_id": "Proc. 3.2",
+        "formal_expression": null,
+        "backup_level": "B_commentary_explicit_relation",
+        "formalization_status": "needs_human_review",
+        "validation_input_source": "Cullen-backed relation from commentary and step bindings",
+        "expected_output_source": "We do this by finding the sexagenary number of the first year of the current Obscuration, and then counting forward.",
+        "can_run_now": false,
+        "excluded_parts": [
+          "岁名命之 labeling",
+          "算上 counting-above convention"
+        ],
+        "reason": "Benchmark-only labeling/counting convention remains human review."
+      }
+    ]
+  }
+}

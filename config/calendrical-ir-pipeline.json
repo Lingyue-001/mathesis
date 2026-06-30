@@ -9,7 +9,7 @@
       "status": "registered",
       "artifacts": {
         "pages": "tmp/procedure-ir/cullen-pages.json",
-        "chunks": "tmp/procedure-ir/cullen-chunks.json",
+        "chunks": "tmp/procedure-ir/cullen-ch3-chunks.json",
         "search_index": "tmp/procedure-ir/cullen-search-index.json",
         "claims": "tmp/procedure-ir/cullen-claims.json",
         "alignments": "tmp/procedure-ir/cullen-alignments.json"

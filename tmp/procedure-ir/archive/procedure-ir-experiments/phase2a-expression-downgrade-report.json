@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-06-23T09:07:38.771Z",
+  "stage": "phase2a_expression_downgrade_report",
+  "reviewed_entries": [
+    {
+      "step_id": "Proc.2.3.step.9",
+      "finding": "C-level backup cannot support a clean formalizable_now status for automatic validation.",
+      "current_backup_level": "C_translation_explicit_operation",
+      "current_formalization_status": "formalizable_now",
+      "current_operation_id": "double_first_quarter_increment_to_get_full_moon_increment",
+      "current_formal_expression": "full_moon_increment = 2 × first_quarter_increment",
+      "recommended_backup_level": "C_translation_explicit_operation",
+      "recommended_formalization_status": "formalizable_with_caveat",
+      "recommended_operation_id": "double_first_quarter_increment_to_get_full_moon_increment",
+      "arithmetic_validation_eligibility": "exclude_from_run_now",
+      "rationale": "The doubling rule is explicit only in Cullen's translation, not in a worked example or commentary relation that proves pair-level arithmetic behavior. Keep the expression human-readable but downgrade its machine-readiness."
+    },
+    {
+      "step_id": "Proc.2.4.step.2b",
+      "finding": "Operation naming carries an off-by-one risk if 'cross' or 'exceed' language is left underspecified.",
+      "current_backup_level": "A_worked_example_formula",
+      "current_formalization_status": "formalizable_with_caveat",
+      "current_operation_id": "compute_number_of_sevens_needed_to_cross_rule_medial_qi_cycle",
+      "current_formal_expression": "steps_before_overflow = floor((章中 − rescaled_surplus) / 7)",
+      "recommended_backup_level": "A_worked_example_formula",
+      "recommended_formalization_status": "formalizable_with_caveat",
+      "recommended_operation_id": "completed_seven_advances_before_overflow",
+      "arithmetic_validation_eligibility": "exclude_from_run_now",
+      "rationale": "The Cullen example supports floor((228 - 168) / 7) = 8, but that quotient is best read as completed seven-unit advances before overflow. Keep the source 加十 vs Cullen 加七 discrepancy explicit and avoid ambiguous cross/exceed naming."
+    },
+    {
+      "step_id": "Proc.2.3.step.3",
+      "finding": "The 38-threshold source rule and the 43/carry commentary relation are not fully reconciled by current inputs alone.",
+      "current_backup_level": "B_commentary_explicit_relation",
+      "current_formalization_status": "formalizable_with_caveat",
+      "current_operation_id": "classify_long_month_from_lesser_remainder_threshold",
+      "current_formal_expression": "is_long_month = (小馀 >= 38)",
+      "recommended_backup_level": "B_commentary_explicit_relation",
+      "recommended_formalization_status": "needs_human_review",
+      "recommended_operation_id": "classify_long_month_from_lesser_remainder_threshold",
+      "arithmetic_validation_eligibility": "needs_cullen_page_check",
+      "rationale": "Current inputs show source '38 or above' and Cullen commentary '43 or more' in a carry explanation, but do not establish a page-level explanation tight enough for automatic arithmetic validation. Keep this out of run-now until the Cullen page is checked directly in a later stage."
+    }
+  ],
+  "downgrade_count": 2,
+  "rename_suggestion_count": 1,
+  "needs_page_check_count": 1
+}
