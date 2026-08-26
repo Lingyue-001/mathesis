@@ -12,7 +12,7 @@ export const mapConfig = {
     trackpadPinchThreshold: 12
   },
   baseLayer: {
-    tileUrl: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+    tileUrl: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_266j_1_4395d6cb619c0e0be3f98fee",
     attribution: "&copy; OpenStreetMap contributors, &copy; CARTO",
     maxZoom: 18
   },
