@@ -1,5 +1,6 @@
 """Source-to-structure coverage and graph closure checks."""
 from .anchors import anchor_for
+from analysis_parser.audit import audit
 
 
 def _span_key(span):
@@ -45,13 +46,20 @@ def build_coverage_ledger(packet, graph, effective=None, replay=None):
     unresolved_quantities = [value['id'] for value in values.values()
                              if value.get('resolution_status') == 'unknown']
     legal_inputs = set((effective.get('parameters') or {}).keys())
+    # Re-run structural audit on the graph being judged. The ledger must not
+    # trust a diagnostic list that may have been created before a later graph
+    # transformation or test corruption.
+    # Lightweight fixture graphs may intentionally omit their source-document
+    # inventory. In that case audit cannot judge span validity; the ledger
+    # still reports coverage, but does not manufacture an invalid-source error.
+    structural_diagnostics = audit(graph) if graph.get('documents') else []
     diagnostics = list(graph.get('diagnostics', []))
     diagnostics.extend(graph.get('program', {}).get('linked', {}).get('diagnostics', []))
     missing_inputs = []
     for diagnostic in diagnostics:
         if diagnostic.get('kind') == 'missing_import' and diagnostic.get('formal') not in legal_inputs:
             missing_inputs.append(diagnostic)
-    invalid = [row for row in diagnostics
+    invalid = structural_diagnostics + [row for row in diagnostics
                if row.get('kind') in ('type_error', 'invalid_unit_transition', 'dependency_cycle', 'invalid_review_binding')]
     decision_states = (replay or {}).get('decision_status', {})
     unstable_decisions = [decision_id for decision_id, state in decision_states.items()
@@ -69,6 +77,7 @@ def build_coverage_ledger(packet, graph, effective=None, replay=None):
             'node_without_source_evidence': missing_node_evidence, 'derived_without_producer': missing_producers,
             'quantities_needing_semantics': unresolved_quantities,
             'necessary_inputs_without_legal_origin': missing_inputs,
+            'structural_diagnostics': structural_diagnostics,
             'unstable_decisions': unstable_decisions,
             'noncomputational_needing_validation': noncomputational_unvalidated,
             'graph_status': graph_status}

@@ -47,8 +47,8 @@
 
 **Files:** existing audit/coverage/validation/review queue/bundle/service modules; M3.1 tests.
 
-- [ ] Make structural audit findings block closure and expose normalized review issues.
-- [ ] Represent ExtensionRequest independently from ordinary defer.
+- [x] Make structural audit findings block closure and expose normalized review issues.
+- [x] Represent ExtensionRequest independently from ordinary defer.
 
 ### Task 5 — Workbench closure
 

@@ -1,9 +1,10 @@
 """Compiler pause questions, produced without a UI dependency."""
 
-def build_review_queue(graph, replay, uncovered=()):
+def build_review_queue(graph, replay, uncovered=(), structural_diagnostics=()):
     items = []
     diagnostics = list(graph.get('diagnostics', []))
     diagnostics.extend(graph.get('program', {}).get('linked', {}).get('diagnostics', []))
+    diagnostics.extend(structural_diagnostics)
     for diagnostic in diagnostics:
         kind = diagnostic.get('kind')
         if kind in ('missing_import', 'ambiguous_import', 'ambiguous_operation_import', 'missing_operation_import'):
@@ -21,12 +22,23 @@ def build_review_queue(graph, replay, uncovered=()):
                           'source_anchors': diagnostic.get('source_spans', []),
                           'reason': 'binding_not_structurally_compatible', 'affected_outputs': [],
                           'details': diagnostic, 'suggested_actions': ['set_scope', 'bind_value', 'retract']})
+        elif kind in ('missing_read_port', 'dangling_read', 'invalid_output_port', 'lost_division_port',
+                      'missing_source', 'invalid_source_span', 'missing_producer', 'cross_query_dependency',
+                      'invalid_time_frame', 'remainder_producer_corruption', 'full_accumulation_corruption',
+                      'parameter_identity_corruption'):
+            items.append({'kind': 'invalid_graph_structure', 'severity': 'blocking',
+                          'source_spans': diagnostic.get('source_spans', []),
+                          'source_anchors': diagnostic.get('source_spans', []), 'reason': kind,
+                          'affected_outputs': diagnostic.get('affected_outputs', []), 'details': diagnostic,
+                          'suggested_actions': ['resegment', 'assemble_known_structure', 'retract']})
     for issue in graph.get('unresolved', []):
         cause = issue.get('cause')
         kind = 'missing_context_or_profile' if cause in ('requires_external_data', 'missing_query_base') else 'no_legal_candidate'
         queue_kind = 'ontology_extension_required' if cause == 'schema_extension_required' else kind
+        actions = (['assemble_known_structure', 'defer', 'retract'] if queue_kind == 'ontology_extension_required'
+                   else ['attach_context', 'select_profile', 'defer'])
         items.append({'kind': queue_kind, 'severity': 'blocking', 'source_spans': issue.get('source_spans', []), 'source_anchors': issue.get('source_spans', []), 'reason': cause, 'affected_outputs': [],
-                      'details': issue, 'suggested_actions': ['attach_context', 'select_profile', 'defer']})
+                      'details': issue, 'suggested_actions': actions})
     for value in graph.get('value_instances', []):
         if value.get('resolution_status') == 'unknown' or (value.get('unit') in ('unknown', 'opaque', 'product')
                                                             and value.get('resolution_status') != 'resolved'):

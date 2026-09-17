@@ -13,7 +13,10 @@ def required_reads(event):
 def audit(report):
     diagnostics=[];values={v['id']:v for v in report['value_instances']};events={e['id']:e for e in report['events']}
     docs={d['doc_id']:d for d in report.get('documents',[])}
-    def add(kind,e,message):diagnostics.append({'kind':kind,'event_id':e.get('id'),'message':message})
+    def add(kind,e,message):
+        diagnostics.append({'kind':kind,'event_id':e.get('id'),'message':message,
+                            'source_spans':list(e.get('source_spans', [])),
+                            'affected_outputs':list(e.get('writes', {}).values())})
     for e in report['events']:
         problem=temporal_error(e,values,events)
         if problem:add('invalid_time_frame',e,problem)

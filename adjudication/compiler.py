@@ -352,6 +352,10 @@ def compile_reviewed(packet, session, branch_id='main'):
     holes = [{'kind': 'ExtensionRequired', 'decision_id': row['decision_id'],
               'source_anchors': [row['target']], 'reason': row['reason']}
              for row in invalid_manual if row['kind'] == 'schema_extension_required']
+    extension_requests = [{'kind': 'ExtensionRequired', 'decision_id': row['decision_id'],
+                           'source_anchors': [row['target']], 'reason': 'schema_extension_required'}
+                          for row in effective.get('deferred', []) if row.get('schema_extension_required')]
+    holes.extend(extension_requests)
     fatal_issues.extend({'kind': row['kind'], 'decision_id': row['decision_id'], 'reason': row['reason']}
                          for row in invalid_manual if row['kind'] != 'schema_extension_required')
     graph['unresolved'].extend({'cause': 'schema_extension_required', 'source_spans': hole['source_anchors'],
@@ -362,10 +366,12 @@ def compile_reviewed(packet, session, branch_id='main'):
                                for issue in fatal_issues)
     graph['adjudication'] = {'session_id': session['session_id'], 'branch_id': branch_id,
                              'effective_decisions': replay['normalized']['effective'], 'holes': holes,
+                             'extension_requests': extension_requests,
                              'lexical_roles': copy.deepcopy(effective.get('lexical_roles', []))}
     ledger = build_coverage_ledger(prepared, graph, replay['effective'], replay)
     trace = build_reconstruction_trace(graph)
-    queue = build_review_queue(graph, replay, uncovered=ledger['unresolved_required_spans'])
+    queue = build_review_queue(graph, replay, uncovered=ledger['unresolved_required_spans'],
+                               structural_diagnostics=ledger['structural_diagnostics'])
     queue['items'].extend({'kind': 'invalid_human_decision', 'severity': 'blocking',
                            'source_spans': decision_sources.get(issue['decision_id'], []),
                            'source_anchors': decision_sources.get(issue['decision_id'], []),
