@@ -3,36 +3,12 @@ import copy
 import json
 
 from .anchors import overlaps, packet_identity, validate_anchor
+from .decision_contracts import semantic_target_key
 from .session import branch_ancestors, runtime_identity
 
 
 def _slot(decision):
-    target = decision['targets'][0]
-    action = decision['action']
-    payload = decision['payload']
-    if action == 'select_candidate':
-        suffix = ('candidate_resolution',)
-    elif action == 'reject_candidate':
-        suffix = ('candidate_resolution',)
-    elif action in ('bind_value', 'bind_call'):
-        consumer = payload['consumer_definition_anchor']
-        suffix = (consumer['doc_id'], consumer['reading_id'], consumer['start'], consumer['end'],
-                  payload.get('formal') or payload.get('input_slot'))
-    elif action == 'set_quantity_semantics':
-        address = payload.get('semantic_output', {})
-        suffix = (address.get('definition_anchor', {}).get('doc_id'),
-                  address.get('definition_anchor', {}).get('start'),
-                  address.get('definition_anchor', {}).get('end'),
-                  address.get('construction_anchor', {}).get('doc_id'),
-                  address.get('construction_anchor', {}).get('start'),
-                  address.get('construction_anchor', {}).get('end'),
-                  address.get('construction_role'), address.get('semantic_role'),
-                  address.get('output_port'), address.get('branch_id'))
-    elif action in ('set_scope', 'select_profile'):
-        suffix = ()
-    else:
-        suffix = ()
-    return (action, target['doc_id'], target['reading_id'], target['start'], target['end'], suffix)
+    return semantic_target_key(decision['action'], decision['payload'], decision['targets'])
 
 
 def _normalize(value):
@@ -121,18 +97,14 @@ def _empty_effective():
             'manual_structures': [], 'noncomputational': [], 'deferred': [], 'approved_scopes': [], 'lexical_roles': []}
 
 
-def _anchor_token(row):
-    target = row['targets'][0]
-    return ':'.join((target['doc_id'], str(target['start']), str(target['end'])))
-
-
 def _apply(effective, row):
-    action, payload, token = row['action'], row['payload'], _anchor_token(row)
+    action, payload = row['action'], row['payload']
+    token = semantic_target_key(action, payload, row['targets'])
     if action == 'select_candidate':
         effective['selected_candidates'][token] = payload['selected_candidate_id']
-        effective['candidate_selection_metadata'][token] = {'decision_id': row['decision_id'],
-                                                             'candidate_set_complete': payload.get('candidate_set_complete', True),
-                                                             'candidate_count': payload.get('candidate_count')}
+        effective['candidate_selection_metadata'][token] = {
+            'decision_id': row['decision_id'], 'target': row['targets'][0],
+        }
     elif action == 'reject_candidate':
         if payload['candidate_id'] not in effective['rejected_candidates']:
             effective['rejected_candidates'].append(payload['candidate_id'])
@@ -142,19 +114,9 @@ def _apply(effective, row):
     elif action == 'set_scope':
         effective['scopes'][token] = payload
     elif action in ('bind_value', 'bind_call'):
-        consumer = payload['consumer_definition_anchor']
-        key = ':'.join(str(value) for value in (consumer['doc_id'], consumer['reading_id'], consumer['start'],
-                                                 consumer['end'], payload.get('formal') or payload.get('input_slot')))
-        effective['bindings'][key] = {**payload, 'decision_id': row['decision_id'], 'target': row['targets'][0]}
+        effective['bindings'][token] = {**payload, 'decision_id': row['decision_id'], 'target': row['targets'][0]}
     elif action == 'set_quantity_semantics':
-        address = payload['semantic_output']
-        key = ':'.join(str(value) for value in (address['definition_anchor']['doc_id'],
-                                                 address['definition_anchor']['start'], address['definition_anchor']['end'],
-                                                 address['construction_anchor']['doc_id'],
-                                                 address['construction_anchor']['start'], address['construction_anchor']['end'],
-                                                 address['construction_role'], address['semantic_role'],
-                                                 address['output_port'], address['branch_id']))
-        effective['quantity_semantics'][key] = {**payload, 'decision_id': row['decision_id']}
+        effective['quantity_semantics'][token] = {**payload, 'decision_id': row['decision_id']}
     elif action == 'select_profile':
         profile = payload.get('profile_id')
         if profile and profile not in effective['profiles']:

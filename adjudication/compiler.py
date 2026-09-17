@@ -9,7 +9,7 @@ from analysis_parser.lexical import tokenize_candidates
 from analysis_parser.program_ir import link_entry, static_interface
 from analysis_parser.scoped import ScopedParser, lower_linked
 
-from .anchors import anchor_key, overlaps, validate_anchor, validate_semantic_output_address
+from .anchors import anchor_key, anchor_location, overlaps, validate_anchor, validate_semantic_output_address
 from .coverage import build_coverage_ledger
 from .registry import OPERATION_CONTRACTS, validate_manual_structure, validate_profile, validate_quantity_semantics
 from .replay import replay_session
@@ -55,7 +55,7 @@ def _manual_candidate(packet, structure, specification, sequence, known_referenc
     anchors = [validate_anchor(packet, anchor) for anchor in anchors]
     anchor = anchors[0]
     node_id = 'review-' + hashlib.sha256(json.dumps({
-        'decision': structure['decision_id'], 'sequence': sequence, 'anchor': anchor,
+        'sequence': sequence, 'anchor': anchor,
         'kind': specification['kind'], 'slots': specification.get('slots', {}),
     }, ensure_ascii=False, sort_keys=True).encode('utf-8')).hexdigest()[:20]
     slots = {}
@@ -64,7 +64,8 @@ def _manual_candidate(packet, structure, specification, sequence, known_referenc
     return {'kind': specification['kind'], 'slots': slots, 'source_spans': anchors,
             'analysis_range': [min(row['start'] for row in anchors), max(row['end'] for row in anchors)], 'text': ''.join(row['quote'] for row in anchors),
             'node_id': node_id, 'production_id': 'ADJUDICATION_MANUAL_V1',
-            'attributes': {'decision_id': structure['decision_id'], 'authored_structure': True},
+            'attributes': {'decision_id': structure['decision_id'], 'authored_structure': True,
+                           'authored_sequence': sequence},
             'status': 'reviewed', 'selection_reason': 'scholar assembled known typed structure'}
 
 
@@ -106,19 +107,38 @@ def _segment_candidates(doc, decision):
     return output
 
 
+def _candidate_sort_key(candidate):
+    return (candidate['analysis_range'][0], candidate['analysis_range'][1],
+            candidate.get('attributes', {}).get('authored_sequence', float('inf')), candidate['node_id'])
+
+
+def _matches_candidate_target(candidate, target):
+    return any(anchor_location(span) == anchor_location(target) for span in candidate.get('source_spans', []))
+
+
 def _rebuild_program(parser, effective, packet, invalid_manual=None):
     streams = {doc_id: [copy.deepcopy(candidate) for candidate in candidates]
                for doc_id, candidates in parser.all_candidates.items()}
-    selected = effective['selected_candidates']
     rejected = effective['rejected_candidates']
+    selections = effective['candidate_selection_metadata']
+    valid_selection_ids = {}
+    for token, metadata in selections.items():
+        candidate_ids = {candidate['node_id'] for candidates in streams.values() for candidate in candidates
+                         if _matches_candidate_target(candidate, metadata['target'])}
+        selected_id = effective['selected_candidates'][token]
+        if selected_id in candidate_ids:
+            valid_selection_ids[token] = selected_id
+        elif invalid_manual is not None:
+            invalid_manual.append({'kind': 'invalid_candidate_selection', 'decision_id': metadata['decision_id'],
+                                   'target': metadata['target'], 'reason': 'candidate_not_in_current_snapshot'})
     for doc_id, candidates in streams.items():
         retained = []
         for candidate in candidates:
-            token = ':'.join((candidate['source_spans'][0]['doc_id'],
-                              str(candidate['source_spans'][0]['start']), str(candidate['source_spans'][0]['end'])))
+            token = next((key for key, metadata in selections.items()
+                          if _matches_candidate_target(candidate, metadata['target'])), None)
             if candidate['node_id'] in rejected:
                 continue
-            if token in selected and candidate['node_id'] != selected[token]:
+            if token in valid_selection_ids and candidate['node_id'] != valid_selection_ids[token]:
                 continue
             retained.append(candidate)
         streams[doc_id] = retained
@@ -137,32 +157,33 @@ def _rebuild_program(parser, effective, packet, invalid_manual=None):
             validate_manual_structure(structure)
         except ValueError:
             if invalid_manual is not None:
-                invalid_manual.append({'kind': 'schema_extension_required', 'structure': structure,
-                                       'reason': 'existing_registry_cannot_represent_structure'})
+                invalid_manual.append({'kind': 'schema_extension_required', 'decision_id': structure['decision_id'],
+                                       'target': structure['target'], 'reason': 'existing_registry_cannot_represent_structure'})
                 continue
             raise
         target = structure['target']
         document_id = target['doc_id']
         if document_id not in streams:
             raise ValueError('manual_structure_unknown_document')
-        if structure.get('replace_automatic'):
-            streams[document_id] = [candidate for candidate in streams[document_id]
-                                    if not _anchor_matches(candidate, target)]
         try:
             manual_candidates = [_manual_candidate(packet, structure, specification, sequence, known_references)
                                  for sequence, specification in enumerate(structure['candidates'])]
         except ValueError as error:
             if invalid_manual is not None:
-                invalid_manual.append({'kind': 'invalid_human_decision', 'structure': structure, 'reason': str(error)})
+                invalid_manual.append({'kind': 'invalid_human_decision', 'decision_id': structure['decision_id'],
+                                       'target': target, 'reason': str(error)})
                 continue
             raise
+        if structure.get('replace_automatic'):
+            streams[document_id] = [candidate for candidate in streams[document_id]
+                                     if not _anchor_matches(candidate, target)]
         streams[document_id].extend(manual_candidates)
         for candidate in manual_candidates:
             if candidate['kind'] in ('name', 'remainder_name'):
                 known_references.add(candidate['slots']['label']['text'])
-        streams[document_id].sort(key=lambda row: (row['analysis_range'][0], row['analysis_range'][1], row['node_id']))
+        streams[document_id].sort(key=_candidate_sort_key)
     for document_id in streams:
-        streams[document_id].sort(key=lambda row: (row['analysis_range'][0], row['analysis_range'][1], row['node_id']))
+        streams[document_id].sort(key=_candidate_sort_key)
     rebuilt = compile_documents([], {})
     rebuilt.syntaxes = streams
     rebuilt.syntax_results = dict(parser.program.syntax_results)
@@ -326,11 +347,11 @@ def compile_reviewed(packet, session, branch_id='main'):
     entries = [definition['id'] for definition in program.definitions
                if definition['kind'] == 'ProcedureDef' and definition['source_role'] == 'primary' and not definition.get('parent')]
     graph = lower_linked(link_entry(program, entries, allowed), parser)
-    holes = [{'kind': 'ExtensionRequired', 'decision_id': row['structure']['decision_id'],
-              'source_anchors': [row['structure']['target']], 'reason': row['reason']}
+    holes = [{'kind': 'ExtensionRequired', 'decision_id': row['decision_id'],
+              'source_anchors': [row['target']], 'reason': row['reason']}
              for row in invalid_manual if row['kind'] == 'schema_extension_required']
-    fatal_issues.extend({'kind': row['kind'], 'decision_id': row['structure']['decision_id'], 'reason': row['reason']}
-                        for row in invalid_manual if row['kind'] != 'schema_extension_required')
+    fatal_issues.extend({'kind': row['kind'], 'decision_id': row['decision_id'], 'reason': row['reason']}
+                         for row in invalid_manual if row['kind'] != 'schema_extension_required')
     graph['unresolved'].extend({'cause': 'schema_extension_required', 'source_spans': hole['source_anchors'],
                                 'hole': hole} for hole in holes)
     decision_sources = {row['decision_id']: row['targets'] for row in session.get('decisions', [])}

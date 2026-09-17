@@ -4,7 +4,8 @@ import hashlib
 import json
 from pathlib import Path
 
-from .anchors import packet_identity, validate_anchor, validate_semantic_output_address
+from .anchors import packet_identity, validate_anchor
+from .decision_contracts import validate_action_payload
 from .registry import registry_identity
 
 
@@ -75,20 +76,7 @@ def validate_decision(session, packet, decision):
         validate_anchor(packet, target)
     if not isinstance(decision['payload'], dict) or not isinstance(decision['depends_on'], list):
         raise ValueError('invalid_decision_payload')
-    if decision['action'] == 'retract' and not decision['payload'].get('decision_id'):
-        raise ValueError('retract_requires_decision_id')
-    if decision['action'] == 'declare_parameter':
-        payload = decision['payload']
-        if payload.get('role') not in ('root_input', 'parameter') or not payload.get('evidence_basis'):
-            raise ValueError('parameter_role_and_evidence_required')
-    if decision['action'] == 'set_quantity_semantics':
-        validate_semantic_output_address(packet, decision['payload'].get('semantic_output'))
-    if decision['action'] in ('bind_value', 'bind_call'):
-        payload = decision['payload']
-        if not payload.get('consumer_definition_anchor') or not payload.get('producer_definition_anchor'):
-            raise ValueError('binding_requires_stable_definition_anchor')
-        validate_anchor(packet, payload['consumer_definition_anchor'])
-        validate_anchor(packet, payload['producer_definition_anchor'])
+    validate_action_payload(packet, decision['action'], decision['payload'], decision['targets'])
     if decision['action'] == 'mark_noncomputational' and (not decision['reason'] or not decision['evidence_refs']):
         raise ValueError('noncomputational_reason_and_evidence_required')
     if decision['action'] == 'set_lexical_role':

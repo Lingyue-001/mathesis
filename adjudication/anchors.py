@@ -54,6 +54,11 @@ def anchor_key(anchor):
                                                   separators=(',', ':')).encode('utf-8')).hexdigest()[:24]
 
 
+def anchor_location(anchor):
+    """Stable occurrence identity shared by full anchors and syntax spans."""
+    return tuple(anchor[name] for name in ('doc_id', 'reading_id', 'start', 'end'))
+
+
 def semantic_output_address(packet, definition_anchor, construction_anchor, construction_role,
                             output_port, branch_id='main', invocation_path=(), semantic_role=None):
     """Persistent semantic output address; runtime AST/event/value ids are excluded."""
