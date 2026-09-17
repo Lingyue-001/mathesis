@@ -1,0 +1,301 @@
+{
+  "schema_version": "3.0",
+  "input_mode": "declared_edited_primary_context",
+  "provided_scope": {
+    "tradition": "Han_Si_fen_li",
+    "planet": null
+  },
+  "primary_documents": [
+    {
+      "doc_id": "HQ.3.7",
+      "reading_id": "HQ.3.7.C2017.v3",
+      "text": "一術，以大周乘年，周天乘閏餘減之，餘滿蔀月，則天正朔日也．",
+      "text_sha256": "ea892daca9f81bfc3664021c117f24b28940cd2da55ba5309fd1f589b3e724eb",
+      "edition_transcription": "一術，以大周乘年，周天乘[閏餘]減之，餘滿蔀(日)[月]，則天正朔日也．",
+      "edition_sha256": "864c2f5251d3da5f18ee61bdfe3f6ecdb65941c546dab53ae8f2e3095a99fc60",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          166,
+          167
+        ],
+        "pdf_pages": [
+          179,
+          180
+        ],
+        "locator": "Proc.3.7 §48"
+      },
+      "edition_edits": [
+        {
+          "edition_start": 12,
+          "edition_end": 16,
+          "old": "[閏餘]",
+          "new": "閏餘",
+          "reading_start": 12,
+          "reading_end": 14,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        },
+        {
+          "edition_start": 22,
+          "edition_end": 28,
+          "old": "(日)[月]",
+          "new": "月",
+          "reading_start": 20,
+          "reading_end": 21,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        }
+      ],
+      "transcription_notes": "Optional conversion diagnostic; not a held-out case.",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    }
+  ],
+  "context_documents": [
+    {
+      "doc_id": "HQ.rule_year",
+      "text": "章法，十九．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155
+        ],
+        "pdf_pages": [
+          168
+        ]
+      },
+      "text_sha256": "24a9ed783208db988673c2b0dc03d4dcf62cfe3fd7e57942acf3c4058763f6ad"
+    },
+    {
+      "doc_id": "HQ.rule_month",
+      "text": "章月，二百三十五．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155
+        ],
+        "pdf_pages": [
+          168
+        ]
+      },
+      "text_sha256": "22035bc231c9e8b1031746a51c9ef9443a5ad6932500be93c2749920c1d2101a"
+    },
+    {
+      "doc_id": "HQ.obscuration_month",
+      "text": "蔀月，九百四十．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154,
+          155
+        ],
+        "pdf_pages": [
+          167,
+          168
+        ]
+      },
+      "text_sha256": "28e7c5b4657e15b81ccc21cab6112e848dd92488b59e2e0b86f4fec1e862e245"
+    },
+    {
+      "doc_id": "HQ.obscuration_days",
+      "text": "蔀日，二萬七千七百五十九．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          156
+        ],
+        "pdf_pages": [
+          169
+        ]
+      },
+      "text_sha256": "95e023b4816518ccd15f1d08c6a3a652a98754ba2f5d454c9f05c24244d199d3"
+    },
+    {
+      "doc_id": "HQ.obscuration_year",
+      "text": "蔀法，七十六．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154
+        ],
+        "pdf_pages": [
+          167
+        ]
+      },
+      "text_sha256": "5d6cdd72b3134ffbb5e340daee5d72b10d652f9e285a1466b819651312a9f675"
+    },
+    {
+      "doc_id": "HQ.solar_day_factor",
+      "text": "日法，四．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155,
+          156
+        ],
+        "pdf_pages": [
+          168,
+          169
+        ]
+      },
+      "text_sha256": "c3c4a3463ecb5f1607d77193993d8c72751fe9f645c33191372f4e8f38298f06"
+    },
+    {
+      "doc_id": "HQ.const.origin",
+      "reading_id": "HQ.const.origin.C2017.v3",
+      "text": "元法，四千五百六十．",
+      "text_sha256": "10a516d7960164ba3140884105cb59809ad5ce3d5846c0cbceb8658c4e0b48a0",
+      "edition_transcription": "元法，四千五百六十．",
+      "edition_sha256": "10a516d7960164ba3140884105cb59809ad5ce3d5846c0cbceb8658c4e0b48a0",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154
+        ],
+        "pdf_pages": [
+          167
+        ],
+        "locator": "§19"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.era",
+      "reading_id": "HQ.const.era.C2017.v3",
+      "text": "紀法，千五百二十．",
+      "text_sha256": "ebd57a8b9ebd78c2516783819cb2d2560e5b362f4928a299dd46243ff8776ea1",
+      "edition_transcription": "紀法，千五百二十．",
+      "edition_sha256": "ebd57a8b9ebd78c2516783819cb2d2560e5b362f4928a299dd46243ff8776ea1",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154
+        ],
+        "pdf_pages": [
+          167
+        ],
+        "locator": "§20"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.obscuration",
+      "reading_id": "HQ.const.obscuration.C2017.v3",
+      "text": "蔀法，七十六．",
+      "text_sha256": "5d6cdd72b3134ffbb5e340daee5d72b10d652f9e285a1466b819651312a9f675",
+      "edition_transcription": "蔀法，七十六．",
+      "edition_sha256": "5d6cdd72b3134ffbb5e340daee5d72b10d652f9e285a1466b819651312a9f675",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154
+        ],
+        "pdf_pages": [
+          167
+        ],
+        "locator": "§22"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.day_remainder",
+      "reading_id": "HQ.const.day_remainder.C2017.v3",
+      "text": "日餘，百六十八．",
+      "text_sha256": "eeecd8dfe12bf217ba10087aa91e3a11167f045586ba639367c2489e45d12088",
+      "edition_transcription": "日餘，百六十八．",
+      "edition_sha256": "eeecd8dfe12bf217ba10087aa91e3a11167f045586ba639367c2489e45d12088",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          156
+        ],
+        "pdf_pages": [
+          169
+        ],
+        "locator": "§32"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.medial",
+      "reading_id": "HQ.const.medial.C2017.v3",
+      "text": "中法，三十二．",
+      "text_sha256": "602d4ab8739e7ba45a2eeaa1d5d62502a6678b9f0bbbad419c44612490dda4c7",
+      "edition_transcription": "中法，(四)[三]十二．",
+      "edition_sha256": "c106f0311e8c669d773df5cf28081a92a27cbb77894944ce30f575fb670eedf7",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          156,
+          157
+        ],
+        "pdf_pages": [
+          169,
+          170
+        ],
+        "locator": "§33"
+      },
+      "edition_edits": [
+        {
+          "edition_start": 3,
+          "edition_end": 9,
+          "old": "(四)[三]",
+          "new": "三",
+          "reading_start": 3,
+          "reading_end": 4,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        }
+      ],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.great_circuit",
+      "reading_id": "HQ.const.great_circuit.C2017.v3",
+      "text": "大周，三十四萬三千三百三十五．",
+      "text_sha256": "168e018b568dc5577e48e6cc7350743ba326d7bc1c0c458e2822c41e921f1b19",
+      "edition_transcription": "大周，三十四萬三千三百三十五．",
+      "edition_sha256": "168e018b568dc5577e48e6cc7350743ba326d7bc1c0c458e2822c41e921f1b19",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          157
+        ],
+        "pdf_pages": [
+          170
+        ],
+        "locator": "§34"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.circuit",
+      "reading_id": "HQ.const.circuit.C2017.v3",
+      "text": "周天，千四百六十一．",
+      "text_sha256": "e65182052ab3b4ff78feba8c4b370b981ad36f8504ac3e4773fbb0868494b122",
+      "edition_transcription": "周天，千四百六十一．",
+      "edition_sha256": "e65182052ab3b4ff78feba8c4b370b981ad36f8504ac3e4773fbb0868494b122",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155
+        ],
+        "pdf_pages": [
+          168
+        ],
+        "locator": "§26"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    }
+  ]
+}

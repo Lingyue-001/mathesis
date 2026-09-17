@@ -1,0 +1,38 @@
+{
+  "numerical_cases": [
+    {
+      "case_id": "N3_01",
+      "status": "completed",
+      "correct": 28,
+      "total": 28,
+      "passed": true,
+      "semantic_obligations_passed": true
+    },
+    {
+      "case_id": "N3_02",
+      "status": "completed",
+      "correct": 28,
+      "total": 28,
+      "passed": true,
+      "semantic_obligations_passed": true
+    },
+    {
+      "case_id": "N3_03",
+      "status": "completed",
+      "correct": 31,
+      "total": 31,
+      "passed": true,
+      "semantic_obligations_passed": true
+    },
+    {
+      "case_id": "N3_04",
+      "status": "completed",
+      "correct": 25,
+      "total": 25,
+      "passed": true,
+      "semantic_obligations_passed": true
+    }
+  ],
+  "passed": true,
+  "not_claimed": "This command alone does not establish 47 structural obligations or fresh-window transfer."
+}

@@ -1,0 +1,1517 @@
+{
+  "cards": [
+    {
+      "card_id": "A03",
+      "candidate_id": "2.26",
+      "obligations": [
+        {
+          "id": "A03.01",
+          "anchor": {
+            "doc_id": "ST.2.26",
+            "reading_id": "ST.2.26.C2017.postfreeze.v1",
+            "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+            "start": 5,
+            "end": 15,
+            "quote": "置上元以來，外所求年"
+          },
+          "scholarly_obligation": "Use elapsed years excluding the target year, as the source 外 and Cullen143127-year worked example require.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                121
+              ],
+              "printed_pages": [
+                108
+              ],
+              "locator": "Proc.2.26"
+            },
+            "extract_file": "../source_checks/A03-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.station_definitions",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    125,
+                    126,
+                    127,
+                    128,
+                    129
+                  ],
+                  "printed_pages": [
+                    112,
+                    113,
+                    114,
+                    115,
+                    116
+                  ],
+                  "locator": "§§204–262, complete Chinese station definitions"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A03.02",
+          "anchor": {
+            "doc_id": "ST.2.26",
+            "reading_id": "ST.2.26.C2017.postfreeze.v1",
+            "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+            "start": 16,
+            "end": 23,
+            "quote": "盈歲數，除去之"
+          },
+          "scholarly_obligation": "Cast out complete Jupiter Year-Number cycles1728 from elapsed years.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                121
+              ],
+              "printed_pages": [
+                108
+              ],
+              "locator": "Proc.2.26"
+            },
+            "extract_file": "../source_checks/A03-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.station_definitions",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    125,
+                    126,
+                    127,
+                    128,
+                    129
+                  ],
+                  "printed_pages": [
+                    112,
+                    113,
+                    114,
+                    115,
+                    116
+                  ],
+                  "locator": "§§204–262, complete Chinese station definitions"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A03.03",
+          "anchor": {
+            "doc_id": "ST.2.26",
+            "reading_id": "ST.2.26.C2017.postfreeze.v1",
+            "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+            "start": 24,
+            "end": 34,
+            "quote": "不盈者以百四十五乘之"
+          },
+          "scholarly_obligation": "Multiply the remainder, not the unreduced elapsed years, by145.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                121
+              ],
+              "printed_pages": [
+                108
+              ],
+              "locator": "Proc.2.26"
+            },
+            "extract_file": "../source_checks/A03-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.station_definitions",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    125,
+                    126,
+                    127,
+                    128,
+                    129
+                  ],
+                  "printed_pages": [
+                    112,
+                    113,
+                    114,
+                    115,
+                    116
+                  ],
+                  "locator": "§§204–262, complete Chinese station definitions"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A03.04",
+          "anchor": {
+            "doc_id": "ST.2.26",
+            "reading_id": "ST.2.26.C2017.postfreeze.v1",
+            "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+            "start": 35,
+            "end": 60,
+            "quote": "以百四十四為法，如法得一，名曰積次，不盈者名曰次餘"
+          },
+          "scholarly_obligation": "Divide by144; preserve whole accumulated stations and station fraction as quotient/remainder.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                121
+              ],
+              "printed_pages": [
+                108
+              ],
+              "locator": "Proc.2.26"
+            },
+            "extract_file": "../source_checks/A03-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.station_definitions",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    125,
+                    126,
+                    127,
+                    128,
+                    129
+                  ],
+                  "printed_pages": [
+                    112,
+                    113,
+                    114,
+                    115,
+                    116
+                  ],
+                  "locator": "§§204–262, complete Chinese station definitions"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A03.05",
+          "anchor": {
+            "doc_id": "ST.2.26",
+            "reading_id": "ST.2.26.C2017.postfreeze.v1",
+            "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+            "start": 61,
+            "end": 78,
+            "quote": "積次盈十二，除去之，不盈者名曰定次"
+          },
+          "scholarly_obligation": "Reduce accumulated stations modulo12 for the station label; preserve the original quotient for the later Grand Year.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                121
+              ],
+              "printed_pages": [
+                108
+              ],
+              "locator": "Proc.2.26"
+            },
+            "extract_file": "../source_checks/A03-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.station_definitions",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    125,
+                    126,
+                    127,
+                    128,
+                    129
+                  ],
+                  "printed_pages": [
+                    112,
+                    113,
+                    114,
+                    115,
+                    116
+                  ],
+                  "locator": "§§204–262, complete Chinese station definitions"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A03.06",
+          "anchor": {
+            "doc_id": "ST.2.26",
+            "reading_id": "ST.2.26.C2017.postfreeze.v1",
+            "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+            "start": 79,
+            "end": 95,
+            "quote": "數從星紀起，算盡之外，則所在次也"
+          },
+          "scholarly_obligation": "Count outside the12-station cycle from Xingji. Source station names/ordering are supplied in complete context; no angular coordinate conversion belongs to this procedure.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                121
+              ],
+              "printed_pages": [
+                108
+              ],
+              "locator": "Proc.2.26"
+            },
+            "extract_file": "../source_checks/A03-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.station_definitions",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    125,
+                    126,
+                    127,
+                    128,
+                    129
+                  ],
+                  "printed_pages": [
+                    112,
+                    113,
+                    114,
+                    115,
+                    116
+                  ],
+                  "locator": "§§204–262, complete Chinese station definitions"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A03.07",
+          "anchor": {
+            "doc_id": "ST.2.26",
+            "reading_id": "ST.2.26.C2017.postfreeze.v1",
+            "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+            "start": 96,
+            "end": 107,
+            "quote": "欲知太歲，以六十除積次"
+          },
+          "scholarly_obligation": "For Grand Year, reduce unreduced accumulated stations modulo60; do not reuse the modulo12 station residue.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                121
+              ],
+              "printed_pages": [
+                108
+              ],
+              "locator": "Proc.2.26"
+            },
+            "extract_file": "../source_checks/A03-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.station_definitions",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    125,
+                    126,
+                    127,
+                    128,
+                    129
+                  ],
+                  "printed_pages": [
+                    112,
+                    113,
+                    114,
+                    115,
+                    116
+                  ],
+                  "locator": "§§204–262, complete Chinese station definitions"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A03.08",
+          "anchor": {
+            "doc_id": "ST.2.26",
+            "reading_id": "ST.2.26.C2017.postfreeze.v1",
+            "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+            "start": 108,
+            "end": 129,
+            "quote": "餘不盈者，數從丙子起，算盡之外，則太歲日也"
+          },
+          "scholarly_obligation": "Count modulo60 from bingzi (index13); this year-name branch has a different cycle origin from the station branch.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                121
+              ],
+              "printed_pages": [
+                108
+              ],
+              "locator": "Proc.2.26"
+            },
+            "extract_file": "../source_checks/A03-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.station_definitions",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    125,
+                    126,
+                    127,
+                    128,
+                    129
+                  ],
+                  "printed_pages": [
+                    112,
+                    113,
+                    114,
+                    115,
+                    116
+                  ],
+                  "locator": "§§204–262, complete Chinese station definitions"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "policy": {
+    "version": "rescue-fixed-atoms-1",
+    "supported_actions": [
+      "literal",
+      "parameter",
+      "input",
+      "alias",
+      "load",
+      "multiply",
+      "subtract",
+      "add",
+      "divmod",
+      "cycle_reduce",
+      "threshold",
+      "count",
+      "query",
+      "method_call",
+      "select",
+      "lookup",
+      "rescale",
+      "fraction",
+      "repeat",
+      "cycle_lift",
+      "epoch_frame",
+      "event_sequence",
+      "boundary_call"
+    ],
+    "obligations": {
+      "A03.01": {
+        "events": [
+          {
+            "kind": [
+              "load",
+              "alias"
+            ],
+            "reads": {
+              "value": {
+                "input": "epoch_elapsed_years"
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.26",
+              "reading_id": "ST.2.26.C2017.postfreeze.v1",
+              "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+              "start": 5,
+              "end": 15,
+              "quote": "置上元以來，外所求年"
+            }
+          }
+        ]
+      },
+      "A03.02": {
+        "events": [
+          {
+            "kind": "cycle_reduce",
+            "reads": {
+              "dividend": {
+                "input": "epoch_elapsed_years"
+              },
+              "divisor": {
+                "parameter": "歲數",
+                "value": 1728
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.26",
+              "reading_id": "ST.2.26.C2017.postfreeze.v1",
+              "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+              "start": 16,
+              "end": 23,
+              "quote": "盈歲數，除去之"
+            }
+          }
+        ]
+      },
+      "A03.03": {
+        "events": [
+          {
+            "kind": "multiply",
+            "reads": {
+              "left": {
+                "origin": {
+                  "kind": "cycle_reduce",
+                  "port": "remainder",
+                  "reads": {
+                    "dividend": {
+                      "input": "epoch_elapsed_years"
+                    },
+                    "divisor": {
+                      "parameter": "歲數",
+                      "value": 1728
+                    }
+                  }
+                }
+              },
+              "right": {
+                "literal": 145
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.26",
+              "reading_id": "ST.2.26.C2017.postfreeze.v1",
+              "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+              "start": 24,
+              "end": 34,
+              "quote": "不盈者以百四十五乘之"
+            }
+          }
+        ]
+      },
+      "A03.04": {
+        "events": [
+          {
+            "kind": "divmod",
+            "reads": {
+              "dividend": {
+                "origin": {
+                  "kind": "multiply",
+                  "port": "result",
+                  "reads": {
+                    "left": {
+                      "origin": {
+                        "kind": "cycle_reduce",
+                        "port": "remainder",
+                        "reads": {
+                          "dividend": {
+                            "input": "epoch_elapsed_years"
+                          },
+                          "divisor": {
+                            "parameter": "歲數",
+                            "value": 1728
+                          }
+                        }
+                      }
+                    },
+                    "right": {
+                      "literal": 145
+                    }
+                  }
+                }
+              },
+              "divisor": {
+                "literal": 144
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.26",
+              "reading_id": "ST.2.26.C2017.postfreeze.v1",
+              "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+              "start": 35,
+              "end": 60,
+              "quote": "以百四十四為法，如法得一，名曰積次，不盈者名曰次餘"
+            }
+          }
+        ]
+      },
+      "A03.05": {
+        "events": [
+          {
+            "kind": "cycle_reduce",
+            "reads": {
+              "dividend": {
+                "origin": {
+                  "kind": "divmod",
+                  "port": "quotient",
+                  "reads": {
+                    "dividend": {
+                      "origin": {
+                        "kind": "multiply",
+                        "port": "result",
+                        "reads": {
+                          "left": {
+                            "origin": {
+                              "kind": "cycle_reduce",
+                              "port": "remainder",
+                              "reads": {
+                                "dividend": {
+                                  "input": "epoch_elapsed_years"
+                                },
+                                "divisor": {
+                                  "parameter": "歲數",
+                                  "value": 1728
+                                }
+                              }
+                            }
+                          },
+                          "right": {
+                            "literal": 145
+                          }
+                        }
+                      }
+                    },
+                    "divisor": {
+                      "literal": 144
+                    }
+                  }
+                }
+              },
+              "divisor": {
+                "literal": 12
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.26",
+              "reading_id": "ST.2.26.C2017.postfreeze.v1",
+              "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+              "start": 61,
+              "end": 78,
+              "quote": "積次盈十二，除去之，不盈者名曰定次"
+            }
+          }
+        ]
+      },
+      "A03.06": {
+        "events": [
+          {
+            "kind": "count",
+            "reads": {
+              "offset": {
+                "origin": {
+                  "kind": "cycle_reduce",
+                  "port": "remainder",
+                  "reads": {
+                    "dividend": {
+                      "origin": {
+                        "kind": "divmod",
+                        "port": "quotient",
+                        "reads": {
+                          "dividend": {
+                            "origin": {
+                              "kind": "multiply",
+                              "port": "result",
+                              "reads": {
+                                "left": {
+                                  "origin": {
+                                    "kind": "cycle_reduce",
+                                    "port": "remainder",
+                                    "reads": {
+                                      "dividend": {
+                                        "input": "epoch_elapsed_years"
+                                      },
+                                      "divisor": {
+                                        "parameter": "歲數",
+                                        "value": 1728
+                                      }
+                                    }
+                                  }
+                                },
+                                "right": {
+                                  "literal": 145
+                                }
+                              }
+                            }
+                          },
+                          "divisor": {
+                            "literal": 144
+                          }
+                        }
+                      }
+                    },
+                    "divisor": {
+                      "literal": 12
+                    }
+                  }
+                }
+              },
+              "origin": {
+                "literal": 1
+              },
+              "cycle": {
+                "literal": 12
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.26",
+              "reading_id": "ST.2.26.C2017.postfreeze.v1",
+              "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+              "start": 79,
+              "end": 95,
+              "quote": "數從星紀起，算盡之外，則所在次也"
+            }
+          }
+        ]
+      },
+      "A03.07": {
+        "events": [
+          {
+            "kind": "cycle_reduce",
+            "reads": {
+              "dividend": {
+                "origin": {
+                  "kind": "divmod",
+                  "port": "quotient",
+                  "reads": {
+                    "dividend": {
+                      "origin": {
+                        "kind": "multiply",
+                        "port": "result",
+                        "reads": {
+                          "left": {
+                            "origin": {
+                              "kind": "cycle_reduce",
+                              "port": "remainder",
+                              "reads": {
+                                "dividend": {
+                                  "input": "epoch_elapsed_years"
+                                },
+                                "divisor": {
+                                  "parameter": "歲數",
+                                  "value": 1728
+                                }
+                              }
+                            }
+                          },
+                          "right": {
+                            "literal": 145
+                          }
+                        }
+                      }
+                    },
+                    "divisor": {
+                      "literal": 144
+                    }
+                  }
+                }
+              },
+              "divisor": {
+                "literal": 60
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.26",
+              "reading_id": "ST.2.26.C2017.postfreeze.v1",
+              "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+              "start": 96,
+              "end": 107,
+              "quote": "欲知太歲，以六十除積次"
+            }
+          }
+        ]
+      },
+      "A03.08": {
+        "events": [
+          {
+            "kind": "count",
+            "reads": {
+              "offset": {
+                "origin": {
+                  "kind": "cycle_reduce",
+                  "port": "remainder",
+                  "reads": {
+                    "dividend": {
+                      "origin": {
+                        "kind": "divmod",
+                        "port": "quotient",
+                        "reads": {
+                          "dividend": {
+                            "origin": {
+                              "kind": "multiply",
+                              "port": "result",
+                              "reads": {
+                                "left": {
+                                  "origin": {
+                                    "kind": "cycle_reduce",
+                                    "port": "remainder",
+                                    "reads": {
+                                      "dividend": {
+                                        "input": "epoch_elapsed_years"
+                                      },
+                                      "divisor": {
+                                        "parameter": "歲數",
+                                        "value": 1728
+                                      }
+                                    }
+                                  }
+                                },
+                                "right": {
+                                  "literal": 145
+                                }
+                              }
+                            }
+                          },
+                          "divisor": {
+                            "literal": 144
+                          }
+                        }
+                      }
+                    },
+                    "divisor": {
+                      "literal": 60
+                    }
+                  }
+                }
+              },
+              "origin": {
+                "literal": 13
+              },
+              "cycle": {
+                "literal": 60
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.26",
+              "reading_id": "ST.2.26.C2017.postfreeze.v1",
+              "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+              "start": 108,
+              "end": 129,
+              "quote": "餘不盈者，數從丙子起，算盡之外，則太歲日也"
+            }
+          }
+        ]
+      }
+    },
+    "contracts": {},
+    "fixed_atoms": [
+      {
+        "atom_id": "A03.01.atom001",
+        "obligation_id": "A03.01",
+        "predicate_path": "/policy/obligations/A03.01/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A03.01.atom002",
+        "obligation_id": "A03.01",
+        "predicate_path": "/policy/obligations/A03.01/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A03.01.atom003",
+        "obligation_id": "A03.01",
+        "predicate_path": "/policy/obligations/A03.01/events/0/reads/value/input",
+        "predicate_type": "value_input"
+      },
+      {
+        "atom_id": "A03.02.atom001",
+        "obligation_id": "A03.02",
+        "predicate_path": "/policy/obligations/A03.02/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A03.02.atom002",
+        "obligation_id": "A03.02",
+        "predicate_path": "/policy/obligations/A03.02/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A03.02.atom003",
+        "obligation_id": "A03.02",
+        "predicate_path": "/policy/obligations/A03.02/events/0/reads/dividend/input",
+        "predicate_type": "value_input"
+      },
+      {
+        "atom_id": "A03.02.atom004",
+        "obligation_id": "A03.02",
+        "predicate_path": "/policy/obligations/A03.02/events/0/reads/divisor/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A03.02.atom005",
+        "obligation_id": "A03.02",
+        "predicate_path": "/policy/obligations/A03.02/events/0/reads/divisor/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A03.03.atom001",
+        "obligation_id": "A03.03",
+        "predicate_path": "/policy/obligations/A03.03/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A03.03.atom002",
+        "obligation_id": "A03.03",
+        "predicate_path": "/policy/obligations/A03.03/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A03.03.atom003",
+        "obligation_id": "A03.03",
+        "predicate_path": "/policy/obligations/A03.03/events/0/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.03.atom004",
+        "obligation_id": "A03.03",
+        "predicate_path": "/policy/obligations/A03.03/events/0/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.03.atom005",
+        "obligation_id": "A03.03",
+        "predicate_path": "/policy/obligations/A03.03/events/0/reads/left/origin/reads/dividend/input",
+        "predicate_type": "value_input"
+      },
+      {
+        "atom_id": "A03.03.atom006",
+        "obligation_id": "A03.03",
+        "predicate_path": "/policy/obligations/A03.03/events/0/reads/left/origin/reads/divisor/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A03.03.atom007",
+        "obligation_id": "A03.03",
+        "predicate_path": "/policy/obligations/A03.03/events/0/reads/left/origin/reads/divisor/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A03.03.atom008",
+        "obligation_id": "A03.03",
+        "predicate_path": "/policy/obligations/A03.03/events/0/reads/right/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.04.atom001",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A03.04.atom002",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A03.04.atom003",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.04.atom004",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.04.atom005",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/reads/dividend/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.04.atom006",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/reads/dividend/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.04.atom007",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/reads/dividend/origin/reads/left/origin/reads/dividend/input",
+        "predicate_type": "value_input"
+      },
+      {
+        "atom_id": "A03.04.atom008",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/reads/dividend/origin/reads/left/origin/reads/divisor/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A03.04.atom009",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/reads/dividend/origin/reads/left/origin/reads/divisor/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A03.04.atom010",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/reads/dividend/origin/reads/right/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.04.atom011",
+        "obligation_id": "A03.04",
+        "predicate_path": "/policy/obligations/A03.04/events/0/reads/divisor/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.05.atom001",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A03.05.atom002",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A03.05.atom003",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.05.atom004",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.05.atom005",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.05.atom006",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.05.atom007",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/reads/dividend/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.05.atom008",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/reads/dividend/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.05.atom009",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/dividend/input",
+        "predicate_type": "value_input"
+      },
+      {
+        "atom_id": "A03.05.atom010",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/divisor/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A03.05.atom011",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/divisor/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A03.05.atom012",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/reads/dividend/origin/reads/right/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.05.atom013",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/dividend/origin/reads/divisor/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.05.atom014",
+        "obligation_id": "A03.05",
+        "predicate_path": "/policy/obligations/A03.05/events/0/reads/divisor/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.06.atom001",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A03.06.atom002",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A03.06.atom003",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.06.atom004",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.06.atom005",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.06.atom006",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.06.atom007",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.06.atom008",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.06.atom009",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.06.atom010",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.06.atom011",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/dividend/input",
+        "predicate_type": "value_input"
+      },
+      {
+        "atom_id": "A03.06.atom012",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/divisor/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A03.06.atom013",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/divisor/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A03.06.atom014",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/right/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.06.atom015",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/dividend/origin/reads/divisor/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.06.atom016",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/offset/origin/reads/divisor/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.06.atom017",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/origin/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.06.atom018",
+        "obligation_id": "A03.06",
+        "predicate_path": "/policy/obligations/A03.06/events/0/reads/cycle/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.07.atom001",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A03.07.atom002",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A03.07.atom003",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.07.atom004",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.07.atom005",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.07.atom006",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.07.atom007",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/reads/dividend/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.07.atom008",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/reads/dividend/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.07.atom009",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/dividend/input",
+        "predicate_type": "value_input"
+      },
+      {
+        "atom_id": "A03.07.atom010",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/divisor/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A03.07.atom011",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/divisor/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A03.07.atom012",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/reads/dividend/origin/reads/right/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.07.atom013",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/dividend/origin/reads/divisor/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.07.atom014",
+        "obligation_id": "A03.07",
+        "predicate_path": "/policy/obligations/A03.07/events/0/reads/divisor/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.08.atom001",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A03.08.atom002",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A03.08.atom003",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.08.atom004",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.08.atom005",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.08.atom006",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.08.atom007",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.08.atom008",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.08.atom009",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A03.08.atom010",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A03.08.atom011",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/dividend/input",
+        "predicate_type": "value_input"
+      },
+      {
+        "atom_id": "A03.08.atom012",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/divisor/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A03.08.atom013",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/left/origin/reads/divisor/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A03.08.atom014",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/reads/dividend/origin/reads/right/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.08.atom015",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/dividend/origin/reads/divisor/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.08.atom016",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/offset/origin/reads/divisor/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.08.atom017",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/origin/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A03.08.atom018",
+        "obligation_id": "A03.08",
+        "predicate_path": "/policy/obligations/A03.08/events/0/reads/cycle/literal",
+        "predicate_type": "value_literal"
+      }
+    ],
+    "fixed_atom_count": 91,
+    "atom_accounting": {
+      "main_event_required_for_descendant_atoms": true,
+      "same_matched_event_for_all_event_predicates": true,
+      "missing_event_keeps_all_predicates_in_denominator": true,
+      "missing_contract_evidence": "fail",
+      "matching_may_not_use_auxiliary_event_instead_of_main_action": true,
+      "aggregate_obligation_pass": "all event atoms and every attached contract must pass",
+      "shared_contract_atom_owner": "first obligation_id; other attached obligations also depend on contract pass; atom counted once",
+      "denominator_source": "this registered fixed_atoms list, never observed graph size",
+      "role_sensitive_reads": true
+    }
+  },
+  "coverage": "22_fixed_source_obligations_plus_explicit_contract_atoms",
+  "supplemental_anchors": [],
+  "annotation_limits": [
+    "Fixed atom denominator is registered from source reference before execution and never shrinks for absent events.",
+    "No parser outputs, generated AST, producer IDs or computed answers were used to author this policy.",
+    "All constraints are observable semantic/source relations, not prescribed node construction. Missing contract evidence fails its fixed atom.",
+    "Complete-chain pass additionally requires actual export/execution and no relevant unresolved facts."
+  ],
+  "profile_selection": {
+    "selected_profiles": [
+      "ST_elapsed",
+      "C2017_ST_Jupiter_station_rate_v1"
+    ],
+    "basis": "T0 registered source-backed conditional profiles; see dependency_preflight.md."
+  },
+  "lawful_inputs": {
+    "epoch_elapsed_years": 143127
+  },
+  "shared_context_disclosure": "A/B windows share full earlier Chinese procedures and source declarations; eight windows are not eight statistically independent samples.",
+  "scholar_extract_file": "../source_checks/A03-scholarly-pages.json",
+  "registration": {
+    "phase": "T0_source_based_before_new_parser_outputs",
+    "old_reference_sha256": "358ff871a7c1783546a7af1c3427697c50328270d44baa7577d7182e2b90f7d0",
+    "source_audit": "../dependency_preflight.json",
+    "input_contract": "../source_supplements/development_input_contract_v1.json",
+    "runtime_use_forbidden": true,
+    "scope": "exposed development only; not new transfer evidence"
+  }
+}

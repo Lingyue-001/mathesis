@@ -1,0 +1,144 @@
+{
+  "surface": "甲量盈乙量除去之",
+  "expected_production": "G_CYCLE_DIVIDE_20",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 2,
+            "quote": "甲量"
+          }
+        ],
+        "surface": "甲量",
+        "analysis_range": [
+          0,
+          2
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast2",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 3,
+            "end": 5,
+            "quote": "乙量"
+          }
+        ],
+        "surface": "乙量",
+        "analysis_range": [
+          3,
+          5
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast3",
+        "kind": "CycleReduce",
+        "slots": {
+          "value": "synthetic.inventory:ast1",
+          "divisor": "synthetic.inventory:ast2"
+        },
+        "children": [
+          "synthetic.inventory:ast1",
+          "synthetic.inventory:ast2"
+        ],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 8,
+            "quote": "甲量盈乙量除去之"
+          }
+        ],
+        "surface": "甲量盈乙量除去之",
+        "analysis_range": [
+          0,
+          8
+        ],
+        "production_id": "G_CYCLE_DIVIDE_20",
+        "lowering_kind": "cycle_divide",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast3"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          8
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 8,
+            "quote": "甲量盈乙量除去之"
+          }
+        ],
+        "surface": "甲量盈乙量除去之",
+        "analysis_range": [
+          0,
+          8
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          8
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          8
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "purpose": "baseline compatibility check; current Work repo may legitimately differ and must be reconciled, never overwritten",
+  "root_directory": "existing mathesis-v3 repository root",
+  "files": [
+    {
+      "path": "reports/v3/ROOT_CAUSE_AND_NEXT_CONTRACT.md",
+      "sha256": "6258efab505fcb24eac537f185520b2242343a6b84a2dc60ef957d4c244c7189",
+      "bytes": 4656
+    },
+    {
+      "path": "reports/v3/IMPLEMENTATION_AND_LIMITS.md",
+      "sha256": "b7f159e5a93f1cab34620481defe7439b0db19bf10c64d969d8461d33dcbb891",
+      "bytes": 5361
+    },
+    {
+      "path": "reports/v3/RUN_AND_INTEGRATION.md",
+      "sha256": "1dba9d753e205bed8c8170b25506e2a6872627cadf49d114a680ec58331bc369",
+      "bytes": 2468
+    },
+    {
+      "path": "reports/v3/WORK_RESULT_REPORT.md",
+      "sha256": "ba2b6fc9fb33df8087d9a39b4656c081acdd5b2a94a5439e3888209635115ef0",
+      "bytes": 12195
+    },
+    {
+      "path": "reports/v3/exposure_registry_for_next_round.json",
+      "sha256": "4876ddf183ef4157ca812be6d567e7e66d6c9520f0aaccc273b919a38d7aeadc",
+      "bytes": 1589
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/freeze.json",
+      "sha256": "5a10703b485ea44a69ab095f7571b4484267e106f3d41a5300bea1b58d355b72",
+      "bytes": 12913
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/SELECTION_REPORT.md",
+      "sha256": "86e1605888bd283b0fa81e25965d67bee7756a19536b264105c2c2aff6832184",
+      "bytes": 4172
+    },
+    {
+      "path": "evaluation/handoff-v3/semantic_match.py",
+      "sha256": "b802a38da8d9a732a93b5e7bf03715a58cadfe39ccda4929de78d1837dc406d7",
+      "bytes": 10711
+    },
+    {
+      "path": "analysis_parser/construction_ir.py",
+      "sha256": "d83f8446fbde33c1bf5fec4e838e52636c95e688d5974f352c211959558ea02a",
+      "bytes": 3924
+    },
+    {
+      "path": "analysis_parser/context_compiler.py",
+      "sha256": "ae7df76f519c93d0129d60534b050314d81fe1430396c788374d66f993882d34",
+      "bytes": 3866
+    },
+    {
+      "path": "analysis_parser/scoped.py",
+      "sha256": "45756aee73155fb68f94eadac92d0229b1342091fb7d9e822c2f33cac1dad216",
+      "bytes": 47875
+    },
+    {
+      "path": "analysis_parser/lexical.py",
+      "sha256": "477e6dba89dd6ef26cf12a9750df21ceb3aa2ac6ed00eaeae0e779d9a2260c4b",
+      "bytes": 1390
+    },
+    {
+      "path": "analysis_parser/operations.py",
+      "sha256": "d25cf7afae07f43454fb002d1a87585b65019c1e12d93f58927376701a0e34d2",
+      "bytes": 6989
+    },
+    {
+      "path": "analysis_parser/resources.py",
+      "sha256": "afc8e674735390dca07aabec23b6a08d4c8186e4fdb734d529df2ab479e7375f",
+      "bytes": 2623
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/packets/A01.json",
+      "sha256": "43644a395bc92d0cecd9bbc24a0b874a23c50c285f12f9e87803050353a2e8b8",
+      "bytes": 26857
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/packets/A02.json",
+      "sha256": "2dc98a95b0fab0879bf198c2ee33658141608f29595c16e40f87c7bc1d2f9654",
+      "bytes": 25654
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/packets/A03.json",
+      "sha256": "6c00965b44a8d96db786db9762608edca3f17d601265e524622fefc375c5c36d",
+      "bytes": 7561
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/packets/A04.json",
+      "sha256": "0f8d283f2bc17ccb53b1c927903b2fa99eb484c7262ff66abff5376ca72a228a",
+      "bytes": 10538
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/references/A01.json",
+      "sha256": "af03902b25f3820c33bf23ffd98815b5231dbc7276ac150c211a67ed593f6686",
+      "bytes": 72349
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/references/A02.json",
+      "sha256": "9e2ee39aeb0d5b67a34959446ce0c3b1ec1d3480902217f81de27cee2241ad26",
+      "bytes": 60886
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/references/A03.json",
+      "sha256": "358ff871a7c1783546a7af1c3427697c50328270d44baa7577d7182e2b90f7d0",
+      "bytes": 29152
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/references/A04.json",
+      "sha256": "bbe45ac615dc296e4e6887cec5edc074ec9d9255f047c28539766ad4034843ed",
+      "bytes": 23253
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/first_outputs/A01.json",
+      "sha256": "99912ffdc78593691d01721aecb46188deb3d27234be666264db39a46a712c3d",
+      "bytes": 673761
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/first_outputs/A02.json",
+      "sha256": "20b0e51313cb311f9d2e0c3e4c275f9cb5332835568d8b02dc14ada010ef6945",
+      "bytes": 640156
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/first_outputs/A03.json",
+      "sha256": "12deb43237aaa207cad833bc5a7ce8a7a42f07f251e212ed329617ededc8e8a4",
+      "bytes": 497225
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/first_outputs/A04.json",
+      "sha256": "8b499ebf0feb590f39b8658008267da961b54403c0b1ad92eb047a5251cd1f65",
+      "bytes": 332525
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/first_scores/A01.json",
+      "sha256": "791e6607f63b2c24ecfb0c998aeba1ab9a5f4412552995cf5b8bb342125d6968",
+      "bytes": 12696
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/first_scores/A02.json",
+      "sha256": "8b48b5de012abddb5c33dc23b57e240f86c5109fe82499e7b9c6579846fba6bc",
+      "bytes": 12862
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/first_scores/A03.json",
+      "sha256": "d84095ef0966a293f7e94e8d90803f16a78a1c9a2282b8655f23627c93cca16f",
+      "bytes": 21758
+    },
+    {
+      "path": "evaluation/handoff-v3/prospective/first_scores/A04.json",
+      "sha256": "fa40fc47c9b984de2810c9865b31fa5a6eb69401569dd1272b602283eb27debd",
+      "bytes": 9736
+    }
+  ]
+}

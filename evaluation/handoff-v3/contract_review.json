@@ -1,0 +1,1711 @@
+{
+  "review_status": "preimplementation_contract_and_actual_baseline",
+  "cards": [
+    {
+      "card_id": "C1_ST",
+      "documents": [
+        "ST.2.1"
+      ],
+      "actual_input_packet": "handoff_v3/runtime_inputs/ST_CIVIL_CORE.json",
+      "required_inputs": [
+        "太极上元至目标年的明确计数",
+        "元法4617",
+        "统法1539"
+      ],
+      "required_outputs": [
+        "入统岁数",
+        "统身份",
+        "统首日"
+      ],
+      "profile": "ST_elapsed; ST_intercalation_Cullen_Liu_GT; instant_lunation/civil_whole_day",
+      "current_modules": [
+        "analysis_parser/pipeline.py",
+        "analysis_parser/state.py",
+        "analysis_parser/execution.py"
+      ],
+      "required_mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M07",
+        "M09"
+      ],
+      "counterexamples": [
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B36"
+      ],
+      "obligation_ids": [
+        "C1_ST.01",
+        "C1_ST.02",
+        "C1_ST.03",
+        "C1_ST.04"
+      ],
+      "v2_actual_unparsed": [
+        {
+          "doc_id": "ST.2.1",
+          "reading_id": "ST.2.1.C2017.v3",
+          "start": 14,
+          "end": 18,
+          "quote": "外所求年"
+        },
+        {
+          "doc_id": "ST.2.1",
+          "reading_id": "ST.2.1.C2017.v3",
+          "start": 19,
+          "end": 24,
+          "quote": "盈元法除之"
+        },
+        {
+          "doc_id": "ST.2.1",
+          "reading_id": "ST.2.1.C2017.v3",
+          "start": 42,
+          "end": 44,
+          "quote": "盈統"
+        },
+        {
+          "doc_id": "ST.2.1",
+          "reading_id": "ST.2.1.C2017.v3",
+          "start": 45,
+          "end": 47,
+          "quote": "除之"
+        },
+        {
+          "doc_id": "ST.2.1",
+          "reading_id": "ST.2.1.C2017.v3",
+          "start": 79,
+          "end": 87,
+          "quote": "各以其統首日為紀"
+        }
+      ],
+      "v2_related_unresolved": [
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.1",
+              "reading_id": "ST.2.1.C2017.v3",
+              "start": 6,
+              "end": 13,
+              "quote": "置太極上元以來"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "太極上元以來"
+          ],
+          "reason": "No source-defined current instance"
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.1",
+              "reading_id": "ST.2.1.C2017.v3",
+              "start": 14,
+              "end": 18,
+              "quote": "外所求年"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.1",
+              "reading_id": "ST.2.1.C2017.v3",
+              "start": 19,
+              "end": 24,
+              "quote": "盈元法除之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.1",
+              "reading_id": "ST.2.1.C2017.v3",
+              "start": 25,
+              "end": 30,
+              "quote": "餘不盈統者"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "餘不"
+          ],
+          "reason": "No source-defined current instance"
+        },
+        {
+          "cause": "requires_external_data",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.1",
+              "reading_id": "ST.2.1.C2017.v3",
+              "start": 25,
+              "end": 30,
+              "quote": "餘不盈統者"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "統者"
+          ],
+          "reason": "Parameter value is not declared in runtime context"
+        },
+        {
+          "cause": "incomplete_construction",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.1",
+              "reading_id": "ST.2.1.C2017.v3",
+              "start": 25,
+              "end": 30,
+              "quote": "餘不盈統者"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "除之"
+          ],
+          "reason": "pending cycle reduction was interrupted before 除之"
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.1",
+              "reading_id": "ST.2.1.C2017.v3",
+              "start": 42,
+              "end": 44,
+              "quote": "盈統"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.1",
+              "reading_id": "ST.2.1.C2017.v3",
+              "start": 45,
+              "end": 47,
+              "quote": "除之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.1",
+              "reading_id": "ST.2.1.C2017.v3",
+              "start": 48,
+              "end": 59,
+              "quote": "餘則地統甲辰以來年數也"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "remainder_producer"
+          ],
+          "reason": "missing remainder producer"
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.1",
+              "reading_id": "ST.2.1.C2017.v3",
+              "start": 79,
+              "end": 87,
+              "quote": "各以其統首日為紀"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        }
+      ],
+      "v2_obligation_status": "not_yet_scored_by_v3_evaluator; source span matches alone are not semantic success",
+      "adapter_gaps": [
+        "edition_edits not consumed by v2",
+        "context_tables not compiled",
+        "derived entry/head outputs must be generated, cannot be fixture inputs"
+      ],
+      "missing_mechanisms": [
+        "source conditional concordance branch",
+        "year convention input",
+        "computed head label"
+      ]
+    },
+    {
+      "card_id": "C1_SF",
+      "documents": [
+        "HQ.3.2"
+      ],
+      "actual_input_packet": "handoff_v3/runtime_inputs/SF_CIVIL_CORE.json",
+      "required_inputs": [
+        "epoch_count + count_convention",
+        "元法4560",
+        "纪法1520",
+        "蔀法76",
+        "§45完整表"
+      ],
+      "required_outputs": [
+        "纪列",
+        "蔀行",
+        "入蔀序数年",
+        "蔀首日",
+        "年名"
+      ],
+      "profile": "SF_Liu_inclusive; SF_completed_four; instant_lunation/civil_whole_day",
+      "current_modules": [
+        "analysis_parser/pipeline.py",
+        "analysis_parser/state.py",
+        "analysis_parser/execution.py"
+      ],
+      "required_mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M07",
+        "M09",
+        "M10"
+      ],
+      "counterexamples": [
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B36"
+      ],
+      "obligation_ids": [
+        "C1_SF.01",
+        "C1_SF.02",
+        "C1_SF.03",
+        "C1_SF.04",
+        "C1_SF.05",
+        "C1_SF.06"
+      ],
+      "v2_actual_unparsed": [
+        {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "start": 14,
+          "end": 21,
+          "quote": "其餘以紀法除之"
+        },
+        {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "start": 22,
+          "end": 28,
+          "quote": "所得數從天紀"
+        },
+        {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "start": 29,
+          "end": 36,
+          "quote": "筭外則所入紀也"
+        },
+        {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "start": 43,
+          "end": 48,
+          "quote": "入紀年數也"
+        },
+        {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "start": 91,
+          "end": 93,
+          "quote": "筭上"
+        },
+        {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "start": 94,
+          "end": 102,
+          "quote": "即所求年太歲所在"
+        }
+      ],
+      "v2_related_unresolved": [
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 14,
+              "end": 21,
+              "quote": "其餘以紀法除之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 22,
+              "end": 28,
+              "quote": "所得數從天紀"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 29,
+              "end": 36,
+              "quote": "筭外則所入紀也"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "requires_external_data",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 37,
+              "end": 42,
+              "quote": "不滿紀法者"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "紀法者"
+          ],
+          "reason": "Parameter value is not declared in runtime context"
+        },
+        {
+          "cause": "incomplete_construction",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 37,
+              "end": 42,
+              "quote": "不滿紀法者"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "除之"
+          ],
+          "reason": "pending cycle reduction was interrupted before 除之"
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 43,
+              "end": 48,
+              "quote": "入紀年數也"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 67,
+              "end": 90,
+              "quote": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "所入蔀也不"
+          ],
+          "reason": "No source-defined current instance"
+        },
+        {
+          "cause": "requires_external_data",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 67,
+              "end": 90,
+              "quote": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "蔀法者入蔀年數也各以所入蔀歲名命之"
+          ],
+          "reason": "Parameter value is not declared in runtime context"
+        },
+        {
+          "cause": "incomplete_construction",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 67,
+              "end": 90,
+              "quote": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "除之"
+          ],
+          "reason": "pending cycle reduction was interrupted before 除之"
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 91,
+              "end": 93,
+              "quote": "筭上"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.2",
+              "reading_id": "HQ.3.2.C2017.v3",
+              "start": 94,
+              "end": 102,
+              "quote": "即所求年太歲所在"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        }
+      ],
+      "v2_obligation_status": "not_yet_scored_by_v3_evaluator; source span matches alone are not semantic success",
+      "adapter_gaps": [
+        "edition_edits not consumed by v2",
+        "context_tables not compiled",
+        "derived entry/head outputs must be generated, cannot be fixture inputs"
+      ],
+      "missing_mechanisms": [
+        "inclusive adapter",
+        "nested cycle quotient/remainder",
+        "table row/column computation"
+      ]
+    },
+    {
+      "card_id": "C2_ST",
+      "documents": [
+        "ST.2.2",
+        "ST.2.3"
+      ],
+      "actual_input_packet": "handoff_v3/runtime_inputs/ST_CIVIL_CORE.json",
+      "required_inputs": [
+        "C1_ST输出",
+        "章月235",
+        "章岁19",
+        "月法2392",
+        "日法81"
+      ],
+      "required_outputs": [
+        "积月/闰余",
+        "积日/小余",
+        "干支朔日",
+        "长月",
+        "独立查询"
+      ],
+      "profile": "ST_elapsed; ST_intercalation_Cullen_Liu_GT; instant_lunation/civil_whole_day",
+      "current_modules": [
+        "analysis_parser/pipeline.py",
+        "analysis_parser/state.py",
+        "analysis_parser/execution.py"
+      ],
+      "required_mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M11"
+      ],
+      "counterexamples": [
+        "B08",
+        "B09",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B22",
+        "B32",
+        "B33"
+      ],
+      "obligation_ids": [
+        "C2_ST.01",
+        "C2_ST.02",
+        "C2_ST.03",
+        "C2_ST.04",
+        "C2_ST.05",
+        "C2_ST.06",
+        "C2_ST.07",
+        "C2_ST.08"
+      ],
+      "v2_actual_unparsed": [],
+      "v2_related_unresolved": [],
+      "v2_obligation_status": "not_yet_scored_by_v3_evaluator; source span matches alone are not semantic success",
+      "adapter_gaps": [
+        "edition_edits not consumed by v2",
+        "context_tables not compiled",
+        "derived entry/head outputs must be generated, cannot be fixture inputs"
+      ],
+      "missing_mechanisms": [
+        "bind computed C1 years/head",
+        "retain old full W01 obligations"
+      ]
+    },
+    {
+      "card_id": "C2_SF",
+      "documents": [
+        "HQ.3.5",
+        "HQ.3.6"
+      ],
+      "actual_input_packet": "handoff_v3/runtime_inputs/SF_CIVIL_CORE.json",
+      "required_inputs": [
+        "C1_SF输出",
+        "章月235",
+        "章法19",
+        "蔀日27759",
+        "蔀月940"
+      ],
+      "required_outputs": [
+        "积月/闰余",
+        "积日/小余",
+        "朔日与下一朔"
+      ],
+      "profile": "SF_Liu_inclusive; SF_completed_four; instant_lunation/civil_whole_day",
+      "current_modules": [
+        "analysis_parser/pipeline.py",
+        "analysis_parser/state.py",
+        "analysis_parser/execution.py"
+      ],
+      "required_mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M11"
+      ],
+      "counterexamples": [
+        "B08",
+        "B09",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B22",
+        "B32",
+        "B33"
+      ],
+      "obligation_ids": [
+        "C2_SF.01",
+        "C2_SF.02",
+        "C2_SF.03",
+        "C2_SF.04",
+        "C2_SF.05",
+        "C2_SF.06",
+        "C2_SF.07"
+      ],
+      "v2_actual_unparsed": [],
+      "v2_related_unresolved": [
+        {
+          "cause": "interpretive_ambiguity",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.5",
+              "reading_id": "HQ.3.5.C2017-reading-v1",
+              "start": 29,
+              "end": 34,
+              "quote": "不滿為閏餘"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "v17",
+            "v27"
+          ],
+          "reason": "multiple compatible unclaimed operation remainders"
+        },
+        {
+          "cause": "interpretive_ambiguity",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.6",
+              "reading_id": "HQ.3.6.C2017-reading-v1",
+              "start": 29,
+              "end": 34,
+              "quote": "不滿為小餘"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "v17",
+            "v36"
+          ],
+          "reason": "multiple compatible unclaimed operation remainders"
+        },
+        {
+          "cause": "interpretive_ambiguity",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.6",
+              "reading_id": "HQ.3.6.C2017-reading-v1",
+              "start": 44,
+              "end": 49,
+              "quote": "其餘為大餘"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "v17",
+            "v42"
+          ],
+          "reason": "multiple compatible unclaimed operation remainders"
+        }
+      ],
+      "v2_obligation_status": "not_yet_scored_by_v3_evaluator; source span matches alone are not semantic success",
+      "adapter_gaps": [
+        "edition_edits not consumed by v2",
+        "context_tables not compiled",
+        "derived entry/head outputs must be generated, cannot be fixture inputs"
+      ],
+      "missing_mechanisms": [
+        "bind computed ordinal/head",
+        "retain old full W02 obligations"
+      ]
+    },
+    {
+      "card_id": "C3_ST",
+      "documents": [
+        "ST.2.5"
+      ],
+      "actual_input_packet": "handoff_v3/runtime_inputs/ST_CIVIL_CORE.json",
+      "required_inputs": [
+        "C1_ST输出",
+        "策余8080",
+        "统法1539",
+        "C2_ST已编译计日子方法"
+      ],
+      "required_outputs": [
+        "冬至整日",
+        "冬至余分/1539",
+        "冬至干支日"
+      ],
+      "profile": "ST_elapsed; ST_intercalation_Cullen_Liu_GT; instant_lunation/civil_whole_day",
+      "current_modules": [
+        "analysis_parser/pipeline.py",
+        "analysis_parser/state.py",
+        "analysis_parser/execution.py"
+      ],
+      "required_mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M07",
+        "M08",
+        "M09"
+      ],
+      "counterexamples": [
+        "B03",
+        "B04",
+        "B05",
+        "B11",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B23",
+        "B24",
+        "B25",
+        "B26",
+        "B35",
+        "B37"
+      ],
+      "obligation_ids": [
+        "C3_ST.01",
+        "C3_ST.02",
+        "C3_ST.03"
+      ],
+      "v2_actual_unparsed": [
+        {
+          "doc_id": "ST.2.5",
+          "reading_id": "ST.2.5.C2017.v3",
+          "start": 32,
+          "end": 36,
+          "quote": "除數如法"
+        }
+      ],
+      "v2_related_unresolved": [
+        {
+          "cause": "interpretive_ambiguity",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.5",
+              "reading_id": "ST.2.5.C2017.v3",
+              "start": 24,
+              "end": 31,
+              "quote": "不盈者名曰小餘"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "v55",
+            "v69",
+            "v84",
+            "v101"
+          ],
+          "reason": "multiple compatible unclaimed operation remainders"
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.5",
+              "reading_id": "ST.2.5.C2017.v3",
+              "start": 32,
+              "end": 36,
+              "quote": "除數如法"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        }
+      ],
+      "v2_obligation_status": "not_yet_scored_by_v3_evaluator; source span matches alone are not semantic success",
+      "adapter_gaps": [
+        "edition_edits not consumed by v2",
+        "context_tables not compiled",
+        "derived entry/head outputs must be generated, cannot be fixture inputs"
+      ],
+      "missing_mechanisms": [
+        "program context compile",
+        "current-argument method call",
+        "residual to absolute time lift"
+      ]
+    },
+    {
+      "card_id": "C3_SF",
+      "documents": [
+        "HQ.3.8"
+      ],
+      "actual_input_packet": "handoff_v3/runtime_inputs/SF_CIVIL_CORE.json",
+      "required_inputs": [
+        "C1_SF输出",
+        "日余168",
+        "中法32"
+      ],
+      "required_outputs": [
+        "winter_state32",
+        "winter_day"
+      ],
+      "profile": "SF_Liu_inclusive; SF_completed_four; instant_lunation/civil_whole_day",
+      "current_modules": [
+        "analysis_parser/pipeline.py",
+        "analysis_parser/state.py",
+        "analysis_parser/execution.py"
+      ],
+      "required_mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M07",
+        "M09",
+        "M11"
+      ],
+      "counterexamples": [
+        "B03",
+        "B04",
+        "B05",
+        "B11",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B23",
+        "B24",
+        "B25",
+        "B26",
+        "B35",
+        "B37"
+      ],
+      "obligation_ids": [
+        "C3_SF.01",
+        "C3_SF.02",
+        "C3_SF.03",
+        "C3_SF.04"
+      ],
+      "v2_actual_unparsed": [
+        {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "start": 0,
+          "end": 14,
+          "quote": "推二十四氣術曰：置入蔀年減一"
+        },
+        {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "start": 47,
+          "end": 54,
+          "quote": "其餘以蔀名命之"
+        },
+        {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "start": 83,
+          "end": 88,
+          "quote": "除命之如前"
+        },
+        {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "start": 89,
+          "end": 93,
+          "quote": "小寒日也"
+        }
+      ],
+      "v2_related_unresolved": [
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 0,
+              "end": 14,
+              "quote": "推二十四氣術曰：置入蔀年減一"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "interpretive_ambiguity",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 32,
+              "end": 37,
+              "quote": "不滿為小餘"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "v17",
+            "v36",
+            "v56",
+            "v65"
+          ],
+          "reason": "multiple compatible unclaimed operation remainders"
+        },
+        {
+          "cause": "requires_external_data",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 38,
+              "end": 46,
+              "quote": "大餘滿六十除去之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "六十除"
+          ],
+          "reason": "Parameter value is not declared in runtime context"
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 47,
+              "end": 54,
+              "quote": "其餘以蔀名命之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 83,
+              "end": 88,
+              "quote": "除命之如前"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 89,
+              "end": 93,
+              "quote": "小寒日也"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        }
+      ],
+      "v2_obligation_status": "not_yet_scored_by_v3_evaluator; source span matches alone are not semantic success",
+      "adapter_gaps": [
+        "edition_edits not consumed by v2",
+        "context_tables not compiled",
+        "derived entry/head outputs must be generated, cannot be fixture inputs"
+      ],
+      "missing_mechanisms": [
+        "in-document winter/qi scope",
+        "fraction /32",
+        "absolute time lift"
+      ]
+    },
+    {
+      "card_id": "C4_ST",
+      "documents": [
+        "ST.2.6"
+      ],
+      "actual_input_packet": "handoff_v3/runtime_inputs/ST_CIVIL_CORE.json",
+      "required_inputs": [
+        "C3_ST输出",
+        "统法1539",
+        "元法4617"
+      ],
+      "required_outputs": [
+        "node_state1539",
+        "qi_state4617",
+        "两个独立序列"
+      ],
+      "profile": "ST_elapsed; ST_intercalation_Cullen_Liu_GT; instant_lunation/civil_whole_day",
+      "current_modules": [
+        "analysis_parser/pipeline.py",
+        "analysis_parser/state.py",
+        "analysis_parser/execution.py"
+      ],
+      "required_mechanisms": [
+        "M01",
+        "M02",
+        "M05",
+        "M06",
+        "M08",
+        "M09",
+        "M11",
+        "M12"
+      ],
+      "counterexamples": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B11",
+        "B12",
+        "B15",
+        "B22",
+        "B23",
+        "B24",
+        "B33",
+        "B35"
+      ],
+      "obligation_ids": [
+        "C4_ST.01",
+        "C4_ST.02",
+        "C4_ST.03",
+        "C4_ST.04"
+      ],
+      "v2_actual_unparsed": [
+        {
+          "doc_id": "ST.2.6",
+          "reading_id": "ST.2.6.C2017.v3",
+          "start": 17,
+          "end": 21,
+          "quote": "三其小餘"
+        },
+        {
+          "doc_id": "ST.2.6",
+          "reading_id": "ST.2.6.C2017.v3",
+          "start": 42,
+          "end": 47,
+          "quote": "皆以元為法"
+        }
+      ],
+      "v2_related_unresolved": [
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.6",
+              "reading_id": "ST.2.6.C2017.v3",
+              "start": 17,
+              "end": 21,
+              "quote": "三其小餘"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.6",
+              "reading_id": "ST.2.6.C2017.v3",
+              "start": 42,
+              "end": 47,
+              "quote": "皆以元為法"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        }
+      ],
+      "v2_obligation_status": "not_yet_scored_by_v3_evaluator; source span matches alone are not semantic success",
+      "adapter_gaps": [
+        "edition_edits not consumed by v2",
+        "context_tables not compiled",
+        "derived entry/head outputs must be generated, cannot be fixture inputs"
+      ],
+      "missing_mechanisms": [
+        "numeric predicate and anaphor",
+        "postposed denominator constraints",
+        "independent winter-base queries"
+      ]
+    },
+    {
+      "card_id": "C4_SF",
+      "documents": [
+        "HQ.3.8"
+      ],
+      "actual_input_packet": "handoff_v3/runtime_inputs/SF_CIVIL_CORE.json",
+      "required_inputs": [
+        "C3_SF冬至state32",
+        "中法32"
+      ],
+      "required_outputs": [
+        "下一气小寒",
+        "后续气序列"
+      ],
+      "profile": "SF_Liu_inclusive; SF_completed_four; instant_lunation/civil_whole_day",
+      "current_modules": [
+        "analysis_parser/pipeline.py",
+        "analysis_parser/state.py",
+        "analysis_parser/execution.py"
+      ],
+      "required_mechanisms": [
+        "M01",
+        "M03",
+        "M04",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M11"
+      ],
+      "counterexamples": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B11",
+        "B12",
+        "B15",
+        "B22",
+        "B23",
+        "B24",
+        "B33",
+        "B35"
+      ],
+      "obligation_ids": [
+        "C4_SF.01",
+        "C4_SF.02"
+      ],
+      "v2_actual_unparsed": [
+        {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "start": 0,
+          "end": 14,
+          "quote": "推二十四氣術曰：置入蔀年減一"
+        },
+        {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "start": 47,
+          "end": 54,
+          "quote": "其餘以蔀名命之"
+        },
+        {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "start": 83,
+          "end": 88,
+          "quote": "除命之如前"
+        },
+        {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "start": 89,
+          "end": 93,
+          "quote": "小寒日也"
+        }
+      ],
+      "v2_related_unresolved": [
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 0,
+              "end": 14,
+              "quote": "推二十四氣術曰：置入蔀年減一"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "interpretive_ambiguity",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 32,
+              "end": 37,
+              "quote": "不滿為小餘"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "v17",
+            "v36",
+            "v56",
+            "v65"
+          ],
+          "reason": "multiple compatible unclaimed operation remainders"
+        },
+        {
+          "cause": "requires_external_data",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 38,
+              "end": 46,
+              "quote": "大餘滿六十除去之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "六十除"
+          ],
+          "reason": "Parameter value is not declared in runtime context"
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 47,
+              "end": 54,
+              "quote": "其餘以蔀名命之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 83,
+              "end": 88,
+              "quote": "除命之如前"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.8",
+              "reading_id": "HQ.3.8.C2017.v3",
+              "start": 89,
+              "end": 93,
+              "quote": "小寒日也"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        }
+      ],
+      "v2_obligation_status": "not_yet_scored_by_v3_evaluator; source span matches alone are not semantic success",
+      "adapter_gaps": [
+        "edition_edits not consumed by v2",
+        "context_tables not compiled",
+        "derived entry/head outputs must be generated, cannot be fixture inputs"
+      ],
+      "missing_mechanisms": [
+        "recurrence vs independent query",
+        "general /32 carry and method reuse"
+      ]
+    },
+    {
+      "card_id": "C5_ST",
+      "documents": [
+        "ST.2.4"
+      ],
+      "actual_input_packet": "handoff_v3/runtime_inputs/ST_CIVIL_CORE.json",
+      "required_inputs": [
+        "C2_ST闰余",
+        "章中228",
+        "冬至计数锚点",
+        "moon/qi日期序列（边界裁决才需要）"
+      ],
+      "required_outputs": [
+        "steps_to_cross",
+        "nominal_month_slot",
+        "nominal_leap_label",
+        "boundary_status"
+      ],
+      "profile": "ST_elapsed; ST_intercalation_Cullen_Liu_GT; instant_lunation/civil_whole_day",
+      "current_modules": [
+        "analysis_parser/pipeline.py",
+        "analysis_parser/state.py",
+        "analysis_parser/execution.py"
+      ],
+      "required_mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M12",
+        "M13"
+      ],
+      "counterexamples": [
+        "B02",
+        "B19",
+        "B20",
+        "B21",
+        "B25",
+        "B27",
+        "B28",
+        "B36",
+        "B37"
+      ],
+      "obligation_ids": [
+        "C5_ST.01",
+        "C5_ST.02",
+        "C5_ST.03",
+        "C5_ST.04"
+      ],
+      "v2_actual_unparsed": [
+        {
+          "doc_id": "ST.2.4",
+          "reading_id": "ST.2.4.C2017.v3",
+          "start": 18,
+          "end": 21,
+          "quote": "盈章中"
+        },
+        {
+          "doc_id": "ST.2.4",
+          "reading_id": "ST.2.4.C2017.v3",
+          "start": 22,
+          "end": 25,
+          "quote": "數所得"
+        },
+        {
+          "doc_id": "ST.2.4",
+          "reading_id": "ST.2.4.C2017.v3",
+          "start": 26,
+          "end": 29,
+          "quote": "起冬至"
+        },
+        {
+          "doc_id": "ST.2.4",
+          "reading_id": "ST.2.4.C2017.v3",
+          "start": 40,
+          "end": 47,
+          "quote": "中氣在朔若二日"
+        }
+      ],
+      "v2_related_unresolved": [
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.4",
+              "reading_id": "ST.2.4.C2017.v3",
+              "start": 13,
+              "end": 17,
+              "quote": "加七得一"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "七得"
+          ],
+          "reason": "No source-defined current instance"
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.4",
+              "reading_id": "ST.2.4.C2017.v3",
+              "start": 18,
+              "end": 21,
+              "quote": "盈章中"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.4",
+              "reading_id": "ST.2.4.C2017.v3",
+              "start": 22,
+              "end": 25,
+              "quote": "數所得"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.4",
+              "reading_id": "ST.2.4.C2017.v3",
+              "start": 26,
+              "end": 29,
+              "quote": "起冬至"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "ST.2.4",
+              "reading_id": "ST.2.4.C2017.v3",
+              "start": 40,
+              "end": 47,
+              "quote": "中氣在朔若二日"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        }
+      ],
+      "v2_obligation_status": "not_yet_scored_by_v3_evaluator; source span matches alone are not semantic success",
+      "adapter_gaps": [
+        "edition_edits not consumed by v2",
+        "context_tables not compiled",
+        "derived entry/head outputs must be generated, cannot be fixture inputs"
+      ],
+      "missing_mechanisms": [
+        "typed repeat count/stop",
+        "nominal vs final month",
+        "same-epoch event constraints"
+      ]
+    },
+    {
+      "card_id": "C5_SF",
+      "documents": [
+        "HQ.3.9"
+      ],
+      "actual_input_packet": "handoff_v3/runtime_inputs/SF_CIVIL_CORE.json",
+      "required_inputs": [
+        "C2_SF闰余",
+        "章法19",
+        "章闰数7（声明推导来源）",
+        "moon/qi日期序列"
+      ],
+      "required_outputs": [
+        "month_count",
+        "nominal_leap_slot",
+        "nominal_leap_label",
+        "boundary_status"
+      ],
+      "profile": "SF_Liu_inclusive; SF_completed_four; instant_lunation/civil_whole_day",
+      "current_modules": [
+        "analysis_parser/pipeline.py",
+        "analysis_parser/state.py",
+        "analysis_parser/execution.py"
+      ],
+      "required_mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M13"
+      ],
+      "counterexamples": [
+        "B02",
+        "B19",
+        "B20",
+        "B21",
+        "B25",
+        "B27",
+        "B28",
+        "B36",
+        "B37"
+      ],
+      "obligation_ids": [
+        "C5_SF.01",
+        "C5_SF.02",
+        "C5_SF.03",
+        "C5_SF.04",
+        "C5_SF.05"
+      ],
+      "v2_actual_unparsed": [
+        {
+          "doc_id": "HQ.3.9",
+          "reading_id": "HQ.3.9.C2017.v3",
+          "start": 13,
+          "end": 19,
+          "quote": "餘以十二乘之"
+        },
+        {
+          "doc_id": "HQ.3.9",
+          "reading_id": "HQ.3.9.C2017.v3",
+          "start": 27,
+          "end": 37,
+          "quote": "滿四以上亦得一筭之數"
+        },
+        {
+          "doc_id": "HQ.3.9",
+          "reading_id": "HQ.3.9.C2017.v3",
+          "start": 51,
+          "end": 54,
+          "quote": "閏月也"
+        },
+        {
+          "doc_id": "HQ.3.9",
+          "reading_id": "HQ.3.9.C2017.v3",
+          "start": 55,
+          "end": 58,
+          "quote": "或進退"
+        },
+        {
+          "doc_id": "HQ.3.9",
+          "reading_id": "HQ.3.9.C2017.v3",
+          "start": 59,
+          "end": 64,
+          "quote": "以中氣定之"
+        }
+      ],
+      "v2_related_unresolved": [
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.9",
+              "reading_id": "HQ.3.9.C2017.v3",
+              "start": 13,
+              "end": 19,
+              "quote": "餘以十二乘之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "requires_external_data",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.9",
+              "reading_id": "HQ.3.9.C2017.v3",
+              "start": 20,
+              "end": 26,
+              "quote": "滿章閏數得一"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "章閏數"
+          ],
+          "reason": "Parameter value is not declared in runtime context"
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.9",
+              "reading_id": "HQ.3.9.C2017.v3",
+              "start": 27,
+              "end": 37,
+              "quote": "滿四以上亦得一筭之數"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.9",
+              "reading_id": "HQ.3.9.C2017.v3",
+              "start": 51,
+              "end": 54,
+              "quote": "閏月也"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.9",
+              "reading_id": "HQ.3.9.C2017.v3",
+              "start": 55,
+              "end": 58,
+              "quote": "或進退"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        },
+        {
+          "cause": "unresolved_parser",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.9",
+              "reading_id": "HQ.3.9.C2017.v3",
+              "start": 59,
+              "end": 64,
+              "quote": "以中氣定之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "unparsed_instruction"
+          ]
+        }
+      ],
+      "v2_obligation_status": "not_yet_scored_by_v3_evaluator; source span matches alone are not semantic success",
+      "adapter_gaps": [
+        "edition_edits not consumed by v2",
+        "context_tables not compiled",
+        "derived entry/head outputs must be generated, cannot be fixture inputs"
+      ],
+      "missing_mechanisms": [
+        "difference remainder vs division remainder",
+        "rounding predicate",
+        "slot vs repeated month label",
+        "event boundary constraints"
+      ]
+    }
+  ],
+  "runtime_exclusions": [
+    "reference",
+    "coverage",
+    "docs",
+    "expected numeric cases"
+  ],
+  "notes": [
+    "Source/model profiles explicitly required; final semantic pass will be assessed against actual event ports, not material presence."
+  ],
+  "material_verdict": "GO: source/profile contracts sufficient for bounded implementation; not a performance claim"
+}

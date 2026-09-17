@@ -1,0 +1,42 @@
+{
+  "role": "experiment specification; Work must freeze explicit reusable model-rule support; not a per-case runtime answer file",
+  "profiles": [
+    {
+      "id": "ST_elapsed",
+      "count": "exclude sought year",
+      "zero_based_elapsed": true,
+      "basis": "C2017 §173; L2003 p.65"
+    },
+    {
+      "id": "SF_Liu_inclusive",
+      "count": "include sought year",
+      "internal_adapter": "E=Y−1, localU=Elocal+1",
+      "basis": "L2003 pp.64–67; I03 explicitly distinguishes project normalization at boundaries"
+    },
+    {
+      "id": "ST_intercalation_Cullen_Liu_GT",
+      "stop": "lag>228",
+      "basis": "C2017 p.93; L2003 eq2.9; I02"
+    },
+    {
+      "id": "ST_intercalation_GE_contrast",
+      "stop": "lag>=228",
+      "basis": "diagnostic alternative, not asserted preferred historical reconstruction"
+    },
+    {
+      "id": "SF_completed_four",
+      "bump": "remainder>=4",
+      "basis": "C2017 §50; L2003 p.70"
+    },
+    {
+      "id": "instant_lunation",
+      "month_boundary": "exact conjunction instant",
+      "basis": "C2017 pp.93–95 theoretical comparison"
+    },
+    {
+      "id": "civil_whole_day",
+      "month_boundary": "midnight starting conjunction day",
+      "basis": "C2017 pp.94–96 calendar evidence; L2003 p.70"
+    }
+  ]
+}

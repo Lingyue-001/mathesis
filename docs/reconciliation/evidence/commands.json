@@ -1,0 +1,111 @@
+[
+  {
+    "name": "parser61",
+    "command": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/parser",
+      "-v"
+    ],
+    "exit_code": 0,
+    "seconds": 1.266
+  },
+  {
+    "name": "parser94",
+    "command": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/parser_v3",
+      "-v"
+    ],
+    "exit_code": 0,
+    "seconds": 11.407
+  },
+  {
+    "name": "engineering",
+    "command": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "evaluation/rescue-v3_1/run_engineering.py",
+      "--out",
+      "D:\\projects\\mathesis\\.cache\\reconciliation\\verified\\engineering"
+    ],
+    "exit_code": 0,
+    "seconds": 10.047
+  },
+  {
+    "name": "exposed",
+    "command": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "evaluation/rescue-v3_1/run_exposed.py",
+      "--out",
+      "D:\\projects\\mathesis\\.cache\\reconciliation\\verified\\exposed",
+      "--source-asset-map",
+      ".cache/reconciliation/source-asset-map.local.json"
+    ],
+    "exit_code": 0,
+    "seconds": 8.109
+  },
+  {
+    "name": "civil",
+    "command": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "evaluation/handoff-v3/run_suite.py",
+      "--out",
+      "D:\\projects\\mathesis\\.cache\\reconciliation\\verified\\civil"
+    ],
+    "exit_code": 0,
+    "seconds": 3.5
+  },
+  {
+    "name": "v2",
+    "command": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "evaluation/handoff-v2/run_development.py",
+      "--out",
+      "D:\\projects\\mathesis\\.cache\\reconciliation\\verified\\v2"
+    ],
+    "exit_code": 0,
+    "seconds": 0.875
+  },
+  {
+    "name": "integration",
+    "command": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/reconciliation",
+      "-v"
+    ],
+    "exit_code": 0,
+    "seconds": 8.0
+  }
+]

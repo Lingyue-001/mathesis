@@ -1,0 +1,8 @@
+{
+  "version": "source-goal-chain-1",
+  "scope": "Exposed development windows only; goal roles come from source endings and registered obligations. Numerical answers are not supplied.",
+  "A01": {"required_exports": [{"label": "見日", "unit": "day_index"}], "root": "epoch_elapsed_years"},
+  "A02": {"required_exports": [{"label": "後見月", "unit": "month_ordinal"}, {"label": "月餘", "unit": "month_fraction"}], "root": "epoch_elapsed_years"},
+  "A03": {"required_exports": [{"label": "所在次", "unit": "station_ordinal"}, {"label": "太歲日", "unit": "year_index"}], "root": "epoch_elapsed_years"},
+  "A04": {"required_exports": [{"label": "大餘", "unit": "day", "instances": 2}, {"label": "小餘", "unit": "day_fraction", "instances": 2}], "root": "epoch_elapsed_years"}
+}

@@ -1,0 +1,1586 @@
+{
+  "cards": [
+    {
+      "card_id": "A04",
+      "candidate_id": "2.31",
+      "obligations": [
+        {
+          "id": "A04.01",
+          "anchor": {
+            "doc_id": "ST.2.31",
+            "reading_id": "ST.2.31.C2017.postfreeze.v1",
+            "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+            "start": 0,
+            "end": 8,
+            "quote": "推篇，大餘亦如之"
+          },
+          "scholarly_obligation": "Section inherits a greater-remainder increment39 from2.30; inherited value must retain source occurrence identity.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                146
+              ],
+              "printed_pages": [
+                133
+              ],
+              "locator": "Proc.2.31"
+            },
+            "extract_file": "../source_checks/A04-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.2.1",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    89
+                  ],
+                  "pdf_pages": [
+                    102
+                  ],
+                  "locator": "Proc.2.1 §173"
+                }
+              },
+              {
+                "doc_id": "ST.2.3",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    91
+                  ],
+                  "pdf_pages": [
+                    104
+                  ],
+                  "locator": "ST.2.3"
+                }
+              },
+              {
+                "doc_id": "ST.2.30",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    145
+                  ],
+                  "printed_pages": [
+                    132
+                  ],
+                  "locator": "Proc.2.30"
+                }
+              },
+              {
+                "doc_id": "ST.rule_year",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    40
+                  ],
+                  "pdf_pages": [
+                    53
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.rule_month",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.lunation_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.concordance_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.day_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    39
+                  ],
+                  "pdf_pages": [
+                    52
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.const.origin",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ],
+                  "locator": "§4"
+                }
+              },
+              {
+                "doc_id": "ST.const.medials",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§17"
+                }
+              },
+              {
+                "doc_id": "ST.const.reckoning",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§20"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A04.02",
+          "anchor": {
+            "doc_id": "ST.2.31",
+            "reading_id": "ST.2.31.C2017.postfreeze.v1",
+            "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+            "start": 9,
+            "end": 13,
+            "quote": "小餘加一"
+          },
+          "scholarly_obligation": "Use lesser-remainder increment1 for the Section query with inherited day-factor81; base is not an injected gold state.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                146
+              ],
+              "printed_pages": [
+                133
+              ],
+              "locator": "Proc.2.31"
+            },
+            "extract_file": "../source_checks/A04-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.2.1",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    89
+                  ],
+                  "pdf_pages": [
+                    102
+                  ],
+                  "locator": "Proc.2.1 §173"
+                }
+              },
+              {
+                "doc_id": "ST.2.3",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    91
+                  ],
+                  "pdf_pages": [
+                    104
+                  ],
+                  "locator": "ST.2.3"
+                }
+              },
+              {
+                "doc_id": "ST.2.30",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    145
+                  ],
+                  "printed_pages": [
+                    132
+                  ],
+                  "locator": "Proc.2.30"
+                }
+              },
+              {
+                "doc_id": "ST.rule_year",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    40
+                  ],
+                  "pdf_pages": [
+                    53
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.rule_month",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.lunation_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.concordance_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.day_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    39
+                  ],
+                  "pdf_pages": [
+                    52
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.const.origin",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ],
+                  "locator": "§4"
+                }
+              },
+              {
+                "doc_id": "ST.const.medials",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§17"
+                }
+              },
+              {
+                "doc_id": "ST.const.reckoning",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§20"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A04.03",
+          "anchor": {
+            "doc_id": "ST.2.31",
+            "reading_id": "ST.2.31.C2017.postfreeze.v1",
+            "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+            "start": 14,
+            "end": 24,
+            "quote": "求周至，加大餘五十九"
+          },
+          "scholarly_obligation": "Circuits Culmination is a separate query with whole-day increment59, not an extra increment to the Section query.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                146
+              ],
+              "printed_pages": [
+                133
+              ],
+              "locator": "Proc.2.31"
+            },
+            "extract_file": "../source_checks/A04-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.2.1",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    89
+                  ],
+                  "pdf_pages": [
+                    102
+                  ],
+                  "locator": "Proc.2.1 §173"
+                }
+              },
+              {
+                "doc_id": "ST.2.3",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    91
+                  ],
+                  "pdf_pages": [
+                    104
+                  ],
+                  "locator": "ST.2.3"
+                }
+              },
+              {
+                "doc_id": "ST.2.30",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    145
+                  ],
+                  "printed_pages": [
+                    132
+                  ],
+                  "locator": "Proc.2.30"
+                }
+              },
+              {
+                "doc_id": "ST.rule_year",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    40
+                  ],
+                  "pdf_pages": [
+                    53
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.rule_month",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.lunation_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.concordance_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.day_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    39
+                  ],
+                  "pdf_pages": [
+                    52
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.const.origin",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ],
+                  "locator": "§4"
+                }
+              },
+              {
+                "doc_id": "ST.const.medials",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§17"
+                }
+              },
+              {
+                "doc_id": "ST.const.reckoning",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§20"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A04.04",
+          "anchor": {
+            "doc_id": "ST.2.31",
+            "reading_id": "ST.2.31.C2017.postfreeze.v1",
+            "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+            "start": 25,
+            "end": 30,
+            "quote": "小餘二十一"
+          },
+          "scholarly_obligation": "The paired lesser-remainder increment21 belongs to Circuits Culmination, at day-factor81.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                146
+              ],
+              "printed_pages": [
+                133
+              ],
+              "locator": "Proc.2.31"
+            },
+            "extract_file": "../source_checks/A04-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.2.1",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    89
+                  ],
+                  "pdf_pages": [
+                    102
+                  ],
+                  "locator": "Proc.2.1 §173"
+                }
+              },
+              {
+                "doc_id": "ST.2.3",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    91
+                  ],
+                  "pdf_pages": [
+                    104
+                  ],
+                  "locator": "ST.2.3"
+                }
+              },
+              {
+                "doc_id": "ST.2.30",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    145
+                  ],
+                  "printed_pages": [
+                    132
+                  ],
+                  "locator": "Proc.2.30"
+                }
+              },
+              {
+                "doc_id": "ST.rule_year",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    40
+                  ],
+                  "pdf_pages": [
+                    53
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.rule_month",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.lunation_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.concordance_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.day_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    39
+                  ],
+                  "pdf_pages": [
+                    52
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.const.origin",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ],
+                  "locator": "§4"
+                }
+              },
+              {
+                "doc_id": "ST.const.medials",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§17"
+                }
+              },
+              {
+                "doc_id": "ST.const.reckoning",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§20"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "policy": {
+    "version": "rescue-fixed-atoms-1",
+    "supported_actions": [
+      "literal",
+      "parameter",
+      "input",
+      "alias",
+      "load",
+      "multiply",
+      "subtract",
+      "add",
+      "divmod",
+      "cycle_reduce",
+      "threshold",
+      "count",
+      "query",
+      "method_call",
+      "select",
+      "lookup",
+      "rescale",
+      "fraction",
+      "repeat",
+      "cycle_lift",
+      "epoch_frame",
+      "event_sequence",
+      "boundary_call"
+    ],
+    "obligations": {
+      "A04.01": {
+        "events": [
+          {
+            "kind": "add",
+            "anchor": {
+              "doc_id": "ST.2.31",
+              "reading_id": "ST.2.31.C2017.postfreeze.v1",
+              "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+              "start": 0,
+              "end": 8,
+              "quote": "推篇，大餘亦如之"
+            },
+            "reads": {
+              "right": {
+                "literal": 39,
+                "anchor": {
+                  "doc_id": "ST.2.30",
+                  "reading_id": "ST.2.30.C2017.postfreeze.v1",
+                  "text_sha256": "b2a1e93b6ece29fb57afd3cf357e8ae3c1839c8f816e7f96a32b03b10e898aac",
+                  "start": 39,
+                  "end": 46,
+                  "quote": "當加大餘三十九"
+                }
+              }
+            },
+            "attributes": {
+              "receiver": "大餘"
+            }
+          }
+        ]
+      },
+      "A04.02": {
+        "events": [
+          {
+            "kind": "add",
+            "anchor": {
+              "doc_id": "ST.2.31",
+              "reading_id": "ST.2.31.C2017.postfreeze.v1",
+              "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+              "start": 9,
+              "end": 13,
+              "quote": "小餘加一"
+            },
+            "reads": {
+              "right": {
+                "literal": 1,
+                "anchor": {
+                  "doc_id": "ST.2.31",
+                  "reading_id": "ST.2.31.C2017.postfreeze.v1",
+                  "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+                  "start": 9,
+                  "end": 13,
+                  "quote": "小餘加一"
+                }
+              }
+            },
+            "attributes": {
+              "receiver": "小餘"
+            }
+          }
+        ]
+      },
+      "A04.03": {
+        "events": [
+          {
+            "kind": "add",
+            "anchor": {
+              "doc_id": "ST.2.31",
+              "reading_id": "ST.2.31.C2017.postfreeze.v1",
+              "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+              "start": 14,
+              "end": 24,
+              "quote": "求周至，加大餘五十九"
+            },
+            "reads": {
+              "right": {
+                "literal": 59,
+                "anchor": {
+                  "doc_id": "ST.2.31",
+                  "reading_id": "ST.2.31.C2017.postfreeze.v1",
+                  "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+                  "start": 14,
+                  "end": 24,
+                  "quote": "求周至，加大餘五十九"
+                }
+              }
+            },
+            "attributes": {
+              "receiver": "大餘"
+            }
+          }
+        ]
+      },
+      "A04.04": {
+        "events": [
+          {
+            "kind": "add",
+            "anchor": {
+              "doc_id": "ST.2.31",
+              "reading_id": "ST.2.31.C2017.postfreeze.v1",
+              "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+              "start": 25,
+              "end": 30,
+              "quote": "小餘二十一"
+            },
+            "reads": {
+              "right": {
+                "literal": 21,
+                "anchor": {
+                  "doc_id": "ST.2.31",
+                  "reading_id": "ST.2.31.C2017.postfreeze.v1",
+                  "text_sha256": "4c69abdb0c8e2e88dfdd158a7d3b539c2fe43d1a928b2f41ba1e8ae8351c97e9",
+                  "start": 25,
+                  "end": 30,
+                  "quote": "小餘二十一"
+                }
+              }
+            },
+            "attributes": {
+              "receiver": "小餘"
+            }
+          }
+        ]
+      }
+    },
+    "contracts": {
+      "A04.01.base": {
+        "type": "query_base",
+        "obligation_ids": [
+          "A04.01"
+        ],
+        "event_ref": {
+          "obligation_id": "A04.01",
+          "event_index": 0
+        },
+        "operand_role": "left",
+        "requirements": {
+          "query_identity": "Section",
+          "base_component_role": "大餘",
+          "root_selector": {
+            "input": "query_initial_rule_ordinal"
+          },
+          "root_count_frame": "elapsed Rules from source-derived Concordance Head",
+          "head_root": {
+            "input": "epoch_elapsed_years"
+          },
+          "head_definition_anchor": {
+            "doc_id": "ST.2.1",
+            "reading_id": "ST.2.1.C2017.v3",
+            "text_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d",
+            "start": 0,
+            "end": 88,
+            "quote": "推日月元統，置太極上元以來，外所求年，盈元法除之，餘不盈統者，則天統甲子以來年數也．盈統，除之，餘則地統甲辰以來年數也．又盈統，除之，餘則人統甲申以來年數也．各以其統首日為紀．"
+          },
+          "initial_instant_evidence": "C2017 §3–4 printed41–42/PDF54–55: midnight conjunction/winter-solstice coincidence at Concordance beginning.",
+          "same_initial_state_across_queries": true,
+          "does_not_read_other_query_result": true,
+          "real_source_producer_required": true,
+          "component_unit": "day",
+          "fraction_denominator": {
+            "parameter": "日法",
+            "value": 81
+          }
+        },
+        "source_justification": "T0 explicitly selected initial Rule ordinal0; §265–266 independently add each interval to this specified common initial instant. Source increments are not the initial state."
+      },
+      "A04.02.base": {
+        "type": "query_base",
+        "obligation_ids": [
+          "A04.02"
+        ],
+        "event_ref": {
+          "obligation_id": "A04.02",
+          "event_index": 0
+        },
+        "operand_role": "left",
+        "requirements": {
+          "query_identity": "Section",
+          "base_component_role": "小餘",
+          "root_selector": {
+            "input": "query_initial_rule_ordinal"
+          },
+          "root_count_frame": "elapsed Rules from source-derived Concordance Head",
+          "head_root": {
+            "input": "epoch_elapsed_years"
+          },
+          "head_definition_anchor": {
+            "doc_id": "ST.2.1",
+            "reading_id": "ST.2.1.C2017.v3",
+            "text_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d",
+            "start": 0,
+            "end": 88,
+            "quote": "推日月元統，置太極上元以來，外所求年，盈元法除之，餘不盈統者，則天統甲子以來年數也．盈統，除之，餘則地統甲辰以來年數也．又盈統，除之，餘則人統甲申以來年數也．各以其統首日為紀．"
+          },
+          "initial_instant_evidence": "C2017 §3–4 printed41–42/PDF54–55: midnight conjunction/winter-solstice coincidence at Concordance beginning.",
+          "same_initial_state_across_queries": true,
+          "does_not_read_other_query_result": true,
+          "real_source_producer_required": true,
+          "component_unit": "day_fraction_numerator",
+          "fraction_denominator": {
+            "parameter": "日法",
+            "value": 81
+          }
+        },
+        "source_justification": "T0 explicitly selected initial Rule ordinal0; §265–266 independently add each interval to this specified common initial instant. Source increments are not the initial state."
+      },
+      "A04.03.base": {
+        "type": "query_base",
+        "obligation_ids": [
+          "A04.03"
+        ],
+        "event_ref": {
+          "obligation_id": "A04.03",
+          "event_index": 0
+        },
+        "operand_role": "left",
+        "requirements": {
+          "query_identity": "Circuits Culmination",
+          "base_component_role": "大餘",
+          "root_selector": {
+            "input": "query_initial_rule_ordinal"
+          },
+          "root_count_frame": "elapsed Rules from source-derived Concordance Head",
+          "head_root": {
+            "input": "epoch_elapsed_years"
+          },
+          "head_definition_anchor": {
+            "doc_id": "ST.2.1",
+            "reading_id": "ST.2.1.C2017.v3",
+            "text_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d",
+            "start": 0,
+            "end": 88,
+            "quote": "推日月元統，置太極上元以來，外所求年，盈元法除之，餘不盈統者，則天統甲子以來年數也．盈統，除之，餘則地統甲辰以來年數也．又盈統，除之，餘則人統甲申以來年數也．各以其統首日為紀．"
+          },
+          "initial_instant_evidence": "C2017 §3–4 printed41–42/PDF54–55: midnight conjunction/winter-solstice coincidence at Concordance beginning.",
+          "same_initial_state_across_queries": true,
+          "does_not_read_other_query_result": true,
+          "real_source_producer_required": true,
+          "component_unit": "day",
+          "fraction_denominator": {
+            "parameter": "日法",
+            "value": 81
+          }
+        },
+        "source_justification": "T0 explicitly selected initial Rule ordinal0; §265–266 independently add each interval to this specified common initial instant. Source increments are not the initial state."
+      },
+      "A04.04.base": {
+        "type": "query_base",
+        "obligation_ids": [
+          "A04.04"
+        ],
+        "event_ref": {
+          "obligation_id": "A04.04",
+          "event_index": 0
+        },
+        "operand_role": "left",
+        "requirements": {
+          "query_identity": "Circuits Culmination",
+          "base_component_role": "小餘",
+          "root_selector": {
+            "input": "query_initial_rule_ordinal"
+          },
+          "root_count_frame": "elapsed Rules from source-derived Concordance Head",
+          "head_root": {
+            "input": "epoch_elapsed_years"
+          },
+          "head_definition_anchor": {
+            "doc_id": "ST.2.1",
+            "reading_id": "ST.2.1.C2017.v3",
+            "text_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d",
+            "start": 0,
+            "end": 88,
+            "quote": "推日月元統，置太極上元以來，外所求年，盈元法除之，餘不盈統者，則天統甲子以來年數也．盈統，除之，餘則地統甲辰以來年數也．又盈統，除之，餘則人統甲申以來年數也．各以其統首日為紀．"
+          },
+          "initial_instant_evidence": "C2017 §3–4 printed41–42/PDF54–55: midnight conjunction/winter-solstice coincidence at Concordance beginning.",
+          "same_initial_state_across_queries": true,
+          "does_not_read_other_query_result": true,
+          "real_source_producer_required": true,
+          "component_unit": "day_fraction_numerator",
+          "fraction_denominator": {
+            "parameter": "日法",
+            "value": 81
+          }
+        },
+        "source_justification": "T0 explicitly selected initial Rule ordinal0; §265–266 independently add each interval to this specified common initial instant. Source increments are not the initial state."
+      },
+      "A04.increment_reuse": {
+        "type": "source_reuse",
+        "obligation_ids": [
+          "A04.01"
+        ],
+        "event_ref": {
+          "obligation_id": "A04.01",
+          "event_index": 0
+        },
+        "operand_role": "right",
+        "requirements": {
+          "reuse_definition_anchor": {
+            "doc_id": "ST.2.30",
+            "reading_id": "ST.2.30.C2017.postfreeze.v1",
+            "text_sha256": "b2a1e93b6ece29fb57afd3cf357e8ae3c1839c8f816e7f96a32b03b10e898aac",
+            "start": 39,
+            "end": 46,
+            "quote": "當加大餘三十九"
+          },
+          "reused_role": "greater-remainder increment of preceding next-Rule operation",
+          "reused_operation": "add",
+          "reject_previous_result": true,
+          "reject_literal_identity_only": true,
+          "must_feed_matched_main_event": true
+        },
+        "source_justification": "C2017 §265–266 printed132–133/PDF145–146: add39 as in previous section. Initial declaration39 alone was insufficient old evidence."
+      },
+      "A04.query_isolation": {
+        "type": "query_isolation",
+        "obligation_ids": [
+          "A04.01",
+          "A04.02",
+          "A04.03",
+          "A04.04"
+        ],
+        "requirements": {
+          "distinct_query_instances": [
+            "Section",
+            "Circuits Culmination"
+          ],
+          "paired_updates": [
+            [
+              "A04.01",
+              "A04.02"
+            ],
+            [
+              "A04.03",
+              "A04.04"
+            ]
+          ],
+          "shared_immutable_initial_state": true,
+          "fraction_carry_denominator": {
+            "parameter": "日法",
+            "value": 81
+          },
+          "each_query_executes_and_exports": true,
+          "reverse_order_preserves_each_result": true,
+          "no_sequential_cross_query_accumulation": true
+        },
+        "source_justification": "§266 supplies two independent periods under conditional four-Rule Section interpretation. Order invariance is the preregistered execution contract, not an extra historical phrase."
+      }
+    },
+    "fixed_atoms": [
+      {
+        "atom_id": "A04.01.atom001",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/obligations/A04.01/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A04.01.atom002",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/obligations/A04.01/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A04.01.atom003",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/obligations/A04.01/events/0/reads/right/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A04.01.atom004",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/obligations/A04.01/events/0/reads/right/anchor",
+        "predicate_type": "value_anchor"
+      },
+      {
+        "atom_id": "A04.01.atom005",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/obligations/A04.01/events/0/attributes/receiver",
+        "predicate_type": "event_attribute"
+      },
+      {
+        "atom_id": "A04.02.atom001",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/obligations/A04.02/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A04.02.atom002",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/obligations/A04.02/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A04.02.atom003",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/obligations/A04.02/events/0/reads/right/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A04.02.atom004",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/obligations/A04.02/events/0/reads/right/anchor",
+        "predicate_type": "value_anchor"
+      },
+      {
+        "atom_id": "A04.02.atom005",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/obligations/A04.02/events/0/attributes/receiver",
+        "predicate_type": "event_attribute"
+      },
+      {
+        "atom_id": "A04.03.atom001",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/obligations/A04.03/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A04.03.atom002",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/obligations/A04.03/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A04.03.atom003",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/obligations/A04.03/events/0/reads/right/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A04.03.atom004",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/obligations/A04.03/events/0/reads/right/anchor",
+        "predicate_type": "value_anchor"
+      },
+      {
+        "atom_id": "A04.03.atom005",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/obligations/A04.03/events/0/attributes/receiver",
+        "predicate_type": "event_attribute"
+      },
+      {
+        "atom_id": "A04.04.atom001",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/obligations/A04.04/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A04.04.atom002",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/obligations/A04.04/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A04.04.atom003",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/obligations/A04.04/events/0/reads/right/literal",
+        "predicate_type": "value_literal"
+      },
+      {
+        "atom_id": "A04.04.atom004",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/obligations/A04.04/events/0/reads/right/anchor",
+        "predicate_type": "value_anchor"
+      },
+      {
+        "atom_id": "A04.04.atom005",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/obligations/A04.04/events/0/attributes/receiver",
+        "predicate_type": "event_attribute"
+      },
+      {
+        "atom_id": "A04.01.atom006",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/query_identity",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom007",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/base_component_role",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom008",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/root_selector",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom009",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/root_count_frame",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom010",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/head_root",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom011",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/head_definition_anchor",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom012",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/initial_instant_evidence",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom013",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/same_initial_state_across_queries",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom014",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/does_not_read_other_query_result",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom015",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/real_source_producer_required",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom016",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/component_unit",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom017",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.01.base/requirements/fraction_denominator",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom006",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/query_identity",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom007",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/base_component_role",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom008",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/root_selector",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom009",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/root_count_frame",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom010",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/head_root",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom011",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/head_definition_anchor",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom012",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/initial_instant_evidence",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom013",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/same_initial_state_across_queries",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom014",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/does_not_read_other_query_result",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom015",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/real_source_producer_required",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom016",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/component_unit",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.02.atom017",
+        "obligation_id": "A04.02",
+        "predicate_path": "/policy/contracts/A04.02.base/requirements/fraction_denominator",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom006",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/query_identity",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom007",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/base_component_role",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom008",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/root_selector",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom009",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/root_count_frame",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom010",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/head_root",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom011",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/head_definition_anchor",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom012",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/initial_instant_evidence",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom013",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/same_initial_state_across_queries",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom014",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/does_not_read_other_query_result",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom015",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/real_source_producer_required",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom016",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/component_unit",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.03.atom017",
+        "obligation_id": "A04.03",
+        "predicate_path": "/policy/contracts/A04.03.base/requirements/fraction_denominator",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom006",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/query_identity",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom007",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/base_component_role",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom008",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/root_selector",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom009",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/root_count_frame",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom010",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/head_root",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom011",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/head_definition_anchor",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom012",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/initial_instant_evidence",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom013",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/same_initial_state_across_queries",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom014",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/does_not_read_other_query_result",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom015",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/real_source_producer_required",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom016",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/component_unit",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.04.atom017",
+        "obligation_id": "A04.04",
+        "predicate_path": "/policy/contracts/A04.04.base/requirements/fraction_denominator",
+        "predicate_type": "query_base"
+      },
+      {
+        "atom_id": "A04.01.atom018",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.increment_reuse/requirements/reuse_definition_anchor",
+        "predicate_type": "source_reuse"
+      },
+      {
+        "atom_id": "A04.01.atom019",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.increment_reuse/requirements/reused_role",
+        "predicate_type": "source_reuse"
+      },
+      {
+        "atom_id": "A04.01.atom020",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.increment_reuse/requirements/reused_operation",
+        "predicate_type": "source_reuse"
+      },
+      {
+        "atom_id": "A04.01.atom021",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.increment_reuse/requirements/reject_previous_result",
+        "predicate_type": "source_reuse"
+      },
+      {
+        "atom_id": "A04.01.atom022",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.increment_reuse/requirements/reject_literal_identity_only",
+        "predicate_type": "source_reuse"
+      },
+      {
+        "atom_id": "A04.01.atom023",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.increment_reuse/requirements/must_feed_matched_main_event",
+        "predicate_type": "source_reuse"
+      },
+      {
+        "atom_id": "A04.01.atom024",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.query_isolation/requirements/distinct_query_instances",
+        "predicate_type": "query_isolation"
+      },
+      {
+        "atom_id": "A04.01.atom025",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.query_isolation/requirements/paired_updates",
+        "predicate_type": "query_isolation"
+      },
+      {
+        "atom_id": "A04.01.atom026",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.query_isolation/requirements/shared_immutable_initial_state",
+        "predicate_type": "query_isolation"
+      },
+      {
+        "atom_id": "A04.01.atom027",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.query_isolation/requirements/fraction_carry_denominator",
+        "predicate_type": "query_isolation"
+      },
+      {
+        "atom_id": "A04.01.atom028",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.query_isolation/requirements/each_query_executes_and_exports",
+        "predicate_type": "query_isolation"
+      },
+      {
+        "atom_id": "A04.01.atom029",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.query_isolation/requirements/reverse_order_preserves_each_result",
+        "predicate_type": "query_isolation"
+      },
+      {
+        "atom_id": "A04.01.atom030",
+        "obligation_id": "A04.01",
+        "predicate_path": "/policy/contracts/A04.query_isolation/requirements/no_sequential_cross_query_accumulation",
+        "predicate_type": "query_isolation"
+      }
+    ],
+    "fixed_atom_count": 81,
+    "atom_accounting": {
+      "main_event_required_for_descendant_atoms": true,
+      "same_matched_event_for_all_event_predicates": true,
+      "missing_event_keeps_all_predicates_in_denominator": true,
+      "missing_contract_evidence": "fail",
+      "matching_may_not_use_auxiliary_event_instead_of_main_action": true,
+      "aggregate_obligation_pass": "all event atoms and every attached contract must pass",
+      "shared_contract_atom_owner": "first obligation_id; other attached obligations also depend on contract pass; atom counted once",
+      "denominator_source": "this registered fixed_atoms list, never observed graph size",
+      "role_sensitive_reads": true
+    }
+  },
+  "coverage": "22_fixed_source_obligations_plus_explicit_contract_atoms",
+  "supplemental_anchors": [],
+  "annotation_limits": [
+    "Fixed atom denominator is registered from source reference before execution and never shrinks for absent events.",
+    "No parser outputs, generated AST, producer IDs or computed answers were used to author this policy.",
+    "All constraints are observable semantic/source relations, not prescribed node construction. Missing contract evidence fails its fixed atom.",
+    "Complete-chain pass additionally requires actual export/execution and no relevant unresolved facts."
+  ],
+  "profile_selection": {
+    "selected_profiles": [
+      "ST_elapsed",
+      "C2017_ST_Section_four_Rules_conditional_v1",
+      "C2017_ST_concordance_midnight_frame_v1"
+    ],
+    "basis": "T0 registered source-backed conditional profiles; see dependency_preflight.md."
+  },
+  "lawful_inputs": {
+    "epoch_elapsed_years": 143127,
+    "query_initial_rule_ordinal": 0
+  },
+  "shared_context_disclosure": "A/B windows share full earlier Chinese procedures and source declarations; eight windows are not eight statistically independent samples.",
+  "scholar_extract_file": "../source_checks/A04-scholarly-pages.json",
+  "scholarly_uncertainty": "Cullen says if (as seems to be the case) Section is four Rules. Reference records the literal source increments and inherited39; it does not certify the conditional chronological reconstruction.",
+  "registration": {
+    "phase": "T0_source_based_before_new_parser_outputs",
+    "old_reference_sha256": "bbe45ac615dc296e4e6887cec5edc074ec9d9255f047c28539766ad4034843ed",
+    "source_audit": "../dependency_preflight.json",
+    "input_contract": "../source_supplements/development_input_contract_v1.json",
+    "runtime_use_forbidden": true,
+    "scope": "exposed development only; not new transfer evidence"
+  }
+}

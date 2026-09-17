@@ -1,0 +1,373 @@
+{
+  "status": "SPECIFICATION_NOT_RESULTS",
+  "cases": [
+    {
+      "id": "H01",
+      "group": "provenance",
+      "setup": "已有自动packet",
+      "action": "创建空session并重编译",
+      "expected": "自动图语义保持；mode明示；不新增human记录",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H02",
+      "group": "provenance",
+      "setup": "source hash已锁定",
+      "action": "改一个字再回放旧decision",
+      "expected": "stale_source；不自动套用",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H03",
+      "group": "provenance",
+      "setup": "重复相同原句两处",
+      "action": "确认第二处producer",
+      "expected": "只改变第二处；引用包含位置和scope",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H04",
+      "group": "segmentation",
+      "setup": "含补充平面字的原文",
+      "action": "浏览器圈选并保存",
+      "expected": "code point offset与Python切片quote一致",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H05",
+      "group": "segmentation",
+      "setup": "其小餘并之被错误分组的演示",
+      "action": "手动切边界并选择Multiply/Combine",
+      "expected": "不改原文；AST包含两个操作；绑定仍独立检查",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H06",
+      "group": "segmentation",
+      "setup": "一个步骤证据跨两句",
+      "action": "建立多跨度节点",
+      "expected": "两跨度各有来源；不复制或删除正文",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H07",
+      "group": "segmentation",
+      "setup": "多个求查询",
+      "action": "调整一个query父级和基态",
+      "expected": "其他query保留原基态；不能全部顶层",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H08",
+      "group": "segmentation",
+      "setup": "必要控制所在句",
+      "action": "mark_noncomputational",
+      "expected": "目标仍依赖该控制时阻止完整发布",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H09",
+      "group": "segmentation",
+      "setup": "L1父子范围交叉循环",
+      "action": "保存分段",
+      "expected": "拒绝循环；允许以引用边表达跨段关系",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H10",
+      "group": "selection",
+      "setup": "两个兼容量候选",
+      "action": "选择一个并保存",
+      "expected": "形成约束；重编译使用确切producer-port",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H11",
+      "group": "selection",
+      "setup": "仅一个但错误的自动候选",
+      "action": "研究者主动纠正",
+      "expected": "可改；保留原自动结果和纠错统计",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H12",
+      "group": "selection",
+      "setup": "候选列表被截断",
+      "action": "尝试自动关闭问题",
+      "expected": "不允许因首选唯一而通过；显示截断/总数",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H13",
+      "group": "manual_construction",
+      "setup": "无正确AST候选但目录有操作",
+      "action": "填写已知类型结构",
+      "expected": "记录typed_manual_construction；同后端生成图",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H14",
+      "group": "manual_construction",
+      "setup": "无已知语义类型",
+      "action": "输入自定义opcode",
+      "expected": "不执行；生成extension_required",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H15",
+      "group": "manual_construction",
+      "setup": "缺中间计算量",
+      "action": "以declare_parameter直接填答案",
+      "expected": "拒绝覆盖derived role；保留缺producer",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H16",
+      "group": "manual_construction",
+      "setup": "所需表有可核对出处",
+      "action": "attach_context后重编译",
+      "expected": "表版本与来源保存；旧相关选择重新核验",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H17",
+      "group": "replay",
+      "setup": "确认后改上游切分",
+      "action": "回放",
+      "expected": "下游stale/needs_revalidation；不按v编号错接",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H18",
+      "group": "replay",
+      "setup": "同一slot两项相反活动决策",
+      "action": "保存",
+      "expected": "冲突或明确分支；不依时间默认覆盖",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H19",
+      "group": "replay",
+      "setup": "一个选择已撤销",
+      "action": "重启会话",
+      "expected": "原缺口返回；历史日志保留",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H20",
+      "group": "replay",
+      "setup": "同一决策账同版本",
+      "action": "两次清洁编译",
+      "expected": "规范化语义图一致；时间戳可不同",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H21",
+      "group": "types",
+      "setup": "人工选择单位不兼容的producer",
+      "action": "执行",
+      "expected": "被类型约束拒绝；human标记不绕过检查",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H22",
+      "group": "types",
+      "setup": "合法量跨单位缺rate",
+      "action": "选择convert",
+      "expected": "保持requires_evidence，不能自动发布完整",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H23",
+      "group": "types",
+      "setup": "条件两侧量同数值不同时间原点",
+      "action": "比较",
+      "expected": "无合法转换时拒绝",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H24",
+      "group": "P1",
+      "setup": "分数r=0和r=1两输入",
+      "action": "执行zero classify",
+      "expected": "分类只在r=0发生；原标签与条件保留",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H25",
+      "group": "P1",
+      "setup": "区间[224,231]",
+      "action": "输入223/224/231/232",
+      "expected": "假/真/真/假；端点规则显式",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H26",
+      "group": "P1",
+      "setup": "if两分支产生下一量",
+      "action": "逆转条件或交换来源",
+      "expected": "反例检查失败；未执行分支不能污染状态",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H27",
+      "group": "P2",
+      "setup": "同单位不同分母两分数",
+      "action": "精确相加并保留源表示",
+      "expected": "数值正确且转换证据/原分母仍在",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H28",
+      "group": "P2",
+      "setup": "整部2、分部1/10减3/10",
+      "action": "执行借位",
+      "expected": "输出1+8/10；条件与借位producer完整",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H29",
+      "group": "P2",
+      "setup": "裸label-number可能声明或更新",
+      "action": "人工分别选择解释",
+      "expected": "两图来源相同解释不同；不强迫数值同一",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H30",
+      "group": "P3",
+      "setup": "同数值不同列",
+      "action": "选择表中另一列",
+      "expected": "来源差异被记录和核验",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H31",
+      "group": "P3",
+      "setup": "表版本或索引基准改变",
+      "action": "回放旧查表决策",
+      "expected": "stale或重新核验；禁止静默沿用",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H32",
+      "group": "P4",
+      "setup": "不等区间宽度[2,3,5]闭开规则",
+      "action": "输入位置2及5",
+      "expected": "分别区间2余0和区间3余0；按声明基准",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H33",
+      "group": "P4",
+      "setup": "日数作为角位置输入",
+      "action": "遍历宿度",
+      "expected": "缺模型率时拒绝",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H34",
+      "group": "P4",
+      "setup": "循环表长度不足或和不符",
+      "action": "定位",
+      "expected": "missing/inconsistent table，不能固定360补完",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H35",
+      "group": "P5",
+      "setup": "初态0，按表有符号增量[3,-1,2]",
+      "action": "有界fold",
+      "expected": "结果4且保留每步3/2/4；这是合成测试",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H36",
+      "group": "P5",
+      "setup": "同一次多状态更新",
+      "action": "选择同时或顺序",
+      "expected": "读取来源不同可见，按所选契约计算",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H37",
+      "group": "P5",
+      "setup": "缺末行或超过声明max_steps",
+      "action": "执行",
+      "expected": "未完成而非静默截断成功",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H38",
+      "group": "UI",
+      "setup": "真实来源packet与候选",
+      "action": "用户圈选/保存/关闭重开",
+      "expected": "不写JSON也可完成；session和图可回放",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H39",
+      "group": "publication",
+      "setup": "图存在必要Hole或未知操作",
+      "action": "点击批准导出",
+      "expected": "可导出partial；完整状态不通过",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H40",
+      "group": "publication",
+      "setup": "符号根输入合法但无数字",
+      "action": "导出",
+      "expected": "graph closed可成立；execution missing_inputs分列",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H41",
+      "group": "comparison",
+      "setup": "两审定图有人工阶段对应",
+      "action": "并置和差异检查",
+      "expected": "每项回原文；对应标human，不回填解析",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H42",
+      "group": "comparison",
+      "setup": "一图对应范围尚不完整",
+      "action": "报告删步",
+      "expected": "只能unknown/partial，不报告历史删除",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H43",
+      "group": "evidence",
+      "setup": "人工决定被机器下游传播",
+      "action": "检查derived节点",
+      "expected": "decision_refs保留；不改称纯自动或text_overt",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H44",
+      "group": "security",
+      "setup": "note含Python或HTML",
+      "action": "保存和显示",
+      "expected": "不执行、不注入；只是注释",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H45",
+      "group": "metrics",
+      "setup": "脚本回放所有决策",
+      "action": "输出统计",
+      "expected": "actor=scripted_fixture；真实人类时长null",
+      "status": "not_run_new_feature"
+    },
+    {
+      "id": "H46",
+      "group": "regression",
+      "setup": "继承自动模式及旧packet",
+      "action": "不载入session运行旧测试",
+      "expected": "旧入口兼容；冻结输出及hash不被覆盖",
+      "status": "not_run_new_feature"
+    }
+  ]
+}

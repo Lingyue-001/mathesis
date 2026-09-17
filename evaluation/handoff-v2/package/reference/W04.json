@@ -1,0 +1,1130 @@
+{
+  "schema_version": "2.0",
+  "window_id": "W04",
+  "role": "curated_teaching_reference_not_parser_output",
+  "annotation_status": "source_calibrated_by_assistant_not_independently_adjudicated",
+  "primary_source_ids": [
+    "HQ.3.38"
+  ],
+  "quantities": [
+    {
+      "quantity_id": "E",
+      "source_label": "積合",
+      "role": "external_upstream_result",
+      "unit": "conjunction_count",
+      "scale": null,
+      "definition_source": "C2017 pp.197–199 §§151–154; L2003 p.89",
+      "note": "执行样例8618，目标事件为合。"
+    },
+    {
+      "quantity_id": "cycle_months",
+      "source_label": "合積月",
+      "role": "parameter",
+      "unit": "lunation_per_conjunction",
+      "scale": null,
+      "definition_source": "C2017 p.190 §88; L2003 p.63",
+      "note": "13"
+    },
+    {
+      "quantity_id": "cycle_mr",
+      "source_label": "月餘",
+      "role": "parameter",
+      "unit": "lunation_parts",
+      "scale": 82213,
+      "definition_source": "C2017 p.190 §89; L2003 p.63",
+      "note": "41606"
+    },
+    {
+      "quantity_id": "F",
+      "source_label": "月法",
+      "role": "parameter",
+      "unit": "lunation_fraction_scale",
+      "scale": null,
+      "definition_source": "C2017 p.190 §90; L2003 p.63",
+      "note": "82213"
+    },
+    {
+      "quantity_id": "era_months",
+      "source_label": "紀月",
+      "role": "cycle_parameter",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "C2017 p.154 §21",
+      "note": "18800"
+    },
+    {
+      "quantity_id": "rule_intercalations",
+      "source_label": "章閏",
+      "role": "parameter",
+      "unit": "intercalation_count_per_rule",
+      "scale": null,
+      "definition_source": "C2017 p.155 §25 explanation; L2003 p.59",
+      "note": "7；Cullen常数段的因為章閏文字有校删，故7的绑定须注明来自周期说明，非捏造独立原文条目。"
+    },
+    {
+      "quantity_id": "rule_months",
+      "source_label": "章月",
+      "role": "parameter",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "C2017 p.155 §25",
+      "note": "235"
+    },
+    {
+      "quantity_id": "boundary_data",
+      "source_label": "相邻朔／中气资料",
+      "role": "external_missing_data",
+      "unit": "event_time",
+      "scale": null,
+      "definition_source": "C2017 pp.167–169 §50; p.201 §159",
+      "note": "本包不提供特定年的完整事件表。"
+    },
+    {
+      "quantity_id": "lesser_accumulation",
+      "source_label": "小積",
+      "role": "whole_month_term",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:01",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "scaled_month_fraction",
+      "source_label": null,
+      "role": "scaled_fraction_term",
+      "unit": "lunation_parts",
+      "scale": 82213,
+      "definition_source": "generated_by:02",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "fraction_month_q",
+      "source_label": null,
+      "role": "whole_month_carry",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:03",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "fraction_month_r",
+      "source_label": null,
+      "role": "division_remainder",
+      "unit": "lunation_parts",
+      "scale": 82213,
+      "definition_source": "generated_by:03",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.sum",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:04",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.total",
+      "source_label": "積月",
+      "role": "current_full_accumulation",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:05",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.r",
+      "source_label": "月餘",
+      "role": "current_remainder",
+      "unit": "lunation_parts",
+      "scale": 82213,
+      "definition_source": "generated_by:06",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "era_cycles",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:07",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.era_r",
+      "source_label": "入紀月",
+      "role": "era_cycle_projection",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:07",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "intercalary_scaled",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:08",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "intercalary_count",
+      "source_label": "閏",
+      "role": "intercalation_count",
+      "unit": "month_count",
+      "scale": null,
+      "definition_source": "generated_by:09",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "intercalary_r",
+      "source_label": null,
+      "role": "division_remainder",
+      "unit": "intercalation_phase_parts",
+      "scale": 235,
+      "definition_source": "generated_by:09",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "intercalary_r.named",
+      "source_label": "閏餘",
+      "role": "intercalation_phase_remainder",
+      "unit": "intercalation_phase_parts",
+      "scale": 235,
+      "definition_source": "generated_by:10",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.nonintercalary",
+      "source_label": null,
+      "role": "nonintercalary_months",
+      "unit": "month_count",
+      "scale": null,
+      "definition_source": "generated_by:11",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "whole_years",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:12",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.year_offset",
+      "source_label": "入歲月數",
+      "role": "within_year_projection",
+      "unit": "month_count",
+      "scale": null,
+      "definition_source": "generated_by:12",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "conjunction.nominal_month",
+      "source_label": "星合所在之月",
+      "role": "nominal_target",
+      "unit": "celestial_month_ordinal",
+      "scale": null,
+      "definition_source": "generated_by:13",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "intercalary_month_candidate",
+      "source_label": "星合閏月",
+      "role": "candidate_status",
+      "unit": "boolean",
+      "scale": null,
+      "definition_source": "generated_by:14",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "month.final_status",
+      "source_label": null,
+      "role": "external_constraint_status",
+      "unit": "resolution_status",
+      "scale": null,
+      "definition_source": "generated_by:15",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    }
+  ],
+  "nodes": [
+    {
+      "node_id": "01",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "以合積月乘積合為小積",
+          "reading_range": [
+            5,
+            15
+          ],
+          "transcription_range": [
+            5,
+            15
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "multiply_and_name",
+      "inputs": [
+        "cycle_months",
+        "E"
+      ],
+      "outputs": [
+        "lesser_accumulation"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "小积是整月项13×积合；是本次中间量，不是表中已存在的另一个常数。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R02",
+        "R03",
+        "R05"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "02",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "又以月餘乘積合",
+          "reading_range": [
+            16,
+            23
+          ],
+          "transcription_range": [
+            16,
+            23
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "multiply",
+      "inputs": [
+        "cycle_mr",
+        "E"
+      ],
+      "outputs": [
+        "scaled_month_fraction"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "此处月余取周期参数；又启动第二个项，不能覆盖小积。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R02",
+        "R03",
+        "R13"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "03",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "滿其月法得一",
+          "reading_range": [
+            24,
+            30
+          ],
+          "transcription_range": [
+            24,
+            30
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "count_full_units",
+      "inputs": [
+        "scaled_month_fraction",
+        "F"
+      ],
+      "outputs": [
+        "fraction_month_q",
+        "fraction_month_r"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "其月法绑定同一行星上下文；按月法分出进整月数和余分。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R04",
+        "R06",
+        "R13"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "04",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "從小積",
+          "reading_range": [
+            31,
+            34
+          ],
+          "transcription_range": [
+            31,
+            34
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "add_to_named_quantity",
+      "inputs": [
+        "fraction_month_q",
+        "lesser_accumulation"
+      ],
+      "outputs": [
+        "months.sum"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "把整月商加入原小积，不将余分加入整月。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R03",
+        "R11"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "05",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "為積月",
+          "reading_range": [
+            34,
+            37
+          ],
+          "transcription_range": [
+            35,
+            38
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "name_result",
+      "inputs": [
+        "months.sum"
+      ],
+      "outputs": [
+        "months.total"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "此结果命名来自Cullen补文；既定校读模式可解析，未经补文原串的字面模式不能声称明写。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R05",
+        "R16"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "06",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "不盡為月餘",
+          "reading_range": [
+            38,
+            43
+          ],
+          "transcription_range": [
+            39,
+            45
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "delayed_remainder_name",
+      "inputs": [
+        "fraction_month_r"
+      ],
+      "outputs": [
+        "months.r"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "本次月余为新实例，不能覆盖或等同周期参数41606。补文中的不尽具有编辑来源。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R05",
+        "R06",
+        "R13",
+        "R16"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "07",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "積月滿紀月去之，餘為入紀月",
+          "reading_range": [
+            44,
+            57
+          ],
+          "transcription_range": [
+            46,
+            59
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "reduce_cycle",
+      "inputs": [
+        "months.total",
+        "era_months"
+      ],
+      "outputs": [
+        "era_cycles",
+        "months.era_r"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "求入纪月；累计整月与其模投影分别保留。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R08",
+        "R13"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "08",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "每以章閏乘之",
+          "reading_range": [
+            58,
+            64
+          ],
+          "transcription_range": [
+            60,
+            66
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "multiply",
+      "inputs": [
+        "rule_intercalations",
+        "months.era_r"
+      ],
+      "outputs": [
+        "intercalary_scaled"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "之指入纪月；每的适用上下文保留，不凭单字创建无终止循环。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R02",
+        "R03",
+        "R06"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "09",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "滿章月得一為閏",
+          "reading_range": [
+            65,
+            72
+          ],
+          "transcription_range": [
+            67,
+            74
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "count_full_units",
+      "inputs": [
+        "intercalary_scaled",
+        "rule_months"
+      ],
+      "outputs": [
+        "intercalary_count",
+        "intercalary_r"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "商为截至该处应扣的闰月数；余分随后用于闰月位置判据。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R04",
+        "R05"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "10",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "不盡為閏餘",
+          "reading_range": [
+            73,
+            78
+          ],
+          "transcription_range": [
+            75,
+            80
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "name_remainder",
+      "inputs": [
+        "intercalary_r"
+      ],
+      "outputs": [
+        "intercalary_r.named"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "235尺度的闰余，不能沿用日月天正计算中的19尺度闰余。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R05",
+        "R06",
+        "R15"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "11",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "以閏減入紀月",
+          "reading_range": [
+            79,
+            85
+          ],
+          "transcription_range": [
+            81,
+            87
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "subtract",
+      "inputs": [
+        "months.era_r",
+        "intercalary_count"
+      ],
+      "outputs": [
+        "months.nonintercalary"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "从入纪月中减去闰数；以A减B的方向是B−A。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R02",
+        "R03"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "12",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "其餘以十二去之，餘為入歲月數",
+          "reading_range": [
+            86,
+            100
+          ],
+          "transcription_range": [
+            88,
+            102
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "reduce_cycle",
+      "inputs": [
+        "months.nonintercalary",
+        "lit:12"
+      ],
+      "outputs": [
+        "whole_years",
+        "months.year_offset"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "先扣闰再去完整12月年；不得交换成先模12后扣全年闰数。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R06",
+        "R08"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "13",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "從天正十一月起，筭外，星合所在之月也",
+          "reading_range": [
+            101,
+            119
+          ],
+          "transcription_range": [
+            103,
+            121
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "count_month_ordinal",
+      "inputs": [
+        "months.year_offset"
+      ],
+      "outputs": [
+        "conjunction.nominal_month"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "输出名义月位及天正十一月起点，保留后面修正规则，尚不宣称所有边界情形最终月名已定。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R10"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "14",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "其閏餘滿二百二十四以上至二百三十一星合閏月",
+          "reading_range": [
+            120,
+            141
+          ],
+          "transcription_range": [
+            122,
+            145
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "bounded_predicate",
+      "inputs": [
+        "intercalary_r.named",
+        "lit:224",
+        "lit:231"
+      ],
+      "outputs": [
+        "intercalary_month_candidate"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "按文本保留224与231的双边界；参考数值投影暂取两端包含，端点政策列入争议登记和专门测试。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60"
+      ],
+      "required_rules": [
+        "R06",
+        "R07",
+        "R16"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "15",
+      "source_spans": [
+        {
+          "passage_id": "HQ.3.38",
+          "reading_id": "HQ.3.38.C2017-reading-v1",
+          "quote": "閏或進退，以朔制之",
+          "reading_range": [
+            142,
+            151
+          ],
+          "transcription_range": [
+            146,
+            155
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "external_constraint_call",
+      "inputs": [
+        "conjunction.nominal_month",
+        "intercalary_month_candidate",
+        "boundary_data"
+      ],
+      "outputs": [
+        "month.final_status"
+      ],
+      "stage": "main",
+      "evidence_status": "requires_external_data",
+      "explanation": "必须保留月位可进退且由朔约束的接口。没有相邻朔／中气事件数据时标requires_external_data，不默认等于初算候选。",
+      "basis": [
+        "C2017 pp.200–201 §§157–159",
+        "L2003 pp.90–91 式3.57–3.60",
+        "C2017 pp.167–169 §50"
+      ],
+      "required_rules": [
+        "R07",
+        "R12"
+      ],
+      "controls": [],
+      "notes": [
+        "解析出约束及其缺失输入可验收；完整月界裁定属于后续B05能力，不属于本轮已完成数值重建。"
+      ]
+    }
+  ],
+  "clause_coverage": [
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "推星合月，",
+      "reading_range": [
+        0,
+        5
+      ],
+      "coverage_node_ids": [],
+      "coverage_status": "title_or_discourse_connector"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "以合積月乘積合為小積，",
+      "reading_range": [
+        5,
+        16
+      ],
+      "coverage_node_ids": [
+        "01"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "又以月餘乘積合，",
+      "reading_range": [
+        16,
+        24
+      ],
+      "coverage_node_ids": [
+        "02"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "滿其月法得一，",
+      "reading_range": [
+        24,
+        31
+      ],
+      "coverage_node_ids": [
+        "03"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "從小積為積月，",
+      "reading_range": [
+        31,
+        38
+      ],
+      "coverage_node_ids": [
+        "04",
+        "05"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "不盡為月餘．",
+      "reading_range": [
+        38,
+        44
+      ],
+      "coverage_node_ids": [
+        "06"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "積月滿紀月去之，",
+      "reading_range": [
+        44,
+        52
+      ],
+      "coverage_node_ids": [
+        "07"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "餘為入紀月．",
+      "reading_range": [
+        52,
+        58
+      ],
+      "coverage_node_ids": [
+        "07"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "每以章閏乘之，",
+      "reading_range": [
+        58,
+        65
+      ],
+      "coverage_node_ids": [
+        "08"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "滿章月得一為閏；",
+      "reading_range": [
+        65,
+        73
+      ],
+      "coverage_node_ids": [
+        "09"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "不盡為閏餘．",
+      "reading_range": [
+        73,
+        79
+      ],
+      "coverage_node_ids": [
+        "10"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "以閏減入紀月，",
+      "reading_range": [
+        79,
+        86
+      ],
+      "coverage_node_ids": [
+        "11"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "其餘以十二去之，",
+      "reading_range": [
+        86,
+        94
+      ],
+      "coverage_node_ids": [
+        "12"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "餘為入歲月數，",
+      "reading_range": [
+        94,
+        101
+      ],
+      "coverage_node_ids": [
+        "12"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "從天正十一月起，",
+      "reading_range": [
+        101,
+        109
+      ],
+      "coverage_node_ids": [
+        "13"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "筭外，",
+      "reading_range": [
+        109,
+        112
+      ],
+      "coverage_node_ids": [
+        "13"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "星合所在之月也．",
+      "reading_range": [
+        112,
+        120
+      ],
+      "coverage_node_ids": [
+        "13"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "其閏餘滿二百二十四以上至二百三十一星合閏月．",
+      "reading_range": [
+        120,
+        142
+      ],
+      "coverage_node_ids": [
+        "14"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "閏或進退，",
+      "reading_range": [
+        142,
+        147
+      ],
+      "coverage_node_ids": [
+        "15"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "HQ.3.38",
+      "quote": "以朔制之．",
+      "reading_range": [
+        147,
+        152
+      ],
+      "coverage_node_ids": [
+        "15"
+      ],
+      "coverage_status": "analysed"
+    }
+  ],
+  "acceptance_policy": "以有来源的端点、依赖、条件、回引和原表述保留为判断单元；内部节点划分允许不同。不得把参考node_id或参考量ID当解析器运行输入。",
+  "source_citations": {
+    "C2017": [
+      187,
+      190,
+      191,
+      198,
+      199,
+      200,
+      201
+    ],
+    "L2003": [
+      61,
+      62,
+      63,
+      89,
+      90,
+      91
+    ]
+  },
+  "prepared_by": "assistant; independent expert adjudication not yet performed"
+}

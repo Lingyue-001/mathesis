@@ -1,0 +1,96 @@
+{
+  "surface": "置上元以來",
+  "expected_production": "G_EPOCH_LOAD_63",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "EpochLoad",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 5,
+            "quote": "置上元以來"
+          }
+        ],
+        "surface": "置上元以來",
+        "analysis_range": [
+          0,
+          5
+        ],
+        "production_id": "G_EPOCH_LOAD_63",
+        "lowering_kind": "epoch_load",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          5
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 5,
+            "quote": "置上元以來"
+          }
+        ],
+        "surface": "置上元以來",
+        "analysis_range": [
+          0,
+          5
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          5
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          5
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

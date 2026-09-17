@@ -1,0 +1,145 @@
+{
+  "schema_version": "2.0",
+  "input_mode": "declared_edited_primary_context",
+  "provided_scope": {
+    "tradition": "Han_Si_fen_li",
+    "planet": null,
+    "scope_is_curator_provided": true
+  },
+  "primary_documents": [
+    {
+      "doc_id": "HQ.3.5",
+      "text": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏．",
+      "reading_id": "HQ.3.5.C2017-reading-v1",
+      "text_sha256": "d579f6a33058713ccabc840a70fea0d21412cb384d9724e10ca4a684a7d1ead2",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          164
+        ],
+        "pdf_pages": [
+          177
+        ],
+        "locator": "HQ.3.5"
+      },
+      "editorial_trace": []
+    },
+    {
+      "doc_id": "HQ.3.6",
+      "text": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也．小餘四百四十一以上，其月大．求後月朔，加大餘二十九，小餘四百九十九，小餘滿蔀月得一，上加大餘，命之如前．",
+      "reading_id": "HQ.3.6.C2017-reading-v1",
+      "text_sha256": "76c0d257f21640e32bf3895b93856a33aaf6d30cde31c7284930b653c3cf9da8",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          165
+        ],
+        "pdf_pages": [
+          178
+        ],
+        "locator": "HQ.3.6"
+      },
+      "editorial_trace": [
+        {
+          "old": "四百九十[九]",
+          "new": "四百九十九",
+          "basis": "Cullen中文补九；刘pp.67–68朔望月分子499。",
+          "transcription_range": [
+            103,
+            110
+          ]
+        }
+      ]
+    }
+  ],
+  "context_documents": [
+    {
+      "doc_id": "HQ.rule_year",
+      "text": "章法，十九．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155
+        ],
+        "pdf_pages": [
+          168
+        ]
+      },
+      "text_sha256": "24a9ed783208db988673c2b0dc03d4dcf62cfe3fd7e57942acf3c4058763f6ad"
+    },
+    {
+      "doc_id": "HQ.rule_month",
+      "text": "章月，二百三十五．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155
+        ],
+        "pdf_pages": [
+          168
+        ]
+      },
+      "text_sha256": "22035bc231c9e8b1031746a51c9ef9443a5ad6932500be93c2749920c1d2101a"
+    },
+    {
+      "doc_id": "HQ.obscuration_month",
+      "text": "蔀月，九百四十．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154,
+          155
+        ],
+        "pdf_pages": [
+          167,
+          168
+        ]
+      },
+      "text_sha256": "28e7c5b4657e15b81ccc21cab6112e848dd92488b59e2e0b86f4fec1e862e245"
+    },
+    {
+      "doc_id": "HQ.obscuration_days",
+      "text": "蔀日，二萬七千七百五十九．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          156
+        ],
+        "pdf_pages": [
+          169
+        ]
+      },
+      "text_sha256": "95e023b4816518ccd15f1d08c6a3a652a98754ba2f5d454c9f05c24244d199d3"
+    },
+    {
+      "doc_id": "HQ.obscuration_year",
+      "text": "蔀法，七十六．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154
+        ],
+        "pdf_pages": [
+          167
+        ]
+      },
+      "text_sha256": "5d6cdd72b3134ffbb5e340daee5d72b10d652f9e285a1466b819651312a9f675"
+    },
+    {
+      "doc_id": "HQ.solar_day_factor",
+      "text": "日法，四．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155,
+          156
+        ],
+        "pdf_pages": [
+          168,
+          169
+        ]
+      },
+      "text_sha256": "c3c4a3463ecb5f1607d77193993d8c72751fe9f645c33191372f4e8f38298f06"
+    }
+  ]
+}

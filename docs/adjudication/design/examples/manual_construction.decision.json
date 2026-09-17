@@ -1,0 +1,85 @@
+{
+  "decision_id": "example-d01",
+  "actor": {
+    "type": "scripted_fixture",
+    "id": "design-example"
+  },
+  "action": "assemble_known_structure",
+  "targets": [
+    {
+      "doc_id": "instructional-fragment",
+      "reading_id": "example-reading-1",
+      "source_sha256": "92e22a725918856712879752e1e0eb77af6a5f6d36cd930aca5c8999968a01e9",
+      "start": 0,
+      "end": 10,
+      "quote": "以見月法乘其小餘并之"
+    }
+  ],
+  "payload": {
+    "interpretation_branch": "example",
+    "structure": {
+      "kind": "Sequence",
+      "children": [
+        {
+          "kind": "Multiply",
+          "source": {
+            "doc_id": "instructional-fragment",
+            "reading_id": "example-reading-1",
+            "source_sha256": "92e22a725918856712879752e1e0eb77af6a5f6d36cd930aca5c8999968a01e9",
+            "start": 0,
+            "end": 8,
+            "quote": "以見月法乘其小餘"
+          },
+          "slots": {
+            "left": {
+              "mention": {
+                "doc_id": "instructional-fragment",
+                "reading_id": "example-reading-1",
+                "source_sha256": "92e22a725918856712879752e1e0eb77af6a5f6d36cd930aca5c8999968a01e9",
+                "start": 1,
+                "end": 4,
+                "quote": "見月法"
+              }
+            },
+            "right": {
+              "mention": {
+                "doc_id": "instructional-fragment",
+                "reading_id": "example-reading-1",
+                "source_sha256": "92e22a725918856712879752e1e0eb77af6a5f6d36cd930aca5c8999968a01e9",
+                "start": 5,
+                "end": 8,
+                "quote": "其小餘"
+              }
+            }
+          },
+          "local_result": "product_1"
+        },
+        {
+          "kind": "Add",
+          "source": {
+            "doc_id": "instructional-fragment",
+            "reading_id": "example-reading-1",
+            "source_sha256": "92e22a725918856712879752e1e0eb77af6a5f6d36cd930aca5c8999968a01e9",
+            "start": 8,
+            "end": 10,
+            "quote": "并之"
+          },
+          "slots": {
+            "left": {
+              "binding_required": "previous_accumulator"
+            },
+            "right": {
+              "local_result": "product_1"
+            }
+          }
+        }
+      ]
+    },
+    "status_after_apply": "still_needs_operand_binding"
+  },
+  "evidence_refs": [
+    "conversation-example-only"
+  ],
+  "reason": "展示无正确候选时按已知类型组装；并未给出上游producer，不能据此宣布完整算法。",
+  "depends_on": []
+}

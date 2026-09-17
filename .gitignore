@@ -16,6 +16,8 @@ yarn-error.log*
 .env
 .env.local
 .cache
+__pycache__/
+*.pyc
 tmp/*-audit-build/**
 tmp/procedure-ir/*.json
 tmp/procedure-ir/*.md

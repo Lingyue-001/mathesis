@@ -1,0 +1,124 @@
+[
+  {
+    "id": "BD01",
+    "kind": "threshold_profiles",
+    "classification": "synthetic",
+    "initial": 221,
+    "increment": 7,
+    "threshold": 228,
+    "counter_initial": 0,
+    "profiles": {
+      "gt": {
+        "iterations": 2,
+        "final": 235
+      },
+      "ge": {
+        "iterations": 1,
+        "final": 228
+      }
+    },
+    "source_relation": "I02 / ST2.4; isolates the equality distinction"
+  },
+  {
+    "id": "BD02",
+    "kind": "SF_inclusive_cycle_entry",
+    "classification": "project_normalization_check_not_new_historical_evidence",
+    "Y_values": [
+      1,
+      76,
+      77,
+      1520,
+      1521,
+      4560,
+      4561
+    ],
+    "expected_local_years": [
+      1,
+      76,
+      1,
+      76,
+      1,
+      76,
+      1
+    ],
+    "profile": "SF_Liu_inclusive with explicitly declared E=Y−1 normalization; I03"
+  },
+  {
+    "id": "BD03",
+    "kind": "event_month_membership",
+    "classification": "synthetic",
+    "moons": [
+      [
+        0,
+        1
+      ],
+      [
+        29,
+        2
+      ],
+      [
+        30,
+        1
+      ]
+    ],
+    "qi": [
+      72,
+      5
+    ],
+    "instant_expected_interval": 0,
+    "whole_day_expected_interval": 1,
+    "explanation": "moons0,14.5,30; qi14.4. At midnight-day boundaries the second month begins14; with instant boundaries it begins14.5."
+  },
+  {
+    "id": "BD04",
+    "kind": "same_day_ordering",
+    "classification": "source_numeric_fragment_with_project_local_epoch",
+    "qi": [
+      158490,
+      4617
+    ],
+    "moon": [
+      160284,
+      4617
+    ],
+    "expected": {
+      "same_whole_day": true,
+      "qi_before_moon": true
+    },
+    "source": "C2017 p.95 Table2.2 spring equinox vs following lunation both sexagenaryday35; localepoch34 chosen only for this pair, not a full dating reconstruction"
+  },
+  {
+    "id": "BD05",
+    "kind": "SF_intercalation_slots",
+    "classification": "source_derived",
+    "remainder": 16,
+    "expected": {
+      "complement": 36,
+      "quotient": 5,
+      "remainder7": 1,
+      "bump": 0,
+      "count": 5,
+      "slot": 6,
+      "celestial_leap_label": 5,
+      "civil_leap_label": 3
+    },
+    "source": "L2003 p.70"
+  },
+  {
+    "id": "BD06",
+    "kind": "SF_intercalation_slots",
+    "classification": "source_derived",
+    "remainder": 14,
+    "expected": {
+      "complement": 60,
+      "quotient": 8,
+      "remainder7": 4,
+      "bump": 1,
+      "count": 9,
+      "slot": 10,
+      "celestial_leap_label": 9,
+      "civil_leap_label": 7
+    },
+    "source": "C2017 pp.168–169; nominal not final whole-day adjudication"
+  }
+]

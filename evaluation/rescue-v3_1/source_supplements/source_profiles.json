@@ -1,0 +1,221 @@
+{
+  "schema_version": "t0-source-profiles-1",
+  "source_identity": {
+    "source_id": "C2017",
+    "author": "Christopher Cullen",
+    "source_checks": "evaluation/handoff-v3/prospective/source_checks/A01–A04-scholarly-pages.json",
+    "all_evidence_scope": "already exposed Chapter 2"
+  },
+  "profiles": [
+    {
+      "name": "C2017_ST_Jupiter_parameter_roles_v1",
+      "status": "source_recoverable",
+      "kind": "scholarly_interpretation",
+      "scope": "San_tong_li, Jupiter; declarations versus local computed quantities remain distinct",
+      "rules": [
+        "見復數 in generic planetary counting denotes Jupiter 見數; 見中法 is explicitly 見數也; 歲數 denotes 歲星歲數 in this planetary scope.",
+        "閏分 in the appearance-month procedure denotes the planetary 見閏分, not the civil intercalation remainder.",
+        "The declared 積月 and 月餘 are whole and fractional lunations per one appearance; 後月餘 names this declared increment. These are not aliases for every computed 積月/月餘."
+      ],
+      "citations": [
+        {
+          "source": "C2017",
+          "pdf_pages": [
+            64,
+            67,
+            113,
+            115,
+            120
+          ],
+          "printed_pages": [
+            51,
+            54,
+            100,
+            102,
+            107
+          ],
+          "locators": [
+            "§22",
+            "§25–28",
+            "§186",
+            "§190",
+            "§197"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C2017_ST_local_year_count_v1",
+      "status": "source_recoverable",
+      "kind": "scholarly_interpretation",
+      "rules": [
+        "Root epoch_elapsed_years is the elapsed interval before the target year. 外所求年 uses this unchanged. 盡所求年 counts through the target year and uses elapsed years plus one; the conversion is local to this phrase, never a global offset."
+      ],
+      "citations": [
+        {
+          "source": "C2017",
+          "pdf_pages": [
+            102,
+            113,
+            123
+          ],
+          "printed_pages": [
+            89,
+            100,
+            110
+          ],
+          "locators": [
+            "§173 commentary",
+            "§186 Chinese and translation",
+            "§202 worked-example root only"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C2017_ST_Jupiter_station_rate_v1",
+      "status": "source_recoverable",
+      "kind": "scholarly_interpretation",
+      "rules": [
+        "For the Year/Jupiter chronological calculation, 145 stations per 144 years is the rate; this is not a dimensionless rate nor a general day-to-angle conversion.",
+        "Preserve full accumulated stations and derive independent twelve-station and sixty-year views. 星紀 is station index 1; 丙子 is sexagenary index 13. Zero exhausted-count offset returns the origin.",
+        "Station labels are in supplied source order, with whitespace normalization only (實 沈 to 實沈); no new Chinese sentence is appended to the procedure."
+      ],
+      "citations": [
+        {
+          "source": "C2017",
+          "pdf_pages": [
+            121,
+            122,
+            123,
+            125,
+            126,
+            127,
+            128,
+            129
+          ],
+          "printed_pages": [
+            108,
+            109,
+            110,
+            112,
+            113,
+            114,
+            115,
+            116
+          ],
+          "locators": [
+            "§202",
+            "§§204–262"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C2017_ST_Section_four_Rules_conditional_v1",
+      "status": "insufficient_to_close_query_base",
+      "kind": "conditional_scholarly_interpretation",
+      "rules": [
+        "Within this passage only, accept Cullen’s conditional interpretation that a 篇 is four Rules; 周至 is three Rules.",
+        "The corresponding increments are 39 whole cyclical days and 1/81 day, or 59 whole cyclical days and 21/81 day, respectively. They are alternatives applied independently to a specified common base.",
+        "This interpretation does not identify which base the user requests, a rule/section ordinal, or whether the initialized state of the preceding procedure is to be consumed. Do not add such a rule as if Cullen stated it."
+      ],
+      "citations": [
+        {
+          "source": "C2017",
+          "pdf_pages": [
+            145,
+            146
+          ],
+          "printed_pages": [
+            132,
+            133
+          ],
+          "locators": [
+            "§265",
+            "§266 and commentary"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C2017_ST_origin_month_day_frame_v1",
+      "status": "conditional_source_supported_alternative",
+      "kind": "scholarly_interpretation",
+      "rules": [
+        "When months are explicitly reduced by Origin Months, their day count is relative to the latest Origin, whose first day is jiazi.1. Preserve this epoch in the corresponding count method.",
+        "Cullen §195 instead calls the base Concordance Head. Retain this discrepancy; the fixed root is an Origin boundary and does not discriminate these readings."
+      ],
+      "citations": [
+        {
+          "source": "C2017",
+          "pdf_pages": [
+            54,
+            55,
+            117,
+            119
+          ],
+          "printed_pages": [
+            41,
+            42,
+            104,
+            106
+          ],
+          "locators": [
+            "§3–4 commentary",
+            "§193 commentary",
+            "§195 commentary"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C2017_ST_concordance_midnight_frame_v1",
+      "status": "source_recoverable_for_explicit_initial_task_choice",
+      "kind": "scholarly_interpretation",
+      "rules": [
+        "A Concordance begins with conjunction and winter solstice coinciding at midnight of the first Celestial month. A task that explicitly requests the zero-th Rule from this head selects that instant.",
+        "This calendar origin fact does not imply that §266 historically requests that particular initial instant; the task must declare its ordinal separately."
+      ],
+      "citations": [
+        {
+          "source": "C2017",
+          "pdf_pages": [
+            54,
+            55,
+            102,
+            146
+          ],
+          "printed_pages": [
+            41,
+            42,
+            89,
+            133
+          ],
+          "locators": [
+            "§3–4 commentary",
+            "§173",
+            "§266 commentary"
+          ]
+        }
+      ]
+    }
+  ],
+  "runtime_projection": {
+    "allowed": [
+      "selected_profiles: registered profile names above, except incomplete base profile cannot certify closure",
+      "context_documents: cited original Chinese source declarations only",
+      "provided_scope: tradition and planet",
+      "inputs.epoch_elapsed_years: existing lawful root"
+    ],
+    "forbidden": [
+      "computed intermediates",
+      "AST",
+      "producer IDs",
+      "expected graph",
+      "expected output",
+      "a fabricated query-base state"
+    ],
+    "conditionally_allowed_root": "inputs.query_initial_rule_ordinal: 0; requires explicit preregistration and adapter whitelist; task choice, not source datum"
+  }
+}

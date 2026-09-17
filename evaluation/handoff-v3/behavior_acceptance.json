@@ -1,0 +1,750 @@
+{
+  "status": "development_engineering_diagnostics_passed",
+  "cases": [
+    {
+      "id": "B01",
+      "mechanisms": [
+        "M01"
+      ],
+      "classification": "synthetic_from_attested_construction",
+      "setup": "以三乘甲，加七得一；为甲提供有来源的初态，尾部另给盈乙、數所得",
+      "expected": "Number7 + count-one separate candidates; no parameter 七得",
+      "failure_to_catch": "greedy name slot swallows control verb",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_add_seven_count_one_not_parameter (test_core_frontend.FrontendTests.test_add_seven_count_one_not_parameter)"
+        },
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_repeat_variable_increment_and_equality (test_core_mechanisms.MechanismTests.test_repeat_variable_increment_and_equality)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B02",
+      "mechanisms": [
+        "M01",
+        "M12"
+      ],
+      "classification": "negative",
+      "setup": "单独加七，后文没有重复、计数或阈值依据",
+      "expected": "one addition / unresolved extended interpretation; no invented loop",
+      "failure_to_catch": "single literal triggers repeated process",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_add_seven_count_one_not_parameter (test_core_frontend.FrontendTests.test_add_seven_count_one_not_parameter)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B03",
+      "mechanisms": [
+        "M01",
+        "M05"
+      ],
+      "classification": "source_development",
+      "setup": "三其小餘；后文有皆以元為法，旧小余/1539、元4617",
+      "expected": "multiply3 observed; rescale separately justified with old/new denominator and scope",
+      "failure_to_catch": "full sentence shortcut replaces reasoning",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_triple_anaphoric_remainder (test_core_frontend.FrontendTests.test_triple_anaphoric_remainder)"
+        },
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_numerical_actual_graph (test_core_scoped.ScopedTests.test_numerical_actual_graph)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B04",
+      "mechanisms": [
+        "M05"
+      ],
+      "classification": "negative",
+      "setup": "B03删除后置分母声明且不提供其他分母依据",
+      "expected": "triple arithmetic remains; rescale not established",
+      "failure_to_catch": "guessed4617 from phrase",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_rescale_removed_or_inconsistent_declaration (test_core_mechanisms.MechanismTests.test_rescale_removed_or_inconsistent_declaration)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B05",
+      "mechanisms": [
+        "M05"
+      ],
+      "classification": "negative",
+      "setup": "保持乘3但新分母给3078而非4617",
+      "expected": "value preserving claim fails; report inconsistency without editing source",
+      "failure_to_catch": "numerator change silently normalized",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_rescale_removed_or_inconsistent_declaration (test_core_mechanisms.MechanismTests.test_rescale_removed_or_inconsistent_declaration)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B06",
+      "mechanisms": [
+        "M01",
+        "M14"
+      ],
+      "classification": "synthetic_slots",
+      "setup": "七十三日，統法分之七十七；十八日，統法分之四百四",
+      "expected": "two mixed quantities via same grammar with separate source spans",
+      "failure_to_catch": "two memorized full sentences",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_mixed_duration_two_values (test_core_frontend.FrontendTests.test_mixed_duration_two_values)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B07",
+      "mechanisms": [
+        "M14"
+      ],
+      "classification": "source_development",
+      "setup": "ST2.7最后一句",
+      "expected": "27+606/1539,原中央词及冬至后锚点可提取; historical role alternatives remain",
+      "failure_to_catch": "force water or central unique interpretation",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_declarations_three_quantities_and_alternatives (test_core_mechanisms.MechanismTests.test_declarations_three_quantities_and_alternatives)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B08",
+      "mechanisms": [
+        "M02",
+        "M03"
+      ],
+      "classification": "inherited_regression",
+      "setup": "W03商用于并积中后再不盈者名曰月余",
+      "expected": "remaining r belongs to original division, full积中 still present",
+      "failure_to_catch": "latest result replaces oldr",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/inherited61-final.log",
+          "test_id": "test_w03_retains_full_values_delayed_ports_and_scan (test_core_composition.CoreTests.test_w03_retains_full_values_delayed_ports_and_scan)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B09",
+      "mechanisms": [
+        "M02",
+        "M03"
+      ],
+      "classification": "inherited_regression",
+      "setup": "W04两个同名月余",
+      "expected": "parameter instance and computed instance remain distinct",
+      "failure_to_catch": "equal name merges producers",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/inherited61-final.log",
+          "test_id": "test_w04_numeric_and_open_boundary (test_core_composition.CoreTests.test_w04_numeric_and_open_boundary)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B10",
+      "mechanisms": [
+        "M03"
+      ],
+      "classification": "source_development",
+      "setup": "以閏餘減章法，餘以十二乘之",
+      "expected": "difference(19,r) is multiplied; no olddivision remainder",
+      "failure_to_catch": "餘 automatically maps to divmod",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_bd05_bd06_real_sf_graph (test_core_scale_control.ScaleControlTests.test_bd05_bd06_real_sf_graph)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B11",
+      "mechanisms": [
+        "M06",
+        "M09"
+      ],
+      "classification": "metamorphic",
+      "setup": "先求八节再求气，与只求气比较（共同winter seed）",
+      "expected": "same qi result; node branch never overwrites seed",
+      "failure_to_catch": "query order leaks state",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_query_base_not_nodes_and_explicit_recurrence (test_core_mechanisms.MechanismTests.test_query_base_not_nodes_and_explicit_recurrence)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B12",
+      "mechanisms": [
+        "M06"
+      ],
+      "classification": "negative",
+      "setup": "explicit又加求下一气，改变前一气状态",
+      "expected": "next result changes, unlike independent base queries",
+      "failure_to_catch": "all queries incorrectly reset to initialwinter",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_query_base_not_nodes_and_explicit_recurrence (test_core_mechanisms.MechanismTests.test_query_base_not_nodes_and_explicit_recurrence)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B13",
+      "mechanisms": [
+        "M08"
+      ],
+      "classification": "source_development",
+      "setup": "C2计日子方法原文放context，C3冬至作为primary",
+      "expected": "compile body and bind winter arguments; recover除數如法",
+      "failure_to_catch": "context declarations only",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_context_method_actual_winter_args (test_core_mechanisms.MechanismTests.test_context_method_actual_winter_args)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B14",
+      "mechanisms": [
+        "M08"
+      ],
+      "classification": "negative",
+      "setup": "从B13移除方法定义和可用共享签名",
+      "expected": "missing_method with source call span; no output imported fromreference",
+      "failure_to_catch": "reference supplies hidden callable",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_method_definition_removed (test_core_scoped.ScopedTests.test_method_definition_removed)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B15",
+      "mechanisms": [
+        "M08",
+        "M09"
+      ],
+      "classification": "negative",
+      "setup": "给两个签名同名但一个以day另一个以du",
+      "expected": "select only type/scope-compatible method or mark ambiguity",
+      "failure_to_catch": "name similarity selects wrongprocedure",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_method_ambiguity_and_wrong_unit (test_core_mechanisms.MechanismTests.test_method_ambiguity_and_wrong_unit)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B16",
+      "mechanisms": [
+        "M08"
+      ],
+      "classification": "fault_injection",
+      "setup": "把正确call target替换成另一方法，保持当前数字碰巧相同",
+      "expected": "evaluator rejects target/contract mismatch",
+      "failure_to_catch": "numeric coincidence masks methoderror",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_method_wrong_target_rejected_despite_same_actuals (test_semantic_match.SemanticMatchTests.test_method_wrong_target_rejected_despite_same_actuals)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score.",
+      "fault_graph_evidence": "evaluation/handoff-v3/runs/v3-20260917/fault-integration-03/B16-score.json"
+    },
+    {
+      "id": "B17",
+      "mechanisms": [
+        "M10"
+      ],
+      "classification": "source_development",
+      "setup": "完整§45表＋Y9411；删除预填U和head",
+      "expected": "select row4 and head58; upstreamgraphproducesU63",
+      "failure_to_catch": "fixture masquerades as era parser",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_numerical_actual_graph (test_core_scoped.ScopedTests.test_numerical_actual_graph)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B18",
+      "mechanisms": [
+        "M10"
+      ],
+      "classification": "metamorphic",
+      "setup": "在declaredSFprofile将Y从2改为78",
+      "expected": "row2 replacesrow1; head40 replaces1; downstreamchanges",
+      "failure_to_catch": "hardcodedselectedtable row",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_sf_row_changes_and_boundaries (test_core_scoped.ScopedTests.test_sf_row_changes_and_boundaries)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B19",
+      "mechanisms": [
+        "M07"
+      ],
+      "classification": "profile_boundary",
+      "setup": "BD02 inputs1,76,77,1520,1521,4560,4561",
+      "expected": "U1..76, noU0/negativeelapsed; attribution toprofile retained",
+      "failure_to_catch": "uncheckedmod zero ordinal",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_sf_row_changes_and_boundaries (test_core_scoped.ScopedTests.test_sf_row_changes_and_boundaries)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B20",
+      "mechanisms": [
+        "M07",
+        "M12"
+      ],
+      "classification": "profile_boundary",
+      "setup": "BD01 state221 step7 threshold228",
+      "expected": "GT2updates;GE1update; bothdeclared notglobal盈rule",
+      "failure_to_catch": "stop equality not checked",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_repeat_variable_increment_and_equality (test_core_mechanisms.MechanismTests.test_repeat_variable_increment_and_equality)"
+        },
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_repeat_pre_zero_post_one (test_core_mechanisms.MechanismTests.test_repeat_pre_zero_post_one)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B21",
+      "mechanisms": [
+        "M12"
+      ],
+      "classification": "metamorphic",
+      "setup": "同一循环构式把increment7改成5，threshold不变（synthetic）",
+      "expected": "count andfinalstate recomputed; no hardcoded7 branch",
+      "failure_to_catch": "knowntext magic constants",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_repeat_variable_increment_and_equality (test_core_mechanisms.MechanismTests.test_repeat_variable_increment_and_equality)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B22",
+      "mechanisms": [
+        "M06"
+      ],
+      "classification": "boundary",
+      "setup": "STsmallr37/38/39 and SF440/441/442",
+      "expected": "long month decision andcarry endpoints exact",
+      "failure_to_catch": "incorrect inclusive threshold",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_long_month_exact_boundaries (test_core_mechanisms.AdditionalContractTests.test_long_month_exact_boundaries)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B23",
+      "mechanisms": [
+        "M05"
+      ],
+      "classification": "negative",
+      "setup": "day numerator requested asdu withoutmovementrate",
+      "expected": "requires_model_rate/incompatible, not sameunit",
+      "failure_to_catch": "matchingdenominator implies angle",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_rescale_wrong_unit_rejects_even_equal_denominators (test_core_scale_control.ScaleControlTests.test_rescale_wrong_unit_rejects_even_equal_denominators)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B24",
+      "mechanisms": [
+        "M05"
+      ],
+      "classification": "metamorphic",
+      "setup": "同一日期以r/S或kr/kS输入并保留声明",
+      "expected": "same representedinstant, different source representation retained",
+      "failure_to_catch": "normalization deletes historicalexpression",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_scale_reference_values_are_not_runtime_inputs (test_core_scale_control.ScaleControlTests.test_scale_reference_values_are_not_runtime_inputs)"
+        },
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_representation_requires_ratio (test_core_frontend.TransitionTests.test_representation_requires_ratio)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B25",
+      "mechanisms": [
+        "M11",
+        "M13"
+      ],
+      "classification": "boundary",
+      "setup": "BD03 exact event intervals",
+      "expected": "instant andwhole-day assign todifferent intervals",
+      "failure_to_catch": "usingoneboundaryprofileeverywhere",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_boundary_profiles_common_epoch (test_core_mechanisms.MechanismTests.test_boundary_profiles_common_epoch)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B26",
+      "mechanisms": [
+        "M11"
+      ],
+      "classification": "negative",
+      "setup": "只给干支日35与6，没有共同epoch或lift",
+      "expected": "cannot assert chronologicalordering",
+      "failure_to_catch": "mod60values sorted asabsolutedates",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_boundary_profiles_common_epoch (test_core_mechanisms.MechanismTests.test_boundary_profiles_common_epoch)"
+        },
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_local_epoch_identity_is_not_sexagenary_label (test_core_scale_control.ScaleControlTests.test_local_epoch_identity_is_not_sexagenary_label)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B27",
+      "mechanisms": [
+        "M13"
+      ],
+      "classification": "boundary",
+      "setup": "SF闰余16与14",
+      "expected": "BD05/06 nominalslots andduplicate labels; finalstatus separate",
+      "failure_to_catch": "slot directlymapped to ordinarymonth",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_bd05_bd06_real_sf_graph (test_core_scale_control.ScaleControlTests.test_bd05_bd06_real_sf_graph)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B28",
+      "mechanisms": [
+        "M13"
+      ],
+      "classification": "negative",
+      "setup": "删除moon/qi事件数据但保留以中气定之",
+      "expected": "external call present; no final adjudication",
+      "failure_to_catch": "unparsedconstraintdeleted",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_missing_event_data_keeps_boundary_call (test_core_mechanisms.AdditionalContractTests.test_missing_event_data_keeps_boundary_call)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B29",
+      "mechanisms": [
+        "M15"
+      ],
+      "classification": "fault_injection",
+      "setup": "两个小餘千一十引用故意对调",
+      "expected": "offset/branch-sensitive evaluator rejects",
+      "failure_to_catch": "firstquote locationusedforboth",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_same_numeric_literal_at_other_occurrence_is_not_same_slot (test_civil_contracts.CivilContractTests.test_same_numeric_literal_at_other_occurrence_is_not_same_slot)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score.",
+      "fault_graph_evidence": "evaluation/handoff-v3/runs/v3-20260917/fault-integration-03/B29-score.json"
+    },
+    {
+      "id": "B30",
+      "mechanisms": [
+        "M15"
+      ],
+      "classification": "evaluator_diagnostic",
+      "setup": "machine usesvalidnewactionunrecognizedbyoldevaluator",
+      "expected": "evaluator_unsupported notautomaticFP; human/adapter review",
+      "failure_to_catch": "newvocabularypunished aswrong",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_unknown_actual_action_is_unsupported_not_fp (test_civil_contracts.CivilContractTests.test_unknown_actual_action_is_unsupported_not_fp)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score.",
+      "fault_graph_evidence": "evaluation/handoff-v3/runs/v3-20260917/fault-integration-03/B30-score.json"
+    },
+    {
+      "id": "B31",
+      "mechanisms": [
+        "M15"
+      ],
+      "classification": "fault_injection",
+      "setup": "保持nodekind但替换quotient为remainder producer",
+      "expected": "reject exactport/producer mismatch",
+      "failure_to_catch": "labelonlymatch",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_repeated_quote_requires_second_occurrence_and_correct_port (test_civil_contracts.CivilContractTests.test_repeated_quote_requires_second_occurrence_and_correct_port)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score.",
+      "fault_graph_evidence": "evaluation/handoff-v3/runs/v3-20260917/fault-integration-03/B31-score.json"
+    },
+    {
+      "id": "B32",
+      "mechanisms": [
+        "M02"
+      ],
+      "classification": "inherited_regression",
+      "setup": "末尾留下盈...待除之尚未完成",
+      "expected": "pending construction appears inunparsed/unresolved audit",
+      "failure_to_catch": "unfinishedstate silently dropped",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/inherited61-final.log",
+          "test_id": "test_incomplete_cycle_at_eof_is_reported_with_original_span (test_core_final_pending.PendingCycleLifecycleTests.test_incomplete_cycle_at_eof_is_reported_with_original_span)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B33",
+      "mechanisms": [
+        "M01",
+        "M02"
+      ],
+      "classification": "metamorphic",
+      "setup": "仅改doc IDs与排版（不改语义），映射跨度",
+      "expected": "graphisomorphic up toIDs andrawspans",
+      "failure_to_catch": "case IDoutputs",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_document_renaming_and_reformatting (test_core_mechanisms.MechanismTests.test_document_renaming_and_reformatting)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B34",
+      "mechanisms": [
+        "M15"
+      ],
+      "classification": "runtime_isolation",
+      "setup": "临时移走reference、gold和baseline，仅提供declaredruntime＋frozenrules",
+      "expected": "parseroutputs unchanged; noLLM/networkcalls",
+      "failure_to_catch": "answerfiledependency",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_inherited_packet_runs_without_reference_files (test_runtime_isolation.RuntimeIsolationTests.test_inherited_packet_runs_without_reference_files)"
+        },
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_reference_read_attempt_blocked_and_logged (test_runtime_isolation.RuntimeIsolationTests.test_reference_read_attempt_blocked_and_logged)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B35",
+      "mechanisms": [
+        "M09"
+      ],
+      "classification": "negative",
+      "setup": "后置以元为法出现在不同任务的独立文段",
+      "expected": "not retroactively alter unrelatedmoonfraction",
+      "failure_to_catch": "globalpostposeddeclaration",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_unrelated_denominator_declaration_does_not_change_moon (test_core_scale_control.ScaleControlTests.test_unrelated_denominator_declaration_does_not_change_moon)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B36",
+      "mechanisms": [
+        "M07",
+        "M13"
+      ],
+      "classification": "source_development",
+      "setup": "has_intercalation=False的全年例",
+      "expected": "do not force a current-year intercalary month",
+      "failure_to_catch": "candidate loop alwaysproduces leap",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_generated_sequences_and_false_intercalation (test_core_mechanisms.MechanismTests.test_generated_sequences_and_false_intercalation)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    },
+    {
+      "id": "B37",
+      "mechanisms": [
+        "M11",
+        "M13"
+      ],
+      "classification": "fault_injection",
+      "setup": "冬至商10/325与完整月朔日数比较前，故意遗漏360×elapsed-years cycle lift",
+      "expected": "time-frame audit rejects comparison even if sexagenary day labels agree",
+      "failure_to_catch": "residual winter time treated as absolute event coordinate",
+      "production_test_implemented": true,
+      "evidence": [
+        {
+          "log": "evaluation/handoff-v3/runs/v3-20260917/all-v3-tests-final.log",
+          "test_id": "test_lift_omission_and_wrong_factor_rejected (test_core_mechanisms.AdditionalContractTests.test_lift_omission_and_wrong_factor_rejected)"
+        }
+      ],
+      "engineering_diagnostic_passed": true,
+      "scope_note": "Development mechanism/negative evidence, not a fresh historical sample or token recall score."
+    }
+  ],
+  "passed": 37,
+  "total": 37
+}

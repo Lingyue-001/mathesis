@@ -1,0 +1,11 @@
+# Imported compiler and regression identities are byte-sensitive. Do not apply
+# checkout newline conversion; historical hashes refer to the original bytes.
+/analysis_parser/** -text
+/evaluation/** -text
+/handoff_v3/** -text
+/rescue/** -text
+/tests/parser/** -text
+/tests/parser_v3/** -text
+/tests/parser_rescue/** -text
+/reports/v3/** -text
+/docs/adjudication/design/** -text

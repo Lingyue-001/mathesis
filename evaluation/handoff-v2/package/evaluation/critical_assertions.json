@@ -1,0 +1,742 @@
+{
+  "schema_version": "2.0",
+  "count": 32,
+  "assertions": [
+    {
+      "assertion_id": "W01.C01",
+      "window_id": "W01",
+      "anchor": {
+        "passage_id": "ST.2.2",
+        "reading_id": "ST.2.2.C2017-reading-v1",
+        "quote": "盈章歲得一",
+        "reading_range": [
+          13,
+          18
+        ],
+        "transcription_range": [
+          18,
+          23
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "双输出",
+      "required_relation": "month_q/month_r来自同一生产事件",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W01.C02",
+      "window_id": "W01",
+      "anchor": {
+        "passage_id": "ST.2.2",
+        "reading_id": "ST.2.2.C2017-reading-v1",
+        "quote": "閏餘十二以上",
+        "reading_range": [
+          32,
+          38
+        ],
+        "transcription_range": [
+          37,
+          43
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "条件对象",
+      "required_relation": "阈值属于闰余，后续朔日运算不被同一guard吞掉",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W01.C03",
+      "window_id": "W01",
+      "anchor": {
+        "passage_id": "ST.2.2",
+        "reading_id": "ST.2.2.C2017-reading-v1",
+        "quote": "求人正，加二",
+        "reading_range": [
+          52,
+          58
+        ],
+        "transcription_range": [
+          57,
+          63
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "查询基态",
+      "required_relation": "人正取基础积月+2",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W01.C04",
+      "window_id": "W01",
+      "anchor": {
+        "passage_id": "ST.2.3",
+        "reading_id": "ST.2.3.C2017-reading-v1",
+        "quote": "不盈者名曰小餘",
+        "reading_range": [
+          23,
+          30
+        ],
+        "transcription_range": [
+          23,
+          30
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "尺度",
+      "required_relation": "小余是日法81的余量",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W01.C05",
+      "window_id": "W01",
+      "anchor": {
+        "passage_id": "ST.2.3",
+        "reading_id": "ST.2.3.C2017-reading-v1",
+        "quote": "積日盈六十，除之",
+        "reading_range": [
+          43,
+          51
+        ],
+        "transcription_range": [
+          43,
+          51
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "余量投影",
+      "required_relation": "大余是mod60，小余不变",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W01.C06",
+      "window_id": "W01",
+      "anchor": {
+        "passage_id": "ST.2.3",
+        "reading_id": "ST.2.3.C2017-reading-v1",
+        "quote": "從大餘",
+        "reading_range": [
+          101,
+          104
+        ],
+        "transcription_range": [
+          101,
+          104
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "进位接收量",
+      "required_relation": "小余满数的商进入大余",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W01.C07",
+      "window_id": "W01",
+      "anchor": {
+        "passage_id": "ST.2.3",
+        "reading_id": "ST.2.3.C2017-reading-v1",
+        "quote": "數除如法",
+        "reading_range": [
+          105,
+          109
+        ],
+        "transcription_range": [
+          105,
+          109
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "回引",
+      "required_relation": "前述约减及命数方法被保留",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W01.C08",
+      "window_id": "W01",
+      "anchor": {
+        "passage_id": "ST.2.3",
+        "reading_id": "ST.2.3.C2017-reading-v1",
+        "quote": "求望，倍弦",
+        "reading_range": [
+          124,
+          129
+        ],
+        "transcription_range": [
+          124,
+          129
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "增量与时刻",
+      "required_relation": "倍的是朔到弦增量",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W02.C01",
+      "window_id": "W02",
+      "anchor": {
+        "passage_id": "HQ.3.5",
+        "reading_id": "HQ.3.5.C2017-reading-v1",
+        "quote": "置入蔀年減一",
+        "reading_range": [
+          5,
+          11
+        ],
+        "transcription_range": [
+          5,
+          11
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "输入计数",
+      "required_relation": "ordinal减1后才乘",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W02.C02",
+      "window_id": "W02",
+      "anchor": {
+        "passage_id": "HQ.3.5",
+        "reading_id": "HQ.3.5.C2017-reading-v1",
+        "quote": "十二以上",
+        "reading_range": [
+          35,
+          39
+        ],
+        "transcription_range": [
+          35,
+          39
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "省略主项",
+      "required_relation": "绑定闰余",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W02.C03",
+      "window_id": "W02",
+      "anchor": {
+        "passage_id": "HQ.3.6",
+        "reading_id": "HQ.3.6.C2017-reading-v1",
+        "quote": "置入蔀積月",
+        "reading_range": [
+          6,
+          11
+        ],
+        "transcription_range": [
+          6,
+          11
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "跨段绑定",
+      "required_relation": "读取3.5结果",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W02.C04",
+      "window_id": "W02",
+      "anchor": {
+        "passage_id": "HQ.3.6",
+        "reading_id": "HQ.3.6.C2017-reading-v1",
+        "quote": "滿蔀月得一",
+        "reading_range": [
+          18,
+          23
+        ],
+        "transcription_range": [
+          18,
+          23
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "参数选择",
+      "required_relation": "940而非日法4",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W02.C05",
+      "window_id": "W02",
+      "anchor": {
+        "passage_id": "HQ.3.6",
+        "reading_id": "HQ.3.6.C2017-reading-v1",
+        "quote": "其餘為大餘",
+        "reading_range": [
+          44,
+          49
+        ],
+        "transcription_range": [
+          44,
+          49
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "余量生产者",
+      "required_relation": "六十日循环余量",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W02.C06",
+      "window_id": "W02",
+      "anchor": {
+        "passage_id": "HQ.3.6",
+        "reading_id": "HQ.3.6.C2017-reading-v1",
+        "quote": "小餘四百四十一以上",
+        "reading_range": [
+          75,
+          84
+        ],
+        "transcription_range": [
+          75,
+          84
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "当前状态",
+      "required_relation": "使用进位前本月小余",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W02.C07",
+      "window_id": "W02",
+      "anchor": {
+        "passage_id": "HQ.3.6",
+        "reading_id": "HQ.3.6.C2017-reading-v1",
+        "quote": "上加大餘",
+        "reading_range": [
+          117,
+          121
+        ],
+        "transcription_range": [
+          119,
+          123
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "进位",
+      "required_relation": "商进大余，余留小余",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W02.C08",
+      "window_id": "W02",
+      "anchor": {
+        "passage_id": "HQ.3.6",
+        "reading_id": "HQ.3.6.C2017-reading-v1",
+        "quote": "命之如前",
+        "reading_range": [
+          122,
+          126
+        ],
+        "transcription_range": [
+          124,
+          128
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "回引",
+      "required_relation": "有明确前述计数方法",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W03.C01",
+      "window_id": "W03",
+      "anchor": {
+        "passage_id": "ST.2.14",
+        "reading_id": "ST.2.14.C2017-reading-v1",
+        "quote": "則積中也",
+        "reading_range": [
+          24,
+          28
+        ],
+        "transcription_range": [
+          32,
+          39
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "全量持久",
+      "required_relation": "全累计积中不得被约减覆写",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W03.C02",
+      "window_id": "W03",
+      "anchor": {
+        "passage_id": "ST.2.14",
+        "reading_id": "ST.2.14.C2017-reading-v1",
+        "quote": "以章中除之",
+        "reading_range": [
+          51,
+          56
+        ],
+        "transcription_range": [
+          62,
+          67
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "逐级投影",
+      "required_relation": "之取中元余",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W03.C03",
+      "window_id": "W03",
+      "anchor": {
+        "passage_id": "ST.2.15",
+        "reading_id": "ST.2.15.C2017-reading-v1",
+        "quote": "以章歲乘中餘",
+        "reading_range": [
+          14,
+          20
+        ],
+        "transcription_range": [
+          16,
+          22
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "跨段输入",
+      "required_relation": "取本次中余而非周期参数",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W03.C04",
+      "window_id": "W03",
+      "anchor": {
+        "passage_id": "ST.2.15",
+        "reading_id": "ST.2.15.C2017-reading-v1",
+        "quote": "從之",
+        "reading_range": [
+          20,
+          22
+        ],
+        "transcription_range": [
+          22,
+          24
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "双乘积合成",
+      "required_relation": "在除法前合成两个乘积",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W03.C05",
+      "window_id": "W03",
+      "anchor": {
+        "passage_id": "ST.2.15",
+        "reading_id": "ST.2.15.C2017-reading-v1",
+        "quote": "并積中",
+        "reading_range": [
+          30,
+          33
+        ],
+        "transcription_range": [
+          32,
+          35
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "正确版本",
+      "required_relation": "商加全累计积中",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W03.C06",
+      "window_id": "W03",
+      "anchor": {
+        "passage_id": "ST.2.15",
+        "reading_id": "ST.2.15.C2017-reading-v1",
+        "quote": "不盈者名曰月餘",
+        "reading_range": [
+          39,
+          46
+        ],
+        "transcription_range": [
+          41,
+          51
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "延后命名",
+      "required_relation": "取见月法事件余数",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W03.C07",
+      "window_id": "W03",
+      "anchor": {
+        "passage_id": "ST.2.15",
+        "reading_id": "ST.2.15.C2017-reading-v1",
+        "quote": "除十三",
+        "reading_range": [
+          87,
+          90
+        ],
+        "transcription_range": [
+          95,
+          98
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "循环条件",
+      "required_relation": "用后置说明形成12/13选择，含有可检查停止条件",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W03.C08",
+      "window_id": "W03",
+      "anchor": {
+        "passage_id": "ST.2.14",
+        "reading_id": "ST.2.14.C2017-reading-v1",
+        "quote": "中數從冬至起，次數從星紀起",
+        "reading_range": [
+          79,
+          92
+        ],
+        "transcription_range": [
+          90,
+          103
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "双计数对象",
+      "required_relation": "中气与星次两种输出不能合并",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W04.C01",
+      "window_id": "W04",
+      "anchor": {
+        "passage_id": "HQ.3.38",
+        "reading_id": "HQ.3.38.C2017-reading-v1",
+        "quote": "以合積月乘積合為小積",
+        "reading_range": [
+          5,
+          15
+        ],
+        "transcription_range": [
+          5,
+          15
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "部分结果",
+      "required_relation": "小积保留第一乘积",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W04.C02",
+      "window_id": "W04",
+      "anchor": {
+        "passage_id": "HQ.3.38",
+        "reading_id": "HQ.3.38.C2017-reading-v1",
+        "quote": "又以月餘乘積合",
+        "reading_range": [
+          16,
+          23
+        ],
+        "transcription_range": [
+          16,
+          23
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "参数实例",
+      "required_relation": "使用周期月余",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W04.C03",
+      "window_id": "W04",
+      "anchor": {
+        "passage_id": "HQ.3.38",
+        "reading_id": "HQ.3.38.C2017-reading-v1",
+        "quote": "從小積",
+        "reading_range": [
+          31,
+          34
+        ],
+        "transcription_range": [
+          31,
+          34
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "端口",
+      "required_relation": "把商加入小积",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W04.C04",
+      "window_id": "W04",
+      "anchor": {
+        "passage_id": "HQ.3.38",
+        "reading_id": "HQ.3.38.C2017-reading-v1",
+        "quote": "不盡為月餘",
+        "reading_range": [
+          38,
+          43
+        ],
+        "transcription_range": [
+          39,
+          45
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "新实例与补文",
+      "required_relation": "本次余量另有ID并标编辑来源",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W04.C05",
+      "window_id": "W04",
+      "anchor": {
+        "passage_id": "HQ.3.38",
+        "reading_id": "HQ.3.38.C2017-reading-v1",
+        "quote": "以閏減入紀月",
+        "reading_range": [
+          79,
+          85
+        ],
+        "transcription_range": [
+          81,
+          87
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "减法方向",
+      "required_relation": "入纪月−闰数，先扣闰再mod12",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W04.C06",
+      "window_id": "W04",
+      "anchor": {
+        "passage_id": "HQ.3.38",
+        "reading_id": "HQ.3.38.C2017-reading-v1",
+        "quote": "不盡為閏餘",
+        "reading_range": [
+          73,
+          78
+        ],
+        "transcription_range": [
+          75,
+          80
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "尺度区分",
+      "required_relation": "该余量分母235，非天正19",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W04.C07",
+      "window_id": "W04",
+      "anchor": {
+        "passage_id": "HQ.3.38",
+        "reading_id": "HQ.3.38.C2017-reading-v1",
+        "quote": "其閏餘滿二百二十四以上至二百三十一星合閏月",
+        "reading_range": [
+          120,
+          141
+        ],
+        "transcription_range": [
+          122,
+          145
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "完整判据",
+      "required_relation": "双端点、对象和闰月候选结果保留",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    },
+    {
+      "assertion_id": "W04.C08",
+      "window_id": "W04",
+      "anchor": {
+        "passage_id": "HQ.3.38",
+        "reading_id": "HQ.3.38.C2017-reading-v1",
+        "quote": "閏或進退，以朔制之",
+        "reading_range": [
+          142,
+          151
+        ],
+        "transcription_range": [
+          146,
+          155
+        ],
+        "offset_convention": "unicode_codepoint_0_based_half_open"
+      },
+      "kind": "开放依赖",
+      "required_relation": "不能丢句；未知事件资料明列缺失",
+      "severity": "critical",
+      "scoring": "semantic_relation_with_source_support_not_exact_reference_node_count",
+      "status": "reference_prepared_pending_Work_run"
+    }
+  ]
+}

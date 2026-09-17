@@ -1,0 +1,122 @@
+[
+  {
+    "id": "M01",
+    "name": "数词／名词槽位与构式组合",
+    "surface_examples": "加七得一；三其小餘；以A乘B",
+    "v2_status": "partial",
+    "audit_note": "数字/术语边界仍可误切；数词谓语缺覆盖",
+    "v3_implemented": false
+  },
+  {
+    "id": "M02",
+    "name": "不可变量与有来源的命名",
+    "surface_examples": "名曰；為；其餘",
+    "v2_status": "retained_development_verified",
+    "audit_note": "保持跨段量身份，不用名称当唯一key",
+    "v3_implemented": false
+  },
+  {
+    "id": "M03",
+    "name": "商余和差量来源",
+    "surface_examples": "盈D得一；不盈；以A減B，餘",
+    "v2_status": "retained_development_verified",
+    "audit_note": "divmod两端口已有，差量的余与除余需区别",
+    "v3_implemented": false
+  },
+  {
+    "id": "M04",
+    "name": "周期消去和完整量保存",
+    "surface_examples": "盈D除之；滿D去之",
+    "v2_status": "retained_partial",
+    "audit_note": "普通mod已有；多级纪统蔀树未开发",
+    "v3_implemented": false
+  },
+  {
+    "id": "M05",
+    "name": "尺度表示与率转换",
+    "surface_examples": "三其小餘；以元為法；法分之N",
+    "v2_status": "partial",
+    "audit_note": "metadata存在；等值rescale与单位率尚不通用",
+    "v3_implemented": false
+  },
+  {
+    "id": "M06",
+    "name": "成对增量／进位／查询基态",
+    "surface_examples": "加大餘A，小餘B；求弦；求次氣",
+    "v2_status": "retained_partial",
+    "audit_note": "月与弦望已验；任意气scope与长序列待验",
+    "v3_implemented": false
+  },
+  {
+    "id": "M07",
+    "name": "阈值、计数约定与名称",
+    "surface_examples": "以上；不盈；算外；筭上",
+    "v2_status": "partial",
+    "audit_note": "固定阈值可用；多个历元约定及月份插槽待完整",
+    "v3_implemented": false
+  },
+  {
+    "id": "M08",
+    "name": "程序上下文编译与方法实参",
+    "surface_examples": "除數如法；數除如法；除命之如前",
+    "v2_status": "missing_general",
+    "audit_note": "context()只读参数；必须编译计日子方法",
+    "v3_implemented": false
+  },
+  {
+    "id": "M09",
+    "name": "任务／子程序作用域与声明索引",
+    "surface_examples": "推冬至；求八節；皆以元為法",
+    "v2_status": "partial",
+    "audit_note": "query已有，后置范围和方法作用域需扩展",
+    "v3_implemented": false
+  },
+  {
+    "id": "M10",
+    "name": "有出处表格的运行时查表",
+    "surface_examples": "從天紀；從甲子蔀起",
+    "v2_status": "not_implemented_for_civil_entry",
+    "audit_note": "首日/年首原来被fixture提供",
+    "v3_implemented": false
+  },
+  {
+    "id": "M11",
+    "name": "表达完整时刻及迭代序列",
+    "surface_examples": "大餘／小餘；求次氣",
+    "v2_status": "partial",
+    "audit_note": "必须留全日数，命名循环日只是视图",
+    "v3_implemented": false
+  },
+  {
+    "id": "M12",
+    "name": "通用循环与计次数",
+    "surface_examples": "加七得一，盈章中，數所得",
+    "v2_status": "missing_general",
+    "audit_note": "12/13年扫描已实现；不能视为通用loop",
+    "v3_implemented": false
+  },
+  {
+    "id": "M13",
+    "name": "候选月份与事件级边界约束",
+    "surface_examples": "以中氣定之；中氣在朔若二日",
+    "v2_status": "partial_external_contract",
+    "audit_note": "只保留外部call已有；输入完备时需真正判定",
+    "v3_implemented": false
+  },
+  {
+    "id": "M14",
+    "name": "陈述式混合量与角色歧义",
+    "surface_examples": "各七十三日，統法分之七十七",
+    "v2_status": "not_implemented",
+    "audit_note": "P04为诊断/开发；不算五类覆盖之一",
+    "v3_implemented": false
+  },
+  {
+    "id": "M15",
+    "name": "可覆盖事件词汇的结构评分",
+    "surface_examples": "准确跨度、端口、作用域、谓词、调用",
+    "v2_status": "partial",
+    "audit_note": "重复quote和新动作仍有限；不得unsupported即错误多报",
+    "v3_implemented": false
+  }
+]

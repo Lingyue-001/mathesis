@@ -1,0 +1,322 @@
+{
+  "schema_version": "3.0",
+  "input_mode": "declared_edited_primary_context",
+  "provided_scope": {
+    "tradition": "San_tong_li",
+    "planet": null,
+    "scope_is_curator_provided": true
+  },
+  "primary_documents": [
+    {
+      "doc_id": "ST.2.1",
+      "reading_id": "ST.2.1.C2017.v3",
+      "text": "推日月元統，置太極上元以來，外所求年，盈元法除之，餘不盈統者，則天統甲子以來年數也．盈統，除之，餘則地統甲辰以來年數也．又盈統，除之，餘則人統甲申以來年數也．各以其統首日為紀．",
+      "text_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d",
+      "edition_transcription": "推日月元統，置太極上元以來，外所求年，盈元法除之，餘不盈統者，則天統甲子以來年數也．盈統，除之，餘則地統甲辰以來年數也．又盈統，除之，餘則人統甲申以來年數也．各以其統首日為紀．",
+      "edition_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          89
+        ],
+        "pdf_pages": [
+          102
+        ],
+        "locator": "Proc.2.1 §173"
+      },
+      "edition_edits": [],
+      "transcription_notes": "Page-marker 1001 removed; line wrapping collapsed; final punctuation supplied as transcription separator.",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "ST.2.2",
+      "text": "推天正，以章月乘入統歲數，盈章歲得一，名曰積月，不盈者名曰閏餘．閏餘十二以上，歲有閏．求地正，加積月一；求人正，加二．",
+      "reading_id": "ST.2.2.C2017-reading-v1",
+      "text_sha256": "e8182c73b13a1356f0400adb9dba3dde7e5dce38ab6def5821740829bc9a5311",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          90
+        ],
+        "pdf_pages": [
+          103
+        ],
+        "locator": "ST.2.2"
+      },
+      "editorial_trace": [
+        {
+          "old": "(人)[入]",
+          "new": "入",
+          "basis": "Cullen中文校勘：人改入；刘pp.25–26以入统岁数解释。",
+          "transcription_range": [
+            8,
+            14
+          ]
+        }
+      ],
+      "edition_transcription": "推天正，以章月乘入統歲數，盈章歲得一，名曰積月，不盈者名曰閏餘．閏餘十二以上，歲有閏．求地正，加積月一；求人正，加二．",
+      "edition_sha256": "e8182c73b13a1356f0400adb9dba3dde7e5dce38ab6def5821740829bc9a5311",
+      "view_status": "v2 adopted reading retained; original editorial_trace retained, see unchanged handoff_v2.zip"
+    },
+    {
+      "doc_id": "ST.2.3",
+      "text": "推正月朔，以月法乘積月，盈日法得一，名曰積日，不盈者名曰小餘．小餘三十八以上，其月大．積日盈六十，除之，不盈者名曰大餘．數從統首日起，算外，則朔日也．求其次月，加大餘二十九，小餘四十三．小餘盈日法得一，從大餘，數除如法．求弦，加大餘七，小餘三十一．求望，倍弦．",
+      "reading_id": "ST.2.3.C2017-reading-v1",
+      "text_sha256": "aa8181ae0efcb681ef9577c07d00056d3231519b41c2ba3e945269bfd9f1f43d",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          91
+        ],
+        "pdf_pages": [
+          104
+        ],
+        "locator": "ST.2.3"
+      },
+      "editorial_trace": [],
+      "edition_transcription": "推正月朔，以月法乘積月，盈日法得一，名曰積日，不盈者名曰小餘．小餘三十八以上，其月大．積日盈六十，除之，不盈者名曰大餘．數從統首日起，算外，則朔日也．求其次月，加大餘二十九，小餘四十三．小餘盈日法得一，從大餘，數除如法．求弦，加大餘七，小餘三十一．求望，倍弦．",
+      "edition_sha256": "aa8181ae0efcb681ef9577c07d00056d3231519b41c2ba3e945269bfd9f1f43d",
+      "view_status": "v2 adopted reading retained; original editorial_trace retained, see unchanged handoff_v2.zip"
+    },
+    {
+      "doc_id": "ST.2.4",
+      "reading_id": "ST.2.4.C2017.v3",
+      "text": "推閏餘所在，以十二乘閏餘，加七得一．盈章中，數所得，起冬至，算外，則中至終閏盈．中氣在朔若二日，則前月閏也．",
+      "text_sha256": "18a65a94509698fe7f2deca19f9616b3bd591d99cf44f388456bede9c17ea4ba",
+      "edition_transcription": "推閏餘所在，以十二乘閏餘，加(十)[七]得一．盈章中，數所得，起冬至，算外，則中至終閏盈．中氣在朔若二日，則前月閏也．",
+      "edition_sha256": "87b9aa3fb934d3ff49633c02eb87c365b9dabec8a2994aac30438a8125168734",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          92
+        ],
+        "pdf_pages": [
+          105
+        ],
+        "locator": "Proc.2.4 §176"
+      },
+      "edition_edits": [
+        {
+          "edition_start": 14,
+          "edition_end": 20,
+          "old": "(十)[七]",
+          "new": "七",
+          "reading_start": 14,
+          "reading_end": 15,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        }
+      ],
+      "transcription_notes": "Comma style regularized; strictness comes from commentary profile, not the character 盈 alone.",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "ST.2.5",
+      "reading_id": "ST.2.5.C2017.v3",
+      "text": "推冬至，以策餘乘入統歲數，盈統法得一，名曰大餘，不盈者名曰小餘．除數如法，則所求冬至日也．",
+      "text_sha256": "9ef64b6853716b9a223993f20667019c0da7ab520e1c5d90f4638796de11e6c7",
+      "edition_transcription": "推冬至，以(算)[策]餘乘(人)[入]統歲數，盈統法得一，名曰大餘，不盈者名曰小餘．除數如法，則所求冬至日也．",
+      "edition_sha256": "d36f2c696eb061f1fc01efef63b466b48b3d6e82b2457f773a756740031b3bc9",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          96
+        ],
+        "pdf_pages": [
+          109
+        ],
+        "locator": "Proc.2.5 §177"
+      },
+      "edition_edits": [
+        {
+          "edition_start": 5,
+          "edition_end": 11,
+          "old": "(算)[策]",
+          "new": "策",
+          "reading_start": 5,
+          "reading_end": 6,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        },
+        {
+          "edition_start": 13,
+          "edition_end": 19,
+          "old": "(人)[入]",
+          "new": "入",
+          "reading_start": 8,
+          "reading_end": 9,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        }
+      ],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "ST.2.6",
+      "reading_id": "ST.2.6.C2017.v3",
+      "text": "求八節，加大餘四十五，小餘千一十．三其小餘，加大餘十五，小餘千一十．推中部二十四氣，皆以元為法．",
+      "text_sha256": "0c7480a45ab86938c8116eee4282f955d503287c05b498d79ed85f5c5ed9a3c7",
+      "edition_transcription": "求八節，加大餘四十五，小餘千一(百)[十]．三其小餘，加大餘十五，小餘千一十．推中部二十四氣，皆以元為法．",
+      "edition_sha256": "6220951895f4d2a6056a0d843ddd57c0ebdb7a7b1d18fc0d9129fa14ff47053d",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          96,
+          97
+        ],
+        "pdf_pages": [
+          109,
+          110
+        ],
+        "locator": "Proc.2.6 §178"
+      },
+      "edition_edits": [
+        {
+          "edition_start": 15,
+          "edition_end": 21,
+          "old": "(百)[十]",
+          "new": "十",
+          "reading_start": 15,
+          "reading_end": 16,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        }
+      ],
+      "transcription_notes": "Extraneous comma after full stop regularized; no new 求二十四氣 heading inserted before 三其小餘.",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    }
+  ],
+  "context_documents": [
+    {
+      "doc_id": "ST.rule_year",
+      "text": "閏法十九，因為章歲．合天地終數，得閏法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          40
+        ],
+        "pdf_pages": [
+          53
+        ]
+      },
+      "text_sha256": "890fdd1d5d02ea179fba2fac1f5a1a6abd93aeaa898d02cdfba22881111b4501"
+    },
+    {
+      "doc_id": "ST.rule_month",
+      "text": "章月二百三十五．五位乘會數，得章月．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          42
+        ],
+        "pdf_pages": [
+          55
+        ]
+      },
+      "text_sha256": "5b2cee0b4adce5ff7b004009ad860b3a8d898e569dc6e6153717f8825a4a8b8d"
+    },
+    {
+      "doc_id": "ST.lunation_factor",
+      "text": "月法二千三百九十二．推大衍象，得月法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          42
+        ],
+        "pdf_pages": [
+          55
+        ]
+      },
+      "text_sha256": "47a7f942bd98999cf15ff83f40b0d9cb3a7dce3f72a581ac4450c56a9317c893"
+    },
+    {
+      "doc_id": "ST.concordance_factor",
+      "text": "統法千五百三十九．以閏法乘日法，得統法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          41
+        ],
+        "pdf_pages": [
+          54
+        ]
+      },
+      "text_sha256": "034a9f390edac25aab24a1206722fda360a738db7ebdf9319f19dd80b6051fbf"
+    },
+    {
+      "doc_id": "ST.day_factor",
+      "text": "日法八十一．元始黃鐘初九自乘，一龠之數，得日法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          39
+        ],
+        "pdf_pages": [
+          52
+        ]
+      },
+      "text_sha256": "ffc84c522268677e78cdc65a7d555f74e1a0d5a2525ce4cccadddc2fa61c90c9"
+    },
+    {
+      "doc_id": "ST.const.origin",
+      "reading_id": "ST.const.origin.C2017.v3",
+      "text": "元法四千六百一十七．參統法，得元法．",
+      "text_sha256": "994be485ee5dd61e31b93fc5e439eebad0281ecb4c8877013654c87c855b0b11",
+      "edition_transcription": "元法四千六百一十七．參統法，得元法．",
+      "edition_sha256": "994be485ee5dd61e31b93fc5e439eebad0281ecb4c8877013654c87c855b0b11",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          41
+        ],
+        "pdf_pages": [
+          54
+        ],
+        "locator": "§4"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "ST.const.medials",
+      "reading_id": "ST.const.medials.C2017.v3",
+      "text": "章中二百二十八．以閏法乘歲中，得章中．",
+      "text_sha256": "4e471cff96d4599b2e7def59d4fc926cdb010b53fdb01f68ab50f47449910c22",
+      "edition_transcription": "章中二百二十八．以閏法乘歲中，得章中．",
+      "edition_sha256": "4e471cff96d4599b2e7def59d4fc926cdb010b53fdb01f68ab50f47449910c22",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          47
+        ],
+        "pdf_pages": [
+          60
+        ],
+        "locator": "§17"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "ST.const.reckoning",
+      "reading_id": "ST.const.reckoning.C2017.v3",
+      "text": "策餘八千八十．什乘元中，以減周天，得策餘．",
+      "text_sha256": "ffdbd673ffc567e5136d07ce2fc49c2c366930aa726fa161aab0c42b72193427",
+      "edition_transcription": "策餘八千八十．什乘元中，以減周天，得策餘．",
+      "edition_sha256": "ffdbd673ffc567e5136d07ce2fc49c2c366930aa726fa161aab0c42b72193427",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          47
+        ],
+        "pdf_pages": [
+          60
+        ],
+        "locator": "§20"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    }
+  ],
+  "runtime_policy": "No reference steps, expected intermediate values, motif labels, or learned-from-this-case method body may enter runtime."
+}

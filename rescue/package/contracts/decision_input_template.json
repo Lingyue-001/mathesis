@@ -1,0 +1,22 @@
+{
+  "protocol_version": "rescue-1.0",
+  "status": "NOT_RUN",
+  "preconditions": {
+    "development_gate_passed": false,
+    "behavior_frozen_before_selection": false,
+    "selection_policy_fixed": false,
+    "batch_locked_before_run": false,
+    "first_runs_preserved": false,
+    "hashes_unchanged": false,
+    "runtime_isolation_verified": false,
+    "no_runtime_llm": false,
+    "reviewer_did_not_use_parser_outputs": false,
+    "exposure_registry_inherited": false,
+    "all_required_relations_scorable": false,
+    "evidence_reviewed": false
+  },
+  "cases": [],
+  "b_prime_summary": null,
+  "evidence_files": [],
+  "note": "Template only. Do not fill true without cited evidence; do not invent future selected procedures."
+}

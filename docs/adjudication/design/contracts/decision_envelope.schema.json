@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Decision envelope v1 — payload语义另由动作签名验证",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id",
+    "actor",
+    "action",
+    "targets",
+    "payload",
+    "evidence_refs",
+    "reason",
+    "depends_on"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "type",
+        "id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "human",
+            "agent",
+            "scripted_fixture"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "action": {
+      "enum": [
+        "select_candidate",
+        "resegment",
+        "set_scope",
+        "assemble_known_structure",
+        "bind_value",
+        "bind_call",
+        "set_quantity_semantics",
+        "select_profile",
+        "attach_context",
+        "declare_parameter",
+        "mark_noncomputational",
+        "defer",
+        "approve_scope",
+        "retract"
+      ]
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/anchor"
+      }
+    },
+    "payload": {
+      "type": "object"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "depends_on": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "doc_id",
+        "reading_id",
+        "source_sha256",
+        "start",
+        "end",
+        "quote"
+      ],
+      "properties": {
+        "doc_id": {
+          "type": "string"
+        },
+        "reading_id": {
+          "type": "string"
+        },
+        "source_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quote": {
+          "type": "string"
+        },
+        "role_path": {
+          "type": "string"
+        },
+        "invocation_path": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "interpretation_branch": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

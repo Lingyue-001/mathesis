@@ -1,0 +1,28 @@
+python : test_asset_relocation_preserves_identity_and_never_hides_missing_assets (test_runtime_portability.RuntimePorta
+bility.test_asset_relocation_preserves_identity_and_never_hides_missing_assets) ... ERROR
+所在位置 行:2 字符: 1
++ python -X utf8 -B -m unittest discover -s tests/reconciliation -p tes ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_asset_relo...sets) ... ERROR:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+test_both_isolated_workers_preserve_source_and_execute (test_runtime_portability.RuntimePortability.test_both_isolated_
+workers_preserve_source_and_execute) ... ok
+test_manifest_keys_and_mutation_diagnostics_use_portable_paths (test_runtime_portability.RuntimePortability.test_manife
+st_keys_and_mutation_diagnostics_use_portable_paths) ... ok
+
+======================================================================
+ERROR: test_asset_relocation_preserves_identity_and_never_hides_missing_assets (test_runtime_portability.RuntimePortabi
+lity.test_asset_relocation_preserves_identity_and_never_hides_missing_assets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\projects\mathesis\tests\reconciliation\test_runtime_portability.py", line 66, in test_asset_relocation_prese
+rves_identity_and_never_hides_missing_assets
+    self.assertFalse(asset_errors(runtime.inventory_errors(root, source_asset_paths=mapping)))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: inventory_errors() got an unexpected keyword argument 'source_asset_paths'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.950s
+
+FAILED (errors=1)

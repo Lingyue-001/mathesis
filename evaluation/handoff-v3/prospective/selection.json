@@ -1,0 +1,4945 @@
+{
+  "candidate_universe": [
+    {
+      "id": "2.1",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          102,
+          103
+        ],
+        "printed_pages": [
+          89,
+          90
+        ],
+        "locator": "Proc.2.1; To predict the Origin and Concordance of sun and moon:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          102,
+          103
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.2",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          103,
+          104
+        ],
+        "printed_pages": [
+          90,
+          91
+        ],
+        "locator": "Proc.2.2; To predict the Celestial Standard Month:24"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          103,
+          104
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.3",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          104,
+          105
+        ],
+        "printed_pages": [
+          91,
+          92
+        ],
+        "locator": "Proc.2.3; To predict the conjunction of the Standard Month:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          104,
+          105
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.4",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          105,
+          106,
+          107,
+          108,
+          109
+        ],
+        "printed_pages": [
+          92,
+          93,
+          94,
+          95,
+          96
+        ],
+        "locator": "Proc.2.4; To seek where the Intercalation Surplus is located:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          105,
+          106,
+          107,
+          108,
+          109
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.5",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          109
+        ],
+        "printed_pages": [
+          96
+        ],
+        "locator": "Proc.2.5; To predict winter solstice:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          109
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.6",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          109,
+          110
+        ],
+        "printed_pages": [
+          96,
+          97
+        ],
+        "locator": "Proc.2.6; To seek the Eight Nodes:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          109,
+          110
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.7",
+      "family": "five_phases",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          110
+        ],
+        "printed_pages": [
+          97
+        ],
+        "locator": "Proc.2.7; To predict the Five Phases:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          110
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.8",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          110,
+          111
+        ],
+        "printed_pages": [
+          97,
+          98
+        ],
+        "locator": "Proc.2.8; To predict the location of the mark-point for conjunctions:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          110
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.9",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          111
+        ],
+        "printed_pages": [
+          98
+        ],
+        "locator": "Proc.2.9; To predict the star where the sun is located at midnight:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.10",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          111
+        ],
+        "printed_pages": [
+          98
+        ],
+        "locator": "Proc.2.10; To predict the star where the moon is located at midnight:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.11",
+      "family": "occurrence_time",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          111,
+          112
+        ],
+        "printed_pages": [
+          98,
+          99
+        ],
+        "locator": "Proc.2.11; To predict the time of occurrence:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.12",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          112,
+          113
+        ],
+        "printed_pages": [
+          99,
+          100
+        ],
+        "locator": "Proc.2.12; To predict lunar eclipses:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          113
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.13",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          113,
+          114
+        ],
+        "printed_pages": [
+          100,
+          101
+        ],
+        "locator": "Proc.2.13; To predict the Appearances or Returns of the Five Stars [sc. ‘Planets’]:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          113,
+          114
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.14",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          114,
+          115
+        ],
+        "printed_pages": [
+          101,
+          102
+        ],
+        "locator": "Proc.2.14; To predict the location of the Appearance Medial [Qi] and [planetary] Sta-"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          114,
+          115
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.15",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          115,
+          116
+        ],
+        "printed_pages": [
+          102,
+          103
+        ],
+        "locator": "Proc.2.15; To predict the month when the Star appears:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          115,
+          116
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.16",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          116,
+          117
+        ],
+        "printed_pages": [
+          103,
+          104
+        ],
+        "locator": "Proc.2.16; To predict the day of Arrival [of the Medial qi]:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          116
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.17",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          117,
+          118
+        ],
+        "printed_pages": [
+          104,
+          105
+        ],
+        "locator": "Proc.2.17; To predict the day of conjunction:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.18",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          118,
+          119
+        ],
+        "printed_pages": [
+          105,
+          106
+        ],
+        "locator": "Proc.2.18; To predict the number of days and number of degrees of entry into"
+      },
+      "exposed": false,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Day/du dual use and astronomical station origins require angular rate/coordinate semantics beyond frozen M05; arithmetic subrelations remain annotatable."
+    },
+    {
+      "id": "2.19",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          119,
+          120
+        ],
+        "printed_pages": [
+          106,
+          107
+        ],
+        "locator": "Proc.2.19; To predict the number of days of entry into a month:"
+      },
+      "exposed": false,
+      "eligible_A": true,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "scaled month fractions + planetary Appearance day + day-count method"
+    },
+    {
+      "id": "2.20",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          120
+        ],
+        "printed_pages": [
+          107
+        ],
+        "locator": "Proc.2.20; To predict the Medial [Qi] of the next Appearance:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "2.21",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          120
+        ],
+        "printed_pages": [
+          107
+        ],
+        "locator": "Proc.2.21; To predict the month of the next Appearance:"
+      },
+      "exposed": false,
+      "eligible_A": true,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "planetary month recurrence + carry + intercalary year scan"
+    },
+    {
+      "id": "2.22",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          120
+        ],
+        "printed_pages": [
+          107
+        ],
+        "locator": "Proc.2.22; To predict the day of Arrival and the number of days and number"
+      },
+      "exposed": false,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Compound recall includes Proc2.18 dual day/du station task, beyond frozen day/month types and day-count method scope."
+    },
+    {
+      "id": "2.23",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          120,
+          121
+        ],
+        "printed_pages": [
+          107,
+          108
+        ],
+        "locator": "Proc.2.23; To predict the conjunction day, and the number of [days of] entry"
+      },
+      "exposed": false,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Recall composes two complete prior tasks (2.17 and2.19); M08 implements a two-operation day-count submethod, not arbitrary multi-task dispatch. New compound dispatch is not merely a renamed lexical slot."
+    },
+    {
+      "id": "2.24",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          121
+        ],
+        "printed_pages": [
+          108
+        ],
+        "locator": "Proc.2.24; To predict the evening Appearance from the morning Appearance,"
+      },
+      "exposed": false,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Bidirectional dawn/dusk Appearance compound dispatch needs phase-conditional task binding beyond M08 day-count method."
+    },
+    {
+      "id": "2.25",
+      "family": "planetary_motion",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          121
+        ],
+        "printed_pages": [
+          108
+        ],
+        "locator": "Proc.2.25; To predict the Five Pacers:"
+      },
+      "exposed": false,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "General mixed rational×rational multiplication with conditional numerator/denominator assembly and lodge coordinates exceeds bounded M14 mixed-quantity recognition."
+    },
+    {
+      "id": "2.26",
+      "family": "year_numbering",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          121,
+          122,
+          123,
+          124
+        ],
+        "printed_pages": [
+          108,
+          109,
+          110,
+          111
+        ],
+        "locator": "Proc.2.26; To predict the location of the Year:"
+      },
+      "exposed": false,
+      "eligible_A": true,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "epoch year + station skipping ratio + parallel 12/60 nominal cycles"
+    },
+    {
+      "id": "2.27",
+      "family": "divinatory_interpretation",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          124,
+          125
+        ],
+        "printed_pages": [
+          111,
+          112
+        ],
+        "locator": "Proc.2.27; Excess and shortfall:"
+      },
+      "exposed": false,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Omen interpretation is not a numeric procedural mechanism in M01–M15."
+    },
+    {
+      "id": "2.28",
+      "family": "astronomical_tables",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131
+        ],
+        "printed_pages": [
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118
+        ],
+        "locator": "Proc.2.28; [Table of the 12 stations]:"
+      },
+      "exposed": false,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Full astronomical station/lodge mapping is a different historical table semantics from M10 single civil year-head table."
+    },
+    {
+      "id": "2.29",
+      "family": "astronomical_tables",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145
+        ],
+        "printed_pages": [
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132
+        ],
+        "locator": "Proc.2.29; [Table of the 28 lodges]:"
+      },
+      "exposed": false,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Astronomical lodge widths/coordinates beyond frozen M10 civil table."
+    },
+    {
+      "id": "2.30",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          145,
+          146
+        ],
+        "printed_pages": [
+          132,
+          133
+        ],
+        "locator": "Proc.2.30; To predict the day of [coincidence of] conjunction and winter"
+      },
+      "exposed": false,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Exhaust all81 Rules in each Concordance: quantified nested iteration exceeds M12 bounded12/13-month scan; paired recurrence alone is known."
+    },
+    {
+      "id": "2.31",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          146
+        ],
+        "printed_pages": [
+          133
+        ],
+        "locator": "Proc.2.31; To predict the Section:"
+      },
+      "exposed": false,
+      "eligible_A": true,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "inherited Rule-head offset + Section/Circuits paired queries"
+    },
+    {
+      "id": "3.1",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          170,
+          171,
+          172,
+          173
+        ],
+        "printed_pages": [
+          157,
+          158,
+          159,
+          160
+        ],
+        "locator": "Proc.3.1; [How lunar eclipse constants are found]:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": [
+          172,
+          173
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.2",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          173,
+          174
+        ],
+        "printed_pages": [
+          160,
+          161
+        ],
+        "locator": "Proc.3.2; To find [the sexagenary year number of] entry into the"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          173,
+          174
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.3",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          174,
+          175,
+          176
+        ],
+        "printed_pages": [
+          161,
+          162,
+          163
+        ],
+        "locator": "Proc.3.3; To predict the year of Obscuration Coincidence entered by the lunar"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          174,
+          175,
+          176
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.4",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          176,
+          177
+        ],
+        "printed_pages": [
+          163,
+          164
+        ],
+        "locator": "Proc.3.4; [Table of year-names]:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": [
+          176,
+          177
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.5",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          177,
+          178
+        ],
+        "printed_pages": [
+          164,
+          165
+        ],
+        "locator": "Proc.3.5; To predict the Celestial Standard [Month]:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          177,
+          178
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.6",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          178,
+          179
+        ],
+        "printed_pages": [
+          165,
+          166
+        ],
+        "locator": "Proc.3.6; To predict the day of Celestial Standard Conjunction:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          178,
+          179
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.7",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          179,
+          180
+        ],
+        "printed_pages": [
+          166,
+          167
+        ],
+        "locator": "Proc.3.7; Another method:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          179,
+          180
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.8",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          180
+        ],
+        "printed_pages": [
+          167
+        ],
+        "locator": "Proc.3.8; To predict the 24 qi."
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          180
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.9",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          180,
+          181,
+          182
+        ],
+        "printed_pages": [
+          167,
+          168,
+          169
+        ],
+        "locator": "Proc.3.9; To predict the location of the intercalary month:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          180,
+          181,
+          182
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.10",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          182,
+          183
+        ],
+        "printed_pages": [
+          169,
+          170
+        ],
+        "locator": "Proc.3.10; To predict the days of crescent and full moon:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          182
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.11",
+      "family": "extinction",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          183,
+          184,
+          185
+        ],
+        "printed_pages": [
+          170,
+          171,
+          172
+        ],
+        "locator": "Proc.3.11; Method to predict Extinction and Obliteration:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.12",
+      "family": "extinction",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          185,
+          186
+        ],
+        "printed_pages": [
+          172,
+          173
+        ],
+        "locator": "Proc.3.12; Another method:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.13",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          186,
+          187
+        ],
+        "printed_pages": [
+          173,
+          174
+        ],
+        "locator": "Proc.3.13; To predict the du where the conjunction is located:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.14",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          187,
+          188
+        ],
+        "printed_pages": [
+          174,
+          175
+        ],
+        "locator": "Proc.3.14; Another method:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.15",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          188
+        ],
+        "printed_pages": [
+          175
+        ],
+        "locator": "Proc.3.15; To predict the du where the sun is located."
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.16",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          188,
+          189
+        ],
+        "printed_pages": [
+          175,
+          176
+        ],
+        "locator": "Proc.3.16; Another method:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.17",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          189,
+          190
+        ],
+        "printed_pages": [
+          176,
+          177
+        ],
+        "locator": "Proc.3.17; To predict the du where the moon is located:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.18",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          190
+        ],
+        "printed_pages": [
+          177
+        ],
+        "locator": "Proc.3.18; Another Method:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.19",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          190,
+          191
+        ],
+        "printed_pages": [
+          177,
+          178
+        ],
+        "locator": "Proc.3.19; To predict the du and parts entered by the sun at dawn:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.20",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          191
+        ],
+        "printed_pages": [
+          178
+        ],
+        "locator": "Proc.3.20; To seek the du entered by the sun at dusk:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.21",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          191
+        ],
+        "printed_pages": [
+          178
+        ],
+        "locator": "Proc.3.21; To predict the du and parts entered by the moon at dawn:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.22",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          191,
+          192
+        ],
+        "printed_pages": [
+          178,
+          179
+        ],
+        "locator": "Proc.3.22; To seek the du entered by the moon at dusk:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.23",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          192
+        ],
+        "printed_pages": [
+          179
+        ],
+        "locator": "Proc.3.23; To predict the Lodge and du entered by the sun at crescents and"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.24",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          192
+        ],
+        "printed_pages": [
+          179
+        ],
+        "locator": "Proc.3.24; To seek full moon and last crescent:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.25",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          192,
+          193
+        ],
+        "printed_pages": [
+          179,
+          180
+        ],
+        "locator": "Proc.3.25; To predict the Lodge and du entered by the moon at crescents and"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.26",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          193
+        ],
+        "printed_pages": [
+          180
+        ],
+        "locator": "Proc.3.26; To seek full moon and last crescent:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.27",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          193,
+          194
+        ],
+        "printed_pages": [
+          180,
+          181
+        ],
+        "locator": "Proc.3.27; To predict lunar eclipses:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.28",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          194,
+          195
+        ],
+        "printed_pages": [
+          181,
+          182
+        ],
+        "locator": "Proc.3.28; To seek the intercalations from entry into the Rule:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.29",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          195
+        ],
+        "printed_pages": [
+          182
+        ],
+        "locator": "Proc.3.29; To seek the next eclipse:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.30",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          195,
+          196
+        ],
+        "printed_pages": [
+          182,
+          183
+        ],
+        "locator": "Proc.3.30; To predict the day of conjunction [which begins the month] with"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.31",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          196
+        ],
+        "printed_pages": [
+          183
+        ],
+        "locator": "Proc.3.31; To seek the day of the eclipse:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.32",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          196,
+          197
+        ],
+        "printed_pages": [
+          183,
+          184
+        ],
+        "locator": "Proc.3.32; To seek the conjunction [of the month] with the next eclipse and"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.33",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          197,
+          198
+        ],
+        "printed_pages": [
+          184,
+          185
+        ],
+        "locator": "Proc.3.33; Another method:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.34",
+      "family": "occurrence_time",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          198,
+          199
+        ],
+        "printed_pages": [
+          185,
+          186
+        ],
+        "locator": "Proc.3.34; To predict the double-hour of all occurrences:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.35",
+      "family": "occurrence_time",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          199,
+          200
+        ],
+        "printed_pages": [
+          186,
+          187
+        ],
+        "locator": "Proc.3.35; To predict the ke of the clepsydra run from water filling:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": [
+          200
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.36",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210
+        ],
+        "printed_pages": [
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197
+        ],
+        "locator": "Proc.3.36; [Derivation of planetary constants]:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": [
+          200,
+          203,
+          210
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.37",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          210,
+          211,
+          212,
+          213
+        ],
+        "printed_pages": [
+          197,
+          198,
+          199,
+          200
+        ],
+        "locator": "Proc.3.37; Method for predicting the five planets:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": [
+          210,
+          211,
+          212,
+          213
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.38",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          213,
+          214
+        ],
+        "printed_pages": [
+          200,
+          201
+        ],
+        "locator": "Proc.3.38; To predict the month of a planet’s conjunction:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          213,
+          214
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.39",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          214,
+          215
+        ],
+        "printed_pages": [
+          201,
+          202
+        ],
+        "locator": "Proc.3.39; To find the conjunction day:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": [
+          214
+        ]
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.40",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          215,
+          216
+        ],
+        "printed_pages": [
+          202,
+          203
+        ],
+        "locator": "Proc.3.40; To find the days entered into the month:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.41",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          216
+        ],
+        "printed_pages": [
+          203
+        ],
+        "locator": "Proc.3.41; To predict the du of conjunction:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.42",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          216,
+          217,
+          218
+        ],
+        "printed_pages": [
+          203,
+          204,
+          205
+        ],
+        "locator": "Proc.3.42; Another method:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.43",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          218
+        ],
+        "printed_pages": [
+          205
+        ],
+        "locator": "Proc.3.43; To find the month of the next conjunction:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.44",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          218,
+          219
+        ],
+        "printed_pages": [
+          205,
+          206
+        ],
+        "locator": "Proc.3.44; To find the conjunction day:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.45",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          219
+        ],
+        "printed_pages": [
+          206
+        ],
+        "locator": "Proc.3.45; To find the day of entry into the month:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.46",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231
+        ],
+        "printed_pages": [
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218
+        ],
+        "locator": "Proc.3.46; To find the du of conjunction:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.47",
+      "family": "planetary_motion",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          231,
+          232,
+          233
+        ],
+        "printed_pages": [
+          218,
+          219,
+          220
+        ],
+        "locator": "Proc.3.47; Method for pacing:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.48",
+      "family": "astronomical_tables",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          233
+        ],
+        "printed_pages": [
+          220
+        ],
+        "locator": "Proc.3.48; [Conversion between equatorial and ecliptic motion]:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "3.49",
+      "family": "astronomical_tables",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          233,
+          234,
+          235,
+          236
+        ],
+        "printed_pages": [
+          220,
+          221,
+          222,
+          223
+        ],
+        "locator": "Proc.3.49; Month Names [and Medial Qi]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.50",
+      "family": "astronomical_tables",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          236,
+          237
+        ],
+        "printed_pages": [
+          223,
+          224
+        ],
+        "locator": "Proc.3.50; [Combined table translation for lodges on equator and ecliptic]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.51",
+      "family": "astronomical_tables",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          237,
+          238,
+          239,
+          240
+        ],
+        "printed_pages": [
+          224,
+          225,
+          226,
+          227
+        ],
+        "locator": "Proc.3.51; [The basis of the solar table]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.52",
+      "family": "astronomical_tables",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          240,
+          241
+        ],
+        "printed_pages": [
+          227,
+          228
+        ],
+        "locator": "Proc.3.52; Table of solar data, day and night lengths, and centred stars:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "3.53",
+      "family": "astronomical_tables",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          241
+        ],
+        "printed_pages": [
+          228
+        ],
+        "locator": "Proc.3.53; [Notation for fractions]:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "4.1",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260
+        ],
+        "printed_pages": [
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247
+        ],
+        "locator": "Proc.4.1; [Years elapsed since system origin]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.2",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          260,
+          261
+        ],
+        "printed_pages": [
+          247,
+          248
+        ],
+        "locator": "Proc.4.2; To predict entry into Era Cycle:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.3",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          261,
+          262,
+          263
+        ],
+        "printed_pages": [
+          248,
+          249,
+          250
+        ],
+        "locator": "Proc.4.3; To predict new moons:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.4",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          263,
+          264
+        ],
+        "printed_pages": [
+          250,
+          251
+        ],
+        "locator": "Proc.4.4; To predict the next month:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.5",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          264,
+          265
+        ],
+        "printed_pages": [
+          251,
+          252
+        ],
+        "locator": "Proc.4.5; To predict the winter solstice:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.6",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          265
+        ],
+        "printed_pages": [
+          252
+        ],
+        "locator": "Proc.4.6; To seek the 24 qi:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.7",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          265,
+          266
+        ],
+        "printed_pages": [
+          252,
+          253
+        ],
+        "locator": "Proc.4.7; To predict intercalary months:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "4.8",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          266,
+          267
+        ],
+        "printed_pages": [
+          253,
+          254
+        ],
+        "locator": "Proc.4.8; To predict crescents and full moons:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.9",
+      "family": "civil_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          267,
+          268
+        ],
+        "printed_pages": [
+          254,
+          255
+        ],
+        "locator": "Proc.4.9; To predict extinctions [of day fraction]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.10",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          268,
+          269
+        ],
+        "printed_pages": [
+          255,
+          256
+        ],
+        "locator": "Proc.4.10; To predict the du of the sun:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.11",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          269
+        ],
+        "printed_pages": [
+          256
+        ],
+        "locator": "Proc.4.11; To seek the next day:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.12",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          269,
+          270
+        ],
+        "printed_pages": [
+          256,
+          257
+        ],
+        "locator": "Proc.4.12; To predict the du of the moon:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.13",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          270
+        ],
+        "printed_pages": [
+          257
+        ],
+        "locator": "Proc.4.13; To seek the next month:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.14",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          270,
+          271
+        ],
+        "printed_pages": [
+          257,
+          258
+        ],
+        "locator": "Proc.4.14; To predict the du of conjunctions:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.15",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          271,
+          272
+        ],
+        "printed_pages": [
+          258,
+          259
+        ],
+        "locator": "Proc.4.15; To seek the next month:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.16",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          272
+        ],
+        "printed_pages": [
+          259
+        ],
+        "locator": "Proc.4.16; To find the du where the sun is located at crescents and full moons:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.17",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          272,
+          273
+        ],
+        "printed_pages": [
+          259,
+          260
+        ],
+        "locator": "Proc.4.17; To seek the du where the motion of the moon is located at crescents"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.18",
+      "family": "solar_lunar_position",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          273,
+          274
+        ],
+        "printed_pages": [
+          260,
+          261
+        ],
+        "locator": "Proc.4.18; To obtain the du of the sun and moon for dusk and dawn:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.19",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          274,
+          275,
+          276
+        ],
+        "printed_pages": [
+          261,
+          262,
+          263
+        ],
+        "locator": "Proc.4.19; To predict lunar eclipses:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.20",
+      "family": "lunar_eclipse",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          276
+        ],
+        "printed_pages": [
+          263
+        ],
+        "locator": "Proc.4.20; To find the next eclipse:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.21",
+      "family": "divinatory_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          276,
+          277
+        ],
+        "printed_pages": [
+          263,
+          264
+        ],
+        "locator": "Proc.4.21; To predict which hexagram will be in effect:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.22",
+      "family": "divinatory_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          277
+        ],
+        "printed_pages": [
+          264
+        ],
+        "locator": "Proc.4.22; To find the next hexagram:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.23",
+      "family": "divinatory_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          277,
+          278,
+          279
+        ],
+        "printed_pages": [
+          264,
+          265,
+          266
+        ],
+        "locator": "Proc.4.23; To find which of the Five Phases will be in effect:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.24",
+      "family": "occurrence_time",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          279
+        ],
+        "printed_pages": [
+          266
+        ],
+        "locator": "Proc.4.24; To find the double-hour of occurrence:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.25",
+      "family": "occurrence_time",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          279,
+          280
+        ],
+        "printed_pages": [
+          266,
+          267
+        ],
+        "locator": "Proc.4.25; To find clepsydra divisions:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.26",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          280,
+          281
+        ],
+        "printed_pages": [
+          267,
+          268
+        ],
+        "locator": "Proc.4.26; To predict when there will be advance or retardation:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.27",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          281,
+          282
+        ],
+        "printed_pages": [
+          268,
+          269
+        ],
+        "locator": "Proc.4.27; To seek the retardation and acceleration of lunar motion:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.28",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          282,
+          283
+        ],
+        "printed_pages": [
+          269,
+          270
+        ],
+        "locator": "Proc.4.28; [Correcting mean lunar motion]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.29",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          283,
+          284,
+          285
+        ],
+        "printed_pages": [
+          270,
+          271,
+          272
+        ],
+        "locator": "Proc.4.29; [Shift in speed sequence position between successive conjunctions]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.30",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          285,
+          286,
+          287,
+          288,
+          289
+        ],
+        "printed_pages": [
+          272,
+          273,
+          274,
+          275,
+          276
+        ],
+        "locator": "Proc.4.30; [Speed sequence table]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.31",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          289,
+          290,
+          291,
+          292
+        ],
+        "printed_pages": [
+          276,
+          277,
+          278,
+          279
+        ],
+        "locator": "Proc.4.31; To predict where conjunctions enter the [speed] sequence:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.32",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          292,
+          293
+        ],
+        "printed_pages": [
+          279,
+          280
+        ],
+        "locator": "Proc.4.32; To seek the next month:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.33",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          293,
+          294
+        ],
+        "printed_pages": [
+          280,
+          281
+        ],
+        "locator": "Proc.4.33; To seek crescents and full moons:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.34",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          294,
+          295,
+          296,
+          297,
+          298
+        ],
+        "printed_pages": [
+          281,
+          282,
+          283,
+          284,
+          285
+        ],
+        "locator": "Proc.4.34; To seek the true greater and lesser [synodic] remainders for [con-"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.35",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          298,
+          299
+        ],
+        "printed_pages": [
+          285,
+          286
+        ],
+        "locator": "Proc.4.35; To seek the true du of the time of occurrence of conjunctions,"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.36",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          299,
+          300
+        ],
+        "printed_pages": [
+          286,
+          287
+        ],
+        "locator": "Proc.4.36; To predict where the moon’s motion at midnight enters the sequence:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.37",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          300,
+          301
+        ],
+        "printed_pages": [
+          287,
+          288
+        ],
+        "locator": "Proc.4.37; To seek the next day:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.38",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          301,
+          302
+        ],
+        "printed_pages": [
+          288,
+          289
+        ],
+        "locator": "Proc.4.38; To seek the true du of the moon at midnight:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.39",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          302,
+          303
+        ],
+        "printed_pages": [
+          289,
+          290
+        ],
+        "locator": "Proc.4.39; To seek Transformation Rates:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.40",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          303,
+          304
+        ],
+        "printed_pages": [
+          290,
+          291
+        ],
+        "locator": "Proc.4.40; To seek the next sequence:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.41",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          304,
+          305
+        ],
+        "printed_pages": [
+          291,
+          292
+        ],
+        "locator": "Proc.4.41; To obtain the true du for midnight of successive days:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.42",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          305
+        ],
+        "printed_pages": [
+          292
+        ],
+        "locator": "Proc.4.42; To seek the Excess or Deficit for the midnight of the next day:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.43",
+      "family": "lunar_anomaly",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          305,
+          306
+        ],
+        "printed_pages": [
+          292,
+          293
+        ],
+        "locator": "Proc.4.43; To seek the du of the moon for dusk and dawn:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.44",
+      "family": "lunar_latitude",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313
+        ],
+        "printed_pages": [
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300
+        ],
+        "locator": "Proc.4.44; Method for the Moon travelling the Three Roads:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.45",
+      "family": "lunar_latitude",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          313,
+          314,
+          315,
+          316
+        ],
+        "printed_pages": [
+          300,
+          301,
+          302,
+          303
+        ],
+        "locator": "Proc.4.45; [Lunar latitude table]:24"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.46",
+      "family": "lunar_latitude",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          316,
+          317,
+          318
+        ],
+        "printed_pages": [
+          303,
+          304,
+          305
+        ],
+        "locator": "Proc.4.46; To predict the entry of the new moon into the Yinyang sequence:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.47",
+      "family": "lunar_latitude",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          318,
+          319,
+          320
+        ],
+        "printed_pages": [
+          305,
+          306,
+          307
+        ],
+        "locator": "Proc.4.47; To seek the next month:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.48",
+      "family": "lunar_latitude",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          320
+        ],
+        "printed_pages": [
+          307
+        ],
+        "locator": "Proc.4.48; To find the true numbers for conjunction and full moon:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.49",
+      "family": "lunar_latitude",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          320,
+          321
+        ],
+        "printed_pages": [
+          307,
+          308
+        ],
+        "locator": "Proc.4.49; To determine entry into the sequence at midnight:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.50",
+      "family": "lunar_latitude",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          321,
+          322
+        ],
+        "printed_pages": [
+          308,
+          309
+        ],
+        "locator": "Proc.4.50; To seek the next day:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.51",
+      "family": "lunar_latitude",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          322
+        ],
+        "printed_pages": [
+          309
+        ],
+        "locator": "Proc.4.51; To seek midnight on the true day:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.52",
+      "family": "lunar_latitude",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          322,
+          323
+        ],
+        "printed_pages": [
+          309,
+          310
+        ],
+        "locator": "Proc.4.52; To find the numbers for dusk and dawn:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.53",
+      "family": "lunar_latitude",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          323,
+          324
+        ],
+        "printed_pages": [
+          310,
+          311
+        ],
+        "locator": "Proc.4.53; To seek the du of polar distance of the moon:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.54",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          324,
+          325
+        ],
+        "printed_pages": [
+          311,
+          312
+        ],
+        "locator": "Proc.4.54; System origin:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.55",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          325
+        ],
+        "printed_pages": [
+          312
+        ],
+        "locator": "Proc.4.55; [Era Heads]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.56",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          325
+        ],
+        "printed_pages": [
+          312
+        ],
+        "locator": "Proc.4.56; The Five Phases:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.57",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          325,
+          326,
+          327
+        ],
+        "printed_pages": [
+          312,
+          313,
+          314
+        ],
+        "locator": "Proc.4.57; [Derivation of Cycle Rate and Solar Rate]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.58",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          327
+        ],
+        "printed_pages": [
+          314
+        ],
+        "locator": "Proc.4.58; [Derivation of Conjunction Lunation Factor]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.59",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          327
+        ],
+        "printed_pages": [
+          314
+        ],
+        "locator": "Proc.4.59; [Derivation of Conjunction Lunation Number]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.60",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          327,
+          328,
+          329
+        ],
+        "printed_pages": [
+          314,
+          315,
+          316
+        ],
+        "locator": "Proc.4.60; [Derivation of Day and Du Factor]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.61",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          329
+        ],
+        "printed_pages": [
+          316
+        ],
+        "locator": "Proc.4.61; [Derivation of [Planet] Dipper Parts]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.62",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          329,
+          330
+        ],
+        "printed_pages": [
+          316,
+          317
+        ],
+        "locator": "Proc.4.62; [Derivation of] the [Planet] Lunar Conjunction Greater Remain-"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.63",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          330,
+          331
+        ],
+        "printed_pages": [
+          317,
+          318
+        ],
+        "locator": "Proc.4.63; [Derivation of] the Days and Day Remainder of Entry into the"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.64",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          331
+        ],
+        "printed_pages": [
+          318
+        ],
+        "locator": "Proc.4.64; [Derivation of] the [Planet] Du Number and Du Remainder for the"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.65",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          331,
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341
+        ],
+        "printed_pages": [
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328
+        ],
+        "locator": "Proc.4.65; [Factors for use with planetary calculations]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.66",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          341,
+          342,
+          343
+        ],
+        "printed_pages": [
+          328,
+          329,
+          330
+        ],
+        "locator": "Proc.4.66; [Locating planetary conjunctions]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.67",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          343,
+          344
+        ],
+        "printed_pages": [
+          330,
+          331
+        ],
+        "locator": "Proc.4.67; To predict the month of planetary conjunction:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "4.68",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          344
+        ],
+        "printed_pages": [
+          331
+        ],
+        "locator": "Proc.4.68; To predict the Day of Entry into Lunation:"
+      },
+      "exposed": true,
+      "eligible_A": false,
+      "source_unavailable": false,
+      "exposure_status": "documented_source_or_adjacent_page_exposure",
+      "exposure_basis": {
+        "explicit_registry": true,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Excluded for prior exposure."
+    },
+    {
+      "id": "4.69",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          344,
+          345
+        ],
+        "printed_pages": [
+          331,
+          332
+        ],
+        "locator": "Proc.4.69; To predict the du of planet conjunction:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.70",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          345
+        ],
+        "printed_pages": [
+          332
+        ],
+        "locator": "Proc.4.70; To find the month of the next conjunction:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.71",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          345,
+          346
+        ],
+        "printed_pages": [
+          332,
+          333
+        ],
+        "locator": "Proc.4.71; To find the day of lunar conjunction for the next planetary"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.72",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          346,
+          347
+        ],
+        "printed_pages": [
+          333,
+          334
+        ],
+        "locator": "Proc.4.72; Method for finding the days of entry into the lunation for the next"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    },
+    {
+      "id": "4.73",
+      "family": "planetary_calendar",
+      "source_locator": {
+        "work": "C2017",
+        "pdf_pages": [
+          347
+        ],
+        "printed_pages": [
+          334
+        ],
+        "locator": "Proc.4.73; To find the next du [of conjunction]:"
+      },
+      "exposed": false,
+      "eligible_A": null,
+      "source_unavailable": false,
+      "exposure_status": "no_documented_rule_development_exposure; corpus_bulk_ingestion_and_unrecorded_historical_exposure_not_excludable",
+      "exposure_basis": {
+        "explicit_registry": false,
+        "adjacent_excerpt_pages": []
+      },
+      "A_review": "Not assessed beyond first four A-eligible source groups; no eligibility inference from parser."
+    }
+  ],
+  "selection_log": [
+    {
+      "candidate_id": "2.1",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.2",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.3",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.4",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.5",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.6",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.7",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.8",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.9",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.10",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.11",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.12",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.13",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.14",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.15",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.16",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.17",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.18",
+      "decision": "selected_B",
+      "reason": "Earliest remaining candidate in fixed order."
+    },
+    {
+      "candidate_id": "2.19",
+      "decision": "selected_A",
+      "reason": "scaled month fractions + planetary Appearance day + day-count method"
+    },
+    {
+      "candidate_id": "2.20",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "2.21",
+      "decision": "selected_A",
+      "reason": "planetary month recurrence + carry + intercalary year scan"
+    },
+    {
+      "candidate_id": "2.22",
+      "decision": "selected_B",
+      "reason": "Earliest remaining candidate in fixed order."
+    },
+    {
+      "candidate_id": "2.23",
+      "decision": "selected_B",
+      "reason": "Earliest remaining candidate in fixed order."
+    },
+    {
+      "candidate_id": "2.24",
+      "decision": "family_replacement",
+      "reason": "Initial fourth B candidate; all first four were planetary_calendar, so only this last item replaced by earliest later planetary_motion candidate2.25."
+    },
+    {
+      "candidate_id": "2.25",
+      "decision": "selected_B",
+      "reason": "Earliest later different family replacing only fourth initial B candidate2.24."
+    },
+    {
+      "candidate_id": "2.26",
+      "decision": "selected_A",
+      "reason": "epoch year + station skipping ratio + parallel 12/60 nominal cycles"
+    },
+    {
+      "candidate_id": "2.27",
+      "decision": "not_selected",
+      "reason": "Omen interpretation is not a numeric procedural mechanism in M01–M15."
+    },
+    {
+      "candidate_id": "2.28",
+      "decision": "not_selected",
+      "reason": "Full astronomical station/lodge mapping is a different historical table semantics from M10 single civil year-head table."
+    },
+    {
+      "candidate_id": "2.29",
+      "decision": "not_selected",
+      "reason": "Astronomical lodge widths/coordinates beyond frozen M10 civil table."
+    },
+    {
+      "candidate_id": "2.30",
+      "decision": "not_selected",
+      "reason": "Exhaust all81 Rules in each Concordance: quantified nested iteration exceeds M12 bounded12/13-month scan; paired recurrence alone is known."
+    },
+    {
+      "candidate_id": "2.31",
+      "decision": "selected_A",
+      "reason": "inherited Rule-head offset + Section/Circuits paired queries"
+    },
+    {
+      "candidate_id": "3.1",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.2",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.3",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.4",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.5",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.6",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.7",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.8",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.9",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.10",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.11",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.12",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.13",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.14",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.15",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.16",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.17",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.18",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.19",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.20",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.21",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.22",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.23",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.24",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.25",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.26",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.27",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.28",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.29",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.30",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.31",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.32",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.33",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.34",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.35",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.36",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.37",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.38",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.39",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.40",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.41",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.42",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.43",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.44",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.45",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.46",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.47",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.48",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "3.49",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.50",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.51",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.52",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "3.53",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "4.1",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.2",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.3",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.4",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.5",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.6",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.7",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "4.8",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.9",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.10",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.11",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.12",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.13",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.14",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.15",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.16",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.17",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.18",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.19",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.20",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.21",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.22",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.23",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.24",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.25",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.26",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.27",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.28",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.29",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.30",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.31",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.32",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.33",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.34",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.35",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.36",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.37",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.38",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.39",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.40",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.41",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.42",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.43",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.44",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.45",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.46",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.47",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.48",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.49",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.50",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.51",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.52",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.53",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.54",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.55",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.56",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.57",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.58",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.59",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.60",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.61",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.62",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.63",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.64",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.65",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.66",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.67",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "4.68",
+      "decision": "excluded_exposed",
+      "reason": "Prior explicit procedure registry or conservative source/commentary page-overlap with retained excerpts."
+    },
+    {
+      "candidate_id": "4.69",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.70",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.71",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.72",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    },
+    {
+      "candidate_id": "4.73",
+      "decision": "not_selected",
+      "reason": "Beyond four selected A and registered four B windows; retained in full ordered universe."
+    }
+  ],
+  "exclusion_registry_hashes": [
+    {
+      "path": "evaluation/handoff-v3/exposure_registry_merged.json",
+      "sha256": "75dfb4e5836195327f7688cd8a4faff92c6c6a48d31779c62765344a24be1d00"
+    },
+    {
+      "path": "handoff_v3/coverage/exposure_registry.json",
+      "sha256": "361e9cdbd3599528c5daf0ae76b50de4da41066d1bad8a6b19c3793d06dd95d5"
+    },
+    {
+      "path": "evaluation/handoff-v2/exposure-audit.json",
+      "sha256": "f35268edfcf708a66a3cada13fb5fdec80a9b6c0ccba17d86ea51aec15d95cfe"
+    },
+    {
+      "path": "handoff_v3/sources/page_map.json",
+      "sha256": "93a4df0692be955636fa918556f3a0744e9867a3cc5110422f58b595c98ce1ff"
+    },
+    {
+      "path": "evaluation/handoff-v2/package/evidence/page_index.json",
+      "sha256": "eea03252297ffa34689b5fa085c56ba55d79c80a0db87a5d7dac9b667812b7a4"
+    }
+  ],
+  "no_parser_prefilter": true,
+  "parser_runs_before_lock": 0,
+  "track_limits": {
+    "A": {
+      "count": 4,
+      "combination_count": 4
+    },
+    "B": {
+      "count": 4,
+      "family_count": 2
+    }
+  },
+  "universe_counts": {
+    "total": 157,
+    "chapter2": 31,
+    "chapter3": 53,
+    "chapter4": 73,
+    "exposed": 45
+  },
+  "bulk_ingestion_disclosure": "Full corpus was historically bulk ingested. Claim limited to no documented use of selected primary procedures for rule development; never-read-by-any-system is explicitly not claimed. Unrecorded historical exposure remains unknown.",
+  "source_only_review": "Eligibility uses frozen M01–M15 actual mechanism limits; no parser prediction or output. Later candidates need not be source-reviewed for A after earliest four are fixed.",
+  "Liu_excerpts_limitation": "L2003 is a different source with no Cullen Proc index. Its retained civil domains are covered by the cumulative explicit development exclusions. An unrecorded cross-source overlap is not asserted impossible."
+}

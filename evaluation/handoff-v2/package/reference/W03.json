@@ -1,0 +1,1709 @@
+{
+  "schema_version": "2.0",
+  "window_id": "W03",
+  "role": "curated_teaching_reference_not_parser_output",
+  "annotation_status": "source_calibrated_by_assistant_not_independently_adjudicated",
+  "primary_source_ids": [
+    "ST.2.14",
+    "ST.2.15"
+  ],
+  "quantities": [
+    {
+      "quantity_id": "E",
+      "source_label": "定見復數",
+      "role": "external_upstream_result",
+      "unit": "appearance_count",
+      "scale": null,
+      "definition_source": "C2017 p.100 §186; L2003 pp.37–38",
+      "note": "数值测试以木星131126为输入，不宣称本包解析了2.13全段。"
+    },
+    {
+      "quantity_id": "A",
+      "source_label": "見中分",
+      "role": "parameter",
+      "unit": "scaled_medial_count",
+      "scale": 1583,
+      "definition_source": "C2017 p.53 §23; L2003 p.16",
+      "note": "木星20736"
+    },
+    {
+      "quantity_id": "F",
+      "source_label": "見中法",
+      "role": "parameter",
+      "unit": "cycle_count",
+      "scale": null,
+      "definition_source": "C2017 p.54 §25",
+      "note": "木星1583"
+    },
+    {
+      "quantity_id": "J",
+      "source_label": "閏分／見閏分",
+      "role": "parameter",
+      "unit": "scaled_intercalary_contribution",
+      "scale": 30077,
+      "definition_source": "C2017 p.54 §26; L2003 p.41",
+      "note": "本用例中閏分对应见闰分12096；显式记录别名与作用域。"
+    },
+    {
+      "quantity_id": "Y19",
+      "source_label": "章歲",
+      "role": "parameter",
+      "unit": "solar_year",
+      "scale": null,
+      "definition_source": "C2017 p.40 §2",
+      "note": "19"
+    },
+    {
+      "quantity_id": "L",
+      "source_label": "見月法",
+      "role": "parameter",
+      "unit": "month_fraction_scale",
+      "scale": null,
+      "definition_source": "C2017 p.54 §28",
+      "note": "30077"
+    },
+    {
+      "quantity_id": "origin_medials",
+      "source_label": "元中",
+      "role": "cycle_parameter",
+      "unit": "medial_qi",
+      "scale": null,
+      "definition_source": "C2017 p.47 §19",
+      "note": "55404"
+    },
+    {
+      "quantity_id": "rule_medials",
+      "source_label": "章中",
+      "role": "cycle_parameter",
+      "unit": "medial_qi",
+      "scale": null,
+      "definition_source": "C2017 p.47 §17",
+      "note": "228"
+    },
+    {
+      "quantity_id": "origin_months",
+      "source_label": "元月",
+      "role": "cycle_parameter",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "C2017 p.46 §16",
+      "note": "57105"
+    },
+    {
+      "quantity_id": "rule_months",
+      "source_label": "章月",
+      "role": "cycle_parameter",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "C2017 p.42 §6",
+      "note": "235"
+    },
+    {
+      "quantity_id": "cycle_M",
+      "source_label": "積月",
+      "role": "distractor_cycle_parameter",
+      "unit": "lunation_per_appearance",
+      "scale": null,
+      "definition_source": "C2017 p.54 §27",
+      "note": "13，与本次累积积月不同。"
+    },
+    {
+      "quantity_id": "cycle_mr",
+      "source_label": "月餘",
+      "role": "distractor_cycle_parameter",
+      "unit": "month_parts",
+      "scale": 30077,
+      "definition_source": "C2017 p.54 §27",
+      "note": "15079，与本次余数17051不同。"
+    },
+    {
+      "quantity_id": "cycle_Q",
+      "source_label": "積中",
+      "role": "distractor_cycle_parameter",
+      "unit": "medial_qi_per_appearance",
+      "scale": null,
+      "definition_source": "C2017 p.53 §24",
+      "note": "13，与累计1717642不同。"
+    },
+    {
+      "quantity_id": "cycle_qr",
+      "source_label": "中餘",
+      "role": "distractor_cycle_parameter",
+      "unit": "medial_qi_parts",
+      "scale": 1583,
+      "definition_source": "C2017 p.53 §24",
+      "note": "157，与本次1450不同。"
+    },
+    {
+      "quantity_id": "scaled_medials",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:01",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "medial_q",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:02",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "medial_r",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:02",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "medials.total",
+      "source_label": "積中",
+      "role": "current_full_accumulation",
+      "unit": "medial_qi",
+      "scale": null,
+      "definition_source": "generated_by:03",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "medials.r",
+      "source_label": "中餘",
+      "role": "current_remainder",
+      "unit": "medial_qi_parts",
+      "scale": 1583,
+      "definition_source": "generated_by:04",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "origin_medial_cycles",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:05",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "medials.origin_r",
+      "source_label": "中元餘",
+      "role": "origin_cycle_projection",
+      "unit": "medial_qi",
+      "scale": null,
+      "definition_source": "generated_by:05",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "rule_medial_cycles",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:06",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "medials.rule_r",
+      "source_label": "入章中數",
+      "role": "rule_cycle_projection",
+      "unit": "medial_qi",
+      "scale": null,
+      "definition_source": "generated_by:06",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "whole_medial_years",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:07",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "medials.year_offset",
+      "source_label": "星見中次",
+      "role": "within_year_projection",
+      "unit": "medial_or_station_offset",
+      "scale": null,
+      "definition_source": "generated_by:07",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "medial.ordinal",
+      "source_label": "星所見中",
+      "role": "medial_ordinal",
+      "unit": "index_1_to_12",
+      "scale": null,
+      "definition_source": "generated_by:08",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "station.ordinal",
+      "source_label": "星所見次",
+      "role": "station_ordinal",
+      "unit": "index_1_to_12",
+      "scale": null,
+      "definition_source": "generated_by:08",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "intercalary_product",
+      "source_label": null,
+      "role": "first_scaled_contribution",
+      "unit": "calibrated_month_parts",
+      "scale": 30077,
+      "definition_source": "generated_by:09",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "medial_scaled_remainder",
+      "source_label": null,
+      "role": "second_scaled_contribution",
+      "unit": "calibrated_month_parts",
+      "scale": 30077,
+      "definition_source": "generated_by:10",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "month_numerator",
+      "source_label": null,
+      "role": "combined_scaled_contribution",
+      "unit": "calibrated_month_parts",
+      "scale": 30077,
+      "definition_source": "generated_by:11",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "extra_month_q",
+      "source_label": null,
+      "role": "whole_month_contribution",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:12",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "accumulated_month_r",
+      "source_label": null,
+      "role": "division_remainder",
+      "unit": "lunation_parts",
+      "scale": 30077,
+      "definition_source": "generated_by:12",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.sum",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:13",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.total",
+      "source_label": "積月",
+      "role": "current_full_accumulation",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:14",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.r",
+      "source_label": "月餘",
+      "role": "current_remainder",
+      "unit": "lunation_parts",
+      "scale": 30077,
+      "definition_source": "generated_by:15",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "origin_month_cycles",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:16",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.origin_r",
+      "source_label": "月元餘",
+      "role": "origin_cycle_projection",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:16",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "rule_month_cycles",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:17",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.rule_r",
+      "source_label": "入章月數",
+      "role": "rule_cycle_projection",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:17",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "intercalation.schedule",
+      "source_label": null,
+      "role": "postposed_control_data",
+      "unit": "year_schedule",
+      "scale": null,
+      "definition_source": "generated_by:18",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "year_in_rule",
+      "source_label": null,
+      "role": "reference_output",
+      "unit": "see_step_explanation",
+      "scale": null,
+      "definition_source": "generated_by:19",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.year_offset",
+      "source_label": null,
+      "role": "within_year_residual_months",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:19",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "appearance.month_ordinal",
+      "source_label": "星所見月",
+      "role": "target_month_ordinal",
+      "unit": "celestial_month_ordinal",
+      "scale": null,
+      "definition_source": "generated_by:20",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    }
+  ],
+  "nodes": [
+    {
+      "node_id": "01",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.14",
+          "reading_id": "ST.2.14.C2017-reading-v1",
+          "quote": "以見中分乘定見復數",
+          "reading_range": [
+            7,
+            16
+          ],
+          "transcription_range": [
+            15,
+            24
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "multiply",
+      "inputs": [
+        "A",
+        "E"
+      ],
+      "outputs": [
+        "scaled_medials"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "取得当前已积见复数对应的中气总量分子。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R02",
+        "R03"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "02",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.14",
+          "reading_id": "ST.2.14.C2017-reading-v1",
+          "quote": "盈見中法得一",
+          "reading_range": [
+            17,
+            23
+          ],
+          "transcription_range": [
+            25,
+            31
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "count_full_units",
+      "inputs": [
+        "scaled_medials",
+        "F"
+      ],
+      "outputs": [
+        "medial_q",
+        "medial_r"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "产生整中气数和F尺度余分。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R04"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "03",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.14",
+          "reading_id": "ST.2.14.C2017-reading-v1",
+          "quote": "則積中也",
+          "reading_range": [
+            24,
+            28
+          ],
+          "transcription_range": [
+            32,
+            39
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "name_result",
+      "inputs": [
+        "medial_q"
+      ],
+      "outputs": [
+        "medials.total"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "命名全累计积中；随后模约减只能产生其投影，不得覆写它。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R05",
+        "R13"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "04",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.14",
+          "reading_id": "ST.2.14.C2017-reading-v1",
+          "quote": "不盈者名曰中餘",
+          "reading_range": [
+            29,
+            36
+          ],
+          "transcription_range": [
+            40,
+            47
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "name_remainder",
+      "inputs": [
+        "medial_r"
+      ],
+      "outputs": [
+        "medials.r"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "命名本次中余，与周期表的中余157有不同生成来源。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R05",
+        "R06",
+        "R13"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "05",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.14",
+          "reading_id": "ST.2.14.C2017-reading-v1",
+          "quote": "以元中除積中，餘則中元餘也",
+          "reading_range": [
+            37,
+            50
+          ],
+          "transcription_range": [
+            48,
+            61
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "reduce_cycle",
+      "inputs": [
+        "medials.total",
+        "origin_medials"
+      ],
+      "outputs": [
+        "origin_medial_cycles",
+        "medials.origin_r"
+      ],
+      "stage": "medial_location_projection",
+      "evidence_status": "calibrated_reading",
+      "explanation": "大周期约减后保留中元余。积中全数仍可在2.15使用。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R08",
+        "R13"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "06",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.14",
+          "reading_id": "ST.2.14.C2017-reading-v1",
+          "quote": "以章中除之，餘則入章中數也",
+          "reading_range": [
+            51,
+            64
+          ],
+          "transcription_range": [
+            62,
+            75
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "reduce_cycle",
+      "inputs": [
+        "medials.origin_r",
+        "rule_medials"
+      ],
+      "outputs": [
+        "rule_medial_cycles",
+        "medials.rule_r"
+      ],
+      "stage": "medial_location_projection",
+      "evidence_status": "calibrated_reading",
+      "explanation": "之回指中元余，不回指原始积中或字典中的周期13。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R06",
+        "R08"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "07",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.14",
+          "reading_id": "ST.2.14.C2017-reading-v1",
+          "quote": "以十二除之，餘則星見中次也",
+          "reading_range": [
+            65,
+            78
+          ],
+          "transcription_range": [
+            76,
+            89
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "reduce_cycle",
+      "inputs": [
+        "medials.rule_r",
+        "lit:12"
+      ],
+      "outputs": [
+        "whole_medial_years",
+        "medials.year_offset"
+      ],
+      "stage": "medial_location_projection",
+      "evidence_status": "calibrated_reading",
+      "explanation": "保留年内中气／星次序偏移。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R06",
+        "R08"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "08",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.14",
+          "reading_id": "ST.2.14.C2017-reading-v1",
+          "quote": "中數從冬至起，次數從星紀起，算外，則星所見中次也",
+          "reading_range": [
+            79,
+            103
+          ],
+          "transcription_range": [
+            90,
+            114
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "dual_count_origin",
+      "inputs": [
+        "medials.year_offset"
+      ],
+      "outputs": [
+        "medial.ordinal",
+        "station.ordinal"
+      ],
+      "stage": "medial_location_projection",
+      "evidence_status": "calibrated_reading",
+      "explanation": "同一偏移分别从冬至和星纪命数；两个输出对象与起点保留。此处从为计数起点。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R10"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "09",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "以閏分乘定見復數",
+          "reading_range": [
+            5,
+            13
+          ],
+          "transcription_range": [
+            5,
+            14
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "multiply",
+      "inputs": [
+        "J",
+        "E"
+      ],
+      "outputs": [
+        "intercalary_product"
+      ],
+      "stage": "month_accumulation",
+      "evidence_status": "calibrated_reading",
+      "explanation": "第一个乘积。閏分的完整参数名见闰分及别名须有本传统、当前行星的词表依据。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R02",
+        "R03",
+        "R13"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "10",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "以章歲乘中餘",
+          "reading_range": [
+            14,
+            20
+          ],
+          "transcription_range": [
+            16,
+            22
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "multiply",
+      "inputs": [
+        "Y19",
+        "medials.r"
+      ],
+      "outputs": [
+        "medial_scaled_remainder"
+      ],
+      "stage": "month_accumulation",
+      "evidence_status": "calibrated_reading",
+      "explanation": "取2.14本次中余并改变尺度；不取周期表157或位置投影的中元余118。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R02",
+        "R03",
+        "R12",
+        "R15"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "11",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "從之",
+          "reading_range": [
+            20,
+            22
+          ],
+          "transcription_range": [
+            22,
+            24
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "add_to_prior_product",
+      "inputs": [
+        "intercalary_product",
+        "medial_scaled_remainder"
+      ],
+      "outputs": [
+        "month_numerator"
+      ],
+      "stage": "month_accumulation",
+      "evidence_status": "calibrated_reading",
+      "explanation": "之取第一个临时乘积；第二乘积加入其中。保留两个乘积和相加事件，不直接替换为闭式总公式。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R03",
+        "R06",
+        "R11"
+      ],
+      "controls": [],
+      "notes": [
+        "Cullen p.102英文括注with the multiplier不宜脱离连续算术说明机械执行；本关系核对刘式2.28。"
+      ]
+    },
+    {
+      "node_id": "12",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "盈見月法得一",
+          "reading_range": [
+            23,
+            29
+          ],
+          "transcription_range": [
+            25,
+            31
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "count_full_units",
+      "inputs": [
+        "month_numerator",
+        "L"
+      ],
+      "outputs": [
+        "extra_month_q",
+        "accumulated_month_r"
+      ],
+      "stage": "month_accumulation",
+      "evidence_status": "calibrated_reading",
+      "explanation": "商余同时生成；余数保持可引用，稍后的并积中不将其消耗。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R04"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "13",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "并積中",
+          "reading_range": [
+            30,
+            33
+          ],
+          "transcription_range": [
+            32,
+            35
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "add_to_named_quantity",
+      "inputs": [
+        "extra_month_q",
+        "medials.total"
+      ],
+      "outputs": [
+        "months.sum"
+      ],
+      "stage": "month_accumulation",
+      "evidence_status": "calibrated_reading",
+      "explanation": "商加全累计积中1717642；禁止加位置投影118、10或周期参数13。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R03",
+        "R06",
+        "R12",
+        "R13"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "14",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "則積月也",
+          "reading_range": [
+            34,
+            38
+          ],
+          "transcription_range": [
+            36,
+            40
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "name_result",
+      "inputs": [
+        "months.sum"
+      ],
+      "outputs": [
+        "months.total"
+      ],
+      "stage": "month_accumulation",
+      "evidence_status": "calibrated_reading",
+      "explanation": "命名上元至本次见的累计月数。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R05"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "15",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "不盈者名曰月餘",
+          "reading_range": [
+            39,
+            46
+          ],
+          "transcription_range": [
+            41,
+            51
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "delayed_remainder_name",
+      "inputs": [
+        "accumulated_month_r"
+      ],
+      "outputs": [
+        "months.r"
+      ],
+      "stage": "month_accumulation",
+      "evidence_status": "calibrated_reading",
+      "explanation": "不盈者回指本段见月法分商余操作；不是刚结束的加法结果。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R05",
+        "R06"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "16",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "以元月除積月，名曰月元餘",
+          "reading_range": [
+            47,
+            59
+          ],
+          "transcription_range": [
+            52,
+            67
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "reduce_cycle",
+      "inputs": [
+        "months.total",
+        "origin_months"
+      ],
+      "outputs": [
+        "origin_month_cycles",
+        "months.origin_r"
+      ],
+      "stage": "month_location_projection",
+      "evidence_status": "calibrated_reading",
+      "explanation": "经校读后求月元余；原排印括号里的余不进入阅读视图。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R08",
+        "R13",
+        "R16"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "17",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "以章月除月元餘，則入章月數也",
+          "reading_range": [
+            60,
+            74
+          ],
+          "transcription_range": [
+            68,
+            82
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "reduce_cycle",
+      "inputs": [
+        "months.origin_r",
+        "rule_months"
+      ],
+      "outputs": [
+        "rule_month_cycles",
+        "months.rule_r"
+      ],
+      "stage": "month_location_projection",
+      "evidence_status": "calibrated_reading",
+      "explanation": "继续取入章月数；保留此前月余months.r供下游入月日计算。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R08",
+        "R13"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "18",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "三歲一閏，六歲二閏，九歲三閏，十一歲四閏，十四歲五閏，十七歲六閏，十九歲七閏",
+          "reading_range": [
+            94,
+            132
+          ],
+          "transcription_range": [
+            101,
+            139
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "read_intercalation_schedule",
+      "inputs": [],
+      "outputs": [
+        "intercalation.schedule"
+      ],
+      "stage": "month_location_projection",
+      "evidence_status": "calibrated_reading",
+      "explanation": "文字给累计闰数与年序；据此形成第3、6、9、11、14、17、19年为13月的章内表。此说明在操作后出现，仍是前一循环所需上下文。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R14"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "19",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "以十二除之，至有閏之歲，除十三",
+          "reading_range": [
+            75,
+            90
+          ],
+          "transcription_range": [
+            83,
+            98
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "scan_years_with_branch",
+      "inputs": [
+        "months.rule_r",
+        "intercalation.schedule",
+        "lit:12",
+        "lit:13"
+      ],
+      "outputs": [
+        "year_in_rule",
+        "months.year_offset"
+      ],
+      "stage": "month_location_projection",
+      "evidence_status": "calibrated_reading",
+      "explanation": "按章中年份逐年去12或13，至不足下一年长度。不能先无条件模12，再靠补丁处理闰年。按Cullen n.28的句读，入章移入后面的说明。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R07",
+        "R08",
+        "R14",
+        "R16"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "20",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.15",
+          "reading_id": "ST.2.15.C2017-reading-v1",
+          "quote": "不盈者數起於天正，算外，則星所見月也",
+          "reading_range": [
+            133,
+            151
+          ],
+          "transcription_range": [
+            140,
+            158
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "count_month_ordinal",
+      "inputs": [
+        "months.year_offset"
+      ],
+      "outputs": [
+        "appearance.month_ordinal"
+      ],
+      "stage": "month_location_projection",
+      "evidence_status": "calibrated_reading",
+      "explanation": "从天正计序，余量0对应第一月；结果与民用月名另层转换。普通数值例不把闰年内的精确闰月位置裁定冒充已完成。",
+      "basis": [
+        "C2017 pp.101–103 §§187–191",
+        "L2003 pp.38–42 式2.24–2.31"
+      ],
+      "required_rules": [
+        "R06",
+        "R10"
+      ],
+      "controls": [],
+      "notes": []
+    }
+  ],
+  "clause_coverage": [
+    {
+      "passage_id": "ST.2.14",
+      "quote": "推星所見中次，",
+      "reading_range": [
+        0,
+        7
+      ],
+      "coverage_node_ids": [],
+      "coverage_status": "title_or_discourse_connector"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "以見中分乘定見復數，",
+      "reading_range": [
+        7,
+        17
+      ],
+      "coverage_node_ids": [
+        "01"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "盈見中法得一，",
+      "reading_range": [
+        17,
+        24
+      ],
+      "coverage_node_ids": [
+        "02"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "則積中也．",
+      "reading_range": [
+        24,
+        29
+      ],
+      "coverage_node_ids": [
+        "03"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "不盈者名曰中餘．",
+      "reading_range": [
+        29,
+        37
+      ],
+      "coverage_node_ids": [
+        "04"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "以元中除積中，",
+      "reading_range": [
+        37,
+        44
+      ],
+      "coverage_node_ids": [
+        "05"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "餘則中元餘也．",
+      "reading_range": [
+        44,
+        51
+      ],
+      "coverage_node_ids": [
+        "05"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "以章中除之，",
+      "reading_range": [
+        51,
+        57
+      ],
+      "coverage_node_ids": [
+        "06"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "餘則入章中數也．",
+      "reading_range": [
+        57,
+        65
+      ],
+      "coverage_node_ids": [
+        "06"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "以十二除之，",
+      "reading_range": [
+        65,
+        71
+      ],
+      "coverage_node_ids": [
+        "07"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "餘則星見中次也．",
+      "reading_range": [
+        71,
+        79
+      ],
+      "coverage_node_ids": [
+        "07"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "中數從冬至起，",
+      "reading_range": [
+        79,
+        86
+      ],
+      "coverage_node_ids": [
+        "08"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "次數從星紀起，",
+      "reading_range": [
+        86,
+        93
+      ],
+      "coverage_node_ids": [
+        "08"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "算外，",
+      "reading_range": [
+        93,
+        96
+      ],
+      "coverage_node_ids": [
+        "08"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.14",
+      "quote": "則星所見中次也．",
+      "reading_range": [
+        96,
+        104
+      ],
+      "coverage_node_ids": [
+        "08"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "推星見月，",
+      "reading_range": [
+        0,
+        5
+      ],
+      "coverage_node_ids": [],
+      "coverage_status": "title_or_discourse_connector"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "以閏分乘定見復數，",
+      "reading_range": [
+        5,
+        14
+      ],
+      "coverage_node_ids": [
+        "09"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "以章歲乘中餘從之，",
+      "reading_range": [
+        14,
+        23
+      ],
+      "coverage_node_ids": [
+        "10",
+        "11"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "盈見月法得一，",
+      "reading_range": [
+        23,
+        30
+      ],
+      "coverage_node_ids": [
+        "12"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "并積中，",
+      "reading_range": [
+        30,
+        34
+      ],
+      "coverage_node_ids": [
+        "13"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "則積月也．",
+      "reading_range": [
+        34,
+        39
+      ],
+      "coverage_node_ids": [
+        "14"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "不盈者名曰月餘．",
+      "reading_range": [
+        39,
+        47
+      ],
+      "coverage_node_ids": [
+        "15"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "以元月除積月，",
+      "reading_range": [
+        47,
+        54
+      ],
+      "coverage_node_ids": [
+        "16"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "名曰月元餘．",
+      "reading_range": [
+        54,
+        60
+      ],
+      "coverage_node_ids": [
+        "16"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "以章月除月元餘，",
+      "reading_range": [
+        60,
+        68
+      ],
+      "coverage_node_ids": [
+        "17"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "則入章月數也．",
+      "reading_range": [
+        68,
+        75
+      ],
+      "coverage_node_ids": [
+        "17"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "以十二除之，",
+      "reading_range": [
+        75,
+        81
+      ],
+      "coverage_node_ids": [
+        "19"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "至有閏之歲，",
+      "reading_range": [
+        81,
+        87
+      ],
+      "coverage_node_ids": [
+        "19"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "除十三．",
+      "reading_range": [
+        87,
+        91
+      ],
+      "coverage_node_ids": [
+        "19"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "入章，",
+      "reading_range": [
+        91,
+        94
+      ],
+      "coverage_node_ids": [],
+      "coverage_status": "title_or_discourse_connector"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "三歲一閏，",
+      "reading_range": [
+        94,
+        99
+      ],
+      "coverage_node_ids": [
+        "18"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "六歲二閏，",
+      "reading_range": [
+        99,
+        104
+      ],
+      "coverage_node_ids": [
+        "18"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "九歲三閏，",
+      "reading_range": [
+        104,
+        109
+      ],
+      "coverage_node_ids": [
+        "18"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "十一歲四閏，",
+      "reading_range": [
+        109,
+        115
+      ],
+      "coverage_node_ids": [
+        "18"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "十四歲五閏，",
+      "reading_range": [
+        115,
+        121
+      ],
+      "coverage_node_ids": [
+        "18"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "十七歲六閏，",
+      "reading_range": [
+        121,
+        127
+      ],
+      "coverage_node_ids": [
+        "18"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "十九歲七閏．",
+      "reading_range": [
+        127,
+        133
+      ],
+      "coverage_node_ids": [
+        "18"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "不盈者數起於天正，",
+      "reading_range": [
+        133,
+        142
+      ],
+      "coverage_node_ids": [
+        "20"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "算外，",
+      "reading_range": [
+        142,
+        145
+      ],
+      "coverage_node_ids": [
+        "20"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.15",
+      "quote": "則星所見月也．",
+      "reading_range": [
+        145,
+        152
+      ],
+      "coverage_node_ids": [
+        "20"
+      ],
+      "coverage_status": "analysed"
+    }
+  ],
+  "acceptance_policy": "以有来源的端点、依赖、条件、回引和原表述保留为判断单元；内部节点划分允许不同。不得把参考node_id或参考量ID当解析器运行输入。",
+  "source_citations": {
+    "C2017": [
+      53,
+      54,
+      100,
+      101,
+      102,
+      103
+    ],
+    "L2003": [
+      15,
+      16,
+      17,
+      38,
+      39,
+      40,
+      41,
+      42
+    ]
+  },
+  "prepared_by": "assistant; independent expert adjudication not yet performed"
+}

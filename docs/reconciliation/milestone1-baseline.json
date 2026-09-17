@@ -1,0 +1,433 @@
+{
+    "milestone":  1,
+    "rollback_head":  "6aefd18d9189b2a8c5451d3189a259dc26218692",
+    "branch":  "main",
+    "recorded_at_utc":  "2026-09-17T14:15:48.9141602Z",
+    "initial_worktree_clean":  true,
+    "protected_files":  [
+                            {
+                                "sha256":  "a8f8dae63da3b9509f1b4cc37609ef460b525758be336776e9c4654204a100c6",
+                                "path":  ".eleventy.js"
+                            },
+                            {
+                                "sha256":  "9b8a7ede55f5d4a714a00aa87f63ec591f8659c897218ec5c12e560098ef8844",
+                                "path":  "AGENTS.md"
+                            },
+                            {
+                                "sha256":  "2f35c8822b784ea41477fca9f4d1bbc6f6b5a1672b6c38785e61c8e0c3ff8849",
+                                "path":  "config/calendrical-ir-pipeline.json"
+                            },
+                            {
+                                "sha256":  "122d93384a9f3b7c052cb04f611cf8b7826ef7891ae031036c881da7f2313ae8",
+                                "path":  "config/cullen-mini-gold-benchmark.json"
+                            },
+                            {
+                                "sha256":  "ae7c2549f014df89067c450a8c2350aff4a49f7b64fbed12a7d5066974fff714",
+                                "path":  "config/sifen-target-family-gold.candidate.json"
+                            },
+                            {
+                                "sha256":  "1a0837c6df07fb7aa298226ea46396d7c195a52b5c20940ab2d59495a38f40a4",
+                                "path":  "netlify/functions/ctext-search.js"
+                            },
+                            {
+                                "sha256":  "12e823b687cfcf9172e80ab425bd10f05dfc757b7825848daaec00e91941a89b",
+                                "path":  "package-lock.json"
+                            },
+                            {
+                                "sha256":  "848bcfe7a314904e4d66fdd95a7f80ad44aafd27f6be363a6321815231eeee96",
+                                "path":  "package.json"
+                            },
+                            {
+                                "sha256":  "9386da3007409b8cb7aa2d70db0c403d367debc410b5f1c1b9d6c046a7961d68",
+                                "path":  "requirements.txt"
+                            },
+                            {
+                                "sha256":  "dbe2e86b45fcbcbd569c68fca11cca374cbf3baabada1ec969e1f9d7ac6f5c97",
+                                "path":  "scripts/align-cullen-procedure-ir.mjs"
+                            },
+                            {
+                                "sha256":  "cbc077dd00fcd7eb714e3198efb918b66f92d0e0a311fc42d6a16e0b7bff53de",
+                                "path":  "scripts/archive/procedure-ir-experiments/README.md"
+                            },
+                            {
+                                "sha256":  "354054a1edf345f73819f4fbd9352c7a8c5d3dd20f9063812131e54705e3a04f",
+                                "path":  "scripts/archive/procedure-ir-experiments/align-sifen-clauses.mjs"
+                            },
+                            {
+                                "sha256":  "fb7dee9d56ec4c4b28ea479ede837ae5eeea056d99a515637547976e312bfbdf",
+                                "path":  "scripts/archive/procedure-ir-experiments/audit-sifen-candidate-evidence.mjs"
+                            },
+                            {
+                                "sha256":  "d812a0222216191ab73d46355837f2e744a817ff23ba25ba4168ef51403d3108",
+                                "path":  "scripts/archive/procedure-ir-experiments/discover-sifen-templates.mjs"
+                            },
+                            {
+                                "sha256":  "a55014fb1429a48a56919ea7c76504213653817a8555382e8c1867015241122d",
+                                "path":  "scripts/archive/procedure-ir-experiments/generate-phase2a-expression-map.mjs"
+                            },
+                            {
+                                "sha256":  "fca1da50ce9ca03f0961cd406ef338078d7241b28d8dc5ebfe1e89280ade563e",
+                                "path":  "scripts/archive/procedure-ir-experiments/generate-phase2a-procedure-ir-pilot.mjs"
+                            },
+                            {
+                                "sha256":  "e3adc57b7c77f986a27b9200af06d370719c36ac9ee82328d117ef792a57df8f",
+                                "path":  "scripts/archive/procedure-ir-experiments/generate-phase2a-validation-whitelist.mjs"
+                            },
+                            {
+                                "sha256":  "24b21b4a2b2e6711603be088f7ca9199ac190bb8396cad81b89408f11beea2a8",
+                                "path":  "scripts/archive/procedure-ir-experiments/pilot-sifen-proc35-auto-reconstruction.mjs"
+                            },
+                            {
+                                "sha256":  "5862b21f17a932cd2613ad64264c2d0f04ec9a59ee0e8d45e8cdea174b139a76",
+                                "path":  "scripts/archive/procedure-ir-experiments/pilot-sifen-proc35-mini-pipeline.mjs"
+                            },
+                            {
+                                "sha256":  "c6651ba9a8af316891e07aa9c561089581d799d0559a5300b9cdb9fc03d18f4b",
+                                "path":  "scripts/archive/procedure-ir-experiments/profile-sifen-corpus.mjs"
+                            },
+                            {
+                                "sha256":  "74773a621d9123226d157d948e57326919f3a96ced6b93a0e2a6bdc018110dbf",
+                                "path":  "scripts/assimilate-cullen.mjs"
+                            },
+                            {
+                                "sha256":  "c302071321e100bc04f204a0b6d3229ccd4085826f920f73df65b91ccee7bbac",
+                                "path":  "scripts/audit-cullen-anchor-quality.mjs"
+                            },
+                            {
+                                "sha256":  "27f24bdccad241fe7b2ce228b21028840d20202d86a65b850de934a3db5367d6",
+                                "path":  "scripts/audit-cullen-chapter-coverage.mjs"
+                            },
+                            {
+                                "sha256":  "98aedfea5b294ab1d661bbe7669b24c2d01d2010e8d5009092c66fc50595a91c",
+                                "path":  "scripts/audit-cullen-led-source-reconstruction.mjs"
+                            },
+                            {
+                                "sha256":  "ad01aab85c776aaeab7cecbe96b41fe2f77dd5cc848f336e5f25155651844fd8",
+                                "path":  "scripts/audit-cullen-oracle.mjs"
+                            },
+                            {
+                                "sha256":  "6dc348eae72ffc4225255b45aed5d9c70c619a4c2efa8768ed8660197c93886f",
+                                "path":  "scripts/audit-cullen-procedure-anchors.mjs"
+                            },
+                            {
+                                "sha256":  "e0b2176c5da56ffc490e873afb6e5f8dd57334c09c7ce7ec5b355859058a7e22",
+                                "path":  "scripts/audit-cullen-procedure-completeness.mjs"
+                            },
+                            {
+                                "sha256":  "ea1de01024be82716a4fc1a47fdb3d23705b2460f86197f0f82d812797c0925f",
+                                "path":  "scripts/audit-cullen-target-span-alignment.mjs"
+                            },
+                            {
+                                "sha256":  "8572450039d624b4251386807bc928a00b1d30df567e8071738dc40024455ee6",
+                                "path":  "scripts/audit-sifen-target-family-candidates.mjs"
+                            },
+                            {
+                                "sha256":  "e0938f4c8e7b7f2de40c05f70e7d65015934712d0f3b257cc4126810dc08d385",
+                                "path":  "scripts/audit-source-cullen-alignment.mjs"
+                            },
+                            {
+                                "sha256":  "ed181e118f165dc827eb5d9c56a8161dd0b5eb77c7a2c582bddac9384664bf9e",
+                                "path":  "scripts/build-ctext-cache.mjs"
+                            },
+                            {
+                                "sha256":  "f3ba7e4898ab7caa929a1fcde956bf8ea6f7c4e9384facf3989b93c4e66d9fb5",
+                                "path":  "scripts/build-cullen-chunks.mjs"
+                            },
+                            {
+                                "sha256":  "0c7c4926a6645076b6ce4caf3446d1e28f6b26eeddc32b29bfe1ef188edcca0e",
+                                "path":  "scripts/build-cullen-pattern-index.mjs"
+                            },
+                            {
+                                "sha256":  "83e49c9553c70fc8ef883294b15332a49ab319da6362ded362db3fe9e1c4d20d",
+                                "path":  "scripts/build-cullen-search-index.mjs"
+                            },
+                            {
+                                "sha256":  "af10242b3ab121537f73e92dcd83dc245e3b038849ef24ca5dce3ac568dd08fc",
+                                "path":  "scripts/build-procedure-ir.mjs"
+                            },
+                            {
+                                "sha256":  "133029953f0af28bf7832ae67c921549ca90bef413abec5f6764dc9fabaef94f",
+                                "path":  "scripts/cullen-oracle-common.mjs"
+                            },
+                            {
+                                "sha256":  "d4916cfb11c34dc9d35b57eeab0393ffc66f615e68eef85da3c019378cb9e832",
+                                "path":  "scripts/cullen-procedure-anchor-common.mjs"
+                            },
+                            {
+                                "sha256":  "f69e0d51e8102a2c39bb2a2857dafe48fe8d723c24d38c2e3ffc1fc698fdd438",
+                                "path":  "scripts/cullen-procedure-inventory-common.mjs"
+                            },
+                            {
+                                "sha256":  "fda0839ffdfe40fc8f6febb748f76e940781e019242e0e05af910d87a00fab04",
+                                "path":  "scripts/extract-cullen-claims.mjs"
+                            },
+                            {
+                                "sha256":  "1a46dfdec78a71ee4527096e38f5c636f2d4d9eda02382f8acc3d31eb2bc0bfd",
+                                "path":  "scripts/extract-cullen-pages.mjs"
+                            },
+                            {
+                                "sha256":  "4010244f57916ec9b28abcde0e7ab877fafe3e5ae9134cdca6dbcacb66ff5a88",
+                                "path":  "scripts/extract_cullen_pages.py"
+                            },
+                            {
+                                "sha256":  "21015d449d4065efb8c41d89c177bce9dc8aa0813732add29d7eaa7afb1a97d8",
+                                "path":  "scripts/footnote_extractor.py"
+                            },
+                            {
+                                "sha256":  "b2905a6da04c73ca28a0d043dcc2753b6bbf9d7e0ce6b8620fc3c8436783fb25",
+                                "path":  "scripts/generate-debug-flags-doc.mjs"
+                            },
+                            {
+                                "sha256":  "6fc6e9fd17c2b84b51dafc2afee773d56ef6f650fc0e082dbaccd802f5e68098",
+                                "path":  "scripts/generate-log-by-tag.mjs"
+                            },
+                            {
+                                "sha256":  "5f3a9e45fa56ba58bb75db4360258f4c2d49dd3648dcaa7d2350de9348c84512",
+                                "path":  "scripts/load-local-env.cjs"
+                            },
+                            {
+                                "sha256":  "d96fbf0986f43169e1393bdcc274131ff0f871fb57682162c36b4b5c0471c984",
+                                "path":  "scripts/procedure-ir-common.mjs"
+                            },
+                            {
+                                "sha256":  "1575b7a012defa4c5e40f730d8cff32fdcfcc41a41e6569d5bd4ffad9f3ecd20",
+                                "path":  "scripts/query-cullen-page.mjs"
+                            },
+                            {
+                                "sha256":  "6266c3a26d9740995c81a0dc541dbd089f1eea0abd493785cb335fed26857358",
+                                "path":  "scripts/query-cullen-proc.mjs"
+                            },
+                            {
+                                "sha256":  "2e168f410ad69cbe14ca488f9554694c7e8e49c602d38f8a42a01a939bf40211",
+                                "path":  "scripts/query-cullen-source.mjs"
+                            },
+                            {
+                                "sha256":  "c38182c7a2c3ea8a1886397d2da27527ebe4cd768ad96b3b22b7b91de6b99395",
+                                "path":  "scripts/scripts-note.md"
+                            },
+                            {
+                                "sha256":  "a4172032e7a491eee5ac777a3a63e83c389af01d0208eed4ac817ae745d29fb6",
+                                "path":  "scripts/setup-mac.sh"
+                            },
+                            {
+                                "sha256":  "6069a035248a400468d9c57faa4eb822827c39286752beac63de27478d7fe20a",
+                                "path":  "scripts/setup-windows.ps1"
+                            },
+                            {
+                                "sha256":  "0956a636d2a3f1b00dc5eb0e8bacf19f323e1778ab73dfaf44461a4d1114a002",
+                                "path":  "scripts/source-cullen-alignment-common.mjs"
+                            },
+                            {
+                                "sha256":  "c0141a40876e56d1319728e2cd75fe0732d3b0d0976ff52178c42e213669ca74",
+                                "path":  "scripts/table_neutralizer.py"
+                            },
+                            {
+                                "sha256":  "2b396d4796335066c896846612bf391b4e4c6b494a65849cfafef74ffe0c1510",
+                                "path":  "scripts/verify-install.mjs"
+                            },
+                            {
+                                "sha256":  "b83fc1b9395daa58a37d503a0ec91bd863cf48fd6cf70c37faf0f12bf0d4a987",
+                                "path":  "server/ctextProxyServer.js"
+                            },
+                            {
+                                "sha256":  "346d578c3f84a69ae277c6af44594d04cd5ca501c08e8e587be789145d0b36a3",
+                                "path":  "server/ctextSearchMiddleware.js"
+                            },
+                            {
+                                "sha256":  "4d8a40a255ae596abdecff6cd5e1b95348f1a89857e54e1ab59a4096a06c5ff7",
+                                "path":  "src/about.md"
+                            },
+                            {
+                                "sha256":  "14e402b155fc4d6d4fd6053205fed24babb5b2bc9282f023404f3d34ac412a19",
+                                "path":  "src/css/map.css"
+                            },
+                            {
+                                "sha256":  "d77eb90e7d530380f416af7c4314baa8736dfdc4811a4a9e2437a845db776813",
+                                "path":  "src/css/style.css"
+                            },
+                            {
+                                "sha256":  "bbbca4570d4c2817ed9301cfa6fe55055f731cbd0081bc67082e2f7e9b370584",
+                                "path":  "src/data.json"
+                            },
+                            {
+                                "sha256":  "e47fbdabcc2dcedf2afc849fb0240571fa39d21ea6078877ffbeba2b24be8ca2",
+                                "path":  "src/dataset.md"
+                            },
+                            {
+                                "sha256":  "03edeb490bfdf20249faee9ce1636d45445544d44ad329e4f0597d933a8780a6",
+                                "path":  "src/index.md"
+                            },
+                            {
+                                "sha256":  "c4d6cff453fc0b53231fed997864b78e0f365cddfc15b0cc27cb87bf0f672f87",
+                                "path":  "src/js/dataset.js"
+                            },
+                            {
+                                "sha256":  "c0e7f9f7b30a63c69c677240797162e2530f26e189ce08dd51cfc2c0f520bf12",
+                                "path":  "src/js/debugFlags.mjs"
+                            },
+                            {
+                                "sha256":  "31676a9f27ba6d5f0cd3845aa9d8b35a682a8e849d3c33bd32c2a37492081c60",
+                                "path":  "src/js/filter.js"
+                            },
+                            {
+                                "sha256":  "7d187fd1dbe23fee57699de942d975f54cc47f441e06de217b1809428790bdfc",
+                                "path":  "src/js/formatters/measurement.js"
+                            },
+                            {
+                                "sha256":  "613c22e23a8aed06fad87c0ec42321f861e5723540157a190c78a353901fc024",
+                                "path":  "src/js/formatters/text.js"
+                            },
+                            {
+                                "sha256":  "dee90b0238dd441ca9b2b1186687f52594a3e8292ab4a2f45a635f48a2b054d5",
+                                "path":  "src/js/map/app.js"
+                            },
+                            {
+                                "sha256":  "33f465e68c5a38b4c11d8aac001c7d84da8c2f9646bca7bf71bde8bb4deba0fb",
+                                "path":  "src/js/map/config.js"
+                            },
+                            {
+                                "sha256":  "0df015d8b19f6bb7d1081632edc619a22ff78fa4e8a90fd8b364a9e60baa8f1a",
+                                "path":  "src/js/map/data.js"
+                            },
+                            {
+                                "sha256":  "8e248ea065930ac68f859c8d7759444bb51a94e39b85e4341f35fca36a063b9b",
+                                "path":  "src/js/map/details.js"
+                            },
+                            {
+                                "sha256":  "dab0e66833890aacd2d6bd9ca05f08f5d0dd57c9b820a46fef718ad464d1d21d",
+                                "path":  "src/js/map/filters.js"
+                            },
+                            {
+                                "sha256":  "80cd38e89807bfc0fe3b25acaeaf392dfd5dabf5acedf5a66dfabd53fec4fbe7",
+                                "path":  "src/js/map/leaflet-view.js"
+                            },
+                            {
+                                "sha256":  "480f90474ff7e501f8b60b9ed50c02539a89b1c20b715002e445e92d8c3a8a03",
+                                "path":  "src/js/map/popup.js"
+                            },
+                            {
+                                "sha256":  "f4cf6f25171d5740a97b6f68658c959574211e4a6a8b754bc9717e85674761e7",
+                                "path":  "src/js/nodeEntryPopup.js"
+                            },
+                            {
+                                "sha256":  "e2ee85e77c005e1e6e7678124343028810506381f22f88d0a589ac5b7c840ffe",
+                                "path":  "src/js/nodeEntrySchema.js"
+                            },
+                            {
+                                "sha256":  "483b6c3d2b7e18de9edd8951810cee941e6d3682a370b2df414e7f3c84351e33",
+                                "path":  "src/js/patterns.js"
+                            },
+                            {
+                                "sha256":  "c75174b0e0a5d47807705bf2b27633d8d2208e75b572da94dd37189786e9a3de",
+                                "path":  "src/js/relation-atlas.js"
+                            },
+                            {
+                                "sha256":  "7372ab637961d06be918019493a895be1a92ed7b30078cb3ed36a570289f3684",
+                                "path":  "src/js/transcriptionSplitLayout.js"
+                            },
+                            {
+                                "sha256":  "75a91a93ef0573c0754495f5dd2e67f4c6b17c2c9695c027ee179fcb302290a8",
+                                "path":  "src/js/ui/heatmap.js"
+                            },
+                            {
+                                "sha256":  "3c21a4f03f887712de7c5e0602cf782879cb16f20bb1e8eaefcf782a87a8cf8a",
+                                "path":  "src/js/ui/splitDetail.js"
+                            },
+                            {
+                                "sha256":  "c5fd83e37fa3994567103020962c94f04d34579ba1d4dc908c77d72c668fa85c",
+                                "path":  "src/layouts/base.liquid"
+                            },
+                            {
+                                "sha256":  "b8d22d98f13bd8d86e2601fc8027df178770170da474514666e2fccf60f7b985",
+                                "path":  "src/map-data/calendars.json"
+                            },
+                            {
+                                "sha256":  "91f10c1e283205f2f6628f8161f99a4b4bdd5ab4691548563fb4a06f34113deb",
+                                "path":  "src/map-data/observations.json"
+                            },
+                            {
+                                "sha256":  "01e51288f3dbc2d8703bb5fd8219ae9a32b868188bc187301c71a42e0999e285",
+                                "path":  "src/map-data/placeNames.json"
+                            },
+                            {
+                                "sha256":  "b7e816b088773f4b5cffbf94906403eccf9d785956c9103f0f4778a00e5b8400",
+                                "path":  "src/map-data/sites.json"
+                            },
+                            {
+                                "sha256":  "a29080a2e693a3307e5027712d8765d040cf6f409b330e3008b2ff24d6d16d77",
+                                "path":  "src/map-data/sources.json"
+                            },
+                            {
+                                "sha256":  "7ecabfd5ef06405f678a06eef65fe6e70f03c83240888a0e601159e341c314a9",
+                                "path":  "src/map.liquid"
+                            },
+                            {
+                                "sha256":  "f01ad4d6083202fc726ac575280bceb0b3036f266c12b31aeba24fd654571368",
+                                "path":  "src/nodes.liquid.html"
+                            },
+                            {
+                                "sha256":  "693e2785c6942548470b10ebee64df6b41d607612fb3522e9f85f4f943fd8fc0",
+                                "path":  "src/patterns.md"
+                            },
+                            {
+                                "sha256":  "2281b3ca350687956758aad35cfb6bbf240f9d1b5ace7cd2d98ff1110ab779aa",
+                                "path":  "src/relation-atlas.md"
+                            },
+                            {
+                                "sha256":  "8b48a33d77d0409fd92e4734a5e3c60ad34c54b55f9c01daff74ad0d7f198faa",
+                                "path":  "src/search.md"
+                            },
+                            {
+                                "sha256":  "78660797938d9bb491afc4e9c9a187cb22fa4fa768d76fdd0aebf52d692f55f2",
+                                "path":  "src/transcriptions/index.md"
+                            },
+                            {
+                                "sha256":  "a8308410fa249008e126ddbf71eb5e68ae9da8ac7efc0bab59aceb8393faf0d7",
+                                "path":  "src/transcriptions/q90.md"
+                            },
+                            {
+                                "sha256":  "23d7402cba1708041a70483ec706f8590b1cf6aad8db330d0965fdb109ab2927",
+                                "path":  "src/transcriptions/q90.xml"
+                            },
+                            {
+                                "sha256":  "a332925b10c0bc13ae7ab8858610d0bb1e7081d4b5a47aea0f264b38f2725b15",
+                                "path":  "src/transcriptions/tei_brhat/1r.html"
+                            },
+                            {
+                                "sha256":  "1cfede06f0ebb60f8595493fb50b274562f9b88ebb16e3b28136f49b3c5e8b85",
+                                "path":  "src/transcriptions/tei_brhat/1r.xml"
+                            },
+                            {
+                                "sha256":  "20a70f598f3c87655ad7ad792aa40d7b787251bcb0e27023d78a4095d7745470",
+                                "path":  "src/transcriptions/tei_hanshu/1a.html"
+                            },
+                            {
+                                "sha256":  "380d7d1e400949de725e320b6076ff7311042fed419d25e66a520893e42eeb7e",
+                                "path":  "src/transcriptions/tei_hanshu/1a.xml"
+                            },
+                            {
+                                "sha256":  "cafa127e3e39ccf4d5695aa90ece9e8f91c45e8f9e0e463ca71948e885976c10",
+                                "path":  "src/visualization.md"
+                            },
+                            {
+                                "sha256":  "fed961e0fdfc491a7c4c437ec4646694fccd9c0b32f25436d82c35f0058cb391",
+                                "path":  "static/ctext-cache.json"
+                            },
+                            {
+                                "sha256":  "6615abc80f9a51c1b6837ed6559485ba23122ecffe6426b6f4e8e7280f9fcbd0",
+                                "path":  "static/graph-data.csv"
+                            },
+                            {
+                                "sha256":  "b18789c67e1066067672d83309b500ea3585484aca4b369fc1b6edd9baeaabd6",
+                                "path":  "static/node-export.csv"
+                            },
+                            {
+                                "sha256":  "e9a7221ed95a5663434c592536e9e4871f5feaa441326102a168b91a7fd9eaa1",
+                                "path":  "static/procedure-ir/cullen-ch3-algorithm-comparison.json"
+                            },
+                            {
+                                "sha256":  "78f1fed7babd9e184b5b085d5847c76d7f8e86b8febb1012f359eae06031066e",
+                                "path":  "static/relationship-export.csv"
+                            }
+                        ]
+}

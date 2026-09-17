@@ -1,0 +1,96 @@
+{
+  "surface": "筭外則所入紀也",
+  "expected_production": "G_ANNOTATION_120",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "Annotation",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 7,
+            "quote": "筭外則所入紀也"
+          }
+        ],
+        "surface": "筭外則所入紀也",
+        "analysis_range": [
+          0,
+          7
+        ],
+        "production_id": "G_ANNOTATION_120",
+        "lowering_kind": "annotation",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          7
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 7,
+            "quote": "筭外則所入紀也"
+          }
+        ],
+        "surface": "筭外則所入紀也",
+        "analysis_range": [
+          0,
+          7
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          7
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          7
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "role": "source qualification and scholarly source checking only; not runtime parser input",
+  "content_opened_for_new_candidate_selection": false,
+  "hashing_only_at_registration": true,
+  "files": [
+    {
+      "path": "/workspace/scratch/50fc00e34239/upload/cullen-source.pdf",
+      "present": true,
+      "sha256": "e5cabc1ff8b8f3c80358251ce9c79a90467ae5e401fa1d7fb204baa534b3ff5c",
+      "bytes": 35408679
+    },
+    {
+      "path": "/workspace/scratch/50fc00e34239/cullen-source-layout.txt",
+      "present": true,
+      "sha256": "202b950e087fc3adf19a9dd42fd86b831f89ab86fd9d27bd8550c2d6b1240449",
+      "bytes": 1095604
+    }
+  ]
+}

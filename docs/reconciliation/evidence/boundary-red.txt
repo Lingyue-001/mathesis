@@ -1,0 +1,23 @@
+python : test_compiler_and_executor_run_without_evaluation_or_history (test_core_boundary.ProductionBoundary.test_compi
+ler_and_executor_run_without_evaluation_or_history) ... FAIL
+所在位置 行:2 字符: 1
++ python -X utf8 -B -m unittest discover -s tests/reconciliation -v *>  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_compiler_a...story) ... FAIL:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+
+======================================================================
+FAIL: test_compiler_and_executor_run_without_evaluation_or_history (test_core_boundary.ProductionBoundary.test_compiler
+_and_executor_run_without_evaluation_or_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\projects\mathesis\tests\reconciliation\test_core_boundary.py", line 16, in test_compiler_and_executor_run_wi
+thout_evaluation_or_history
+    self.assertTrue(core.is_dir(), 'The production compiler has not been reconciled')
+AssertionError: False is not true : The production compiler has not been reconciled
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

@@ -1,0 +1,311 @@
+{
+  "schema_version": "2.0",
+  "claim": "reference arithmetic only; no source language parser is executed",
+  "fixtures": [
+    {
+      "fixture_id": "N01",
+      "window_id": "W01",
+      "kind": "scholar_worked_example",
+      "basis": [
+        "L2003 pp.25–26,28–29; 式2.6–2.8"
+      ],
+      "inputs": {
+        "years": 10,
+        "head": 1
+      },
+      "expected": {
+        "months": 123,
+        "intercalary_remainder": 13,
+        "days": 3632,
+        "small": 24,
+        "greater": 32,
+        "day_index": 33,
+        "long_month": false,
+        "next_small": 67,
+        "next_greater": 1,
+        "next_day_index": 2,
+        "quarter_small": 55,
+        "quarter_greater": 39,
+        "quarter_day_index": 40,
+        "full_small": 5,
+        "full_greater": 47,
+        "full_day_index": 48,
+        "terrestrial_months": 124,
+        "anthropic_months": 125
+      },
+      "note": "输入为学者示例已有入统年数，未测试上元到入统年数的自动解析；弦望和后朔数值按原文增量重新核算。"
+    },
+    {
+      "fixture_id": "N02",
+      "window_id": "W01",
+      "kind": "scholar_worked_example",
+      "basis": [
+        "C2017 pp.90–92 example 102 BCE"
+      ],
+      "inputs": {
+        "years": 2,
+        "head": 1
+      },
+      "expected": {
+        "months": 24,
+        "intercalary_remainder": 14,
+        "days": 708,
+        "small": 60,
+        "greater": 48,
+        "day_index": 49,
+        "long_month": true,
+        "next_small": 22,
+        "next_greater": 18,
+        "next_day_index": 19,
+        "quarter_small": 10,
+        "quarter_greater": 56,
+        "quarter_day_index": 57,
+        "full_small": 41,
+        "full_greater": 3,
+        "full_day_index": 4,
+        "terrestrial_months": 25,
+        "anthropic_months": 26
+      },
+      "note": "同文换学者另一算例只验证执行一致性，不构成新语言泛化。"
+    },
+    {
+      "fixture_id": "N03",
+      "window_id": "W02",
+      "kind": "scholar_worked_example",
+      "basis": [
+        "L2003 pp.67–68 永建五年"
+      ],
+      "inputs": {
+        "ordinal": 63,
+        "head": 38
+      },
+      "expected": {
+        "years": 62,
+        "months": 766,
+        "intercalary_remainder": 16,
+        "days": 22620,
+        "small": 594,
+        "greater": 0,
+        "day_index": 38,
+        "long_month": true,
+        "next_small": 153,
+        "next_greater": 30,
+        "next_day_index": 8
+      },
+      "note": "蔀首辛丑按1–60序号38给定；不宣称本轮重建了完整蔀首表。"
+    },
+    {
+      "fixture_id": "N04",
+      "window_id": "W02",
+      "kind": "scholar_partial_example_with_explicit_test_origin",
+      "basis": [
+        "C2017 pp.165–166 example second year"
+      ],
+      "inputs": {
+        "ordinal": 2,
+        "head": 1
+      },
+      "expected": {
+        "years": 1,
+        "months": 12,
+        "intercalary_remainder": 7,
+        "days": 354,
+        "small": 348,
+        "greater": 54,
+        "day_index": 55,
+        "long_month": false,
+        "next_small": 847,
+        "next_greater": 23,
+        "next_day_index": 24
+      },
+      "note": "12、354、348、54来自Cullen例子；为检测命日另明确假定蔀首序号1。后朔为本包复算。"
+    },
+    {
+      "fixture_id": "N05",
+      "window_id": "W03",
+      "kind": "scholar_worked_example",
+      "basis": [
+        "L2003 pp.38–42 太始三年木星"
+      ],
+      "inputs": {
+        "E": 131126
+      },
+      "expected": {
+        "medials_total": 1717642,
+        "medial_remainder": 1450,
+        "medials_origin_remainder": 118,
+        "medials_rule_remainder": 118,
+        "medials_year_offset": 10,
+        "medial_ordinal": 11,
+        "first_product": 1586100096,
+        "second_product": 27550,
+        "month_numerator": 1586127646,
+        "extra_month_quotient": 52735,
+        "months_total": 1770377,
+        "month_remainder": 17051,
+        "months_origin_remainder": 122,
+        "months_rule_remainder": 122,
+        "whole_years_removed": 9,
+        "months_removed": 111,
+        "months_year_offset": 11,
+        "appearance_month_ordinal": 12
+      },
+      "note": "本次月余17051，周期月余15079；全积中1717642，局部中元余118，不可混用。"
+    },
+    {
+      "fixture_id": "N06",
+      "window_id": "W03",
+      "kind": "synthetic_numeric_diagnostic",
+      "basis": [
+        "project check using L2003 eq.2.24–2.31"
+      ],
+      "inputs": {
+        "E": 1
+      },
+      "expected": {
+        "medials_total": 13,
+        "medial_remainder": 157,
+        "medials_origin_remainder": 13,
+        "medials_rule_remainder": 13,
+        "medials_year_offset": 1,
+        "medial_ordinal": 2,
+        "first_product": 12096,
+        "second_product": 2983,
+        "month_numerator": 15079,
+        "extra_month_quotient": 0,
+        "months_total": 13,
+        "month_remainder": 15079,
+        "months_origin_remainder": 13,
+        "months_rule_remainder": 13,
+        "whole_years_removed": 1,
+        "months_removed": 12,
+        "months_year_offset": 1,
+        "appearance_month_ordinal": 2
+      },
+      "note": "仅换数值，不是另一条古代文本。"
+    },
+    {
+      "fixture_id": "N07",
+      "window_id": "W04",
+      "kind": "scholar_worked_example",
+      "basis": [
+        "L2003 pp.90–91 永建五年木星"
+      ],
+      "inputs": {
+        "E": 8618
+      },
+      "expected": {
+        "lesser_accumulation": 112034,
+        "second_product": 358560508,
+        "fraction_month_quotient": 4361,
+        "months_total": 116395,
+        "month_remainder": 29615,
+        "months_era_remainder": 3595,
+        "intercalation_count": 107,
+        "intercalation_remainder": 20,
+        "nonintercalary_months": 3488,
+        "months_year_offset": 8,
+        "nominal_month_ordinal": 9,
+        "nominal_civil_month": 7,
+        "intercalary_candidate": false,
+        "final_month_status": "requires_external_data"
+      },
+      "note": "源例月位为天正第9／民用7月。通用执行器在缺少独立月界资料时仍将最终裁定接口标待输入；无历史新结论。"
+    },
+    {
+      "fixture_id": "N08",
+      "window_id": "W04",
+      "kind": "synthetic_numeric_diagnostic",
+      "basis": [
+        "project check using L2003 eq.3.57–3.60"
+      ],
+      "inputs": {
+        "E": 1
+      },
+      "expected": {
+        "lesser_accumulation": 13,
+        "second_product": 41606,
+        "fraction_month_quotient": 0,
+        "months_total": 13,
+        "month_remainder": 41606,
+        "months_era_remainder": 13,
+        "intercalation_count": 0,
+        "intercalation_remainder": 91,
+        "nonintercalary_months": 13,
+        "months_year_offset": 1,
+        "nominal_month_ordinal": 2,
+        "nominal_civil_month": 12,
+        "intercalary_candidate": false,
+        "final_month_status": "requires_external_data"
+      },
+      "note": "数值组合诊断，仅用于复算与状态不变性检查。"
+    }
+  ],
+  "parameter_sets": {
+    "W01": {
+      "rule_months": 235,
+      "rule_years": 19,
+      "lunation_numerator": 2392,
+      "day_denominator": 81,
+      "long_threshold": 38,
+      "day_increment": 29,
+      "part_increment": 43,
+      "quarter_day_increment": 7,
+      "quarter_part_increment": 31,
+      "cycle": 60
+    },
+    "W02": {
+      "rule_months": 235,
+      "rule_years": 19,
+      "lunation_numerator": 27759,
+      "day_denominator": 940,
+      "long_threshold": 441,
+      "day_increment": 29,
+      "part_increment": 499,
+      "cycle": 60
+    },
+    "W03": {
+      "medial_parts": 20736,
+      "medial_factor": 1583,
+      "intercalation_parts": 12096,
+      "rule_years": 19,
+      "month_factor": 30077,
+      "origin_medials": 55404,
+      "rule_medials": 228,
+      "origin_months": 57105,
+      "rule_months": 235,
+      "months_per_regular_year": 12,
+      "leap_years": [
+        3,
+        6,
+        9,
+        11,
+        14,
+        17,
+        19
+      ],
+      "year_number": 1728
+    },
+    "W04": {
+      "whole_months_per_cycle": 13,
+      "cycle_month_remainder": 41606,
+      "month_factor": 82213,
+      "era_months": 18800,
+      "rule_months": 235,
+      "intercalations_per_rule": 7,
+      "months_per_regular_year": 12,
+      "intercalary_min": 224,
+      "intercalary_max": 231,
+      "solar_rate": 4725,
+      "cycle_rate": 4327,
+      "rule_years": 19
+    }
+  },
+  "parameter_provenance": {
+    "W01": "C2017 pp.39–42,90–92; L2003 pp.13–14,25–27",
+    "W02": "C2017 pp.154–156,164–166; L2003 pp.59–60,66–68",
+    "W03": "C2017 pp.46–47,53–54,101–103; L2003 pp.15–17,38–42",
+    "W04": "C2017 pp.154–155,190,200–201; L2003 pp.59,61–63,90–91"
+  },
+  "explicit_binding_notice": "这些参数服务参考复算，是已校准绑定，不代表Work已从原文自动抽出。尤其章闰7来自所引周期说明；严格原字运行若无该数值，图可保留符号参数，数值执行需声明补充来源。"
+}

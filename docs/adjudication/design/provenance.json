@@ -1,0 +1,50 @@
+{
+    "files":  [
+                  {
+                      "sha256":  "93086de4f7e38fef57383c5393f93ad7b513a857f906a9446c1b6ce9a2b4d41a",
+                      "path":  "01_GOAL_AND_SCOPE.md"
+                  },
+                  {
+                      "sha256":  "958d1709ee7a60285dfa810c68a37638946a1ae25331469f41623ee7cea0afdb",
+                      "path":  "02_SEGMENTATION_AND_TRIGGERS.md"
+                  },
+                  {
+                      "sha256":  "20e53d4858c4999789cfece2d449a9afc6a9e31b4548e144efbc6cd64c282e46",
+                      "path":  "03_PRIMITIVE_FAMILIES.md"
+                  },
+                  {
+                      "sha256":  "b97f432555168391f7e21b95a61d3d6d098b76b8f5691cbaa885e5f7adba3447",
+                      "path":  "04_DECISIONS_AND_COMPILATION.md"
+                  },
+                  {
+                      "sha256":  "bd60ca00a28f31de616418fd7645d25bf839018f2d7bf363f310874a47abe97a",
+                      "path":  "05_LOCAL_WORKBENCH_AND_EXPORT.md"
+                  },
+                  {
+                      "sha256":  "94181ed47bc80fcb9599798d932738f9955c2b88c3d0e5aa1a3aecb063d13d5d",
+                      "path":  "06_ACCEPTANCE_AND_METRICS.md"
+                  },
+                  {
+                      "sha256":  "f901af933bc0e1bb8a7be41be66bbfb39465448ef427b89f4f16835a8a6996c5",
+                      "path":  "contracts/acceptance_cases.json"
+                  },
+                  {
+                      "sha256":  "25ccc3e588083a3d7b762c89d9d69bd1a2986ffec4e6b01e92a5f0a0abb17491",
+                      "path":  "contracts/decision_envelope.schema.json"
+                  },
+                  {
+                      "sha256":  "ebd76a61e1f8d78483a0db50a07d721d5a63eac146a3630f90e095c8b0242b49",
+                      "path":  "contracts/operation_catalog.json"
+                  },
+                  {
+                      "sha256":  "514476ba6b727d6ce72ae3713bd345dc526cc8f6a5928a79c66d133d69a50077",
+                      "path":  "examples/manual_construction.decision.json"
+                  },
+                  {
+                      "sha256":  "06e9ed2a01afbf51b0b994d25361350e889dacaf0e850f16d6ac4b745ae0fde4",
+                      "path":  "examples/source.json"
+                  }
+              ],
+    "sha256":  "bdd6a8ae091363359fcaa2024818514cfb46e87d0308c4c9a397bd27ca27cfd1",
+    "archive":  "MATHesis_v4_Scholar_Adjudication_Design_2026-09-17.zip"
+}

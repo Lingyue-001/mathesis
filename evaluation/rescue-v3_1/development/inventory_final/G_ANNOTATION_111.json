@@ -1,0 +1,96 @@
+{
+  "surface": "則中至終閏盈",
+  "expected_production": "G_ANNOTATION_111",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "Annotation",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 6,
+            "quote": "則中至終閏盈"
+          }
+        ],
+        "surface": "則中至終閏盈",
+        "analysis_range": [
+          0,
+          6
+        ],
+        "production_id": "G_ANNOTATION_111",
+        "lowering_kind": "annotation",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          6
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 6,
+            "quote": "則中至終閏盈"
+          }
+        ],
+        "surface": "則中至終閏盈",
+        "analysis_range": [
+          0,
+          6
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          6
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          6
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

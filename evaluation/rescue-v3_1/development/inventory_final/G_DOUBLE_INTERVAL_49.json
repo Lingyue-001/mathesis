@@ -1,0 +1,121 @@
+{
+  "surface": "倍甲課",
+  "expected_production": "G_DOUBLE_INTERVAL_49",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 1,
+            "end": 3,
+            "quote": "甲課"
+          }
+        ],
+        "surface": "甲課",
+        "analysis_range": [
+          1,
+          3
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast2",
+        "kind": "DoubleInterval",
+        "slots": {
+          "target": "synthetic.inventory:ast1"
+        },
+        "children": [
+          "synthetic.inventory:ast1"
+        ],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 3,
+            "quote": "倍甲課"
+          }
+        ],
+        "surface": "倍甲課",
+        "analysis_range": [
+          0,
+          3
+        ],
+        "production_id": "G_DOUBLE_INTERVAL_49",
+        "lowering_kind": "double_interval",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast2"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          3
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 3,
+            "quote": "倍甲課"
+          }
+        ],
+        "surface": "倍甲課",
+        "analysis_range": [
+          0,
+          3
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          3
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          3
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

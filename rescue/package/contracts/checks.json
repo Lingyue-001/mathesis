@@ -1,0 +1,501 @@
+{
+  "version": "rescue-1.0",
+  "count": 35,
+  "checks": [
+    {
+      "id": "S01",
+      "layer": "generic_frame",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "同一body「置甲量」分别以「推冬至」「推甲課」为标题",
+      "must_observe": "两个程序都有独立ProcedureDef；unknown domain_label允许空；body匿名化结构一致",
+      "must_reject_or_contrast": "陌生标题的scope消失或主体仍在context",
+      "implementation_targets": [
+        "analysis_parser/scoped.py",
+        "analysis_parser/program_ir.py"
+      ]
+    },
+    {
+      "id": "S02",
+      "layer": "generic_frame",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "两个源文段都使用未知标题与同名输出",
+      "must_observe": "两个definition scope和producer独立；能按source与调用证据选择",
+      "must_reject_or_contrast": "仅按标题/同名把不同定义合并",
+      "implementation_targets": [
+        "analysis_parser/scoped.py",
+        "analysis_parser/program_ir.py"
+      ]
+    },
+    {
+      "id": "S03",
+      "layer": "generic_frame",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "沿用v3求其次月/求弦/求望与A04篇/周至",
+      "must_observe": "兄弟Query有parent/base_ref；分别从规定基态或显式递推起算",
+      "must_reject_or_contrast": "把所有求字当独立空状态，或串用另一query结果",
+      "implementation_targets": [
+        "analysis_parser/scoped.py",
+        "analysis_parser/program_ir.py"
+      ]
+    },
+    {
+      "id": "S04",
+      "layer": "generic_frame",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "给出一个已界定的procedure文本窗口但没有显式标题",
+      "must_observe": "保留源文程序容器、定义和返回，goal可unknown",
+      "must_reject_or_contrast": "无标题时不生成程序/导出",
+      "implementation_targets": [
+        "analysis_parser/scoped.py",
+        "analysis_parser/program_ir.py"
+      ]
+    },
+    {
+      "id": "S05",
+      "layer": "generic_frame",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "两任务各有后置以D为法；改变第二任务声明",
+      "must_observe": "只改变其合法作用域；第一任务来源和结果不受影响",
+      "must_reject_or_contrast": "前瞻越过task barrier或粗暴切断本任务后置说明",
+      "implementation_targets": [
+        "analysis_parser/scoped.py",
+        "analysis_parser/program_ir.py"
+      ]
+    },
+    {
+      "id": "L01",
+      "layer": "compositional_syntax",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "合成：以甲法乘其乙餘并之；甲法=3，乙餘=7，前累加量=5",
+      "must_observe": "Multiply→Combine两动作；乘积21、合并26；其乙餘是回指",
+      "must_reject_or_contrast": "把其乙餘并之当输入或忽略并之",
+      "implementation_targets": [
+        "analysis_parser/lexical.py",
+        "analysis_parser/construction_ir.py",
+        "analysis_parser/syntax_ir.py"
+      ]
+    },
+    {
+      "id": "L02",
+      "layer": "compositional_syntax",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "合成：以甲法乘其乙餘從之；另测從冬至起",
+      "must_observe": "前者合并乘积；后者计数起点；两者保留不同AST",
+      "must_reject_or_contrast": "把所有從字统一加法",
+      "implementation_targets": [
+        "analysis_parser/lexical.py",
+        "analysis_parser/construction_ir.py",
+        "analysis_parser/syntax_ir.py"
+      ]
+    },
+    {
+      "id": "L03",
+      "layer": "compositional_syntax",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "合成：加甲量於乙量；甲量=3，乙量旧值=10",
+      "must_observe": "Update目标乙量，结果13；旧乙量10仍可追溯",
+      "must_reject_or_contrast": "把甲量於乙量当一个名词或更新甲量",
+      "implementation_targets": [
+        "analysis_parser/lexical.py",
+        "analysis_parser/construction_ir.py",
+        "analysis_parser/syntax_ir.py"
+      ]
+    },
+    {
+      "id": "L04",
+      "layer": "compositional_syntax",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "三其小餘＋同任务后置分母声明，沿用v3换尺度profile",
+      "must_observe": "先Multiply再以分母/上下文证明Rescale，两个证据层可见",
+      "must_reject_or_contrast": "只遇三其小餘就硬编码1539→4617",
+      "implementation_targets": [
+        "analysis_parser/lexical.py",
+        "analysis_parser/construction_ir.py",
+        "analysis_parser/syntax_ir.py"
+      ]
+    },
+    {
+      "id": "L05",
+      "layer": "compositional_syntax",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "声明术语乘率；输入以乘率乘乙量",
+      "must_observe": "乘率整体Term与中间乘操作分开",
+      "must_reject_or_contrast": "全局按乘字split破坏术语",
+      "implementation_targets": [
+        "analysis_parser/lexical.py",
+        "analysis_parser/construction_ir.py",
+        "analysis_parser/syntax_ir.py"
+      ]
+    },
+    {
+      "id": "L06",
+      "layer": "compositional_syntax",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "对非空原文分别传真实token、空token和缺谓词token",
+      "must_observe": "后两者报不完整/不一致；语义结果依赖token",
+      "must_reject_or_contrast": "忽略token参数，继续从raw text得到完整结果",
+      "implementation_targets": [
+        "analysis_parser/lexical.py",
+        "analysis_parser/construction_ir.py",
+        "analysis_parser/syntax_ir.py"
+      ]
+    },
+    {
+      "id": "L07",
+      "layer": "compositional_syntax",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "给词法层两个合法分词候选且类型/上下文不能消歧",
+      "must_observe": "保存AmbiguousParse和两个候选的证据",
+      "must_reject_or_contrast": "依据规则数组第一项或数值答案强行唯一化",
+      "implementation_targets": [
+        "analysis_parser/lexical.py",
+        "analysis_parser/construction_ir.py",
+        "analysis_parser/syntax_ir.py"
+      ]
+    },
+    {
+      "id": "L08",
+      "layer": "compositional_syntax",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "沿用盈...等待后续除之的悬空构式，将其置于EOF",
+      "must_observe": "有原跨度incomplete诊断；阻断相关完整链",
+      "must_reject_or_contrast": "末尾pending静默丢弃",
+      "implementation_targets": [
+        "analysis_parser/lexical.py",
+        "analysis_parser/construction_ir.py",
+        "analysis_parser/syntax_ir.py"
+      ]
+    },
+    {
+      "id": "L09",
+      "layer": "compositional_syntax",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "中途加入明确未支持构式，前面已有两个命名量",
+      "must_observe": "未知段产生hole与诊断；无关旧量仍保留；依赖hole的链不通过",
+      "must_reject_or_contrast": "清空所有状态或把未知谓词吞成Term后算0unparsed",
+      "implementation_targets": [
+        "analysis_parser/lexical.py",
+        "analysis_parser/construction_ir.py",
+        "analysis_parser/syntax_ir.py"
+      ]
+    },
+    {
+      "id": "P01",
+      "layer": "program_interfaces",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "同一源程序分别置于primary与context，指定相同目标",
+      "must_observe": "定义body/端口匿名化一致；source_role仅影响入口",
+      "must_reject_or_contrast": "context降格成标量正则摘要",
+      "implementation_targets": [
+        "analysis_parser/context_compiler.py",
+        "analysis_parser/program_ir.py",
+        "analysis_parser/scoped.py",
+        "analysis_parser/operations.py"
+      ]
+    },
+    {
+      "id": "P02",
+      "layer": "program_interfaces",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "三段合成程序：seed5乘3→15，加7→22，按4分商余→5余2",
+      "must_observe": "只外给seed；中间量来自上游实际producer与调用",
+      "must_reject_or_contrast": "外给15/22或前端查预写算式答案",
+      "implementation_targets": [
+        "analysis_parser/context_compiler.py",
+        "analysis_parser/program_ir.py",
+        "analysis_parser/scoped.py",
+        "analysis_parser/operations.py"
+      ]
+    },
+    {
+      "id": "P03",
+      "layer": "program_interfaces",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "P02仅将seed5换9",
+      "must_observe": "实际图执行中间27/34，商8余2；来源不变",
+      "must_reject_or_contrast": "缓存旧输出或从gold读取新输出",
+      "implementation_targets": [
+        "analysis_parser/context_compiler.py",
+        "analysis_parser/program_ir.py",
+        "analysis_parser/scoped.py",
+        "analysis_parser/operations.py"
+      ]
+    },
+    {
+      "id": "P04",
+      "layer": "program_interfaces",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "P02删除提供中间甲的必要source",
+      "must_observe": "明确missing_definition/free_variable，无完整链",
+      "must_reject_or_contrast": "把中间甲自动注册成允许的外部输入",
+      "implementation_targets": [
+        "analysis_parser/context_compiler.py",
+        "analysis_parser/program_ir.py",
+        "analysis_parser/scoped.py",
+        "analysis_parser/operations.py"
+      ]
+    },
+    {
+      "id": "P05",
+      "layer": "program_interfaces",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "A02积月13参数与2.15累计积月同时存在",
+      "must_observe": "参数与动态量分实例；按受事和周期用法选择",
+      "must_reject_or_contrast": "仅名称相同或数字相同就任选",
+      "implementation_targets": [
+        "analysis_parser/context_compiler.py",
+        "analysis_parser/program_ir.py",
+        "analysis_parser/scoped.py",
+        "analysis_parser/operations.py"
+      ]
+    },
+    {
+      "id": "P06",
+      "layer": "program_interfaces",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "相同方法分别用5和9调用，再重复/反序执行",
+      "must_observe": "调用ID、结果value ID不同；definition ID相同；结果互不污染",
+      "must_reject_or_contrast": "共享可变本地状态或返回第一次的result",
+      "implementation_targets": [
+        "analysis_parser/context_compiler.py",
+        "analysis_parser/program_ir.py",
+        "analysis_parser/scoped.py",
+        "analysis_parser/operations.py"
+      ]
+    },
+    {
+      "id": "P07",
+      "layer": "program_interfaces",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "A01 context2.3有未用查询；目标只需要计日方法子图",
+      "must_observe": "能编译带形式参数的MethodSlice；仅执行目标闭包",
+      "must_reject_or_contrast": "强制执行所有无关查询或复制旧朔日数值",
+      "implementation_targets": [
+        "analysis_parser/context_compiler.py",
+        "analysis_parser/program_ir.py",
+        "analysis_parser/scoped.py",
+        "analysis_parser/operations.py"
+      ]
+    },
+    {
+      "id": "P08",
+      "layer": "program_interfaces",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "context：甲法三；置乙量五；加大餘二十九；積日盈六十，除之",
+      "must_observe": "只有甲法三是独立参数声明；其他是指令/条件",
+      "must_reject_or_contrast": "parameter标签出现置乙量/加大餘/積日盈",
+      "implementation_targets": [
+        "analysis_parser/context_compiler.py",
+        "analysis_parser/program_ir.py",
+        "analysis_parser/scoped.py",
+        "analysis_parser/operations.py"
+      ]
+    },
+    {
+      "id": "P09",
+      "layer": "program_interfaces",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "合法方法body同时有multiply、divmod和count",
+      "must_observe": "使用公共操作语义执行全部body并返回实际端口",
+      "must_reject_or_contrast": "方法只容许cycle_reduce/count或缺body退回公式",
+      "implementation_targets": [
+        "analysis_parser/context_compiler.py",
+        "analysis_parser/program_ir.py",
+        "analysis_parser/scoped.py",
+        "analysis_parser/operations.py"
+      ]
+    },
+    {
+      "id": "P10",
+      "layer": "program_interfaces",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "两定义形成无初始状态的循环依赖；另有不被目标使用的缺输入定义",
+      "must_observe": "相关环明确诊断；未用定义不造成目标失败",
+      "must_reject_or_contrast": "死循环，或通过添加隐式输入打断环",
+      "implementation_targets": [
+        "analysis_parser/context_compiler.py",
+        "analysis_parser/program_ir.py",
+        "analysis_parser/scoped.py",
+        "analysis_parser/operations.py"
+      ]
+    },
+    {
+      "id": "T01",
+      "layer": "typed_values",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "同一已证实月日转换body仅重命名中性标题",
+      "must_observe": "由实际参数/量用途证明的单位率保持",
+      "must_reject_or_contrast": "去掉TASKS映射就变unknown或丢率",
+      "implementation_targets": [
+        "analysis_parser/resources.py",
+        "analysis_parser/quantity_semantics.py",
+        "analysis_parser/scoped.py"
+      ]
+    },
+    {
+      "id": "T02",
+      "layer": "typed_values",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "删除单位率证据，再尝试月与日相加",
+      "must_observe": "报告缺转换证据并阻断",
+      "must_reject_or_contrast": "无条件将不同量纲当同一整数",
+      "implementation_targets": [
+        "analysis_parser/resources.py",
+        "analysis_parser/quantity_semantics.py",
+        "analysis_parser/scoped.py"
+      ]
+    },
+    {
+      "id": "T03",
+      "layer": "typed_values",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "同数值的全累计量与循环投影对换",
+      "must_observe": "producer/port评分拒绝，数字相等也失败",
+      "must_reject_or_contrast": "只比较最终数值",
+      "implementation_targets": [
+        "analysis_parser/resources.py",
+        "analysis_parser/quantity_semantics.py",
+        "analysis_parser/scoped.py"
+      ]
+    },
+    {
+      "id": "T04",
+      "layer": "typed_values",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "同量从分母81换1539；另测分母只变数值不变的错误操作",
+      "must_observe": "等值换尺度须分子/分母同时有证明；反例拒绝",
+      "must_reject_or_contrast": "乘19自动意味着任何日分→角分转换",
+      "implementation_targets": [
+        "analysis_parser/resources.py",
+        "analysis_parser/quantity_semantics.py",
+        "analysis_parser/scoped.py"
+      ]
+    },
+    {
+      "id": "T05",
+      "layer": "typed_values",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "A03同初始纪年，比较外所求年与具名解释下盡所求年",
+      "must_observe": "局部计数框架及转换有原文证据，不能全局覆盖",
+      "must_reject_or_contrast": "把所有上元年数视为同一种已逝年",
+      "implementation_targets": [
+        "analysis_parser/resources.py",
+        "analysis_parser/quantity_semantics.py",
+        "analysis_parser/scoped.py"
+      ]
+    },
+    {
+      "id": "E01",
+      "layer": "evaluation_integrity",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "同一个三输入事件，先删整事件再只删一个输入",
+      "must_observe": "gold原子关系数不变；TP+FN总是固定gold数",
+      "must_reject_or_contrast": "缺整事件只计1FN而部分错计多FN",
+      "implementation_targets": [
+        "evaluation/handoff-v3/semantic_match.py",
+        "evaluation/handoff-v3/isolated_runtime.py",
+        "evaluation/rescue-v3_1/"
+      ]
+    },
+    {
+      "id": "E02",
+      "layer": "evaluation_integrity",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "一条正确关系旁追加一条错误producer关系",
+      "must_observe": "正确可得TP，额外错误计FP；不能以集合合并吞掉",
+      "must_reject_or_contrast": "多报关系不受惩罚",
+      "implementation_targets": [
+        "evaluation/handoff-v3/semantic_match.py",
+        "evaluation/handoff-v3/isolated_runtime.py",
+        "evaluation/rescue-v3_1/"
+      ]
+    },
+    {
+      "id": "E03",
+      "layer": "evaluation_integrity",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "同span有literal/alias及尚未支持的主动作",
+      "must_observe": "主义务不能被helper满足；B单列范围缺口；A相关漏项仍在",
+      "must_reject_or_contrast": "辅助事件命中使完整通过",
+      "implementation_targets": [
+        "evaluation/handoff-v3/semantic_match.py",
+        "evaluation/handoff-v3/isolated_runtime.py",
+        "evaluation/rescue-v3_1/"
+      ]
+    },
+    {
+      "id": "E04",
+      "layer": "evaluation_integrity",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "同一真实未决分别以list/dict诊断表示；另有info诊断",
+      "must_observe": "error/unresolved/incomplete均阻断相关整链；info按契约处理",
+      "must_reject_or_contrast": "只识别一种容器，或所有信息都错误阻断",
+      "implementation_targets": [
+        "evaluation/handoff-v3/semantic_match.py",
+        "evaluation/handoff-v3/isolated_runtime.py",
+        "evaluation/rescue-v3_1/"
+      ]
+    },
+    {
+      "id": "E05",
+      "layer": "evaluation_integrity",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "运行时尝试读取reference、调用网络LLM或接收expected_graph",
+      "must_observe": "被隔离拒绝并留下日志；合法source背景仍可读",
+      "must_reject_or_contrast": "把答案、手工AST或逐例producer作为参数输入",
+      "implementation_targets": [
+        "evaluation/handoff-v3/semantic_match.py",
+        "evaluation/handoff-v3/isolated_runtime.py",
+        "evaluation/rescue-v3_1/"
+      ]
+    },
+    {
+      "id": "E06",
+      "layer": "evaluation_integrity",
+      "status": "SPECIFIED_NOT_IMPLEMENTED_IN_THIS_PACKAGE",
+      "material_type": "engineering_diagnostic_or_exposed_regression_NOT_new_historical_transfer",
+      "input_or_setup": "对已存在first-run路径再次写；或首跑后改变行为文件",
+      "must_observe": "拒绝覆写；哈希变化使实验无效",
+      "must_reject_or_contrast": "把replay重命名当首次或只冻结部分代码",
+      "implementation_targets": [
+        "evaluation/handoff-v3/semantic_match.py",
+        "evaluation/handoff-v3/isolated_runtime.py",
+        "evaluation/rescue-v3_1/"
+      ]
+    }
+  ]
+}

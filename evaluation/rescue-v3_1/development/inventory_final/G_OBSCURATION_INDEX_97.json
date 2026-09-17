@@ -1,0 +1,96 @@
+{
+  "surface": "所得數從甲子蔀起",
+  "expected_production": "G_OBSCURATION_INDEX_97",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "ObscurationIndex",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 8,
+            "quote": "所得數從甲子蔀起"
+          }
+        ],
+        "surface": "所得數從甲子蔀起",
+        "analysis_range": [
+          0,
+          8
+        ],
+        "production_id": "G_OBSCURATION_INDEX_97",
+        "lowering_kind": "obscuration_index",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          8
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 8,
+            "quote": "所得數從甲子蔀起"
+          }
+        ],
+        "surface": "所得數從甲子蔀起",
+        "analysis_range": [
+          0,
+          8
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          8
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          8
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

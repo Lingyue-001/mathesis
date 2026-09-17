@@ -1,0 +1,60 @@
+{
+  "all_passed": true,
+  "behavior_changes_during_run": [],
+  "new_transfer_evidence": false,
+  "phase": "exposed_development",
+  "windows": [
+    {
+      "full_chain_passed": true,
+      "obligations_passed": 5,
+      "obligations_total": 5,
+      "relations": {
+        "FN": 0,
+        "FP": 0,
+        "TP": 114
+      },
+      "runtime_guard_clean": true,
+      "runtime_status": "completed",
+      "window_id": "A01"
+    },
+    {
+      "full_chain_passed": true,
+      "obligations_passed": 5,
+      "obligations_total": 5,
+      "relations": {
+        "FN": 0,
+        "FP": 0,
+        "TP": 83
+      },
+      "runtime_guard_clean": true,
+      "runtime_status": "completed",
+      "window_id": "A02"
+    },
+    {
+      "full_chain_passed": true,
+      "obligations_passed": 8,
+      "obligations_total": 8,
+      "relations": {
+        "FN": 0,
+        "FP": 0,
+        "TP": 91
+      },
+      "runtime_guard_clean": true,
+      "runtime_status": "completed",
+      "window_id": "A03"
+    },
+    {
+      "full_chain_passed": true,
+      "obligations_passed": 4,
+      "obligations_total": 4,
+      "relations": {
+        "FN": 0,
+        "FP": 0,
+        "TP": 81
+      },
+      "runtime_guard_clean": true,
+      "runtime_status": "completed",
+      "window_id": "A04"
+    }
+  ]
+}

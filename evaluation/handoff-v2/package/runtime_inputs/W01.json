@@ -1,0 +1,141 @@
+{
+  "schema_version": "2.0",
+  "input_mode": "declared_edited_primary_context",
+  "provided_scope": {
+    "tradition": "San_tong_li",
+    "planet": null,
+    "scope_is_curator_provided": true
+  },
+  "primary_documents": [
+    {
+      "doc_id": "ST.2.2",
+      "text": "推天正，以章月乘入統歲數，盈章歲得一，名曰積月，不盈者名曰閏餘．閏餘十二以上，歲有閏．求地正，加積月一；求人正，加二．",
+      "reading_id": "ST.2.2.C2017-reading-v1",
+      "text_sha256": "e8182c73b13a1356f0400adb9dba3dde7e5dce38ab6def5821740829bc9a5311",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          90
+        ],
+        "pdf_pages": [
+          103
+        ],
+        "locator": "ST.2.2"
+      },
+      "editorial_trace": [
+        {
+          "old": "(人)[入]",
+          "new": "入",
+          "basis": "Cullen中文校勘：人改入；刘pp.25–26以入统岁数解释。",
+          "transcription_range": [
+            8,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "ST.2.3",
+      "text": "推正月朔，以月法乘積月，盈日法得一，名曰積日，不盈者名曰小餘．小餘三十八以上，其月大．積日盈六十，除之，不盈者名曰大餘．數從統首日起，算外，則朔日也．求其次月，加大餘二十九，小餘四十三．小餘盈日法得一，從大餘，數除如法．求弦，加大餘七，小餘三十一．求望，倍弦．",
+      "reading_id": "ST.2.3.C2017-reading-v1",
+      "text_sha256": "aa8181ae0efcb681ef9577c07d00056d3231519b41c2ba3e945269bfd9f1f43d",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          91
+        ],
+        "pdf_pages": [
+          104
+        ],
+        "locator": "ST.2.3"
+      },
+      "editorial_trace": []
+    }
+  ],
+  "context_documents": [
+    {
+      "doc_id": "ST.rule_year",
+      "text": "閏法十九，因為章歲．合天地終數，得閏法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          40
+        ],
+        "pdf_pages": [
+          53
+        ]
+      },
+      "text_sha256": "890fdd1d5d02ea179fba2fac1f5a1a6abd93aeaa898d02cdfba22881111b4501"
+    },
+    {
+      "doc_id": "ST.rule_month",
+      "text": "章月二百三十五．五位乘會數，得章月．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          42
+        ],
+        "pdf_pages": [
+          55
+        ]
+      },
+      "text_sha256": "5b2cee0b4adce5ff7b004009ad860b3a8d898e569dc6e6153717f8825a4a8b8d"
+    },
+    {
+      "doc_id": "ST.lunation_factor",
+      "text": "月法二千三百九十二．推大衍象，得月法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          42
+        ],
+        "pdf_pages": [
+          55
+        ]
+      },
+      "text_sha256": "47a7f942bd98999cf15ff83f40b0d9cb3a7dce3f72a581ac4450c56a9317c893"
+    },
+    {
+      "doc_id": "ST.concordance_factor",
+      "text": "統法千五百三十九．以閏法乘日法，得統法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          41
+        ],
+        "pdf_pages": [
+          54
+        ]
+      },
+      "text_sha256": "034a9f390edac25aab24a1206722fda360a738db7ebdf9319f19dd80b6051fbf"
+    },
+    {
+      "doc_id": "ST.year_input_context",
+      "text": "推日月元統，置太極上元以來，外所求年，盈元法除之，餘不盈統者，則天統甲子以來年數也．盈統，除之，餘則地統甲辰以來年數也．又盈統，除之，餘則人統甲申以來年數也．各以其統首日為紀．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          89
+        ],
+        "pdf_pages": [
+          102
+        ]
+      },
+      "text_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d"
+    },
+    {
+      "doc_id": "ST.day_factor",
+      "text": "日法八十一．元始黃鐘初九自乘，一龠之數，得日法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          39
+        ],
+        "pdf_pages": [
+          52
+        ]
+      },
+      "text_sha256": "ffc84c522268677e78cdc65a7d555f74e1a0d5a2525ce4cccadddc2fa61c90c9"
+    }
+  ]
+}

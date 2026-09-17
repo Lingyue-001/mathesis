@@ -1,0 +1,30 @@
+TAP version 13
+# Subtest: parseStatsTextGroupsDetailed parses normal stats table
+ok 1 - parseStatsTextGroupsDetailed parses normal stats table
+  ---
+  duration_ms: 11.7693
+  ...
+# Subtest: parseStatsTextGroupsDetailed parses high-frequency variant table shape
+ok 2 - parseStatsTextGroupsDetailed parses high-frequency variant table shape
+  ---
+  duration_ms: 2.5751
+  ...
+# Subtest: parseStatsTextGroupsDetailed parses current ctext statstable shape
+ok 3 - parseStatsTextGroupsDetailed parses current ctext statstable shape
+  ---
+  duration_ms: 1.6093
+  ...
+# Subtest: parseStatsTextGroupsDetailed marks gated pages
+ok 4 - parseStatsTextGroupsDetailed marks gated pages
+  ---
+  duration_ms: 1.9888
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 156.0747

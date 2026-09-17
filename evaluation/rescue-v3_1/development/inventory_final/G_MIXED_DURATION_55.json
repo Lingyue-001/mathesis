@@ -1,0 +1,236 @@
+{
+  "surface": "其甲課各三日，乙量分之三",
+  "expected_production": "G_MIXED_DURATION_55",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 1,
+            "end": 3,
+            "quote": "甲課"
+          }
+        ],
+        "surface": "甲課",
+        "analysis_range": [
+          1,
+          3
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast2",
+        "kind": "Number",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 4,
+            "end": 5,
+            "quote": "三"
+          }
+        ],
+        "surface": "三",
+        "analysis_range": [
+          4,
+          5
+        ],
+        "production_id": "LEX_NUMBER",
+        "value": 3
+      },
+      {
+        "id": "synthetic.inventory:ast3",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 7,
+            "end": 9,
+            "quote": "乙量"
+          }
+        ],
+        "surface": "乙量",
+        "analysis_range": [
+          7,
+          9
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast4",
+        "kind": "Number",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 11,
+            "end": 12,
+            "quote": "三"
+          }
+        ],
+        "surface": "三",
+        "analysis_range": [
+          11,
+          12
+        ],
+        "production_id": "LEX_NUMBER",
+        "value": 3
+      },
+      {
+        "id": "synthetic.inventory:ast5",
+        "kind": "MixedDuration",
+        "slots": {
+          "subject": "synthetic.inventory:ast1",
+          "whole": "synthetic.inventory:ast2",
+          "denominator": "synthetic.inventory:ast3",
+          "numerator": "synthetic.inventory:ast4"
+        },
+        "children": [
+          "synthetic.inventory:ast1",
+          "synthetic.inventory:ast2",
+          "synthetic.inventory:ast3",
+          "synthetic.inventory:ast4"
+        ],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 12,
+            "quote": "其甲課各三日，乙量分之三"
+          }
+        ],
+        "surface": "其甲課各三日，乙量分之三",
+        "analysis_range": [
+          0,
+          12
+        ],
+        "production_id": "G_MIXED_DURATION_55",
+        "lowering_kind": "mixed_duration",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast5"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          12
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 6,
+            "quote": "其甲課各三日"
+          }
+        ],
+        "surface": "其甲課各三日",
+        "analysis_range": [
+          0,
+          6
+        ],
+        "production_id": "G_UNSUPPORTED"
+      },
+      {
+        "id": "synthetic.inventory:ast2",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 7,
+            "end": 12,
+            "quote": "乙量分之三"
+          }
+        ],
+        "surface": "乙量分之三",
+        "analysis_range": [
+          7,
+          12
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1",
+      "synthetic.inventory:ast2"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          6
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      },
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          7,
+          12
+        ],
+        "node_id": "synthetic.inventory:ast2"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          6
+        ],
+        "status": "unresolved"
+      },
+      {
+        "analysis_range": [
+          7,
+          12
+        ],
+        "status": "unresolved"
+      },
+      {
+        "analysis_range": [
+          6,
+          7
+        ],
+        "status": "registered_noncomputational"
+      }
+    ]
+  }
+}

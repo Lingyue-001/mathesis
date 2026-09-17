@@ -1,0 +1,77 @@
+python : test_both_isolated_workers_preserve_source_and_execute (test_runtime_portability.RuntimePortability.test_both_
+isolated_workers_preserve_source_and_execute) ...
+所在位置 行:2 字符: 1
++ python -X utf8 -B -m unittest discover -s tests/reconciliation -p tes ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_both_isola...d_execute) ... :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+  test_both_isolated_workers_preserve_source_and_execute (test_runtime_portability.RuntimePortability.test_both_isolate
+d_workers_preserve_source_and_execute) (protocol='portable_v3') ... ERROR
+  test_both_isolated_workers_preserve_source_and_execute (test_runtime_portability.RuntimePortability.test_both_isolate
+d_workers_preserve_source_and_execute) (protocol='portable_rescue') ... FAIL
+test_manifest_keys_and_mutation_diagnostics_use_portable_paths (test_runtime_portability.RuntimePortability.test_manife
+st_keys_and_mutation_diagnostics_use_portable_paths) ... FAIL
+
+======================================================================
+ERROR: test_both_isolated_workers_preserve_source_and_execute (test_runtime_portability.RuntimePortability.test_both_is
+olated_workers_preserve_source_and_execute) (protocol='portable_v3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\projects\mathesis\tests\reconciliation\test_runtime_portability.py", line 27, in test_both_isolated_workers_
+preserve_source_and_execute
+    result = load(path, name).run_isolated(packet, {}, core_dir=ROOT / 'analysis_parser')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\mathesis\evaluation\handoff-v3\isolated_runtime.py", line 46, in run_isolated
+    raise RuntimeError('Isolated runtime process failed: ' + result.stderr[-4000:])
+RuntimeError: Isolated runtime process failed: Traceback (most recent call last):
+  File "C:\Users\DELL\AppData\Local\Temp\mathesis-v3-runtime-jagowljv\isolated_runtime.py", line 115, in <module>
+  File "C:\Users\DELL\AppData\Local\Temp\mathesis-v3-runtime-jagowljv\isolated_runtime.py", line 109, in _worker
+UnicodeEncodeError: 'gbk' codec can't encode character '\U00020000' in position 172: illegal multibyte sequence
+
+
+======================================================================
+FAIL: test_both_isolated_workers_preserve_source_and_execute (test_runtime_portability.RuntimePortability.test_both_iso
+lated_workers_preserve_source_and_execute) (protocol='portable_rescue')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\projects\mathesis\tests\reconciliation\test_runtime_portability.py", line 28, in test_both_isolated_workers_
+preserve_source_and_execute
+    self.assertEqual(result['status'], 'completed', result.get('stderr', result))
+AssertionError: 'process_error' != 'completed'
+- process_error
++ completed
+ : Traceback (most recent call last):
+  File "C:\Users\DELL\AppData\Local\Temp\mathesis-rescue-runtime-37ivxnys\runtime_protocol.py", line 252, in <module>
+  File "C:\Users\DELL\AppData\Local\Temp\mathesis-rescue-runtime-37ivxnys\runtime_protocol.py", line 162, in _worker
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 98: illegal multibyte sequence
+
+
+======================================================================
+FAIL: test_manifest_keys_and_mutation_diagnostics_use_portable_paths (test_runtime_portability.RuntimePortability.test_
+manifest_keys_and_mutation_diagnostics_use_portable_paths)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\projects\mathesis\tests\reconciliation\test_runtime_portability.py", line 43, in test_manifest_keys_and_muta
+tion_diagnostics_use_portable_paths
+    self.assertEqual([f['path'] for f in manifest['files']], ['analysis_parser/core.py'])
+AssertionError: Lists differ: ['analysis_parser\\core.py'] != ['analysis_parser/core.py']
+
+First differing element 0:
+'analysis_parser\\core.py'
+'analysis_parser/core.py'
+
+- ['analysis_parser\\core.py']
+?                  ^^
+
++ ['analysis_parser/core.py']
+?                  ^
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.767s
+
+FAILED (failures=2, errors=1)

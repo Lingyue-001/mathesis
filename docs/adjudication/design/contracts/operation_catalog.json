@@ -1,0 +1,165 @@
+{
+  "catalog_version": "adjudication-design-1",
+  "status": "SPECIFICATION_NOT_IMPLEMENTATION",
+  "families": [
+    {
+      "id": "S1",
+      "name": "显式受事与省略表达适配",
+      "kind": "syntax_adapter",
+      "reuse": [
+        "add",
+        "subtract",
+        "load",
+        "alias"
+      ],
+      "seeds": [
+        "3.19",
+        "4.32"
+      ],
+      "requires": [
+        "source receiver",
+        "scope",
+        "producer"
+      ],
+      "new_semantics": false
+    },
+    {
+      "id": "P1",
+      "name": "条件范围与分类",
+      "kind": "semantic_extension",
+      "reuse": [
+        "threshold",
+        "select"
+      ],
+      "operations": [
+        "compare",
+        "and",
+        "if",
+        "classify",
+        "merge_branch_output"
+      ],
+      "seeds": [
+        "3.11",
+        "3.28",
+        "3.32"
+      ],
+      "required_fields": [
+        "operator",
+        "lhs",
+        "rhs",
+        "condition_scope",
+        "then_body",
+        "else_body"
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "有理数量与有条件进退位",
+      "kind": "semantic_generalization",
+      "reuse": [
+        "fraction",
+        "rescale",
+        "convert",
+        "add",
+        "subtract",
+        "divmod"
+      ],
+      "operations": [
+        "update_parts",
+        "normalize_parts"
+      ],
+      "seeds": [
+        "4.32",
+        "4.36"
+      ],
+      "required_fields": [
+        "quantity_parts",
+        "denominators",
+        "units",
+        "receiver",
+        "direction",
+        "guard",
+        "rate_evidence"
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "具来源的一般表读取",
+      "kind": "semantic_generalization",
+      "reuse": [
+        "lookup"
+      ],
+      "operations": [
+        "table_read"
+      ],
+      "seeds": [
+        "3.4",
+        "4.55"
+      ],
+      "required_fields": [
+        "table_id",
+        "table_hash",
+        "row_selector",
+        "field_selector",
+        "index_base",
+        "output_type"
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "有序不等长区间遍历",
+      "kind": "semantic_extension",
+      "reuse": [
+        "subtract",
+        "count"
+      ],
+      "operations": [
+        "locate_interval"
+      ],
+      "seeds": [
+        "3.23"
+      ],
+      "required_fields": [
+        "position",
+        "ordered_widths",
+        "start",
+        "direction",
+        "cycle_or_end",
+        "boundary_convention",
+        "coordinate_frame"
+      ]
+    },
+    {
+      "id": "P5",
+      "name": "有限表驱动多状态递推",
+      "kind": "semantic_generalization",
+      "reuse": [
+        "repeat",
+        "year_scan",
+        "method_call"
+      ],
+      "operations": [
+        "fold_sequence",
+        "bounded_repeat"
+      ],
+      "seeds": [
+        "4.28",
+        "4.40"
+      ],
+      "required_fields": [
+        "initial_state",
+        "sequence",
+        "body",
+        "update_order",
+        "stop",
+        "max_steps",
+        "returns"
+      ]
+    }
+  ],
+  "notes": [
+    "P1–P5是能力范围，S1只扩表达适配。",
+    "各操作须实现validator/lowering/executor/provenance/scorer，不只添加枚举。",
+    "历史来源closure必须另外认证。"
+  ]
+}

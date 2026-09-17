@@ -1,0 +1,136 @@
+{
+  "surface": "盈乙量得一",
+  "expected_production": "G_DIVIDE_16",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [],
+        "surface": "",
+        "analysis_range": [
+          0,
+          0
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast2",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 1,
+            "end": 3,
+            "quote": "乙量"
+          }
+        ],
+        "surface": "乙量",
+        "analysis_range": [
+          1,
+          3
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast3",
+        "kind": "DivMod",
+        "slots": {
+          "value": "synthetic.inventory:ast1",
+          "divisor": "synthetic.inventory:ast2"
+        },
+        "children": [
+          "synthetic.inventory:ast1",
+          "synthetic.inventory:ast2"
+        ],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 5,
+            "quote": "盈乙量得一"
+          }
+        ],
+        "surface": "盈乙量得一",
+        "analysis_range": [
+          0,
+          5
+        ],
+        "production_id": "G_DIVIDE_16",
+        "lowering_kind": "divide",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast3"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          5
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 5,
+            "quote": "盈乙量得一"
+          }
+        ],
+        "surface": "盈乙量得一",
+        "analysis_range": [
+          0,
+          5
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          5
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          5
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+python : test_asset_relocation_preserves_identity_and_never_hides_missing_assets (test_runtime_portability.RuntimePorta
+bility.test_asset_relocation_preserves_identity_and_never_hides_missing_assets) ... ok
+所在位置 行:2 字符: 1
++ python -X utf8 -B -m unittest discover -s tests/reconciliation -p tes ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_asset_relo..._assets) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+test_both_isolated_workers_preserve_source_and_execute (test_runtime_portability.RuntimePortability.test_both_isolated_
+workers_preserve_source_and_execute) ... ok
+test_exposed_host_reads_utf8_metadata_without_utf8_mode (test_runtime_portability.RuntimePortability.test_exposed_host_
+reads_utf8_metadata_without_utf8_mode) ... FAIL
+test_manifest_keys_and_mutation_diagnostics_use_portable_paths (test_runtime_portability.RuntimePortability.test_manife
+st_keys_and_mutation_diagnostics_use_portable_paths) ... ok
+
+======================================================================
+FAIL: test_exposed_host_reads_utf8_metadata_without_utf8_mode (test_runtime_portability.RuntimePortability.test_exposed
+_host_reads_utf8_metadata_without_utf8_mode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\projects\mathesis\tests\reconciliation\test_runtime_portability.py", line 32, in test_exposed_host_reads_utf
+8_metadata_without_utf8_mode
+    self.assertTrue((out / 'summary.json').is_file(), process.stderr)
+AssertionError: False is not true : Traceback (most recent call last):
+  File "D:\projects\mathesis\evaluation\rescue-v3_1\run_exposed.py", line 52, in <module>
+    raise SystemExit(run(args.out,source_asset_paths=mapping))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\mathesis\evaluation\rescue-v3_1\run_exposed.py", line 22, in run
+    contracts=json.loads((HERE/'contracts/chain_contracts.json').read_text());rows=[]
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xa6 in position 338: illegal multibyte sequence
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.329s
+
+FAILED (failures=1)

@@ -1,0 +1,153 @@
+[
+  {
+    "id": "SC01",
+    "kind": "representation_rescale",
+    "input": {
+      "numerator": 24,
+      "denominator": 81,
+      "unit": "day"
+    },
+    "operation": {
+      "numerator_multiplier": 19,
+      "new_denominator": 1539
+    },
+    "expected": {
+      "numerator": 456,
+      "denominator": 1539,
+      "unit": "day",
+      "value_preserved": true
+    },
+    "basis": "C2017 pp.97–98 lunar-conjunction quantity relation; diagnostic isolates time representation, does not infer du"
+  },
+  {
+    "id": "SC02",
+    "kind": "representation_rescale",
+    "input": {
+      "numerator": 770,
+      "denominator": 1539,
+      "unit": "day"
+    },
+    "operation": {
+      "numerator_multiplier": 3,
+      "new_denominator": 4617
+    },
+    "expected": {
+      "numerator": 2310,
+      "denominator": 4617,
+      "unit": "day",
+      "value_preserved": true
+    },
+    "basis": "C2017 §178; L2003 eq2.14"
+  },
+  {
+    "id": "SC03",
+    "kind": "numerator_arithmetic_only",
+    "input": {
+      "numerator": 770,
+      "denominator": 1539,
+      "unit": "day"
+    },
+    "operation": {
+      "numerator_multiplier": 3,
+      "new_denominator": 1539
+    },
+    "expected": {
+      "numerator": 2310,
+      "denominator": 1539,
+      "unit": "day",
+      "value_preserved": false
+    },
+    "basis": "synthetic contrast; triple numerator alone changes represented magnitude"
+  },
+  {
+    "id": "SC04",
+    "kind": "rate_conversion",
+    "input": {
+      "numerator": 16,
+      "denominator": 19,
+      "unit": "month"
+    },
+    "rate": {
+      "numerator": 27759,
+      "denominator": 940,
+      "from_unit": "month",
+      "to_unit": "day"
+    },
+    "expected": {
+      "numerator": 23376,
+      "denominator": 940,
+      "unit": "day"
+    },
+    "basis": "C2017 pp.155,166–167 §26/§48"
+  },
+  {
+    "id": "SC05",
+    "kind": "missing_model_rate",
+    "input": {
+      "numerator": 456,
+      "denominator": 1539,
+      "unit": "day"
+    },
+    "requested_unit": "du",
+    "rate": null,
+    "expected_status": "requires_model_rate",
+    "basis": "project negative; equal numeric scale does not provide motion rate"
+  },
+  {
+    "id": "SC06",
+    "kind": "incompatible_addition",
+    "inputs": [
+      {
+        "numerator": 1,
+        "denominator": 81,
+        "unit": "day"
+      },
+      {
+        "numerator": 1,
+        "denominator": 1539,
+        "unit": "du"
+      }
+    ],
+    "expected_status": "incompatible_without_conversion",
+    "basis": "project negative; no implicit day/du bridge"
+  },
+  {
+    "id": "SC07",
+    "kind": "mixed_duration",
+    "whole": 73,
+    "numerator": 77,
+    "denominator": 1539,
+    "unit": "day",
+    "expected_fraction": [
+      112424,
+      1539
+    ],
+    "basis": "C2017 p.97 §179"
+  },
+  {
+    "id": "SC08",
+    "kind": "mixed_duration",
+    "whole": 18,
+    "numerator": 404,
+    "denominator": 1539,
+    "unit": "day",
+    "expected_fraction": [
+      28106,
+      1539
+    ],
+    "basis": "C2017 p.97 §179"
+  },
+  {
+    "id": "SC09",
+    "kind": "mixed_duration",
+    "whole": 27,
+    "numerator": 606,
+    "denominator": 1539,
+    "unit": "day",
+    "expected_fraction": [
+      42159,
+      1539
+    ],
+    "basis": "C2017 p.97 §180; original central role remains disputed"
+  }
+]

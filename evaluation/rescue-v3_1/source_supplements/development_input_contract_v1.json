@@ -1,0 +1,106 @@
+{
+  "schema_version": "rescue-v3.1-development-input-contract-1",
+  "status": "T0_preregistered_conditional_execution",
+  "old_packets_mutated": false,
+  "interpretation_registry": "source_profiles.json",
+  "input_mode": "declared_edited_primary_context",
+  "runtime_fields_allowed": [
+    "packet.selected_profiles",
+    "inputs.epoch_elapsed_years",
+    "inputs.query_initial_rule_ordinal"
+  ],
+  "patches": {
+    "A01": {
+      "selected_profiles": [
+        "ST_elapsed",
+        "C2017_ST_Jupiter_parameter_roles_v1",
+        "C2017_ST_local_year_count_v1",
+        "C2017_ST_origin_month_day_frame_v1"
+      ],
+      "inputs": {
+        "epoch_elapsed_years": 143127
+      }
+    },
+    "A02": {
+      "selected_profiles": [
+        "ST_elapsed",
+        "C2017_ST_Jupiter_parameter_roles_v1",
+        "C2017_ST_local_year_count_v1"
+      ],
+      "inputs": {
+        "epoch_elapsed_years": 143127
+      }
+    },
+    "A03": {
+      "selected_profiles": [
+        "ST_elapsed",
+        "C2017_ST_Jupiter_station_rate_v1"
+      ],
+      "inputs": {
+        "epoch_elapsed_years": 143127
+      }
+    },
+    "A04": {
+      "selected_profiles": [
+        "ST_elapsed",
+        "C2017_ST_Section_four_Rules_conditional_v1",
+        "C2017_ST_concordance_midnight_frame_v1"
+      ],
+      "inputs": {
+        "epoch_elapsed_years": 143127,
+        "query_initial_rule_ordinal": 0
+      }
+    }
+  },
+  "query_initial_rule_ordinal": {
+    "scope": "Section/Circuits Culmination conditional task",
+    "type": "nonnegative integer",
+    "count_frame": "elapsed whole Rules since source-derived Concordance Head",
+    "selected_value": 0,
+    "provenance": "Current T0 task choice; not Chinese source words and not historical intent attributed to Cullen",
+    "source_for_frame": {
+      "source_id": "C2017",
+      "printed_pages": [
+        41,
+        42,
+        89,
+        132,
+        133
+      ],
+      "pdf_pages": [
+        54,
+        55,
+        102,
+        145,
+        146
+      ],
+      "locators": [
+        "§3–4 commentary",
+        "§173",
+        "§265–266"
+      ]
+    },
+    "requested_queries": [
+      "one Section interval",
+      "one Circuits Culmination interval"
+    ],
+    "query_relation": "independent requests from the same selected initial instant"
+  },
+  "prohibited_runtime_fields": [
+    "computed head day",
+    "computed greater remainder",
+    "computed lesser remainder",
+    "computed planetary intermediate",
+    "AST",
+    "producer_id",
+    "expected_graph",
+    "expected_answer"
+  ],
+  "conditions": [
+    "Keep all original source documents and canonical readings unchanged.",
+    "Register and validate initial task field; do not treat the field itself as a state or graph binding.",
+    "Preserve separate parameter/computed quantity identities.",
+    "Preserve source/frame conflicts as named conditional alternatives.",
+    "This specifies a conditional developer experiment, not a new historical test or unique reconstruction of authorial intent."
+  ]
+}

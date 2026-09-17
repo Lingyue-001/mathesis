@@ -1,0 +1,144 @@
+{
+  "surface": "推甲課",
+  "expected_production": "G_TASK_MARKER_0",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 1,
+            "quote": "推"
+          }
+        ],
+        "surface": "推",
+        "analysis_range": [
+          0,
+          1
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast2",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 1,
+            "end": 3,
+            "quote": "甲課"
+          }
+        ],
+        "surface": "甲課",
+        "analysis_range": [
+          1,
+          3
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast3",
+        "kind": "Heading",
+        "slots": {
+          "marker": "synthetic.inventory:ast1",
+          "target": "synthetic.inventory:ast2"
+        },
+        "children": [
+          "synthetic.inventory:ast1",
+          "synthetic.inventory:ast2"
+        ],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 3,
+            "quote": "推甲課"
+          }
+        ],
+        "surface": "推甲課",
+        "analysis_range": [
+          0,
+          3
+        ],
+        "production_id": "G_TASK_MARKER_0",
+        "lowering_kind": "task_marker",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast3"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          3
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 3,
+            "quote": "推甲課"
+          }
+        ],
+        "surface": "推甲課",
+        "analysis_range": [
+          0,
+          3
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          3
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          3
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

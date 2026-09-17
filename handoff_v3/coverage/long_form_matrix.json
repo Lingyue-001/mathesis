@@ -1,0 +1,2663 @@
+[
+  {
+    "cell": "C1_ST",
+    "family": "era_entry",
+    "tradition": "San_tong_li",
+    "mechanism": "M01",
+    "evidence_locators": [
+      "C2017 pp.89–90 §173",
+      "L2003 pp.23–24 eq2.5"
+    ],
+    "obligation_ids": [
+      "C1_ST.01",
+      "C1_ST.02",
+      "C1_ST.03",
+      "C1_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_ST",
+    "family": "era_entry",
+    "tradition": "San_tong_li",
+    "mechanism": "M02",
+    "evidence_locators": [
+      "C2017 pp.89–90 §173",
+      "L2003 pp.23–24 eq2.5"
+    ],
+    "obligation_ids": [
+      "C1_ST.01",
+      "C1_ST.02",
+      "C1_ST.03",
+      "C1_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B32",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_ST",
+    "family": "era_entry",
+    "tradition": "San_tong_li",
+    "mechanism": "M03",
+    "evidence_locators": [
+      "C2017 pp.89–90 §173",
+      "L2003 pp.23–24 eq2.5"
+    ],
+    "obligation_ids": [
+      "C1_ST.01",
+      "C1_ST.02",
+      "C1_ST.03",
+      "C1_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B10"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_ST",
+    "family": "era_entry",
+    "tradition": "San_tong_li",
+    "mechanism": "M04",
+    "evidence_locators": [
+      "C2017 pp.89–90 §173",
+      "L2003 pp.23–24 eq2.5"
+    ],
+    "obligation_ids": [
+      "C1_ST.01",
+      "C1_ST.02",
+      "C1_ST.03",
+      "C1_ST.04"
+    ],
+    "candidate_behavior_tests": [],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_ST",
+    "family": "era_entry",
+    "tradition": "San_tong_li",
+    "mechanism": "M07",
+    "evidence_locators": [
+      "C2017 pp.89–90 §173",
+      "L2003 pp.23–24 eq2.5"
+    ],
+    "obligation_ids": [
+      "C1_ST.01",
+      "C1_ST.02",
+      "C1_ST.03",
+      "C1_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B19",
+      "B20",
+      "B36"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_ST",
+    "family": "era_entry",
+    "tradition": "San_tong_li",
+    "mechanism": "M09",
+    "evidence_locators": [
+      "C2017 pp.89–90 §173",
+      "L2003 pp.23–24 eq2.5"
+    ],
+    "obligation_ids": [
+      "C1_ST.01",
+      "C1_ST.02",
+      "C1_ST.03",
+      "C1_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B15",
+      "B35"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_SF",
+    "family": "era_entry",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M01",
+    "evidence_locators": [
+      "C2017 pp.159–164 §§43,45 Tables3.1–3.2",
+      "L2003 pp.64–67 eq3.1–3.3"
+    ],
+    "obligation_ids": [
+      "C1_SF.01",
+      "C1_SF.02",
+      "C1_SF.03",
+      "C1_SF.04",
+      "C1_SF.05",
+      "C1_SF.06"
+    ],
+    "candidate_behavior_tests": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_SF",
+    "family": "era_entry",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M02",
+    "evidence_locators": [
+      "C2017 pp.159–164 §§43,45 Tables3.1–3.2",
+      "L2003 pp.64–67 eq3.1–3.3"
+    ],
+    "obligation_ids": [
+      "C1_SF.01",
+      "C1_SF.02",
+      "C1_SF.03",
+      "C1_SF.04",
+      "C1_SF.05",
+      "C1_SF.06"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B32",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_SF",
+    "family": "era_entry",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M03",
+    "evidence_locators": [
+      "C2017 pp.159–164 §§43,45 Tables3.1–3.2",
+      "L2003 pp.64–67 eq3.1–3.3"
+    ],
+    "obligation_ids": [
+      "C1_SF.01",
+      "C1_SF.02",
+      "C1_SF.03",
+      "C1_SF.04",
+      "C1_SF.05",
+      "C1_SF.06"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B10"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_SF",
+    "family": "era_entry",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M04",
+    "evidence_locators": [
+      "C2017 pp.159–164 §§43,45 Tables3.1–3.2",
+      "L2003 pp.64–67 eq3.1–3.3"
+    ],
+    "obligation_ids": [
+      "C1_SF.01",
+      "C1_SF.02",
+      "C1_SF.03",
+      "C1_SF.04",
+      "C1_SF.05",
+      "C1_SF.06"
+    ],
+    "candidate_behavior_tests": [],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_SF",
+    "family": "era_entry",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M07",
+    "evidence_locators": [
+      "C2017 pp.159–164 §§43,45 Tables3.1–3.2",
+      "L2003 pp.64–67 eq3.1–3.3"
+    ],
+    "obligation_ids": [
+      "C1_SF.01",
+      "C1_SF.02",
+      "C1_SF.03",
+      "C1_SF.04",
+      "C1_SF.05",
+      "C1_SF.06"
+    ],
+    "candidate_behavior_tests": [
+      "B19",
+      "B20",
+      "B36"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_SF",
+    "family": "era_entry",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M09",
+    "evidence_locators": [
+      "C2017 pp.159–164 §§43,45 Tables3.1–3.2",
+      "L2003 pp.64–67 eq3.1–3.3"
+    ],
+    "obligation_ids": [
+      "C1_SF.01",
+      "C1_SF.02",
+      "C1_SF.03",
+      "C1_SF.04",
+      "C1_SF.05",
+      "C1_SF.06"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B15",
+      "B35"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C1_SF",
+    "family": "era_entry",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M10",
+    "evidence_locators": [
+      "C2017 pp.159–164 §§43,45 Tables3.1–3.2",
+      "L2003 pp.64–67 eq3.1–3.3"
+    ],
+    "obligation_ids": [
+      "C1_SF.01",
+      "C1_SF.02",
+      "C1_SF.03",
+      "C1_SF.04",
+      "C1_SF.05",
+      "C1_SF.06"
+    ],
+    "candidate_behavior_tests": [
+      "B17",
+      "B18"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "mechanism": "M01",
+    "evidence_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "obligation_ids": [
+      "C2_ST.01",
+      "C2_ST.02",
+      "C2_ST.03",
+      "C2_ST.04",
+      "C2_ST.05",
+      "C2_ST.06",
+      "C2_ST.07",
+      "C2_ST.08"
+    ],
+    "candidate_behavior_tests": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "mechanism": "M02",
+    "evidence_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "obligation_ids": [
+      "C2_ST.01",
+      "C2_ST.02",
+      "C2_ST.03",
+      "C2_ST.04",
+      "C2_ST.05",
+      "C2_ST.06",
+      "C2_ST.07",
+      "C2_ST.08"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B32",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "mechanism": "M03",
+    "evidence_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "obligation_ids": [
+      "C2_ST.01",
+      "C2_ST.02",
+      "C2_ST.03",
+      "C2_ST.04",
+      "C2_ST.05",
+      "C2_ST.06",
+      "C2_ST.07",
+      "C2_ST.08"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B10"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "mechanism": "M04",
+    "evidence_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "obligation_ids": [
+      "C2_ST.01",
+      "C2_ST.02",
+      "C2_ST.03",
+      "C2_ST.04",
+      "C2_ST.05",
+      "C2_ST.06",
+      "C2_ST.07",
+      "C2_ST.08"
+    ],
+    "candidate_behavior_tests": [],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "mechanism": "M05",
+    "evidence_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "obligation_ids": [
+      "C2_ST.01",
+      "C2_ST.02",
+      "C2_ST.03",
+      "C2_ST.04",
+      "C2_ST.05",
+      "C2_ST.06",
+      "C2_ST.07",
+      "C2_ST.08"
+    ],
+    "candidate_behavior_tests": [
+      "B03",
+      "B04",
+      "B05",
+      "B23",
+      "B24"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "mechanism": "M06",
+    "evidence_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "obligation_ids": [
+      "C2_ST.01",
+      "C2_ST.02",
+      "C2_ST.03",
+      "C2_ST.04",
+      "C2_ST.05",
+      "C2_ST.06",
+      "C2_ST.07",
+      "C2_ST.08"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B12",
+      "B22"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "mechanism": "M07",
+    "evidence_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "obligation_ids": [
+      "C2_ST.01",
+      "C2_ST.02",
+      "C2_ST.03",
+      "C2_ST.04",
+      "C2_ST.05",
+      "C2_ST.06",
+      "C2_ST.07",
+      "C2_ST.08"
+    ],
+    "candidate_behavior_tests": [
+      "B19",
+      "B20",
+      "B36"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "mechanism": "M08",
+    "evidence_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "obligation_ids": [
+      "C2_ST.01",
+      "C2_ST.02",
+      "C2_ST.03",
+      "C2_ST.04",
+      "C2_ST.05",
+      "C2_ST.06",
+      "C2_ST.07",
+      "C2_ST.08"
+    ],
+    "candidate_behavior_tests": [
+      "B13",
+      "B14",
+      "B15",
+      "B16"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "mechanism": "M09",
+    "evidence_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "obligation_ids": [
+      "C2_ST.01",
+      "C2_ST.02",
+      "C2_ST.03",
+      "C2_ST.04",
+      "C2_ST.05",
+      "C2_ST.06",
+      "C2_ST.07",
+      "C2_ST.08"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B15",
+      "B35"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "mechanism": "M11",
+    "evidence_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "obligation_ids": [
+      "C2_ST.01",
+      "C2_ST.02",
+      "C2_ST.03",
+      "C2_ST.04",
+      "C2_ST.05",
+      "C2_ST.06",
+      "C2_ST.07",
+      "C2_ST.08"
+    ],
+    "candidate_behavior_tests": [
+      "B25",
+      "B26",
+      "B37"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M01",
+    "evidence_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "obligation_ids": [
+      "C2_SF.01",
+      "C2_SF.02",
+      "C2_SF.03",
+      "C2_SF.04",
+      "C2_SF.05",
+      "C2_SF.06",
+      "C2_SF.07"
+    ],
+    "candidate_behavior_tests": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M02",
+    "evidence_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "obligation_ids": [
+      "C2_SF.01",
+      "C2_SF.02",
+      "C2_SF.03",
+      "C2_SF.04",
+      "C2_SF.05",
+      "C2_SF.06",
+      "C2_SF.07"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B32",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M03",
+    "evidence_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "obligation_ids": [
+      "C2_SF.01",
+      "C2_SF.02",
+      "C2_SF.03",
+      "C2_SF.04",
+      "C2_SF.05",
+      "C2_SF.06",
+      "C2_SF.07"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B10"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M04",
+    "evidence_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "obligation_ids": [
+      "C2_SF.01",
+      "C2_SF.02",
+      "C2_SF.03",
+      "C2_SF.04",
+      "C2_SF.05",
+      "C2_SF.06",
+      "C2_SF.07"
+    ],
+    "candidate_behavior_tests": [],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M05",
+    "evidence_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "obligation_ids": [
+      "C2_SF.01",
+      "C2_SF.02",
+      "C2_SF.03",
+      "C2_SF.04",
+      "C2_SF.05",
+      "C2_SF.06",
+      "C2_SF.07"
+    ],
+    "candidate_behavior_tests": [
+      "B03",
+      "B04",
+      "B05",
+      "B23",
+      "B24"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M06",
+    "evidence_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "obligation_ids": [
+      "C2_SF.01",
+      "C2_SF.02",
+      "C2_SF.03",
+      "C2_SF.04",
+      "C2_SF.05",
+      "C2_SF.06",
+      "C2_SF.07"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B12",
+      "B22"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M07",
+    "evidence_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "obligation_ids": [
+      "C2_SF.01",
+      "C2_SF.02",
+      "C2_SF.03",
+      "C2_SF.04",
+      "C2_SF.05",
+      "C2_SF.06",
+      "C2_SF.07"
+    ],
+    "candidate_behavior_tests": [
+      "B19",
+      "B20",
+      "B36"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M08",
+    "evidence_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "obligation_ids": [
+      "C2_SF.01",
+      "C2_SF.02",
+      "C2_SF.03",
+      "C2_SF.04",
+      "C2_SF.05",
+      "C2_SF.06",
+      "C2_SF.07"
+    ],
+    "candidate_behavior_tests": [
+      "B13",
+      "B14",
+      "B15",
+      "B16"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M09",
+    "evidence_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "obligation_ids": [
+      "C2_SF.01",
+      "C2_SF.02",
+      "C2_SF.03",
+      "C2_SF.04",
+      "C2_SF.05",
+      "C2_SF.06",
+      "C2_SF.07"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B15",
+      "B35"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M11",
+    "evidence_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "obligation_ids": [
+      "C2_SF.01",
+      "C2_SF.02",
+      "C2_SF.03",
+      "C2_SF.04",
+      "C2_SF.05",
+      "C2_SF.06",
+      "C2_SF.07"
+    ],
+    "candidate_behavior_tests": [
+      "B25",
+      "B26",
+      "B37"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_ST",
+    "family": "winter_solstice",
+    "tradition": "San_tong_li",
+    "mechanism": "M01",
+    "evidence_locators": [
+      "C2017 p.96 §177",
+      "L2003 pp.27–29 eq2.10–2.11"
+    ],
+    "obligation_ids": [
+      "C3_ST.01",
+      "C3_ST.02",
+      "C3_ST.03"
+    ],
+    "candidate_behavior_tests": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_ST",
+    "family": "winter_solstice",
+    "tradition": "San_tong_li",
+    "mechanism": "M02",
+    "evidence_locators": [
+      "C2017 p.96 §177",
+      "L2003 pp.27–29 eq2.10–2.11"
+    ],
+    "obligation_ids": [
+      "C3_ST.01",
+      "C3_ST.02",
+      "C3_ST.03"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B32",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_ST",
+    "family": "winter_solstice",
+    "tradition": "San_tong_li",
+    "mechanism": "M03",
+    "evidence_locators": [
+      "C2017 p.96 §177",
+      "L2003 pp.27–29 eq2.10–2.11"
+    ],
+    "obligation_ids": [
+      "C3_ST.01",
+      "C3_ST.02",
+      "C3_ST.03"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B10"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_ST",
+    "family": "winter_solstice",
+    "tradition": "San_tong_li",
+    "mechanism": "M04",
+    "evidence_locators": [
+      "C2017 p.96 §177",
+      "L2003 pp.27–29 eq2.10–2.11"
+    ],
+    "obligation_ids": [
+      "C3_ST.01",
+      "C3_ST.02",
+      "C3_ST.03"
+    ],
+    "candidate_behavior_tests": [],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_ST",
+    "family": "winter_solstice",
+    "tradition": "San_tong_li",
+    "mechanism": "M07",
+    "evidence_locators": [
+      "C2017 p.96 §177",
+      "L2003 pp.27–29 eq2.10–2.11"
+    ],
+    "obligation_ids": [
+      "C3_ST.01",
+      "C3_ST.02",
+      "C3_ST.03"
+    ],
+    "candidate_behavior_tests": [
+      "B19",
+      "B20",
+      "B36"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_ST",
+    "family": "winter_solstice",
+    "tradition": "San_tong_li",
+    "mechanism": "M08",
+    "evidence_locators": [
+      "C2017 p.96 §177",
+      "L2003 pp.27–29 eq2.10–2.11"
+    ],
+    "obligation_ids": [
+      "C3_ST.01",
+      "C3_ST.02",
+      "C3_ST.03"
+    ],
+    "candidate_behavior_tests": [
+      "B13",
+      "B14",
+      "B15",
+      "B16"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_ST",
+    "family": "winter_solstice",
+    "tradition": "San_tong_li",
+    "mechanism": "M09",
+    "evidence_locators": [
+      "C2017 p.96 §177",
+      "L2003 pp.27–29 eq2.10–2.11"
+    ],
+    "obligation_ids": [
+      "C3_ST.01",
+      "C3_ST.02",
+      "C3_ST.03"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B15",
+      "B35"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_SF",
+    "family": "winter_solstice",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M01",
+    "evidence_locators": [
+      "C2017 p.167 §49前半",
+      "L2003 p.69 eq3.12"
+    ],
+    "obligation_ids": [
+      "C3_SF.01",
+      "C3_SF.02",
+      "C3_SF.03",
+      "C3_SF.04"
+    ],
+    "candidate_behavior_tests": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_SF",
+    "family": "winter_solstice",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M02",
+    "evidence_locators": [
+      "C2017 p.167 §49前半",
+      "L2003 p.69 eq3.12"
+    ],
+    "obligation_ids": [
+      "C3_SF.01",
+      "C3_SF.02",
+      "C3_SF.03",
+      "C3_SF.04"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B32",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_SF",
+    "family": "winter_solstice",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M03",
+    "evidence_locators": [
+      "C2017 p.167 §49前半",
+      "L2003 p.69 eq3.12"
+    ],
+    "obligation_ids": [
+      "C3_SF.01",
+      "C3_SF.02",
+      "C3_SF.03",
+      "C3_SF.04"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B10"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_SF",
+    "family": "winter_solstice",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M04",
+    "evidence_locators": [
+      "C2017 p.167 §49前半",
+      "L2003 p.69 eq3.12"
+    ],
+    "obligation_ids": [
+      "C3_SF.01",
+      "C3_SF.02",
+      "C3_SF.03",
+      "C3_SF.04"
+    ],
+    "candidate_behavior_tests": [],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_SF",
+    "family": "winter_solstice",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M07",
+    "evidence_locators": [
+      "C2017 p.167 §49前半",
+      "L2003 p.69 eq3.12"
+    ],
+    "obligation_ids": [
+      "C3_SF.01",
+      "C3_SF.02",
+      "C3_SF.03",
+      "C3_SF.04"
+    ],
+    "candidate_behavior_tests": [
+      "B19",
+      "B20",
+      "B36"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_SF",
+    "family": "winter_solstice",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M09",
+    "evidence_locators": [
+      "C2017 p.167 §49前半",
+      "L2003 p.69 eq3.12"
+    ],
+    "obligation_ids": [
+      "C3_SF.01",
+      "C3_SF.02",
+      "C3_SF.03",
+      "C3_SF.04"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B15",
+      "B35"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C3_SF",
+    "family": "winter_solstice",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M11",
+    "evidence_locators": [
+      "C2017 p.167 §49前半",
+      "L2003 p.69 eq3.12"
+    ],
+    "obligation_ids": [
+      "C3_SF.01",
+      "C3_SF.02",
+      "C3_SF.03",
+      "C3_SF.04"
+    ],
+    "candidate_behavior_tests": [
+      "B25",
+      "B26",
+      "B37"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_ST",
+    "family": "qi_series",
+    "tradition": "San_tong_li",
+    "mechanism": "M01",
+    "evidence_locators": [
+      "C2017 pp.96–97 §178",
+      "L2003 p.28 eq2.12–2.15"
+    ],
+    "obligation_ids": [
+      "C4_ST.01",
+      "C4_ST.02",
+      "C4_ST.03",
+      "C4_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_ST",
+    "family": "qi_series",
+    "tradition": "San_tong_li",
+    "mechanism": "M02",
+    "evidence_locators": [
+      "C2017 pp.96–97 §178",
+      "L2003 p.28 eq2.12–2.15"
+    ],
+    "obligation_ids": [
+      "C4_ST.01",
+      "C4_ST.02",
+      "C4_ST.03",
+      "C4_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B32",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_ST",
+    "family": "qi_series",
+    "tradition": "San_tong_li",
+    "mechanism": "M05",
+    "evidence_locators": [
+      "C2017 pp.96–97 §178",
+      "L2003 p.28 eq2.12–2.15"
+    ],
+    "obligation_ids": [
+      "C4_ST.01",
+      "C4_ST.02",
+      "C4_ST.03",
+      "C4_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B03",
+      "B04",
+      "B05",
+      "B23",
+      "B24"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_ST",
+    "family": "qi_series",
+    "tradition": "San_tong_li",
+    "mechanism": "M06",
+    "evidence_locators": [
+      "C2017 pp.96–97 §178",
+      "L2003 p.28 eq2.12–2.15"
+    ],
+    "obligation_ids": [
+      "C4_ST.01",
+      "C4_ST.02",
+      "C4_ST.03",
+      "C4_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B12",
+      "B22"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_ST",
+    "family": "qi_series",
+    "tradition": "San_tong_li",
+    "mechanism": "M08",
+    "evidence_locators": [
+      "C2017 pp.96–97 §178",
+      "L2003 p.28 eq2.12–2.15"
+    ],
+    "obligation_ids": [
+      "C4_ST.01",
+      "C4_ST.02",
+      "C4_ST.03",
+      "C4_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B13",
+      "B14",
+      "B15",
+      "B16"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_ST",
+    "family": "qi_series",
+    "tradition": "San_tong_li",
+    "mechanism": "M09",
+    "evidence_locators": [
+      "C2017 pp.96–97 §178",
+      "L2003 p.28 eq2.12–2.15"
+    ],
+    "obligation_ids": [
+      "C4_ST.01",
+      "C4_ST.02",
+      "C4_ST.03",
+      "C4_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B15",
+      "B35"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_ST",
+    "family": "qi_series",
+    "tradition": "San_tong_li",
+    "mechanism": "M11",
+    "evidence_locators": [
+      "C2017 pp.96–97 §178",
+      "L2003 p.28 eq2.12–2.15"
+    ],
+    "obligation_ids": [
+      "C4_ST.01",
+      "C4_ST.02",
+      "C4_ST.03",
+      "C4_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B25",
+      "B26",
+      "B37"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_ST",
+    "family": "qi_series",
+    "tradition": "San_tong_li",
+    "mechanism": "M12",
+    "evidence_locators": [
+      "C2017 pp.96–97 §178",
+      "L2003 p.28 eq2.12–2.15"
+    ],
+    "obligation_ids": [
+      "C4_ST.01",
+      "C4_ST.02",
+      "C4_ST.03",
+      "C4_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B02",
+      "B20",
+      "B21"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_SF",
+    "family": "qi_series",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M01",
+    "evidence_locators": [
+      "C2017 p.167 §49后半",
+      "L2003 p.69"
+    ],
+    "obligation_ids": [
+      "C4_SF.01",
+      "C4_SF.02"
+    ],
+    "candidate_behavior_tests": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_SF",
+    "family": "qi_series",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M03",
+    "evidence_locators": [
+      "C2017 p.167 §49后半",
+      "L2003 p.69"
+    ],
+    "obligation_ids": [
+      "C4_SF.01",
+      "C4_SF.02"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B10"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_SF",
+    "family": "qi_series",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M04",
+    "evidence_locators": [
+      "C2017 p.167 §49后半",
+      "L2003 p.69"
+    ],
+    "obligation_ids": [
+      "C4_SF.01",
+      "C4_SF.02"
+    ],
+    "candidate_behavior_tests": [],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_SF",
+    "family": "qi_series",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M06",
+    "evidence_locators": [
+      "C2017 p.167 §49后半",
+      "L2003 p.69"
+    ],
+    "obligation_ids": [
+      "C4_SF.01",
+      "C4_SF.02"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B12",
+      "B22"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_SF",
+    "family": "qi_series",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M07",
+    "evidence_locators": [
+      "C2017 p.167 §49后半",
+      "L2003 p.69"
+    ],
+    "obligation_ids": [
+      "C4_SF.01",
+      "C4_SF.02"
+    ],
+    "candidate_behavior_tests": [
+      "B19",
+      "B20",
+      "B36"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_SF",
+    "family": "qi_series",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M08",
+    "evidence_locators": [
+      "C2017 p.167 §49后半",
+      "L2003 p.69"
+    ],
+    "obligation_ids": [
+      "C4_SF.01",
+      "C4_SF.02"
+    ],
+    "candidate_behavior_tests": [
+      "B13",
+      "B14",
+      "B15",
+      "B16"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_SF",
+    "family": "qi_series",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M09",
+    "evidence_locators": [
+      "C2017 p.167 §49后半",
+      "L2003 p.69"
+    ],
+    "obligation_ids": [
+      "C4_SF.01",
+      "C4_SF.02"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B15",
+      "B35"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C4_SF",
+    "family": "qi_series",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M11",
+    "evidence_locators": [
+      "C2017 p.167 §49后半",
+      "L2003 p.69"
+    ],
+    "obligation_ids": [
+      "C4_SF.01",
+      "C4_SF.02"
+    ],
+    "candidate_behavior_tests": [
+      "B25",
+      "B26",
+      "B37"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_ST",
+    "family": "intercalation_location",
+    "tradition": "San_tong_li",
+    "mechanism": "M01",
+    "evidence_locators": [
+      "C2017 pp.92–96 §176",
+      "L2003 p.27 eq2.9, p.29"
+    ],
+    "obligation_ids": [
+      "C5_ST.01",
+      "C5_ST.02",
+      "C5_ST.03",
+      "C5_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_ST",
+    "family": "intercalation_location",
+    "tradition": "San_tong_li",
+    "mechanism": "M02",
+    "evidence_locators": [
+      "C2017 pp.92–96 §176",
+      "L2003 p.27 eq2.9, p.29"
+    ],
+    "obligation_ids": [
+      "C5_ST.01",
+      "C5_ST.02",
+      "C5_ST.03",
+      "C5_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B32",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_ST",
+    "family": "intercalation_location",
+    "tradition": "San_tong_li",
+    "mechanism": "M03",
+    "evidence_locators": [
+      "C2017 pp.92–96 §176",
+      "L2003 p.27 eq2.9, p.29"
+    ],
+    "obligation_ids": [
+      "C5_ST.01",
+      "C5_ST.02",
+      "C5_ST.03",
+      "C5_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B10"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_ST",
+    "family": "intercalation_location",
+    "tradition": "San_tong_li",
+    "mechanism": "M05",
+    "evidence_locators": [
+      "C2017 pp.92–96 §176",
+      "L2003 p.27 eq2.9, p.29"
+    ],
+    "obligation_ids": [
+      "C5_ST.01",
+      "C5_ST.02",
+      "C5_ST.03",
+      "C5_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B03",
+      "B04",
+      "B05",
+      "B23",
+      "B24"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_ST",
+    "family": "intercalation_location",
+    "tradition": "San_tong_li",
+    "mechanism": "M07",
+    "evidence_locators": [
+      "C2017 pp.92–96 §176",
+      "L2003 p.27 eq2.9, p.29"
+    ],
+    "obligation_ids": [
+      "C5_ST.01",
+      "C5_ST.02",
+      "C5_ST.03",
+      "C5_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B19",
+      "B20",
+      "B36"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_ST",
+    "family": "intercalation_location",
+    "tradition": "San_tong_li",
+    "mechanism": "M09",
+    "evidence_locators": [
+      "C2017 pp.92–96 §176",
+      "L2003 p.27 eq2.9, p.29"
+    ],
+    "obligation_ids": [
+      "C5_ST.01",
+      "C5_ST.02",
+      "C5_ST.03",
+      "C5_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B15",
+      "B35"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_ST",
+    "family": "intercalation_location",
+    "tradition": "San_tong_li",
+    "mechanism": "M12",
+    "evidence_locators": [
+      "C2017 pp.92–96 §176",
+      "L2003 p.27 eq2.9, p.29"
+    ],
+    "obligation_ids": [
+      "C5_ST.01",
+      "C5_ST.02",
+      "C5_ST.03",
+      "C5_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B02",
+      "B20",
+      "B21"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_ST",
+    "family": "intercalation_location",
+    "tradition": "San_tong_li",
+    "mechanism": "M13",
+    "evidence_locators": [
+      "C2017 pp.92–96 §176",
+      "L2003 p.27 eq2.9, p.29"
+    ],
+    "obligation_ids": [
+      "C5_ST.01",
+      "C5_ST.02",
+      "C5_ST.03",
+      "C5_ST.04"
+    ],
+    "candidate_behavior_tests": [
+      "B25",
+      "B27",
+      "B28",
+      "B36",
+      "B37"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_SF",
+    "family": "intercalation_location",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M01",
+    "evidence_locators": [
+      "C2017 pp.167–169 §50",
+      "L2003 pp.69–70 eq3.13"
+    ],
+    "obligation_ids": [
+      "C5_SF.01",
+      "C5_SF.02",
+      "C5_SF.03",
+      "C5_SF.04",
+      "C5_SF.05"
+    ],
+    "candidate_behavior_tests": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_SF",
+    "family": "intercalation_location",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M02",
+    "evidence_locators": [
+      "C2017 pp.167–169 §50",
+      "L2003 pp.69–70 eq3.13"
+    ],
+    "obligation_ids": [
+      "C5_SF.01",
+      "C5_SF.02",
+      "C5_SF.03",
+      "C5_SF.04",
+      "C5_SF.05"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B32",
+      "B33"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_SF",
+    "family": "intercalation_location",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M03",
+    "evidence_locators": [
+      "C2017 pp.167–169 §50",
+      "L2003 pp.69–70 eq3.13"
+    ],
+    "obligation_ids": [
+      "C5_SF.01",
+      "C5_SF.02",
+      "C5_SF.03",
+      "C5_SF.04",
+      "C5_SF.05"
+    ],
+    "candidate_behavior_tests": [
+      "B08",
+      "B09",
+      "B10"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_SF",
+    "family": "intercalation_location",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M05",
+    "evidence_locators": [
+      "C2017 pp.167–169 §50",
+      "L2003 pp.69–70 eq3.13"
+    ],
+    "obligation_ids": [
+      "C5_SF.01",
+      "C5_SF.02",
+      "C5_SF.03",
+      "C5_SF.04",
+      "C5_SF.05"
+    ],
+    "candidate_behavior_tests": [
+      "B03",
+      "B04",
+      "B05",
+      "B23",
+      "B24"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_SF",
+    "family": "intercalation_location",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M07",
+    "evidence_locators": [
+      "C2017 pp.167–169 §50",
+      "L2003 pp.69–70 eq3.13"
+    ],
+    "obligation_ids": [
+      "C5_SF.01",
+      "C5_SF.02",
+      "C5_SF.03",
+      "C5_SF.04",
+      "C5_SF.05"
+    ],
+    "candidate_behavior_tests": [
+      "B19",
+      "B20",
+      "B36"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_SF",
+    "family": "intercalation_location",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M09",
+    "evidence_locators": [
+      "C2017 pp.167–169 §50",
+      "L2003 pp.69–70 eq3.13"
+    ],
+    "obligation_ids": [
+      "C5_SF.01",
+      "C5_SF.02",
+      "C5_SF.03",
+      "C5_SF.04",
+      "C5_SF.05"
+    ],
+    "candidate_behavior_tests": [
+      "B11",
+      "B15",
+      "B35"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  },
+  {
+    "cell": "C5_SF",
+    "family": "intercalation_location",
+    "tradition": "Han_Si_fen_li",
+    "mechanism": "M13",
+    "evidence_locators": [
+      "C2017 pp.167–169 §50",
+      "L2003 pp.69–70 eq3.13"
+    ],
+    "obligation_ids": [
+      "C5_SF.01",
+      "C5_SF.02",
+      "C5_SF.03",
+      "C5_SF.04",
+      "C5_SF.05"
+    ],
+    "candidate_behavior_tests": [
+      "B25",
+      "B27",
+      "B28",
+      "B36",
+      "B37"
+    ],
+    "actual_function": null,
+    "v3_execution_result": "not_run",
+    "work_must_record": [
+      "surface_construction_id",
+      "rule_version",
+      "positive_source_example",
+      "negative_case",
+      "novel_composition_status",
+      "evidence_basis",
+      "actual_event_ids",
+      "first_failure_layer"
+    ]
+  }
+]

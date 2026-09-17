@@ -1,0 +1,729 @@
+{
+  "schema_version": "3.0",
+  "input_mode": "declared_edited_primary_context",
+  "provided_scope": {
+    "tradition": "Han_Si_fen_li",
+    "planet": null,
+    "scope_is_curator_provided": true
+  },
+  "primary_documents": [
+    {
+      "doc_id": "HQ.3.2",
+      "reading_id": "HQ.3.2.C2017.v3",
+      "text": "推入蔀術曰：以元法除去上元，其餘以紀法除之，所得數從天紀，筭外則所入紀也．不滿紀法者，入紀年數也．以蔀法除之，所得數從甲子蔀起，筭外，所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之，筭上，即所求年太歲所在．",
+      "text_sha256": "9afd58beadd28cc35670cc3d6e5b04b2758b9d8c7412f55c9ac4f756d20724d8",
+      "edition_transcription": "推入蔀術曰：以元法除去上元，其餘以紀法除之，所得數從天紀，筭外則所入紀也．不滿紀法者，入紀年數也．以蔀法除之，所得數從甲子蔀起，筭外，[所入蔀也不滿蔀法者入蔀年數也各以]所入(紀)[蔀]歲名命之，筭上，即所求年太歲所在．",
+      "edition_sha256": "19617721bdc2154590ad4cd99f2dd419348012322286cebde460e52853a5b3d6",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          159,
+          160,
+          161
+        ],
+        "pdf_pages": [
+          172,
+          173,
+          174
+        ],
+        "locator": "Proc.3.2 §43"
+      },
+      "edition_edits": [
+        {
+          "edition_start": 67,
+          "edition_end": 85,
+          "old": "[所入蔀也不滿蔀法者入蔀年數也各以]",
+          "new": "所入蔀也不滿蔀法者入蔀年數也各以",
+          "reading_start": 67,
+          "reading_end": 83,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        },
+        {
+          "edition_start": 87,
+          "edition_end": 93,
+          "old": "(紀)[蔀]",
+          "new": "蔀",
+          "reading_start": 85,
+          "reading_end": 86,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        }
+      ],
+      "transcription_notes": "Title joins the preceding printed page; zero-remainder and ordinal semantics are registered in I03.",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.3.5",
+      "text": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏．",
+      "reading_id": "HQ.3.5.C2017-reading-v1",
+      "text_sha256": "d579f6a33058713ccabc840a70fea0d21412cb384d9724e10ca4a684a7d1ead2",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          164
+        ],
+        "pdf_pages": [
+          177
+        ],
+        "locator": "HQ.3.5"
+      },
+      "editorial_trace": [],
+      "edition_transcription": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏．",
+      "edition_sha256": "d579f6a33058713ccabc840a70fea0d21412cb384d9724e10ca4a684a7d1ead2",
+      "view_status": "v2 adopted reading retained; original editorial_trace retained, see unchanged handoff_v2.zip"
+    },
+    {
+      "doc_id": "HQ.3.6",
+      "text": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也．小餘四百四十一以上，其月大．求後月朔，加大餘二十九，小餘四百九十九，小餘滿蔀月得一，上加大餘，命之如前．",
+      "reading_id": "HQ.3.6.C2017-reading-v1",
+      "text_sha256": "76c0d257f21640e32bf3895b93856a33aaf6d30cde31c7284930b653c3cf9da8",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          165
+        ],
+        "pdf_pages": [
+          178
+        ],
+        "locator": "HQ.3.6"
+      },
+      "editorial_trace": [
+        {
+          "old": "四百九十[九]",
+          "new": "四百九十九",
+          "basis": "Cullen中文补九；刘pp.67–68朔望月分子499。",
+          "transcription_range": [
+            103,
+            110
+          ]
+        }
+      ],
+      "edition_transcription": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也．小餘四百四十一以上，其月大．求後月朔，加大餘二十九，小餘四百九十九，小餘滿蔀月得一，上加大餘，命之如前．",
+      "edition_sha256": "76c0d257f21640e32bf3895b93856a33aaf6d30cde31c7284930b653c3cf9da8",
+      "view_status": "v2 adopted reading retained; original editorial_trace retained, see unchanged handoff_v2.zip"
+    },
+    {
+      "doc_id": "HQ.3.8",
+      "reading_id": "HQ.3.8.C2017.v3",
+      "text": "推二十四氣術曰：置入蔀年減一，以日餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也．求次氣，加大餘十五，小餘七，除命之如前，小寒日也．",
+      "text_sha256": "07fb60c3b06f1cf91ec06739c6072dbd743e2f02f9b87736d649943c7544d2fe",
+      "edition_transcription": "推二十四氣術曰：置入蔀年減一，以(月)[日]餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也．求次氣，加大餘十五，小餘七，除命之如前，小寒日也．",
+      "edition_sha256": "dcf7b94d002796d7ec4c54e240e92b69147865bb5fb09107b20bb07f824807dd",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          167
+        ],
+        "pdf_pages": [
+          180
+        ],
+        "locator": "Proc.3.8 §49"
+      },
+      "edition_edits": [
+        {
+          "edition_start": 16,
+          "edition_end": 22,
+          "old": "(月)[日]",
+          "new": "日",
+          "reading_start": 16,
+          "reading_end": 17,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        }
+      ],
+      "transcription_notes": "Two computational goals remain in one source procedure.",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.3.9",
+      "reading_id": "HQ.3.9.C2017.v3",
+      "text": "推閏月所在，以閏餘減章法，餘以十二乘之，滿章閏數得一，滿四以上亦得一筭之數，從前年十一月起，筭盡之外，閏月也．或進退，以中氣定之．",
+      "text_sha256": "a9f26624c994fe30240a377aa4f8c6c6922f9fd1377cadbd02a5752106bce038",
+      "edition_transcription": "推閏月所在，以閏餘減章法，餘以十二乘之，滿章閏數得一，滿四以上亦得一筭之數，從前年十一月起，筭盡之外，閏月也．或進退，以中氣定之．",
+      "edition_sha256": "a9f26624c994fe30240a377aa4f8c6c6922f9fd1377cadbd02a5752106bce038",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          167,
+          168,
+          169
+        ],
+        "pdf_pages": [
+          180,
+          181,
+          182
+        ],
+        "locator": "Proc.3.9 §50"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    }
+  ],
+  "context_documents": [
+    {
+      "doc_id": "HQ.rule_year",
+      "text": "章法，十九．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155
+        ],
+        "pdf_pages": [
+          168
+        ]
+      },
+      "text_sha256": "24a9ed783208db988673c2b0dc03d4dcf62cfe3fd7e57942acf3c4058763f6ad"
+    },
+    {
+      "doc_id": "HQ.rule_month",
+      "text": "章月，二百三十五．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155
+        ],
+        "pdf_pages": [
+          168
+        ]
+      },
+      "text_sha256": "22035bc231c9e8b1031746a51c9ef9443a5ad6932500be93c2749920c1d2101a"
+    },
+    {
+      "doc_id": "HQ.obscuration_month",
+      "text": "蔀月，九百四十．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154,
+          155
+        ],
+        "pdf_pages": [
+          167,
+          168
+        ]
+      },
+      "text_sha256": "28e7c5b4657e15b81ccc21cab6112e848dd92488b59e2e0b86f4fec1e862e245"
+    },
+    {
+      "doc_id": "HQ.obscuration_days",
+      "text": "蔀日，二萬七千七百五十九．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          156
+        ],
+        "pdf_pages": [
+          169
+        ]
+      },
+      "text_sha256": "95e023b4816518ccd15f1d08c6a3a652a98754ba2f5d454c9f05c24244d199d3"
+    },
+    {
+      "doc_id": "HQ.obscuration_year",
+      "text": "蔀法，七十六．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154
+        ],
+        "pdf_pages": [
+          167
+        ]
+      },
+      "text_sha256": "5d6cdd72b3134ffbb5e340daee5d72b10d652f9e285a1466b819651312a9f675"
+    },
+    {
+      "doc_id": "HQ.solar_day_factor",
+      "text": "日法，四．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155,
+          156
+        ],
+        "pdf_pages": [
+          168,
+          169
+        ]
+      },
+      "text_sha256": "c3c4a3463ecb5f1607d77193993d8c72751fe9f645c33191372f4e8f38298f06"
+    },
+    {
+      "doc_id": "HQ.const.origin",
+      "reading_id": "HQ.const.origin.C2017.v3",
+      "text": "元法，四千五百六十．",
+      "text_sha256": "10a516d7960164ba3140884105cb59809ad5ce3d5846c0cbceb8658c4e0b48a0",
+      "edition_transcription": "元法，四千五百六十．",
+      "edition_sha256": "10a516d7960164ba3140884105cb59809ad5ce3d5846c0cbceb8658c4e0b48a0",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154
+        ],
+        "pdf_pages": [
+          167
+        ],
+        "locator": "§19"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.era",
+      "reading_id": "HQ.const.era.C2017.v3",
+      "text": "紀法，千五百二十．",
+      "text_sha256": "ebd57a8b9ebd78c2516783819cb2d2560e5b362f4928a299dd46243ff8776ea1",
+      "edition_transcription": "紀法，千五百二十．",
+      "edition_sha256": "ebd57a8b9ebd78c2516783819cb2d2560e5b362f4928a299dd46243ff8776ea1",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154
+        ],
+        "pdf_pages": [
+          167
+        ],
+        "locator": "§20"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.day_remainder",
+      "reading_id": "HQ.const.day_remainder.C2017.v3",
+      "text": "日餘，百六十八．",
+      "text_sha256": "eeecd8dfe12bf217ba10087aa91e3a11167f045586ba639367c2489e45d12088",
+      "edition_transcription": "日餘，百六十八．",
+      "edition_sha256": "eeecd8dfe12bf217ba10087aa91e3a11167f045586ba639367c2489e45d12088",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          156
+        ],
+        "pdf_pages": [
+          169
+        ],
+        "locator": "§32"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.medial",
+      "reading_id": "HQ.const.medial.C2017.v3",
+      "text": "中法，三十二．",
+      "text_sha256": "602d4ab8739e7ba45a2eeaa1d5d62502a6678b9f0bbbad419c44612490dda4c7",
+      "edition_transcription": "中法，(四)[三]十二．",
+      "edition_sha256": "c106f0311e8c669d773df5cf28081a92a27cbb77894944ce30f575fb670eedf7",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          156,
+          157
+        ],
+        "pdf_pages": [
+          169,
+          170
+        ],
+        "locator": "§33"
+      },
+      "edition_edits": [
+        {
+          "edition_start": 3,
+          "edition_end": 9,
+          "old": "(四)[三]",
+          "new": "三",
+          "reading_start": 3,
+          "reading_end": 4,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        }
+      ],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.great_circuit",
+      "reading_id": "HQ.const.great_circuit.C2017.v3",
+      "text": "大周，三十四萬三千三百三十五．",
+      "text_sha256": "168e018b568dc5577e48e6cc7350743ba326d7bc1c0c458e2822c41e921f1b19",
+      "edition_transcription": "大周，三十四萬三千三百三十五．",
+      "edition_sha256": "168e018b568dc5577e48e6cc7350743ba326d7bc1c0c458e2822c41e921f1b19",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          157
+        ],
+        "pdf_pages": [
+          170
+        ],
+        "locator": "§34"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "HQ.const.circuit",
+      "reading_id": "HQ.const.circuit.C2017.v3",
+      "text": "周天，千四百六十一．",
+      "text_sha256": "e65182052ab3b4ff78feba8c4b370b981ad36f8504ac3e4773fbb0868494b122",
+      "edition_transcription": "周天，千四百六十一．",
+      "edition_sha256": "e65182052ab3b4ff78feba8c4b370b981ad36f8504ac3e4773fbb0868494b122",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155
+        ],
+        "pdf_pages": [
+          168
+        ],
+        "locator": "§26"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    }
+  ],
+  "runtime_policy": "No reference steps, expected intermediate values, motif labels, or learned-from-this-case method body may enter runtime.",
+  "context_tables": [
+    {
+      "table_id": "HQ.3.4",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          162,
+          163
+        ],
+        "pdf_pages": [
+          175,
+          176
+        ],
+        "locator": "§45 Tables3.1–3.2"
+      },
+      "representation": "modern numeric transcription of published table; historical Chinese labels retained",
+      "columns": [
+        "天紀歲名",
+        "地紀歲名",
+        "人紀歲名",
+        "蔀首日"
+      ],
+      "rows": [
+        {
+          "row_ordinal": 1,
+          "numeric": [
+            17,
+            37,
+            57,
+            1
+          ],
+          "source_labels": [
+            "庚辰",
+            "庚子",
+            "庚申",
+            "甲子"
+          ]
+        },
+        {
+          "row_ordinal": 2,
+          "numeric": [
+            33,
+            53,
+            13,
+            40
+          ],
+          "source_labels": [
+            "丙申",
+            "丙辰",
+            "丙子",
+            "癸卯"
+          ]
+        },
+        {
+          "row_ordinal": 3,
+          "numeric": [
+            49,
+            9,
+            29,
+            19
+          ],
+          "source_labels": [
+            "壬子",
+            "壬申",
+            "壬辰",
+            "壬午"
+          ]
+        },
+        {
+          "row_ordinal": 4,
+          "numeric": [
+            5,
+            25,
+            45,
+            58
+          ],
+          "source_labels": [
+            "戊辰",
+            "戊子",
+            "戊申",
+            "辛酉"
+          ]
+        },
+        {
+          "row_ordinal": 5,
+          "numeric": [
+            21,
+            41,
+            1,
+            37
+          ],
+          "source_labels": [
+            "甲申",
+            "甲辰",
+            "甲子",
+            "庚子"
+          ]
+        },
+        {
+          "row_ordinal": 6,
+          "numeric": [
+            37,
+            57,
+            17,
+            16
+          ],
+          "source_labels": [
+            "庚子",
+            "庚申",
+            "庚辰",
+            "己卯"
+          ]
+        },
+        {
+          "row_ordinal": 7,
+          "numeric": [
+            53,
+            13,
+            33,
+            55
+          ],
+          "source_labels": [
+            "丙辰",
+            "丙子",
+            "丙申",
+            "戊午"
+          ]
+        },
+        {
+          "row_ordinal": 8,
+          "numeric": [
+            9,
+            29,
+            49,
+            34
+          ],
+          "source_labels": [
+            "壬申",
+            "壬辰",
+            "壬子",
+            "丁酉"
+          ]
+        },
+        {
+          "row_ordinal": 9,
+          "numeric": [
+            25,
+            45,
+            5,
+            13
+          ],
+          "source_labels": [
+            "戊子",
+            "戊申",
+            "戊辰",
+            "丙子"
+          ]
+        },
+        {
+          "row_ordinal": 10,
+          "numeric": [
+            41,
+            1,
+            21,
+            52
+          ],
+          "source_labels": [
+            "甲辰",
+            "甲子",
+            "甲申",
+            "乙卯"
+          ]
+        },
+        {
+          "row_ordinal": 11,
+          "numeric": [
+            57,
+            17,
+            37,
+            31
+          ],
+          "source_labels": [
+            "庚申",
+            "庚辰",
+            "庚子",
+            "甲午"
+          ]
+        },
+        {
+          "row_ordinal": 12,
+          "numeric": [
+            13,
+            33,
+            53,
+            10
+          ],
+          "source_labels": [
+            "丙子",
+            "丙申",
+            "丙辰",
+            "癸酉"
+          ]
+        },
+        {
+          "row_ordinal": 13,
+          "numeric": [
+            29,
+            49,
+            9,
+            49
+          ],
+          "source_labels": [
+            "壬辰",
+            "壬子",
+            "壬申",
+            "壬子"
+          ]
+        },
+        {
+          "row_ordinal": 14,
+          "numeric": [
+            45,
+            5,
+            25,
+            28
+          ],
+          "source_labels": [
+            "戊申",
+            "戊辰",
+            "戊子",
+            "辛卯"
+          ]
+        },
+        {
+          "row_ordinal": 15,
+          "numeric": [
+            1,
+            21,
+            41,
+            7
+          ],
+          "source_labels": [
+            "甲子",
+            "甲申",
+            "甲辰",
+            "庚午"
+          ]
+        },
+        {
+          "row_ordinal": 16,
+          "numeric": [
+            17,
+            37,
+            57,
+            46
+          ],
+          "source_labels": [
+            "庚辰",
+            "庚子",
+            "庚申",
+            "己酉"
+          ]
+        },
+        {
+          "row_ordinal": 17,
+          "numeric": [
+            33,
+            53,
+            13,
+            25
+          ],
+          "source_labels": [
+            "丙申",
+            "丙辰",
+            "丙子",
+            "戊子"
+          ]
+        },
+        {
+          "row_ordinal": 18,
+          "numeric": [
+            49,
+            9,
+            29,
+            4
+          ],
+          "source_labels": [
+            "壬子",
+            "壬申",
+            "壬辰",
+            "丁卯"
+          ]
+        },
+        {
+          "row_ordinal": 19,
+          "numeric": [
+            5,
+            25,
+            45,
+            43
+          ],
+          "source_labels": [
+            "戊辰",
+            "戊子",
+            "戊申",
+            "丙午"
+          ]
+        },
+        {
+          "row_ordinal": 20,
+          "numeric": [
+            21,
+            41,
+            1,
+            22
+          ],
+          "source_labels": [
+            "甲申",
+            "甲辰",
+            "甲子",
+            "乙酉"
+          ]
+        }
+      ],
+      "editorial_note": "Cullen Table3.1 emends exchanged columns and individual entries; this chosen edition is the input, not unedited Hou Hanshu."
+    }
+  ],
+  "context_supplied_values": [
+    {
+      "id": "HQ.chapter_intercalations",
+      "label": "章閏數",
+      "value": 7,
+      "kind": "context_supplied_scholarly_derivation",
+      "formula": "235 - 19 * 12",
+      "basis": "C2017 p.155 §25; L2003 p.59",
+      "not_automatically_extracted": true,
+      "scope": "Han_Si_fen_li"
+    }
+  ]
+}

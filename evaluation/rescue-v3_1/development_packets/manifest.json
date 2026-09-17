@@ -1,0 +1,49 @@
+{
+  "contract_sha256": "6e467d27cfb14001f5494d4a884bc7c5375a979c7a0dcb4536c6ca23c2559dbf",
+  "files": [
+    {
+      "case": "A01",
+      "original_path": "evaluation/handoff-v3/prospective/packets/A01.json",
+      "original_sha256": "43644a395bc92d0cecd9bbc24a0b874a23c50c285f12f9e87803050353a2e8b8",
+      "development_sha256": "727e67609b359b88c189134fad1f96e7fbfb083db57b18c547a75b3e46f15d91",
+      "source_documents_unchanged": true,
+      "changed_paths": [
+        "packet.selected_profiles",
+        "inputs"
+      ]
+    },
+    {
+      "case": "A02",
+      "original_path": "evaluation/handoff-v3/prospective/packets/A02.json",
+      "original_sha256": "2dc98a95b0fab0879bf198c2ee33658141608f29595c16e40f87c7bc1d2f9654",
+      "development_sha256": "b809100f44d0438d261dff64ea07e9c5739bf269e962bcb22ba9c8a9650a8a57",
+      "source_documents_unchanged": true,
+      "changed_paths": [
+        "packet.selected_profiles",
+        "inputs"
+      ]
+    },
+    {
+      "case": "A03",
+      "original_path": "evaluation/handoff-v3/prospective/packets/A03.json",
+      "original_sha256": "6c00965b44a8d96db786db9762608edca3f17d601265e524622fefc375c5c36d",
+      "development_sha256": "0c6f9d9d4dea4ed3cdb63ae08814a1091c4a8a94a0ef770b37b2992169172f9f",
+      "source_documents_unchanged": true,
+      "changed_paths": [
+        "packet.selected_profiles",
+        "inputs"
+      ]
+    },
+    {
+      "case": "A04",
+      "original_path": "evaluation/handoff-v3/prospective/packets/A04.json",
+      "original_sha256": "0f8d283f2bc17ccb53b1c927903b2fa99eb484c7262ff66abff5376ca72a228a",
+      "development_sha256": "1c5ea42a50555fc303f78227bee3e6e72c4609b5a14ed867313996342658c05c",
+      "source_documents_unchanged": true,
+      "changed_paths": [
+        "packet.selected_profiles",
+        "inputs"
+      ]
+    }
+  ]
+}

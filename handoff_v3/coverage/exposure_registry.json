@@ -1,0 +1,31 @@
+{
+  "policy": "All source procedures quoted in this package and both embedded predecessor archives are exposed; use predecessor registries cumulatively. Being omitted from v2 development does not restore blindness.",
+  "development_ids": [
+    "ST.2.1",
+    "ST.2.14",
+    "ST.2.15",
+    "ST.2.2",
+    "ST.2.3",
+    "ST.2.4",
+    "ST.2.5",
+    "ST.2.6",
+    "ST.2.7"
+  ],
+  "additionally_exposed_in_discussion": [
+    "ST.2.8",
+    "ST.2.9",
+    "ST.2.10",
+    "HQ.3.3",
+    "HQ.3.10",
+    "HQ.3.13",
+    "HQ.3.14",
+    "HQ.3.15",
+    "HQ.3.16",
+    "HQ.3.17",
+    "HQ.3.18",
+    "QX.4.7",
+    "QX.4.67",
+    "QX.4.68"
+  ],
+  "note": "These are not an exhaustive historical exposure list; Work must merge its local registries. No actual unexposed test text or gold supplied here."
+}

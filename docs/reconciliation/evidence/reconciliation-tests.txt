@@ -1,0 +1,10 @@
+test_compiler_and_executor_run_without_evaluation_or_history (test_core_boundary.ProductionBoundary.test_compiler_and_executor_run_without_evaluation_or_history) ... ok
+test_asset_relocation_preserves_identity_and_never_hides_missing_assets (test_runtime_portability.RuntimePortability.test_asset_relocation_preserves_identity_and_never_hides_missing_assets) ... ok
+test_both_isolated_workers_preserve_source_and_execute (test_runtime_portability.RuntimePortability.test_both_isolated_workers_preserve_source_and_execute) ... ok
+test_exposed_host_reads_utf8_metadata_without_utf8_mode (test_runtime_portability.RuntimePortability.test_exposed_host_reads_utf8_metadata_without_utf8_mode) ... ok
+test_manifest_keys_and_mutation_diagnostics_use_portable_paths (test_runtime_portability.RuntimePortability.test_manifest_keys_and_mutation_diagnostics_use_portable_paths) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 7.770s
+
+OK

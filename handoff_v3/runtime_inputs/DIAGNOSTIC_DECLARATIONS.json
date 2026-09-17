@@ -1,0 +1,176 @@
+{
+  "schema_version": "3.0",
+  "input_mode": "declared_edited_primary_context",
+  "provided_scope": {
+    "tradition": "San_tong_li",
+    "planet": null
+  },
+  "primary_documents": [
+    {
+      "doc_id": "ST.2.7",
+      "reading_id": "ST.2.7.C2017.v3",
+      "text": "推五行，其四行各七十三日，統法分之七十七．中央各十八日，統法分之四百四．冬至後，中央二十七日六百六分．",
+      "text_sha256": "b37b7c12239c853ccb89203610bc806d42e2206a0f30ad0f535869365cb2c938",
+      "edition_transcription": "推五行，其四行各七十三日，統(歲)[法]分之七十七．中央各十八日，統法分之四百四．冬至後，中央二十七日六百六分．",
+      "edition_sha256": "7654f1fb4ac75cbaf9a87259c1fe84712b8591fd8481aa9f88822276321cd3dd",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          97
+        ],
+        "pdf_pages": [
+          110
+        ],
+        "locator": "Proc.2.7 §§179–180"
+      },
+      "edition_edits": [
+        {
+          "edition_start": 14,
+          "edition_end": 20,
+          "old": "(歲)[法]",
+          "new": "法",
+          "reading_start": 14,
+          "reading_end": 15,
+          "basis": "C2017 printed editorial notation; accepted for this declared reading only"
+        }
+      ],
+      "transcription_notes": "Diagnostic declaration family; central/water interpretation remains disputed.",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    }
+  ],
+  "context_documents": [
+    {
+      "doc_id": "ST.rule_year",
+      "text": "閏法十九，因為章歲．合天地終數，得閏法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          40
+        ],
+        "pdf_pages": [
+          53
+        ]
+      },
+      "text_sha256": "890fdd1d5d02ea179fba2fac1f5a1a6abd93aeaa898d02cdfba22881111b4501"
+    },
+    {
+      "doc_id": "ST.rule_month",
+      "text": "章月二百三十五．五位乘會數，得章月．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          42
+        ],
+        "pdf_pages": [
+          55
+        ]
+      },
+      "text_sha256": "5b2cee0b4adce5ff7b004009ad860b3a8d898e569dc6e6153717f8825a4a8b8d"
+    },
+    {
+      "doc_id": "ST.lunation_factor",
+      "text": "月法二千三百九十二．推大衍象，得月法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          42
+        ],
+        "pdf_pages": [
+          55
+        ]
+      },
+      "text_sha256": "47a7f942bd98999cf15ff83f40b0d9cb3a7dce3f72a581ac4450c56a9317c893"
+    },
+    {
+      "doc_id": "ST.concordance_factor",
+      "text": "統法千五百三十九．以閏法乘日法，得統法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          41
+        ],
+        "pdf_pages": [
+          54
+        ]
+      },
+      "text_sha256": "034a9f390edac25aab24a1206722fda360a738db7ebdf9319f19dd80b6051fbf"
+    },
+    {
+      "doc_id": "ST.day_factor",
+      "text": "日法八十一．元始黃鐘初九自乘，一龠之數，得日法．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          39
+        ],
+        "pdf_pages": [
+          52
+        ]
+      },
+      "text_sha256": "ffc84c522268677e78cdc65a7d555f74e1a0d5a2525ce4cccadddc2fa61c90c9"
+    },
+    {
+      "doc_id": "ST.const.origin",
+      "reading_id": "ST.const.origin.C2017.v3",
+      "text": "元法四千六百一十七．參統法，得元法．",
+      "text_sha256": "994be485ee5dd61e31b93fc5e439eebad0281ecb4c8877013654c87c855b0b11",
+      "edition_transcription": "元法四千六百一十七．參統法，得元法．",
+      "edition_sha256": "994be485ee5dd61e31b93fc5e439eebad0281ecb4c8877013654c87c855b0b11",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          41
+        ],
+        "pdf_pages": [
+          54
+        ],
+        "locator": "§4"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "ST.const.medials",
+      "reading_id": "ST.const.medials.C2017.v3",
+      "text": "章中二百二十八．以閏法乘歲中，得章中．",
+      "text_sha256": "4e471cff96d4599b2e7def59d4fc926cdb010b53fdb01f68ab50f47449910c22",
+      "edition_transcription": "章中二百二十八．以閏法乘歲中，得章中．",
+      "edition_sha256": "4e471cff96d4599b2e7def59d4fc926cdb010b53fdb01f68ab50f47449910c22",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          47
+        ],
+        "pdf_pages": [
+          60
+        ],
+        "locator": "§17"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    },
+    {
+      "doc_id": "ST.const.reckoning",
+      "reading_id": "ST.const.reckoning.C2017.v3",
+      "text": "策餘八千八十．什乘元中，以減周天，得策餘．",
+      "text_sha256": "ffdbd673ffc567e5136d07ce2fc49c2c366930aa726fa161aab0c42b72193427",
+      "edition_transcription": "策餘八千八十．什乘元中，以減周天，得策餘．",
+      "edition_sha256": "ffdbd673ffc567e5136d07ce2fc49c2c366930aa726fa161aab0c42b72193427",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          47
+        ],
+        "pdf_pages": [
+          60
+        ],
+        "locator": "§20"
+      },
+      "edition_edits": [],
+      "transcription_notes": "",
+      "view_status": "chosen reading of modern scholarly edition; not an original manuscript witness"
+    }
+  ]
+}

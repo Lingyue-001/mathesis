@@ -1,0 +1,94 @@
+{
+  "scope": "Previous evaluation files only; bulk corpus/system ingestion is separately disclosed, not claimed absent.",
+  "records": [
+    {
+      "path": "evaluation/ROLE_FLOW_STATUS_2026-09-16.md",
+      "sha256": "a28e66658111b62a5d4ca557cf139a02c34a4dc43145ab727fa164a3411413bc",
+      "mentioned_ids": [
+        "Proc. 2.11",
+        "Proc. 2.12",
+        "Proc. 2.15",
+        "Proc. 2.17",
+        "Proc. 2.20",
+        "Proc. 2.9"
+      ]
+    },
+    {
+      "path": "evaluation/frozen-transfer-v121657c-pre-reference.md",
+      "sha256": "0ec083bd81726aa270a795e1d4b56512f6a159363c4fba8ebe030eb52ef673ab",
+      "mentioned_ids": [
+        "Proc. 3.39"
+      ]
+    },
+    {
+      "path": "evaluation/han-domain-v1/REPORT.md",
+      "sha256": "2ff75916890463187c12dbee5111619fcd812f143475d21e3b041c8d7034e08c",
+      "mentioned_ids": [
+        "Proc. 2.16",
+        "Proc. 2.20",
+        "Proc. 2.9"
+      ]
+    },
+    {
+      "path": "evaluation/han-domain-v1/scholarly-checks.json",
+      "sha256": "da7c8c0b5f4fce242bd98512bae5393652798337f250802cb70d26934b73a3e7",
+      "mentioned_ids": [
+        "Proc. 2.9"
+      ]
+    },
+    {
+      "path": "evaluation/han-role-flow-v2/PROTOCOL.md",
+      "sha256": "a66401bd5aa67d529d0b2ee71a9cc30b50cd8b5e8d09592b1956046f5fe49d0c",
+      "mentioned_ids": [
+        "Proc. 2.11"
+      ]
+    },
+    {
+      "path": "evaluation/han-role-flow-v2/manifest.json",
+      "sha256": "c5c9cdb45531c683be479f12101a9877c1d4644deebc49dfd658e33ba8bd8d5b",
+      "mentioned_ids": [
+        "Proc. 2.11"
+      ]
+    },
+    {
+      "path": "evaluation/state-parser-v1/assisted-state-diagnostic.json",
+      "sha256": "7a73e669c1bf64557b073b21ee310be4e87a74c742f9c6c7356bde555102d85a",
+      "mentioned_ids": [
+        "Proc. 2.14"
+      ]
+    },
+    {
+      "path": "evaluation/state-parser-v1/freeze.json",
+      "sha256": "243f6dfc34820099bd0bdbb8e538f16d1c831a4616a95d29403f13ffc1ead323",
+      "mentioned_ids": [
+        "Proc.2.15"
+      ]
+    },
+    {
+      "path": "evaluation/state-parser-v1/scholarly-checks.json",
+      "sha256": "b972d776de706a52d2cbed831d349998c7f033bffc010021b881e43a6d49166e",
+      "mentioned_ids": [
+        "Proc. 2.14",
+        "Proc. 2.8",
+        "Proc. 3.53"
+      ]
+    },
+    {
+      "path": "evaluation/state-parser-v2/development-replay.json",
+      "sha256": "5b0f5103746881e266b25f031794c4593f5e80c88815599aee8191234d3f8b50",
+      "mentioned_ids": [
+        "Proc. 2.14"
+      ]
+    },
+    {
+      "path": "evaluation/state-parser-v2/scholarly-checks.json",
+      "sha256": "1b02beebaf6b4ae830647f0df7dc38262f779e4747f68eb7481d30585e2cd3c7",
+      "mentioned_ids": [
+        "Proc. 2.10",
+        "Proc. 2.13",
+        "Proc. 3.47",
+        "Proc. 3.48"
+      ]
+    }
+  ]
+}

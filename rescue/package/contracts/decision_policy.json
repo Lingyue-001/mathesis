@@ -1,0 +1,40 @@
+{
+  "version": "rescue-1.0",
+  "a_prime_cases": 4,
+  "b_prime_cases": 4,
+  "continue_min_complete_chains": 3,
+  "continue_min_obligation_fraction": {
+    "numerator": 85,
+    "denominator": 100
+  },
+  "stop_max_complete_chains": 1,
+  "stop_min_structural_failed_cases": 2,
+  "note": "engineering budget gates; not a statistical theorem or universal limit on deterministic methods",
+  "required_preconditions": [
+    "development_gate_passed",
+    "behavior_frozen_before_selection",
+    "selection_policy_fixed",
+    "batch_locked_before_run",
+    "first_runs_preserved",
+    "hashes_unchanged",
+    "runtime_isolation_verified",
+    "no_runtime_llm",
+    "reviewer_did_not_use_parser_outputs",
+    "exposure_registry_inherited",
+    "all_required_relations_scorable",
+    "evidence_reviewed"
+  ],
+  "required_case_closures": [
+    "lexical_construction_closed",
+    "semantic_control_closed",
+    "dependency_inputs_closed",
+    "interpretation_closed",
+    "evaluator_closed",
+    "novel_composition"
+  ],
+  "structural_fields": [
+    "scope_ok",
+    "predicate_boundaries_ok",
+    "derivable_producers_ok"
+  ]
+}

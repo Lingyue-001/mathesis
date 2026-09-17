@@ -1,0 +1,536 @@
+{
+  "version": "rescue-scoring-support-1",
+  "scope": "Evaluable predicate fields and source evidence contracts; action naming alone does not establish complete A qualification. Generic subset matching is supported only on these frozen fields.",
+  "actions": {
+    "literal": {
+      "reads": [],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "value"
+      ],
+      "control": []
+    },
+    "parameter": {
+      "reads": [],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "name",
+        "value"
+      ],
+      "control": []
+    },
+    "input": {
+      "reads": [],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "name",
+        "parameter"
+      ],
+      "control": []
+    },
+    "alias": {
+      "reads": [
+        "value"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [],
+      "control": []
+    },
+    "load": {
+      "reads": [
+        "value"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [],
+      "control": []
+    },
+    "add": {
+      "reads": [
+        "left",
+        "right"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "receiver_label",
+        "integer_nonnegative",
+        "receiver"
+      ],
+      "control": []
+    },
+    "multiply": {
+      "reads": [
+        "left",
+        "right"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "integer_nonnegative"
+      ],
+      "control": []
+    },
+    "subtract": {
+      "reads": [
+        "left",
+        "right"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "receiver_label",
+        "integer_nonnegative"
+      ],
+      "control": []
+    },
+    "divmod": {
+      "reads": [
+        "dividend",
+        "divisor"
+      ],
+      "writes": [
+        "quotient",
+        "remainder"
+      ],
+      "attributes": [
+        "integer_nonnegative"
+      ],
+      "control": []
+    },
+    "cycle_reduce": {
+      "reads": [
+        "dividend",
+        "divisor"
+      ],
+      "writes": [
+        "quotient",
+        "remainder"
+      ],
+      "attributes": [
+        "integer_nonnegative"
+      ],
+      "control": []
+    },
+    "count": {
+      "reads": [
+        "offset",
+        "origin",
+        "cycle"
+      ],
+      "writes": [
+        "result",
+        "civil_month_number"
+      ],
+      "attributes": [
+        "cyclic",
+        "ordinal_origin",
+        "origin_label",
+        "civil_origin",
+        "civil_cycle"
+      ],
+      "control": []
+    },
+    "threshold": {
+      "reads": [
+        "value",
+        "lower",
+        "upper"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [],
+      "control": []
+    },
+    "method_call": {
+      "reads": [
+        "*"
+      ],
+      "writes": [
+        "*"
+      ],
+      "attributes": [
+        "target",
+        "body",
+        "formal_returns"
+      ],
+      "control": []
+    },
+    "year_scan": {
+      "reads": [
+        "months"
+      ],
+      "writes": [
+        "years",
+        "remainder",
+        "months_removed"
+      ],
+      "attributes": [
+        "cumulative_schedule",
+        "intercalary_year_months",
+        "ordinary_year_months"
+      ],
+      "control": []
+    },
+    "interval_scale": {
+      "reads": [
+        "value",
+        "factor"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [],
+      "control": []
+    },
+    "framed_origin": {
+      "reads": [
+        "head",
+        "epoch"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "epoch_kind",
+        "profile",
+        "source_month_proof"
+      ],
+      "control": []
+    },
+    "initial_instant": {
+      "reads": [
+        "head",
+        "epoch",
+        "ordinal",
+        "denominator"
+      ],
+      "writes": [
+        "day_offset",
+        "fraction"
+      ],
+      "attributes": [],
+      "control": []
+    },
+    "select": {
+      "reads": [
+        "divisor",
+        "local0",
+        "local1",
+        "local2",
+        "head0",
+        "head1",
+        "head2"
+      ],
+      "writes": [
+        "index",
+        "local",
+        "head"
+      ],
+      "attributes": [
+        "choices"
+      ],
+      "control": []
+    },
+    "lookup": {
+      "reads": [
+        "row",
+        "column"
+      ],
+      "writes": [
+        "head_day",
+        "head_year"
+      ],
+      "attributes": [
+        "row_base",
+        "column_base",
+        "table",
+        "day_column"
+      ],
+      "control": []
+    },
+    "rescale": {
+      "reads": [
+        "value",
+        "old_denominator",
+        "new_denominator",
+        "factor"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [],
+      "control": []
+    },
+    "fraction": {
+      "reads": [
+        "whole",
+        "numerator",
+        "denominator"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [],
+      "control": []
+    },
+    "convert": {
+      "reads": [
+        "numerator",
+        "denominator",
+        "rate_numerator",
+        "rate_denominator",
+        "output_denominator"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "rate"
+      ],
+      "control": []
+    },
+    "repeat": {
+      "reads": [
+        "initial",
+        "increment",
+        "threshold"
+      ],
+      "writes": [
+        "state",
+        "count"
+      ],
+      "attributes": [
+        "control",
+        "max_iterations"
+      ],
+      "control": [
+        "test",
+        "stop",
+        "counter",
+        "body"
+      ]
+    },
+    "cycle_lift": {
+      "reads": [
+        "whole",
+        "elapsed_years",
+        "factor"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "model_rule"
+      ],
+      "control": []
+    },
+    "epoch_frame": {
+      "reads": [
+        "epoch_elapsed",
+        "local_elapsed"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "tradition"
+      ],
+      "control": []
+    },
+    "event_sequence": {
+      "reads": [
+        "whole",
+        "numerator",
+        "denominator",
+        "increment_whole",
+        "increment_numerator",
+        "increment_denominator",
+        "epoch"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "stride",
+        "count",
+        "time_frame",
+        "sequence_role"
+      ],
+      "control": []
+    },
+    "boundary_call": {
+      "reads": [
+        "has_intercalation",
+        "moon_events",
+        "qi_events"
+      ],
+      "writes": [
+        "result"
+      ],
+      "attributes": [
+        "profile"
+      ],
+      "control": []
+    },
+    "query": {
+      "reads": [],
+      "writes": [],
+      "attributes": [],
+      "control": []
+    }
+  },
+  "event_fields": [
+    "kind",
+    "anchor",
+    "reads",
+    "writes",
+    "attributes",
+    "scope",
+    "control",
+    "quantity",
+    "method_binding",
+    "method_contract",
+    "exact_reads",
+    "exact_writes"
+  ],
+  "selector_fields": [
+    "origin",
+    "parameter",
+    "value",
+    "literal",
+    "input",
+    "anchor",
+    "unit",
+    "quantity_kind",
+    "time_frame",
+    "one_of",
+    "export",
+    "denominator"
+  ],
+  "method_fields": [
+    "definition_anchor",
+    "formal_inputs",
+    "body_required",
+    "body_semantics_required",
+    "required_return_roles",
+    "actual_binding_identity",
+    "source_parameters_required",
+    "output_must_depend_on_actuals"
+  ],
+  "method_roles": [
+    "cyclical_day",
+    "appearance_month_ordinal"
+  ],
+  "contract_requirements": {
+    "source_epoch_frame": [
+      "same_conjunction_invocation",
+      "head_actual_has_source_frame",
+      "origin_profile_selected",
+      "conflicting_source_wording_retained",
+      "head_input_not_injected"
+    ],
+    "source_parameter_role": [
+      "whole_interval_source",
+      "fraction_interval_source",
+      "computed_values_distinct",
+      "profile"
+    ],
+    "current_state": [
+      "retained_fraction",
+      "same_update_instance_as_month_call",
+      "cannot_restore_previous_month_state"
+    ],
+    "query_base": [
+      "query_identity",
+      "base_component_role",
+      "root_selector",
+      "root_count_frame",
+      "head_root",
+      "head_definition_anchor",
+      "initial_instant_evidence",
+      "same_initial_state_across_queries",
+      "does_not_read_other_query_result",
+      "real_source_producer_required",
+      "component_unit",
+      "fraction_denominator"
+    ],
+    "source_reuse": [
+      "reuse_definition_anchor",
+      "reused_role",
+      "reused_operation",
+      "reject_previous_result",
+      "reject_literal_identity_only",
+      "must_feed_matched_main_event"
+    ],
+    "query_isolation": [
+      "distinct_query_instances",
+      "paired_updates",
+      "shared_immutable_initial_state",
+      "fraction_carry_denominator",
+      "each_query_executes_and_exports",
+      "reverse_order_preserves_each_result",
+      "no_sequential_cross_query_accumulation"
+    ]
+  },
+  "structured_fields": {
+    "scope": [
+      "tradition",
+      "task",
+      "procedure_id",
+      "definition_id",
+      "call_id",
+      "planet",
+      "query",
+      "scope_is_curator_provided"
+    ],
+    "quantity": [
+      "unit",
+      "quantity_kind",
+      "scale",
+      "representation",
+      "time_frame"
+    ],
+    "method_binding": [
+      "definition_id",
+      "actuals",
+      "formal_actuals",
+      "formal_inputs",
+      "return_bindings"
+    ]
+  },
+  "value_units": [
+    "integer",
+    "day",
+    "day_index",
+    "day_fraction",
+    "day_fraction_numerator",
+    "month",
+    "month_fraction",
+    "month_ordinal",
+    "year",
+    "year_index",
+    "station",
+    "station_ordinal",
+    "du",
+    "cycle",
+    "fraction",
+    "count",
+    "boolean",
+    "epoch",
+    "event_sequence"
+  ]
+}

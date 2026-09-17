@@ -1,0 +1,534 @@
+{
+  "policy": "Exclude every explicit historical evaluation mention conservatively; adjacent excerpt-page exposure additionally resolved against the post-freeze universe. Bulk ingestion is disclosed, not claimed absent.",
+  "procedure_ids": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8",
+    "2.9",
+    "2.10",
+    "2.11",
+    "2.12",
+    "2.13",
+    "2.14",
+    "2.15",
+    "2.16",
+    "2.17",
+    "2.20",
+    "3.2",
+    "3.3",
+    "3.5",
+    "3.6",
+    "3.7",
+    "3.8",
+    "3.9",
+    "3.10",
+    "3.13",
+    "3.14",
+    "3.15",
+    "3.16",
+    "3.17",
+    "3.18",
+    "3.38",
+    "3.39",
+    "3.47",
+    "3.48",
+    "3.53",
+    "4.7",
+    "4.67",
+    "4.68"
+  ],
+  "records": [
+    {
+      "path": "evaluation/ROLE_FLOW_STATUS_2026-09-16.md",
+      "sha256": "a28e66658111b62a5d4ca557cf139a02c34a4dc43145ab727fa164a3411413bc",
+      "procedure_ids": [
+        "2.9",
+        "2.11",
+        "2.12",
+        "2.15",
+        "2.17",
+        "2.20"
+      ]
+    },
+    {
+      "path": "evaluation/frozen-transfer-v121657c-pre-reference.md",
+      "sha256": "0ec083bd81726aa270a795e1d4b56512f6a159363c4fba8ebe030eb52ef673ab",
+      "procedure_ids": [
+        "3.39"
+      ]
+    },
+    {
+      "path": "evaluation/han-domain-v1/REPORT.md",
+      "sha256": "2ff75916890463187c12dbee5111619fcd812f143475d21e3b041c8d7034e08c",
+      "procedure_ids": [
+        "2.9",
+        "2.16",
+        "2.20"
+      ]
+    },
+    {
+      "path": "evaluation/han-domain-v1/scholarly-checks.json",
+      "sha256": "da7c8c0b5f4fce242bd98512bae5393652798337f250802cb70d26934b73a3e7",
+      "procedure_ids": [
+        "2.9"
+      ]
+    },
+    {
+      "path": "evaluation/han-role-flow-v2/PROTOCOL.md",
+      "sha256": "a66401bd5aa67d529d0b2ee71a9cc30b50cd8b5e8d09592b1956046f5fe49d0c",
+      "procedure_ids": [
+        "2.11"
+      ]
+    },
+    {
+      "path": "evaluation/han-role-flow-v2/manifest.json",
+      "sha256": "c5c9cdb45531c683be479f12101a9877c1d4644deebc49dfd658e33ba8bd8d5b",
+      "procedure_ids": [
+        "2.11"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/exposure-audit.json",
+      "sha256": "f35268edfcf708a66a3cada13fb5fdec80a9b6c0ccba17d86ea51aec15d95cfe",
+      "procedure_ids": [
+        "2.8",
+        "2.9",
+        "2.10",
+        "2.11",
+        "2.12",
+        "2.13",
+        "2.14",
+        "2.15",
+        "2.16",
+        "2.17",
+        "2.20",
+        "3.39",
+        "3.47",
+        "3.48",
+        "3.53"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/first_outputs/P01.json",
+      "sha256": "fdf1328bf8aa242512c5ff95772a9df74f0a57bea3c57c324ede41f412fd3b4e",
+      "procedure_ids": [
+        "2.2",
+        "2.4"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/first_outputs/P02.json",
+      "sha256": "394b68af384877acf161ba33d7ecf61e6565b55c2f3cfbbacf4abd7cb183db22",
+      "procedure_ids": [
+        "2.3",
+        "2.5"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/first_outputs/P03.json",
+      "sha256": "4cf0fc3e35a4a419fb9635e37a10e393af8bc80dffbbb6ca4557c9447364d509",
+      "procedure_ids": [
+        "2.5",
+        "2.6"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/first_outputs/P04.json",
+      "sha256": "39ffb57298fc6aac44142aa7bc1cdec8a62596cafaaf2bd8f084a37bd1735923",
+      "procedure_ids": [
+        "2.7"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/packets/P01.json",
+      "sha256": "b6f136af43e698126f899fa681b39a4f81cf5ba4ad69334fbc87f0884c375389",
+      "procedure_ids": [
+        "2.2",
+        "2.4"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/packets/P02.json",
+      "sha256": "b3532a3d8828145e219ece9ce72be55cd418663f7463aee662e4d5240bf8be64",
+      "procedure_ids": [
+        "2.3",
+        "2.5"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/packets/P03.json",
+      "sha256": "d25c9cf8981e51e9a0c390216d25fbf7a5b3c3e7fa7eb271d3bd4837dc5568b9",
+      "procedure_ids": [
+        "2.5",
+        "2.6"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/packets/P04.json",
+      "sha256": "d7b58a0e7ee7a45f1f6c5263188d846f7a7e2847f35e3ad947715c5f67d3f44f",
+      "procedure_ids": [
+        "2.7"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/prepared.json",
+      "sha256": "8be45b983727c775ad6337e94a603b455acae4f44432389cf09e35497c3eef68",
+      "procedure_ids": [
+        "2.2",
+        "2.3",
+        "2.5"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/references/P01.json",
+      "sha256": "749c5aecc5bf21cd9a9bea0f1477f82eff37d20143204685c14d4cbabc6074c0",
+      "procedure_ids": [
+        "2.4"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/references/P02.json",
+      "sha256": "222130f4d6e6e34498eb6b25d43e5e23c34f4cc0ddbd5a64635b05692a2df10e",
+      "procedure_ids": [
+        "2.5"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/references/P03.json",
+      "sha256": "918c0f6d73c6f084d23107476ccae5e2cc93b1f8456ceea13b37f4064caf374c",
+      "procedure_ids": [
+        "2.6"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/references/P04.json",
+      "sha256": "1a6108161e6a8c88f138bbf32b8495070780a561c8ebb9d5701452e4e300487b",
+      "procedure_ids": [
+        "2.7"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/scores/P01.json",
+      "sha256": "6e94f0e14561544a590747d19aeb0edef1b4fd6ebe355652c5f4248d477ec1e6",
+      "procedure_ids": [
+        "2.4"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/scores/P02.json",
+      "sha256": "3d817e2e29e410d748d74b5e797aa4497bac44f72b2153ca3979f97ef81fa2b8",
+      "procedure_ids": [
+        "2.5"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/scores/P03.json",
+      "sha256": "55c8e23b6c7816f2a13a400fb9d7e77a201f21eb56cc5df76f45d22697c109d1",
+      "procedure_ids": [
+        "2.6"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/scores/P04.json",
+      "sha256": "183ccf3cd392b72f6db17aa07210ad48fa0bae670a164e8b925d333feb7c7512",
+      "procedure_ids": [
+        "2.7"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/source_checks/verification.json",
+      "sha256": "b3df875fdea2f6a071807ab7285e690817a39e5d961b354c79ef5ae331169726",
+      "procedure_ids": [
+        "2.4",
+        "2.6",
+        "2.7"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/prospective/summary.json",
+      "sha256": "2504f7f42189b029309b04fa2e5a39dbcb6a75c2bb81b4e56f0d95061173187d",
+      "procedure_ids": [
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "2.6",
+        "2.7"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W01-critical.json",
+      "sha256": "a9da99034c399f92fb00adea1a055b558437a1ab5da43a53fa609e69dfd433f8",
+      "procedure_ids": [
+        "2.2",
+        "2.3"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W01-steps.json",
+      "sha256": "f2be67324bef6233089c44ae8f7735d7b418b96165a6c26b71f0c1478859bf5d",
+      "procedure_ids": [
+        "2.2",
+        "2.3"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W01.json",
+      "sha256": "777200bcfc349765e0a1105920e552e36eb0d96fe0049ebca2f3986554da5f9b",
+      "procedure_ids": [
+        "2.2",
+        "2.3"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W02-critical.json",
+      "sha256": "9633c8b8a8ba3cefefd666508b2a86982949510d331be7682dad5c8976baa616",
+      "procedure_ids": [
+        "3.5",
+        "3.6"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W02-steps.json",
+      "sha256": "d1e2a044047232698cd4865dd45fba93533eaa0308ca0082a2e842ff90948e7f",
+      "procedure_ids": [
+        "3.5",
+        "3.6"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W02.json",
+      "sha256": "656f1d7b74974f92aa0db1763f70b98e64d3df32206ba785e62bd1c0c8cdc092",
+      "procedure_ids": [
+        "3.5",
+        "3.6"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W03-critical.json",
+      "sha256": "31a6b1aa67c111e598673c509cf3b9111c4b80514423660a0eac43c6253f24de",
+      "procedure_ids": [
+        "2.14",
+        "2.15"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W03-steps.json",
+      "sha256": "ef700d9e156aabe92282600b9dbd30ffd3267ee31fd4c748a1d07650638241d5",
+      "procedure_ids": [
+        "2.14",
+        "2.15"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W03.json",
+      "sha256": "cb47469b9eaa08ea7a39f2e284b160173d3ebdfc61ef018ba793d6fc2408cddd",
+      "procedure_ids": [
+        "2.14",
+        "2.15"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W04-critical.json",
+      "sha256": "57ef6472918b723c0601f6b6345fefed2789344bbef5ad2529759b37e50054fe",
+      "procedure_ids": [
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W04-steps.json",
+      "sha256": "c4c8ee55a43c3e8d1735fed38565bb1656abfd8a15d8235239d9e8aab720c5b0",
+      "procedure_ids": [
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/W04.json",
+      "sha256": "1f6e7d6d4fb598ce673a8530a05bf063f0d4b3fa0b17148c12a3a6571a814cdf",
+      "procedure_ids": [
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D09-output.json",
+      "sha256": "8010d706936af4a7db7922f2b504a550cd794f4aad986316cabc62f8e3d1b4d9",
+      "procedure_ids": [
+        "2.15"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D10-output.json",
+      "sha256": "4ff2616f200f4a3c42fed3ce29fbd0e778058a5307be0e47a793cc50eaada23d",
+      "procedure_ids": [
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D20-mutated-graph.json",
+      "sha256": "797a3f68278f0075340fe50697549a055d1f227e405064a3531dec76083945d4",
+      "procedure_ids": [
+        "2.14",
+        "2.15"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D20-rejected.json",
+      "sha256": "7aff61d4be693411489d00354c4a2c3575db3ff3795b520a1794980de315a695",
+      "procedure_ids": [
+        "2.15"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D21-mutated-graph.json",
+      "sha256": "9a66298d5bf7815af6e84e691248a7c01b8eac2a78e5786c63c8b335a2746674",
+      "procedure_ids": [
+        "2.14",
+        "2.15"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D21-rejected.json",
+      "sha256": "197226e402baad37601bbfa862db2e42774c272025d9098d291ea5436c86219e",
+      "procedure_ids": [
+        "2.15"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D22-cross-call-rejected.json",
+      "sha256": "9bd7a9f109c7ea9838276b2c3a212d4c59119d988cddd7aa9502d040730d721b",
+      "procedure_ids": [
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D22-forward-cycle-mutated-graph.json",
+      "sha256": "7ee1ca156e0d9001c75941afa17ecef984383555726f4931dbb9ac0619564dd1",
+      "procedure_ids": [
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D22-forward-cycle-rejected.json",
+      "sha256": "7fa52baec179f9c5a5c7dbdc7c56e2e6ce4e8774ad522674d6926de48f418670",
+      "procedure_ids": [
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D22-mutated-graph.json",
+      "sha256": "01b859c185f3cbb035f8f4eb3435926edb8a3c971ae9ebaedb65d0d236ff24d0",
+      "procedure_ids": [
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D22-rejected.json",
+      "sha256": "7fa52baec179f9c5a5c7dbdc7c56e2e6ce4e8774ad522674d6926de48f418670",
+      "procedure_ids": [
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior/D24-output.json",
+      "sha256": "15a5a80e1ad9c04c1abf39d4803a73b69bb85ef36bfc79f7f5794651323e0b4e",
+      "procedure_ids": [
+        "2.14",
+        "2.15"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/behavior.json",
+      "sha256": "0f18196bd313ddd21c2441c4d728a0c56087c1628b20096d069b9dcf314c4108",
+      "procedure_ids": [
+        "2.2",
+        "2.3",
+        "2.14",
+        "2.15",
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/critical.json",
+      "sha256": "a78da0a1ab15d04049d526e22a7a6e6b80bb876969e1f96eac38261447f4341c",
+      "procedure_ids": [
+        "2.2",
+        "2.3",
+        "2.14",
+        "2.15",
+        "3.5",
+        "3.6",
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/handoff-v2/results/summary.json",
+      "sha256": "1ccc932e1f1066cfa09d1ca555a6ef70f0c52308bd6fe7dc02ae6cdb5c70a204",
+      "procedure_ids": [
+        "3.38"
+      ]
+    },
+    {
+      "path": "evaluation/state-parser-v1/assisted-state-diagnostic.json",
+      "sha256": "7a73e669c1bf64557b073b21ee310be4e87a74c742f9c6c7356bde555102d85a",
+      "procedure_ids": [
+        "2.14"
+      ]
+    },
+    {
+      "path": "evaluation/state-parser-v1/freeze.json",
+      "sha256": "243f6dfc34820099bd0bdbb8e538f16d1c831a4616a95d29403f13ffc1ead323",
+      "procedure_ids": [
+        "2.15"
+      ]
+    },
+    {
+      "path": "evaluation/state-parser-v1/scholarly-checks.json",
+      "sha256": "b972d776de706a52d2cbed831d349998c7f033bffc010021b881e43a6d49166e",
+      "procedure_ids": [
+        "2.8",
+        "2.14",
+        "3.53"
+      ]
+    },
+    {
+      "path": "evaluation/state-parser-v2/development-replay.json",
+      "sha256": "5b0f5103746881e266b25f031794c4593f5e80c88815599aee8191234d3f8b50",
+      "procedure_ids": [
+        "2.14"
+      ]
+    },
+    {
+      "path": "evaluation/state-parser-v2/scholarly-checks.json",
+      "sha256": "1b02beebaf6b4ae830647f0df7dc38262f779e4747f68eb7481d30585e2cd3c7",
+      "procedure_ids": [
+        "2.10",
+        "2.13",
+        "3.47",
+        "3.48"
+      ]
+    }
+  ],
+  "adjacent_page_resources": [
+    {
+      "path": "handoff_v3/sources/page_map.json",
+      "sha256": "93a4df0692be955636fa918556f3a0744e9867a3cc5110422f58b595c98ce1ff"
+    },
+    {
+      "path": "evaluation/handoff-v2/package/evidence/page_index.json",
+      "sha256": "eea03252297ffa34689b5fa085c56ba55d79c80a0db87a5d7dac9b667812b7a4"
+    },
+    {
+      "path": "handoff_v3/coverage/exposure_registry.json",
+      "sha256": "361e9cdbd3599528c5daf0ae76b50de4da41066d1bad8a6b19c3793d06dd95d5"
+    },
+    {
+      "path": "evaluation/handoff-v2/exposure-audit.json",
+      "sha256": "f35268edfcf708a66a3cada13fb5fdec80a9b6c0ccba17d86ea51aec15d95cfe"
+    }
+  ]
+}

@@ -1,0 +1,2761 @@
+{
+  "cards": [
+    {
+      "card_id": "A02",
+      "candidate_id": "2.21",
+      "obligations": [
+        {
+          "id": "A02.01",
+          "anchor": {
+            "doc_id": "ST.2.21",
+            "reading_id": "ST.2.21.C2017.postfreeze.v1",
+            "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+            "start": 5,
+            "end": 12,
+            "quote": "加積月於月元餘"
+          },
+          "scholarly_obligation": "Add the single-Appearance interval of13 complete months (§27) to the current month-Origin remainder; do not read the accumulated total under the same label.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                120
+              ],
+              "printed_pages": [
+                107
+              ],
+              "locator": "Proc.2.21"
+            },
+            "extract_file": "../source_checks/A02-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.2.1",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    89
+                  ],
+                  "pdf_pages": [
+                    102
+                  ],
+                  "locator": "Proc.2.1 §173"
+                }
+              },
+              {
+                "doc_id": "ST.2.3",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    91
+                  ],
+                  "pdf_pages": [
+                    104
+                  ],
+                  "locator": "ST.2.3"
+                }
+              },
+              {
+                "doc_id": "ST.2.13",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    113
+                  ],
+                  "printed_pages": [
+                    100
+                  ],
+                  "locator": "Proc.2.13"
+                }
+              },
+              {
+                "doc_id": "ST.2.14",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    114,
+                    115
+                  ],
+                  "printed_pages": [
+                    101,
+                    102
+                  ],
+                  "locator": "Proc.2.14"
+                }
+              },
+              {
+                "doc_id": "ST.2.15",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    115,
+                    116
+                  ],
+                  "printed_pages": [
+                    102,
+                    103
+                  ],
+                  "locator": "Proc.2.15"
+                }
+              },
+              {
+                "doc_id": "ST.rule_year",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    40
+                  ],
+                  "pdf_pages": [
+                    53
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.rule_month",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.lunation_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.concordance_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.day_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    39
+                  ],
+                  "pdf_pages": [
+                    52
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.const.origin",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ],
+                  "locator": "§4"
+                }
+              },
+              {
+                "doc_id": "ST.const.medials",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§17"
+                }
+              },
+              {
+                "doc_id": "ST.const.reckoning",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§20"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.2",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    66
+                  ],
+                  "printed_pages": [
+                    53
+                  ],
+                  "locator": "Chinese source declaration 見中分二萬七百三"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.3",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    66
+                  ],
+                  "printed_pages": [
+                    53
+                  ],
+                  "locator": "Chinese source declaration 積中十三，中餘百"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.4",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見中法千五百八十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.5",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見閏分萬二千九十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.6",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 積月十三，月餘萬"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.7",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見月法三萬七十七"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.8",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見中日法七百三十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.9",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    68
+                  ],
+                  "printed_pages": [
+                    55
+                  ],
+                  "locator": "Chinese source declaration 見月日法二百四十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.10",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    56
+                  ],
+                  "printed_pages": [
+                    43
+                  ],
+                  "locator": "Chinese source declaration 中法十四萬五百三"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.11",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    60
+                  ],
+                  "printed_pages": [
+                    47
+                  ],
+                  "locator": "Chinese source declaration 元中五萬五千四百"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.12",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    59
+                  ],
+                  "printed_pages": [
+                    46
+                  ],
+                  "locator": "Chinese source declaration 元月五萬七千一百"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A02.02",
+          "anchor": {
+            "doc_id": "ST.2.21",
+            "reading_id": "ST.2.21.C2017.postfreeze.v1",
+            "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+            "start": 13,
+            "end": 20,
+            "quote": "加後月餘於月餘"
+          },
+          "scholarly_obligation": "Add the later interval remainder15079 (§27) to the current remainder produced by2.15; two same-label values have distinct provenance.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                120
+              ],
+              "printed_pages": [
+                107
+              ],
+              "locator": "Proc.2.21"
+            },
+            "extract_file": "../source_checks/A02-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.2.1",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    89
+                  ],
+                  "pdf_pages": [
+                    102
+                  ],
+                  "locator": "Proc.2.1 §173"
+                }
+              },
+              {
+                "doc_id": "ST.2.3",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    91
+                  ],
+                  "pdf_pages": [
+                    104
+                  ],
+                  "locator": "ST.2.3"
+                }
+              },
+              {
+                "doc_id": "ST.2.13",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    113
+                  ],
+                  "printed_pages": [
+                    100
+                  ],
+                  "locator": "Proc.2.13"
+                }
+              },
+              {
+                "doc_id": "ST.2.14",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    114,
+                    115
+                  ],
+                  "printed_pages": [
+                    101,
+                    102
+                  ],
+                  "locator": "Proc.2.14"
+                }
+              },
+              {
+                "doc_id": "ST.2.15",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    115,
+                    116
+                  ],
+                  "printed_pages": [
+                    102,
+                    103
+                  ],
+                  "locator": "Proc.2.15"
+                }
+              },
+              {
+                "doc_id": "ST.rule_year",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    40
+                  ],
+                  "pdf_pages": [
+                    53
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.rule_month",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.lunation_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.concordance_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.day_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    39
+                  ],
+                  "pdf_pages": [
+                    52
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.const.origin",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ],
+                  "locator": "§4"
+                }
+              },
+              {
+                "doc_id": "ST.const.medials",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§17"
+                }
+              },
+              {
+                "doc_id": "ST.const.reckoning",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§20"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.2",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    66
+                  ],
+                  "printed_pages": [
+                    53
+                  ],
+                  "locator": "Chinese source declaration 見中分二萬七百三"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.3",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    66
+                  ],
+                  "printed_pages": [
+                    53
+                  ],
+                  "locator": "Chinese source declaration 積中十三，中餘百"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.4",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見中法千五百八十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.5",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見閏分萬二千九十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.6",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 積月十三，月餘萬"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.7",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見月法三萬七十七"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.8",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見中日法七百三十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.9",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    68
+                  ],
+                  "printed_pages": [
+                    55
+                  ],
+                  "locator": "Chinese source declaration 見月日法二百四十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.10",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    56
+                  ],
+                  "printed_pages": [
+                    43
+                  ],
+                  "locator": "Chinese source declaration 中法十四萬五百三"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.11",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    60
+                  ],
+                  "printed_pages": [
+                    47
+                  ],
+                  "locator": "Chinese source declaration 元中五萬五千四百"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.12",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    59
+                  ],
+                  "printed_pages": [
+                    46
+                  ],
+                  "locator": "Chinese source declaration 元月五萬七千一百"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A02.03",
+          "anchor": {
+            "doc_id": "ST.2.21",
+            "reading_id": "ST.2.21.C2017.postfreeze.v1",
+            "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+            "start": 21,
+            "end": 26,
+            "quote": "盈其法得一"
+          },
+          "scholarly_obligation": "Carry complete month units from the updated fraction using its Appearance month denominator30077.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                120
+              ],
+              "printed_pages": [
+                107
+              ],
+              "locator": "Proc.2.21"
+            },
+            "extract_file": "../source_checks/A02-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.2.1",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    89
+                  ],
+                  "pdf_pages": [
+                    102
+                  ],
+                  "locator": "Proc.2.1 §173"
+                }
+              },
+              {
+                "doc_id": "ST.2.3",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    91
+                  ],
+                  "pdf_pages": [
+                    104
+                  ],
+                  "locator": "ST.2.3"
+                }
+              },
+              {
+                "doc_id": "ST.2.13",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    113
+                  ],
+                  "printed_pages": [
+                    100
+                  ],
+                  "locator": "Proc.2.13"
+                }
+              },
+              {
+                "doc_id": "ST.2.14",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    114,
+                    115
+                  ],
+                  "printed_pages": [
+                    101,
+                    102
+                  ],
+                  "locator": "Proc.2.14"
+                }
+              },
+              {
+                "doc_id": "ST.2.15",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    115,
+                    116
+                  ],
+                  "printed_pages": [
+                    102,
+                    103
+                  ],
+                  "locator": "Proc.2.15"
+                }
+              },
+              {
+                "doc_id": "ST.rule_year",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    40
+                  ],
+                  "pdf_pages": [
+                    53
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.rule_month",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.lunation_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.concordance_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.day_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    39
+                  ],
+                  "pdf_pages": [
+                    52
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.const.origin",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ],
+                  "locator": "§4"
+                }
+              },
+              {
+                "doc_id": "ST.const.medials",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§17"
+                }
+              },
+              {
+                "doc_id": "ST.const.reckoning",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§20"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.2",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    66
+                  ],
+                  "printed_pages": [
+                    53
+                  ],
+                  "locator": "Chinese source declaration 見中分二萬七百三"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.3",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    66
+                  ],
+                  "printed_pages": [
+                    53
+                  ],
+                  "locator": "Chinese source declaration 積中十三，中餘百"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.4",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見中法千五百八十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.5",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見閏分萬二千九十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.6",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 積月十三，月餘萬"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.7",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見月法三萬七十七"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.8",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見中日法七百三十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.9",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    68
+                  ],
+                  "printed_pages": [
+                    55
+                  ],
+                  "locator": "Chinese source declaration 見月日法二百四十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.10",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    56
+                  ],
+                  "printed_pages": [
+                    43
+                  ],
+                  "locator": "Chinese source declaration 中法十四萬五百三"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.11",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    60
+                  ],
+                  "printed_pages": [
+                    47
+                  ],
+                  "locator": "Chinese source declaration 元中五萬五千四百"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.12",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    59
+                  ],
+                  "printed_pages": [
+                    46
+                  ],
+                  "locator": "Chinese source declaration 元月五萬七千一百"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A02.04",
+          "anchor": {
+            "doc_id": "ST.2.21",
+            "reading_id": "ST.2.21.C2017.postfreeze.v1",
+            "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+            "start": 27,
+            "end": 31,
+            "quote": "從月元餘"
+          },
+          "scholarly_obligation": "Add the carry quotient to the updated whole month amount.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                120
+              ],
+              "printed_pages": [
+                107
+              ],
+              "locator": "Proc.2.21"
+            },
+            "extract_file": "../source_checks/A02-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.2.1",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    89
+                  ],
+                  "pdf_pages": [
+                    102
+                  ],
+                  "locator": "Proc.2.1 §173"
+                }
+              },
+              {
+                "doc_id": "ST.2.3",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    91
+                  ],
+                  "pdf_pages": [
+                    104
+                  ],
+                  "locator": "ST.2.3"
+                }
+              },
+              {
+                "doc_id": "ST.2.13",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    113
+                  ],
+                  "printed_pages": [
+                    100
+                  ],
+                  "locator": "Proc.2.13"
+                }
+              },
+              {
+                "doc_id": "ST.2.14",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    114,
+                    115
+                  ],
+                  "printed_pages": [
+                    101,
+                    102
+                  ],
+                  "locator": "Proc.2.14"
+                }
+              },
+              {
+                "doc_id": "ST.2.15",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    115,
+                    116
+                  ],
+                  "printed_pages": [
+                    102,
+                    103
+                  ],
+                  "locator": "Proc.2.15"
+                }
+              },
+              {
+                "doc_id": "ST.rule_year",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    40
+                  ],
+                  "pdf_pages": [
+                    53
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.rule_month",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.lunation_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.concordance_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.day_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    39
+                  ],
+                  "pdf_pages": [
+                    52
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.const.origin",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ],
+                  "locator": "§4"
+                }
+              },
+              {
+                "doc_id": "ST.const.medials",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§17"
+                }
+              },
+              {
+                "doc_id": "ST.const.reckoning",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§20"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.2",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    66
+                  ],
+                  "printed_pages": [
+                    53
+                  ],
+                  "locator": "Chinese source declaration 見中分二萬七百三"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.3",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    66
+                  ],
+                  "printed_pages": [
+                    53
+                  ],
+                  "locator": "Chinese source declaration 積中十三，中餘百"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.4",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見中法千五百八十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.5",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見閏分萬二千九十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.6",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 積月十三，月餘萬"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.7",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見月法三萬七十七"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.8",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見中日法七百三十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.9",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    68
+                  ],
+                  "printed_pages": [
+                    55
+                  ],
+                  "locator": "Chinese source declaration 見月日法二百四十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.10",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    56
+                  ],
+                  "printed_pages": [
+                    43
+                  ],
+                  "locator": "Chinese source declaration 中法十四萬五百三"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.11",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    60
+                  ],
+                  "printed_pages": [
+                    47
+                  ],
+                  "locator": "Chinese source declaration 元中五萬五千四百"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.12",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    59
+                  ],
+                  "printed_pages": [
+                    46
+                  ],
+                  "locator": "Chinese source declaration 元月五萬七千一百"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "A02.05",
+          "anchor": {
+            "doc_id": "ST.2.21",
+            "reading_id": "ST.2.21.C2017.postfreeze.v1",
+            "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+            "start": 32,
+            "end": 42,
+            "quote": "除數如法，則後見月也"
+          },
+          "scholarly_obligation": "Apply the prior month-Origin/Rule reductions and12/13 month year scan in2.15 to the newly updated state.",
+          "provenance": {
+            "source": "C2017",
+            "locator": {
+              "work": "C2017",
+              "pdf_pages": [
+                120
+              ],
+              "printed_pages": [
+                107
+              ],
+              "locator": "Proc.2.21"
+            },
+            "extract_file": "../source_checks/A02-scholarly-pages.json",
+            "basis": "Whole Proc translation and immediately following commentary; source-occurrence/operand identity independently annotated.",
+            "context_sources": [
+              {
+                "doc_id": "ST.2.1",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    89
+                  ],
+                  "pdf_pages": [
+                    102
+                  ],
+                  "locator": "Proc.2.1 §173"
+                }
+              },
+              {
+                "doc_id": "ST.2.3",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    91
+                  ],
+                  "pdf_pages": [
+                    104
+                  ],
+                  "locator": "ST.2.3"
+                }
+              },
+              {
+                "doc_id": "ST.2.13",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    113
+                  ],
+                  "printed_pages": [
+                    100
+                  ],
+                  "locator": "Proc.2.13"
+                }
+              },
+              {
+                "doc_id": "ST.2.14",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    114,
+                    115
+                  ],
+                  "printed_pages": [
+                    101,
+                    102
+                  ],
+                  "locator": "Proc.2.14"
+                }
+              },
+              {
+                "doc_id": "ST.2.15",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    115,
+                    116
+                  ],
+                  "printed_pages": [
+                    102,
+                    103
+                  ],
+                  "locator": "Proc.2.15"
+                }
+              },
+              {
+                "doc_id": "ST.rule_year",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    40
+                  ],
+                  "pdf_pages": [
+                    53
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.rule_month",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.lunation_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    42
+                  ],
+                  "pdf_pages": [
+                    55
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.concordance_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.day_factor",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    39
+                  ],
+                  "pdf_pages": [
+                    52
+                  ]
+                }
+              },
+              {
+                "doc_id": "ST.const.origin",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    41
+                  ],
+                  "pdf_pages": [
+                    54
+                  ],
+                  "locator": "§4"
+                }
+              },
+              {
+                "doc_id": "ST.const.medials",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§17"
+                }
+              },
+              {
+                "doc_id": "ST.const.reckoning",
+                "source": {
+                  "work": "C2017",
+                  "printed_pages": [
+                    47
+                  ],
+                  "pdf_pages": [
+                    60
+                  ],
+                  "locator": "§20"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.1",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    64
+                  ],
+                  "printed_pages": [
+                    51
+                  ],
+                  "locator": "Chinese source declaration 木金相乘為十二，"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.2",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    66
+                  ],
+                  "printed_pages": [
+                    53
+                  ],
+                  "locator": "Chinese source declaration 見中分二萬七百三"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.3",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    66
+                  ],
+                  "printed_pages": [
+                    53
+                  ],
+                  "locator": "Chinese source declaration 積中十三，中餘百"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.4",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見中法千五百八十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.5",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見閏分萬二千九十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.6",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 積月十三，月餘萬"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.7",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見月法三萬七十七"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.8",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    67
+                  ],
+                  "printed_pages": [
+                    54
+                  ],
+                  "locator": "Chinese source declaration 見中日法七百三十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.9",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    68
+                  ],
+                  "printed_pages": [
+                    55
+                  ],
+                  "locator": "Chinese source declaration 見月日法二百四十"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.10",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    56
+                  ],
+                  "printed_pages": [
+                    43
+                  ],
+                  "locator": "Chinese source declaration 中法十四萬五百三"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.11",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    60
+                  ],
+                  "printed_pages": [
+                    47
+                  ],
+                  "locator": "Chinese source declaration 元中五萬五千四百"
+                }
+              },
+              {
+                "doc_id": "ST.jupiter.declaration.12",
+                "source": {
+                  "work": "C2017",
+                  "pdf_pages": [
+                    59
+                  ],
+                  "printed_pages": [
+                    46
+                  ],
+                  "locator": "Chinese source declaration 元月五萬七千一百"
+                }
+              }
+            ]
+          },
+          "unsupported_actions": [
+            "month_scan_method_actual_binding"
+          ]
+        }
+      ]
+    }
+  ],
+  "policy": {
+    "version": "rescue-fixed-atoms-1",
+    "supported_actions": [
+      "literal",
+      "parameter",
+      "input",
+      "alias",
+      "load",
+      "multiply",
+      "subtract",
+      "add",
+      "divmod",
+      "cycle_reduce",
+      "threshold",
+      "count",
+      "query",
+      "method_call",
+      "select",
+      "lookup",
+      "rescale",
+      "fraction",
+      "repeat",
+      "cycle_lift",
+      "epoch_frame",
+      "event_sequence",
+      "boundary_call"
+    ],
+    "obligations": {
+      "A02.01": {
+        "events": [
+          {
+            "kind": "add",
+            "reads": {
+              "left": {
+                "origin": {
+                  "kind": "cycle_reduce",
+                  "port": "remainder",
+                  "anchor": {
+                    "doc_id": "ST.2.15",
+                    "reading_id": "ST.2.15.C2017.postfreeze.v1",
+                    "text_sha256": "fb8c431019b9ac78957709f02f7f44a0aee690bbf3bd7823bb027ba3b9b437c4",
+                    "start": 47,
+                    "end": 59,
+                    "quote": "以元月除積月，名曰月元餘"
+                  }
+                }
+              },
+              "right": {
+                "parameter": "積月",
+                "value": 13
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.21",
+              "reading_id": "ST.2.21.C2017.postfreeze.v1",
+              "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+              "start": 5,
+              "end": 12,
+              "quote": "加積月於月元餘"
+            }
+          }
+        ]
+      },
+      "A02.02": {
+        "events": [
+          {
+            "kind": "add",
+            "reads": {
+              "left": {
+                "origin": {
+                  "kind": "divmod",
+                  "port": "remainder",
+                  "anchor": {
+                    "doc_id": "ST.2.15",
+                    "reading_id": "ST.2.15.C2017.postfreeze.v1",
+                    "text_sha256": "fb8c431019b9ac78957709f02f7f44a0aee690bbf3bd7823bb027ba3b9b437c4",
+                    "start": 23,
+                    "end": 46,
+                    "quote": "盈見月法得一，并積中，則積月也．不盈者名曰月餘"
+                  }
+                }
+              },
+              "right": {
+                "parameter": "月餘",
+                "value": 15079
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.21",
+              "reading_id": "ST.2.21.C2017.postfreeze.v1",
+              "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+              "start": 13,
+              "end": 20,
+              "quote": "加後月餘於月餘"
+            }
+          }
+        ]
+      },
+      "A02.03": {
+        "events": [
+          {
+            "kind": "divmod",
+            "reads": {
+              "dividend": {
+                "origin": {
+                  "kind": "add",
+                  "port": "result",
+                  "reads": {
+                    "left": {
+                      "origin": {
+                        "kind": "divmod",
+                        "port": "remainder",
+                        "anchor": {
+                          "doc_id": "ST.2.15",
+                          "reading_id": "ST.2.15.C2017.postfreeze.v1",
+                          "text_sha256": "fb8c431019b9ac78957709f02f7f44a0aee690bbf3bd7823bb027ba3b9b437c4",
+                          "start": 23,
+                          "end": 46,
+                          "quote": "盈見月法得一，并積中，則積月也．不盈者名曰月餘"
+                        }
+                      }
+                    },
+                    "right": {
+                      "parameter": "月餘",
+                      "value": 15079
+                    }
+                  }
+                }
+              },
+              "divisor": {
+                "parameter": "見月法",
+                "value": 30077
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.21",
+              "reading_id": "ST.2.21.C2017.postfreeze.v1",
+              "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+              "start": 21,
+              "end": 26,
+              "quote": "盈其法得一"
+            }
+          }
+        ]
+      },
+      "A02.04": {
+        "events": [
+          {
+            "kind": "add",
+            "reads": {
+              "left": {
+                "origin": {
+                  "kind": "add",
+                  "port": "result",
+                  "reads": {
+                    "left": {
+                      "origin": {
+                        "kind": "cycle_reduce",
+                        "port": "remainder",
+                        "anchor": {
+                          "doc_id": "ST.2.15",
+                          "reading_id": "ST.2.15.C2017.postfreeze.v1",
+                          "text_sha256": "fb8c431019b9ac78957709f02f7f44a0aee690bbf3bd7823bb027ba3b9b437c4",
+                          "start": 47,
+                          "end": 59,
+                          "quote": "以元月除積月，名曰月元餘"
+                        }
+                      }
+                    },
+                    "right": {
+                      "parameter": "積月",
+                      "value": 13
+                    }
+                  }
+                }
+              },
+              "right": {
+                "origin": {
+                  "kind": "divmod",
+                  "port": "quotient",
+                  "reads": {
+                    "dividend": {
+                      "origin": {
+                        "kind": "add",
+                        "port": "result",
+                        "reads": {
+                          "left": {
+                            "origin": {
+                              "kind": "divmod",
+                              "port": "remainder",
+                              "anchor": {
+                                "doc_id": "ST.2.15",
+                                "reading_id": "ST.2.15.C2017.postfreeze.v1",
+                                "text_sha256": "fb8c431019b9ac78957709f02f7f44a0aee690bbf3bd7823bb027ba3b9b437c4",
+                                "start": 23,
+                                "end": 46,
+                                "quote": "盈見月法得一，并積中，則積月也．不盈者名曰月餘"
+                              }
+                            }
+                          },
+                          "right": {
+                            "parameter": "月餘",
+                            "value": 15079
+                          }
+                        }
+                      }
+                    },
+                    "divisor": {
+                      "parameter": "見月法",
+                      "value": 30077
+                    }
+                  }
+                }
+              }
+            },
+            "anchor": {
+              "doc_id": "ST.2.21",
+              "reading_id": "ST.2.21.C2017.postfreeze.v1",
+              "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+              "start": 27,
+              "end": 31,
+              "quote": "從月元餘"
+            }
+          }
+        ]
+      },
+      "A02.05": {
+        "events": [
+          {
+            "kind": "method_call",
+            "anchor": {
+              "doc_id": "ST.2.21",
+              "reading_id": "ST.2.21.C2017.postfreeze.v1",
+              "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+              "start": 32,
+              "end": 42,
+              "quote": "除數如法，則後見月也"
+            },
+            "reads": {
+              "month_offset": {
+                "origin": {
+                  "kind": "add",
+                  "reads": {
+                    "left": {
+                      "origin": {
+                        "kind": "add",
+                        "port": "result",
+                        "reads": {
+                          "left": {
+                            "origin": {
+                              "kind": "cycle_reduce",
+                              "port": "remainder",
+                              "anchor": {
+                                "doc_id": "ST.2.15",
+                                "reading_id": "ST.2.15.C2017.postfreeze.v1",
+                                "text_sha256": "fb8c431019b9ac78957709f02f7f44a0aee690bbf3bd7823bb027ba3b9b437c4",
+                                "start": 47,
+                                "end": 59,
+                                "quote": "以元月除積月，名曰月元餘"
+                              }
+                            }
+                          },
+                          "right": {
+                            "parameter": "積月",
+                            "value": 13
+                          }
+                        }
+                      }
+                    },
+                    "right": {
+                      "origin": {
+                        "kind": "divmod",
+                        "port": "quotient",
+                        "reads": {
+                          "dividend": {
+                            "origin": {
+                              "kind": "add",
+                              "port": "result",
+                              "reads": {
+                                "left": {
+                                  "origin": {
+                                    "kind": "divmod",
+                                    "port": "remainder",
+                                    "anchor": {
+                                      "doc_id": "ST.2.15",
+                                      "reading_id": "ST.2.15.C2017.postfreeze.v1",
+                                      "text_sha256": "fb8c431019b9ac78957709f02f7f44a0aee690bbf3bd7823bb027ba3b9b437c4",
+                                      "start": 23,
+                                      "end": 46,
+                                      "quote": "盈見月法得一，并積中，則積月也．不盈者名曰月餘"
+                                    }
+                                  }
+                                },
+                                "right": {
+                                  "parameter": "月餘",
+                                  "value": 15079
+                                }
+                              }
+                            }
+                          },
+                          "divisor": {
+                            "parameter": "見月法",
+                            "value": 30077
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "anchor": {
+                    "doc_id": "ST.2.21",
+                    "reading_id": "ST.2.21.C2017.postfreeze.v1",
+                    "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+                    "start": 27,
+                    "end": 31,
+                    "quote": "從月元餘"
+                  },
+                  "port": "result"
+                }
+              }
+            },
+            "method_contract": {
+              "definition_anchor": {
+                "doc_id": "ST.2.15",
+                "reading_id": "ST.2.15.C2017.postfreeze.v1",
+                "text_sha256": "fb8c431019b9ac78957709f02f7f44a0aee690bbf3bd7823bb027ba3b9b437c4",
+                "start": 47,
+                "end": 152,
+                "quote": "以元月除積月，名曰月元餘．以章月除月元餘，則入章月數也．以十二除之，至有閏之歲，除十三．入章，三歲一閏，六歲二閏，九歲三閏，十一歲四閏，十四歲五閏，十七歲六閏，十九歲七閏．不盈者數起於天正，算外，則星所見月也．"
+              },
+              "formal_inputs": [
+                "month_offset"
+              ],
+              "required_return_roles": [
+                "appearance_month_ordinal"
+              ],
+              "body_required": true,
+              "actual_binding_identity": true,
+              "source_parameters_required": [
+                "元月",
+                "章月"
+              ],
+              "body_semantics_required": [
+                "Origin-month reduction",
+                "Rule-month reduction",
+                "12/13 month year scan with source intercalation schedule",
+                "outside-count from 天正"
+              ],
+              "output_must_depend_on_actuals": true
+            }
+          }
+        ]
+      }
+    },
+    "contracts": {
+      "A02.parameter_roles": {
+        "type": "source_parameter_role",
+        "obligation_ids": [
+          "A02.01",
+          "A02.02"
+        ],
+        "requirements": {
+          "whole_interval_source": {
+            "doc_id": "ST.jupiter.declaration.6",
+            "reading_id": "ST.jupiter.declaration.6.C2017.postfreeze.v1",
+            "text_sha256": "5f26aed063e5b2f6b9e6bd81ddc213e3602bf4ad3cd08af95d8a149409be808e",
+            "start": 0,
+            "end": 4,
+            "quote": "積月十三"
+          },
+          "fraction_interval_source": {
+            "doc_id": "ST.jupiter.declaration.6",
+            "reading_id": "ST.jupiter.declaration.6.C2017.postfreeze.v1",
+            "text_sha256": "5f26aed063e5b2f6b9e6bd81ddc213e3602bf4ad3cd08af95d8a149409be808e",
+            "start": 5,
+            "end": 13,
+            "quote": "月餘萬五千七十九"
+          },
+          "computed_values_distinct": true,
+          "profile": "C2017_ST_Jupiter_parameter_roles_v1"
+        },
+        "source_justification": "C2017 §27 and §197 distinguish per-appearance parameters from current cumulative values."
+      },
+      "A02.updated_fraction": {
+        "type": "current_state",
+        "obligation_ids": [
+          "A02.03",
+          "A02.05"
+        ],
+        "requirements": {
+          "retained_fraction": {
+            "origin": {
+              "kind": "divmod",
+              "reads": {
+                "dividend": {
+                  "origin": {
+                    "kind": "add",
+                    "port": "result",
+                    "reads": {
+                      "left": {
+                        "origin": {
+                          "kind": "divmod",
+                          "port": "remainder",
+                          "anchor": {
+                            "doc_id": "ST.2.15",
+                            "reading_id": "ST.2.15.C2017.postfreeze.v1",
+                            "text_sha256": "fb8c431019b9ac78957709f02f7f44a0aee690bbf3bd7823bb027ba3b9b437c4",
+                            "start": 23,
+                            "end": 46,
+                            "quote": "盈見月法得一，并積中，則積月也．不盈者名曰月餘"
+                          }
+                        }
+                      },
+                      "right": {
+                        "parameter": "月餘",
+                        "value": 15079
+                      }
+                    }
+                  }
+                },
+                "divisor": {
+                  "parameter": "見月法",
+                  "value": 30077
+                }
+              },
+              "anchor": {
+                "doc_id": "ST.2.21",
+                "reading_id": "ST.2.21.C2017.postfreeze.v1",
+                "text_sha256": "18e788b1018269cbeee2efb7cd3a2b502a31a6ec60c5ef96029df0cd17edb7d0",
+                "start": 21,
+                "end": 26,
+                "quote": "盈其法得一"
+              },
+              "port": "remainder"
+            }
+          },
+          "same_update_instance_as_month_call": true,
+          "cannot_restore_previous_month_state": true
+        },
+        "source_justification": "§197 advances the current appearance state; month query uses updated whole months while retaining the new remainder, not a saved result."
+      }
+    },
+    "fixed_atoms": [
+      {
+        "atom_id": "A02.01.atom001",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/obligations/A02.01/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A02.01.atom002",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/obligations/A02.01/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A02.01.atom003",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/obligations/A02.01/events/0/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.01.atom004",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/obligations/A02.01/events/0/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.01.atom005",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/obligations/A02.01/events/0/reads/left/origin/anchor",
+        "predicate_type": "producer_anchor"
+      },
+      {
+        "atom_id": "A02.01.atom006",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/obligations/A02.01/events/0/reads/right/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A02.01.atom007",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/obligations/A02.01/events/0/reads/right/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A02.02.atom001",
+        "obligation_id": "A02.02",
+        "predicate_path": "/policy/obligations/A02.02/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A02.02.atom002",
+        "obligation_id": "A02.02",
+        "predicate_path": "/policy/obligations/A02.02/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A02.02.atom003",
+        "obligation_id": "A02.02",
+        "predicate_path": "/policy/obligations/A02.02/events/0/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.02.atom004",
+        "obligation_id": "A02.02",
+        "predicate_path": "/policy/obligations/A02.02/events/0/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.02.atom005",
+        "obligation_id": "A02.02",
+        "predicate_path": "/policy/obligations/A02.02/events/0/reads/left/origin/anchor",
+        "predicate_type": "producer_anchor"
+      },
+      {
+        "atom_id": "A02.02.atom006",
+        "obligation_id": "A02.02",
+        "predicate_path": "/policy/obligations/A02.02/events/0/reads/right/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A02.02.atom007",
+        "obligation_id": "A02.02",
+        "predicate_path": "/policy/obligations/A02.02/events/0/reads/right/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A02.03.atom001",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A02.03.atom002",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A02.03.atom003",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.03.atom004",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.03.atom005",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/reads/dividend/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.03.atom006",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/reads/dividend/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.03.atom007",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/reads/dividend/origin/reads/left/origin/anchor",
+        "predicate_type": "producer_anchor"
+      },
+      {
+        "atom_id": "A02.03.atom008",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/reads/dividend/origin/reads/right/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A02.03.atom009",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/reads/dividend/origin/reads/right/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A02.03.atom010",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/reads/divisor/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A02.03.atom011",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/obligations/A02.03/events/0/reads/divisor/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A02.04.atom001",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A02.04.atom002",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A02.04.atom003",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.04.atom004",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.04.atom005",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/left/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.04.atom006",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/left/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.04.atom007",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/left/origin/reads/left/origin/anchor",
+        "predicate_type": "producer_anchor"
+      },
+      {
+        "atom_id": "A02.04.atom008",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/left/origin/reads/right/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A02.04.atom009",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/left/origin/reads/right/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A02.04.atom010",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.04.atom011",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.04.atom012",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.04.atom013",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.04.atom014",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/reads/dividend/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.04.atom015",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/reads/dividend/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.04.atom016",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/reads/dividend/origin/reads/left/origin/anchor",
+        "predicate_type": "producer_anchor"
+      },
+      {
+        "atom_id": "A02.04.atom017",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/reads/dividend/origin/reads/right/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A02.04.atom018",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/reads/dividend/origin/reads/right/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A02.04.atom019",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/reads/divisor/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A02.04.atom020",
+        "obligation_id": "A02.04",
+        "predicate_path": "/policy/obligations/A02.04/events/0/reads/right/origin/reads/divisor/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A02.05.atom001",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/kind",
+        "predicate_type": "main_event_kind"
+      },
+      {
+        "atom_id": "A02.05.atom002",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/anchor",
+        "predicate_type": "main_event_source"
+      },
+      {
+        "atom_id": "A02.05.atom003",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.05.atom004",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.05.atom005",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/anchor",
+        "predicate_type": "producer_anchor"
+      },
+      {
+        "atom_id": "A02.05.atom006",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.05.atom007",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.05.atom008",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/left/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.05.atom009",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/left/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.05.atom010",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/left/origin/reads/left/origin/anchor",
+        "predicate_type": "producer_anchor"
+      },
+      {
+        "atom_id": "A02.05.atom011",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/left/origin/reads/right/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A02.05.atom012",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/left/origin/reads/right/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A02.05.atom013",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.05.atom014",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.05.atom015",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/reads/dividend/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.05.atom016",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/reads/dividend/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.05.atom017",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/reads/dividend/origin/reads/left/origin/kind",
+        "predicate_type": "producer_kind"
+      },
+      {
+        "atom_id": "A02.05.atom018",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/reads/dividend/origin/reads/left/origin/port",
+        "predicate_type": "producer_port"
+      },
+      {
+        "atom_id": "A02.05.atom019",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/reads/dividend/origin/reads/left/origin/anchor",
+        "predicate_type": "producer_anchor"
+      },
+      {
+        "atom_id": "A02.05.atom020",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/reads/dividend/origin/reads/right/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A02.05.atom021",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/reads/dividend/origin/reads/right/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A02.05.atom022",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/reads/divisor/parameter",
+        "predicate_type": "value_parameter"
+      },
+      {
+        "atom_id": "A02.05.atom023",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/reads/month_offset/origin/reads/right/origin/reads/divisor/value",
+        "predicate_type": "value_value"
+      },
+      {
+        "atom_id": "A02.05.atom024",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/method_contract/definition_anchor",
+        "predicate_type": "method_contract"
+      },
+      {
+        "atom_id": "A02.05.atom025",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/method_contract/formal_inputs",
+        "predicate_type": "method_contract"
+      },
+      {
+        "atom_id": "A02.05.atom026",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/method_contract/required_return_roles",
+        "predicate_type": "method_contract"
+      },
+      {
+        "atom_id": "A02.05.atom027",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/method_contract/body_required",
+        "predicate_type": "method_contract"
+      },
+      {
+        "atom_id": "A02.05.atom028",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/method_contract/actual_binding_identity",
+        "predicate_type": "method_contract"
+      },
+      {
+        "atom_id": "A02.05.atom029",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/method_contract/source_parameters_required",
+        "predicate_type": "method_contract"
+      },
+      {
+        "atom_id": "A02.05.atom030",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/method_contract/body_semantics_required",
+        "predicate_type": "method_contract"
+      },
+      {
+        "atom_id": "A02.05.atom031",
+        "obligation_id": "A02.05",
+        "predicate_path": "/policy/obligations/A02.05/events/0/method_contract/output_must_depend_on_actuals",
+        "predicate_type": "method_contract"
+      },
+      {
+        "atom_id": "A02.01.atom008",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/contracts/A02.parameter_roles/requirements/whole_interval_source",
+        "predicate_type": "source_parameter_role"
+      },
+      {
+        "atom_id": "A02.01.atom009",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/contracts/A02.parameter_roles/requirements/fraction_interval_source",
+        "predicate_type": "source_parameter_role"
+      },
+      {
+        "atom_id": "A02.01.atom010",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/contracts/A02.parameter_roles/requirements/computed_values_distinct",
+        "predicate_type": "source_parameter_role"
+      },
+      {
+        "atom_id": "A02.01.atom011",
+        "obligation_id": "A02.01",
+        "predicate_path": "/policy/contracts/A02.parameter_roles/requirements/profile",
+        "predicate_type": "source_parameter_role"
+      },
+      {
+        "atom_id": "A02.03.atom012",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/contracts/A02.updated_fraction/requirements/retained_fraction",
+        "predicate_type": "current_state"
+      },
+      {
+        "atom_id": "A02.03.atom013",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/contracts/A02.updated_fraction/requirements/same_update_instance_as_month_call",
+        "predicate_type": "current_state"
+      },
+      {
+        "atom_id": "A02.03.atom014",
+        "obligation_id": "A02.03",
+        "predicate_path": "/policy/contracts/A02.updated_fraction/requirements/cannot_restore_previous_month_state",
+        "predicate_type": "current_state"
+      }
+    ],
+    "fixed_atom_count": 83,
+    "atom_accounting": {
+      "main_event_required_for_descendant_atoms": true,
+      "same_matched_event_for_all_event_predicates": true,
+      "missing_event_keeps_all_predicates_in_denominator": true,
+      "missing_contract_evidence": "fail",
+      "matching_may_not_use_auxiliary_event_instead_of_main_action": true,
+      "aggregate_obligation_pass": "all event atoms and every attached contract must pass",
+      "shared_contract_atom_owner": "first obligation_id; other attached obligations also depend on contract pass; atom counted once",
+      "denominator_source": "this registered fixed_atoms list, never observed graph size",
+      "role_sensitive_reads": true
+    }
+  },
+  "coverage": "22_fixed_source_obligations_plus_explicit_contract_atoms",
+  "supplemental_anchors": [],
+  "annotation_limits": [
+    "Fixed atom denominator is registered from source reference before execution and never shrinks for absent events.",
+    "No parser outputs, generated AST, producer IDs or computed answers were used to author this policy.",
+    "All constraints are observable semantic/source relations, not prescribed node construction. Missing contract evidence fails its fixed atom.",
+    "Complete-chain pass additionally requires actual export/execution and no relevant unresolved facts."
+  ],
+  "profile_selection": {
+    "selected_profiles": [
+      "ST_elapsed",
+      "C2017_ST_Jupiter_parameter_roles_v1",
+      "C2017_ST_local_year_count_v1"
+    ],
+    "basis": "T0 registered source-backed conditional profiles; see dependency_preflight.md."
+  },
+  "lawful_inputs": {
+    "epoch_elapsed_years": 143127
+  },
+  "shared_context_disclosure": "A/B windows share full earlier Chinese procedures and source declarations; eight windows are not eight statistically independent samples.",
+  "scholar_extract_file": "../source_checks/A02-scholarly-pages.json",
+  "registration": {
+    "phase": "T0_source_based_before_new_parser_outputs",
+    "old_reference_sha256": "9e2ee39aeb0d5b67a34959446ce0c3b1ec1d3480902217f81de27cee2241ad26",
+    "source_audit": "../dependency_preflight.json",
+    "input_contract": "../source_supplements/development_input_contract_v1.json",
+    "runtime_use_forbidden": true,
+    "scope": "exposed development only; not new transfer evidence"
+  }
+}

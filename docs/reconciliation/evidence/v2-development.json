@@ -1,0 +1,437 @@
+{
+  "mode": "exposed_development_acceptance_not_generalization",
+  "timestamp_utc": "2026-09-17T14:37:16.559332+00:00",
+  "python": "3.11.9",
+  "critical": {
+    "passed": 32,
+    "total": 32
+  },
+  "reference_steps": {
+    "W01": {
+      "passed": 21,
+      "total": 21
+    },
+    "W02": {
+      "passed": 19,
+      "total": 19
+    },
+    "W03": {
+      "passed": 20,
+      "total": 20
+    },
+    "W04": {
+      "passed": 15,
+      "total": 15
+    }
+  },
+  "numeric": {
+    "passed": 8,
+    "total": 8
+  },
+  "behavior": {
+    "passed": 25,
+    "total_run": 25,
+    "D26": "not_run_in_development"
+  },
+  "input_integrity": [
+    {
+      "window": "W01",
+      "span_errors": [],
+      "diagnostics": [],
+      "unparsed_spans": [],
+      "unresolved": [],
+      "full_primary_character_denominator": 189,
+      "pass": true
+    },
+    {
+      "window": "W02",
+      "span_errors": [],
+      "diagnostics": [],
+      "unparsed_spans": [],
+      "unresolved": [],
+      "full_primary_character_denominator": 172,
+      "pass": true
+    },
+    {
+      "window": "W03",
+      "span_errors": [],
+      "diagnostics": [],
+      "unparsed_spans": [],
+      "unresolved": [],
+      "full_primary_character_denominator": 256,
+      "pass": true
+    },
+    {
+      "window": "W04",
+      "span_errors": [],
+      "diagnostics": [],
+      "unparsed_spans": [],
+      "unresolved": [
+        {
+          "cause": "requires_external_data",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.38",
+              "reading_id": "HQ.3.38.C2017-reading-v1",
+              "start": 58,
+              "end": 64,
+              "quote": "每以章閏乘之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "章閏"
+          ],
+          "reason": "Parameter value is not declared in runtime context"
+        },
+        {
+          "cause": "requires_external_data",
+          "source_spans": [
+            {
+              "doc_id": "HQ.3.38",
+              "reading_id": "HQ.3.38.C2017-reading-v1",
+              "start": 147,
+              "end": 151,
+              "quote": "以朔制之"
+            }
+          ],
+          "missing_or_conflicting_inputs": [
+            "boundary_data"
+          ],
+          "reason": "No source-defined current instance"
+        }
+      ],
+      "full_primary_character_denominator": 152,
+      "pass": true
+    }
+  ],
+  "layers": {
+    "W01": {
+      "quantity_mention_roles": {
+        "status": "scored",
+        "TP": 37,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "producer_port_relations": {
+        "status": "scored",
+        "TP": 79,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "cross_document_relations": {
+        "status": "scored",
+        "TP": 1,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "condition_scope": {
+        "status": "scored",
+        "TP": 2,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "method_external_calls": {
+        "status": "scored",
+        "TP": 3,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "full_structure": {
+        "status": "scored",
+        "TP": 1,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "all_token_mentions": {
+        "status": "not_scored",
+        "TP": null,
+        "FP": null,
+        "FN": null,
+        "precision": null,
+        "recall": null,
+        "missing_annotation": "Exhaustive token mention spans/roles are absent; reference quantities are not all-token gold."
+      }
+    },
+    "W02": {
+      "quantity_mention_roles": {
+        "status": "scored",
+        "TP": 32,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "producer_port_relations": {
+        "status": "scored",
+        "TP": 60,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "cross_document_relations": {
+        "status": "scored",
+        "TP": 1,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "condition_scope": {
+        "status": "scored",
+        "TP": 2,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "method_external_calls": {
+        "status": "scored",
+        "TP": 1,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "full_structure": {
+        "status": "scored",
+        "TP": 1,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "all_token_mentions": {
+        "status": "not_scored",
+        "TP": null,
+        "FP": null,
+        "FN": null,
+        "precision": null,
+        "recall": null,
+        "missing_annotation": "Exhaustive token mention spans/roles are absent; reference quantities are not all-token gold."
+      }
+    },
+    "W03": {
+      "quantity_mention_roles": {
+        "status": "scored",
+        "TP": 43,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "producer_port_relations": {
+        "status": "scored",
+        "TP": 63,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "cross_document_relations": {
+        "status": "scored",
+        "TP": 2,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "condition_scope": {
+        "status": "scored",
+        "TP": 1,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "method_external_calls": {
+        "status": "scored",
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "precision": null,
+        "recall": null
+      },
+      "full_structure": {
+        "status": "scored",
+        "TP": 1,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "all_token_mentions": {
+        "status": "not_scored",
+        "TP": null,
+        "FP": null,
+        "FN": null,
+        "precision": null,
+        "recall": null,
+        "missing_annotation": "Exhaustive token mention spans/roles are absent; reference quantities are not all-token gold."
+      }
+    },
+    "W04": {
+      "quantity_mention_roles": {
+        "status": "scored",
+        "TP": 27,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "producer_port_relations": {
+        "status": "scored",
+        "TP": 47,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "cross_document_relations": {
+        "status": "scored",
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "precision": null,
+        "recall": null
+      },
+      "condition_scope": {
+        "status": "scored",
+        "TP": 1,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "method_external_calls": {
+        "status": "scored",
+        "TP": 1,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "full_structure": {
+        "status": "scored",
+        "TP": 1,
+        "FP": 0,
+        "FN": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "all_token_mentions": {
+        "status": "not_scored",
+        "TP": null,
+        "FP": null,
+        "FN": null,
+        "precision": null,
+        "recall": null,
+        "missing_annotation": "Exhaustive token mention spans/roles are absent; reference quantities are not all-token gold."
+      }
+    }
+  },
+  "layer_macro": {
+    "all_token_mentions": {
+      "scored_windows": 0,
+      "precision": null,
+      "recall": null,
+      "TP": null,
+      "FP": null,
+      "FN": null
+    },
+    "condition_scope": {
+      "scored_windows": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "TP": 6,
+      "FP": 0,
+      "FN": 0
+    },
+    "cross_document_relations": {
+      "scored_windows": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "TP": 4,
+      "FP": 0,
+      "FN": 0
+    },
+    "full_structure": {
+      "scored_windows": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "TP": 4,
+      "FP": 0,
+      "FN": 0
+    },
+    "method_external_calls": {
+      "scored_windows": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "TP": 5,
+      "FP": 0,
+      "FN": 0
+    },
+    "producer_port_relations": {
+      "scored_windows": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "TP": 249,
+      "FP": 0,
+      "FN": 0
+    },
+    "quantity_mention_roles": {
+      "scored_windows": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "TP": 139,
+      "FP": 0,
+      "FN": 0
+    }
+  },
+  "full_chain": {
+    "W01": true,
+    "W02": true,
+    "W03": true,
+    "W04": true
+  },
+  "gate_contract": "All 75 reference steps, 32 critical assertions, N01–N08, D01–D25, and every scored reference-annotated layer must pass. All-token mention recall is not_scored and is not claimed.",
+  "development_gate_passed": true,
+  "code_hashes": {
+    "analysis_parser\\__init__.py": "004b6198115f5dda99bdb8be7bf1349b7ee901ada7d05339698ca40d735aa48d",
+    "analysis_parser\\audit.py": "822bd789488263c59fe74e4336b51b8297be50db4ed97b0cdd80cd220e20543b",
+    "analysis_parser\\construction_ir.py": "68e31dfa7f2d429cd8b558fd0bc1e9f06287677f1acfbf2a14e6a4721f91b296",
+    "analysis_parser\\context_compiler.py": "0bad4021cb12f0bf56320050ad290b5fe0a298741e0d7aa5fdf17e7c023f637d",
+    "analysis_parser\\control_ir.py": "2d2ebde9929a4f8ca749268f02b9476caeacb5b569c5669af45ec6e6b771c7f3",
+    "analysis_parser\\execution.py": "83d9e4fc59b9c1c1815e17e22aea568cf390e02b93bb6a2e9666ddf3863878fc",
+    "analysis_parser\\inputs.py": "e934e2ca237f0ca0d0ee2235d4a515fa5e3bb005927234e7d25dbbd000bedf7e",
+    "analysis_parser\\lexical.py": "4489c6a8450abb6af59c0f3aefff0be7574a0bbe0d3076678a6633e4b5ece6e3",
+    "analysis_parser\\operations.py": "d0a3ab04b6ad4e340655d0eb76f307f6b6dac2ce113b98a1e1d1f138ae767d07",
+    "analysis_parser\\pipeline.py": "5029c2422c8443561f455220d43c9186059015ff0663c417d5cafbbf0b1ce060",
+    "analysis_parser\\program_ir.py": "440a2fdb158261c07738638b8e3c209e3c160f9c04992799e91fc636b80de31e",
+    "analysis_parser\\quantity_semantics.py": "24d7e8e4975d43ea34159756ebbc7ba9f03606c3232ce5fbc4112ba5e9890a19",
+    "analysis_parser\\resources.py": "1fd03413726c0756b620b8dfc9b5fb127eb3e8019e5090f585ba7de2cfebc96c",
+    "analysis_parser\\scoped.py": "551247ce66360c2b81fdf388a33c0b7c0d1754080a52662c87d2ee3276f6a084",
+    "analysis_parser\\state.py": "69fa724447a919355f6de9a3a6f2a61602f9e4da12c88234bcd98ae1756c6843",
+    "analysis_parser\\syntax_ir.py": "7e8709dc1da0b2658338bc02959ec0ced3f8e9557e6581d3efbf4cae8173cb9b",
+    "evaluation\\handoff-v2\\behavior.py": "5ce34145a0106e7fefeb0119d908b55532e7a8c561f22317d290c04029696236",
+    "evaluation\\handoff-v2\\critical.py": "a69a2d458210ee73daa7cf2d356978031a228649c9c22470c09c0804c732d256",
+    "evaluation\\handoff-v2\\graph_checks.py": "1e6add4f9385ff27ebc082efc56c4672bc5cce581d0d01abee3b5131087809fc",
+    "evaluation\\handoff-v2\\layers.py": "9236c67ed2313694ebdc95309848f83ff09b945d862f8dbbfab4b9a21bfbd483",
+    "evaluation\\handoff-v2\\numeric.py": "c6f81063f69d0017a32d4b95de4920ef854a0c3e3a889521d3e8e70d2f1c496a",
+    "evaluation\\handoff-v2\\reference_steps.py": "d077f8d2b77cbfb05c3122204afb5caa5c48664914bf6e2a45a7a698c68530d9",
+    "evaluation\\handoff-v2\\run_development.py": "44aee9753ca65049d682ee81fd4a592ddd6edf077626b451de236f07d9f43e88",
+    "evaluation\\handoff-v2\\semantic_checks.py": "185bda6142e9494e4cca660efbaa579d6f828aa5ac4cddfa0e4967796832a3e6"
+  }
+}

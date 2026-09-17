@@ -1,0 +1,4199 @@
+{
+  "version": "actual-production-inventory-2",
+  "implementation_sha256": "68e31dfa7f2d429cd8b558fd0bc1e9f06287677f1acfbf2a14e6a4721f91b296",
+  "production_count": 127,
+  "productions": [
+    {
+      "production_id": "G_TASK_MARKER_0",
+      "lowering_kind": "task_marker",
+      "ast_kind": "Heading",
+      "pattern": "{marker:k}{target:h}",
+      "slots": {
+        "marker": "k",
+        "target": "h"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "推甲課",
+      "negative_example": {
+        "surface": "推甲課",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_TASK_MARKER_0.json",
+      "probe_sha256": "011f88c43914c1aba0945243fa8de686cdee88b7c90d9ca2effc9da8168f7c0b",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_QUERY_MARKER_1",
+      "lowering_kind": "query_marker",
+      "ast_kind": "Heading",
+      "pattern": "欲知{target:h}",
+      "slots": {
+        "target": "h"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "欲知甲課",
+      "negative_example": {
+        "surface": "欲知甲課",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_QUERY_MARKER_1.json",
+      "probe_sha256": "f2abd19910624dc1248776df26aaef020936ddaa0170c3f63b15b0a929e12c50",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_UPDATE_COUNT_2",
+      "lowering_kind": "update_count",
+      "ast_kind": "RepeatStep",
+      "pattern": "加{increment:n}得一",
+      "slots": {
+        "increment": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "加三得一",
+      "negative_example": {
+        "surface": "加三得一",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_UPDATE_COUNT_2.json",
+      "probe_sha256": "a310ab7c8abb1d1c130a9031604a323a63d6ccb26dfed57f7e8e30048a4f9861",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_NUMERAL_PREDICATE_3",
+      "lowering_kind": "numeral_predicate",
+      "ast_kind": "Multiply",
+      "pattern": "{factor:n}其{value:t}",
+      "slots": {
+        "factor": "n",
+        "value": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "三其甲量",
+      "negative_example": {
+        "surface": "三其甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_NUMERAL_PREDICATE_3.json",
+      "probe_sha256": "96230125b892ab6150e918905774d3ec069895b165a5e826bf53dd7b9548ffd6",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_DENOMINATOR_DECLARATION_4",
+      "lowering_kind": "denominator_declaration",
+      "ast_kind": "DenominatorDeclaration",
+      "pattern": "皆以{denominator:a}為法",
+      "slots": {
+        "denominator": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "皆以乙量為法",
+      "negative_example": {
+        "surface": "皆以乙量為法",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_DENOMINATOR_DECLARATION_4.json",
+      "probe_sha256": "6476c9d5c13ed82ad06aba8ed4712ebe92ab5bf0c2c298bbe3b2adb561d223c2",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_DENOMINATOR_DECLARATION_5",
+      "lowering_kind": "denominator_declaration",
+      "ast_kind": "DenominatorDeclaration",
+      "pattern": "以{denominator:a}為法",
+      "slots": {
+        "denominator": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "以乙量為法",
+      "negative_example": {
+        "surface": "以乙量為法",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_DENOMINATOR_DECLARATION_5.json",
+      "probe_sha256": "deb225a32ff4ec89a9d7d9248421db7cd8287405209caabeb8940247a71dc259",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_MULTIPLY_6",
+      "lowering_kind": "multiply",
+      "ast_kind": "Multiply",
+      "pattern": "以{left:a}乘{right:a}",
+      "slots": {
+        "left": "a",
+        "right": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [
+        "并之",
+        "從之"
+      ],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "以甲量乘乙量",
+      "negative_example": {
+        "surface": "以甲量乘乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_MULTIPLY_6.json",
+      "probe_sha256": "4cc1a8312513cec10e8cbf322961690e7ff0edccebfb92013f215d9474db07bd",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_MULTIPLY_7",
+      "lowering_kind": "multiply",
+      "ast_kind": "Multiply",
+      "pattern": "又以{left:a}乘{right:a}",
+      "slots": {
+        "left": "a",
+        "right": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [
+        "并之",
+        "從之"
+      ],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "又以甲量乘乙量",
+      "negative_example": {
+        "surface": "又以甲量乘乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_MULTIPLY_7.json",
+      "probe_sha256": "6e4d531c95d629b545bfb96e22102a7002bbdea6d934882c47a82468c0102505",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_MULTIPLY_8",
+      "lowering_kind": "multiply",
+      "ast_kind": "Multiply",
+      "pattern": "每以{left:a}乘{right:a}",
+      "slots": {
+        "left": "a",
+        "right": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [
+        "并之",
+        "從之"
+      ],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "每以甲量乘乙量",
+      "negative_example": {
+        "surface": "每以甲量乘乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_MULTIPLY_8.json",
+      "probe_sha256": "f177f0def03662e4be6b8179288bc50e08cf9f12487314c9e97c974ca5b4c8f2",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_MULTIPLY_9",
+      "lowering_kind": "multiply",
+      "ast_kind": "Multiply",
+      "pattern": "餘以{left:a}乘{right:a}",
+      "slots": {
+        "left": "a",
+        "right": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [
+        "并之",
+        "從之"
+      ],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "餘以甲量乘乙量",
+      "negative_example": {
+        "surface": "餘以甲量乘乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_MULTIPLY_9.json",
+      "probe_sha256": "6f6c6bb8a4d0c5c557e930e8aad0c933bbc3e9f2ab2046bc19794bcef22dfe54",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_SUBTRACT_10",
+      "lowering_kind": "subtract",
+      "ast_kind": "Subtract",
+      "pattern": "以{right:a}減{left:a}",
+      "slots": {
+        "right": "a",
+        "left": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "以乙量減甲量",
+      "negative_example": {
+        "surface": "以乙量減甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_SUBTRACT_10.json",
+      "probe_sha256": "cf674931fcb3030ab0c087fc640289cc37c07a05b0c641c28b4ae26bbeed28eb",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_UPDATE_11",
+      "lowering_kind": "update",
+      "ast_kind": "Update",
+      "pattern": "加{amount:a}於{receiver:t}",
+      "slots": {
+        "amount": "a",
+        "receiver": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "加乙量於乙量",
+      "negative_example": {
+        "surface": "加乙量於乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_UPDATE_11.json",
+      "probe_sha256": "ecd7fa8124140340df92493cdebe6d7c01b73dd9accd51f80682cb42086bfedf",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_PAIR_INCREMENT_12",
+      "lowering_kind": "pair_increment",
+      "ast_kind": "Increment",
+      "pattern": "加{receiver:t}{amount:n}",
+      "slots": {
+        "receiver": "t",
+        "amount": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "加大餘三",
+      "negative_example": {
+        "surface": "加大餘三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_PAIR_INCREMENT_12.json",
+      "probe_sha256": "2c779c093d8282c2ba4c1e16ff7a814b0167d4fd48e43bb1e7cbfa03b11e5966",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_PAIR_INCREMENT_13",
+      "lowering_kind": "pair_increment",
+      "ast_kind": "Increment",
+      "pattern": "{receiver:t}{amount:n}",
+      "slots": {
+        "receiver": "t",
+        "amount": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "大餘三",
+      "negative_example": {
+        "surface": "大餘三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_PAIR_INCREMENT_13.json",
+      "probe_sha256": "2b12e84133b72e5ebbbf231a87474cba9d049d3c55f6ef9ee87bcab2d5c8e58b",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_LOAD_14",
+      "lowering_kind": "load",
+      "ast_kind": "Load",
+      "pattern": "置{value:a}減{decrement:n}",
+      "slots": {
+        "value": "a",
+        "decrement": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "置甲量減三",
+      "negative_example": {
+        "surface": "置甲量減三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_LOAD_14.json",
+      "probe_sha256": "15377c2cf9d930d07c1efd6d176e0f71a884778081d0d747b79ecce4ca1f702a",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_LOAD_15",
+      "lowering_kind": "load",
+      "ast_kind": "Load",
+      "pattern": "置{value:a}",
+      "slots": {
+        "value": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "置甲量",
+      "negative_example": {
+        "surface": "置甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_LOAD_15.json",
+      "probe_sha256": "365f6d118d348de3345105b46ba3a92dd9d942c151848f334475c2be0a7f5e60",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_DIVIDE_16",
+      "lowering_kind": "divide",
+      "ast_kind": "DivMod",
+      "pattern": "{value:o}盈{divisor:a}得一",
+      "slots": {
+        "value": "o",
+        "divisor": "a"
+      },
+      "optional_slots": [
+        "value"
+      ],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "盈乙量得一",
+      "negative_example": {
+        "surface": "盈乙量得一",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_DIVIDE_16.json",
+      "probe_sha256": "d837d5d1b21b7cd2a877773303801663cae815b5f6c02387af513035afee6a0d",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_DIVIDE_17",
+      "lowering_kind": "divide",
+      "ast_kind": "DivMod",
+      "pattern": "{value:o}滿{divisor:a}得一",
+      "slots": {
+        "value": "o",
+        "divisor": "a"
+      },
+      "optional_slots": [
+        "value"
+      ],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "滿乙量得一",
+      "negative_example": {
+        "surface": "滿乙量得一",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_DIVIDE_17.json",
+      "probe_sha256": "cde30928dfa3f10456c248bfe3a1ba3e5211e575438c0b6b7c4b6115ac197ee2",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CYCLE_DIVIDE_18",
+      "lowering_kind": "cycle_divide",
+      "ast_kind": "CycleReduce",
+      "pattern": "{value:a}以{divisor:a}除去之",
+      "slots": {
+        "value": "a",
+        "divisor": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "甲量以乙量除去之",
+      "negative_example": {
+        "surface": "甲量以乙量除去之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CYCLE_DIVIDE_18.json",
+      "probe_sha256": "074c059689dce101a97806955a509bd4b6b38173fd6e329cbe62c6ccf22e33a8",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CYCLE_DIVIDE_19",
+      "lowering_kind": "cycle_divide",
+      "ast_kind": "CycleReduce",
+      "pattern": "{value:a}以{divisor:a}去之",
+      "slots": {
+        "value": "a",
+        "divisor": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "甲量以乙量去之",
+      "negative_example": {
+        "surface": "甲量以乙量去之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CYCLE_DIVIDE_19.json",
+      "probe_sha256": "ea6c690f49b7449cf4376874c2363757f3feec7066a9669b6613c50b10d1d51e",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CYCLE_DIVIDE_20",
+      "lowering_kind": "cycle_divide",
+      "ast_kind": "CycleReduce",
+      "pattern": "{value:a}盈{divisor:a}除去之",
+      "slots": {
+        "value": "a",
+        "divisor": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "甲量盈乙量除去之",
+      "negative_example": {
+        "surface": "甲量盈乙量除去之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CYCLE_DIVIDE_20.json",
+      "probe_sha256": "038cd9756bada4c9165af9371d7557a3b7c8e48a41c9055bd23e8f70a21705fb",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CYCLE_DIVIDE_21",
+      "lowering_kind": "cycle_divide",
+      "ast_kind": "CycleReduce",
+      "pattern": "{value:a}滿{divisor:a}除去之",
+      "slots": {
+        "value": "a",
+        "divisor": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "甲量滿乙量除去之",
+      "negative_example": {
+        "surface": "甲量滿乙量除去之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CYCLE_DIVIDE_21.json",
+      "probe_sha256": "ca8a4f799f6b0917c745b78c2711a8a61305860be8949ac76e0da15b2d782cd4",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_DIVIDE_BY_22",
+      "lowering_kind": "divide_by",
+      "ast_kind": "CycleReduce",
+      "pattern": "以{divisor:a}除{value:a}",
+      "slots": {
+        "divisor": "a",
+        "value": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "以乙量除甲量",
+      "negative_example": {
+        "surface": "以乙量除甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_DIVIDE_BY_22.json",
+      "probe_sha256": "8c8eba38f3edeb9dfc25ad4a3c24e8f149a004363c63386aef30860cc237071e",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_PENDING_CYCLE_23",
+      "lowering_kind": "pending_cycle",
+      "ast_kind": "PendingCycle",
+      "pattern": "{value:a}盈{divisor:a}",
+      "slots": {
+        "value": "a",
+        "divisor": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "甲量盈乙量",
+      "negative_example": {
+        "surface": "甲量盈乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_PENDING_CYCLE_23.json",
+      "probe_sha256": "05134d3f791b5b3a42dfdd6b1f55bbef7d2a0807aba044387096d1f9c237c329",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_PENDING_CYCLE_24",
+      "lowering_kind": "pending_cycle",
+      "ast_kind": "PendingCycle",
+      "pattern": "{value:a}滿{divisor:a}",
+      "slots": {
+        "value": "a",
+        "divisor": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "甲量滿乙量",
+      "negative_example": {
+        "surface": "甲量滿乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_PENDING_CYCLE_24.json",
+      "probe_sha256": "32f8f1c6000630744637cd47b4b53baa529fe5e85afded4a65d76b41a529cb7d",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_LOOP_THRESHOLD_25",
+      "lowering_kind": "loop_threshold",
+      "ast_kind": "LoopThreshold",
+      "pattern": "盈{threshold:a}",
+      "slots": {
+        "threshold": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "盈乙量",
+      "negative_example": {
+        "surface": "盈乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_LOOP_THRESHOLD_25.json",
+      "probe_sha256": "82f928db508345495e9b2cd3e86730eaa3bd48e0006f0ec8d5dd7a0e6bcde73f",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_REMAINDER_NAME_26",
+      "lowering_kind": "remainder_name",
+      "ast_kind": "NameRemainder",
+      "pattern": "不盈者名曰{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "不盈者名曰甲量",
+      "negative_example": {
+        "surface": "不盈者名曰甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_REMAINDER_NAME_26.json",
+      "probe_sha256": "6f5abc5c853552e80cb4bf0203d85defc33d2e99c37abbd1a1b0a412d69da287",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_REMAINDER_NAME_27",
+      "lowering_kind": "remainder_name",
+      "ast_kind": "NameRemainder",
+      "pattern": "不盈者為{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "不盈者為甲量",
+      "negative_example": {
+        "surface": "不盈者為甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_REMAINDER_NAME_27.json",
+      "probe_sha256": "cf7af08f49b4743258eeb43768acfc76135459850862ba89b5a5974a5465cceb",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_REMAINDER_NAME_28",
+      "lowering_kind": "remainder_name",
+      "ast_kind": "NameRemainder",
+      "pattern": "不滿為{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "不滿為甲量",
+      "negative_example": {
+        "surface": "不滿為甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_REMAINDER_NAME_28.json",
+      "probe_sha256": "e737048ac7cba2477343ce9fb9f8d9c4999307848c41b46a17698c92c4ef9ef3",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_REMAINDER_NAME_29",
+      "lowering_kind": "remainder_name",
+      "ast_kind": "NameRemainder",
+      "pattern": "不盡為{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "不盡為甲量",
+      "negative_example": {
+        "surface": "不盡為甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_REMAINDER_NAME_29.json",
+      "probe_sha256": "448e85c5d9536293338063944f048340f19a5e0d24f72c8d8fc9e62c0afc5ab0",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_REMAINDER_NAME_30",
+      "lowering_kind": "remainder_name",
+      "ast_kind": "NameRemainder",
+      "pattern": "其餘為{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "其餘為甲量",
+      "negative_example": {
+        "surface": "其餘為甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_REMAINDER_NAME_30.json",
+      "probe_sha256": "9260d9364fb6aeb5c131940d6af9a6f637fe2b9162feeb5d7dff51af334bf399",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_REMAINDER_NAME_31",
+      "lowering_kind": "remainder_name",
+      "ast_kind": "NameRemainder",
+      "pattern": "餘為{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "餘為甲量",
+      "negative_example": {
+        "surface": "餘為甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_REMAINDER_NAME_31.json",
+      "probe_sha256": "ee5f7ee43667d45d392845db0c76be0bb97498ee23f77bb06b5edc9aa09433a8",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_REMAINDER_NAME_32",
+      "lowering_kind": "remainder_name",
+      "ast_kind": "NameRemainder",
+      "pattern": "餘則{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "餘則甲量",
+      "negative_example": {
+        "surface": "餘則甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_REMAINDER_NAME_32.json",
+      "probe_sha256": "690467d9586daab92697ebd24bd80d30b22a041f627b5092624ebcdcc49a490d",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_NAME_33",
+      "lowering_kind": "name",
+      "ast_kind": "Name",
+      "pattern": "名曰{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "名曰甲量",
+      "negative_example": {
+        "surface": "名曰甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_NAME_33.json",
+      "probe_sha256": "8a83b4dd8cc82c917eff535622e035cab20672d438bbb457714716c59ecbce2b",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_NAME_34",
+      "lowering_kind": "name",
+      "ast_kind": "Name",
+      "pattern": "名為{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "名為甲量",
+      "negative_example": {
+        "surface": "名為甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_NAME_34.json",
+      "probe_sha256": "14666e57d2661fe5cf45e0ceb8340002be4309bfaf853e8d4f63adc149346777",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_NAME_35",
+      "lowering_kind": "name",
+      "ast_kind": "Name",
+      "pattern": "為{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "為甲量",
+      "negative_example": {
+        "surface": "為甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_NAME_35.json",
+      "probe_sha256": "804fd070920a944cdff1481d6b129e7d1fc47f531735956bee2de5bf8748f47c",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_RECEIVER_ADD_36",
+      "lowering_kind": "receiver_add",
+      "ast_kind": "Combine",
+      "pattern": "從{receiver:a}",
+      "slots": {
+        "receiver": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "從乙量",
+      "negative_example": {
+        "surface": "從乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_RECEIVER_ADD_36.json",
+      "probe_sha256": "2fc18c448eb7ffd10b2e882469a341d5a9b50c0757f61348e30309afc456f3cb",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_RECEIVER_ADD_37",
+      "lowering_kind": "receiver_add",
+      "ast_kind": "Combine",
+      "pattern": "上加{receiver:a}",
+      "slots": {
+        "receiver": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "上加乙量",
+      "negative_example": {
+        "surface": "上加乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_RECEIVER_ADD_37.json",
+      "probe_sha256": "d67f0276d44772df739f3e6e140d5aa6c1cbcebd681ce38e411337c6f72e08ea",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_RECEIVER_ADD_38",
+      "lowering_kind": "receiver_add",
+      "ast_kind": "Combine",
+      "pattern": "并{receiver:a}",
+      "slots": {
+        "receiver": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "并乙量",
+      "negative_example": {
+        "surface": "并乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_RECEIVER_ADD_38.json",
+      "probe_sha256": "9952ac7f0e12e9f345078e37cebe246710c451a2ac22fca0e9de46e697abd769",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_COUNT_ORIGIN_39",
+      "lowering_kind": "count_origin",
+      "ast_kind": "Count",
+      "pattern": "從{origin:h}起",
+      "slots": {
+        "origin": "h"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "從甲子起",
+      "negative_example": {
+        "surface": "從甲子起",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_COUNT_ORIGIN_39.json",
+      "probe_sha256": "04493246cd50f2d24646b000fbf2af507c0016fdd51bdbc7874f2dc4227524b5",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_COUNT_ORIGIN_40",
+      "lowering_kind": "count_origin",
+      "ast_kind": "Count",
+      "pattern": "數從{origin:h}起",
+      "slots": {
+        "origin": "h"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "數從甲子起",
+      "negative_example": {
+        "surface": "數從甲子起",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_COUNT_ORIGIN_40.json",
+      "probe_sha256": "4e3b0cc2daef77c99f90de77d8d2ea9c710a23eb107964eaf6eeb4ed75bf968f",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_COUNT_ORIGIN_41",
+      "lowering_kind": "count_origin",
+      "ast_kind": "Count",
+      "pattern": "中數從{origin:h}起",
+      "slots": {
+        "origin": "h"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "中數從甲子起",
+      "negative_example": {
+        "surface": "中數從甲子起",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_COUNT_ORIGIN_41.json",
+      "probe_sha256": "a7af98d6278ad6076fbc9d951f1be61577153aa238cb0b2d86821b2b01acaa79",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_COUNT_ORIGIN_42",
+      "lowering_kind": "count_origin",
+      "ast_kind": "Count",
+      "pattern": "次數從{origin:h}起",
+      "slots": {
+        "origin": "h"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "次數從甲子起",
+      "negative_example": {
+        "surface": "次數從甲子起",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_COUNT_ORIGIN_42.json",
+      "probe_sha256": "82843b49f4719968c6aed073027345e972e371f4aa8062598cf6cc880e4cd23b",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_COUNT_COMMAND_43",
+      "lowering_kind": "count_command",
+      "ast_kind": "Count",
+      "pattern": "以{origin:a}命之",
+      "slots": {
+        "origin": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "以甲子命之",
+      "negative_example": {
+        "surface": "以甲子命之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_COUNT_COMMAND_43.json",
+      "probe_sha256": "4dc15de1a5245a1c141f9ded64e3957ce1b8106558079a64451d33a1890858a6",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_COUNT_COMMAND_44",
+      "lowering_kind": "count_command",
+      "ast_kind": "Count",
+      "pattern": "其餘以{origin:a}命之",
+      "slots": {
+        "origin": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "其餘以甲子命之",
+      "negative_example": {
+        "surface": "其餘以甲子命之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_COUNT_COMMAND_44.json",
+      "probe_sha256": "75e174c4631a58190ee982edcc3e42fd268136c90a3b10eea30d11f22d02cae9",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_THRESHOLD_45",
+      "lowering_kind": "threshold",
+      "ast_kind": "Threshold",
+      "pattern": "{value:o}{lower:n}以上",
+      "slots": {
+        "value": "o",
+        "lower": "n"
+      },
+      "optional_slots": [
+        "value"
+      ],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "三以上",
+      "negative_example": {
+        "surface": "三以上",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_THRESHOLD_45.json",
+      "probe_sha256": "fe9a3f60c3fb3cb684561913d99d6d4f6cfbb40ab274212983189eae8cab778f",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_THRESHOLD_46",
+      "lowering_kind": "threshold",
+      "ast_kind": "Threshold",
+      "pattern": "{value:o}滿{lower:n}以上",
+      "slots": {
+        "value": "o",
+        "lower": "n"
+      },
+      "optional_slots": [
+        "value"
+      ],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "滿三以上",
+      "negative_example": {
+        "surface": "滿三以上",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_THRESHOLD_46.json",
+      "probe_sha256": "a00b1eb7d72317551dd2bc491427c217cb900a1ff76d20e82379ff1f8efde07b",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ADD_47",
+      "lowering_kind": "add",
+      "ast_kind": "Add",
+      "pattern": "加{amount:a}",
+      "slots": {
+        "amount": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "加乙量",
+      "negative_example": {
+        "surface": "加乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ADD_47.json",
+      "probe_sha256": "f1aa6c7d94cca84d415c3ef6da8c0ffe6480f8259de4cec03016634d1a5e673a",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_RECUR_INCREMENT_48",
+      "lowering_kind": "recur_increment",
+      "ast_kind": "Increment",
+      "pattern": "又加{receiver:t}{amount:n}",
+      "slots": {
+        "receiver": "t",
+        "amount": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "又加乙量三",
+      "negative_example": {
+        "surface": "又加乙量三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_RECUR_INCREMENT_48.json",
+      "probe_sha256": "c9bf9335bf5aa7ce1ecc05bfbd0de9bf3dd0b50a3ca16f427e56900e1a4f9bfa",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_DOUBLE_INTERVAL_49",
+      "lowering_kind": "double_interval",
+      "ast_kind": "DoubleInterval",
+      "pattern": "倍{target:h}",
+      "slots": {
+        "target": "h"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "倍甲課",
+      "negative_example": {
+        "surface": "倍甲課",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_DOUBLE_INTERVAL_49.json",
+      "probe_sha256": "80d91e05b83d87f4f02bbff5551f0f237833a585ed7fa0505fed4a55c1dde7bf",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_MIXED_COMPACT_50",
+      "lowering_kind": "mixed_compact",
+      "ast_kind": "MixedDuration",
+      "pattern": "{label:t}{whole:n}日{numerator:n}分",
+      "slots": {
+        "label": "t",
+        "whole": "n",
+        "numerator": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "甲量三日三分",
+      "negative_example": {
+        "surface": "甲量三日三分",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_MIXED_COMPACT_50.json",
+      "probe_sha256": "d6bff38ae758305ca3daa800fd1bfca98eabff006e56438b48f565052e1d8d28",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_DECLARATION_51",
+      "lowering_kind": "declaration",
+      "ast_kind": "Declaration",
+      "pattern": "{label:t}{value:n}",
+      "slots": {
+        "label": "t",
+        "value": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "甲量三",
+      "negative_example": {
+        "surface": "甲量三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_DECLARATION_51.json",
+      "probe_sha256": "82e0935c0f2fc4d89fa3a8a8fe537e08ecb34fc816f40981a2742574d4470a4e",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_DECLARATION_52",
+      "lowering_kind": "declaration",
+      "ast_kind": "Declaration",
+      "pattern": "{label:t}，{value:n}",
+      "slots": {
+        "label": "t",
+        "value": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "甲量，三",
+      "negative_example": {
+        "surface": "甲量，三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_DECLARATION_52.json",
+      "probe_sha256": "d2ea16fcfd6f37b12eb652ddd0e7629bdedb320c9f9416727eda1f5d96d5d8c6",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_PARAMETER_ALIAS_53",
+      "lowering_kind": "parameter_alias",
+      "ast_kind": "ParameterAlias",
+      "pattern": "因為{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "因為甲量",
+      "negative_example": {
+        "surface": "因為甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_PARAMETER_ALIAS_53.json",
+      "probe_sha256": "8dab1f9468c65163d3474e849580840c2026ce4b9d3dc1f6bdbe429eadc2e551",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_MIXED_DURATION_54",
+      "lowering_kind": "mixed_duration",
+      "ast_kind": "MixedDuration",
+      "pattern": "{whole:n}日，{denominator:a}分之{numerator:n}",
+      "slots": {
+        "whole": "n",
+        "denominator": "a",
+        "numerator": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "三日，乙量分之三",
+      "negative_example": {
+        "surface": "三日，乙量分之三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_MIXED_DURATION_54.json",
+      "probe_sha256": "d8f319f7ec5cff1393fb89100e2a6e4cf245ebd96183f38336cd548334894758",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_MIXED_DURATION_55",
+      "lowering_kind": "mixed_duration",
+      "ast_kind": "MixedDuration",
+      "pattern": "其{subject:h}各{whole:n}日，{denominator:a}分之{numerator:n}",
+      "slots": {
+        "subject": "h",
+        "whole": "n",
+        "denominator": "a",
+        "numerator": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "其甲課各三日，乙量分之三",
+      "negative_example": {
+        "surface": "其甲課各三日，乙量分之三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_MIXED_DURATION_55.json",
+      "probe_sha256": "adfff3c960c8a0bcb86da6055ffb99e39bc506bae0681e03974c865074fb6426",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_MIXED_DURATION_56",
+      "lowering_kind": "mixed_duration",
+      "ast_kind": "MixedDuration",
+      "pattern": "中央各{whole:n}日，{denominator:a}分之{numerator:n}",
+      "slots": {
+        "whole": "n",
+        "denominator": "a",
+        "numerator": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "中央各三日，乙量分之三",
+      "negative_example": {
+        "surface": "中央各三日，乙量分之三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_MIXED_DURATION_56.json",
+      "probe_sha256": "fde30753bf6d24fa2d28a241150efcc10ed538ecad2c5af116167fc534ada7e5",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_NAME_57",
+      "lowering_kind": "name",
+      "ast_kind": "Name",
+      "pattern": "則{label:t}也",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "則甲量也",
+      "negative_example": {
+        "surface": "則甲量也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_NAME_57.json",
+      "probe_sha256": "ded7b67889b1e6076f9817e0a57e288e5e3b203757a41e8c7fb6526907bd2ed7",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_REMAINDER_NAME_58",
+      "lowering_kind": "remainder_name",
+      "ast_kind": "NameRemainder",
+      "pattern": "餘名曰{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "餘名曰甲量",
+      "negative_example": {
+        "surface": "餘名曰甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_REMAINDER_NAME_58.json",
+      "probe_sha256": "3103dc0a40459ad4bb59cf3b61845025d771c217606f87bd8adb6302431bd5fa",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_REMAINDER_NAME_59",
+      "lowering_kind": "remainder_name",
+      "ast_kind": "NameRemainder",
+      "pattern": "餘則{label:t}也",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "餘則甲量也",
+      "negative_example": {
+        "surface": "餘則甲量也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_REMAINDER_NAME_59.json",
+      "probe_sha256": "5ad61ccc753ecc2eb2179d53285db1b079c5139614d9b70806e737357cc26cfa",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_MULTIPLY_FOCUS_60",
+      "lowering_kind": "multiply_focus",
+      "ast_kind": "Multiply",
+      "pattern": "乘{factor:a}",
+      "slots": {
+        "factor": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "乘乙量",
+      "negative_example": {
+        "surface": "乘乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_MULTIPLY_FOCUS_60.json",
+      "probe_sha256": "912767d50a0cbbbc53cc7ca25f9aa8eed459a921763eb76d58b755324a5c355b",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_REUSE_OPERATION_61",
+      "lowering_kind": "reuse_operation",
+      "ast_kind": "ReuseOperation",
+      "pattern": "{receiver:t}亦如之",
+      "slots": {
+        "receiver": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "乙量亦如之",
+      "negative_example": {
+        "surface": "乙量亦如之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_REUSE_OPERATION_61.json",
+      "probe_sha256": "2c0fc72675f8c6feb999b1701fb211ef3f6b3aeacf7e259e1d64841c91304877",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_MULTIPLY_62",
+      "lowering_kind": "multiply",
+      "ast_kind": "Multiply",
+      "pattern": "不盈者以{left:a}乘{right:a}",
+      "slots": {
+        "left": "a",
+        "right": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [
+        "并之",
+        "從之"
+      ],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "不盈者以甲量乘乙量",
+      "negative_example": {
+        "surface": "不盈者以甲量乘乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_MULTIPLY_62.json",
+      "probe_sha256": "dfce305d6f2311d13f72172337d41c2c03113e5a7e854970d520d61da5f6dbdf",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_EPOCH_LOAD_63",
+      "lowering_kind": "epoch_load",
+      "ast_kind": "EpochLoad",
+      "pattern": "置上元以來",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "置上元以來",
+      "negative_example": {
+        "surface": "置上元以來",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_EPOCH_LOAD_63.json",
+      "probe_sha256": "6376c45f8c4f2fe2a7fc29b1bc8aac99ff87cc90469ccd42b014d22375194be7",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_PAIR_INCREMENT_64",
+      "lowering_kind": "pair_increment",
+      "ast_kind": "Increment",
+      "pattern": "{receiver:t}加{amount:n}",
+      "slots": {
+        "receiver": "t",
+        "amount": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "大餘加三",
+      "negative_example": {
+        "surface": "大餘加三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_PAIR_INCREMENT_64.json",
+      "probe_sha256": "bb0dbcf76e701e8de04967aad5297836a3abc47322fc07119e828c1af98bbf61",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_RECUR_INCREMENT_65",
+      "lowering_kind": "recur_increment",
+      "ast_kind": "Increment",
+      "pattern": "當加{receiver:t}{amount:n}",
+      "slots": {
+        "receiver": "t",
+        "amount": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "當加乙量三",
+      "negative_example": {
+        "surface": "當加乙量三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_RECUR_INCREMENT_65.json",
+      "probe_sha256": "b04f4cb596de9eb0244a84322ad49c33d74209c0fde3d4e5e424bfc4ff54f712",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_RECEIVER_ADD_66",
+      "lowering_kind": "receiver_add",
+      "ast_kind": "Combine",
+      "pattern": "并之{receiver:t}",
+      "slots": {
+        "receiver": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "并之乙量",
+      "negative_example": {
+        "surface": "并之乙量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_RECEIVER_ADD_66.json",
+      "probe_sha256": "62034d91329ebb8c80e7ce9236708d1a5787762f21f3121c0cc24c4e95995a1f",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_METHOD_VALUE_REFERENCE_67",
+      "lowering_kind": "method_value_reference",
+      "ast_kind": "MethodCall",
+      "pattern": "數除{value:t}如法",
+      "slots": {
+        "value": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "數除甲量如法",
+      "negative_example": {
+        "surface": "數除甲量如法",
+        "tokens": []
+      },
+      "positive_reachable": false,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_METHOD_VALUE_REFERENCE_67.json",
+      "probe_sha256": "efa7c6efd45ef7e1b4b372311335881af8738ba4abc6cb4da1e911633b54466f",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_COUNT_REMAINDER_68",
+      "lowering_kind": "count_remainder",
+      "ast_kind": "Count",
+      "pattern": "不盈者數起於{origin:h}",
+      "slots": {
+        "origin": "h"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "不盈者數起於甲子",
+      "negative_example": {
+        "surface": "不盈者數起於甲子",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_COUNT_REMAINDER_68.json",
+      "probe_sha256": "e9ed595be312db324193e78dc2e9bb56c92db4df5d6dd9b5a4cc81c1dea24399",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_SCALAR_VALUE_69",
+      "lowering_kind": "scalar_value",
+      "ast_kind": "ScalarDeclaration",
+      "pattern": "為{value:n}",
+      "slots": {
+        "value": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "為三",
+      "negative_example": {
+        "surface": "為三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_SCALAR_VALUE_69.json",
+      "probe_sha256": "cf17924f34e3ef0802d5cd2e0b9f8b9b3f8b97cf935e330352e8f3101ae4151a",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_SCALAR_NAME_70",
+      "lowering_kind": "scalar_name",
+      "ast_kind": "ScalarName",
+      "pattern": "是為{label:t}",
+      "slots": {
+        "label": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "是為甲量",
+      "negative_example": {
+        "surface": "是為甲量",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_SCALAR_NAME_70.json",
+      "probe_sha256": "0a962fc4e5f41629626bccbc55d8d7fc12dfb57f007a4d819c0be50e27c838d4",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_SCHEDULE_ROW_71",
+      "lowering_kind": "schedule_row",
+      "ast_kind": "ScheduleRow",
+      "pattern": "{year:n}歲{count:n}閏",
+      "slots": {
+        "year": "n",
+        "count": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "三歲三閏",
+      "negative_example": {
+        "surface": "三歲三閏",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_SCHEDULE_ROW_71.json",
+      "probe_sha256": "b86932ebb2898940cb8333ed62f44aca0ca4d1e832c6781b69b48ed94f11b62d",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_SCAN_LENGTH_72",
+      "lowering_kind": "scan_length",
+      "ast_kind": "ScanLength",
+      "pattern": "除{months:n}",
+      "slots": {
+        "months": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "除三",
+      "negative_example": {
+        "surface": "除三",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_SCAN_LENGTH_72.json",
+      "probe_sha256": "344da1a2399061bb48bc255e1e1d07a1ffddd738934b99196fa97c61bb934db2",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_EPOCH_LOAD_73",
+      "lowering_kind": "epoch_load",
+      "ast_kind": "EpochLoad",
+      "pattern": "置太極上元以來",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "置太極上元以來",
+      "negative_example": {
+        "surface": "置太極上元以來",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_EPOCH_LOAD_73.json",
+      "probe_sha256": "5fa46bca2ca0f02bf8b80af39ce620f38f12e2134cf77903de255729f5099460",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_EPOCH_DIVIDE_74",
+      "lowering_kind": "epoch_divide",
+      "ast_kind": "EpochDivide",
+      "pattern": "以{divisor:a}除去上元",
+      "slots": {
+        "divisor": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "以乙量除去上元",
+      "negative_example": {
+        "surface": "以乙量除去上元",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_EPOCH_DIVIDE_74.json",
+      "probe_sha256": "a1baa88cf80667e74d77afde0b807de55db58e11fb1bdf3624ebf5f5db584532",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ENTRY_CYCLE_75",
+      "lowering_kind": "entry_cycle",
+      "ast_kind": "EntryCycle",
+      "pattern": "盈{divisor:a}除之",
+      "slots": {
+        "divisor": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "盈乙量除之",
+      "negative_example": {
+        "surface": "盈乙量除之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ENTRY_CYCLE_75.json",
+      "probe_sha256": "ac095970e2858cc36343337f6be219b34fcb920d35751b61ca69a82bc1e7e06f",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ENTRY_REMAINDER_DIVIDE_76",
+      "lowering_kind": "entry_remainder_divide",
+      "ast_kind": "EntryRemainderDivide",
+      "pattern": "其餘以{divisor:a}除之",
+      "slots": {
+        "divisor": "a"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "其餘以乙量除之",
+      "negative_example": {
+        "surface": "其餘以乙量除之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ENTRY_REMAINDER_DIVIDE_76.json",
+      "probe_sha256": "935d6442a81779bcddfd1a55c330523b65f9948d63c1d594054b9ae1820dfba9",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CONCORDANCE_CASE_77",
+      "lowering_kind": "concordance_case",
+      "ast_kind": "ConcordanceCase",
+      "pattern": "則{branch:b}{head:t}以來年數也",
+      "slots": {
+        "branch": "b",
+        "head": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "則天統乙量以來年數也",
+      "negative_example": {
+        "surface": "則天統乙量以來年數也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CONCORDANCE_CASE_77.json",
+      "probe_sha256": "0dfaf897a2fca1c21961cd7f6515005939e14ebf7e4040243f874b7de028d934",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CONCORDANCE_CASE_78",
+      "lowering_kind": "concordance_case",
+      "ast_kind": "ConcordanceCase",
+      "pattern": "餘則{branch:b}{head:t}以來年數也",
+      "slots": {
+        "branch": "b",
+        "head": "t"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "餘則天統乙量以來年數也",
+      "negative_example": {
+        "surface": "餘則天統乙量以來年數也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CONCORDANCE_CASE_78.json",
+      "probe_sha256": "c380cbfd0eab768f6d102d6decfcdd7e6a48316a8b0851b70f6b99b0abe41d2a",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CONDITIONAL_COUNT_79",
+      "lowering_kind": "conditional_count",
+      "ast_kind": "ConditionalCount",
+      "pattern": "滿{lower:n}以上亦得一筭之數",
+      "slots": {
+        "lower": "n"
+      },
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "滿三以上亦得一筭之數",
+      "negative_example": {
+        "surface": "滿三以上亦得一筭之數",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CONDITIONAL_COUNT_79.json",
+      "probe_sha256": "a02c41971254f0410a20de8c71cab9c4673b2cf5419bad3bb39812aea0f52cca",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_METHOD_REFERENCE_80",
+      "lowering_kind": "method_reference",
+      "ast_kind": "MethodReference",
+      "pattern": "除數如法",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "除數如法",
+      "negative_example": {
+        "surface": "除數如法",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_METHOD_REFERENCE_80.json",
+      "probe_sha256": "08555b3964bd7d2925d9bb5bbf118ed55f7411371ef0053a74589521e9bc7556",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_METHOD_REFERENCE_81",
+      "lowering_kind": "method_reference",
+      "ast_kind": "MethodReference",
+      "pattern": "數除如法",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "數除如法",
+      "negative_example": {
+        "surface": "數除如法",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_METHOD_REFERENCE_81.json",
+      "probe_sha256": "fafcd88638289918be920b5ca0ef1cd768f816d9c0ddf372c109de8bcdc41248",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_METHOD_REFERENCE_82",
+      "lowering_kind": "method_reference",
+      "ast_kind": "MethodReference",
+      "pattern": "除命之如前",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "除命之如前",
+      "negative_example": {
+        "surface": "除命之如前",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_METHOD_REFERENCE_82.json",
+      "probe_sha256": "bd81288fabb8374ecfb069e03218b1148842cc1e9451515368fc6ec3561f95ef",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_METHOD_REFERENCE_83",
+      "lowering_kind": "method_reference",
+      "ast_kind": "MethodReference",
+      "pattern": "命之如前",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "命之如前",
+      "negative_example": {
+        "surface": "命之如前",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_METHOD_REFERENCE_83.json",
+      "probe_sha256": "21a91f68143205a73c0d60843426e80b16b587457bd352de2b082841d8735bb9",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_USE_DENOMINATOR_84",
+      "lowering_kind": "use_denominator",
+      "ast_kind": "UseDenominator",
+      "pattern": "如法得一",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "如法得一",
+      "negative_example": {
+        "surface": "如法得一",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_USE_DENOMINATOR_84.json",
+      "probe_sha256": "0a9f615a7a5e54fb34e9315b73255dfaeaaf77f3e4af8be974481e03f241e35c",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_COMPLETE_CYCLE_85",
+      "lowering_kind": "complete_cycle",
+      "ast_kind": "CompleteCycle",
+      "pattern": "除之",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "除之",
+      "negative_example": {
+        "surface": "除之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_COMPLETE_CYCLE_85.json",
+      "probe_sha256": "fc8c2e1b6b659b412276322e4b791b05acaadf380949ac925b96039aa77a95fe",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_COMPLETE_CYCLE_86",
+      "lowering_kind": "complete_cycle",
+      "ast_kind": "CompleteCycle",
+      "pattern": "除去之",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "除去之",
+      "negative_example": {
+        "surface": "除去之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_COMPLETE_CYCLE_86.json",
+      "probe_sha256": "cfb2ab30bb30443260e9ae12b14f8ad0fd8f699d7cd5714986dfa46d343ab479",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_JUDGMENT_87",
+      "lowering_kind": "judgment",
+      "ast_kind": "Judgment",
+      "pattern": "歲有閏",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "歲有閏",
+      "negative_example": {
+        "surface": "歲有閏",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_JUDGMENT_87.json",
+      "probe_sha256": "32243260cf0b5a31fa5b76376c8345eb22c7c23a5006bb4598051cd89f06bbf7",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_JUDGMENT_88",
+      "lowering_kind": "judgment",
+      "ast_kind": "Judgment",
+      "pattern": "其歲有閏",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "其歲有閏",
+      "negative_example": {
+        "surface": "其歲有閏",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_JUDGMENT_88.json",
+      "probe_sha256": "4d66a60b18a59b99ba44485d05ce8cf365a0d37dd02e3f6d9735b56a8d6fe943",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_JUDGMENT_89",
+      "lowering_kind": "judgment",
+      "ast_kind": "Judgment",
+      "pattern": "其月大",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "其月大",
+      "negative_example": {
+        "surface": "其月大",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_JUDGMENT_89.json",
+      "probe_sha256": "cced3334a7845338e8d5f73f455fe335eb30f1e1fe946c342c6304c69fe8a33d",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_EPOCH_INCLUSIVE_90",
+      "lowering_kind": "epoch_inclusive",
+      "ast_kind": "EpochInclusive",
+      "pattern": "盡所求年",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "盡所求年",
+      "negative_example": {
+        "surface": "盡所求年",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_EPOCH_INCLUSIVE_90.json",
+      "probe_sha256": "cdeab3f0819a2e433c07cdeabaec6e553227b18ac5e005c437df6c062002b08e",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_EPOCH_ELAPSED_91",
+      "lowering_kind": "epoch_elapsed",
+      "ast_kind": "EpochElapsed",
+      "pattern": "外所求年",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "外所求年",
+      "negative_example": {
+        "surface": "外所求年",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_EPOCH_ELAPSED_91.json",
+      "probe_sha256": "8a9002e314d6cd38ec21e816b349ee244ba904bbac17cc35d3c3fef7f6e34cfa",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CONCORDANCE_REMAINDER_92",
+      "lowering_kind": "concordance_remainder",
+      "ast_kind": "ConcordanceRemainder",
+      "pattern": "餘不盈統者",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "餘不盈統者",
+      "negative_example": {
+        "surface": "餘不盈統者",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CONCORDANCE_REMAINDER_92.json",
+      "probe_sha256": "5cd5aab2ae75401aa917abb7eb61d3287bcd0d26a4a8818afe4a669afd56bc6e",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CONCORDANCE_PENDING_93",
+      "lowering_kind": "concordance_pending",
+      "ast_kind": "ConcordancePending",
+      "pattern": "盈統",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "盈統",
+      "negative_example": {
+        "surface": "盈統",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CONCORDANCE_PENDING_93.json",
+      "probe_sha256": "0c3f3b142ff767cbcd4c392b3c4b15858d30d4675a46f38acd9daefb76df129d",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CONCORDANCE_PENDING_94",
+      "lowering_kind": "concordance_pending",
+      "ast_kind": "ConcordancePending",
+      "pattern": "又盈統",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "又盈統",
+      "negative_example": {
+        "surface": "又盈統",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CONCORDANCE_PENDING_94.json",
+      "probe_sha256": "d795472ba7773a43d474b473ce762a98c8f87ad5c0410ed07e2f42546ab67f25",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_CONCORDANCE_SELECT_95",
+      "lowering_kind": "concordance_select",
+      "ast_kind": "ConcordanceSelect",
+      "pattern": "各以其統首日為紀",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "各以其統首日為紀",
+      "negative_example": {
+        "surface": "各以其統首日為紀",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_CONCORDANCE_SELECT_95.json",
+      "probe_sha256": "0062642bdb951710b6258d9dc549f28f94cc0939785da969c53d39ddefffd1e4",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ERA_INDEX_96",
+      "lowering_kind": "era_index",
+      "ast_kind": "EraIndex",
+      "pattern": "所得數從天紀",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "所得數從天紀",
+      "negative_example": {
+        "surface": "所得數從天紀",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ERA_INDEX_96.json",
+      "probe_sha256": "1d05b4a5ad5c9ea4a9b85ab8fd77d94096c757492c307d8e285da1ac2856f004",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_OBSCURATION_INDEX_97",
+      "lowering_kind": "obscuration_index",
+      "ast_kind": "ObscurationIndex",
+      "pattern": "所得數從甲子蔀起",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "所得數從甲子蔀起",
+      "negative_example": {
+        "surface": "所得數從甲子蔀起",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_OBSCURATION_INDEX_97.json",
+      "probe_sha256": "38d0a987fc408f34d0502d968faed38b43e9fedfdfaa636cbb2df1c712565980",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_YEAR_NAME_98",
+      "lowering_kind": "year_name",
+      "ast_kind": "YearName",
+      "pattern": "即所求年太歲所在",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "即所求年太歲所在",
+      "negative_example": {
+        "surface": "即所求年太歲所在",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_YEAR_NAME_98.json",
+      "probe_sha256": "cb8f35982a5415acd2744c885487f2bcd4789fa744f95dcbf5d478f792f99f0e",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_NOMINAL_99",
+      "lowering_kind": "nominal",
+      "ast_kind": "Nominal",
+      "pattern": "起冬至",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "起冬至",
+      "negative_example": {
+        "surface": "起冬至",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_NOMINAL_99.json",
+      "probe_sha256": "0b1d40767721b71dcdcb1f700ef475b53bd7df39d422f4ce36d0db046b48d05e",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_LOOP_RESULT_100",
+      "lowering_kind": "loop_result",
+      "ast_kind": "LoopResult",
+      "pattern": "數所得",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "數所得",
+      "negative_example": {
+        "surface": "數所得",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_LOOP_RESULT_100.json",
+      "probe_sha256": "52edf2601bf92d0792ddf50d7ec9112e20ae8a49d532d49479fdf707a99f4aeb",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_TEMPORAL_ANCHOR_101",
+      "lowering_kind": "temporal_anchor",
+      "ast_kind": "TemporalAnchor",
+      "pattern": "冬至後",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "冬至後",
+      "negative_example": {
+        "surface": "冬至後",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_TEMPORAL_ANCHOR_101.json",
+      "probe_sha256": "e0991d8a65dea1490ba779cb9181bc46e70b6ebc9e44e5e1962cf023d95e49f4",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_BOUNDARY_102",
+      "lowering_kind": "boundary",
+      "ast_kind": "Boundary",
+      "pattern": "中氣在朔若二日",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "中氣在朔若二日",
+      "negative_example": {
+        "surface": "中氣在朔若二日",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_BOUNDARY_102.json",
+      "probe_sha256": "b352f4096d6487fa0da6427c093fbaa93a8e4d8e7f8a88fb5b5746592d5deb91",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_BOUNDARY_103",
+      "lowering_kind": "boundary",
+      "ast_kind": "Boundary",
+      "pattern": "或進退",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "或進退",
+      "negative_example": {
+        "surface": "或進退",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_BOUNDARY_103.json",
+      "probe_sha256": "9049653e92d7ad67d02d78745c76314fdea1186e8374454d6296f0bc012ea136",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_BOUNDARY_104",
+      "lowering_kind": "boundary",
+      "ast_kind": "Boundary",
+      "pattern": "以中氣定之",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "以中氣定之",
+      "negative_example": {
+        "surface": "以中氣定之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_BOUNDARY_104.json",
+      "probe_sha256": "6d9a5c376325657eb0c5138fb02cc56cf5d10ec2f458225d69e7ebb76719b27f",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_105",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "算盡之外",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "算盡之外",
+      "negative_example": {
+        "surface": "算盡之外",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_105.json",
+      "probe_sha256": "66ad67fa61ef9f31fce63d7df56af0b2bc4b1fdcbfac30e0426d1b52b32b15d3",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_106",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "餘不盈者",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "餘不盈者",
+      "negative_example": {
+        "surface": "餘不盈者",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_106.json",
+      "probe_sha256": "addf897eeeadccb0af76894f1df7e04dbdafe60f4e7990f908d9c37f65aaa130",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_107",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "至有閏之歲",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "至有閏之歲",
+      "negative_example": {
+        "surface": "至有閏之歲",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_107.json",
+      "probe_sha256": "3e28b145aabff49ae972af9543effef8d89536082914f646fa7fa5b6e1562f3b",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_108",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "入章",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "入章",
+      "negative_example": {
+        "surface": "入章",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_108.json",
+      "probe_sha256": "48f7cf4c32b1956b48472ba5e191c2526b081238fb9f58fb522939b67db2f817",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_109",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "月大",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "月大",
+      "negative_example": {
+        "surface": "月大",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_109.json",
+      "probe_sha256": "f35b54c604c2630f9d0ee0cfd66232babe317d2b97f23e0cc474ab3be4bf6564",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_110",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "算外",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "算外",
+      "negative_example": {
+        "surface": "算外",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_110.json",
+      "probe_sha256": "78f90bc20562932638e1b930102370053893446cef713d285eac965eb55627f9",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_111",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "則中至終閏盈",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "則中至終閏盈",
+      "negative_example": {
+        "surface": "則中至終閏盈",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_111.json",
+      "probe_sha256": "319bdbbec52d1ff33fcdcc04f6aff5e27f9d43eba49e27e53f3f1fae60c51841",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_112",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "則前月閏也",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "則前月閏也",
+      "negative_example": {
+        "surface": "則前月閏也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_112.json",
+      "probe_sha256": "364adb0c7c6ca8003a0d5e5156bf903dbca6fe40572751f2b8767522525094e0",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_113",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "閏月也",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "閏月也",
+      "negative_example": {
+        "surface": "閏月也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_113.json",
+      "probe_sha256": "72dac677d2db8bd76a3c5b905707e56d8885e281c679f8c8bb32ae4e95656da3",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_114",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "筭盡之外",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "筭盡之外",
+      "negative_example": {
+        "surface": "筭盡之外",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_114.json",
+      "probe_sha256": "449508117a1116efb3e0e19ea7bab75c33d76222f6860c23f9c60ef5b391ddf1",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_115",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "則所求冬至日也",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "則所求冬至日也",
+      "negative_example": {
+        "surface": "則所求冬至日也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_115.json",
+      "probe_sha256": "2ccacf8f719d166dd25dc5fa7b339a84b684addafdcb977a06305c66ed718be4",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_116",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "則前年冬至之日也",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "則前年冬至之日也",
+      "negative_example": {
+        "surface": "則前年冬至之日也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_116.json",
+      "probe_sha256": "9819e7e61f9ed43839156b1dc2ea4168be53abe7f81b90a86c259d35d2dcc748",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_117",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "小寒日也",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "小寒日也",
+      "negative_example": {
+        "surface": "小寒日也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_117.json",
+      "probe_sha256": "432271cd8d16509ff58d88f68b0829e489361d968c25bed1e124eb8e063408ac",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_118",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "則朔日也",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "則朔日也",
+      "negative_example": {
+        "surface": "則朔日也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_118.json",
+      "probe_sha256": "1d23afb1a721d35c69894c926edd22a87ad7a45f93d58552447499e7966cea41",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_119",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "則前年天正十一月朔日也",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "則前年天正十一月朔日也",
+      "negative_example": {
+        "surface": "則前年天正十一月朔日也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_119.json",
+      "probe_sha256": "a5763160ec754f05fb1e020e63507291b3d3e3c506d262acf42ccf16fb63393a",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_120",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "筭外則所入紀也",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "筭外則所入紀也",
+      "negative_example": {
+        "surface": "筭外則所入紀也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_120.json",
+      "probe_sha256": "c88485b98e255d3882b74bd9cfacb46d8ea9e0a212402dbde62a9b2440673790",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_121",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "不滿紀法者",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "不滿紀法者",
+      "negative_example": {
+        "surface": "不滿紀法者",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_121.json",
+      "probe_sha256": "7d7856538df009912c8008544481e4a1d3e5196d3b63a5506d243def75b2d1cc",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_122",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "入紀年數也",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "入紀年數也",
+      "negative_example": {
+        "surface": "入紀年數也",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_122.json",
+      "probe_sha256": "a73018b456d8617aafccd54f239996f40cd3979aaa031bebfc9f300109f3a060",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_123",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "筭外",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "筭外",
+      "negative_example": {
+        "surface": "筭外",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_123.json",
+      "probe_sha256": "13b1280a39b1a9ce6c34c83719580b895015a2af2fb5c321faeffb68860b7715",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_124",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "筭上",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "筭上",
+      "negative_example": {
+        "surface": "筭上",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_124.json",
+      "probe_sha256": "0513dd17c1f164d3fa95abdd01a419610bdcbffee5450c08498e79296fac9f20",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_125",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "所入蔀也不滿蔀法者",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "所入蔀也不滿蔀法者",
+      "negative_example": {
+        "surface": "所入蔀也不滿蔀法者",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_125.json",
+      "probe_sha256": "e4b540e6f66cdf2f3cb75b4e4d23f284350703ff645a9480fb3067a1b2726606",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    },
+    {
+      "production_id": "G_ANNOTATION_126",
+      "lowering_kind": "annotation",
+      "ast_kind": "Annotation",
+      "pattern": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之",
+      "slots": {},
+      "optional_slots": [],
+      "optional_suffixes": [],
+      "composition": "complete Multiply followed by Combine can form a Sequence; no arbitrary recursive clause composition",
+      "type_conditions": {
+        "n": "Number lexical edge",
+        "t": "complete bounded Term path excluding undeclared predicate edges",
+        "a": "Term or Anaphor",
+        "h": "source-bounded heading/name",
+        "o": "optional operand",
+        "k": "procedure marker",
+        "b": "declared Concordance branch"
+      },
+      "anaphor_scope": "active Procedure/Query invocation; no cross-definition implicit focus",
+      "positive_example": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之",
+      "negative_example": {
+        "surface": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之",
+        "tokens": []
+      },
+      "positive_reachable": true,
+      "negative_rejected": true,
+      "probe_file": "evaluation/rescue-v3_1/development/inventory_final/G_ANNOTATION_126.json",
+      "probe_sha256": "e36b48360a6ab97ddc1235b653b24240f31c6195e253fdbe597c4c3ad11382b8",
+      "test_function": "evaluation/rescue-v3_1/production_inventory.py::check_case",
+      "qualification_limit": "This is syntax reachability only. Ambiguous/missing positives are not closure-certified. A source qualifier must separately prove types, antecedents, controls, roots, profiles and scoring support."
+    }
+  ],
+  "composition_productions": [
+    {
+      "production_id": "G_MULTIPLY_COMBINE",
+      "slots": [
+        "product"
+      ],
+      "suffixes": [
+        "并之",
+        "從之"
+      ],
+      "tests": [
+        "tests/parser_rescue/test_syntax.py::Syntax.test_L01",
+        "tests/parser_rescue/test_syntax.py::Syntax.test_L02",
+        "tests/parser_rescue/test_syntax.py::AmbiguityCoverageReview.test_complete_term_competes_with_suffix_composition"
+      ]
+    },
+    {
+      "production_id": "G_SEQUENCE",
+      "ordered_children": [
+        "Multiply",
+        "Combine"
+      ],
+      "tests": [
+        "tests/parser_rescue/test_syntax.py::Syntax.test_L01"
+      ]
+    }
+  ],
+  "diagnostic_productions": [
+    "G_AMBIGUITY",
+    "G_UNSUPPORTED"
+  ],
+  "summary": {
+    "positive_reachable": 126,
+    "negative_rejected": 127
+  },
+  "not_claimed": "Not new historical accuracy or independent scholar adjudication; complete inventory was materialized after A3, not at T0."
+}

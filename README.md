@@ -102,3 +102,11 @@ A research website built with Eleventy to explore symbolic math, calendrical sys
 3) `pathPrefix` set for project site (`/mathesis/`) in production.
 4) All asset/route links use Eleventy `| url` filter or base-aware fetch.
 5) Push a change and verify CSS/JS/network requests in the deployed site.
+
+## Compiler and adjudication architecture
+
+- Production parser / syntax IR / program IR / exact executor: `analysis_parser/` (v3.1 implementation reconciled without rewriting its core).
+- Repository architecture and planned module boundaries: [docs/architecture.md](docs/architecture.md).
+- Milestone 1 provenance, source-asset setup, regression evidence and commands: [docs/reconciliation/README.md](docs/reconciliation/README.md).
+- Future adjudication requirements (design, not implementation): [docs/adjudication/requirements.md](docs/adjudication/requirements.md).
+- Pattern Lab retains its existing behavior. Adjudication Lab is a separate planned local workbench; no new UI is implemented in Milestone 1.

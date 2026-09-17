@@ -1,0 +1,246 @@
+{
+  "role": "development_material_coverage_not_performance",
+  "traditions": [
+    "San_tong_li",
+    "Han_Si_fen_li"
+  ],
+  "families": [
+    "era_entry",
+    "new_moon",
+    "winter_solstice",
+    "qi_series",
+    "intercalation_location"
+  ],
+  "cells": [
+    {
+      "id": "C1_ST",
+      "family": "era_entry",
+      "tradition": "San_tong_li",
+      "documents": [
+        "ST.2.1"
+      ],
+      "reference": "reference/civil_cards.json#C1_ST",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M07",
+        "M09"
+      ],
+      "materials_prepared": true,
+      "v3_runtime_verified": false,
+      "prior_status": "new_development_obligation",
+      "no_claim": "table completion is not parser success"
+    },
+    {
+      "id": "C1_SF",
+      "family": "era_entry",
+      "tradition": "Han_Si_fen_li",
+      "documents": [
+        "HQ.3.2"
+      ],
+      "reference": "reference/civil_cards.json#C1_SF",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M07",
+        "M09",
+        "M10"
+      ],
+      "materials_prepared": true,
+      "v3_runtime_verified": false,
+      "prior_status": "new_development_obligation",
+      "no_claim": "table completion is not parser success"
+    },
+    {
+      "id": "C2_ST",
+      "family": "new_moon",
+      "tradition": "San_tong_li",
+      "documents": [
+        "ST.2.2",
+        "ST.2.3"
+      ],
+      "reference": "reference/civil_cards.json#C2_ST",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M11"
+      ],
+      "materials_prepared": true,
+      "v3_runtime_verified": false,
+      "prior_status": "v2_development_passed",
+      "no_claim": "table completion is not parser success"
+    },
+    {
+      "id": "C2_SF",
+      "family": "new_moon",
+      "tradition": "Han_Si_fen_li",
+      "documents": [
+        "HQ.3.5",
+        "HQ.3.6"
+      ],
+      "reference": "reference/civil_cards.json#C2_SF",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M11"
+      ],
+      "materials_prepared": true,
+      "v3_runtime_verified": false,
+      "prior_status": "v2_development_passed",
+      "no_claim": "table completion is not parser success"
+    },
+    {
+      "id": "C3_ST",
+      "family": "winter_solstice",
+      "tradition": "San_tong_li",
+      "documents": [
+        "ST.2.5"
+      ],
+      "reference": "reference/civil_cards.json#C3_ST",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M07",
+        "M08",
+        "M09"
+      ],
+      "materials_prepared": true,
+      "v3_runtime_verified": false,
+      "prior_status": "v2_fresh_failed_now_exposed",
+      "no_claim": "table completion is not parser success"
+    },
+    {
+      "id": "C3_SF",
+      "family": "winter_solstice",
+      "tradition": "Han_Si_fen_li",
+      "documents": [
+        "HQ.3.8"
+      ],
+      "reference": "reference/civil_cards.json#C3_SF",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M07",
+        "M09",
+        "M11"
+      ],
+      "materials_prepared": true,
+      "v3_runtime_verified": false,
+      "prior_status": "new_development_obligation",
+      "no_claim": "table completion is not parser success"
+    },
+    {
+      "id": "C4_ST",
+      "family": "qi_series",
+      "tradition": "San_tong_li",
+      "documents": [
+        "ST.2.6"
+      ],
+      "reference": "reference/civil_cards.json#C4_ST",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M05",
+        "M06",
+        "M08",
+        "M09",
+        "M11",
+        "M12"
+      ],
+      "materials_prepared": true,
+      "v3_runtime_verified": false,
+      "prior_status": "v2_fresh_failed_now_exposed",
+      "no_claim": "table completion is not parser success"
+    },
+    {
+      "id": "C4_SF",
+      "family": "qi_series",
+      "tradition": "Han_Si_fen_li",
+      "documents": [
+        "HQ.3.8"
+      ],
+      "reference": "reference/civil_cards.json#C4_SF",
+      "mechanisms": [
+        "M01",
+        "M03",
+        "M04",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M11"
+      ],
+      "materials_prepared": true,
+      "v3_runtime_verified": false,
+      "prior_status": "new_development_obligation",
+      "no_claim": "table completion is not parser success"
+    },
+    {
+      "id": "C5_ST",
+      "family": "intercalation_location",
+      "tradition": "San_tong_li",
+      "documents": [
+        "ST.2.4"
+      ],
+      "reference": "reference/civil_cards.json#C5_ST",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M12",
+        "M13"
+      ],
+      "materials_prepared": true,
+      "v3_runtime_verified": false,
+      "prior_status": "v2_fresh_failed_now_exposed",
+      "no_claim": "table completion is not parser success"
+    },
+    {
+      "id": "C5_SF",
+      "family": "intercalation_location",
+      "tradition": "Han_Si_fen_li",
+      "documents": [
+        "HQ.3.9"
+      ],
+      "reference": "reference/civil_cards.json#C5_SF",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M13"
+      ],
+      "materials_prepared": true,
+      "v3_runtime_verified": false,
+      "prior_status": "new_development_obligation",
+      "no_claim": "table completion is not parser success"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "rescue-source-qualification-1",
+  "candidate_universe": "evaluation/handoff-v3/prospective/selection.json",
+  "inherited_exposure": ["evaluation/handoff-v2/exposure-audit.json", "reports/v3/exposure_registry_for_next_round.json"],
+  "ordering": "numerical Cullen procedure order; cumulative exposed primary/context bodies excluded",
+  "seed": 0,
+  "seed_use": "no random draw; deterministic order",
+  "A_count": 4,
+  "A_min_distinct_task_query_combinations": 2,
+  "A_certificates": ["lexical_construction", "program_control", "background_root_inputs", "interpretation_profile", "frozen_scoring_support", "novel_dependency_composition"],
+  "A_qualification": "Every certificate must cite source spans and frozen production/resource/protocol identifiers. Primitive operation-name overlap alone does not establish construction closure.",
+  "B_count": 4,
+  "B_selection": "Earliest four remaining after A and its necessary context bodies are locked. No known-grammar or family replacement filter.",
+  "insufficient_A": "INSUFFICIENT_ELIGIBLE_MATERIAL; no new experiment or replacement by exposed targets",
+  "shared_context": "Already developed shared parameters/method context may recur; disclose shared dependence. A newly read target/context body is exposed and cannot subsequently be another fresh primary.",
+  "selection_after": "Accepted development gate and complete behavior freeze",
+  "parser_access_before_lock": "forbidden: no probing, parse, execute or parser-output review",
+  "batch_lock": "All eight primary/context packets, references and fixed atom registrations before any first-run parser invocation",
+  "first_attempt": "Exclusive experiment journal, source identity claim and outputs, including errors/timeouts; never repair then rename as first",
+  "interpretation": "Conditional source profiles and task initial selectors declared before lock; no derived intermediate inputs",
+  "score_revision_after_first": "May document a grader defect but cannot use revised score to cross continuation gate"
+}

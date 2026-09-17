@@ -1,0 +1,197 @@
+{
+  "schema_version": "2.0",
+  "input_mode": "declared_edited_primary_context",
+  "provided_scope": {
+    "tradition": "Han_Si_fen_li",
+    "planet": "Jupiter",
+    "scope_is_curator_provided": true
+  },
+  "primary_documents": [
+    {
+      "doc_id": "HQ.3.38",
+      "text": "推星合月，以合積月乘積合為小積，又以月餘乘積合，滿其月法得一，從小積為積月，不盡為月餘．積月滿紀月去之，餘為入紀月．每以章閏乘之，滿章月得一為閏；不盡為閏餘．以閏減入紀月，其餘以十二去之，餘為入歲月數，從天正十一月起，筭外，星合所在之月也．其閏餘滿二百二十四以上至二百三十一星合閏月．閏或進退，以朔制之．",
+      "reading_id": "HQ.3.38.C2017-reading-v1",
+      "text_sha256": "1b7e4a320bc2eaf8b3fd092b9969f9df7e8f7201ccb0ff0ab32ce6cea2ccc5a5",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          200,
+          201
+        ],
+        "pdf_pages": [
+          213,
+          214
+        ],
+        "locator": "HQ.3.38"
+      },
+      "editorial_trace": [
+        {
+          "old": "[為積月，不盡]",
+          "new": "為積月，不盡",
+          "basis": "Cullen中文补文；刘pp.90–91以式3.57–3.60展开。此输入是既定校读文本。",
+          "transcription_range": [
+            34,
+            42
+          ]
+        },
+        {
+          "old": "閏[餘]",
+          "new": "閏餘",
+          "basis": "Cullen在阈值对象处补余。",
+          "transcription_range": [
+            123,
+            127
+          ]
+        }
+      ]
+    }
+  ],
+  "context_documents": [
+    {
+      "doc_id": "HQ.rule_month",
+      "text": "章月，二百三十五．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155
+        ],
+        "pdf_pages": [
+          168
+        ]
+      },
+      "text_sha256": "22035bc231c9e8b1031746a51c9ef9443a5ad6932500be93c2749920c1d2101a"
+    },
+    {
+      "doc_id": "HQ.rule_year",
+      "text": "章法，十九．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          155
+        ],
+        "pdf_pages": [
+          168
+        ]
+      },
+      "text_sha256": "24a9ed783208db988673c2b0dc03d4dcf62cfe3fd7e57942acf3c4058763f6ad"
+    },
+    {
+      "doc_id": "HQ.era_month",
+      "text": "紀月，萬八千八百．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          154
+        ],
+        "pdf_pages": [
+          167
+        ]
+      },
+      "text_sha256": "5b144c81c3196e989f5246b5d8f3da40784db9fe8d078d157c933de98bef2746"
+    },
+    {
+      "doc_id": "HQ.jupiter.cycle_rate",
+      "text": "周率，四千三百二十七．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          189
+        ],
+        "pdf_pages": [
+          202
+        ]
+      },
+      "text_sha256": "4177aab613544939e537d9888eab97fb1b5d5a794655282fa888de13d1cd6b1b"
+    },
+    {
+      "doc_id": "HQ.jupiter.solar_rate",
+      "text": "日率，四千七百二十五．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          189,
+          190
+        ],
+        "pdf_pages": [
+          202,
+          203
+        ]
+      },
+      "text_sha256": "a8e92baee0531687b9789ae03d0f03e99bce1761d488e5e5f7d1536d75e0f3f1"
+    },
+    {
+      "doc_id": "HQ.jupiter.cycle_months",
+      "text": "合積月，十三．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          190
+        ],
+        "pdf_pages": [
+          203
+        ]
+      },
+      "text_sha256": "6a0e352b76a85ec912aacbd05cab357aaa17b6eb6f957e6aedc5e4171bc163cc"
+    },
+    {
+      "doc_id": "HQ.jupiter.cycle_month_rem",
+      "text": "月餘，四萬一千六百六．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          190
+        ],
+        "pdf_pages": [
+          203
+        ]
+      },
+      "text_sha256": "ba8d143e2c0e49300fea1ea3a2da8dcd36dd9d32822e7ef2f35e6bb1d0126660"
+    },
+    {
+      "doc_id": "HQ.jupiter.month_factor",
+      "text": "月法，八萬二千二百一十三．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          190
+        ],
+        "pdf_pages": [
+          203
+        ]
+      },
+      "text_sha256": "3745752859d23d87ac80f5fe467e1c121e4306ab8e17ae2f2b7cc67921dbd9fd"
+    },
+    {
+      "doc_id": "HQ.jupiter.cycle_day_rem",
+      "text": "大餘，二十三．小餘，八百四十七．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          190,
+          191
+        ],
+        "pdf_pages": [
+          203,
+          204
+        ]
+      },
+      "text_sha256": "189c48e353518b10588e8e6bc0d51bc188e8f7a58a4d3e96bbdfb0c8fad09bdc"
+    },
+    {
+      "doc_id": "HQ.intercalation_rule",
+      "text": "推閏月所在，以閏餘減章法，餘以十二乘之，滿章閏數得一，滿四以上亦得一筭之數，從前年十一月起，筭盡之外，閏月也．或進退，以中氣定之．",
+      "source": {
+        "work": "C2017",
+        "printed_pages": [
+          167,
+          168
+        ],
+        "pdf_pages": [
+          180,
+          181
+        ]
+      },
+      "text_sha256": "a9f26624c994fe30240a377aa4f8c6c6922f9fd1377cadbd02a5752106bce038"
+    }
+  ]
+}

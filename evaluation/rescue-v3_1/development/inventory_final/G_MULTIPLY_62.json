@@ -1,0 +1,144 @@
+{
+  "surface": "不盈者以甲量乘乙量",
+  "expected_production": "G_MULTIPLY_62",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 4,
+            "end": 6,
+            "quote": "甲量"
+          }
+        ],
+        "surface": "甲量",
+        "analysis_range": [
+          4,
+          6
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast2",
+        "kind": "Term",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 7,
+            "end": 9,
+            "quote": "乙量"
+          }
+        ],
+        "surface": "乙量",
+        "analysis_range": [
+          7,
+          9
+        ],
+        "production_id": "LEX_TERM"
+      },
+      {
+        "id": "synthetic.inventory:ast3",
+        "kind": "Multiply",
+        "slots": {
+          "left": "synthetic.inventory:ast1",
+          "right": "synthetic.inventory:ast2"
+        },
+        "children": [
+          "synthetic.inventory:ast1",
+          "synthetic.inventory:ast2"
+        ],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 9,
+            "quote": "不盈者以甲量乘乙量"
+          }
+        ],
+        "surface": "不盈者以甲量乘乙量",
+        "analysis_range": [
+          0,
+          9
+        ],
+        "production_id": "G_MULTIPLY_62",
+        "lowering_kind": "multiply",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast3"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          9
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 9,
+            "quote": "不盈者以甲量乘乙量"
+          }
+        ],
+        "surface": "不盈者以甲量乘乙量",
+        "analysis_range": [
+          0,
+          9
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          9
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          9
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "C2017",
+    "author": "Christopher Cullen",
+    "title": "The Foundations of Celestial Reckoning: Three Ancient Chinese Astronomical Systems",
+    "year": 2017,
+    "publisher": "Routledge",
+    "local_source_sha256": "e5cabc1ff8b8f3c80358251ce9c79a90467ae5e401fa1d7fb204baa534b3ff5c",
+    "mapping": "printed page +13 = source PDF page for included pages",
+    "access": "User-supplied full book; selected excerpts only"
+  },
+  {
+    "id": "L2003",
+    "author": "刘洪涛",
+    "title": "古代历法计算法",
+    "year": 2003,
+    "publisher": "南开大学出版社",
+    "local_source_sha256": "bba6dd611f242a5f9c9ce5068f6989775db8bfb3c18990c2bc552fba0ce35859",
+    "mapping": "printed page +20 = source PDF page for included pages",
+    "access": "User-supplied scan; selected excerpts only"
+  },
+  {
+    "id": "M2022",
+    "author": "Daniel Patrick Morgan",
+    "title": "Remarks on the Mathematics and Philosophy of Space-time in Early Imperial China",
+    "year": 2022,
+    "book": "The Exercise of the Spatial Imagination in Pre-Modern China",
+    "pages": "149–188",
+    "doi": "10.1515/9783110749823-008",
+    "read_ranges": "158–163 and 166–169",
+    "url": "https://www.researchgate.net/publication/358494035_Remarks_on_the_Mathematics_and_Philosophy_of_Space-time_in_Early_Imperial_China",
+    "access": "Published chapter full-text HTML read; PDF not included; taxonomy attribution bounded in I09"
+  },
+  {
+    "id": "ME2025",
+    "author": "Erica L. Meszaros",
+    "title": "Algorithmic Relationships in Babylonian Astronomical Procedure Texts",
+    "year": 2025,
+    "journal": "Berichte zur Wissenschaftsgeschichte 48",
+    "pages": "11–28",
+    "doi": "10.1002/bewi.202400021",
+    "read_ranges": "14–15,21–25",
+    "access": "User supplied PDF; cited methodological comparisons, no source parser provided"
+  },
+  {
+    "id": "BK2026",
+    "author": "Andrea Bréard; Valerie Kiel",
+    "title": "“實如法而一”: Division and Equality in Early Chinese Mathematical Texts",
+    "year": 2026,
+    "journal": "ASIA 80(1)",
+    "pages": "313–343",
+    "doi": "10.1515/asia-2025-0025",
+    "read_ranges": "333–337",
+    "access": "User supplied PDF; nuanced form/meaning mapping, not a reusable released lexicon"
+  }
+]

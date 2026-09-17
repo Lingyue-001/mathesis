@@ -1,0 +1,386 @@
+[
+  {
+    "card_id": "C1_ST",
+    "quantity_contracts": [
+      {
+        "symbol": "epoch_year_count",
+        "kind": "year_count",
+        "unit": "year",
+        "representation": "count with inclusive/exclusive origin",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "local_year",
+        "kind": "year_count",
+        "unit": "year",
+        "representation": "elapsed for ST / ordinal for SF",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "head_day",
+        "kind": "cyclic_day_label",
+        "unit": "sexagenary_day",
+        "representation": "one_based label",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "era_index",
+        "kind": "ordinal",
+        "unit": "era",
+        "representation": "zero-based internal index",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      }
+    ],
+    "scope_contract": "tradition + task + invocation + branch; doc boundary is not automatically a state reset",
+    "consumer_contract": "Use reference/civil_dependency_contract.json; individual graph consumers are recovered from source/call evidence, not forced from this teaching graph",
+    "condition_contract": "All carry/threshold/loop predicates need operand IDs, comparison, test order, and profile; record evidence",
+    "missing_contract": "real missing context / textual ambiguity / implementation gap / evaluation gap are distinct"
+  },
+  {
+    "card_id": "C1_SF",
+    "quantity_contracts": [
+      {
+        "symbol": "epoch_year_count",
+        "kind": "year_count",
+        "unit": "year",
+        "representation": "count with inclusive/exclusive origin",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "local_year",
+        "kind": "year_count",
+        "unit": "year",
+        "representation": "elapsed for ST / ordinal for SF",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "head_day",
+        "kind": "cyclic_day_label",
+        "unit": "sexagenary_day",
+        "representation": "one_based label",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "era_index",
+        "kind": "ordinal",
+        "unit": "era",
+        "representation": "zero-based internal index",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      }
+    ],
+    "scope_contract": "tradition + task + invocation + branch; doc boundary is not automatically a state reset",
+    "consumer_contract": "Use reference/civil_dependency_contract.json; individual graph consumers are recovered from source/call evidence, not forced from this teaching graph",
+    "condition_contract": "All carry/threshold/loop predicates need operand IDs, comparison, test order, and profile; record evidence",
+    "missing_contract": "real missing context / textual ambiguity / implementation gap / evaluation gap are distinct"
+  },
+  {
+    "card_id": "C2_ST",
+    "quantity_contracts": [
+      {
+        "symbol": "accumulated_months",
+        "kind": "lunation_count",
+        "unit": "month",
+        "representation": "integer",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "intercalation_remainder",
+        "kind": "duration",
+        "unit": "month",
+        "representation": "numerator/19",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "accumulated_days",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "integer retains absolute offset",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "small_remainder",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "numerator/81",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "day_label",
+        "kind": "cyclic_day_label",
+        "unit": "sexagenary_day",
+        "representation": "projection from complete day offset",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      }
+    ],
+    "scope_contract": "tradition + task + invocation + branch; doc boundary is not automatically a state reset",
+    "consumer_contract": "Use reference/civil_dependency_contract.json; individual graph consumers are recovered from source/call evidence, not forced from this teaching graph",
+    "condition_contract": "All carry/threshold/loop predicates need operand IDs, comparison, test order, and profile; record evidence",
+    "missing_contract": "real missing context / textual ambiguity / implementation gap / evaluation gap are distinct"
+  },
+  {
+    "card_id": "C2_SF",
+    "quantity_contracts": [
+      {
+        "symbol": "accumulated_months",
+        "kind": "lunation_count",
+        "unit": "month",
+        "representation": "integer",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "intercalation_remainder",
+        "kind": "duration",
+        "unit": "month",
+        "representation": "numerator/19",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "accumulated_days",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "integer retains absolute offset",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "small_remainder",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "numerator/940",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "day_label",
+        "kind": "cyclic_day_label",
+        "unit": "sexagenary_day",
+        "representation": "projection from complete day offset",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      }
+    ],
+    "scope_contract": "tradition + task + invocation + branch; doc boundary is not automatically a state reset",
+    "consumer_contract": "Use reference/civil_dependency_contract.json; individual graph consumers are recovered from source/call evidence, not forced from this teaching graph",
+    "condition_contract": "All carry/threshold/loop predicates need operand IDs, comparison, test order, and profile; record evidence",
+    "missing_contract": "real missing context / textual ambiguity / implementation gap / evaluation gap are distinct"
+  },
+  {
+    "card_id": "C3_ST",
+    "quantity_contracts": [
+      {
+        "symbol": "winter_whole_residual",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "integer after implicit complete360 cycles removed",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "winter_remainder",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "numerator/1539",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "winter_day",
+        "kind": "cyclic_day_label",
+        "unit": "sexagenary_day",
+        "representation": "projection; not an absolute instant",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      }
+    ],
+    "scope_contract": "tradition + task + invocation + branch; doc boundary is not automatically a state reset",
+    "consumer_contract": "Use reference/civil_dependency_contract.json; individual graph consumers are recovered from source/call evidence, not forced from this teaching graph",
+    "condition_contract": "All carry/threshold/loop predicates need operand IDs, comparison, test order, and profile; record evidence",
+    "missing_contract": "real missing context / textual ambiguity / implementation gap / evaluation gap are distinct"
+  },
+  {
+    "card_id": "C3_SF",
+    "quantity_contracts": [
+      {
+        "symbol": "winter_whole_residual",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "integer after implicit complete360 cycles removed",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "winter_remainder",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "numerator/32",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "winter_day",
+        "kind": "cyclic_day_label",
+        "unit": "sexagenary_day",
+        "representation": "projection; not an absolute instant",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      }
+    ],
+    "scope_contract": "tradition + task + invocation + branch; doc boundary is not automatically a state reset",
+    "consumer_contract": "Use reference/civil_dependency_contract.json; individual graph consumers are recovered from source/call evidence, not forced from this teaching graph",
+    "condition_contract": "All carry/threshold/loop predicates need operand IDs, comparison, test order, and profile; record evidence",
+    "missing_contract": "real missing context / textual ambiguity / implementation gap / evaluation gap are distinct"
+  },
+  {
+    "card_id": "C4_ST",
+    "quantity_contracts": [
+      {
+        "symbol": "base_remainder",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "1539→4617 ST /32 SF",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "step_duration",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "15+1010/4617 ST or15+7/32 SF",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "node_duration",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "45+1010/1539 ST only",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "qi_index",
+        "kind": "ordinal",
+        "unit": "qi",
+        "representation": "task sequence, winter at1",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      }
+    ],
+    "scope_contract": "tradition + task + invocation + branch; doc boundary is not automatically a state reset",
+    "consumer_contract": "Use reference/civil_dependency_contract.json; individual graph consumers are recovered from source/call evidence, not forced from this teaching graph",
+    "condition_contract": "All carry/threshold/loop predicates need operand IDs, comparison, test order, and profile; record evidence",
+    "missing_contract": "real missing context / textual ambiguity / implementation gap / evaluation gap are distinct"
+  },
+  {
+    "card_id": "C4_SF",
+    "quantity_contracts": [
+      {
+        "symbol": "base_remainder",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "1539→4617 ST /32 SF",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "step_duration",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "15+1010/4617 ST or15+7/32 SF",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "node_duration",
+        "kind": "duration",
+        "unit": "day",
+        "representation": "45+1010/1539 ST only",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "qi_index",
+        "kind": "ordinal",
+        "unit": "qi",
+        "representation": "task sequence, winter at1",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      }
+    ],
+    "scope_contract": "tradition + task + invocation + branch; doc boundary is not automatically a state reset",
+    "consumer_contract": "Use reference/civil_dependency_contract.json; individual graph consumers are recovered from source/call evidence, not forced from this teaching graph",
+    "condition_contract": "All carry/threshold/loop predicates need operand IDs, comparison, test order, and profile; record evidence",
+    "missing_contract": "real missing context / textual ambiguity / implementation gap / evaluation gap are distinct"
+  },
+  {
+    "card_id": "C5_ST",
+    "quantity_contracts": [
+      {
+        "symbol": "lag",
+        "kind": "duration",
+        "unit": "month",
+        "representation": "r/19→12r/228 or complement",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "counter",
+        "kind": "count",
+        "unit": "medial_qi_step",
+        "representation": "integer",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "month_slot",
+        "kind": "ordinal",
+        "unit": "lunation_slot",
+        "representation": "insertion position",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "month_label",
+        "kind": "calendar_label",
+        "unit": "month",
+        "representation": "duplicates previous month",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "moon_qi_time",
+        "kind": "instant",
+        "unit": "day",
+        "representation": "common epoch + whole day + fraction",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      }
+    ],
+    "scope_contract": "tradition + task + invocation + branch; doc boundary is not automatically a state reset",
+    "consumer_contract": "Use reference/civil_dependency_contract.json; individual graph consumers are recovered from source/call evidence, not forced from this teaching graph",
+    "condition_contract": "All carry/threshold/loop predicates need operand IDs, comparison, test order, and profile; record evidence",
+    "missing_contract": "real missing context / textual ambiguity / implementation gap / evaluation gap are distinct"
+  },
+  {
+    "card_id": "C5_SF",
+    "quantity_contracts": [
+      {
+        "symbol": "lag",
+        "kind": "duration",
+        "unit": "month",
+        "representation": "r/19→12r/228 or complement",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "counter",
+        "kind": "count",
+        "unit": "medial_qi_step",
+        "representation": "integer",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "month_slot",
+        "kind": "ordinal",
+        "unit": "lunation_slot",
+        "representation": "insertion position",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "month_label",
+        "kind": "calendar_label",
+        "unit": "month",
+        "representation": "duplicates previous month",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      },
+      {
+        "symbol": "moon_qi_time",
+        "kind": "instant",
+        "unit": "day",
+        "representation": "common epoch + whole day + fraction",
+        "source_or_model": "Declared analytical type grounded in the cited worked card; source names retained separately"
+      }
+    ],
+    "scope_contract": "tradition + task + invocation + branch; doc boundary is not automatically a state reset",
+    "consumer_contract": "Use reference/civil_dependency_contract.json; individual graph consumers are recovered from source/call evidence, not forced from this teaching graph",
+    "condition_contract": "All carry/threshold/loop predicates need operand IDs, comparison, test order, and profile; record evidence",
+    "missing_contract": "real missing context / textual ambiguity / implementation gap / evaluation gap are distinct"
+  }
+]

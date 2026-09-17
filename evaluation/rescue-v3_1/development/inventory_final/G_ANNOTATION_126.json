@@ -1,0 +1,96 @@
+{
+  "surface": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之",
+  "expected_production": "G_ANNOTATION_126",
+  "positive_found": true,
+  "positive_diagnostics": [],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "Annotation",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 23,
+            "quote": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之"
+          }
+        ],
+        "surface": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之",
+        "analysis_range": [
+          0,
+          23
+        ],
+        "production_id": "G_ANNOTATION_126",
+        "lowering_kind": "annotation",
+        "attributes": {
+          "continuation": false
+        }
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          23
+        ],
+        "status": "parsed"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 23,
+            "quote": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之"
+          }
+        ],
+        "surface": "所入蔀也不滿蔀法者入蔀年數也各以所入蔀歲名命之",
+        "analysis_range": [
+          0,
+          23
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          23
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          23
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

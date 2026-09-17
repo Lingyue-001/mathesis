@@ -1,0 +1,1505 @@
+[
+  {
+    "card_id": "C1_ST",
+    "family": "era_entry",
+    "tradition": "San_tong_li",
+    "documents": [
+      "ST.2.1"
+    ],
+    "scholarly_locators": [
+      "C2017 pp.89–90 §173",
+      "L2003 pp.23–24 eq2.5"
+    ],
+    "goal": "定位当前统、入统已逝年与统首日",
+    "inputs": [
+      "太极上元至目标年的明确计数",
+      "元法4617",
+      "统法1539"
+    ],
+    "outputs": [
+      "入统岁数",
+      "统身份",
+      "统首日"
+    ],
+    "obligations": [
+      {
+        "id": "C1_ST.01",
+        "anchor": {
+          "doc_id": "ST.2.1",
+          "reading_id": "ST.2.1.C2017.v3",
+          "text_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d",
+          "start": 14,
+          "end": 18,
+          "quote": "外所求年",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "epoch_year_count"
+        ],
+        "writes": [
+          "elapsed_years"
+        ],
+        "required_semantics": "计数排除所求年；保留原计数约定，不在后续再无依据减一。",
+        "interpretation_basis": "C2017 p.89; L2003 p.23",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C1_ST.02",
+        "anchor": {
+          "doc_id": "ST.2.1",
+          "reading_id": "ST.2.1.C2017.v3",
+          "text_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d",
+          "start": 19,
+          "end": 24,
+          "quote": "盈元法除之",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "elapsed_years",
+          "元法"
+        ],
+        "writes": [
+          "origin_remainder"
+        ],
+        "required_semantics": "消去完整元，原全量另存。",
+        "interpretation_basis": "C2017 §173",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C1_ST.03",
+        "anchor": {
+          "doc_id": "ST.2.1",
+          "reading_id": "ST.2.1.C2017.v3",
+          "text_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d",
+          "start": 25,
+          "end": 30,
+          "quote": "餘不盈統者",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "origin_remainder",
+          "統法"
+        ],
+        "writes": [
+          "concordance_branch"
+        ],
+        "required_semantics": "先判断天统；接续盈统两次消去形成互斥天/地/人三分支。",
+        "interpretation_basis": "C2017 §173; L2003 eq2.5",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C1_ST.04",
+        "anchor": {
+          "doc_id": "ST.2.1",
+          "reading_id": "ST.2.1.C2017.v3",
+          "text_sha256": "890d09c256b9984b2903adb965d1a4d6081a5160674725233cd37d3d3d98546d",
+          "start": 79,
+          "end": 87,
+          "quote": "各以其統首日為紀",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "concordance_branch"
+        ],
+        "writes": [
+          "year_within_concordance",
+          "head_day"
+        ],
+        "required_semantics": "天统甲子1、地统甲辰41、人统甲申21；天统年的局部余量由对应分支选择。年名、日名不得混同。",
+        "interpretation_basis": "C2017 §173",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      }
+    ],
+    "mechanisms": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M07",
+      "M09"
+    ],
+    "issues": [
+      "I03"
+    ],
+    "status": "development_reference_curated_this_round_not_parser_output",
+    "coverage": "Full procedural source included; listed semantic obligations are not exhaustive token annotation."
+  },
+  {
+    "card_id": "C1_SF",
+    "family": "era_entry",
+    "tradition": "Han_Si_fen_li",
+    "documents": [
+      "HQ.3.2"
+    ],
+    "scholarly_locators": [
+      "C2017 pp.159–164 §§43,45 Tables3.1–3.2",
+      "L2003 pp.64–67 eq3.1–3.3"
+    ],
+    "goal": "由上元年数选择纪、蔀、查首日及年名",
+    "inputs": [
+      "epoch_count + count_convention",
+      "元法4560",
+      "纪法1520",
+      "蔀法76",
+      "§45完整表"
+    ],
+    "outputs": [
+      "纪列",
+      "蔀行",
+      "入蔀序数年",
+      "蔀首日",
+      "年名"
+    ],
+    "obligations": [
+      {
+        "id": "C1_SF.01",
+        "anchor": {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "text_sha256": "9afd58beadd28cc35670cc3d6e5b04b2758b9d8c7412f55c9ac4f756d20724d8",
+          "start": 6,
+          "end": 13,
+          "quote": "以元法除去上元",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "epoch_count",
+          "元法"
+        ],
+        "writes": [
+          "origin_remainder"
+        ],
+        "required_semantics": "独立保存全数和元余；算上/算外使用I03的命名profile。",
+        "interpretation_basis": "C2017 §43; L2003 p.65",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C1_SF.02",
+        "anchor": {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "text_sha256": "9afd58beadd28cc35670cc3d6e5b04b2758b9d8c7412f55c9ac4f756d20724d8",
+          "start": 14,
+          "end": 21,
+          "quote": "其餘以紀法除之",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "origin_remainder",
+          "紀法"
+        ],
+        "writes": [
+          "era_quotient",
+          "era_remainder"
+        ],
+        "required_semantics": "商用于纪定位，余用于后续入蔀；两端口都保存。",
+        "interpretation_basis": "C2017 §43",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C1_SF.03",
+        "anchor": {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "text_sha256": "9afd58beadd28cc35670cc3d6e5b04b2758b9d8c7412f55c9ac4f756d20724d8",
+          "start": 22,
+          "end": 28,
+          "quote": "所得數從天紀",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "era_quotient"
+        ],
+        "writes": [
+          "era_column"
+        ],
+        "required_semantics": "从天纪按算外定位0/1/2对应列；不得把它当加法。",
+        "interpretation_basis": "C2017 pp.160–161",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C1_SF.04",
+        "anchor": {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "text_sha256": "9afd58beadd28cc35670cc3d6e5b04b2758b9d8c7412f55c9ac4f756d20724d8",
+          "start": 49,
+          "end": 54,
+          "quote": "以蔀法除之",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "era_remainder",
+          "蔀法"
+        ],
+        "writes": [
+          "obscuration_quotient",
+          "obscuration_year_remainder"
+        ],
+        "required_semantics": "对象取纪余；保持方法参数与当前量独立。",
+        "interpretation_basis": "C2017 §43",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C1_SF.05",
+        "anchor": {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "text_sha256": "9afd58beadd28cc35670cc3d6e5b04b2758b9d8c7412f55c9ac4f756d20724d8",
+          "start": 55,
+          "end": 63,
+          "quote": "所得數從甲子蔀起",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "obscuration_quotient",
+          "era_column",
+          "HQ.3.4"
+        ],
+        "writes": [
+          "obscuration_row",
+          "head_day",
+          "head_year"
+        ],
+        "required_semantics": "两个索引查历史表；首日来自选中行，年首来自行列。表格整体是背景输入，选中行不许预填。",
+        "interpretation_basis": "C2017 §45; L2003 p.66",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C1_SF.06",
+        "anchor": {
+          "doc_id": "HQ.3.2",
+          "reading_id": "HQ.3.2.C2017.v3",
+          "text_sha256": "9afd58beadd28cc35670cc3d6e5b04b2758b9d8c7412f55c9ac4f756d20724d8",
+          "start": 91,
+          "end": 102,
+          "quote": "筭上，即所求年太歲所在",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "head_year",
+          "obscuration_year_remainder"
+        ],
+        "writes": [
+          "current_year_name",
+          "years_into_obscuration"
+        ],
+        "required_semantics": "inclusive profile以U−1作年名偏移；年份对象与日对象分开。余0的profile处理保留记录。",
+        "interpretation_basis": "L2003 pp.65–67; I03",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      }
+    ],
+    "mechanisms": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M07",
+      "M09",
+      "M10"
+    ],
+    "issues": [
+      "I03",
+      "I04"
+    ],
+    "status": "development_reference_curated_this_round_not_parser_output",
+    "coverage": "Full procedural source included; listed semantic obligations are not exhaustive token annotation."
+  },
+  {
+    "card_id": "C2_ST",
+    "family": "new_moon",
+    "tradition": "San_tong_li",
+    "documents": [
+      "ST.2.2",
+      "ST.2.3"
+    ],
+    "scholarly_locators": [
+      "C2017 pp.90–92 §§174–175",
+      "L2003 pp.25–26 eq2.6–2.8"
+    ],
+    "goal": "从入统年及首日到天正朔、后月与弦望查询",
+    "inputs": [
+      "C1_ST输出",
+      "章月235",
+      "章岁19",
+      "月法2392",
+      "日法81"
+    ],
+    "outputs": [
+      "积月/闰余",
+      "积日/小余",
+      "干支朔日",
+      "长月",
+      "独立查询"
+    ],
+    "obligations": [
+      {
+        "id": "C2_ST.01",
+        "anchor": {
+          "doc_id": "ST.2.2",
+          "reading_id": "ST.2.2.C2017-reading-v1",
+          "text_sha256": "e8182c73b13a1356f0400adb9dba3dde7e5dce38ab6def5821740829bc9a5311",
+          "start": 4,
+          "end": 12,
+          "quote": "以章月乘入統歲數",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "入統歲數",
+          "章月"
+        ],
+        "writes": [
+          "month_numerator"
+        ],
+        "required_semantics": "构式组合乘法，不按篇名输出。",
+        "interpretation_basis": "C2017 §174",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_ST.02",
+        "anchor": {
+          "doc_id": "ST.2.2",
+          "reading_id": "ST.2.2.C2017-reading-v1",
+          "text_sha256": "e8182c73b13a1356f0400adb9dba3dde7e5dce38ab6def5821740829bc9a5311",
+          "start": 13,
+          "end": 31,
+          "quote": "盈章歲得一，名曰積月，不盈者名曰閏餘",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "month_numerator",
+          "章歲"
+        ],
+        "writes": [
+          "積月",
+          "閏餘"
+        ],
+        "required_semantics": "商为完整月计数；余为月的19分表示；保留两个producer端口。",
+        "interpretation_basis": "L2003 eq2.6",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_ST.03",
+        "anchor": {
+          "doc_id": "ST.2.2",
+          "reading_id": "ST.2.2.C2017-reading-v1",
+          "text_sha256": "e8182c73b13a1356f0400adb9dba3dde7e5dce38ab6def5821740829bc9a5311",
+          "start": 32,
+          "end": 42,
+          "quote": "閏餘十二以上，歲有閏",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "閏餘"
+        ],
+        "writes": [
+          "has_intercalation"
+        ],
+        "required_semantics": "全年有闰predicate，不等于已经定位闰月。",
+        "interpretation_basis": "C2017 p.91",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_ST.04",
+        "anchor": {
+          "doc_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "text_sha256": "aa8181ae0efcb681ef9577c07d00056d3231519b41c2ba3e945269bfd9f1f43d",
+          "start": 5,
+          "end": 17,
+          "quote": "以月法乘積月，盈日法得一",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "積月",
+          "月法",
+          "日法"
+        ],
+        "writes": [
+          "積日",
+          "小餘"
+        ],
+        "required_semantics": "通过本历月日率转换；商为整日，余在81分日尺度。",
+        "interpretation_basis": "L2003 eq2.7",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_ST.05",
+        "anchor": {
+          "doc_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "text_sha256": "aa8181ae0efcb681ef9577c07d00056d3231519b41c2ba3e945269bfd9f1f43d",
+          "start": 43,
+          "end": 51,
+          "quote": "積日盈六十，除之",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "積日"
+        ],
+        "writes": [
+          "day_cycle_offset"
+        ],
+        "required_semantics": "消去日循环而保存全积日；引用的是上一个除法的商。",
+        "interpretation_basis": "C2017 §175",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_ST.06",
+        "anchor": {
+          "doc_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "text_sha256": "aa8181ae0efcb681ef9577c07d00056d3231519b41c2ba3e945269bfd9f1f43d",
+          "start": 60,
+          "end": 69,
+          "quote": "數從統首日起，算外",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "day_cycle_offset",
+          "統首日"
+        ],
+        "writes": [
+          "new_moon_day"
+        ],
+        "required_semantics": "形成有形式参数的count方法；允许后文在新状态调用。",
+        "interpretation_basis": "C2017 p.92",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_ST.07",
+        "anchor": {
+          "doc_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "text_sha256": "aa8181ae0efcb681ef9577c07d00056d3231519b41c2ba3e945269bfd9f1f43d",
+          "start": 31,
+          "end": 42,
+          "quote": "小餘三十八以上，其月大",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "小餘"
+        ],
+        "writes": [
+          "month_long"
+        ],
+        "required_semantics": "阈值38，原文出处及英语注释43冲突登记I01。",
+        "interpretation_basis": "L2003 p.26; C2017中文",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_ST.08",
+        "anchor": {
+          "doc_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "text_sha256": "aa8181ae0efcb681ef9577c07d00056d3231519b41c2ba3e945269bfd9f1f43d",
+          "start": 75,
+          "end": 92,
+          "quote": "求其次月，加大餘二十九，小餘四十三",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "base_day",
+          "base_fraction"
+        ],
+        "writes": [
+          "next_day",
+          "next_fraction"
+        ],
+        "required_semantics": "成对增量29+43/81、进位、日循环；与求弦/求望各有查询基态。",
+        "interpretation_basis": "C2017 §175; v2 W01完整回归",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      }
+    ],
+    "mechanisms": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M11"
+    ],
+    "issues": [
+      "I01"
+    ],
+    "status": "development_reference_curated_this_round_not_parser_output",
+    "coverage": "Full procedural source included; listed semantic obligations are not exhaustive token annotation."
+  },
+  {
+    "card_id": "C2_SF",
+    "family": "new_moon",
+    "tradition": "Han_Si_fen_li",
+    "documents": [
+      "HQ.3.5",
+      "HQ.3.6"
+    ],
+    "scholarly_locators": [
+      "C2017 pp.164–166 §§46–47",
+      "L2003 pp.66–68 eq3.7–3.9"
+    ],
+    "goal": "从入蔀序数年及查表首日得到天正朔及下一朔",
+    "inputs": [
+      "C1_SF输出",
+      "章月235",
+      "章法19",
+      "蔀日27759",
+      "蔀月940"
+    ],
+    "outputs": [
+      "积月/闰余",
+      "积日/小余",
+      "朔日与下一朔"
+    ],
+    "obligations": [
+      {
+        "id": "C2_SF.01",
+        "anchor": {
+          "doc_id": "HQ.3.5",
+          "reading_id": "HQ.3.5.C2017-reading-v1",
+          "text_sha256": "d579f6a33058713ccabc840a70fea0d21412cb384d9724e10ca4a684a7d1ead2",
+          "start": 5,
+          "end": 11,
+          "quote": "置入蔀年減一",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "入蔀年"
+        ],
+        "writes": [
+          "elapsed_years"
+        ],
+        "required_semantics": "从序数转已逝区间且只转一次；预先提供elapsed输入时不得再减。",
+        "interpretation_basis": "C2017 p.164; L2003 p.67",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_SF.02",
+        "anchor": {
+          "doc_id": "HQ.3.5",
+          "reading_id": "HQ.3.5.C2017-reading-v1",
+          "text_sha256": "d579f6a33058713ccabc840a70fea0d21412cb384d9724e10ca4a684a7d1ead2",
+          "start": 12,
+          "end": 23,
+          "quote": "以章月乘之，滿章法得一",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "elapsed_years",
+          "章月",
+          "章法"
+        ],
+        "writes": [
+          "積月",
+          "閏餘"
+        ],
+        "required_semantics": "商余分别命名；有闰阈值12另存。",
+        "interpretation_basis": "L2003 eq3.7",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_SF.03",
+        "anchor": {
+          "doc_id": "HQ.3.6",
+          "reading_id": "HQ.3.6.C2017-reading-v1",
+          "text_sha256": "76c0d257f21640e32bf3895b93856a33aaf6d30cde31c7284930b653c3cf9da8",
+          "start": 6,
+          "end": 23,
+          "quote": "置入蔀積月，以蔀日乘之，滿蔀月得一",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "積月",
+          "蔀日",
+          "蔀月"
+        ],
+        "writes": [
+          "積日",
+          "小餘"
+        ],
+        "required_semantics": "跨源段引用积月；单位率27759/940作用于月，余量/940日。",
+        "interpretation_basis": "L2003 eq3.8",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_SF.04",
+        "anchor": {
+          "doc_id": "HQ.3.6",
+          "reading_id": "HQ.3.6.C2017-reading-v1",
+          "text_sha256": "76c0d257f21640e32bf3895b93856a33aaf6d30cde31c7284930b653c3cf9da8",
+          "start": 35,
+          "end": 49,
+          "quote": "積日以六十除去之，其餘為大餘",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "積日"
+        ],
+        "writes": [
+          "大餘"
+        ],
+        "required_semantics": "日循环投影不覆盖积日。",
+        "interpretation_basis": "L2003 eq3.9",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_SF.05",
+        "anchor": {
+          "doc_id": "HQ.3.6",
+          "reading_id": "HQ.3.6.C2017-reading-v1",
+          "text_sha256": "76c0d257f21640e32bf3895b93856a33aaf6d30cde31c7284930b653c3cf9da8",
+          "start": 50,
+          "end": 62,
+          "quote": "以所入蔀名命之，筭盡之外",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "大餘",
+          "head_day"
+        ],
+        "writes": [
+          "new_moon_day"
+        ],
+        "required_semantics": "调用实际C1选择的蔀首日，不取年首或固定甲子。",
+        "interpretation_basis": "C2017 pp.165–166",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_SF.06",
+        "anchor": {
+          "doc_id": "HQ.3.6",
+          "reading_id": "HQ.3.6.C2017-reading-v1",
+          "text_sha256": "76c0d257f21640e32bf3895b93856a33aaf6d30cde31c7284930b653c3cf9da8",
+          "start": 75,
+          "end": 88,
+          "quote": "小餘四百四十一以上，其月大",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "小餘"
+        ],
+        "writes": [
+          "month_long"
+        ],
+        "required_semantics": "阈值441，等号归长月。",
+        "interpretation_basis": "L2003 p.68",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C2_SF.07",
+        "anchor": {
+          "doc_id": "HQ.3.6",
+          "reading_id": "HQ.3.6.C2017-reading-v1",
+          "text_sha256": "76c0d257f21640e32bf3895b93856a33aaf6d30cde31c7284930b653c3cf9da8",
+          "start": 89,
+          "end": 108,
+          "quote": "求後月朔，加大餘二十九，小餘四百九十九",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "new_moon_day",
+          "小餘"
+        ],
+        "writes": [
+          "next_day",
+          "next_fraction"
+        ],
+        "required_semantics": "29+499/940，双端口进位及如前count方法；不修改基月结果。",
+        "interpretation_basis": "C2017 §47; v2 W02完整回归",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      }
+    ],
+    "mechanisms": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M11"
+    ],
+    "issues": [
+      "I03"
+    ],
+    "status": "development_reference_curated_this_round_not_parser_output",
+    "coverage": "Full procedural source included; listed semantic obligations are not exhaustive token annotation."
+  },
+  {
+    "card_id": "C3_ST",
+    "family": "winter_solstice",
+    "tradition": "San_tong_li",
+    "documents": [
+      "ST.2.5"
+    ],
+    "scholarly_locators": [
+      "C2017 p.96 §177",
+      "L2003 pp.27–29 eq2.10–2.11"
+    ],
+    "goal": "由入统已逝年求冬至精确时刻与干支日",
+    "inputs": [
+      "C1_ST输出",
+      "策余8080",
+      "统法1539",
+      "C2_ST已编译计日子方法"
+    ],
+    "outputs": [
+      "冬至整日",
+      "冬至余分/1539",
+      "冬至干支日"
+    ],
+    "obligations": [
+      {
+        "id": "C3_ST.01",
+        "anchor": {
+          "doc_id": "ST.2.5",
+          "reading_id": "ST.2.5.C2017.v3",
+          "text_sha256": "9ef64b6853716b9a223993f20667019c0da7ab520e1c5d90f4638796de11e6c7",
+          "start": 4,
+          "end": 12,
+          "quote": "以策餘乘入統歲數",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "策餘",
+          "入統歲數"
+        ],
+        "writes": [
+          "solstice_numerator"
+        ],
+        "required_semantics": "保留年余量的本历关系，8080/1539为每年超360日的时长。",
+        "interpretation_basis": "C2017 §177; L2003 eq2.10",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C3_ST.02",
+        "anchor": {
+          "doc_id": "ST.2.5",
+          "reading_id": "ST.2.5.C2017.v3",
+          "text_sha256": "9ef64b6853716b9a223993f20667019c0da7ab520e1c5d90f4638796de11e6c7",
+          "start": 13,
+          "end": 31,
+          "quote": "盈統法得一，名曰大餘，不盈者名曰小餘",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "solstice_numerator",
+          "統法"
+        ],
+        "writes": [
+          "winter_whole",
+          "winter_remainder"
+        ],
+        "required_semantics": "商/余有winter任务scope；不得覆盖moon小余。",
+        "interpretation_basis": "L2003 eq2.10",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C3_ST.03",
+        "anchor": {
+          "doc_id": "ST.2.5",
+          "reading_id": "ST.2.5.C2017.v3",
+          "text_sha256": "9ef64b6853716b9a223993f20667019c0da7ab520e1c5d90f4638796de11e6c7",
+          "start": 32,
+          "end": 36,
+          "quote": "除數如法",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "winter_whole",
+          "winter_remainder",
+          "head_day"
+        ],
+        "writes": [
+          "winter_day"
+        ],
+        "required_semantics": "回用消六十和命日子方法，实参为冬至量，不重复执行月日转换及月参数。",
+        "interpretation_basis": "C2017 §177; L2003 eq2.11",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      }
+    ],
+    "mechanisms": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M07",
+      "M08",
+      "M09"
+    ],
+    "issues": [],
+    "status": "development_reference_curated_this_round_not_parser_output",
+    "coverage": "Full procedural source included; listed semantic obligations are not exhaustive token annotation."
+  },
+  {
+    "card_id": "C3_SF",
+    "family": "winter_solstice",
+    "tradition": "Han_Si_fen_li",
+    "documents": [
+      "HQ.3.8"
+    ],
+    "scholarly_locators": [
+      "C2017 p.167 §49前半",
+      "L2003 p.69 eq3.12"
+    ],
+    "goal": "在推二十四气首段建立冬至基态",
+    "inputs": [
+      "C1_SF输出",
+      "日余168",
+      "中法32"
+    ],
+    "outputs": [
+      "winter_state32",
+      "winter_day"
+    ],
+    "obligations": [
+      {
+        "id": "C3_SF.01",
+        "anchor": {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "text_sha256": "07fb60c3b06f1cf91ec06739c6072dbd743e2f02f9b87736d649943c7544d2fe",
+          "start": 8,
+          "end": 20,
+          "quote": "置入蔀年減一，以日餘乘之",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "入蔀年",
+          "日餘"
+        ],
+        "writes": [
+          "winter_numerator"
+        ],
+        "required_semantics": "序数减一后乘168，分支范围为winter任务。",
+        "interpretation_basis": "L2003 eq3.12",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C3_SF.02",
+        "anchor": {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "text_sha256": "07fb60c3b06f1cf91ec06739c6072dbd743e2f02f9b87736d649943c7544d2fe",
+          "start": 21,
+          "end": 37,
+          "quote": "滿中法得一，名曰大餘，不滿為小餘",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "winter_numerator",
+          "中法"
+        ],
+        "writes": [
+          "winter_whole",
+          "winter_remainder"
+        ],
+        "required_semantics": "商与/32余数，保留本次除法身份。",
+        "interpretation_basis": "C2017 §49",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C3_SF.03",
+        "anchor": {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "text_sha256": "07fb60c3b06f1cf91ec06739c6072dbd743e2f02f9b87736d649943c7544d2fe",
+          "start": 38,
+          "end": 46,
+          "quote": "大餘滿六十除去之",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "winter_whole"
+        ],
+        "writes": [
+          "winter_cycle_offset"
+        ],
+        "required_semantics": "余分仍存；不重新用蔀月940。",
+        "interpretation_basis": "C2017 §49",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C3_SF.04",
+        "anchor": {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "text_sha256": "07fb60c3b06f1cf91ec06739c6072dbd743e2f02f9b87736d649943c7544d2fe",
+          "start": 47,
+          "end": 59,
+          "quote": "其餘以蔀名命之，筭盡之外",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "winter_cycle_offset",
+          "head_day"
+        ],
+        "writes": [
+          "winter_day",
+          "winter_base"
+        ],
+        "required_semantics": "正确调用蔀首日；后续气从完整冬至基态开始。",
+        "interpretation_basis": "L2003 p.69",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      }
+    ],
+    "mechanisms": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M07",
+      "M09",
+      "M11"
+    ],
+    "issues": [
+      "I03"
+    ],
+    "status": "development_reference_curated_this_round_not_parser_output",
+    "coverage": "Full procedural source included; listed semantic obligations are not exhaustive token annotation."
+  },
+  {
+    "card_id": "C4_ST",
+    "family": "qi_series",
+    "tradition": "San_tong_li",
+    "documents": [
+      "ST.2.6"
+    ],
+    "scholarly_locators": [
+      "C2017 pp.96–97 §178",
+      "L2003 p.28 eq2.12–2.15"
+    ],
+    "goal": "从同一冬至基态分别查询八节与二十四气",
+    "inputs": [
+      "C3_ST输出",
+      "统法1539",
+      "元法4617"
+    ],
+    "outputs": [
+      "node_state1539",
+      "qi_state4617",
+      "两个独立序列"
+    ],
+    "obligations": [
+      {
+        "id": "C4_ST.01",
+        "anchor": {
+          "doc_id": "ST.2.6",
+          "reading_id": "ST.2.6.C2017.v3",
+          "text_sha256": "0c7480a45ab86938c8116eee4282f955d503287c05b498d79ed85f5c5ed9a3c7",
+          "start": 0,
+          "end": 16,
+          "quote": "求八節，加大餘四十五，小餘千一十",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "winter_state1539"
+        ],
+        "writes": [
+          "nodes_query"
+        ],
+        "required_semantics": "成对加45、1010，尺度1539；一条与二十四气并列的查询。",
+        "interpretation_basis": "C2017 §178; L2003 eq2.12–13",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C4_ST.02",
+        "anchor": {
+          "doc_id": "ST.2.6",
+          "reading_id": "ST.2.6.C2017.v3",
+          "text_sha256": "0c7480a45ab86938c8116eee4282f955d503287c05b498d79ed85f5c5ed9a3c7",
+          "start": 17,
+          "end": 21,
+          "quote": "三其小餘",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "winter_remainder"
+        ],
+        "writes": [
+          "triple_numerator"
+        ],
+        "required_semantics": "先识别数词谓语×3与回指，不能预装固定rescale句答案。",
+        "interpretation_basis": "C2017 §178原句",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C4_ST.03",
+        "anchor": {
+          "doc_id": "ST.2.6",
+          "reading_id": "ST.2.6.C2017.v3",
+          "text_sha256": "0c7480a45ab86938c8116eee4282f955d503287c05b498d79ed85f5c5ed9a3c7",
+          "start": 42,
+          "end": 47,
+          "quote": "皆以元為法",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "triple_numerator",
+          "元法",
+          "統法"
+        ],
+        "writes": [
+          "qi_base4617"
+        ],
+        "required_semantics": "后置分母与范围使3r/4617=r/1539成立；只有双方已知且任务scope正确才判等值换尺度。",
+        "interpretation_basis": "C2017 p.97; L2003 eq2.14–15",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C4_ST.04",
+        "anchor": {
+          "doc_id": "ST.2.6",
+          "reading_id": "ST.2.6.C2017.v3",
+          "text_sha256": "0c7480a45ab86938c8116eee4282f955d503287c05b498d79ed85f5c5ed9a3c7",
+          "start": 22,
+          "end": 33,
+          "quote": "加大餘十五，小餘千一十",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "qi_base4617"
+        ],
+        "writes": [
+          "qi_query"
+        ],
+        "required_semantics": "15+1010/4617逐气累加；同字小余千一十出现两次，必须按offset分开绑定。",
+        "interpretation_basis": "C2017 §178; L2003 eq2.14–15",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      }
+    ],
+    "mechanisms": [
+      "M01",
+      "M02",
+      "M05",
+      "M06",
+      "M08",
+      "M09",
+      "M11",
+      "M12"
+    ],
+    "issues": [
+      "I05"
+    ],
+    "status": "development_reference_curated_this_round_not_parser_output",
+    "coverage": "Full procedural source included; listed semantic obligations are not exhaustive token annotation."
+  },
+  {
+    "card_id": "C4_SF",
+    "family": "qi_series",
+    "tradition": "Han_Si_fen_li",
+    "documents": [
+      "HQ.3.8"
+    ],
+    "scholarly_locators": [
+      "C2017 p.167 §49后半",
+      "L2003 p.69"
+    ],
+    "goal": "冬至后递推下一气并推广到当前气序列",
+    "inputs": [
+      "C3_SF冬至state32",
+      "中法32"
+    ],
+    "outputs": [
+      "下一气小寒",
+      "后续气序列"
+    ],
+    "obligations": [
+      {
+        "id": "C4_SF.01",
+        "anchor": {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "text_sha256": "07fb60c3b06f1cf91ec06739c6072dbd743e2f02f9b87736d649943c7544d2fe",
+          "start": 69,
+          "end": 82,
+          "quote": "求次氣，加大餘十五，小餘七",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "winter_base32"
+        ],
+        "writes": [
+          "next_qi_raw"
+        ],
+        "required_semantics": "从冬至基态取值，加15+7/32，保留进位前后量。",
+        "interpretation_basis": "C2017 §49",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C4_SF.02",
+        "anchor": {
+          "doc_id": "HQ.3.8",
+          "reading_id": "HQ.3.8.C2017.v3",
+          "text_sha256": "07fb60c3b06f1cf91ec06739c6072dbd743e2f02f9b87736d649943c7544d2fe",
+          "start": 83,
+          "end": 93,
+          "quote": "除命之如前，小寒日也",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "next_qi_raw",
+          "head_day"
+        ],
+        "writes": [
+          "next_qi_state",
+          "next_qi_day"
+        ],
+        "required_semantics": "回用当前计日子方法并进行/32进位；ordinal气序列由调用的步数推进，不能每次从冬至只算同一气。",
+        "interpretation_basis": "L2003 p.69; C2017 §49",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      }
+    ],
+    "mechanisms": [
+      "M01",
+      "M03",
+      "M04",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M11"
+    ],
+    "issues": [],
+    "status": "development_reference_curated_this_round_not_parser_output",
+    "coverage": "Full procedural source included; listed semantic obligations are not exhaustive token annotation."
+  },
+  {
+    "card_id": "C5_ST",
+    "family": "intercalation_location",
+    "tradition": "San_tong_li",
+    "documents": [
+      "ST.2.4"
+    ],
+    "scholarly_locators": [
+      "C2017 pp.92–96 §176",
+      "L2003 p.27 eq2.9, p.29"
+    ],
+    "goal": "由闰余累计跨阈值，输出名义闰位并独立核查整日月份",
+    "inputs": [
+      "C2_ST闰余",
+      "章中228",
+      "冬至计数锚点",
+      "moon/qi日期序列（边界裁决才需要）"
+    ],
+    "outputs": [
+      "steps_to_cross",
+      "nominal_month_slot",
+      "nominal_leap_label",
+      "boundary_status"
+    ],
+    "obligations": [
+      {
+        "id": "C5_ST.01",
+        "anchor": {
+          "doc_id": "ST.2.4",
+          "reading_id": "ST.2.4.C2017.v3",
+          "text_sha256": "18a65a94509698fe7f2deca19f9616b3bd591d99cf44f388456bede9c17ea4ba",
+          "start": 6,
+          "end": 12,
+          "quote": "以十二乘閏餘",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "閏餘"
+        ],
+        "writes": [
+          "initial_scaled_lag"
+        ],
+        "required_semantics": "r/19月→12r/228月；同数值换尺度，另有每中气7/228增量。",
+        "interpretation_basis": "C2017 p.93; L2003 eq2.9",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C5_ST.02",
+        "anchor": {
+          "doc_id": "ST.2.4",
+          "reading_id": "ST.2.4.C2017.v3",
+          "text_sha256": "18a65a94509698fe7f2deca19f9616b3bd591d99cf44f388456bede9c17ea4ba",
+          "start": 13,
+          "end": 25,
+          "quote": "加七得一．盈章中，數所得",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "initial_scaled_lag",
+          "章中"
+        ],
+        "writes": [
+          "loop_state",
+          "iteration_count"
+        ],
+        "required_semantics": "加7更新lag，得一更新counter；按声明的strict-exceeds profile停止，两个变量与判定顺序都入IR。",
+        "interpretation_basis": "C2017 p.93; L2003 eq2.9; I02",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C5_ST.03",
+        "anchor": {
+          "doc_id": "ST.2.4",
+          "reading_id": "ST.2.4.C2017.v3",
+          "text_sha256": "18a65a94509698fe7f2deca19f9616b3bd591d99cf44f388456bede9c17ea4ba",
+          "start": 26,
+          "end": 32,
+          "quote": "起冬至，算外",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "iteration_count",
+          "winter_anchor"
+        ],
+        "writes": [
+          "medial_ordinal",
+          "nominal_month_slot"
+        ],
+        "required_semantics": "冬至为1，k步后中气ordinal=k+1；闰月重复前月名，槽位与名字独立。",
+        "interpretation_basis": "C2017 pp.93–94",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C5_ST.04",
+        "anchor": {
+          "doc_id": "ST.2.4",
+          "reading_id": "ST.2.4.C2017.v3",
+          "text_sha256": "18a65a94509698fe7f2deca19f9616b3bd591d99cf44f388456bede9c17ea4ba",
+          "start": 40,
+          "end": 53,
+          "quote": "中氣在朔若二日，則前月閏也",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "nominal_month_slot",
+          "moon_events",
+          "qi_events"
+        ],
+        "writes": [
+          "civil_boundary_result"
+        ],
+        "required_semantics": "以命名解释profile处理；Cullen区分瞬时朔望月规则与整日实践，不能默选其一或用mod60标签比较时间先后。",
+        "interpretation_basis": "C2017 pp.94–96; L2003 p.27",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      }
+    ],
+    "mechanisms": [
+      "M01",
+      "M02",
+      "M03",
+      "M05",
+      "M07",
+      "M09",
+      "M12",
+      "M13"
+    ],
+    "issues": [
+      "I02",
+      "I06"
+    ],
+    "status": "development_reference_curated_this_round_not_parser_output",
+    "coverage": "Full procedural source included; listed semantic obligations are not exhaustive token annotation."
+  },
+  {
+    "card_id": "C5_SF",
+    "family": "intercalation_location",
+    "tradition": "Han_Si_fen_li",
+    "documents": [
+      "HQ.3.9"
+    ],
+    "scholarly_locators": [
+      "C2017 pp.167–169 §50",
+      "L2003 pp.69–70 eq3.13"
+    ],
+    "goal": "由闰余互补量求候选闰位，再按中气/朔的整日边界判断",
+    "inputs": [
+      "C2_SF闰余",
+      "章法19",
+      "章闰数7（声明推导来源）",
+      "moon/qi日期序列"
+    ],
+    "outputs": [
+      "month_count",
+      "nominal_leap_slot",
+      "nominal_leap_label",
+      "boundary_status"
+    ],
+    "obligations": [
+      {
+        "id": "C5_SF.01",
+        "anchor": {
+          "doc_id": "HQ.3.9",
+          "reading_id": "HQ.3.9.C2017.v3",
+          "text_sha256": "a9f26624c994fe30240a377aa4f8c6c6922f9fd1377cadbd02a5752106bce038",
+          "start": 6,
+          "end": 19,
+          "quote": "以閏餘減章法，餘以十二乘之",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "閏餘",
+          "章法"
+        ],
+        "writes": [
+          "complement_scaled"
+        ],
+        "required_semantics": "先19−r再×12；余是减法差，不能搜最近divmod余数代替。",
+        "interpretation_basis": "C2017 §50; L2003 eq3.13",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C5_SF.02",
+        "anchor": {
+          "doc_id": "HQ.3.9",
+          "reading_id": "HQ.3.9.C2017.v3",
+          "text_sha256": "a9f26624c994fe30240a377aa4f8c6c6922f9fd1377cadbd02a5752106bce038",
+          "start": 20,
+          "end": 26,
+          "quote": "滿章閏數得一",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "complement_scaled",
+          "章閏數"
+        ],
+        "writes": [
+          "q",
+          "r7"
+        ],
+        "required_semantics": "独立求商余；7的来源不能从没法别名猜。",
+        "interpretation_basis": "C2017 p.155 §25 & §50",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C5_SF.03",
+        "anchor": {
+          "doc_id": "HQ.3.9",
+          "reading_id": "HQ.3.9.C2017.v3",
+          "text_sha256": "a9f26624c994fe30240a377aa4f8c6c6922f9fd1377cadbd02a5752106bce038",
+          "start": 27,
+          "end": 37,
+          "quote": "滿四以上亦得一筭之數",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "q",
+          "r7"
+        ],
+        "writes": [
+          "adjusted_count"
+        ],
+        "required_semantics": "余数≥4才加一计数；保留调整量和条件。",
+        "interpretation_basis": "C2017 p.169; L2003 p.70",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C5_SF.04",
+        "anchor": {
+          "doc_id": "HQ.3.9",
+          "reading_id": "HQ.3.9.C2017.v3",
+          "text_sha256": "a9f26624c994fe30240a377aa4f8c6c6922f9fd1377cadbd02a5752106bce038",
+          "start": 38,
+          "end": 54,
+          "quote": "從前年十一月起，筭盡之外，閏月也",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "adjusted_count"
+        ],
+        "writes": [
+          "slot",
+          "repeated_month_label"
+        ],
+        "required_semantics": "从前年11月定位插入槽位；重复前月名另一步。r16得到第6槽、天正闰五月/民用闰三月。",
+        "interpretation_basis": "L2003 p.70算例",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      },
+      {
+        "id": "C5_SF.05",
+        "anchor": {
+          "doc_id": "HQ.3.9",
+          "reading_id": "HQ.3.9.C2017.v3",
+          "text_sha256": "a9f26624c994fe30240a377aa4f8c6c6922f9fd1377cadbd02a5752106bce038",
+          "start": 55,
+          "end": 64,
+          "quote": "或進退，以中氣定之",
+          "offsets": "Unicode codepoints, zero-based, half-open"
+        },
+        "reads": [
+          "slot",
+          "moon_events",
+          "qi_events"
+        ],
+        "writes": [
+          "boundary_result"
+        ],
+        "required_semantics": "近边界实际判定保留为外部事件约束；数据全时执行，缺数据时明确requires_external_data。",
+        "interpretation_basis": "C2017 pp.168–169; L2003 p.70",
+        "gate": "source_structure_or_declared_computational_profile",
+        "acceptable_realizations": "one or more source-linked nodes preserving these ports/scope; action-name equality alone insufficient"
+      }
+    ],
+    "mechanisms": [
+      "M01",
+      "M02",
+      "M03",
+      "M05",
+      "M07",
+      "M09",
+      "M13"
+    ],
+    "issues": [
+      "I06"
+    ],
+    "status": "development_reference_curated_this_round_not_parser_output",
+    "coverage": "Full procedural source included; listed semantic obligations are not exhaustive token annotation."
+  }
+]

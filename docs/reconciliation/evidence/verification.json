@@ -1,0 +1,71 @@
+{
+  "checked_at_utc": "2026-09-17T14:38:58.578930+00:00",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.9",
+  "node": "20.20.1",
+  "eleventy": "2.0.1",
+  "rollback_head": "6aefd18d9189b2a8c5451d3189a259dc26218692",
+  "protected_files_checked": 106,
+  "protected_changes": [],
+  "imported_files": 420,
+  "imported_upstream_bytes": 11823867,
+  "production_files_identical_to_upstream": 16,
+  "upstream_frozen_files_present": 367,
+  "evaluator_adaptations": [
+    {
+      "path": "evaluation/handoff-v3/isolated_runtime.py",
+      "upstream_sha256": "b29a08ce4c881cd5dffcf6a4f8fe58b68516d5b53014a629843513ef92bdd208",
+      "repository_sha256": "0d7a6cae2f01eec132e0ef2b320060ac6713aa4e737688860e8faccf249de0c8"
+    },
+    {
+      "path": "evaluation/rescue-v3_1/run_exposed.py",
+      "upstream_sha256": "0af17915f4ec9db9edd04d01d3cb3a48cb87ba5d974b25638b19531908ca5c3c",
+      "repository_sha256": "c2e87711802fe8f16cf177e613e14da11aef732b8ce49b43f8b02facb77786cc"
+    },
+    {
+      "path": "evaluation/rescue-v3_1/runtime_protocol.py",
+      "upstream_sha256": "fc76dfbc8b11a4bfa2f4e37206beea075a817c984b03aa1716c31b8fb47e6d7e",
+      "repository_sha256": "a80e00c0aa1964c8ede912954a6a6ce8aea47db579eed94e74c3471f2d39ebc2"
+    }
+  ],
+  "source_assets": [
+    {
+      "frozen_path": "/workspace/scratch/50fc00e34239/upload/cullen-source.pdf",
+      "bytes": 35408679,
+      "sha256": "e5cabc1ff8b8f3c80358251ce9c79a90467ae5e401fa1d7fb204baa534b3ff5c",
+      "identity_matches": true
+    },
+    {
+      "frozen_path": "/workspace/scratch/50fc00e34239/cullen-source-layout.txt",
+      "bytes": 1095604,
+      "sha256": "202b950e087fc3adf19a9dd42fd86b831f89ab86fd9d27bd8550c2d6b1240449",
+      "identity_matches": true
+    }
+  ],
+  "local_mapping": ".cache/reconciliation/source-asset-map.local.json (ignored; machine-specific)",
+  "upstream_freeze_rewritten": false,
+  "current_strict_exposed_gate_passed": true,
+  "traceability_design_clauses": 170,
+  "traceability_acceptance_cases": 46,
+  "traceability_supplements": 13,
+  "website": [
+    {
+      "command": [
+        "C:/Users/DELL/AppData/Roaming/fnm/node-versions/v20.20.1/installation/node.exe",
+        "--test",
+        "tests/ctext-stats-parser.test.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Users/DELL/AppData/Roaming/fnm/node-versions/v20.20.1/installation/node.exe",
+        "node_modules/@11ty/eleventy/cmd.js",
+        "--output=.cache/reconciliation/site"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "human_adjudication_performed": false,
+  "new_transfer_evidence": false
+}

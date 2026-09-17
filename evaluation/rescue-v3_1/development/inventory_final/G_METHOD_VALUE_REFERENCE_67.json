@@ -1,0 +1,110 @@
+{
+  "surface": "數除甲量如法",
+  "expected_production": "G_METHOD_VALUE_REFERENCE_67",
+  "positive_found": false,
+  "positive_diagnostics": [
+    {
+      "kind": "UnsupportedConstruction",
+      "analysis_range": [
+        0,
+        6
+      ],
+      "node_id": "synthetic.inventory:ast1"
+    }
+  ],
+  "negative_rejected": true,
+  "positive_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 6,
+            "quote": "數除甲量如法"
+          }
+        ],
+        "surface": "數除甲量如法",
+        "analysis_range": [
+          0,
+          6
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          6
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          6
+        ],
+        "status": "unresolved"
+      }
+    ]
+  },
+  "negative_view": {
+    "nodes": [
+      {
+        "id": "synthetic.inventory:ast1",
+        "kind": "UnsupportedConstruction",
+        "slots": {},
+        "children": [],
+        "source_spans": [
+          {
+            "doc_id": "synthetic.inventory",
+            "reading_id": "synthetic.inventory.declared",
+            "start": 0,
+            "end": 6,
+            "quote": "數除甲量如法"
+          }
+        ],
+        "surface": "數除甲量如法",
+        "analysis_range": [
+          0,
+          6
+        ],
+        "production_id": "G_UNSUPPORTED"
+      }
+    ],
+    "roots": [
+      "synthetic.inventory:ast1"
+    ],
+    "diagnostics": [
+      {
+        "kind": "UnsupportedConstruction",
+        "analysis_range": [
+          0,
+          6
+        ],
+        "node_id": "synthetic.inventory:ast1"
+      }
+    ],
+    "token_coverage": [
+      {
+        "analysis_range": [
+          0,
+          6
+        ],
+        "status": "unresolved"
+      }
+    ]
+  }
+}

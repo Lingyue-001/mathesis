@@ -1,0 +1,1055 @@
+{
+  "unique_obligations": 47,
+  "all_passed": true,
+  "method": "Union of actual civil semantic obligation IDs across N3_01–N3_04; every occurrence passes. Numeric summary alone is insufficient.",
+  "obligations": [
+    {
+      "id": "C1_ST.01",
+      "card_id": "C1_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e10"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e10"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C1_ST.02",
+      "card_id": "C1_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e11"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e11"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C1_ST.03",
+      "card_id": "C1_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e17"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e17"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C1_ST.04",
+      "card_id": "C1_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e17"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e17"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C2_ST.01",
+      "card_id": "C2_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e20"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e20"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C2_ST.02",
+      "card_id": "C2_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e21"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e21"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C2_ST.03",
+      "card_id": "C2_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e25"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e25"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C2_ST.04",
+      "card_id": "C2_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e34"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e34"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C2_ST.05",
+      "card_id": "C2_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e40"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e40"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C2_ST.06",
+      "card_id": "C2_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e42"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e42"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C2_ST.07",
+      "card_id": "C2_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e38"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e38"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C2_ST.08",
+      "card_id": "C2_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e45",
+            "e48"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e45",
+            "e48"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C3_ST.01",
+      "card_id": "C3_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e98"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e98"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C3_ST.02",
+      "card_id": "C3_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e99"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e99"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C3_ST.03",
+      "card_id": "C3_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e103"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e103"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C4_ST.01",
+      "card_id": "C4_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e107",
+            "e110"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e107",
+            "e110"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C4_ST.02",
+      "card_id": "C4_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e121"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e121"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C4_ST.03",
+      "card_id": "C4_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e123"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e123"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C4_ST.04",
+      "card_id": "C4_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e126",
+            "e129"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e126",
+            "e129"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C5_ST.01",
+      "card_id": "C5_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e87",
+            "e88"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e87",
+            "e88"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C5_ST.02",
+      "card_id": "C5_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e90"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e90"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C5_ST.03",
+      "card_id": "C5_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e92"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e92"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C5_ST.04",
+      "card_id": "C5_ST",
+      "runs": [
+        {
+          "case": "N3_01-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e147"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        },
+        {
+          "case": "N3_02-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e147"
+          ],
+          "source_result_sha256": "aafc6c9032e346fe2e2a95ce2657e37c45d781521cda360bac125daa606506d0"
+        }
+      ]
+    },
+    {
+      "id": "C1_SF.01",
+      "card_id": "C1_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e17"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e17"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C1_SF.02",
+      "card_id": "C1_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e18"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e18"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C1_SF.03",
+      "card_id": "C1_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e19"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e19"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C1_SF.04",
+      "card_id": "C1_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e20"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e20"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C1_SF.05",
+      "card_id": "C1_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e23"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e23"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C1_SF.06",
+      "card_id": "C1_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e28"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e28"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C2_SF.01",
+      "card_id": "C2_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e31"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e31"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C2_SF.02",
+      "card_id": "C2_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e33",
+            "e37"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e33",
+            "e37"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C2_SF.03",
+      "card_id": "C2_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e40"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e40"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C2_SF.04",
+      "card_id": "C2_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e44"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e44"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C2_SF.05",
+      "card_id": "C2_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e46"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e46"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C2_SF.06",
+      "card_id": "C2_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e48"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e48"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C2_SF.07",
+      "card_id": "C2_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e51",
+            "e54"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e51",
+            "e54"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C3_SF.01",
+      "card_id": "C3_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e66"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e66"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C3_SF.02",
+      "card_id": "C3_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e67"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e67"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C3_SF.03",
+      "card_id": "C3_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e71"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e71"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C3_SF.04",
+      "card_id": "C3_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e73"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e73"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C4_SF.01",
+      "card_id": "C4_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e76",
+            "e79"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e76",
+            "e79"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C4_SF.02",
+      "card_id": "C4_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e86"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e86"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C5_SF.01",
+      "card_id": "C5_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e90"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e90"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C5_SF.02",
+      "card_id": "C5_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e91"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e91"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C5_SF.03",
+      "card_id": "C5_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e94"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e94"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C5_SF.04",
+      "card_id": "C5_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e96"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e96"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    },
+    {
+      "id": "C5_SF.05",
+      "card_id": "C5_SF",
+      "runs": [
+        {
+          "case": "N3_03-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e109"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        },
+        {
+          "case": "N3_04-semantic.json",
+          "status": "pass",
+          "matched_event_ids": [
+            "e109"
+          ],
+          "source_result_sha256": "94d6e9c18fcc68c10930af3ca445a74365d5914983ce243a2ca9dfad0512fd65"
+        }
+      ]
+    }
+  ]
+}

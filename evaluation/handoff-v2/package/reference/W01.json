@@ -1,0 +1,1635 @@
+{
+  "schema_version": "2.0",
+  "window_id": "W01",
+  "role": "curated_teaching_reference_not_parser_output",
+  "annotation_status": "source_calibrated_by_assistant_not_independently_adjudicated",
+  "primary_source_ids": [
+    "ST.2.2",
+    "ST.2.3"
+  ],
+  "quantities": [
+    {
+      "quantity_id": "years",
+      "source_label": "入統歲數",
+      "role": "external_elapsed_interval",
+      "unit": "solar_year",
+      "scale": null,
+      "definition_source": "C2017 pp.89–90; L2003 pp.23–25",
+      "note": ""
+    },
+    {
+      "quantity_id": "head",
+      "source_label": "統首日",
+      "role": "external_cycle_origin",
+      "unit": "sexagenary_day",
+      "scale": null,
+      "definition_source": "C2017 p.89 §173",
+      "note": ""
+    },
+    {
+      "quantity_id": "k235",
+      "source_label": "章月",
+      "role": "parameter",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "C2017 p.42 §6",
+      "note": ""
+    },
+    {
+      "quantity_id": "k19",
+      "source_label": "章歲",
+      "role": "parameter",
+      "unit": "solar_year",
+      "scale": null,
+      "definition_source": "C2017 p.40 §2",
+      "note": ""
+    },
+    {
+      "quantity_id": "k2392",
+      "source_label": "月法",
+      "role": "parameter",
+      "unit": "day_parts",
+      "scale": 81,
+      "definition_source": "C2017 p.42 §7",
+      "note": ""
+    },
+    {
+      "quantity_id": "k81",
+      "source_label": "日法",
+      "role": "parameter",
+      "unit": "parts_per_day",
+      "scale": null,
+      "definition_source": "C2017 p.39 §1",
+      "note": ""
+    },
+    {
+      "quantity_id": "scaled_months",
+      "source_label": null,
+      "role": "scaled_month_total",
+      "unit": "lunation_parts",
+      "scale": 19,
+      "definition_source": "generated_by:01",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "month_q",
+      "source_label": null,
+      "role": "whole_month_output",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:02",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "month_r",
+      "source_label": null,
+      "role": "remainder_output",
+      "unit": "lunation_parts",
+      "scale": 19,
+      "definition_source": "generated_by:02",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.base",
+      "source_label": "積月",
+      "role": "accumulated_months",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:03",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "intercalary_r",
+      "source_label": "閏餘",
+      "role": "current_intercalation_remainder",
+      "unit": "lunation_parts",
+      "scale": 19,
+      "definition_source": "generated_by:04",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "year.intercalary",
+      "source_label": "歲有閏",
+      "role": "predicate",
+      "unit": "boolean",
+      "scale": null,
+      "definition_source": "generated_by:05",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.terrestrial",
+      "source_label": "地正積月",
+      "role": "alternative_query_months",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:06",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "months.anthropic",
+      "source_label": "人正積月",
+      "role": "alternative_query_months",
+      "unit": "lunation",
+      "scale": null,
+      "definition_source": "generated_by:07",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "scaled_days",
+      "source_label": null,
+      "role": "scaled_day_total",
+      "unit": "day_parts",
+      "scale": 81,
+      "definition_source": "generated_by:08",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "day_q",
+      "source_label": null,
+      "role": "whole_day_output",
+      "unit": "day",
+      "scale": null,
+      "definition_source": "generated_by:09",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "day_r",
+      "source_label": null,
+      "role": "fractional_day_output",
+      "unit": "day_parts",
+      "scale": 81,
+      "definition_source": "generated_by:09",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "days.total",
+      "source_label": "積日",
+      "role": "accumulated_whole_days",
+      "unit": "day",
+      "scale": null,
+      "definition_source": "generated_by:10",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "small.current",
+      "source_label": "小餘",
+      "role": "current_day_remainder",
+      "unit": "day_parts",
+      "scale": 81,
+      "definition_source": "generated_by:11",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "month.long",
+      "source_label": "其月大",
+      "role": "predicate",
+      "unit": "boolean",
+      "scale": null,
+      "definition_source": "generated_by:12",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "days.cycles",
+      "source_label": null,
+      "role": "discarded_full_cycles",
+      "unit": "sexagenary_cycle_count",
+      "scale": null,
+      "definition_source": "generated_by:13",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "greater.current",
+      "source_label": null,
+      "role": "sexagenary_day_offset",
+      "unit": "day",
+      "scale": null,
+      "definition_source": "generated_by:13",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "greater.named",
+      "source_label": "大餘",
+      "role": "sexagenary_day_offset",
+      "unit": "day",
+      "scale": null,
+      "definition_source": "generated_by:14",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "conjunction.day",
+      "source_label": "朔日",
+      "role": "event_day_label",
+      "unit": "sexagenary_index_1_to_60",
+      "scale": null,
+      "definition_source": "generated_by:15",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "greater.next.precarry",
+      "source_label": null,
+      "role": "pending_whole_day_offset",
+      "unit": "day",
+      "scale": null,
+      "definition_source": "generated_by:16",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "small.next.precarry",
+      "source_label": null,
+      "role": "pending_day_remainder",
+      "unit": "day_parts",
+      "scale": 81,
+      "definition_source": "generated_by:16",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "carry.next",
+      "source_label": null,
+      "role": "carry_whole_days",
+      "unit": "day",
+      "scale": null,
+      "definition_source": "generated_by:17",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "small.next",
+      "source_label": "小餘",
+      "role": "next_day_remainder",
+      "unit": "day_parts",
+      "scale": 81,
+      "definition_source": "generated_by:17",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "greater.next.precycle",
+      "source_label": null,
+      "role": "whole_day_offset_before_cycle_reduction",
+      "unit": "day",
+      "scale": null,
+      "definition_source": "generated_by:18",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "greater.next",
+      "source_label": "大餘",
+      "role": "next_sexagenary_day_offset",
+      "unit": "day",
+      "scale": null,
+      "definition_source": "generated_by:19",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "conjunction.next.day",
+      "source_label": "後月朔",
+      "role": "event_day_label",
+      "unit": "sexagenary_index_1_to_60",
+      "scale": null,
+      "definition_source": "generated_by:19",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "quarter.greater",
+      "source_label": null,
+      "role": "event_day_offset",
+      "unit": "day",
+      "scale": null,
+      "definition_source": "generated_by:20",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "quarter.small",
+      "source_label": null,
+      "role": "event_day_remainder",
+      "unit": "day_parts",
+      "scale": 81,
+      "definition_source": "generated_by:20",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "quarter.day",
+      "source_label": null,
+      "role": "event_day_label",
+      "unit": "sexagenary_index_1_to_60",
+      "scale": null,
+      "definition_source": "generated_by:20",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "full.greater",
+      "source_label": null,
+      "role": "event_day_offset",
+      "unit": "day",
+      "scale": null,
+      "definition_source": "generated_by:21",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "full.small",
+      "source_label": null,
+      "role": "event_day_remainder",
+      "unit": "day_parts",
+      "scale": 81,
+      "definition_source": "generated_by:21",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    },
+    {
+      "quantity_id": "full.day",
+      "source_label": null,
+      "role": "event_day_label",
+      "unit": "sexagenary_index_1_to_60",
+      "scale": null,
+      "definition_source": "generated_by:21",
+      "note": "现代分析量ID；没有声称这是原文所命之名。"
+    }
+  ],
+  "nodes": [
+    {
+      "node_id": "01",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.2",
+          "reading_id": "ST.2.2.C2017-reading-v1",
+          "quote": "以章月乘入統歲數",
+          "reading_range": [
+            4,
+            12
+          ],
+          "transcription_range": [
+            4,
+            17
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "multiply",
+      "inputs": [
+        "k235",
+        "years"
+      ],
+      "outputs": [
+        "scaled_months"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "章月与已逝入统年数相乘，保留临时乘积。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R02",
+        "R03"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "02",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.2",
+          "reading_id": "ST.2.2.C2017-reading-v1",
+          "quote": "盈章歲得一",
+          "reading_range": [
+            13,
+            18
+          ],
+          "transcription_range": [
+            18,
+            23
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "count_full_units",
+      "inputs": [
+        "scaled_months",
+        "k19"
+      ],
+      "outputs": [
+        "month_q",
+        "month_r"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "按章岁取得整月和未满余量；得一表示每满一次计一。这里采用商余语义投影，不推定物质算法。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R04"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "03",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.2",
+          "reading_id": "ST.2.2.C2017-reading-v1",
+          "quote": "名曰積月",
+          "reading_range": [
+            19,
+            23
+          ],
+          "transcription_range": [
+            24,
+            28
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "name_result",
+      "inputs": [
+        "month_q"
+      ],
+      "outputs": [
+        "months.base"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "积月命名商，时间跨度为统首至所求天正月。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R05"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "04",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.2",
+          "reading_id": "ST.2.2.C2017-reading-v1",
+          "quote": "不盈者名曰閏餘",
+          "reading_range": [
+            24,
+            31
+          ],
+          "transcription_range": [
+            29,
+            36
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "name_remainder",
+      "inputs": [
+        "month_r"
+      ],
+      "outputs": [
+        "intercalary_r"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "闰余命名上一次满数运算的余量；尺度19，不能当整数闰月数。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R05",
+        "R06"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "05",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.2",
+          "reading_id": "ST.2.2.C2017-reading-v1",
+          "quote": "閏餘十二以上，歲有閏",
+          "reading_range": [
+            32,
+            42
+          ],
+          "transcription_range": [
+            37,
+            47
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "threshold_predicate",
+      "inputs": [
+        "intercalary_r",
+        "lit:12"
+      ],
+      "outputs": [
+        "year.intercalary"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "闰余>=12时输出该年有闰；条件只控制这个判断，不阻断后面的朔日计算。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R07"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "06",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.2",
+          "reading_id": "ST.2.2.C2017-reading-v1",
+          "quote": "求地正，加積月一",
+          "reading_range": [
+            43,
+            51
+          ],
+          "transcription_range": [
+            48,
+            56
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "query_offset",
+      "inputs": [
+        "months.base",
+        "lit:1"
+      ],
+      "outputs": [
+        "months.terrestrial"
+      ],
+      "stage": "query.terrestrial",
+      "evidence_status": "calibrated_reading",
+      "explanation": "地正查询用天正积月加1。保留基础积月；不在所有调用中无条件累加。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R09"
+      ],
+      "controls": [
+        "query=terrestrial"
+      ],
+      "notes": []
+    },
+    {
+      "node_id": "07",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.2",
+          "reading_id": "ST.2.2.C2017-reading-v1",
+          "quote": "求人正，加二",
+          "reading_range": [
+            52,
+            58
+          ],
+          "transcription_range": [
+            57,
+            63
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "query_offset",
+      "inputs": [
+        "months.base",
+        "lit:2"
+      ],
+      "outputs": [
+        "months.anthropic"
+      ],
+      "stage": "query.anthropic",
+      "evidence_status": "calibrated_reading",
+      "explanation": "人正查询相对天正积月加2；不把地正加1后的值再加2。省略宾语由查询对照结构和学者说明确定。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R06",
+        "R09"
+      ],
+      "controls": [
+        "query=anthropic"
+      ],
+      "notes": []
+    },
+    {
+      "node_id": "08",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "以月法乘積月",
+          "reading_range": [
+            5,
+            11
+          ],
+          "transcription_range": [
+            5,
+            11
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "multiply",
+      "inputs": [
+        "k2392",
+        "months.base"
+      ],
+      "outputs": [
+        "scaled_days"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "本样板默认天正分支；月法乘所选积月。另两个正月查询应各自取自己的积月快照。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R02",
+        "R03",
+        "R12"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "09",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "盈日法得一",
+          "reading_range": [
+            12,
+            17
+          ],
+          "transcription_range": [
+            12,
+            17
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "count_full_units",
+      "inputs": [
+        "scaled_days",
+        "k81"
+      ],
+      "outputs": [
+        "day_q",
+        "day_r"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "商为整日，余为日法81下的日分。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R04"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "10",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "名曰積日",
+          "reading_range": [
+            18,
+            22
+          ],
+          "transcription_range": [
+            18,
+            22
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "name_result",
+      "inputs": [
+        "day_q"
+      ],
+      "outputs": [
+        "days.total"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "命名整日总量，供六十日循环约减；不改变小余。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R05"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "11",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "不盈者名曰小餘",
+          "reading_range": [
+            23,
+            30
+          ],
+          "transcription_range": [
+            23,
+            30
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "name_remainder",
+      "inputs": [
+        "day_r"
+      ],
+      "outputs": [
+        "small.current"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "小余来自按81满数的日分余量，不能回指2.2的闰余。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R05",
+        "R06"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "12",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "小餘三十八以上，其月大",
+          "reading_range": [
+            31,
+            42
+          ],
+          "transcription_range": [
+            31,
+            42
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "threshold_predicate",
+      "inputs": [
+        "small.current",
+        "lit:38"
+      ],
+      "outputs": [
+        "month.long"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "当前月长判据是小余>=38；保留原阈值及与下一朔加43的关联。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R07"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "13",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "積日盈六十，除之",
+          "reading_range": [
+            43,
+            51
+          ],
+          "transcription_range": [
+            43,
+            51
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "reduce_cycle",
+      "inputs": [
+        "days.total",
+        "lit:60"
+      ],
+      "outputs": [
+        "days.cycles",
+        "greater.current"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "去完整六十日循环，保留日数余量；不能把这里的除之只投影成商。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R04",
+        "R08"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "14",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "不盈者名曰大餘",
+          "reading_range": [
+            52,
+            59
+          ],
+          "transcription_range": [
+            52,
+            59
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "name_remainder",
+      "inputs": [
+        "greater.current"
+      ],
+      "outputs": [
+        "greater.named"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "大余命名六十日循环余量，尺度是整日；与小余不可合并。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R05",
+        "R06"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "15",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "數從統首日起，算外，則朔日也",
+          "reading_range": [
+            60,
+            74
+          ],
+          "transcription_range": [
+            60,
+            74
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "cyclic_count",
+      "inputs": [
+        "head",
+        "greater.named"
+      ],
+      "outputs": [
+        "conjunction.day"
+      ],
+      "stage": "main",
+      "evidence_status": "calibrated_reading",
+      "explanation": "保存起点统首日和算外惯例。数值检验用1基序号：1+((head-1+offset)%60)。这只是一种现代实现。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R10"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "16",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "求其次月，加大餘二十九，小餘四十三",
+          "reading_range": [
+            75,
+            92
+          ],
+          "transcription_range": [
+            75,
+            92
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "paired_increment",
+      "inputs": [
+        "greater.named",
+        "small.current",
+        "lit:29",
+        "lit:43"
+      ],
+      "outputs": [
+        "greater.next.precarry",
+        "small.next.precarry"
+      ],
+      "stage": "query.next_month",
+      "evidence_status": "calibrated_reading",
+      "explanation": "下一月查询从当前朔日状态分别加29与43；小余四十三省略重复的加。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R03",
+        "R06",
+        "R09"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "17",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "小餘盈日法得一",
+          "reading_range": [
+            93,
+            100
+          ],
+          "transcription_range": [
+            93,
+            100
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "count_full_units",
+      "inputs": [
+        "small.next.precarry",
+        "k81"
+      ],
+      "outputs": [
+        "carry.next",
+        "small.next"
+      ],
+      "stage": "query.next_month",
+      "evidence_status": "calibrated_reading",
+      "explanation": "取得进位商及进位后的剩余日分。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R04"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "18",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "從大餘",
+          "reading_range": [
+            101,
+            104
+          ],
+          "transcription_range": [
+            101,
+            104
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "carry_to_receiver",
+      "inputs": [
+        "carry.next",
+        "greater.next.precarry"
+      ],
+      "outputs": [
+        "greater.next.precycle"
+      ],
+      "stage": "query.next_month",
+      "evidence_status": "calibrated_reading",
+      "explanation": "把进位单位加到已加29的大余；从的输入为商而非小余原数。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R06",
+        "R11"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "19",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "數除如法",
+          "reading_range": [
+            105,
+            109
+          ],
+          "transcription_range": [
+            105,
+            109
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "reuse_count_reduce",
+      "inputs": [
+        "greater.next.precycle",
+        "head",
+        "lit:60"
+      ],
+      "outputs": [
+        "greater.next",
+        "conjunction.next.day"
+      ],
+      "stage": "query.next_month",
+      "evidence_status": "calibrated_reading",
+      "explanation": "回用本段六十日约减及统首日起算的方法；解析为有目标的调用。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R08",
+        "R10",
+        "R12"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "20",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "求弦，加大餘七，小餘三十一",
+          "reading_range": [
+            110,
+            123
+          ],
+          "transcription_range": [
+            110,
+            123
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "paired_increment",
+      "inputs": [
+        "greater.named",
+        "small.current",
+        "lit:7",
+        "lit:31",
+        "k81",
+        "head"
+      ],
+      "outputs": [
+        "quarter.greater",
+        "quarter.small",
+        "quarter.day"
+      ],
+      "stage": "query.quarter",
+      "evidence_status": "calibrated_reading",
+      "explanation": "求弦为另一个查询，从本月朔加7日31/81日，并沿用进位及循环。不能默认从刚求得的下月朔继续加。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R06",
+        "R09",
+        "R11",
+        "R12"
+      ],
+      "controls": [],
+      "notes": []
+    },
+    {
+      "node_id": "21",
+      "source_spans": [
+        {
+          "passage_id": "ST.2.3",
+          "reading_id": "ST.2.3.C2017-reading-v1",
+          "quote": "求望，倍弦",
+          "reading_range": [
+            124,
+            129
+          ],
+          "transcription_range": [
+            124,
+            129
+          ],
+          "offset_convention": "unicode_codepoint_0_based_half_open"
+        }
+      ],
+      "action": "double_interval_from_base",
+      "inputs": [
+        "greater.named",
+        "small.current",
+        "lit:7",
+        "lit:31",
+        "k81",
+        "head"
+      ],
+      "outputs": [
+        "full.greater",
+        "full.small",
+        "full.day"
+      ],
+      "stage": "query.full",
+      "evidence_status": "calibrated_reading",
+      "explanation": "倍的是朔到弦的增量；求望从同一朔加14日62/81日。不能把弦日的干支序号乘2。",
+      "basis": [
+        "C2017 pp.90–92 §§174–175",
+        "L2003 pp.25–27 式2.6–2.8"
+      ],
+      "required_rules": [
+        "R09",
+        "R12"
+      ],
+      "controls": [],
+      "notes": []
+    }
+  ],
+  "clause_coverage": [
+    {
+      "passage_id": "ST.2.2",
+      "quote": "推天正，",
+      "reading_range": [
+        0,
+        4
+      ],
+      "coverage_node_ids": [],
+      "coverage_status": "title_or_discourse_connector"
+    },
+    {
+      "passage_id": "ST.2.2",
+      "quote": "以章月乘入統歲數，",
+      "reading_range": [
+        4,
+        13
+      ],
+      "coverage_node_ids": [
+        "01"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.2",
+      "quote": "盈章歲得一，",
+      "reading_range": [
+        13,
+        19
+      ],
+      "coverage_node_ids": [
+        "02"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.2",
+      "quote": "名曰積月，",
+      "reading_range": [
+        19,
+        24
+      ],
+      "coverage_node_ids": [
+        "03"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.2",
+      "quote": "不盈者名曰閏餘．",
+      "reading_range": [
+        24,
+        32
+      ],
+      "coverage_node_ids": [
+        "04"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.2",
+      "quote": "閏餘十二以上，",
+      "reading_range": [
+        32,
+        39
+      ],
+      "coverage_node_ids": [
+        "05"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.2",
+      "quote": "歲有閏．",
+      "reading_range": [
+        39,
+        43
+      ],
+      "coverage_node_ids": [
+        "05"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.2",
+      "quote": "求地正，",
+      "reading_range": [
+        43,
+        47
+      ],
+      "coverage_node_ids": [
+        "06"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.2",
+      "quote": "加積月一；",
+      "reading_range": [
+        47,
+        52
+      ],
+      "coverage_node_ids": [
+        "06"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.2",
+      "quote": "求人正，",
+      "reading_range": [
+        52,
+        56
+      ],
+      "coverage_node_ids": [
+        "07"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.2",
+      "quote": "加二．",
+      "reading_range": [
+        56,
+        59
+      ],
+      "coverage_node_ids": [
+        "07"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "推正月朔，",
+      "reading_range": [
+        0,
+        5
+      ],
+      "coverage_node_ids": [],
+      "coverage_status": "title_or_discourse_connector"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "以月法乘積月，",
+      "reading_range": [
+        5,
+        12
+      ],
+      "coverage_node_ids": [
+        "08"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "盈日法得一，",
+      "reading_range": [
+        12,
+        18
+      ],
+      "coverage_node_ids": [
+        "09"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "名曰積日，",
+      "reading_range": [
+        18,
+        23
+      ],
+      "coverage_node_ids": [
+        "10"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "不盈者名曰小餘．",
+      "reading_range": [
+        23,
+        31
+      ],
+      "coverage_node_ids": [
+        "11"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "小餘三十八以上，",
+      "reading_range": [
+        31,
+        39
+      ],
+      "coverage_node_ids": [
+        "12"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "其月大．",
+      "reading_range": [
+        39,
+        43
+      ],
+      "coverage_node_ids": [
+        "12"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "積日盈六十，",
+      "reading_range": [
+        43,
+        49
+      ],
+      "coverage_node_ids": [
+        "13"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "除之，",
+      "reading_range": [
+        49,
+        52
+      ],
+      "coverage_node_ids": [
+        "13"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "不盈者名曰大餘．",
+      "reading_range": [
+        52,
+        60
+      ],
+      "coverage_node_ids": [
+        "14"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "數從統首日起，",
+      "reading_range": [
+        60,
+        67
+      ],
+      "coverage_node_ids": [
+        "15"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "算外，",
+      "reading_range": [
+        67,
+        70
+      ],
+      "coverage_node_ids": [
+        "15"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "則朔日也．",
+      "reading_range": [
+        70,
+        75
+      ],
+      "coverage_node_ids": [
+        "15"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "求其次月，",
+      "reading_range": [
+        75,
+        80
+      ],
+      "coverage_node_ids": [
+        "16"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "加大餘二十九，",
+      "reading_range": [
+        80,
+        87
+      ],
+      "coverage_node_ids": [
+        "16"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "小餘四十三．",
+      "reading_range": [
+        87,
+        93
+      ],
+      "coverage_node_ids": [
+        "16"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "小餘盈日法得一，",
+      "reading_range": [
+        93,
+        101
+      ],
+      "coverage_node_ids": [
+        "17"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "從大餘，",
+      "reading_range": [
+        101,
+        105
+      ],
+      "coverage_node_ids": [
+        "18"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "數除如法．",
+      "reading_range": [
+        105,
+        110
+      ],
+      "coverage_node_ids": [
+        "19"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "求弦，",
+      "reading_range": [
+        110,
+        113
+      ],
+      "coverage_node_ids": [
+        "20"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "加大餘七，",
+      "reading_range": [
+        113,
+        118
+      ],
+      "coverage_node_ids": [
+        "20"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "小餘三十一．",
+      "reading_range": [
+        118,
+        124
+      ],
+      "coverage_node_ids": [
+        "20"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "求望，",
+      "reading_range": [
+        124,
+        127
+      ],
+      "coverage_node_ids": [
+        "21"
+      ],
+      "coverage_status": "analysed"
+    },
+    {
+      "passage_id": "ST.2.3",
+      "quote": "倍弦．",
+      "reading_range": [
+        127,
+        130
+      ],
+      "coverage_node_ids": [
+        "21"
+      ],
+      "coverage_status": "analysed"
+    }
+  ],
+  "acceptance_policy": "以有来源的端点、依赖、条件、回引和原表述保留为判断单元；内部节点划分允许不同。不得把参考node_id或参考量ID当解析器运行输入。",
+  "source_citations": {
+    "C2017": [
+      90,
+      91,
+      92
+    ],
+    "L2003": [
+      25,
+      26,
+      27
+    ]
+  },
+  "prepared_by": "assistant; independent expert adjudication not yet performed"
+}

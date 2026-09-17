@@ -1,0 +1,707 @@
+[
+  {
+    "id": "S01",
+    "test": "tests/parser_rescue/test_frames.py::test_S01",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/scoped.py",
+      "analysis_parser/program_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_frames.Frames.test_S01",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "S02",
+    "test": "tests/parser_rescue/test_frames.py::test_S02",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/scoped.py",
+      "analysis_parser/program_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_frames.Frames.test_S02",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "S03",
+    "test": "tests/parser_rescue/test_frames.py::test_S03",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/scoped.py",
+      "analysis_parser/program_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_frames.Frames.test_S03",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "S04",
+    "test": "tests/parser_rescue/test_frames.py::test_S04",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/scoped.py",
+      "analysis_parser/program_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_frames.Frames.test_S04",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "S05",
+    "test": "tests/parser_rescue/test_frames.py::test_S05",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/scoped.py",
+      "analysis_parser/program_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_frames.Frames.test_S05",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "L01",
+    "test": "tests/parser_rescue/test_syntax.py::test_L01",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/lexical.py",
+      "analysis_parser/construction_ir.py",
+      "analysis_parser/syntax_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_syntax.Syntax.test_L01",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "L02",
+    "test": "tests/parser_rescue/test_syntax.py::test_L02",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/lexical.py",
+      "analysis_parser/construction_ir.py",
+      "analysis_parser/syntax_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_syntax.Syntax.test_L02",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "L03",
+    "test": "tests/parser_rescue/test_syntax.py::test_L03",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/lexical.py",
+      "analysis_parser/construction_ir.py",
+      "analysis_parser/syntax_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_syntax.Syntax.test_L03",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "L04",
+    "test": "tests/parser_rescue/test_syntax.py::test_L04",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/lexical.py",
+      "analysis_parser/construction_ir.py",
+      "analysis_parser/syntax_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_syntax.Syntax.test_L04",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "L05",
+    "test": "tests/parser_rescue/test_syntax.py::test_L05",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/lexical.py",
+      "analysis_parser/construction_ir.py",
+      "analysis_parser/syntax_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_syntax.Syntax.test_L05",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "L06",
+    "test": "tests/parser_rescue/test_syntax.py::test_L06",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/lexical.py",
+      "analysis_parser/construction_ir.py",
+      "analysis_parser/syntax_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_syntax.Syntax.test_L06",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "L07",
+    "test": "tests/parser_rescue/test_syntax.py::test_L07",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/lexical.py",
+      "analysis_parser/construction_ir.py",
+      "analysis_parser/syntax_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_syntax.Syntax.test_L07",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "L08",
+    "test": "tests/parser_rescue/test_syntax.py::test_L08",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/lexical.py",
+      "analysis_parser/construction_ir.py",
+      "analysis_parser/syntax_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_syntax.Syntax.test_L08",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "L09",
+    "test": "tests/parser_rescue/test_syntax.py::test_L09",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/lexical.py",
+      "analysis_parser/construction_ir.py",
+      "analysis_parser/syntax_ir.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_syntax.Syntax.test_L09",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "P01",
+    "test": "tests/parser_rescue/test_program_links.py::test_P01",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/context_compiler.py",
+      "analysis_parser/program_ir.py",
+      "analysis_parser/scoped.py",
+      "analysis_parser/operations.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_program_links.Programs.test_P01",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "P02",
+    "test": "tests/parser_rescue/test_program_links.py::test_P02",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/context_compiler.py",
+      "analysis_parser/program_ir.py",
+      "analysis_parser/scoped.py",
+      "analysis_parser/operations.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_program_links.Programs.test_P02",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "P03",
+    "test": "tests/parser_rescue/test_program_links.py::test_P03",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/context_compiler.py",
+      "analysis_parser/program_ir.py",
+      "analysis_parser/scoped.py",
+      "analysis_parser/operations.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_program_links.Programs.test_P03",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "P04",
+    "test": "tests/parser_rescue/test_program_links.py::test_P04",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/context_compiler.py",
+      "analysis_parser/program_ir.py",
+      "analysis_parser/scoped.py",
+      "analysis_parser/operations.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_program_links.Programs.test_P04",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "P05",
+    "test": "tests/parser_rescue/test_program_links.py::test_P05",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/context_compiler.py",
+      "analysis_parser/program_ir.py",
+      "analysis_parser/scoped.py",
+      "analysis_parser/operations.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_program_links.Programs.test_P05",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "P06",
+    "test": "tests/parser_rescue/test_program_links.py::test_P06",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/context_compiler.py",
+      "analysis_parser/program_ir.py",
+      "analysis_parser/scoped.py",
+      "analysis_parser/operations.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_program_links.Programs.test_P06",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "P07",
+    "test": "tests/parser_rescue/test_program_links.py::test_P07",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/context_compiler.py",
+      "analysis_parser/program_ir.py",
+      "analysis_parser/scoped.py",
+      "analysis_parser/operations.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_program_links.Programs.test_P07",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "P08",
+    "test": "tests/parser_rescue/test_program_links.py::test_P08",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/context_compiler.py",
+      "analysis_parser/program_ir.py",
+      "analysis_parser/scoped.py",
+      "analysis_parser/operations.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_program_links.Programs.test_P08",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "P09",
+    "test": "tests/parser_rescue/test_program_links.py::test_P09",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/context_compiler.py",
+      "analysis_parser/program_ir.py",
+      "analysis_parser/scoped.py",
+      "analysis_parser/operations.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_program_links.Programs.test_P09",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "P10",
+    "test": "tests/parser_rescue/test_program_links.py::test_P10",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/context_compiler.py",
+      "analysis_parser/program_ir.py",
+      "analysis_parser/scoped.py",
+      "analysis_parser/operations.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_program_links.Programs.test_P10",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "T01",
+    "test": "tests/parser_rescue/test_semantic_ports.py::test_T01",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/resources.py",
+      "analysis_parser/quantity_semantics.py",
+      "analysis_parser/scoped.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_semantic_ports.Ports.test_T01",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "T02",
+    "test": "tests/parser_rescue/test_semantic_ports.py::test_T02",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/resources.py",
+      "analysis_parser/quantity_semantics.py",
+      "analysis_parser/scoped.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_semantic_ports.Ports.test_T02",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "T03",
+    "test": "tests/parser_rescue/test_semantic_ports.py::test_T03",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/resources.py",
+      "analysis_parser/quantity_semantics.py",
+      "analysis_parser/scoped.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_semantic_ports.Ports.test_T03",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "T04",
+    "test": "tests/parser_rescue/test_semantic_ports.py::test_T04",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/resources.py",
+      "analysis_parser/quantity_semantics.py",
+      "analysis_parser/scoped.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_semantic_ports.Ports.test_T04",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "T05",
+    "test": "tests/parser_rescue/test_semantic_ports.py::test_T05",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "analysis_parser/resources.py",
+      "analysis_parser/quantity_semantics.py",
+      "analysis_parser/scoped.py"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_semantic_ports.Ports.test_T05",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "E01",
+    "test": "tests/parser_rescue/test_evaluation_integrity.py::test_E01",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "evaluation/handoff-v3/semantic_match.py",
+      "evaluation/handoff-v3/isolated_runtime.py",
+      "evaluation/rescue-v3_1/"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E01",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "E02",
+    "test": "tests/parser_rescue/test_evaluation_integrity.py::test_E02",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "evaluation/handoff-v3/semantic_match.py",
+      "evaluation/handoff-v3/isolated_runtime.py",
+      "evaluation/rescue-v3_1/"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E02",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "E03",
+    "test": "tests/parser_rescue/test_evaluation_integrity.py::test_E03",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "evaluation/handoff-v3/semantic_match.py",
+      "evaluation/handoff-v3/isolated_runtime.py",
+      "evaluation/rescue-v3_1/"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E03",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "E04",
+    "test": "tests/parser_rescue/test_evaluation_integrity.py::test_E04",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "evaluation/handoff-v3/semantic_match.py",
+      "evaluation/handoff-v3/isolated_runtime.py",
+      "evaluation/rescue-v3_1/"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E04",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "E05",
+    "test": "tests/parser_rescue/test_evaluation_integrity.py::test_E05",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "evaluation/handoff-v3/semantic_match.py",
+      "evaluation/handoff-v3/isolated_runtime.py",
+      "evaluation/rescue-v3_1/"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E05",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  },
+  {
+    "id": "E06",
+    "test": "tests/parser_rescue/test_evaluation_integrity.py::test_E06",
+    "status": "PASS",
+    "spec_source": "rescue/package/contracts/checks.json",
+    "implementation_targets": [
+      "evaluation/handoff-v3/semantic_match.py",
+      "evaluation/handoff-v3/isolated_runtime.py",
+      "evaluation/rescue-v3_1/"
+    ],
+    "observed_tests": [
+      {
+        "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E06",
+        "status": "PASS"
+      }
+    ],
+    "evidence": "evaluation/rescue-v3_1/development/final_engineering_core2_eval2/summary.json",
+    "phase": "final_joint_development_core2_evaluator2; both independent reviews accepted",
+    "evidence_sha256": "48ff7947f670bc92610f0e3c7c5e47b455de3fffe8c88a612f431c39e99b2ebe"
+  }
+]

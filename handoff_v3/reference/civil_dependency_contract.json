@@ -1,0 +1,53 @@
+{
+  "nodes": [
+    "era_entry",
+    "new_moon",
+    "winter_solstice",
+    "qi_series",
+    "intercalation_location"
+  ],
+  "edges": [
+    {
+      "from": "era_entry",
+      "to": "new_moon",
+      "ports": [
+        "years_local",
+        "cycle_head_day"
+      ]
+    },
+    {
+      "from": "era_entry",
+      "to": "winter_solstice",
+      "ports": [
+        "years_local",
+        "cycle_head_day"
+      ]
+    },
+    {
+      "from": "winter_solstice",
+      "to": "qi_series",
+      "ports": [
+        "whole_days",
+        "fraction_numerator",
+        "denominator",
+        "epoch"
+      ]
+    },
+    {
+      "from": "new_moon",
+      "to": "intercalation_location",
+      "ports": [
+        "intercalation_remainder",
+        "moon_times"
+      ]
+    },
+    {
+      "from": "qi_series",
+      "to": "intercalation_location",
+      "ports": [
+        "medial_qi_times"
+      ]
+    }
+  ],
+  "boundary": "Arithmetic nominal placement may precede full event-series construction. Final whole-day adjudication requires both event streams in the same date frame."
+}

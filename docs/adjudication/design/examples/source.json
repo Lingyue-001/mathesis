@@ -1,0 +1,8 @@
+{
+  "doc_id": "instructional-fragment",
+  "reading_id": "example-reading-1",
+  "text": "以見月法乘其小餘并之",
+  "source_sha256": "92e22a725918856712879752e1e0eb77af6a5f6d36cd930aca5c8999968a01e9",
+  "status": "source_derived_instructional_fragment_NOT_COMPLETE_HISTORICAL_PACKET",
+  "notes": "例句来自会话所讨论的Proc.2.19表达；完整历史运行须使用用户提供的source packet与上下文。"
+}

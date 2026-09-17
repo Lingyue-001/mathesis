@@ -1,0 +1,94 @@
+{
+  "inputs": {
+    "epoch_elapsed_years": 143127
+  },
+  "packet": {
+    "context_documents": [
+      {
+        "doc_id": "ST.jupiter.declaration.1",
+        "edition_sha256": "66143ab60174c0bdce746e9f6029d523b83427a1741d5ec0a9ebb42dd6c3056b",
+        "edition_transcription": "木金相乘為十二，是為歲星小周．小周乘巛策，為千七百二十八，是為歲星歲數．",
+        "reading_id": "ST.jupiter.declaration.1.C2017.postfreeze.v1",
+        "source": {
+          "locator": "Chinese source declaration 木金相乘為十二，",
+          "pdf_pages": [
+            64
+          ],
+          "printed_pages": [
+            51
+          ],
+          "work": "C2017"
+        },
+        "source_id": "C2017",
+        "text": "木金相乘為十二，是為歲星小周．小周乘巛策，為千七百二十八，是為歲星歲數．",
+        "text_sha256": "66143ab60174c0bdce746e9f6029d523b83427a1741d5ec0a9ebb42dd6c3056b",
+        "transcription_notes": "Line wrapping collapsed; punctuation regularized; complete Chinese procedure retained.",
+        "view_status": "Declared reading of Cullen scholarly edition, not manuscript witness"
+      },
+      {
+        "doc_id": "ST.station_definitions",
+        "edition_sha256": "7eea25e8bfc0314e60330478c3fafd6c71b80d9e7d5f3a03537217d4e8c0f7e2",
+        "edition_transcription": "星紀，初斗十二度，大雪．中牽牛初，冬至．於夏為十一月，商為十二月,周為正月．終於婺女七度． 玄枵，初婺女八度，小寒．中危初，大寒．於夏為十二月，商為正月，周為二月．終於危十五度． 諏訾， 初危十六度，立春．中 營 室十四度，驚蟄．今曰雨水，於夏為正月,商為二月，周為三月．終於奎四度． 降婁，初奎五度，雨水．今曰驚蟄．中婁四度，春分．於夏為二月，商為三月，周為四月．終於胃六度． 大梁，初胃七度，穀雨．今曰清明．中昴八度，清明．今曰穀雨，於夏為三月,商為四月，周為五月．終於畢十一度． 實 沈、初畢十二度，立夏．中井初，小滿．於夏為四月，商為五月，周為六月.終於井十五度． 鶉首，初井十六度，芒種．中井三十一度，夏至．於夏為五月，商為六月, 周為七月．終於柳八度． 鶉火，初柳九度，小暑．中張三度，大暑．於夏為六月，商為七月，周為八月．終於張十七度． 鶉尾，初張十八度，立秋．中翼十五度，處暑．於夏為七月，商為八月, 周為九月．終於軫十一度． 壽星，初軫十二度，白露．中角十度，秋分．於夏為八月，商為九月, 周為十月．終於氐四度． 大火，初氐五度，寒露．中房五度，霜降．於夏為九月，商為十月, 周為十一月．終於尾九度． 析木，初尾十度，立冬．中箕七度，小雪．於夏為十月，商為十一月，周為十二月．終於斗十一度．",
+        "reading_id": "ST.station_definitions.C2017.postfreeze.v1",
+        "source": {
+          "locator": "§§204–262, complete Chinese station definitions",
+          "pdf_pages": [
+            125,
+            126,
+            127,
+            128,
+            129
+          ],
+          "printed_pages": [
+            112,
+            113,
+            114,
+            115,
+            116
+          ],
+          "work": "C2017"
+        },
+        "source_id": "C2017",
+        "text": "星紀，初斗十二度，大雪．中牽牛初，冬至．於夏為十一月，商為十二月,周為正月．終於婺女七度． 玄枵，初婺女八度，小寒．中危初，大寒．於夏為十二月，商為正月，周為二月．終於危十五度． 諏訾， 初危十六度，立春．中 營 室十四度，驚蟄．今曰雨水，於夏為正月,商為二月，周為三月．終於奎四度． 降婁，初奎五度，雨水．今曰驚蟄．中婁四度，春分．於夏為二月，商為三月，周為四月．終於胃六度． 大梁，初胃七度，穀雨．今曰清明．中昴八度，清明．今曰穀雨，於夏為三月,商為四月，周為五月．終於畢十一度． 實 沈、初畢十二度，立夏．中井初，小滿．於夏為四月，商為五月，周為六月.終於井十五度． 鶉首，初井十六度，芒種．中井三十一度，夏至．於夏為五月，商為六月, 周為七月．終於柳八度． 鶉火，初柳九度，小暑．中張三度，大暑．於夏為六月，商為七月，周為八月．終於張十七度． 鶉尾，初張十八度，立秋．中翼十五度，處暑．於夏為七月，商為八月, 周為九月．終於軫十一度． 壽星，初軫十二度，白露．中角十度，秋分．於夏為八月，商為九月, 周為十月．終於氐四度． 大火，初氐五度，寒露．中房五度，霜降．於夏為九月，商為十月, 周為十一月．終於尾九度． 析木，初尾十度，立冬．中箕七度，小雪．於夏為十月，商為十一月，周為十二月．終於斗十一度．",
+        "text_sha256": "7eea25e8bfc0314e60330478c3fafd6c71b80d9e7d5f3a03537217d4e8c0f7e2",
+        "transcription_notes": "Complete 12 Chinese station paragraphs in source order; no table reconstruction. This is source context, not expected position data.",
+        "view_status": "Declared reading of Cullen scholarly edition, not manuscript witness"
+      }
+    ],
+    "input_mode": "declared_edited_primary_context",
+    "primary_documents": [
+      {
+        "doc_id": "ST.2.26",
+        "edition_sha256": "8d1c5868cf6e55407d005c0cd28789a0dd604b469fcb8c704f30af624c6269ec",
+        "edition_transcription": "推歲所在，置上元以來，外所求年，盈歲數，除去之，不盈者以百四十五乘之，以百四十四為法，如法得一，名曰積次，不盈者名曰次餘．積次盈十二，除去之，不盈者名曰定次．數從星紀起，算盡之外，則所在次也．欲知太歲，以六十除(餘)積次，餘不盈者，數從丙子起，算盡之外，則太歲日也．",
+        "reading_id": "ST.2.26.C2017.postfreeze.v1",
+        "source": {
+          "locator": "Proc.2.26",
+          "pdf_pages": [
+            121
+          ],
+          "printed_pages": [
+            108
+          ],
+          "work": "C2017"
+        },
+        "source_id": "C2017",
+        "text": "推歲所在，置上元以來，外所求年，盈歲數，除去之，不盈者以百四十五乘之，以百四十四為法，如法得一，名曰積次，不盈者名曰次餘．積次盈十二，除去之，不盈者名曰定次．數從星紀起，算盡之外，則所在次也．欲知太歲，以六十除積次，餘不盈者，數從丙子起，算盡之外，則太歲日也．",
+        "text_sha256": "dd036cc000b901b7d41e4db1539905a01337181198ae03639337f33c2965f901",
+        "transcription_notes": "Complete Chinese §202 at PDF121, English and commentary PDF122–124; omit parenthetical 餘; page marker1005 removed.",
+        "view_status": "Declared reading of Cullen scholarly edition, not manuscript witness"
+      }
+    ],
+    "provided_scope": {
+      "planet": "Jupiter",
+      "scope_is_curator_provided": true,
+      "tradition": "San_tong_li"
+    },
+    "runtime_policy": "Only Chinese source and declared scope/profile. No scholarly English, reference steps, graph templates, computed intermediate values, derived era/head-day inputs, or expected answers.",
+    "schema_version": "3.0",
+    "selected_profiles": [
+      "ST_elapsed",
+      "C2017_ST_Jupiter_station_rate_v1"
+    ]
+  }
+}

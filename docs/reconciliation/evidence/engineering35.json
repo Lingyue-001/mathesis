@@ -1,0 +1,672 @@
+{
+  "specified": 35,
+  "passed": 35,
+  "tests_run": 78,
+  "all_tests_successful": true,
+  "checks": [
+    {
+      "id": "S01",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_frames.Frames.test_S01",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_frames.Frames.test_S02",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_frames.Frames.test_S03",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_frames.Frames.test_S04",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_frames.Frames.test_S05",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "L01",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_syntax.Syntax.test_L01",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "L02",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_syntax.Syntax.test_L02",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "L03",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_syntax.Syntax.test_L03",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "L04",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_syntax.Syntax.test_L04",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "L05",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_syntax.Syntax.test_L05",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "L06",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_syntax.Syntax.test_L06",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "L07",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_syntax.Syntax.test_L07",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "L08",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_syntax.Syntax.test_L08",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "L09",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_syntax.Syntax.test_L09",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_program_links.Programs.test_P01",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_program_links.Programs.test_P02",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_program_links.Programs.test_P03",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_program_links.Programs.test_P04",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_program_links.Programs.test_P05",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_program_links.Programs.test_P06",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_program_links.Programs.test_P07",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_program_links.Programs.test_P08",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_program_links.Programs.test_P09",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_program_links.Programs.test_P10",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "T01",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_semantic_ports.Ports.test_T01",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "T02",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_semantic_ports.Ports.test_T02",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "T03",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_semantic_ports.Ports.test_T03",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "T04",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_semantic_ports.Ports.test_T04",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "T05",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_semantic_ports.Ports.test_T05",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "E01",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E01",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "E02",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E02",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "E03",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E03",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "E04",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E04",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "E05",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E05",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "E06",
+      "status": "PASS",
+      "tests": [
+        {
+          "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E06",
+          "status": "PASS"
+        }
+      ]
+    }
+  ],
+  "all_results": [
+    {
+      "test": "test_core_review_regressions.AdditionalBoundaries.test_method_cannot_span_heading",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core_review_regressions.AdditionalBoundaries.test_schedule_method_keeps_hole_dependency",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core_review_regressions.AdditionalBoundaries.test_unknown_intervening_method_statement_blocks_execution",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core_review_regressions.CoreReviewCounterexamples.test_denominator_cannot_cross_procedure_boundary",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core_review_regressions.CoreReviewCounterexamples.test_domain_label_cannot_share_accumulator_between_definitions",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core_review_regressions.CoreReviewCounterexamples.test_source_method_preserves_multiply_and_updated_return",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core_review_regressions.CoreReviewCounterexamples.test_used_source_method_cannot_hide_hole_rebinding_its_return",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core_review_regressions.FinalReceiverRegressions.test_divmod_named_receiver_keeps_remainder_and_quotient_distinct",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core_review_regressions.FinalReceiverRegressions.test_later_cycle_deletion_updates_the_count_receiver",
+      "status": "PASS"
+    },
+    {
+      "test": "test_core_review_regressions.FinalReceiverRegressions.test_receiver_writes_and_focus_only_arithmetic_have_distinct_roles",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E01",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E02",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E03",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E04",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E05",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_E06",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_query_order_audit_executes_independent_calls_in_reverse",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluation_integrity.EvaluationIntegrityTests.test_registered_atoms_are_kept_when_all_events_are_missing",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_B_unsupported_nested_contract_keeps_denominator",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_alias_cannot_discard_conflicting_unit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_auxiliary_method_requires_semantics_and_trace",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_certificate_evidence_resolves_sources_files_and_identifiers",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_duplicate_graph_id_is_not_silently_collapsed",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_duplicate_values_and_execution_steps_reject",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_execution_values_alone_do_not_establish_chain",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_executor_control_must_equal_scored_control",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_fixed_registration_requires_every_predicate_once",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_frozen_action_ports_keep_atom_count_under_mutation",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_goal_and_structure_contracts_are_machine_checkable",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_independent_namespaced_instances_keep_their_real_returns",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_instance_cannot_shadow_global_value_or_repair_corrupt_producer",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_instance_cannot_shadow_prior_instance_value",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_instance_value_table_contains_only_its_unique_produced_values",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_manifest_cannot_claim_closed_without_required_files",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_manifest_only_cannot_qualify_a_batch",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_method_body_needs_applicable_source",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_method_formal_type_matches_actual_endpoint",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_named_method_return_is_not_any_return",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_nested_kind_diagnostics_block_but_benign_info_does_not",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_qualification_order_and_page_exposures_are_complete",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_reference_support_is_not_caller_declared",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_registered_A3_remains_assessable",
+      "status": "PASS"
+    },
+    {
+      "test": "test_evaluator_review_regressions.EvaluatorReviewRegressions.test_unknown_reference_field_and_action_port_reject",
+      "status": "PASS"
+    },
+    {
+      "test": "test_frames.Frames.test_S01",
+      "status": "PASS"
+    },
+    {
+      "test": "test_frames.Frames.test_S02",
+      "status": "PASS"
+    },
+    {
+      "test": "test_frames.Frames.test_S03",
+      "status": "PASS"
+    },
+    {
+      "test": "test_frames.Frames.test_S04",
+      "status": "PASS"
+    },
+    {
+      "test": "test_frames.Frames.test_S05",
+      "status": "PASS"
+    },
+    {
+      "test": "test_method_evidence.MethodEvidenceTests.test_commutativity_is_one_permutation_and_subtraction_is_not",
+      "status": "PASS"
+    },
+    {
+      "test": "test_method_evidence.MethodEvidenceTests.test_method_semantics_and_execution_trace_are_both_required",
+      "status": "PASS"
+    },
+    {
+      "test": "test_method_evidence.MethodEvidenceTests.test_return_projection_is_real_and_rejects_wrong_producer",
+      "status": "PASS"
+    },
+    {
+      "test": "test_program_links.Programs.test_P01",
+      "status": "PASS"
+    },
+    {
+      "test": "test_program_links.Programs.test_P02",
+      "status": "PASS"
+    },
+    {
+      "test": "test_program_links.Programs.test_P03",
+      "status": "PASS"
+    },
+    {
+      "test": "test_program_links.Programs.test_P04",
+      "status": "PASS"
+    },
+    {
+      "test": "test_program_links.Programs.test_P05",
+      "status": "PASS"
+    },
+    {
+      "test": "test_program_links.Programs.test_P06",
+      "status": "PASS"
+    },
+    {
+      "test": "test_program_links.Programs.test_P07",
+      "status": "PASS"
+    },
+    {
+      "test": "test_program_links.Programs.test_P08",
+      "status": "PASS"
+    },
+    {
+      "test": "test_program_links.Programs.test_P09",
+      "status": "PASS"
+    },
+    {
+      "test": "test_program_links.Programs.test_P10",
+      "status": "PASS"
+    },
+    {
+      "test": "test_semantic_ports.Ports.test_T01",
+      "status": "PASS"
+    },
+    {
+      "test": "test_semantic_ports.Ports.test_T02",
+      "status": "PASS"
+    },
+    {
+      "test": "test_semantic_ports.Ports.test_T03",
+      "status": "PASS"
+    },
+    {
+      "test": "test_semantic_ports.Ports.test_T04",
+      "status": "PASS"
+    },
+    {
+      "test": "test_semantic_ports.Ports.test_T05",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.AmbiguityCoverageReview.test_ambiguous_composition_has_unresolved_coverage",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.AmbiguityCoverageReview.test_complete_term_competes_with_suffix_composition",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.AmbiguityCoverageReview.test_mixed_duration_coverage_owns_internal_comma_once",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.Syntax.test_L01",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.Syntax.test_L02",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.Syntax.test_L03",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.Syntax.test_L04",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.Syntax.test_L05",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.Syntax.test_L06",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.Syntax.test_L07",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.Syntax.test_L08",
+      "status": "PASS"
+    },
+    {
+      "test": "test_syntax.Syntax.test_L09",
+      "status": "PASS"
+    }
+  ]
+}
