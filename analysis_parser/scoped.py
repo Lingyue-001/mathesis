@@ -65,11 +65,28 @@ class ScopedParser(Parser):
         return event
     def inferred_value(self,kind,reads,spans,rule,attributes,meta,basis,evidence="scholarly_interpretation"):
         v=self.env.value(kind,reads,spans,rule,attributes,meta);self.analytical(self.env.events[self.env.values[v]['producer']],basis,evidence);return v
+    def review_metadata(self, syntax_node_id, port, semantic_role):
+        return getattr(self, 'review_output_metadata', {}).get((syntax_node_id, port, semantic_role))
+    def apply_review_metadata(self, value_id, metadata):
+        """Apply a validated semantic decision at the value emission boundary."""
+        if not metadata:
+            return
+        explicit = {key: value for key, value in metadata.items()
+                    if key in ('unit', 'scale', 'role', 'quantity_kind', 'representation')}
+        value = self.env.reconcile_value(value_id, explicit)
+        refs = metadata.get('decision_refs') or [metadata.get('decision_id')]
+        value['adjudication_decision_refs'] = [ref for ref in refs if ref]
+        event = self.env.events[value['producer']]
+        event['adjudication_decision_refs'] = value['adjudication_decision_refs']
+        event['evidence_status'] = 'scholarly_calibrated'
+        value['evidence_basis'] = metadata.get('evidence_basis', 'scholarship')
+        value['decision_origin'] = metadata.get('decision_origin', 'human_selection')
     def context(self):
-        decl_ids={}
+        decl_ids={};declared_values=[]
         for d in self.context_ir['declarations']:
             v=self.env.value('parameter',{},d['source_spans'],'V3_DECL',{'name':d['label'],'value':d['value'],'declaration_id':d['id']},{'labels':[d['label']]+d['aliases'],'role':'parameter','unit':UNITS.get(d['label'],'opaque')})
             decl_ids[d['id']]=v
+            declared_values.append((v,d))
             for label in [d['label']]+d['aliases']:self.env.parameters.setdefault(label,[]).append(v)
         self.report['declaration_equivalences']=[dict(e,value_id=decl_ids[e['declaration']],equivalent_value_ids=[decl_ids[x] for x in e['equivalent_to']]) for e in self.context_ir['equivalences']]
         for alias,label in self.program.aliases.items():
@@ -80,10 +97,15 @@ class ScopedParser(Parser):
         if role_profile and self.env.scope.get('planet')=='Jupiter':
             for label,unit in role_profile['interval_parameters'].items():
                 for vid in self.env.parameters.get(label,[]):
-                    self.env.values[vid]['unit']=unit
+                    self.env.reconcile_value(vid, {'unit': unit})
                     self.env.values[vid]['parameter_role']='per_appearance_increment'
                     self.env.values[vid]['evidence'].append({'basis':'scholarly_interpretation','source_locator':role_profile['basis']})
-                    if unit=='month_fraction' and len(self.env.parameters.get('見月法',[]))==1:self.env.values[vid]['scale']={'denominator':self.env.parameters['見月法'][0]}
+                    if unit=='month_fraction' and len(self.env.parameters.get('見月法',[]))==1:
+                        self.env.reconcile_value(vid, {'scale': {'denominator':self.env.parameters['見月法'][0]}})
+        # A scholar's explicit semantic decision is a compiler input that
+        # constrains automatic context/profile facts, never a graph-side patch.
+        for vid, declaration in declared_values:
+            self.apply_review_metadata(vid, self.review_metadata(declaration['syntax_node_id'], 'result', 'parameter'))
         for d in self.packet.get('context_supplied_values',[]):
             # Explicit scholarly background is never reported as a source sentence.
             supports=[s for x in self.context_ir['declarations'] for s in x['source_spans'] if x['label'] in ('章月','章法')]
@@ -143,7 +165,7 @@ class ScopedParser(Parser):
         return super().medial_month_bridge(medial_id,month_id)
     def binary(self,kind,left,right,spans,rule='R02',attrs=None):
         result=super().binary(kind,left,right,spans,rule,attrs)
-        if kind=='multiply' and self.env.values[left]['unit']=='integer' and self.env.values[right]['unit']=='integer':self.env.values[result]['unit']='integer'
+        if kind=='multiply' and self.env.values[left]['unit']=='integer' and self.env.values[right]['unit']=='integer':self.env.reconcile_value(result, {'unit':'integer'})
         if kind=='multiply':
             for factor,operand in ((left,right),(right,left)):
                 fv=self.env.values[factor];ov=self.env.values[operand]
@@ -208,7 +230,8 @@ class ScopedParser(Parser):
                 proven=any(v['role']=='literal' and self.env.events[v['producer']]['attributes'].get('value')==rate['numerator'] for v in factors) and any(v['unit']==rate['from_unit'] for v in factors)
                 if proven:
                     event['attributes']['quantity_transition']={'status':'resolved','transition':'source_rate_division','rate':dict(rate,basis=profile['basis'])}
-                    for port in ('quotient','remainder'):self.env.values[event['writes'][port]]['unit']='station' if port=='quotient' else 'station_fraction'
+                    for port in ('quotient','remainder'):
+                        self.env.reconcile_value(event['writes'][port], {'unit':'station' if port=='quotient' else 'station_fraction'})
                 else:event['attributes']['execution_blocked']='unproven station rate operands'
             elif len(matches)==1:
                 rule,factor,operand=matches[0]
@@ -217,7 +240,12 @@ class ScopedParser(Parser):
                 event['attributes']['quantity_transition']=dict(checked,rate=rate,operand=operand,source_operation=numerator['id'],scope=dict(self.env.scope))
                 event['evidence']=[{'basis':'scholarly_interpretation','source_locator':rule['basis']}]
                 for port in ('quotient','remainder'):
-                    value=self.env.values[event['writes'][port]];value['quantity_kind']='duration' if rule['to_unit']=='day' else 'count';value['unit']=rule['to_unit'] if port=='quotient' else rule['to_unit']+'_fraction';value['representation']={'kind':'whole' if port=='quotient' else 'fraction_numerator','denominator_id':d}
+                    value=self.env.values[event['writes'][port]]
+                    self.env.reconcile_value(event['writes'][port], {
+                        'quantity_kind':'duration' if rule['to_unit']=='day' else 'count',
+                        'unit':rule['to_unit'] if port=='quotient' else rule['to_unit']+'_fraction',
+                        'representation':{'kind':'whole' if port=='quotient' else 'fraction_numerator','denominator_id':d},
+                    })
                     if rule.get('residual'):value['time_frame']='annual_residual'
                     elif rule['to_unit']=='day':value['time_frame']='full_local_epoch'
             elif self.env.values[x]['unit'].endswith('_fraction') and isinstance(self.env.values[x].get('scale'),dict) and self.env.values[x]['scale'].get('denominator')==d:
@@ -247,7 +275,7 @@ class ScopedParser(Parser):
     def name(self,label,spans,remainder=False):
         v=super().name(label,spans,remainder)
         source=self.env.events[self.env.values[v]['producer']]['reads']['value']
-        if self.env.values[source]['unit']=='unknown':self.env.values[v]['unit']='unknown'
+        if self.env.values[source]['unit']=='unknown':self.env.reconcile_value(v, {'unit':'unknown'})
         for key in ('quantity_kind','representation','time_frame','epoch','rate_denominator','rate_target','rate_evidence','epoch_kind','epoch_proof'):
             if key in self.env.values[source]:self.env.values[v][key]=copy.deepcopy(self.env.values[source][key])
         if self.env.query=='main':
@@ -824,14 +852,7 @@ def lower_linked(linked, environment):
                 # it while the event is emitted preserves type/audit execution
                 # as the sole graph construction path.
                 for port,vid in event['writes'].items():
-                    review=getattr(p,'review_output_metadata',{}).get((c['node_id'],port,event['kind']))
-                    if review:
-                        p.env.values[vid].update({key:value for key,value in review.items()
-                                                  if key not in ('decision_id','decision_refs')})
-                        refs=review.get('decision_refs') or [review.get('decision_id')]
-                        p.env.values[vid]['adjudication_decision_refs']=[ref for ref in refs if ref]
-                        event['adjudication_decision_refs']=p.env.values[vid]['adjudication_decision_refs']
-                        event['evidence_status']='scholarly_calibrated'
+                    p.apply_review_metadata(vid, p.review_metadata(c['node_id'], port, event['kind']))
             c['status']='selected' if ok else 'unresolved';c['selection_reason']='typed slots and linked source state' if ok else 'no compatible lowering'
             p.report['coverage']['accounted_spans' if ok else 'unparsed_spans'].extend(c['source_spans'])
             if not ok:

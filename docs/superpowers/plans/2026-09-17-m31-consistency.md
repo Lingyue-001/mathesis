@@ -40,8 +40,8 @@
 
 **Files:** existing state/scoped/quantity semantics/compiler modules; M3.1 tests.
 
-- [ ] Apply decision and automatic quantity facts at both context and operation emission sites.
-- [ ] Derive compatible unit/kind/status together and retain incompatible/unknown states.
+- [x] Apply decision and automatic quantity facts at both context and operation emission sites.
+- [x] Derive compatible unit/kind/status together and retain incompatible/unknown states.
 
 ### Task 4 — Unified validation and closure
 

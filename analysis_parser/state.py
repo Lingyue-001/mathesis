@@ -1,4 +1,7 @@
 """Immutable value creation and explicit source-supported candidate resolution."""
+from .quantity_semantics import finalize_quantity_metadata
+
+
 class Environment:
     def __init__(self, report, scope):
         self.report=report;self.scope=dict(scope,query='main');self.main={};self.active=self.main
@@ -28,14 +31,20 @@ class Environment:
                 val.setdefault('evidence_basis','derived_from_reviewed_input')
                 val.setdefault('decision_origin','automatic_derivation')
             if self.report.get('schema_version')=='3.0':
-                unit=val['unit'];scale=val['scale']
-                val.setdefault('quantity_kind','duration' if unit in ('day','day_fraction') else 'angle' if unit in ('du','du_fraction') else 'count' if unit in ('integer','year','year_ordinal','month','month_fraction') else 'unknown')
-                val.setdefault('representation',{'kind':'fraction_numerator','denominator_id':scale['denominator']} if isinstance(scale,dict) and scale.get('denominator') else {'kind':'whole'})
-                val.setdefault('resolution_status','unknown' if unit in ('opaque','product','unknown') else 'resolved')
+                finalize_quantity_metadata(val, event, meta)
                 val.setdefault('evidence',[{'basis':'editorial_reading' if event['evidence_status']=='declared_edited' else 'source_explicit','source_spans':spans}])
             self.report['value_instances'].append(val);self.values[vid]=val;event['writes'][port]=vid
         self.report['events'].append(event);self.events[eid]=event
         return event
+    def reconcile_value(self, value_id, explicit_metadata=None):
+        """Re-finalize a value after a typed parser or review fact changes it."""
+        value = self.values[value_id]
+        for key in ('unit', 'scale', 'role', 'quantity_kind', 'representation'):
+            if key in (explicit_metadata or {}):
+                value[key] = explicit_metadata[key]
+        if self.report.get('schema_version') == '3.0':
+            finalize_quantity_metadata(value, self.events[value['producer']], explicit_metadata)
+        return value
     def value(self,kind,reads,spans,rule,attributes=None,meta=None):
         return self.event(kind,reads,['result'],spans,rule,attributes,{'result':meta or {}})['writes']['result']
     def issue(self,cause,spans,missing,**kwargs):

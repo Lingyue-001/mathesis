@@ -2,6 +2,47 @@
 from fractions import Fraction
 
 UNKNOWN={'unknown','opaque','product',None}
+
+# The same vocabulary is used when a value is first emitted and when a later
+# compiler fact refines its unit. Keeping these fields together prevents a
+# value from becoming, for example, an integer with an inherited ``unknown``
+# quantity kind.
+UNIT_QUANTITY_KINDS = {
+    'integer': 'count', 'cycle': 'count', 'ordinal': 'count',
+    'year': 'count', 'year_ordinal': 'count', 'year_index': 'count',
+    'month': 'count', 'month_fraction': 'count', 'month_ordinal': 'count',
+    'month_name_index': 'count', 'intercalary_month': 'count',
+    'medial': 'count', 'medial_fraction': 'count', 'station': 'count',
+    'station_fraction': 'count', 'planet_event': 'count', 'table_column': 'count',
+    'day': 'duration', 'day_fraction': 'duration', 'day_index': 'duration',
+    'du': 'angle', 'du_fraction': 'angle',
+    'boolean': 'predicate', 'status': 'status', 'boundary_status': 'status',
+    'epoch_identity': 'reference', 'event_sequence': 'sequence',
+}
+
+
+def finalize_quantity_metadata(value, event, explicit_metadata=None):
+    """Derive the compatible unit/kind/representation/status tuple in one place.
+
+    ``explicit_metadata`` is the small, typed input supplied at the emission
+    site (including a reviewed semantic decision). The function never needs an
+    adjudication dependency: callers may use it for automatic parser facts and
+    the reviewed compiler alike.
+    """
+    explicit = explicit_metadata or {}
+    unit = value.get('unit')
+    quantity_kind = explicit.get('quantity_kind', UNIT_QUANTITY_KINDS.get(unit, 'unknown'))
+    value['quantity_kind'] = quantity_kind
+    if 'representation' not in explicit:
+        scale = value.get('scale')
+        value['representation'] = ({'kind': 'fraction_numerator', 'denominator_id': scale['denominator']}
+                                   if isinstance(scale, dict) and scale.get('denominator') else {'kind': 'whole'})
+    parser_unresolved = event.get('attributes', {}).get('resolution_status') not in (None, 'resolved')
+    value['resolution_status'] = ('unknown' if unit in UNKNOWN or quantity_kind == 'unknown' or parser_unresolved
+                                  else 'resolved')
+    return value
+
+
 def check_transition(event, values, context):
     a=event.get('attributes',{});kind=event['kind']; reads=event.get('reads',{});writes=event.get('writes',{})
     source=values.get(reads.get('value',reads.get('left')),{});target=values.get(writes.get('result',reads.get('right')), {})
