@@ -63,6 +63,10 @@ class ReviewedWorkbenchTests(unittest.TestCase):
                 self.assertEqual(result['summary']['review_status'], 'needs_revalidation')
                 self.assertTrue(result['bundle']['review_queue']['items'])
                 self.assertEqual(result['session'], original)
+                stages = result['presentation']['stages']
+                self.assertEqual(len({s['id'] for s in stages}), len(stages))
+                self.assertTrue(any(s['label'].startswith('自动参考：') for s in stages))
+                self.assertIn('待重新核验', result['presentation']['session_text'])
                 reference = result['reference_analysis']
                 self.assertEqual(reference['kind'], 'current_automatic_reference')
                 self.assertEqual(reference['graph'], opened['graph'])

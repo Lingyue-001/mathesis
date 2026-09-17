@@ -8,6 +8,7 @@ import re
 from urllib.parse import unquote, urlsplit
 
 from source_adapters.corpus import build_source_packet, list_procedures
+from workbench.presentation import ontology_reference
 from workbench.service import (analyze_procedure, apply_adjudication_decision,
                                branch_adjudication, compile_adjudication,
                                compile_procedure, execute_adjudication, open_adjudication)
@@ -52,7 +53,9 @@ def make_server(root, port=8789, site_root=None):
                 return
             path = urlsplit(self.path).path
             try:
-                if path == '/api/procedures':
+                if path == '/api/ontology':
+                    self.reply(200, ontology_reference())
+                elif path == '/api/procedures':
                     self.reply(200, {'procedures': list_procedures(root)})
                 elif path.startswith('/api/adjudication/'):
                     self.reply(200, open_adjudication(root, path.removeprefix('/api/adjudication/')))

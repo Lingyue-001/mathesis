@@ -5,6 +5,7 @@ from adjudication import append_decision, compile_reviewed, create_branch, new_s
 from adjudication.bundle import make_bundle
 from source_adapters.corpus import build_source_packet
 from workbench.projection import project_graph
+from workbench.presentation import build_presentation
 
 
 def analyze_procedure(root, procedure_id):
@@ -133,6 +134,7 @@ def _reviewed_response(source, session, branch_id):
             'kind': 'current_automatic_reference',
             **{key: reference[key] for key in ('graph', 'projection', 'stages', 'summary')},
         }
+    response['presentation'] = build_presentation(response)
     return response
 
 
@@ -168,6 +170,7 @@ def execute_adjudication(root, procedure_id, session, branch_id, inputs):
     result['execution'] = execution
     result['summary'] = {**result['summary'], 'execution_graph': 'reviewed',
                          'execution_status': 'missing_inputs' if missing else 'unresolved' if execution.get('unresolved') else 'executed'}
+    result['presentation'] = build_presentation(result)
     return result
 
 

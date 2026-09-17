@@ -88,3 +88,28 @@ M4 真人试用至少记录 candidate selection、free segmentation、typed manu
 - M4：有限 primitive、真实 scholar-assisted 目标、双图 demo 与实际人工成本；每个 milestone 独立 commit/check。
 
 M1 提交后停止，不自动执行 M2。
+
+## M3.2A canonical language boundary
+
+`typed codes → analysis_parser/ontology.py → workbench/presentation.py → API presentation → Workbench / Methodology`
+
+The ontology is the single language registry: code, category/hierarchy, label,
+short and methodological definitions, minimum evidence fields, and prohibited
+inferences. Formal grammar aliases refer to the same entries. Session action and
+lexical-role code sets now come from it. `adjudication/registry.py` still owns
+typed construction signatures and profile validation; it is not a second label
+dictionary. Parser, IR, executor and decision compatibility rules are unchanged.
+
+The presentation builder reads existing projection, queue, replay and validation
+facts. It preserves source addresses and suggested actions without certifying
+nearby candidates, assigning severity, approving bindings or drawing historical
+conclusions. Unknown visible codes raise an explicit error. Free source labels
+and user branch names remain source/user data, not enum entries.
+
+The two new Python modules have separate reusable responsibilities: the
+ontology is independent of HTTP and UI; presentation shapes existing facts for
+clients without growing the compiler or service dispatcher. The reference route
+`GET /api/ontology` serializes this live registry; `/methodology/` renders it with
+shared website components. No glossary JSON, frontend label map, new server,
+graph layout or scoring path is introduced. Detailed machine evidence remains
+in debug/provenance disclosures.

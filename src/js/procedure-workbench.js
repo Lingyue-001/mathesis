@@ -1,5 +1,5 @@
 import { renderSource, markSourceSelection, revealInPanel, selectionAnchor } from './ui/source-links.js';
-import { renderStructure, renderGraph, renderRelationships, markObjects, element, action, pretty } from './ui/procedure-view.js';
+import { renderStructure, renderGraph, renderRelationships, markObjects, element, action } from './ui/procedure-view.js';
 import { exportSession, importSession, loadSession, saveSession } from './ui/adjudication-session-store.js';
 
 const byId = id => document.getElementById(id);
@@ -14,7 +14,7 @@ async function request(path, body) {
   const response = await fetch(`${base.replace(/\/?$/, '/')}${path}`, body === undefined ? {} : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: json(body) });
   if (!response.headers.get('Content-Type')?.includes('application/json')) throw new Error('此站点当前未连接本地分析服务。');
   const value = await response.json();
-  if (!response.ok) throw new Error(value.error || `HTTP ${response.status}`);
+  if (!response.ok) { console.debug('Workbench API', response.status, value); throw new Error('服务未接受本次请求；原分析仍保留。详细协议记录见浏览器调试控制台。'); }
   return value;
 }
 function busy(value) {
@@ -43,7 +43,7 @@ function selectSteps(ids) {
   select(ids, steps.flatMap(step => step.event_ids), steps.flatMap(step => step.source_spans), steps.map(step => step.surface).join(' / '));
   if (steps[0]?.source_spans[0]) chooseAnchor(steps[0].source_spans[0]);
 }
-function selectNode(id) { const node = analysis.projection.nodes.find(item => item.id === id); if (node) { select(node.step_ids, [id], node.source_spans || [], `${node.id} · ${node.kind}`); if (node.source_spans?.[0]) chooseAnchor(node.source_spans[0]); } }
+function selectNode(id) { const node = analysis.projection.nodes.find(item => item.id === id); if (node) { select(node.step_ids, [id], node.source_spans || [], analysis.presentation.nodes[id].label); if (node.source_spans?.[0]) chooseAnchor(node.source_spans[0]); } }
 function selectFrame(id) {
   const frame = analysis.projection.frames.find(item => item.id === id); if (!frame) return;
   const seen = new Set();
@@ -60,45 +60,85 @@ function chooseAnchor(anchor) {
 
 function renderStages() {
   const box = byId('system-stages'); box.replaceChildren();
-  for (const stage of analysis.stages) { const row = element('details', 'research-stage'); row.dataset.stageId = stage.id; row.append(element('summary', '', `${stage.label} · ${stage.status}`), element('p', 'entry-card-note', `Inputs: ${stage.inputs.join(' · ') || '—'} · Rules: ${stage.rules.join(' · ') || '—'}`), element('pre', '', json(stage.artifacts))); box.append(row); }
+  for (const stage of analysis.presentation.stages) {
+    const row = element('details', 'research-stage'); row.dataset.stageId = stage.id;
+    row.append(element('summary', '', `${stage.label} · ${stage.status}`), element('p', 'entry-card-note', stage.text), element('p', 'entry-card-note', stage.downstream));
+    const debug = element('details'); debug.dataset.debug = 'true';
+    debug.append(element('summary', '', '调试／阶段原始证据'), element('pre', '', json(stage.provenance)));
+    row.append(debug); box.append(row);
+  }
 }
 function renderQuestions() {
-  const box = byId('review-queue'); box.replaceChildren(); const questions = analysis.projection.review_queue.items;
-  if (!questions.length) box.append(element('p', 'entry-card-note', '当前编译没有 review question。'));
-  for (const question of questions) {
+  const box = byId('review-queue'); box.replaceChildren();
+  for (const question of analysis.presentation.questions) {
     const card = element('article', 'entry-card'); card.dataset.reviewId = question.id;
-    card.append(action(`${question.kind} · ${question.severity}`, () => { if (question.source_anchors?.[0]) chooseAnchor(question.source_anchors[0]); const steps = analysis.projection.steps.filter(step => question.source_anchors?.some(anchor => step.source_spans.some(span => span.doc_id === anchor.doc_id && span.start < anchor.end && anchor.start < span.end))); if (steps.length) selectSteps(steps.map(step => step.id)); }));
-    card.append(element('p', 'entry-card-note', `原因：${pretty(question.reason)} · 允许：${question.suggested_actions.join(' / ')}`));
-    card.append(element('p', 'entry-card-note', `受影响：${question.affected_outputs.join(' / ') || '未记录'} · 候选：${question.candidate_options.map(row => `${row.kind} (${row.production_id || 'reviewed'})`).join(' / ') || '无合法候选'}`)); box.append(card);
+    card.append(action(`${question.label} · ${question.severity}`, () => {
+      if (question.source_anchors?.[0]) chooseAnchor(question.source_anchors[0]);
+      const steps = analysis.projection.steps.filter(step => question.source_anchors?.some(anchor => step.source_spans.some(span => span.doc_id === anchor.doc_id && span.start < anchor.end && anchor.start < span.end)));
+      if (steps.length) selectSteps(steps.map(step => step.id));
+    }));
+    card.append(element('p', 'entry-card-note', question.text));
+    card.append(element('p', 'entry-card-note', `后端建议的动作：${question.actions.map(row => row.label).join(' / ') || '未提供'}`));
+    card.append(element('p', 'entry-card-note', question.affected_text));
+    card.append(element('p', 'entry-card-note', `${question.evidence_note}：${question.nearby_evidence.map(row => `${row.label}「${row.text}」`).join(' / ') || '未提供'}`));
+    box.append(card);
   }
 }
 function showCandidateOptions() {
   const selectBox = byId('candidate-select'); selectBox.replaceChildren();
-  const candidates = analysis?.graph?.construction_candidates || [];
+  const candidates = analysis?.presentation?.candidates || [];
   const matching = !selectedAnchor ? [] : candidates.filter(row => row.source_spans?.some(span => span.doc_id === selectedAnchor.doc_id && span.start < selectedAnchor.end && selectedAnchor.start < span.end));
-  for (const row of matching) selectBox.add(new Option(`${row.kind} · ${row.text || row.surface || row.node_id} · ${row.production_id || 'rule'}`, row.node_id));
-  if (!matching.length) selectBox.add(new Option('No candidate at selected span', ''));
+  for (const row of matching) selectBox.add(new Option(`${row.label} · ${row.surface} · ${row.evidence}`, row.id));
+  if (!matching.length) selectBox.add(new Option('所选范围没有可选候选', ''));
 }
-function showIssues() { const box = byId('analysis-issues'); box.replaceChildren(); for (const issue of analysis.projection.issues) { const item = element('details', 'research-disclosure'); item.append(element('summary', '', `${issue.origin} · ${issue.kind}`), element('pre', '', json(issue))); box.append(item); } }
+function showIssues() {
+  const box = byId('analysis-issues'); box.replaceChildren();
+  for (const issue of analysis.presentation.issues) {
+    const item = element('details', 'research-disclosure');
+    item.append(element('summary', '', issue.label), element('p', '', issue.text)); box.append(item);
+  }
+}
+function showControls() {
+  for (const [id, options] of Object.entries(analysis.presentation.controls)) {
+    if (id === 'candidate-select') continue;
+    const control = byId(id), selected = control.value; control.replaceChildren();
+    for (const option of options) control.add(new Option(option.label, option.code));
+    if (options.some(option => option.code === selected)) control.value = selected;
+  }
+  for (const row of analysis.presentation.actions) {
+    for (const button of document.querySelectorAll(`[data-action="${row.code}"]`)) button.textContent = row.label;
+  }
+}
 function showDefinitions() {
   for (const id of ['binding-consumer', 'binding-producer', 'scope-definition', 'scope-base']) byId(id).replaceChildren();
   byId('scope-base').add(new Option('No explicit query base', ''));
   for (const frame of analysis.projection.frames) if (frame.source_spans?.[0]) {
-    for (const id of ['binding-consumer', 'binding-producer', 'scope-definition', 'scope-base']) byId(id).add(new Option(`${frame.label} · ${frame.id}`, frame.id));
+    for (const id of ['binding-consumer', 'binding-producer', 'scope-definition', 'scope-base']) byId(id).add(new Option(analysis.presentation.frames[frame.id].label, frame.id));
   }
   const contexts = byId('context-select'); contexts.replaceChildren();
-  for (const doc of analysis.graph.documents.filter(doc => doc.category === 'context_documents')) contexts.add(new Option(`${doc.doc_id} · ${doc.text}`, doc.doc_id));
+  for (const doc of analysis.graph.documents.filter(doc => doc.category === 'context_documents')) contexts.add(new Option(`${doc.source?.path || '背景材料'} · ${doc.text}`, doc.doc_id));
 }
-function showHistory() { const box = byId('decision-history'); box.replaceChildren(); for (const row of analysis.session.decisions) { const line = element('p', 'entry-card-row', `${row.revision}. ${row.action} · ${row.actor.type} · ${row.targets[0]?.quote || ''}`); if (row.action !== 'retract') line.append(action('Retract', () => applyDecision(makeDecision('retract', row.targets, { decision_id: row.decision_id }, `retract ${row.decision_id}`)))); box.append(line); } }
+function showHistory() {
+  const box = byId('decision-history'); box.replaceChildren();
+  for (const row of analysis.presentation.history) {
+    const line = element('p', 'entry-card-row', `${row.revision}. ${row.label} · ${row.actor} · ${row.status} · ${row.quote}`);
+    line.dataset.decisionAction = row.action;
+    if (row.action !== 'retract') {
+      const decision = analysis.session.decisions.find(item => item.decision_id === row.id);
+      line.append(action(analysis.presentation.actions.find(item => item.code === 'retract').label, () => applyDecision(makeDecision('retract', decision.targets, { decision_id: row.id }, `retract ${row.id}`))));
+    }
+    box.append(line);
+  }
+}
 function showInputs() { byId('inputs').replaceChildren(); for (const [index, spec] of analysis.procedure.inputs.entries()) { const field = element('input'); field.type = 'text'; field.inputMode = 'numeric'; field.id = `input-${index}`; field.name = spec.name; const labelNode = element('label', '', `${spec.name}（${spec.minimum}–${spec.maximum}）`); labelNode.htmlFor = field.id; const box = element('div'); box.append(labelNode, field); byId('inputs').append(box); } }
 function renderSourceView() { const layer = byId('annotation-layer').value; const evidence = layer === 'all' ? Object.values(analysis.projection.layers).flat() : (analysis.projection.layers[layer] || []); renderSource(byId('source'), analysis.graph.documents, analysis.projection.steps, selectSteps, evidence, chooseAnchor); }
 function consume(next) {
   const referenceOnly = !next.graph;
   const display = referenceOnly ? next.reference_analysis : next;
-  if (!display?.graph) throw new Error(`Session requires revalidation: ${next.bundle?.replay?.status || 'graph_unavailable'}`);
-  analysis = { ...next, graph: display.graph, projection: display.projection, stages: display.stages, referenceOnly };
+  if (!display?.graph) throw new Error('当前会话需要重新核验；暂时没有可展示的程序图。');
+  analysis = { ...next, graph: display.graph, projection: { ...display.projection, presentation: next.presentation }, stages: display.stages, referenceOnly };
   if (referenceOnly) {
-    analysis.projection = { ...display.projection, review_queue: { ...display.projection.review_queue,
+    analysis.projection = { ...analysis.projection, review_queue: { ...display.projection.review_queue,
       items: [...next.projection.review_queue.items, ...display.projection.review_queue.items] } };
     analysis.stages = [...next.stages, ...display.stages.map(stage => ({ ...stage, id: `reference-${stage.id}`, label: `自动参考：${stage.label}` }))];
   } else saveSession(next.procedure.id, next.session, next.branch_id);
@@ -109,11 +149,11 @@ function consume(next) {
   for (const branch of next.session.branches) branchSelect.add(new Option(branch.id, branch.id, false, branch.id === next.branch_id));
   branchSelect.value = next.branch_id;
   renderStages(); renderSourceView(); renderStructure(byId('structure'), analysis.projection, selectSteps, selectFrame); renderGraph(byId('graph'), analysis.projection, selectNode);
-  byId('graph-summary').textContent = `${referenceOnly ? '当前自动参考（只读） · ' : ''}${display.projection.nodes.length} events · ${display.projection.quantities.length} values · ${display.projection.edges.length} dependency edges · graph ${display.summary.graph_status}`;
+  byId('graph-summary').textContent = next.presentation.graph_text;
   byId('graph-raw').textContent = json(display.graph); byId('selection-detail').replaceChildren(); byId('selection-status').textContent = '选择原文、步骤、图节点或问题，查看 typed relationships。';
-  byId('session-status').textContent = `${referenceOnly ? `旧 session 待重验（${next.bundle.replay.status}）；当前显示只读自动参考，旧决定已保留。 ` : ''}Branch ${next.branch_id} · review ${next.summary.review_status} · graph ${next.summary.graph_status} · execution ${next.summary.execution_status} · comparison ${next.summary.comparison_status}`;
-  showIssues(); renderQuestions(); showDefinitions(); showHistory(); showInputs(); showCandidateOptions(); byId('analysis').hidden = false;
-  byId('status').textContent = referenceOnly ? `Session 待重验 · 当前自动参考有 ${display.projection.review_queue.items.length} 个问题；旧决定未应用` : `已载入 reviewed structure · ${next.projection.review_queue.items.length} 个当前问题`;
+  byId('session-status').textContent = next.presentation.session_text;
+  showIssues(); renderQuestions(); showControls(); showDefinitions(); showHistory(); showInputs(); showCandidateOptions(); byId('analysis').hidden = false;
+  byId('status').textContent = next.presentation.status_text;
   busy(false);
 }
 async function loadAnalysis() {
@@ -144,6 +184,6 @@ byId('declare-parameter').addEventListener('click', () => applyDecision(makeDeci
 byId('create-branch').addEventListener('click', async () => { const branch = byId('branch-name').value.trim(); if (!branch) return; busy(true); try { consume(await request('api/adjudication/branch', { procedure_id: analysis.procedure.id, session: analysis.session, branch_id: branch, from_branch: analysis.branch_id })); } catch (error) { byId('session-status').textContent = `Branch rejected: ${error.message}`; } finally { busy(false); } });
 byId('export-session').addEventListener('click', () => { const blob = new Blob([exportSession(analysis.procedure.id, analysis.session, analysis.branch_id)], { type: 'application/json' }); const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = `${analysis.procedure.id}-${analysis.branch_id}-session.json`; link.click(); setTimeout(() => URL.revokeObjectURL(link.href), 0); });
 byId('import-session').addEventListener('change', async event => { const file = event.target.files[0]; if (!file || !analysis) return; try { const saved = importSession(await file.text(), analysis.procedure.id); consume(await request('api/adjudication/compile', { procedure_id: analysis.procedure.id, session: saved.session, branch_id: saved.branch_id })); } catch (error) { byId('session-status').textContent = `Import rejected: ${error.message}`; } });
-byId('execute-form').addEventListener('submit', async event => { event.preventDefault(); if (!analysis) return; busy(true); byId('execution-result').hidden = true; try { const inputs = {}; for (const field of byId('inputs').querySelectorAll('input')) { const text = field.value.trim(); if (text) { if (!/^\d+$/.test(text) || !Number.isSafeInteger(Number(text))) throw new Error(`${field.name} 请输入整数`); inputs[field.name] = Number(text); } } const result = await request('api/adjudication/execute', { procedure_id: analysis.procedure.id, session: analysis.session, branch_id: analysis.branch_id, inputs }); byId('execution-status').textContent = `Execution: ${result.summary.execution_status} · graph: ${result.summary.execution_graph}`; byId('outputs').textContent = json(result.execution.named_outputs); byId('execution-raw').textContent = json(result.execution); byId('execution-result').hidden = false; } catch (error) { byId('execution-status').textContent = `数值验证未完成：${error.message}`; } finally { busy(false); } });
+byId('execute-form').addEventListener('submit', async event => { event.preventDefault(); if (!analysis) return; busy(true); byId('execution-result').hidden = true; try { const inputs = {}; for (const field of byId('inputs').querySelectorAll('input')) { const text = field.value.trim(); if (text) { if (!/^\d+$/.test(text) || !Number.isSafeInteger(Number(text))) throw new Error(`${field.name} 请输入整数`); inputs[field.name] = Number(text); } } const result = await request('api/adjudication/execute', { procedure_id: analysis.procedure.id, session: analysis.session, branch_id: analysis.branch_id, inputs }); byId('execution-status').textContent = result.presentation.session_text; byId('outputs').textContent = result.presentation.execution_text; byId('execution-raw').textContent = json(result.execution); byId('execution-result').hidden = false; } catch (error) { byId('execution-status').textContent = `数值验证未完成：${error.message}`; } finally { busy(false); } });
 
 try { const response = await request('api/procedures'); for (const procedure of response.procedures) byId('procedure').add(new Option(procedure.title, procedure.id)); if (!response.procedures.length) throw new Error('没有已登记的 procedure'); await loadAnalysis(); } catch (error) { byId('status').textContent = `无法载入：${error.message}`; }

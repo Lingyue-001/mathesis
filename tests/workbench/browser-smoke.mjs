@@ -25,13 +25,13 @@ try {
   await page.locator('[data-step-id="sifen:38:ast12"] button').first().click();
   assert.equal(await page.locator('#source button[data-start="18"]').getAttribute('data-selected'), 'true');
   assert.equal(await page.locator('[data-node-id="e8"]').getAttribute('data-selected'), 'true');
-  assert.match(await page.locator('#selection-detail').innerText(), /remainder/);
-  assert.match(await page.locator('#selection-detail').innerText(), /month_fraction/);
+  assert.match(await page.locator('#selection-detail').innerText(), /余数/);
+  assert.match(await page.locator('#selection-detail').innerText(), /月分量/);
   await page.locator('[data-node-id="e10"]').click();
   assert.equal(await page.locator('[data-step-id="sifen:38:ast16"]').getAttribute('data-selected'), 'true');
   assert.equal(await page.locator('#source button[data-start="29"]').getAttribute('data-selected'), 'true');
-  assert.match(await page.locator('#analysis-issues').innerText(), /missing_import/);
-  assert.match(await page.locator('#analysis-issues').innerText(), /quantity_unresolved/);
+  assert.match(await page.locator('#analysis-issues').innerText(), /输入缺少来源/);
+  assert.match(await page.locator('#analysis-issues').innerText(), /数量语义未定/);
   await page.locator('[data-node-id="e8"]').focus();
   await page.keyboard.press('Enter');
   assert.equal(await page.locator('[data-node-id="e8"]').getAttribute('data-selected'), 'true');
@@ -59,7 +59,7 @@ try {
   const success = await execute();
   assert.equal(success.execution.named_outputs['main:積月'], 296);
   assert.equal(success.execution.named_outputs['main:閏餘'], 16);
-  assert.match(await page.locator('#execution-status').innerText(), /executed/);
+  assert.match(await page.locator('#execution-status').innerText(), /数值核算完成/);
   assert.equal(await page.locator('[data-node-id="e8"]').getAttribute('data-selected'), 'true', 'Executing must retain structure selection');
   await page.locator('#input-0').fill('77');
   assert.match((await execute()).error, /invalid_input/);

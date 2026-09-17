@@ -94,3 +94,79 @@ Runtime investigation also found three Workbench processes listening on 8792;
 the older instances were stopped and final browser validation used a single
 current-code process. Old processes can continue serving older compiler modules
 even after a site rebuild; restart the Python service after Python changes.
+
+## M3.2A canonical ontology and scholar language (2026-09-18)
+
+Baseline: `c3e5d2d`. Inventory used imported formal `GRAMMAR`/`EXACT`,
+`OPERATION_CONTRACTS`, `ACTIONS`, `QUANTITY_UNITS`, `UNIT_QUANTITY_KINDS` and
+actual service/decision results. No Python source-string mining was used.
+The two exposed corpus targets initially returned 9 operation kinds, 14 syntax
+kinds and 3 question kinds; obsolete identity replay adds the stale-session
+question. Real resegmentation additionally exposed `unknown_quantity`; a real
+typed-structure decision established the authored-candidate provenance case.
+
+`analysis_parser/ontology.py` contains 441 entries including formal syntax
+aliases. The category/code pair is its key. It covers operations/constructions,
+quantity kinds/roles/units/representations, issue/cause, decisions, candidate,
+review/session/validation/execution/comparison/stage states, profiles, ports and
+evidence. Entry fields describe minimum evidence, not replacement executable
+signatures. Unknown codes at presentation boundaries fail explicitly.
+
+`workbench/presentation.py` translates existing structured facts only. Queue
+severity, actions and source anchors stay equal to the backend originals;
+overlapping constructions are labelled nearby evidence, not legal substitutes.
+Candidate status does not assert scholarly confirmation. Authored structures
+retain their decision origin and actual actor type. Stage artifacts, quantities,
+ports, scope, control attributes and stale automatic-reference identity remain
+inspectable. Machine identifiers still address objects internally and remain
+available in raw graph/stage debug disclosures.
+
+`GET /api/ontology` and the website `/methodology/` use the same registry as the
+Workbench view model. JavaScript only renders the labels. Existing controls get
+their labels from the API; the output-port field now shows names from existing
+output signatures while submitting their unchanged codes. These names do not
+certify compatibility. Profile selection retains its empty initial choice.
+No CSS/graph geometry, parser/IR/executor rule, Pattern Lab or primitive expansion
+was changed.
+
+Seven tests in `tests/workbench/test_presentation.py` cover:
+
+- formal vocabulary/entry completeness and unknown-code rejection;
+- semantic goldens and prohibited claims for missing input, unsupported and
+  incomplete construction, unknown quantity, stale session, conflicting
+  decisions, incompatible binding and extension request;
+- both actual corpus outputs, immutable graph/queue inputs, unchanged suggested
+  actions, and explicit failure for new unregistered states;
+- actual resegmentation/recompilation/retraction and authored-structure actor
+  provenance;
+- new registry entry propagation, plus a live HTTP reference/Workbench check.
+
+The existing browser acceptance also checks §40's actual unresolved span,
+source/structure/graph visibility, stale reference, translated normal text,
+Methodology entry count/labels against the live API, and rendering newly supplied
+view-model/reference entries without a browser map. The latter renderer
+extension is a labelled scripted fixture; the HTTP registry mutation is tested
+separately in Python. Neither is a human trial or a historical interpretation.
+
+Verification on this tree:
+
+| Check | Result |
+|---|---|
+| `unittest discover -s tests/workbench` | 27 passed, including 7 language tests |
+| `unittest discover -s tests/adjudication` | 71 passed, including M3.1 19 |
+| `unittest discover -s tests/parser` | 61 passed |
+| `unittest discover -s tests/parser_v3` | 94 passed |
+| `unittest discover -s tests/parser_rescue` | 78 passed, including engineering 35 |
+| `unittest discover -s tests/reconciliation` | 5 passed |
+| `tests/workbench/adjudication-browser.mjs` | passed in Chromium against localhost |
+| `tests/workbench/browser-smoke.mjs` | passed, including Pattern Lab navigation |
+| CText parser tests / Eleventy build / whitespace check | 4 passed / passed / passed |
+
+The existing rescue fixture ResourceWarning remains. Coverage is the exposed
+Workbench vocabulary plus the formal tables and exercised decision paths; it is
+not a claim that every unexposed corpus passage has been interpreted. New visible
+codes require authored entries and tests. API error details stay in the debug
+console, with a human-readable failure message in the normal view. Existing stale
+sessions remain read-only until separately revalidated; language changes do not
+migrate them. Local access: `http://127.0.0.1:8792/adjudication/` and
+`http://127.0.0.1:8792/methodology/`. No push or M4 work.

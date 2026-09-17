@@ -7,15 +7,10 @@ from pathlib import Path
 from .anchors import packet_identity, validate_anchor
 from .decision_contracts import validate_action_payload
 from .registry import registry_identity
+from analysis_parser.ontology import codes
 
 
-ACTIONS = {
-    'select_candidate', 'reject_candidate', 'resegment', 'set_scope',
-    'bind_value', 'bind_call', 'set_quantity_semantics', 'select_profile',
-    'attach_context', 'declare_parameter', 'assemble_known_structure',
-    'mark_noncomputational', 'defer', 'approve_scope', 'retract',
-    'set_lexical_role',
-}
+ACTIONS = codes('action')
 
 # A scholar may correct one attested occurrence's grammatical function.  These
 # labels are deliberately textual evidence, not operation kinds or global
@@ -23,7 +18,7 @@ ACTIONS = {
 # separate judgement.
 LEXICAL_ROLE_CONTRACT = {
     'version': '1.0',
-    'roles': frozenset({'term', 'numeral', 'pronoun', 'function_word', 'preposition', 'particle', 'operator_cue'}),
+    'roles': frozenset(codes('lexical_role')),
 }
 
 

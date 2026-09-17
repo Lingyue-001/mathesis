@@ -25,10 +25,10 @@ try {
   const response = page.waitForResponse(r => r.url() === `${origin}/api/adjudication/decision`);
   await page.locator('#apply-lexical-role').click();
   assert.equal((await response).ok(), true);
-  await page.waitForFunction(() => document.querySelector('#decision-history').textContent.includes('set_lexical_role'));
+  await page.locator('#decision-history [data-decision-action="set_lexical_role"]').waitFor();
   const before = await page.locator('#decision-history').innerText();
   await page.reload();
-  await page.waitForFunction(() => document.querySelector('#decision-history').textContent.includes('set_lexical_role'));
+  await page.locator('#decision-history [data-decision-action="set_lexical_role"]').waitFor();
   assert.equal(await page.locator('#decision-history').innerText(), before, 'session restores after browser reload');
   const persistedSession = await page.evaluate(() => localStorage.getItem('mathesis.adjudication-session.v1.sifen-3-5'));
   await page.route('**/api/adjudication/compile', route => route.fulfill({ status: 409, contentType: 'application/json', body: JSON.stringify({ error: 'transient_test_failure' }) }));
@@ -41,10 +41,11 @@ try {
   await page.locator('#split-at').fill('14');
   const resegment = page.waitForResponse(r => r.url() === `${origin}/api/adjudication/decision`);
   await page.locator('#resegment').click();
-  assert.equal((await resegment).ok(), true);
-  await page.waitForFunction(() => document.querySelector('#decision-history').textContent.includes('resegment'));
+  const segmentedResponse = await resegment;
+  assert.equal(segmentedResponse.ok(), true, await segmentedResponse.text());
+  await page.locator('#decision-history [data-decision-action="resegment"]').waitFor();
   const retract = page.waitForResponse(r => r.url() === `${origin}/api/adjudication/decision`);
-  await page.locator('#decision-history p', { hasText: 'resegment' }).getByRole('button', { name: 'Retract' }).click();
+  await page.locator('#decision-history [data-decision-action="resegment"]').getByRole('button', { name: '撤销决定' }).click();
   assert.equal((await retract).ok(), true);
   await page.waitForFunction(() => JSON.parse(document.querySelector('#graph-raw').textContent).adjudication.effective_decisions.segments.length === 0);
   await page.locator('#branch-name').fill('browser-reading');
@@ -72,7 +73,7 @@ try {
     }
     const graph = JSON.parse(await page.locator('#graph-raw').textContent());
     assert.ok(graph.unresolved.some(issue => issue.source_spans.some(span => span.doc_id === 'sifen:40' && span.start === 9 && span.end === 14 && span.quote === '周天乘減之')), 'known unresolved construction retains its actual source address');
-    const questions = page.locator('#review-queue article', { hasText: 'unresolved_parser' });
+    const questions = page.locator('#review-queue article', { hasText: '当前规则未能解释这段文字' });
     let located = false;
     for (const question of await questions.all()) {
       assert.equal(await question.isVisible(), true, 'unresolved question is visible');
@@ -89,7 +90,7 @@ try {
   }
   await assertRealHoleVisible();
   await page.locator('#apply-lexical-role').click();
-  await page.waitForFunction(() => document.querySelector('#decision-history').textContent.includes('set_lexical_role'));
+  await page.locator('#decision-history [data-decision-action="set_lexical_role"]').waitFor();
   // A compiler upgrade leaves real persisted sessions with obsolete identity locks.
   // Seed both registered targets so cold reload starts without an old visible graph.
   const savedStale = await page.evaluate(() => {
@@ -107,8 +108,8 @@ try {
   await page.waitForFunction(() => !document.querySelector('#procedure').disabled);
   await assertRealHoleVisible();
   assert.match(await page.locator('#status').innerText(), /待重验/);
-  assert.match(await page.locator('#session-status').innerText(), /needs_revalidation/);
-  assert.match(await page.locator('#decision-history').innerText(), /set_lexical_role/);
+  assert.match(await page.locator('#session-status').innerText(), /待重新核验/);
+  assert.equal(await page.locator('#decision-history [data-decision-action="set_lexical_role"]').count(), 1);
   assert.equal(await page.locator('#resegment').isDisabled(), true, 'stale decisions cannot mutate the automatic reference');
   assert.equal(await page.locator('#execute').isDisabled(), true);
   assert.equal(await page.evaluate(() => localStorage.getItem('mathesis.adjudication-session.v1.sifen-3-7-alternative')), savedStale, 'stale session is retained byte-for-byte');
@@ -120,6 +121,32 @@ try {
   await page.locator('#import-session').setInputFiles({ name: 'stale-session.json', mimeType: 'application/json', buffer: Buffer.concat(staleChunks) });
   await page.waitForFunction(() => document.querySelector('#status').textContent.includes('待重验'));
   await assertRealHoleVisible();
+  const visibleText = await page.locator('#analysis').innerText();
+  assert.doesNotMatch(visibleText, /\b[ev]\d+\b|G_[A-Z_0-9]+|unresolved_parser|missing_import|unknown_quantity|no_legal_candidate|needs_revalidation|unresolved_focus/, 'normal view contains backend language, not machine codes');
+  const ontology = await (await page.request.get(`${origin}/api/ontology`)).json();
+  const reference = await browser.newPage();
+  await reference.goto(`${origin}/methodology/`);
+  await reference.waitForFunction(() => document.querySelectorAll('[data-ontology-code]').length > 0);
+  assert.equal(await reference.locator('[data-ontology-code]').count(), ontology.entries.length, 'reference renders every live registry entry');
+  const label = ontology.entries.find(row => row.category === 'cause' && row.code === 'unresolved_parser').label;
+  assert.equal(await reference.locator('[data-ontology-category="cause"][data-ontology-code="unresolved_parser"] h2').innerText(), label);
+  // Presentation transport contract: newly authored backend labels do not require
+  // a browser map or release. This is a scripted renderer test, not scholarship.
+  const extension = { ...ontology.entries.find(row => row.category === 'issue'), code: 'new_test_issue', label: '新登记的审核事项', definition: '由测试目录提供的定义' };
+  await reference.route('**/api/ontology', route => route.fulfill({ json: { ...ontology, entries: [...ontology.entries, extension] } }));
+  await reference.reload();
+  await reference.locator('[data-ontology-code="new_test_issue"]').waitFor();
+  assert.equal(await reference.locator('[data-ontology-code="new_test_issue"] h2').innerText(), extension.label);
+  const extra = await browser.newPage();
+  await extra.route('**/api/adjudication/sifen-3-5', async route => {
+    const response = await route.fetch(); const body = await response.json();
+    body.presentation.questions.push({ ...body.presentation.questions[0], id: extension.code, label: extension.label, text: extension.definition });
+    await route.fulfill({ json: body });
+  });
+  await extra.goto(`${origin}/adjudication/?actor=scripted_browser`);
+  await extra.locator('[data-review-id="new_test_issue"]').waitFor();
+  assert.match(await extra.locator('[data-review-id="new_test_issue"]').innerText(), /新登记的审核事项/);
+  await extra.close(); await reference.close();
   assert.equal(await page.locator('#numerical-check').getAttribute('open'), null);
   assert.deepEqual(errors, []);
   console.log('M3 browser acceptance passed: stages, layers, linked source, real decision/recompile, restore, and two corpus targets.');

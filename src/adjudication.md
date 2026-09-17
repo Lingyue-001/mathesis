@@ -9,6 +9,7 @@ templateEngineOverride: liquid
   <section class="search-hero">
     <h1 class="page-kicker">Procedure Workbench</h1>
     <p>Source ↔ Procedure structure ↔ Graph</p>
+    <p class="entry-card-note"><a href="{{ '/methodology/' | url }}">Methodology / Ontology Reference：术语、证据边界与禁止推断</a></p>
     <p class="entry-card-note">并置阅读原文与计算过程。点击原文、步骤或图节点，追踪它们之间的来源与数量关系。</p>
   </section>
   <section class="filter-box search-controls workbench-controls" aria-label="Procedure selection">
@@ -68,34 +69,34 @@ templateEngineOverride: liquid
       <p id="selected-anchor" class="entry-card-note" role="status">先从原文、结构或问题选择一个 source span。</p>
       <div class="workbench-action-grid">
         <label>Candidate <select id="candidate-select"></select></label>
-        <button id="select-candidate" type="button">Select candidate</button>
-        <button id="reject-candidate" type="button">Reject candidate</button>
+        <button id="select-candidate" data-action="select_candidate" type="button"></button>
+        <button id="reject-candidate" data-action="reject_candidate" type="button"></button>
         <label>Split at source character offset <input id="split-at" type="number" min="0"></label>
-        <button id="resegment" type="button">Re-segment</button>
-        <label>Known type <select id="manual-operation"><option value="load">Load</option><option value="name">Name</option></select></label>
-        <button id="assemble-known" type="button">Assemble known structure</button>
-        <label>Lexical role <select id="lexical-role"><option value="term">term</option><option value="numeral">numeral</option><option value="pronoun">pronoun</option><option value="function_word">function word</option><option value="preposition">preposition</option><option value="particle">particle</option><option value="operator_cue">operator cue</option></select></label>
-        <button id="apply-lexical-role" type="button">Apply local lexical role</button>
-        <button id="mark-unresolved" type="button">Keep unresolved</button>
-        <button id="request-extension" type="button">Request schema extension</button>
+        <button id="resegment" data-action="resegment" type="button"></button>
+        <label>Known type <select id="manual-operation"></select></label>
+        <button id="assemble-known" data-action="assemble_known_structure" type="button"></button>
+        <label>Lexical role <select id="lexical-role"></select></label>
+        <button id="apply-lexical-role" data-action="set_lexical_role" type="button"></button>
+        <button id="mark-unresolved" data-action="defer:unresolved" type="button"></button>
+        <button id="request-extension" data-action="defer:schema_extension_required" type="button"></button>
       </div>
       <details class="research-disclosure"><summary>Binding, scope, profile, and context</summary>
         <div class="workbench-action-grid">
           <label>Consumer definition <select id="binding-consumer"></select></label>
           <label>Producer definition <select id="binding-producer"></select></label>
           <label>Formal / input slot <input id="binding-formal" type="text"></label>
-          <label>Producer output port <input id="binding-port" type="text" value="result"></label>
-          <button id="apply-binding" type="button">Bind producer / port</button>
+          <label>Producer output port <select id="binding-port"></select></label>
+          <button id="apply-binding" data-action="bind_value" type="button"></button>
           <label>Procedure or stage <select id="scope-definition"></select></label>
           <label>Query base <select id="scope-base"></select></label>
-          <button id="apply-scope" type="button">Set local scope</button>
-          <label>Profile <select id="profile-select"><option value="">Choose existing profile</option><option value="ST_elapsed">ST elapsed</option><option value="SF_Liu_inclusive">SF Liu inclusive</option><option value="SF_completed_four">SF completed four</option><option value="instant_lunation">instant lunation</option><option value="civil_whole_day">civil whole day</option></select></label>
-          <button id="apply-profile" type="button">Select profile</button>
+          <button id="apply-scope" data-action="set_scope" type="button"></button>
+          <label>Profile <select id="profile-select"></select></label>
+          <button id="apply-profile" data-action="select_profile" type="button"></button>
           <label>Existing context <select id="context-select"></select></label>
-          <button id="attach-context" type="button">Attach context</button>
+          <button id="attach-context" data-action="attach_context" type="button"></button>
           <label>Root parameter <input id="parameter-name" type="text"></label>
-          <label>Unit <select id="parameter-unit"><option value="integer">integer</option><option value="year">year</option><option value="month">month</option><option value="day">day</option><option value="unknown">unknown</option></select></label>
-          <button id="declare-parameter" type="button">Declare parameter</button>
+          <label>Unit <select id="parameter-unit"></select></label>
+          <button id="declare-parameter" data-action="declare_parameter" type="button"></button>
         </div>
       </details>
       <h3 class="entry-card-title">Decision history</h3><div id="decision-history"></div>
@@ -108,9 +109,9 @@ templateEngineOverride: liquid
         <button id="execute" type="submit">Execute</button>
       </form>
       <p id="execution-status" role="status" aria-live="polite">尚未执行。Graph computed、source-attested 与 scholar-reconstructed 的比较均独立显示。</p>
-      <div id="execution-result" hidden><pre id="outputs"></pre><details><summary>Execution / unresolved</summary><pre id="execution-raw"></pre></details></div>
+      <div id="execution-result" hidden><pre id="outputs"></pre><details data-debug="true"><summary>调试／原始执行记录</summary><pre id="execution-raw"></pre></details></div>
     </details>
-    <details id="graph-json" class="research-disclosure">
+    <details id="graph-json" class="research-disclosure" data-debug="true">
       <summary>原始 IR / graph JSON</summary><pre id="graph-raw"></pre>
     </details>
   </div>

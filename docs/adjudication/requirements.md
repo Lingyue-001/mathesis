@@ -237,6 +237,19 @@ M2 core 的实际 test ID 与运行证据见 [m2-evidence.md](m2-evidence.md)；
 
 ## M3 actual implementation and evidence (2026-09-17)
 
+M3.2A language-layer evidence (2026-09-18): the single registry and view model
+are covered by `tests/workbench/test_presentation.py` (7 tests):
+`test_registry_exhaustiveness_and_entry_contract`,
+`test_semantic_goldens_and_must_not_say`,
+`test_real_outputs_and_presentation_do_not_change_structured_facts`,
+`test_actual_resegment_and_retract_states_have_language`,
+`test_actual_authored_candidate_does_not_claim_rule_or_human_trial`,
+`test_ontology_http_and_workbench_share_live_registry`, and
+`test_registry_extension_updates_reference_and_workbench_without_second_mapping`.
+The existing `adjudication-browser.mjs` verifies translated real §40 output and
+live Methodology/API synchronization. Details and limits are in `m3-evidence.md`.
+These are language/presentation checks; they do not upgrade any M4 requirement.
+
 | Requirement groups | Implemented module boundary | Actual test IDs | Status |
 |---|---|---|---|
 | D05.001–D05.006, H38 | `src/adjudication.md`, `src/js/procedure-workbench.js`, `src/js/ui/source-links.js`, `workbench/api.py` | `tests/workbench/adjudication-browser.mjs`; `tests/workbench/test_adjudication_workflow.py` | implemented: same page, source/structure/graph/question links, real reviewed actions and replay |
