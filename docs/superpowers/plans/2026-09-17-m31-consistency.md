@@ -32,9 +32,9 @@
 
 **Files:** existing syntax/context/program/scoped/compiler/projection modules; M3.1 tests.
 
-- [ ] Reproduce and repair reviewed syntax, context declaration, and MethodSlice snapshot divergence.
-- [ ] Derive program/context/method/control artifacts from reviewed syntax without parallel rebuild paths.
-- [ ] Enforce current-object identity through graph and projection.
+- [x] Reproduce and repair reviewed syntax, context declaration, and MethodSlice snapshot divergence.
+- [x] Derive program/context/method/control artifacts from reviewed syntax without parallel rebuild paths.
+- [x] Enforce current-object identity through graph and projection.
 
 ### Task 3 — Quantity semantic finalization
 

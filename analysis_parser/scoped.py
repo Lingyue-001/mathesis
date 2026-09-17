@@ -8,7 +8,7 @@ from .pipeline import Parser,UNITS,ROLE_ALIASES
 from .inputs import span,number,NUMBER
 from .lexical import tokenize_candidates
 from .construction_ir import propose_constructions
-from .context_compiler import compile_context, compile_documents
+from .context_compiler import compile_documents
 from .control_ir import resolve_control, following_region
 from .resources import PROFILES,SEXAGENARY,WINTER_LIFT,CONTEXTUAL_RATES,PLANETARY_RATES,resource_hashes
 from .quantity_semantics import check_transition
@@ -24,11 +24,12 @@ class ScopedParser(Parser):
         self.report.update(schema_version='3.0',adapter='typed_scoped_v3',tokens=[],construction_candidates=[],scope_graph=[],method_library=[],task_exports={},selected_profiles=self.selected)
         self.report['provenance']['resource_hashes']=resource_hashes()
         self.report['provenance']['selected_profiles']=self.profile
-        self.context_ir=compile_context(self.docs,packet.get('context_tables',[]),{'tradition':self.env.scope.get('tradition'),'selected_profiles':self.selected})
-        self.report['method_library']=self.context_ir['method_library'];self.report['context']=self.context_ir
         self.states={};self.task=None;self.task_division={};self.task_denominators={};self.snapshots={};self.cases=[];self.pending_concordance=None
         self.env.parser=self
-        self.program=compile_documents(self.docs,{})
+        self.program=compile_documents(self.docs,{}, context_tables=packet.get('context_tables',[]),
+                                       profile={'tradition':self.env.scope.get('tradition'),'selected_profiles':self.selected})
+        self.context_ir=self.program.context_ir
+        self.report['method_library']=self.context_ir['method_library'];self.report['context']=self.context_ir
         self.program.aliases={k:v for profile in self.profile.values() if profile.get('tradition',self.env.scope.get('tradition'))==self.env.scope.get('tradition') and profile.get('planet',self.env.scope.get('planet'))==self.env.scope.get('planet') for k,v in profile.get('aliases',{}).items()}
         self.program.aliases={**ROLE_ALIASES.get(self.env.scope.get('tradition'),{}),**self.program.aliases}
         self.program.parameter_uses={name for profile in self.profile.values() for name in profile.get('parameter_uses',[])}
@@ -41,9 +42,6 @@ class ScopedParser(Parser):
             for cs in self.program.syntaxes.values():
                 for i,c in enumerate(cs[:-1]):
                     if c['kind']=='divide_by' and c['slots']['divisor']['text']==frame['origin_month_parameter'] and cs[i+1]['kind']=='name':self.program.preferred_frame_inputs.add(cs[i+1]['slots']['label']['text'])
-        for method in self.report['method_library']:
-            method['definition_id']=method['id']
-            self.program.definitions.append({'id':method['id'],'kind':'MethodSlice','goal_surface':None,'domain_label':None,'parent':None,'source_role':'context','source_spans':method['source_spans'],'formal_inputs':method['formal_inputs'],'free_variables':dict(method['formal_inputs']),'defined_values':{},'return_ports':{name:{'body_value_id':vid} for name,vid in method['returns'].items()},'body':[n['id'] for n in method['body']]})
         self.report['program']=self.program.to_dict()
         self.report['ir_revision']='3.1-rescue'
         self.report['syntax']={key:[item for syntax in self.program.syntax_results.values() for item in getattr(syntax,key)] for key in ('nodes','roots','diagnostics','token_coverage')}

@@ -2,10 +2,10 @@
 from .lexical import tokenize_candidates
 from .construction_ir import propose_constructions, parse_syntax
 
-def compile_context(documents, tables, profile):
+def compile_context(documents, tables, profile, candidate_streams=None):
     context={'declarations':[],'equivalences':[],'method_library':[],'scope_graph':[],'denominator_declarations':[],'tables':tables,'profile':profile}
     for doc in documents:
-        candidates=propose_constructions(tokenize_candidates(doc,{}),doc)
+        candidates = candidate_streams[doc['doc_id']] if candidate_streams is not None else propose_constructions(tokenize_candidates(doc,{}),doc)
         # The same AST supplies parameter declarations in either source role.
         last=None
         for c in candidates:
@@ -141,19 +141,31 @@ def compile_cycle_slices(candidates,doc,profile):
         start=None;cycle=None
     return methods
 
-def compile_documents(documents, resources):
-    """Compile source-local procedure identities without evaluating definitions."""
+def _method_definitions(methods):
+    return [{'id': method['id'], 'kind': 'MethodSlice', 'goal_surface': None,
+             'domain_label': None, 'parent': None, 'source_role': 'context',
+             'source_spans': method['source_spans'], 'formal_inputs': method['formal_inputs'],
+             'free_variables': dict(method['formal_inputs']), 'defined_values': {},
+             'return_ports': {name: {'body_value_id': value} for name, value in method['returns'].items()},
+             'body': [node['id'] for node in method['body']]}
+            for method in methods]
+
+
+def build_documents_from_candidates(documents, candidate_streams, syntax_results, resources,
+                                    context_tables=(), profile=None):
+    """Build context, methods and Program IR from one already-selected syntax view."""
     from .program_ir import ProgramIndex, compile_frames
     from .scoped import TASKS
-    index=ProgramIndex()
+    index = ProgramIndex()
     for doc in documents:
-        syntax=parse_syntax(tokenize_candidates(doc,resources.get('lexicon',{})),doc)
-        cs=syntax.candidates()
-        index.syntax_results[doc['doc_id']]=syntax
-        index.diagnostics.extend(dict(d,doc_id=doc['doc_id']) for d in syntax.diagnostics)
-        compile_frames(doc,cs,index,TASKS)
-        index.syntaxes[doc['doc_id']]=cs
-    methods=compile_context(documents,[],{}).get('method_library',[])
+        syntax = syntax_results[doc['doc_id']]
+        candidates = candidate_streams[doc['doc_id']]
+        index.syntax_results[doc['doc_id']] = syntax
+        index.diagnostics.extend(dict(d, doc_id=doc['doc_id']) for d in syntax.diagnostics)
+        compile_frames(doc, candidates, index, TASKS)
+        index.syntaxes[doc['doc_id']] = candidates
+    context = compile_context(documents, list(context_tables), profile or {}, index.syntaxes)
+    methods = context['method_library']
     for stream in index.syntaxes.values():
         for c in stream:
             if c['kind']=='method_value_reference':
@@ -170,7 +182,23 @@ def compile_documents(documents, resources):
         used=set().union(*(set(d['free_variables']) for d in index.definitions if d['id']!=definition['id']))
         returned=({next(reversed(names))} if names else set()) | (set(names)&used)
         definition['return_ports']={n:dict(r) for n,r in names.items() if n in returned}
+    for method in methods:
+        method['definition_id'] = method['id']
+    index.definitions.extend(_method_definitions(methods))
+    index.context_ir = context
     return index
+
+
+def compile_documents(documents, resources, *, context_tables=(), profile=None):
+    """Compile source-local procedure identities without evaluating definitions."""
+    syntax_results = {}
+    candidate_streams = {}
+    for doc in documents:
+        syntax = parse_syntax(tokenize_candidates(doc, resources.get('lexicon', {})), doc)
+        syntax_results[doc['doc_id']] = syntax
+        candidate_streams[doc['doc_id']] = syntax.candidates()
+    return build_documents_from_candidates(documents, candidate_streams, syntax_results, resources,
+                                           context_tables=context_tables, profile=profile)
 
 
 def compile_schedule_slices(candidates, doc, profile):

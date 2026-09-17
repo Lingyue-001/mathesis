@@ -3,11 +3,12 @@ import copy
 import hashlib
 import json
 
-from analysis_parser.context_compiler import compile_documents
+from analysis_parser.context_compiler import build_documents_from_candidates
 from analysis_parser.construction_ir import parse_syntax
 from analysis_parser.lexical import tokenize_candidates
-from analysis_parser.program_ir import link_entry, static_interface
+from analysis_parser.program_ir import link_entry
 from analysis_parser.scoped import ScopedParser, lower_linked
+from analysis_parser.syntax_ir import syntax_from_candidates
 
 from .anchors import anchor_key, anchor_location, overlaps, validate_anchor, validate_semantic_output_address
 from .coverage import build_coverage_ledger
@@ -184,26 +185,18 @@ def _rebuild_program(parser, effective, packet, invalid_manual=None):
         streams[document_id].sort(key=_candidate_sort_key)
     for document_id in streams:
         streams[document_id].sort(key=_candidate_sort_key)
-    rebuilt = compile_documents([], {})
-    rebuilt.syntaxes = streams
-    rebuilt.syntax_results = dict(parser.program.syntax_results)
-    rebuilt.diagnostics = list(parser.program.diagnostics)
-    from analysis_parser.program_ir import compile_frames
-    from analysis_parser.scoped import TASKS
-    for doc_id, candidates in streams.items():
-        compile_frames(docs[doc_id], candidates, rebuilt, TASKS)
-    for definition in rebuilt.definitions:
-        body = [candidate for stream in streams.values() for candidate in stream
-                if candidate.get('definition_id') == definition['id']]
-        names, uses = static_interface(body)
-        definition['defined_values'] = names
-        definition['free_variables'] = uses
-        definition['formal_inputs'] = dict(uses)
-    for definition in rebuilt.definitions:
-        names = definition['defined_values']
-        used = set().union(*(set(row['free_variables']) for row in rebuilt.definitions if row['id'] != definition['id']))
-        returned = ({next(reversed(names))} if names else set()) | (set(names) & used)
-        definition['return_ports'] = {name: dict(ref) for name, ref in names.items() if name in returned}
+    changed_documents = {row['target']['doc_id'] for row in effective.get('segments', [])}
+    changed_documents.update(row['target']['doc_id'] for row in effective.get('manual_structures', []))
+    syntax_results = {
+        doc_id: syntax_from_candidates(candidates) if doc_id in changed_documents
+        else copy.deepcopy(parser.program.syntax_results[doc_id])
+        for doc_id, candidates in streams.items()
+    }
+    rebuilt = build_documents_from_candidates(
+        parser.docs, streams, syntax_results, {},
+        context_tables=packet.get('context_tables', []),
+        profile={'tradition': parser.env.scope.get('tradition'), 'selected_profiles': parser.selected},
+    )
     # Scope decisions modify Program IR frames before linking.  They use source
     # anchors, never saved runtime graph ids.
     for payload in effective.get('scopes', {}).values():
@@ -233,9 +226,18 @@ def _rebuild_program(parser, effective, packet, invalid_manual=None):
     for attribute in ('aliases', 'parameter_uses', 'initial_frame', 'interval_parameters', 'preferred_frame_inputs'):
         setattr(rebuilt, attribute, copy.deepcopy(getattr(parser.program, attribute, {} if attribute == 'aliases' else set())))
     parser.program = rebuilt
+    parser.context_ir = rebuilt.context_ir
     parser.all_candidates = streams
+    from analysis_parser.control_ir import resolve_control
+    stops = [profile['stop'] for profile in parser.profile.values() if 'stop' in profile]
+    parser.loop_controls = {doc_id: resolve_control(candidates, {'stop': stops[0] if len(stops) == 1 else None}, {})
+                            for doc_id, candidates in streams.items()}
     parser.report['construction_candidates'] = [candidate for stream in streams.values() for candidate in stream]
     parser.report['program'] = rebuilt.to_dict()
+    parser.report['context'] = rebuilt.context_ir
+    parser.report['method_library'] = rebuilt.context_ir['method_library']
+    parser.report['syntax'] = {key: [item for syntax in rebuilt.syntax_results.values() for item in getattr(syntax, key)]
+                               for key in ('nodes', 'roots', 'diagnostics', 'token_coverage')}
     return rebuilt
 
 
