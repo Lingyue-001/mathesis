@@ -8,18 +8,41 @@ templateEngineOverride: liquid
 <div class="search-page procedure-workbench">
   <section class="search-hero">
     <h1 class="page-kicker">Procedure Workbench</h1>
-    <p>Source ↔ Procedure structure ↔ Graph</p>
-    <p class="entry-card-note"><a href="{{ '/methodology/' | url }}">Methodology / Ontology Reference：术语、证据边界与禁止推断</a></p>
-    <p class="entry-card-note">并置阅读原文与计算过程。点击原文、步骤或图节点，追踪它们之间的来源与数量关系。</p>
+    <p class="entry-card-note">原文 → 操作 → 数量关系 · 点击片段或图中对象查看关联。 <a href="{{ '/methodology/' | url }}">Methodology</a></p>
   </section>
   <section class="filter-box search-controls workbench-controls" aria-label="Procedure selection">
     <label for="procedure">Procedure</label>
     <select id="procedure" disabled></select>
     <button id="analyze" type="button" disabled>重新分析结构</button>
-    <p id="scope" class="entry-card-note"></p>
   </section>
   <p id="status" role="status" aria-live="polite">正在读取 procedure…</p>
   <div id="analysis" hidden>
+    <div id="presentation-view">
+    <div class="workbench-columns">
+      <section id="source-structure" class="research-panel" aria-labelledby="source-title">
+        <h2 id="source-title" class="section-title is-small">Source / Procedure structure</h2>
+        <div id="source"><div id="structure" class="research-source-stack" aria-label="Annotated source and procedure structure"></div></div>
+      </section>
+      <section class="research-panel" aria-labelledby="graph-title">
+        <h2 id="graph-title" class="section-title is-small">Typed graph</h2>
+        <p id="graph-summary" class="entry-card-note"></p>
+        <div class="research-legend" aria-label="Graph legend" title="箭头表示数量引用；栏位不代表时间顺序，末端输出不等于已审定结果。">
+          <span data-kind="parameter-input">参数／输入</span><span data-kind="value">量</span><span data-kind="operation">操作</span><span data-kind="result">末端输出</span><span data-kind="unresolved">待审</span>
+        </div>
+        <div id="graph" class="research-scroll"></div>
+        <p id="relation-summary" class="research-relation" aria-live="polite">选择原文或操作，查看输入量 → 操作 → 输出量。</p>
+      </section>
+    </div>
+    <section class="research-panel" aria-labelledby="review-summary-title">
+      <h2 id="review-summary-title" class="section-title is-small">待审定 / Unresolved</h2>
+      <div id="review-summary" class="research-annotations"></div>
+    </section>
+    </div>
+    <details id="advanced-details" class="research-disclosure">
+    <summary>Advanced / Technical details</summary>
+    <p id="scope" class="entry-card-note"></p>
+    <label for="annotation-layer">Annotation layer</label>
+    <select id="annotation-layer"><option value="all">All layers</option><option value="L0">L0 source / reading</option><option value="L1">L1 procedure / stage</option><option value="L2">L2 construction / control</option><option value="L3">L3 term / quantity</option></select>
     <section class="filter-box" aria-labelledby="processing-title">
       <h2 id="processing-title" class="section-title is-small">System processing flow</h2>
       <p class="entry-card-note">这是分析系统的实际产物记录；它不同于原文内部的算法步骤。</p>
@@ -34,25 +57,6 @@ templateEngineOverride: liquid
       <button id="export-session" type="button">Export session</button>
       <label class="object-select">Import session <input id="import-session" type="file" accept="application/json"></label>
     </section>
-    <div class="workbench-columns">
-      <section class="research-panel" aria-labelledby="source-title">
-        <h2 id="source-title" class="section-title is-small">Source / Context</h2>
-        <label for="annotation-layer">Annotation layer</label>
-        <select id="annotation-layer"><option value="all">All layers</option><option value="L0">L0 source / reading</option><option value="L1">L1 procedure / stage</option><option value="L2">L2 construction / control</option><option value="L3">L3 term / quantity</option></select>
-        <p class="entry-card-note">高亮按原文字符范围定位；相同词形不自动合并。点击范围可作为当前审核目标。</p>
-        <div id="source" class="research-scroll"></div>
-      </section>
-      <section class="research-panel" aria-labelledby="structure-title">
-        <h2 id="structure-title" class="section-title is-small">Procedure structure</h2>
-        <p class="entry-card-note">Procedure → query / stage → 按原文顺序排列的操作。</p>
-        <div id="structure" class="research-scroll"></div>
-      </section>
-      <section class="research-panel" aria-labelledby="graph-title">
-        <h2 id="graph-title" class="section-title is-small">Typed graph</h2>
-        <p id="graph-summary" class="entry-card-note"></p>
-        <div id="graph" class="research-scroll"></div>
-      </section>
-    </div>
     <section class="filter-box" aria-labelledby="selection-title">
       <h2 id="selection-title" class="section-title is-small">Selection / typed relationships</h2>
       <p id="selection-status" role="status" aria-live="polite">选择一个步骤，查看 quantity roles、端口、依赖、unit / scale 与 scope / control。</p>
@@ -113,6 +117,7 @@ templateEngineOverride: liquid
     </details>
     <details id="graph-json" class="research-disclosure" data-debug="true">
       <summary>原始 IR / graph JSON</summary><pre id="graph-raw"></pre>
+    </details>
     </details>
   </div>
 </div>

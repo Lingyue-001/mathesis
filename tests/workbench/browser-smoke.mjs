@@ -6,7 +6,7 @@ import { chromium } from 'playwright';
 const origin = process.env.WORKBENCH_URL || 'http://127.0.0.1:8789';
 const browser = await chromium.launch({ headless: true });
 try {
-  const page = await browser.newPage({ viewport: { width: 1600, height: 1100 } });
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   const errors = [];
   const requests = [];
   page.on('pageerror', error => errors.push(error.message));
@@ -14,6 +14,48 @@ try {
   await page.goto(`${origin}/adjudication/`);
   assert.equal(await page.locator('#homeSideNav a[href="/adjudication/"]').count(), 1, 'Must be a website page with shared navigation');
   await page.waitForFunction(() => document.querySelectorAll('[data-step-id]').length > 0);
+  for (const viewport of [{ width: 1440, height: 900 }, { width: 1366, height: 768 }]) {
+  await page.setViewportSize(viewport);
+  await page.evaluate(() => scrollTo(0, 0));
+  for (const procedure of ['sifen-3-5', 'sifen-3-7-alternative']) {
+    await page.selectOption('#procedure', procedure);
+    await page.waitForFunction(() => !document.querySelector('#procedure').disabled);
+    assert.equal(await page.locator('#source-structure #source').count(), 1, 'source and annotated structure share one panel');
+    assert.equal(await page.locator('#source-structure #structure').count(), 1);
+    assert.equal(await page.locator('#advanced-details').getAttribute('open'), null);
+    assert.equal(await page.locator('#branch-select').isVisible(), false);
+    assert.equal(await page.locator('#apply-lexical-role').isVisible(), false);
+    await mkdir('.cache/workbench', { recursive: true });
+    await page.screenshot({ path: `.cache/workbench/presentation-${procedure}-${viewport.width}.png` });
+    for (const id of ['source', 'structure', 'graph', 'review-summary']) {
+      const box = await page.locator(`#${id}`).boundingBox();
+      assert.ok(box && box.y >= 0 && box.y + box.height <= viewport.height, `${procedure}: ${id} fits ${viewport.width}×${viewport.height}: ${JSON.stringify(box)}`);
+    }
+    const graph = JSON.parse(await page.locator('#graph-raw').textContent());
+    assert.equal(await page.locator('#graph [data-value-id]').count(), graph.value_instances.length, 'quantity objects are represented, not only events');
+    assert.equal(await page.locator('#graph [data-node-id]').count(), graph.events.length);
+    for (const kind of ['parameter-input', 'operation', 'result', 'unresolved']) assert.ok(await page.locator(`#graph [data-kind="${kind}"]`).count(), `${kind} has a distinct presentation`);
+    if (procedure === 'sifen-3-5') assert.ok(await page.locator('#graph [data-kind="value"]').count());
+    const viewBox = await page.locator('#graph svg').getAttribute('viewBox');
+    const dimensions = viewBox.split(' ').map(Number);
+    assert.ok(dimensions[2] > dimensions[3], 'graph is horizontal and compact');
+    assert.ok(await page.locator('#review-summary button').count());
+    assert.doesNotMatch(await page.locator('#presentation-view').innerText(), /\b[ev]\d+\b|G_[A-Z_0-9]+|unresolved_parser/);
+    if (procedure === 'sifen-3-7-alternative') {
+      const unresolved = page.locator('#source button[data-doc-id="sifen:40"][data-start="9"]');
+      assert.equal(await unresolved.getAttribute('data-unresolved'), 'true');
+      await unresolved.click();
+      assert.ok(await page.locator('#structure [data-selected="true"]').count());
+      const multiplier = page.locator('#graph [data-node-id]', { hasText: '相乘' });
+      await multiplier.click();
+      assert.match(await page.locator('#relation-summary').innerText(), /大周.*年/);
+      assert.equal(await page.locator('#source button[data-doc-id="sifen:40"][data-start="3"]').getAttribute('data-selected'), 'true');
+    }
+  }
+  }
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.selectOption('#procedure', 'sifen-3-5');
+  await page.waitForFunction(() => !document.querySelector('#procedure').disabled);
   assert.equal(requests.filter(url => url.endsWith('/api/adjudication/execute')).length, 0, 'Analysis must not execute');
   assert.equal(await page.locator('#numerical-check').getAttribute('open'), null);
   assert.equal(await page.locator('#execute-form').isVisible(), false);
@@ -25,6 +67,7 @@ try {
   await page.locator('[data-step-id="sifen:38:ast12"] button').first().click();
   assert.equal(await page.locator('#source button[data-start="18"]').getAttribute('data-selected'), 'true');
   assert.equal(await page.locator('[data-node-id="e8"]').getAttribute('data-selected'), 'true');
+  await page.locator('#advanced-details > summary').click();
   assert.match(await page.locator('#selection-detail').innerText(), /余数/);
   assert.match(await page.locator('#selection-detail').innerText(), /月分量/);
   await page.locator('[data-node-id="e10"]').click();

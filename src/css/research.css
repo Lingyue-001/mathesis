@@ -17,15 +17,44 @@
 .research-table-wrap { overflow-x: auto; }
 .research-table { width: 100%; min-width: 44rem; border-collapse: collapse; font-size: 0.87rem; text-align: left; }
 .research-table th, .research-table td { padding: 0.45rem; border-bottom: 1px solid #ded4c9; vertical-align: top; overflow-wrap: anywhere; }
-.research-graph { display: block; width: 100%; min-width: 240px; }
+.research-graph { display: block; width: 100%; min-width: 640px; }
 .research-graph .graph-edge { stroke: #b8a48d; fill: none; stroke-width: 1.2; }
 .research-graph .graph-edge[data-selected="true"] { stroke: #86582b; stroke-width: 2.5; }
 .research-graph marker path { fill: #86582b; }
 .research-graph [role="button"] { cursor: pointer; }
 .research-graph rect { fill: #fffdf9; stroke: #ded4c9; rx: 8px; }
 .research-graph [data-selected="true"] rect { fill: #f4eadc; stroke: #86582b; stroke-width: 2; }
-.research-graph text { fill: #3c2f22; font-size: 13px; }
-.research-graph .graph-node-id { font-size: 11px; fill: #6a5742; }
+.research-graph text { fill: #3c2f22; font-size: 16px; }
+/* Compact, reusable source annotations and typed relation lanes. */
+.research-source-stack .entry-card { padding: var(--source-card-padding, 0.65rem); margin-block: 0.4rem; }
+.research-source-stack .entry-card-title { font-size: 0.78rem; margin-bottom: 0.15rem; }
+.research-source-stack .source-text { margin: 0; line-height: 1.75; }
+.source-span[data-selected="true"] { outline: 2px solid #86582b; outline-offset: 1px; }
+.source-span[data-unresolved="true"] { border-bottom: 2px dotted #9b592f; }
+.research-annotations { display: flex; flex-wrap: wrap; align-items: start; gap: 0.3rem; font-size: 0.8rem; line-height: 1.5; }
+.research-annotations > section { flex-basis: 100%; }
+.research-object.research-annotations > .research-tree { flex-basis: 100%; }
+.research-object.research-annotations > .object-select { border: 0; }
+.research-context { font-size: 0.85rem; margin-block: 0.5rem; }
+.research-context > summary { cursor: pointer; }
+.research-annotations .research-tree { display: flex; flex-wrap: wrap; gap: 0.3rem; padding-left: 0.6rem; }
+.research-annotations .entry-card { padding: 0.15rem 0.4rem; margin: 0; border-radius: 5px; }
+.research-annotations .object-select { padding: 0.15rem 0.25rem; }
+.research-annotations > .object-select { border: 1px solid #ded4c9; border-radius: 5px; }
+.research-legend { display: flex; flex-wrap: wrap; gap: 0.8rem; font-size: 0.72rem; margin-block: 0.3rem; }
+.research-legend span::before { content: ''; display: inline-block; width: 0.7em; height: 0.7em; margin-right: 0.3em; border: 1px solid #948575; background: var(--object-fill, #fffdf9); }
+[data-kind="parameter-input"] { --object-fill: #f5e6ca; }
+[data-kind="value"] { --object-fill: #edf3f6; }
+[data-kind="operation"] { --object-fill: #e0edf2; }
+[data-kind="result"] { --object-fill: #e5eedf; }
+[data-kind="unresolved"] { --object-fill: #faeee1; }
+.research-graph [data-kind] rect { fill: var(--object-fill); }
+.research-graph [data-kind="result"] rect { stroke-width: 2; }
+.research-graph [data-unresolved="true"] rect { stroke: #9b592f; stroke-dasharray: 4 3; }
+.research-graph [data-selected="true"] rect { stroke: #86582b; stroke-width: 3; }
+.research-graph .graph-node-note { font-size: 12px; fill: #6a5742; }
+.research-annotations [data-kind="unresolved"] { background: var(--object-fill); border-style: dashed; border-color: #b28a61; }
+.research-relation { font-size: 0.87rem; line-height: 1.6; margin-block: 0.5rem; }
 @media (max-width: 600px) {
   .research-properties { grid-template-columns: minmax(0, 1fr); }
   .research-properties dd { margin-bottom: 0.7rem; }

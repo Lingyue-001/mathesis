@@ -16,14 +16,21 @@ export function overlaps(a, b) {
   return a.doc_id === b.doc_id && a.reading_id === b.reading_id && a.start < b.end && b.start < a.end;
 }
 
-export function renderSource(container, documents, steps, onSelect, evidence = [], onAnchor = () => {}) {
+export function renderSource(container, documents, steps, onSelect, evidence = [], onAnchor = () => {}, presentation = {}) {
   container.replaceChildren();
+  const contexts = document.createElement('details');
+  contexts.className = 'research-context';
+  const contextSummary = document.createElement('summary');
+  contextSummary.textContent = `背景材料 · ${documents.filter(doc => doc.category === 'context_documents').length}`;
+  contexts.append(contextSummary);
   for (const doc of documents) {
     const card = document.createElement('article');
     card.className = 'entry-card';
+    card.dataset.sourceDoc = doc.doc_id;
     const heading = document.createElement('h3');
     heading.className = 'entry-card-title';
-    heading.textContent = `${doc.category === 'context_documents' ? 'Context' : 'Source'} · ${doc.source?.path || doc.doc_id}${doc.source?.section ? ` · §${doc.source.section}` : ''}`;
+    heading.textContent = `${doc.category === 'context_documents' ? '背景' : '原文'}${doc.source?.section ? ` · §${doc.source.section}` : ''}`;
+    heading.title = `${doc.source?.path || doc.doc_id} · ${doc.reading_id}`;
     const body = document.createElement('p');
     body.className = 'source-text pattern-source-text';
     const spans = [...steps.flatMap(step => step.source_spans
@@ -44,9 +51,17 @@ export function renderSource(container, documents, steps, onSelect, evidence = [
       button.dataset.start = segment.start;
       button.dataset.end = segment.end;
       button.setAttribute('aria-pressed', 'false');
-      button.title = `${doc.doc_id} [${segment.start}, ${segment.end})`;
-      // Existing stateless Pattern Lab utility escapes scholarly text; no scoring.
-      button.innerHTML = highlightedText(segment.text, []);
+      const address = { doc_id: doc.doc_id, reading_id: doc.reading_id, start: segment.start, end: segment.end };
+      const questions = (presentation.questions || []).filter(q => q.source_anchors?.some(span => overlaps(span, address)));
+      const labels = [...new Set(segment.spans.map(s => presentation.candidates?.find(c => c.id === s.step_id)?.label || presentation.steps?.[s.step_id]?.label).filter(Boolean))];
+      button.dataset.unresolved = String(questions.length > 0);
+      button.title = [...labels, ...new Set(questions.map(q => q.label))].join(' · ');
+      // Reuse Pattern Lab's markup/color utility with a fixed visual intensity,
+      // not similarity scoring. Only local markup uses UTF-16 lengths; source
+      // addresses remain code points. Trim formatter whitespace outside <mark>.
+      button.innerHTML = labels.length ? highlightedText(segment.text, [{
+        start: 0, end: segment.text.length, family: 'operation_skeleton', value: 0.08, title: labels.join(' · '),
+      }]).trim() : highlightedText(segment.text, []);
       button.addEventListener('click', () => {
         const stepIds = [...new Set(segment.spans.map(s => s.step_id).filter(Boolean))];
         if (stepIds.length) onSelect(stepIds);
@@ -55,8 +70,10 @@ export function renderSource(container, documents, steps, onSelect, evidence = [
       body.append(button);
     }
     card.append(heading, body);
-    container.append(card);
+    if (doc.category === 'context_documents') contexts.append(card);
+    else container.append(card);
   }
+  if (contexts.children.length > 1) container.append(contexts);
 }
 
 export function markSourceSelection(container, spans) {
@@ -92,6 +109,9 @@ export function selectionAnchor(container) {
 
 export function revealInPanel(container, target) {
   if (!target) return;
+  for (let ancestor = target.parentElement; ancestor && container.contains(ancestor); ancestor = ancestor.parentElement) {
+    if (ancestor.tagName === 'DETAILS') ancestor.open = true;
+  }
   const box = container.getBoundingClientRect();
   const item = target.getBoundingClientRect();
   if (item.top < box.top || item.bottom > box.bottom) container.scrollTop += item.top - box.top - 10;

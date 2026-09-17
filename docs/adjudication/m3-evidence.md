@@ -170,3 +170,48 @@ console, with a human-readable failure message in the normal view. Existing stal
 sessions remain read-only until separately revalidated; language changes do not
 migrate them. Local access: `http://127.0.0.1:8792/adjudication/` and
 `http://127.0.0.1:8792/methodology/`. No push or M4 work.
+
+## Presentation View and method implementation map (2026-09-18)
+
+Baseline `17f48a3`. Default display now combines each source document and its
+procedure/construction annotations in one card, using the shared Pattern Lab
+`highlightedText` markup and source-address linking. Background documents can be
+expanded. The graph uses three compact lanes for source quantities, operations
+and derived quantities; arrows remain actual producer/value/consumer relations,
+not chronology or inferred control flow. Parameter/input, value, operation and
+terminal output have distinct styling; unknown quantities and anchored review
+questions remain visible. Terminal output does not mean approved or complete.
+Every event and quantity remains addressable; source events with a single output
+share a glyph with that quantity. Technical IDs stay in DOM addresses/debug.
+
+Session/branch tools, full review evidence and decisions, processing stages,
+numerical checks and raw JSON are inside the initially closed Advanced section.
+Its open state survives recompilation within the page. Presentation changes
+neither Python production files nor the ontology; no backend logic, registry or
+primitive family was added. Shared `filter-box` padding uses an optional page
+variable with its original default, preserving other website pages.
+
+`browser-smoke.mjs` first failed on the old separate-panel layout. It now checks
+both real targets at **1440×900 and 1366×768**: Source/Structure, the entire graph
+container and unresolved summary fit the initial viewport; all actual events and
+values appear, graph types differ, Advanced controls start hidden, and the §40
+multiply node links to `以大周乘年 [3,8)` with 大周／年 in its quantity relation.
+§40's known `[9,14)` unresolved span remains marked. Existing keyboard,
+execution, mobile overflow and Pattern Lab navigation assertions still pass.
+On narrow screens the graph scrolls horizontally rather than shrinking text
+into illegibility; the desktop first-screen guarantee is not a mobile claim.
+
+`adjudication-browser.mjs` explicitly opens Advanced for existing decision,
+retraction, branching, saved-session and stale-reference checks. Its additional
+DOM selection test selects through the shared `<mark>` markup across an astral
+character, combining mark, newline and repeated text; rendered source content
+and Unicode code-point anchors stay exact. It also retains the previous
+multi-event/multi-span and reference-page tests. Actors remain scripted.
+
+Verification: both browser suites, Workbench 27, adjudication 71, parser 61/94,
+rescue 78 (engineering 35 included), reconciliation 5, CText 4, site build and
+whitespace checks passed. Existing rescue ResourceWarning is unchanged.
+Viewport screenshots are regenerable under `.cache/workbench/presentation-*`.
+[METHOD_IMPLEMENTATION_MAP.md](../METHOD_IMPLEMENTATION_MAP.md) records the
+actual module boundaries and freshly inspected `ast4 → e6 → v3/v5/v6` example,
+including its unresolved input/quantity semantics and `partial` export status.

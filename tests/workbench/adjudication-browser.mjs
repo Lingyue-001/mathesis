@@ -18,9 +18,26 @@ try {
     return sourceSegments('𠀀a\u0301\n甲甲', [{ start: 0, end: 3 }, { start: 4, end: 6 }, { start: 5, end: 6 }]);
   });
   assert.deepEqual(coordinateSegments.map(row => [row.start, row.end, row.text, row.spans.length]), [[0, 3, '𠀀á', 1], [3, 4, '\n', 0], [4, 5, '甲', 1], [5, 6, '甲', 2]], 'astral, combining, newline, repeated text and multi-event spans retain code-point coordinates');
+  const annotatedSelection = await page.evaluate(async () => {
+    const { renderSource, selectionAnchor } = await import('/js/ui/source-links.js');
+    const text = '𠀀a\u0301\n甲甲', doc = { doc_id: 'coordinate-probe', reading_id: 'reading-1', text, category: 'primary_documents' };
+    const spans = [[0, 3], [4, 6], [5, 6]].map(([start, end]) => ({ doc_id: doc.doc_id, reading_id: doc.reading_id, start, end }));
+    const steps = spans.map((span, i) => ({ id: `probe-${i}`, source_spans: [span] }));
+    const host = document.createElement('div'); document.body.append(host);
+    renderSource(host, [doc], steps, () => {}, [], () => {}, { steps: Object.fromEntries(steps.map(s => [s.id, { label: '结构标注' }])) });
+    const actualText = host.querySelector('.source-text').textContent;
+    const marks = host.querySelectorAll('.source-span mark');
+    const range = document.createRange(); range.setStart(marks[0].firstChild, 2); range.setEnd(marks[marks.length - 1].firstChild, 1);
+    const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
+    const anchor = selectionAnchor(host); selection.removeAllRanges(); host.remove();
+    return { actualText, anchor };
+  });
+  assert.equal(annotatedSelection.actualText, '𠀀á\n甲甲', 'shared annotation markup must not insert characters into source');
+  assert.deepEqual(annotatedSelection.anchor, { doc_id: 'coordinate-probe', reading_id: 'reading-1', start: 1, end: 6 }, 'selection inside shared mark markup remains in source code points');
   const source = page.locator('#source button[data-doc-id="sifen:38"][data-start="0"]');
   await source.click();
   assert.equal(await page.locator('#selected-anchor').getAttribute('data-doc-id'), 'sifen:38');
+  await page.locator('#advanced-details > summary').click();
   await page.locator('#lexical-role').selectOption('term');
   const response = page.waitForResponse(r => r.url() === `${origin}/api/adjudication/decision`);
   await page.locator('#apply-lexical-role').click();
@@ -28,6 +45,7 @@ try {
   await page.locator('#decision-history [data-decision-action="set_lexical_role"]').waitFor();
   const before = await page.locator('#decision-history').innerText();
   await page.reload();
+  await page.locator('#advanced-details > summary').click();
   await page.locator('#decision-history [data-decision-action="set_lexical_role"]').waitFor();
   assert.equal(await page.locator('#decision-history').innerText(), before, 'session restores after browser reload');
   const persistedSession = await page.evaluate(() => localStorage.getItem('mathesis.adjudication-session.v1.sifen-3-5'));
@@ -67,6 +85,7 @@ try {
   await page.waitForFunction(() => document.querySelector('#scope').textContent.includes('一术'));
   assert.equal(await page.locator('#review-queue [data-review-id]').count() > 0, true, 'same view renders the real hole target');
   async function assertRealHoleVisible() {
+    if (await page.locator('#advanced-details').getAttribute('open') === null) await page.locator('#advanced-details > summary').click();
     for (const id of ['source', 'structure', 'graph']) {
       assert.equal(await page.locator(`#${id}`).isVisible(), true, `${id} is actually visible for §40`);
       assert.ok((await page.locator(`#${id}`).innerText()).trim(), `${id} has rendered content`);
@@ -144,6 +163,8 @@ try {
     await route.fulfill({ json: body });
   });
   await extra.goto(`${origin}/adjudication/?actor=scripted_browser`);
+  await extra.locator('#review-summary button', { hasText: extension.label }).waitFor();
+  await extra.locator('#advanced-details > summary').click();
   await extra.locator('[data-review-id="new_test_issue"]').waitFor();
   assert.match(await extra.locator('[data-review-id="new_test_issue"]').innerText(), /新登记的审核事项/);
   await extra.close(); await reference.close();

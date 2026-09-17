@@ -12,8 +12,8 @@ export function action(text, onClick) {
   return button;
 }
 
-export function renderStructure(container, projection, onStep, onFrame) {
-  container.replaceChildren();
+export function renderStructure(container, projection, onStep, onFrame, annotateSources = false) {
+  if (!annotateSources) container.replaceChildren();
   const frames = new Map(projection.frames.map(f => [f.id, f]));
   const steps = new Map(projection.steps.map(s => [s.id, s]));
   const shown = new Set();
@@ -22,18 +22,19 @@ export function renderStructure(container, projection, onStep, onFrame) {
     const card = element('li', 'entry-card research-object');
     card.dataset.stepId = step.id;
     const text = projection.presentation.steps[step.id];
-    card.append(action(`${order}. ${text.label} — ${step.surface}`, () => onStep([step.id])));
-    card.append(element('p', 'entry-card-note', `${text.events} · ${text.issues}`));
+    const construction = projection.presentation.candidates.find(c => c.id === step.id);
+    const button = action(`${order}. ${step.surface} · ${construction?.label || text.label}`, () => onStep([step.id]));
+    button.title = `${text.events} · ${text.issues}`;
+    card.append(button);
     return card;
   }
   function frameNode(frame, ancestors = new Set()) {
     if (ancestors.has(frame.id)) return element('p', 'entry-card-note', '范围存在循环引用');
     const next = new Set([...ancestors, frame.id]);
-    const box = element('section', 'research-object');
+    const box = element('section', 'research-object research-annotations');
     box.dataset.frameId = frame.id;
     const text = projection.presentation.frames[frame.id];
     box.append(action(text.label, () => onFrame(frame.id)));
-    box.append(element('p', 'entry-card-note', `${text.source_role} · ${text.base}`));
     const list = element('ol', 'research-tree');
     let order = 0;
     for (const item of frame.body) {
@@ -44,11 +45,12 @@ export function renderStructure(container, projection, onStep, onFrame) {
     box.append(list);
     return box;
   }
-  for (const frame of projection.frames.filter(f => !f.parent || !frames.has(f.parent))) container.append(frameNode(frame));
+  const owner = spans => annotateSources ? [...container.querySelectorAll('[data-source-doc]')].find(card => spans?.some(span => span.doc_id === card.dataset.sourceDoc)) || container : container;
+  for (const frame of projection.frames.filter(f => !f.parent || !frames.has(f.parent))) owner(frame.source_spans).append(frameNode(frame));
   const orphaned = projection.steps.filter(s => !shown.has(s.id));
   if (orphaned.length) {
     container.append(element('h3', 'entry-card-title', '未归入 procedure 的语法节点'));
-    const list = element('ol', 'research-tree');
+    const list = element('ol', 'research-tree research-annotations');
     orphaned.forEach((step, i) => list.append(stepNode(step, i + 1)));
     container.append(list);
   }
@@ -61,36 +63,82 @@ function svgElement(tag, attributes = {}, text) {
   return node;
 }
 
-export function renderGraph(container, projection, onNode) {
+export function renderGraph(container, projection, onNode, onQuestion = () => {}) {
   container.replaceChildren();
   const nodes = projection.nodes;
-  const svg = svgElement('svg', { class: 'research-graph', viewBox: `0 0 330 ${Math.max(100, nodes.length * 80 + 20)}`, role: 'group', 'aria-label': 'Event dependency graph' });
+  // Three visual lanes use recorded producers/ports, not a second evaluator.
+  // Source events share a glyph with their output quantity; every event/value
+  // retains its own address. Right-lane quantities may feed later operations.
+  const sourceNodes = nodes.filter(n => ['input', 'parameter', 'literal'].includes(n.kind)
+    && projection.quantities.filter(v => v.producer === n.id).length === 1);
+  const sourceIds = new Set(sourceNodes.map(n => n.id));
+  const operations = nodes.filter(n => !sourceIds.has(n.id));
+  const sourceValues = projection.quantities.filter(v => sourceIds.has(v.producer));
+  const derivedValues = projection.quantities.filter(v => !sourceIds.has(v.producer));
+  const rowHeight = 42, top = 30, width = 210;
+  const height = Math.max(sourceValues.length, operations.length, derivedValues.length, 2) * rowHeight + top;
+  const svg = svgElement('svg', { class: 'research-graph', viewBox: `0 0 900 ${height}`, role: 'group', 'aria-label': 'Quantity and operation graph' });
+  for (const [x, text] of [[20, '来源量'], [345, '操作'], [670, '派生量／输出']]) svg.append(svgElement('text', { x, y: 18 }, text));
   const defs = svgElement('defs');
   const marker = svgElement('marker', { id: 'procedure-edge-arrow', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 6, markerHeight: 6, orient: 'auto' });
   marker.append(svgElement('path', { d: 'M 0 0 L 10 5 L 0 10 z' })); defs.append(marker); svg.append(defs);
-  const positions = new Map(nodes.map((n, i) => [n.id, i * 80 + 39]));
+  const eventPositions = new Map(operations.map((n, i) => [n.id, { x: 345, y: top + i * rowHeight }]));
+  const valuePositions = new Map([...sourceValues.map((v, i) => [v.id, { x: 20, y: top + i * rowHeight }]), ...derivedValues.map((v, i) => [v.id, { x: 670, y: top + i * rowHeight }])]);
+  const connect = (from, to, title, attrs) => {
+    const rightward = from.x < to.x;
+    const x1 = from.x + (rightward ? width : 0), x2 = to.x + (rightward ? 0 : width);
+    const y1 = from.y + 18, y2 = to.y + 18, mid = (x1 + x2) / 2;
+    const path = svgElement('path', { class: 'graph-edge', d: `M ${x1} ${y1} C ${mid} ${y1}, ${mid} ${y2}, ${x2} ${y2}`, 'marker-end': 'url(#procedure-edge-arrow)', ...attrs });
+    path.append(svgElement('title', {}, title)); svg.append(path);
+  };
   projection.edges.forEach((edge, i) => {
-    if (!positions.has(edge.producer) || !positions.has(edge.consumer)) return;
-    const a = positions.get(edge.producer), b = positions.get(edge.consumer), gutter = 12 + i % 5 * 10;
-    const path = svgElement('path', { class: 'graph-edge', d: `M 90 ${a} C ${gutter} ${a}, ${gutter} ${b}, 90 ${b}`,
-      'marker-end': 'url(#procedure-edge-arrow)', 'data-producer': edge.producer, 'data-consumer': edge.consumer });
-    path.append(svgElement('title', {}, projection.presentation.edges[i].text));
-    svg.append(path);
+    const from = valuePositions.get(edge.value_id), to = eventPositions.get(edge.consumer);
+    if (from && to) connect(from, to, projection.presentation.edges[i].text, { 'data-producer': edge.producer, 'data-consumer': edge.consumer });
   });
-  nodes.forEach(node => {
-    const text = projection.presentation.nodes[node.id];
-    const y = positions.get(node.id) - 29;
-    const group = svgElement('g', { 'data-node-id': node.id, role: 'button', tabindex: 0, 'aria-pressed': 'false', 'aria-label': text.label });
-    group.append(svgElement('rect', { x: 90, y, width: 232, height: 58 }));
-    group.append(svgElement('text', { x: 100, y: y + 22 }, text.label));
-    group.append(svgElement('text', { x: 100, y: y + 43, class: 'graph-node-id' }, text.outputs));
-    group.addEventListener('click', () => onNode(node.id));
-    group.addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onNode(node.id); }
-    });
+  for (const value of derivedValues) {
+    const from = eventPositions.get(value.producer), to = valuePositions.get(value.id);
+    if (from && to) connect(from, to, projection.presentation.quantities[value.id].role, { 'data-producer': value.producer });
+  }
+  const glyph = (position, title, subtitle, attrs, select) => {
+    const { x, y } = position;
+    const group = svgElement('g', { role: 'button', tabindex: 0, 'aria-pressed': 'false', 'aria-label': `${title} · ${subtitle}`, ...attrs });
+    group.append(svgElement('rect', { x, y, width, height: 38 }));
+    group.append(svgElement('text', { x: x + 8, y: y + 16 }, title));
+    group.append(svgElement('text', { x: x + 8, y: y + 31, class: 'graph-node-note' }, subtitle));
+    group.append(svgElement('title', {}, `${title} · ${subtitle}`));
+    group.addEventListener('click', select);
+    group.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); select(); } });
     svg.append(group);
+  };
+  operations.forEach(node => {
+    const text = projection.presentation.nodes[node.id];
+    glyph(eventPositions.get(node.id), text.operation, text.source, { 'data-node-id': node.id, 'data-kind': 'operation' }, () => onNode(node.id));
   });
+  const consumed = new Set(projection.edges.map(e => e.value_id));
+  for (const value of projection.quantities) {
+    const text = projection.presentation.quantities[value.id];
+    const source = sourceIds.has(value.producer);
+    const kind = source && ['parameter', 'external_input', 'root_input', 'missing_upstream'].includes(value.role) ? 'parameter-input' : source || consumed.has(value.id) ? 'value' : 'result';
+    glyph(valuePositions.get(value.id), text.name, `${text.role} · ${text.unit}`, { 'data-value-id': value.id, 'data-kind': kind,
+      ...(source ? { 'data-node-id': value.producer } : {}), 'data-producer-id': value.producer,
+      'data-unresolved': String(value.resolution_status !== 'resolved') }, () => onNode(value.producer));
+  }
   container.append(svg);
+  const holes = element('div', 'research-annotations');
+  const locations = new Map();
+  for (const question of projection.presentation.questions) {
+    for (const span of question.source_anchors?.length ? question.source_anchors : [null]) {
+      const key = span ? JSON.stringify([span.doc_id, span.reading_id, span.start, span.end]) : question.id;
+      if (!locations.has(key)) locations.set(key, { span, questions: [] });
+      locations.get(key).questions.push(question);
+    }
+  }
+  for (const { span, questions } of locations.values()) {
+    const badge = action(span?.quote ? `待审「${span.quote}」` : questions[0].label, () => onQuestion(questions[0], span));
+    badge.dataset.kind = 'unresolved'; badge.dataset.questionId = questions[0].id;
+    badge.title = [...new Set(questions.map(q => q.label))].join(' · '); holes.append(badge);
+  }
+  container.append(holes);
 }
 
 export function markObjects(container, attribute, ids) {

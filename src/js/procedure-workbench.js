@@ -36,6 +36,13 @@ function select(stepIds, nodeIds, spans, title) {
   for (const edge of byId('graph').querySelectorAll('.graph-edge')) edge.dataset.selected = String(nodes.has(edge.dataset.consumer) || nodes.has(edge.dataset.producer));
   byId('selection-status').textContent = `${title} · ${steps.size} 个语法步骤 · ${nodes.size} 个 graph events`;
   renderRelationships(byId('selection-detail'), analysis.projection, nodes, steps, selectNode);
+  const relations = analysis.projection.nodes.filter(n => nodes.has(n.id)).map(node => {
+    const name = id => analysis.presentation.quantities[id]?.name || '未记录的量';
+    return `${Object.values(node.reads || {}).map(name).join('、') || '无上游读取'} → ${analysis.presentation.nodes[node.id].operation} → ${Object.values(node.writes || {}).map(name).join('、') || '无独立输出'}`;
+  });
+  byId('relation-summary').textContent = relations.join('；') || `${title}：没有独立操作，参见待审问题。`;
+  const linkedValues = new Set(analysis.projection.nodes.filter(n => nodes.has(n.id)).flatMap(n => [...Object.values(n.reads || {}), ...Object.values(n.writes || {})]));
+  markObjects(byId('graph'), 'data-value-id', linkedValues);
   for (const id of ['source', 'structure', 'graph']) revealInPanel(byId(id), byId(id).querySelector('[data-selected="true"]:not(.graph-edge)'));
 }
 function selectSteps(ids) {
@@ -68,21 +75,32 @@ function renderStages() {
     row.append(debug); box.append(row);
   }
 }
+function selectQuestion(question, location) {
+  const spans = location ? [location] : question.source_anchors || [];
+  const steps = analysis.projection.steps.filter(step => spans.some(anchor => step.source_spans.some(span => span.doc_id === anchor.doc_id && span.reading_id === anchor.reading_id && span.start < anchor.end && anchor.start < span.end)));
+  select(steps.map(s => s.id), steps.flatMap(s => s.event_ids), spans, question.label);
+  if (spans[0]) chooseAnchor(spans[0]);
+}
 function renderQuestions() {
   const box = byId('review-queue'); box.replaceChildren();
+  const summary = byId('review-summary'); summary.replaceChildren();
+  const groups = new Map();
   for (const question of analysis.presentation.questions) {
+    if (!groups.has(question.label)) groups.set(question.label, []);
+    groups.get(question.label).push(question);
     const card = element('article', 'entry-card'); card.dataset.reviewId = question.id;
-    card.append(action(`${question.label} · ${question.severity}`, () => {
-      if (question.source_anchors?.[0]) chooseAnchor(question.source_anchors[0]);
-      const steps = analysis.projection.steps.filter(step => question.source_anchors?.some(anchor => step.source_spans.some(span => span.doc_id === anchor.doc_id && span.start < anchor.end && anchor.start < span.end)));
-      if (steps.length) selectSteps(steps.map(step => step.id));
-    }));
+    card.append(action(`${question.label} · ${question.severity}`, () => selectQuestion(question)));
     card.append(element('p', 'entry-card-note', question.text));
     card.append(element('p', 'entry-card-note', `后端建议的动作：${question.actions.map(row => row.label).join(' / ') || '未提供'}`));
     card.append(element('p', 'entry-card-note', question.affected_text));
     card.append(element('p', 'entry-card-note', `${question.evidence_note}：${question.nearby_evidence.map(row => `${row.label}「${row.text}」`).join(' / ') || '未提供'}`));
     box.append(card);
   }
+  for (const [label, questions] of groups) {
+    const button = action(`${label} · ${questions.length}`, () => selectQuestion(questions[0]));
+    button.dataset.kind = 'unresolved'; button.title = questions[0].text; summary.append(button);
+  }
+  if (!groups.size) summary.append(element('p', 'entry-card-note', '当前没有待审问题；完整性与审定状态见详细检查。'));
 }
 function showCandidateOptions() {
   const selectBox = byId('candidate-select'); selectBox.replaceChildren();
@@ -131,7 +149,12 @@ function showHistory() {
   }
 }
 function showInputs() { byId('inputs').replaceChildren(); for (const [index, spec] of analysis.procedure.inputs.entries()) { const field = element('input'); field.type = 'text'; field.inputMode = 'numeric'; field.id = `input-${index}`; field.name = spec.name; const labelNode = element('label', '', `${spec.name}（${spec.minimum}–${spec.maximum}）`); labelNode.htmlFor = field.id; const box = element('div'); box.append(labelNode, field); byId('inputs').append(box); } }
-function renderSourceView() { const layer = byId('annotation-layer').value; const evidence = layer === 'all' ? Object.values(analysis.projection.layers).flat() : (analysis.projection.layers[layer] || []); renderSource(byId('source'), analysis.graph.documents, analysis.projection.steps, selectSteps, evidence, chooseAnchor); }
+function renderSourceView() {
+  const layer = byId('annotation-layer').value;
+  const evidence = layer === 'all' ? Object.values(analysis.projection.layers).flat() : (analysis.projection.layers[layer] || []);
+  renderSource(byId('structure'), analysis.graph.documents, analysis.projection.steps, selectSteps, evidence, chooseAnchor, analysis.presentation);
+  renderStructure(byId('structure'), analysis.projection, selectSteps, selectFrame, true);
+}
 function consume(next) {
   const referenceOnly = !next.graph;
   const display = referenceOnly ? next.reference_analysis : next;
@@ -148,7 +171,8 @@ function consume(next) {
   const branchSelect = byId('branch-select'); branchSelect.replaceChildren();
   for (const branch of next.session.branches) branchSelect.add(new Option(branch.id, branch.id, false, branch.id === next.branch_id));
   branchSelect.value = next.branch_id;
-  renderStages(); renderSourceView(); renderStructure(byId('structure'), analysis.projection, selectSteps, selectFrame); renderGraph(byId('graph'), analysis.projection, selectNode);
+  renderStages(); renderSourceView(); renderGraph(byId('graph'), analysis.projection, selectNode, selectQuestion);
+  byId('relation-summary').textContent = '选择原文或操作，查看输入量 → 操作 → 输出量。';
   byId('graph-summary').textContent = next.presentation.graph_text;
   byId('graph-raw').textContent = json(display.graph); byId('selection-detail').replaceChildren(); byId('selection-status').textContent = '选择原文、步骤、图节点或问题，查看 typed relationships。';
   byId('session-status').textContent = next.presentation.session_text;

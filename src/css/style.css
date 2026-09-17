@@ -813,7 +813,7 @@ body.home-floating-nav main {
 .filter-box {
   background: #fffdf9;
   border-radius: 16px;
-  padding: 1.8rem;
+  padding: var(--panel-padding, 1.8rem);
   box-shadow: 0 18px 32px rgba(31, 31, 31, 0.05);
 }
 

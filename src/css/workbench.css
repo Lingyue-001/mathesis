@@ -1,13 +1,14 @@
 /* Page layout only; reusable research components live in research.css. */
-.procedure-workbench { max-width: 1600px; }
+.procedure-workbench { max-width: 1600px; margin-block: 1rem; line-height: 1.5; --panel-padding: 0.5rem 1rem; --heading-major-gap: 0.6rem; }
 .workbench-controls { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
-.workbench-controls #scope { flex-basis: 100%; }
 .workbench-controls select { min-width: 0; max-width: 100%; flex: 1; }
-.workbench-columns { display: grid; grid-template-columns: 0.9fr 1.25fr 0.9fr; gap: 1.6rem; margin-bottom: 1.6rem; }
+.workbench-columns { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 1.4rem; margin-bottom: 0.5rem; }
+.procedure-workbench #source { --source-card-padding: 0.4rem 0.65rem; }
+.procedure-workbench #graph { max-height: none; }
 .procedure-workbench #inputs { display: flex; gap: 1rem; flex-wrap: wrap; margin-block: 1rem; }
 .procedure-workbench #selection-detail > article { margin-block: 1rem; }
 .procedure-workbench [hidden] { display: none; }
-.procedure-workbench .filter-box { margin-block: 1.2rem; }
+.procedure-workbench .filter-box { margin-block: 0.7rem; }
 .research-stage-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.65rem; }
 .research-stage { border: 1px solid #ded4c9; border-radius: 0.4rem; padding: 0.55rem; overflow-wrap: anywhere; }
 .research-stage summary { cursor: pointer; font-weight: 600; }
