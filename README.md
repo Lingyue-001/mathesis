@@ -14,10 +14,6 @@ A research website built with Eleventy to explore symbolic math, calendrical sys
 - Search: Flexible matching (stems, inflectional variants, sandhi, compound subparts) and collection building (e.g., all occurrences of a word).
 - OCR tool integration: Use an existing tool for segmentation + recognition; implement post-correction from the author’s paper and integrate into a user-friendly workflow.
 
-## Project notes
-- For current status and prioritized todos, see `NOTE_当前需求清单和待办_Current_Status_and_Todo.md`.
-- For completed changes and retrospectives, see `LOG_已完成改动和复盘_Completed_Changes_and_Retrospective.md`.
-
 ## Data sources and workflow (current)
 - Search/data pages load from `src/data.json`.
 - Visualization page loads from CSV exports in `static/` (see `static/node-export.csv` and `static/relationship-export.csv`).
@@ -65,11 +61,6 @@ A research website built with Eleventy to explore symbolic math, calendrical sys
   - `NETLIFY_CTEXT_PROXY_SETUP.md`
 - Netlify build-time env var for frontend default proxy:
   - `CTEXT_PROXY_ORIGIN=https://<your-proxy>.onrender.com`
-
-## Log Navigation (Timeline + Tag)
-- Timeline source (primary): `LOG_已完成改动和复盘_Completed_Changes_and_Retrospective.md`
-- Tag-grouped view (auto-generated): `LOG_按标签视图_By_Tag.md`
-- Update command: `npm run generate:log-by-tag`
 
 ### CText lookup (dev middleware)
 - API: `/api/ctext/search?q=<term>`

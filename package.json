@@ -32,9 +32,9 @@
     "promote:ctext-cache": "node scripts/build-ctext-cache.mjs --promote tmp/ctext-static-build/ctext-cache.candidate.json",
     "test:ctext-stats-parser": "node --test tests/ctext-stats-parser.test.mjs",
     "start:ctext-proxy": "node server/ctextProxyServer.js",
-    "prestart": "npm run generate:debug-flags-doc && npm run generate:log-by-tag",
+    "prestart": "npm run generate:debug-flags-doc",
     "start": "npx eleventy --serve",
-    "prebuild": "npm run generate:debug-flags-doc && npm run generate:log-by-tag",
+    "prebuild": "npm run generate:debug-flags-doc",
     "build": "npx eleventy"
   },
   "devDependencies": {

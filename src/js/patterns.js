@@ -436,7 +436,7 @@ function renderConstantChunk(chunk) {
         <strong class="result-title">${escapeHtml(chunkLabel(chunk))}</strong>
         <span class="pattern-card-kicker">constant / ${escapeHtml(annotationKind(chunk))}</span>
       </div>
-      <p class="pattern-source-text">${escapeHtml(chunk.source_text_zh)}</p>
+      <p class="pattern-source-text">${highlightedText(chunk.source_text_zh, spans)}</p>
       ${renderEnglishText(chunk, spans)}
       <dl class="pattern-feature-list">
         <dt>Constants</dt><dd>${escapeHtml(chunk.constants.join(" · ") || "none")}</dd>
@@ -455,7 +455,7 @@ function renderDescriptionChunk(chunk) {
         <strong class="result-title">${escapeHtml(chunkLabel(chunk))}</strong>
         <span class="pattern-card-kicker">${escapeHtml(chunkKind(chunk))} / ${escapeHtml(annotationKind(chunk))}</span>
       </div>
-      <p class="pattern-source-text">${escapeHtml(chunk.source_text_zh)}</p>
+      <p class="pattern-source-text">${highlightedText(chunk.source_text_zh, spans)}</p>
       ${renderEnglishText(chunk, spans)}
       <dl class="pattern-feature-list">
         <dt>Key terms</dt><dd>${escapeHtml(chunk.terms.slice(0, 16).join(" · ") || "none")}</dd>
@@ -651,14 +651,22 @@ function bestSourceSpanForOccurrence(occurrence, sourceSpans = []) {
   return (sourceSpans ?? [])
     .filter((span) => spansOverlap(occurrence, span))
     .sort((a, b) =>
-      (b.priority ?? 0) - (a.priority ?? 0)
+      spanSpecificityScore(a, occurrence) - spanSpecificityScore(b, occurrence)
       || spanLength(a) - spanLength(b)
+      || (b.priority ?? 0) - (a.priority ?? 0)
       || a.start - b.start
     )[0] ?? null;
 }
 
 function spansOverlap(a, b) {
   return a.start < b.end && b.start < a.end;
+}
+
+function spanSpecificityScore(span, occurrence) {
+  const boundaryDistance = Math.abs((span.start ?? 0) - (occurrence.start ?? 0))
+    + Math.abs((span.end ?? 0) - (occurrence.end ?? 0));
+  const lengthPenalty = Math.abs(spanLength(span) - spanLength(occurrence));
+  return boundaryDistance * 10 + lengthPenalty;
 }
 
 function dedupeEnglishHighlightSpans(spans) {
@@ -1218,7 +1226,7 @@ function lcsOperationPairs(aOps, bOps) {
       pairs.push({ a: aOps[i], b: bOps[j], aIndex: i, bIndex: j, op: aOps[i].op });
       i += 1;
       j += 1;
-    } else if (dp[i + 1][j] >= dp[i][j + 1]) {
+    } else if (dp[i + 1][j] > dp[i][j + 1]) {
       i += 1;
     } else {
       j += 1;

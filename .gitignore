@@ -16,11 +16,21 @@ yarn-error.log*
 .env
 .env.local
 .cache
+tmp/*-audit-build/**
 tmp/procedure-ir/*.json
 tmp/procedure-ir/*.md
 tmp/procedure-ir/stabilization-checkpoint/**
 tmp/ctext_cache/**
 tmp/ctext-static-build/**
+
+# Local agent skill installations
+.agents/skills/**
+skills-lock.json
+
+# Local project notes and development history
+NOTE_当前需求清单和待办_Current_Status_and_Todo.md
+LOG_已完成改动和复盘_Completed_Changes_and_Retrospective.md
+LOG_按标签视图_By_Tag.md
 
 # Local Netlify folder
 .netlify

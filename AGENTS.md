@@ -1,10 +1,13 @@
 # AGENTS Instructions
 
 ## Startup Context Rule
-At the start of every new Codex session in this repository, read these files first before any edits:
-1. `NOTE_当前需求清单和待办_Current_Status_and_Todo.md`
-2. `LOG_已完成改动和复盘_Completed_Changes_and_Retrospective.md`
-3. `README.md`
+At the start of every new Codex session in this repository:
+1. Read `README.md` before any edits.
+2. If the following local-only files exist, read them before any edits:
+   - `NOTE_当前需求清单和待办_Current_Status_and_Todo.md`
+   - `LOG_已完成改动和复盘_Completed_Changes_and_Retrospective.md`
+
+The NOTE/LOG files are intentionally ignored by Git. Their absence in a clean clone is expected and must not block work.
 
 ## Purpose Split
 - `NOTE_当前需求清单和待办_Current_Status_and_Todo.md`:
@@ -30,9 +33,9 @@ Allowed tags:
 - `project-docs`
 
 ## Documentation Update Confirmation Rule
-- Do not update `NOTE_当前需求清单和待办_Current_Status_and_Todo.md` or `LOG_已完成改动和复盘_Completed_Changes_and_Retrospective.md` until the user explicitly confirms the proposed change is acceptable in that turn, unless the user explicitly asks to update these files immediately.
-- If the user asks to commit/push the current turn's changes, treat that as approval for this turn's implemented updates/plan, and update NOTE/LOG accordingly before commit.
-- Before commit/push, record completed progress and retrospective notes in the appropriate NOTE/LOG files for that turn.
+- When the local NOTE/LOG files exist, do not update them until the user explicitly confirms the proposed change is acceptable in that turn, unless the user explicitly asks to update them immediately.
+- If the user asks to commit/push the current turn's changes, treat that as approval for this turn's implemented updates/plan and update the existing local NOTE/LOG files accordingly before commit.
+- Before commit/push, record completed progress and retrospective notes in the appropriate existing local NOTE/LOG files. Do not create these private files in a clean clone where they are absent.
 
 ## UI Change Confirmation Rule
 - Suggestions are encouraged, but any visible UI appearance change that is not a direct functional bug fix must be explicitly communicated to the user and confirmed before code is changed.
