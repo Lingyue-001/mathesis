@@ -332,7 +332,11 @@ def compile_reviewed(packet, session, branch_id='main'):
     if replay['status'] != 'ok':
         return {'schema': 'ReviewedProcedureBundle', 'schema_version': '1.0', 'replay': replay,
                 'graph': None, 'coverage_ledger': None, 'trace': None,
-                'review_queue': {'schema': 'ReviewQueue', 'schema_version': '1.0', 'items': []}}
+                'review_queue': {'schema': 'ReviewQueue', 'schema_version': '1.0', 'items': [
+                    {'id': 'session-revalidation', 'kind': 'stale_session', 'severity': 'blocking',
+                     'reason': replay['status'], 'source_spans': [], 'source_anchors': [],
+                     'affected_outputs': [], 'candidate_options': [], 'suggested_actions': [],
+                     'details': {'requires_revalidation': True}}]}}
     decision_issues = validate_effective_decisions(replay['effective'])
     fatal_issues = [row for row in decision_issues if row['kind'] != 'schema_extension_required']
     effective = _without_invalid_decisions(replay['effective'], {row['decision_id'] for row in fatal_issues})

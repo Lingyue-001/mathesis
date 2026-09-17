@@ -56,3 +56,41 @@ reconciliation 5/5; both Workbench/Pattern Lab browser smoke tests; and Eleventy
 build all pass. `set_scope` was also replayed through the reviewed service using
 an existing canonical anchor; it produced the current reviewed graph without a
 browser graph payload.
+
+## Persisted-session regression after 0cf614b
+
+On the unchanged baseline, a fresh §40 session had four compiler unresolved
+records and 13 review questions, including `周天乘減之` at `sifen:40 [9,14)`.
+An obsolete saved engine identity reproduced the reported blank page without a
+JavaScript exception: `compile_reviewed` stopped at `stale_identity` with
+`graph=null` and an empty queue; the service reported `review=completed`; the
+browser returned before unhiding its analysis panel, then printed a success
+message with zero questions. This was a stale-response/render contract failure,
+not evidence that the unsupported constructions had become supported.
+
+Blocked compilation now emits a session revalidation question. The service keeps
+the original session and `graph=null`, reports `needs_revalidation`, and supplies
+a separately labelled `current_automatic_reference` through the same compiler
+with an empty current session. The browser renders that reference read-only,
+keeps the saved decisions/identity locks intact, and permits their export.
+It does not silently migrate, approve, execute, or edit the stale interpretation.
+Manual revalidation/migration of an old session is still required.
+
+`test_stale_session_preserves_decisions_and_exposes_separate_unresolved_reference`
+tests stale source and runtime identities, original decision retention, reference
+equivalence to a fresh compilation, and execution rejection.
+`adjudication-browser.mjs` now tests real §40 content visibility (Source,
+Procedure Structure, Typed Graph), the specific unresolved span and question-to-source
+navigation, cold reload with stale persisted sessions, original export, read-only
+controls, and re-import. Both tests failed on 0cf614b before the fix.
+
+Verification: adjudication 71 (including M3.1 19), Workbench 20, parser 61,
+parser-v3 94, rescue 78 (including engineering 35), reconciliation 5, both browser
+suites, CText 4, and the Eleventy build passed. The rescue suite still emits its
+pre-existing unclosed-fixture ResourceWarning. Browser actors remain
+`scripted_fixture`; this is not a human usability trial.
+
+Runtime investigation also found three Workbench processes listening on 8792;
+the older instances were stopped and final browser validation used a single
+current-code process. Old processes can continue serving older compiler modules
+even after a site rebuild; restart the Python service after Python changes.

@@ -109,7 +109,7 @@ def _reviewed_response(source, session, branch_id):
         'projection_version': 2, 'frames': [], 'steps': [], 'nodes': [], 'edges': [], 'quantities': [],
         'issues': [], 'layers': {}, 'coverage': None, 'review_queue': bundle['review_queue'], 'trace': None,
     }
-    return {
+    response = {
         **source, 'session': session, 'branch_id': branch_id, 'bundle': bundle, 'graph': graph,
         'projection': projection,
         'stages': _stage_records(source, bundle) if graph is not None else [
@@ -117,11 +117,23 @@ def _reviewed_response(source, session, branch_id):
              'artifacts': [], 'rules': [], 'affected_stages': []}],
         'summary': {
             'graph_status': bundle['coverage_ledger']['graph_status'] if graph is not None else 'invalid',
-            'review_status': 'needs_review' if bundle['review_queue']['items'] else 'completed',
+            'review_status': ('needs_revalidation' if graph is None else
+                              'needs_review' if bundle['review_queue']['items'] else 'completed'),
             'execution_status': 'not_run',
             'comparison_status': 'unavailable',
         },
     }
+    if graph is None:
+        # A blocked replay is not an empty successful analysis. Keep its session
+        # and graph=None; provide a separately labelled, decision-free reference
+        # through the same compiler so the current source remains inspectable.
+        reference = _reviewed_response(source, new_session(source['source_packet'],
+                                       f"workbench:{source['procedure']['id']}"), 'main')
+        response['reference_analysis'] = {
+            'kind': 'current_automatic_reference',
+            **{key: reference[key] for key in ('graph', 'projection', 'stages', 'summary')},
+        }
+    return response
 
 
 def open_adjudication(root, procedure_id, session=None, branch_id='main'):

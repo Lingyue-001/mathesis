@@ -17,7 +17,12 @@ async function request(path, body) {
   if (!response.ok) throw new Error(value.error || `HTTP ${response.status}`);
   return value;
 }
-function busy(value) { for (const node of document.querySelectorAll('.procedure-workbench button, .procedure-workbench select, .procedure-workbench input')) if (node.id !== 'import-session') node.disabled = value; }
+function busy(value) {
+  for (const node of document.querySelectorAll('.procedure-workbench button, .procedure-workbench select, .procedure-workbench input')) {
+    const mutatesReview = node.closest('[aria-labelledby="decision-title"], #execute-form') || ['create-branch', 'branch-name', 'branch-select'].includes(node.id);
+    if (node.id !== 'import-session') node.disabled = value || Boolean(analysis?.referenceOnly && mutatesReview);
+  }
+}
 function actor() { return scriptedActor ? { type: 'scripted_fixture', id: 'browser-test' } : { type: 'human', id: 'local-workbench' }; }
 function makeDecision(actionName, targets, payload, reason = 'local workbench review', dependsOn = []) {
   return { decision_id: `ui-${crypto.randomUUID()}`, actor: actor(), created_at: new Date().toISOString(), branch_id: analysis.branch_id, action: actionName, targets, payload, evidence_refs: ['workbench:visible-source'], reason, depends_on: dependsOn };
@@ -88,25 +93,35 @@ function showHistory() { const box = byId('decision-history'); box.replaceChildr
 function showInputs() { byId('inputs').replaceChildren(); for (const [index, spec] of analysis.procedure.inputs.entries()) { const field = element('input'); field.type = 'text'; field.inputMode = 'numeric'; field.id = `input-${index}`; field.name = spec.name; const labelNode = element('label', '', `${spec.name}（${spec.minimum}–${spec.maximum}）`); labelNode.htmlFor = field.id; const box = element('div'); box.append(labelNode, field); byId('inputs').append(box); } }
 function renderSourceView() { const layer = byId('annotation-layer').value; const evidence = layer === 'all' ? Object.values(analysis.projection.layers).flat() : (analysis.projection.layers[layer] || []); renderSource(byId('source'), analysis.graph.documents, analysis.projection.steps, selectSteps, evidence, chooseAnchor); }
 function consume(next) {
-  if (!next.graph) {
-    byId('session-status').textContent = `Session requires revalidation: ${next.bundle?.replay?.status || 'stale_source'}`;
-    return;
-  }
-  analysis = next; saveSession(next.procedure.id, next.session, next.branch_id); byId('scope').textContent = next.procedure.scope_note;
+  const referenceOnly = !next.graph;
+  const display = referenceOnly ? next.reference_analysis : next;
+  if (!display?.graph) throw new Error(`Session requires revalidation: ${next.bundle?.replay?.status || 'graph_unavailable'}`);
+  analysis = { ...next, graph: display.graph, projection: display.projection, stages: display.stages, referenceOnly };
+  if (referenceOnly) {
+    analysis.projection = { ...display.projection, review_queue: { ...display.projection.review_queue,
+      items: [...next.projection.review_queue.items, ...display.projection.review_queue.items] } };
+    analysis.stages = [...next.stages, ...display.stages.map(stage => ({ ...stage, id: `reference-${stage.id}`, label: `自动参考：${stage.label}` }))];
+  } else saveSession(next.procedure.id, next.session, next.branch_id);
+  selectedAnchor = null;
+  byId('selected-anchor').textContent = '先从原文、结构或问题选择一个 source span。';
+  byId('scope').textContent = next.procedure.scope_note;
   const branchSelect = byId('branch-select'); branchSelect.replaceChildren();
   for (const branch of next.session.branches) branchSelect.add(new Option(branch.id, branch.id, false, branch.id === next.branch_id));
   branchSelect.value = next.branch_id;
-  renderStages(); renderSourceView(); renderStructure(byId('structure'), next.projection, selectSteps, selectFrame); renderGraph(byId('graph'), next.projection, selectNode);
-  byId('graph-summary').textContent = `${next.projection.nodes.length} events · ${next.projection.quantities.length} values · ${next.projection.edges.length} dependency edges · graph ${next.summary.graph_status}`;
-  byId('graph-raw').textContent = json(next.graph); byId('selection-detail').replaceChildren(); byId('selection-status').textContent = '选择原文、步骤、图节点或问题，查看 typed relationships。';
-  byId('session-status').textContent = `Branch ${next.branch_id} · review ${next.summary.review_status} · graph ${next.summary.graph_status} · execution ${next.summary.execution_status} · comparison ${next.summary.comparison_status}`;
+  renderStages(); renderSourceView(); renderStructure(byId('structure'), analysis.projection, selectSteps, selectFrame); renderGraph(byId('graph'), analysis.projection, selectNode);
+  byId('graph-summary').textContent = `${referenceOnly ? '当前自动参考（只读） · ' : ''}${display.projection.nodes.length} events · ${display.projection.quantities.length} values · ${display.projection.edges.length} dependency edges · graph ${display.summary.graph_status}`;
+  byId('graph-raw').textContent = json(display.graph); byId('selection-detail').replaceChildren(); byId('selection-status').textContent = '选择原文、步骤、图节点或问题，查看 typed relationships。';
+  byId('session-status').textContent = `${referenceOnly ? `旧 session 待重验（${next.bundle.replay.status}）；当前显示只读自动参考，旧决定已保留。 ` : ''}Branch ${next.branch_id} · review ${next.summary.review_status} · graph ${next.summary.graph_status} · execution ${next.summary.execution_status} · comparison ${next.summary.comparison_status}`;
   showIssues(); renderQuestions(); showDefinitions(); showHistory(); showInputs(); showCandidateOptions(); byId('analysis').hidden = false;
+  byId('status').textContent = referenceOnly ? `Session 待重验 · 当前自动参考有 ${display.projection.review_queue.items.length} 个问题；旧决定未应用` : `已载入 reviewed structure · ${next.projection.review_queue.items.length} 个当前问题`;
+  busy(false);
 }
 async function loadAnalysis() {
   const procedureId = byId('procedure').value; const revision = ++requestRevision; busy(true); byId('status').textContent = '正在调用 reviewed compiler…';
-  try { const saved = loadSession(procedureId); const next = saved ? await request('api/adjudication/compile', { procedure_id: procedureId, session: saved.session, branch_id: saved.branch_id }) : await request(`api/adjudication/${encodeURIComponent(procedureId)}`); if (revision !== requestRevision) return; consume(next); byId('status').textContent = `已载入 reviewed structure · ${next.projection.review_queue.items.length} 个当前问题`; } catch (error) { if (revision === requestRevision) byId('status').textContent = `分析未完成；已保留本地 session：${error.message}`; } finally { if (revision === requestRevision) busy(false); }
+  try { const saved = loadSession(procedureId); const next = saved ? await request('api/adjudication/compile', { procedure_id: procedureId, session: saved.session, branch_id: saved.branch_id }) : await request(`api/adjudication/${encodeURIComponent(procedureId)}`); if (revision !== requestRevision) return; consume(next); } catch (error) { if (revision === requestRevision) byId('status').textContent = `分析未完成；已保留本地 session：${error.message}`; } finally { if (revision === requestRevision) busy(false); }
 }
 async function applyDecision(row) {
+  if (analysis?.referenceOnly) throw new Error('旧 session 待重验；自动参考为只读。');
   if (!selectedAnchor && !row.targets?.length) throw new Error('请先选择 source span'); const revision = ++requestRevision; busy(true); byId('session-status').textContent = '正在应用 decision 并重新编译…';
   try { const next = await request('api/adjudication/decision', { procedure_id: analysis.procedure.id, session: analysis.session, decision: row, branch_id: analysis.branch_id }); if (revision === requestRevision) consume(next); } catch (error) { if (revision === requestRevision) byId('session-status').textContent = `Decision rejected: ${error.message}`; } finally { if (revision === requestRevision) busy(false); }
 }

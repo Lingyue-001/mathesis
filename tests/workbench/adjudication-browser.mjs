@@ -65,6 +65,61 @@ try {
   await page.selectOption('#procedure', 'sifen-3-7-alternative');
   await page.waitForFunction(() => document.querySelector('#scope').textContent.includes('一术'));
   assert.equal(await page.locator('#review-queue [data-review-id]').count() > 0, true, 'same view renders the real hole target');
+  async function assertRealHoleVisible() {
+    for (const id of ['source', 'structure', 'graph']) {
+      assert.equal(await page.locator(`#${id}`).isVisible(), true, `${id} is actually visible for §40`);
+      assert.ok((await page.locator(`#${id}`).innerText()).trim(), `${id} has rendered content`);
+    }
+    const graph = JSON.parse(await page.locator('#graph-raw').textContent());
+    assert.ok(graph.unresolved.some(issue => issue.source_spans.some(span => span.doc_id === 'sifen:40' && span.start === 9 && span.end === 14 && span.quote === '周天乘減之')), 'known unresolved construction retains its actual source address');
+    const questions = page.locator('#review-queue article', { hasText: 'unresolved_parser' });
+    let located = false;
+    for (const question of await questions.all()) {
+      assert.equal(await question.isVisible(), true, 'unresolved question is visible');
+      await question.getByRole('button').click();
+      if (await page.locator('#selected-anchor').getAttribute('data-start') === '9') {
+        assert.equal(await page.locator('#selected-anchor').getAttribute('data-doc-id'), 'sifen:40');
+        assert.equal(await page.locator('#selected-anchor').getAttribute('data-end'), '14');
+        assert.match(await page.locator('#selected-anchor').innerText(), /周天乘減之/);
+        located = true;
+        break;
+      }
+    }
+    assert.equal(located, true, 'the actual unresolved question locates its known source span');
+  }
+  await assertRealHoleVisible();
+  await page.locator('#apply-lexical-role').click();
+  await page.waitForFunction(() => document.querySelector('#decision-history').textContent.includes('set_lexical_role'));
+  // A compiler upgrade leaves real persisted sessions with obsolete identity locks.
+  // Seed both registered targets so cold reload starts without an old visible graph.
+  const savedStale = await page.evaluate(() => {
+    for (const id of ['sifen-3-5', 'sifen-3-7-alternative']) {
+      const key = `mathesis.adjudication-session.v1.${id}`;
+      const saved = JSON.parse(localStorage.getItem(key));
+      saved.session.identity_locks.engine.sha256 = 'previous-engine-version';
+      localStorage.setItem(key, JSON.stringify(saved));
+    }
+    return localStorage.getItem('mathesis.adjudication-session.v1.sifen-3-7-alternative');
+  });
+  await page.reload();
+  await page.waitForFunction(() => !document.querySelector('#procedure').disabled);
+  await page.selectOption('#procedure', 'sifen-3-7-alternative');
+  await page.waitForFunction(() => !document.querySelector('#procedure').disabled);
+  await assertRealHoleVisible();
+  assert.match(await page.locator('#status').innerText(), /待重验/);
+  assert.match(await page.locator('#session-status').innerText(), /needs_revalidation/);
+  assert.match(await page.locator('#decision-history').innerText(), /set_lexical_role/);
+  assert.equal(await page.locator('#resegment').isDisabled(), true, 'stale decisions cannot mutate the automatic reference');
+  assert.equal(await page.locator('#execute').isDisabled(), true);
+  assert.equal(await page.evaluate(() => localStorage.getItem('mathesis.adjudication-session.v1.sifen-3-7-alternative')), savedStale, 'stale session is retained byte-for-byte');
+  const staleExport = page.waitForEvent('download');
+  await page.locator('#export-session').click();
+  const staleChunks = [];
+  for await (const chunk of await (await staleExport).createReadStream()) staleChunks.push(chunk);
+  assert.deepEqual(JSON.parse(Buffer.concat(staleChunks)).session, JSON.parse(savedStale).session, 'export retains original identity locks');
+  await page.locator('#import-session').setInputFiles({ name: 'stale-session.json', mimeType: 'application/json', buffer: Buffer.concat(staleChunks) });
+  await page.waitForFunction(() => document.querySelector('#status').textContent.includes('待重验'));
+  await assertRealHoleVisible();
   assert.equal(await page.locator('#numerical-check').getAttribute('open'), null);
   assert.deepEqual(errors, []);
   console.log('M3 browser acceptance passed: stages, layers, linked source, real decision/recompile, restore, and two corpus targets.');

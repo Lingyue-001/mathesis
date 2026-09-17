@@ -1,5 +1,6 @@
 """M3-A contracts for the same-origin reviewed Procedure Workbench."""
 import importlib
+import copy
 import json
 from pathlib import Path
 import tempfile
@@ -37,6 +38,40 @@ class ReviewedWorkbenchTests(unittest.TestCase):
         result = self.service().open_adjudication(ROOT, second['id'])
         self.assertEqual(result['source_packet']['schema_version'], '3.0')
         self.assertTrue(result['projection']['review_queue']['items'])
+
+    def test_stale_session_preserves_decisions_and_exposes_separate_unresolved_reference(self):
+        service = self.service()
+        opened = service.open_adjudication(ROOT, 'sifen-3-7-alternative')
+        from adjudication.anchors import anchor_for
+        from adjudication import append_decision
+        packet = opened['source_packet']
+        session_with_decision = copy.deepcopy(opened['session'])
+        append_decision(session_with_decision, {
+            'decision_id': 'retained-role', 'actor': {'type': 'scripted_fixture', 'id': 'stale-session-test'},
+            'created_at': '2026-09-17T00:00:00Z', 'branch_id': 'main', 'action': 'set_lexical_role',
+            'targets': [anchor_for(packet, 'sifen:40', 9, 14)],
+            'payload': {'contract_version': '1.0', 'grammatical_role': 'term'},
+            'evidence_refs': ['source:test'], 'reason': 'retention probe', 'depends_on': [],
+        }, packet=packet)
+        for stale_field in ('identity_locks', 'source_packet'):
+            with self.subTest(stale_field=stale_field):
+                session = copy.deepcopy(session_with_decision)
+                session[stale_field] = {'sha256': 'previous-version'}
+                original = copy.deepcopy(session)
+                result = service.compile_adjudication(ROOT, opened['procedure']['id'], session)
+                self.assertIsNone(result['graph'], 'stale decisions must never be silently relocked')
+                self.assertEqual(result['summary']['review_status'], 'needs_revalidation')
+                self.assertTrue(result['bundle']['review_queue']['items'])
+                self.assertEqual(result['session'], original)
+                reference = result['reference_analysis']
+                self.assertEqual(reference['kind'], 'current_automatic_reference')
+                self.assertEqual(reference['graph'], opened['graph'])
+                self.assertEqual(reference['projection'], opened['projection'])
+                self.assertTrue(any(span['quote'] == '周天乘減之'
+                                    for issue in reference['graph']['unresolved']
+                                    for span in issue['source_spans']))
+                with self.assertRaisesRegex(ValueError, 'reviewed_graph_unavailable'):
+                    service.execute_adjudication(ROOT, opened['procedure']['id'], session, 'main', {})
 
     def test_numerical_check_executes_the_reviewed_graph_not_a_fresh_automatic_graph(self):
         service = self.service()
