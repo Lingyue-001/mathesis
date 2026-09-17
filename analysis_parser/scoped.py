@@ -826,7 +826,7 @@ def lower_linked(linked, environment):
                 # it while the event is emitted preserves type/audit execution
                 # as the sole graph construction path.
                 for port,vid in event['writes'].items():
-                    review=getattr(p,'review_output_metadata',{}).get((c['node_id'],port))
+                    review=getattr(p,'review_output_metadata',{}).get((c['node_id'],port,event['kind']))
                     if review:
                         p.env.values[vid].update({key:value for key,value in review.items()
                                                   if key not in ('decision_id','decision_refs')})

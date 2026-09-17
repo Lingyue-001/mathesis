@@ -28,6 +28,25 @@ def validate_effective_decisions(effective):
     return issues
 
 
+def validate_root_parameters(program, effective):
+    """A root is legal only when the compiled procedure has no producer for it."""
+    produced = {name for definition in program.definitions
+                for name in definition.get('defined_values', {})}
+    formal_inputs = {name for definition in program.definitions
+                     for name in definition.get('formal_inputs', {})}
+    issues = []
+    for name, payload in effective.get('parameters', {}).items():
+        if not payload.get('root_input', True):
+            continue
+        if name in produced:
+            issues.append({'kind': 'invalid_parameter_declaration', 'decision_id': payload['decision_id'],
+                           'reason': 'source_derived_value_cannot_be_root_input'})
+        elif formal_inputs and name not in formal_inputs:
+            issues.append({'kind': 'invalid_parameter_declaration', 'decision_id': payload['decision_id'],
+                           'reason': 'root_input_not_a_required_formal'})
+    return issues
+
+
 def validate_comparison_operands(left, right):
     """Reject equality/order comparisons across incompatible time origins/scales."""
     if left.get('unit') != right.get('unit'):

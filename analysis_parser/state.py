@@ -7,6 +7,14 @@ class Environment:
     def event(self,kind,reads,ports,spans,rule,attributes=None, metadata=None):
         eid='e'+str(len(self.report['events'])+1)
         event={'id':eid,'kind':kind,'reads':reads,'writes':{},'source_spans':spans,'scope':dict(self.scope),'evidence_status':'declared_edited' if any(s.get('editorial_provenance') for s in spans) else 'text_overt','rule_id':rule,'attributes':attributes or {},'text_order':len(self.report['events']),'dependency_order':len(self.report['events'])}
+        upstream=[self.values[value_id] for value_id in reads.values() if value_id in self.values]
+        decision_refs=sorted({reference for value in upstream
+                              for reference in value.get('adjudication_decision_refs', [])})
+        if decision_refs:
+            event['evidence_status']='mechanically_derived'
+            event['adjudication_decision_refs']=decision_refs
+            event['evidence_basis']='derived_from_reviewed_input'
+            event['decision_origin']='automatic_derivation'
         if self.report.get('schema_version')=='3.0':
             doc_order={d['doc_id']:i for i,d in enumerate(self.report.get('documents',[]))}
             event['source_order']=[{'document_index':doc_order.get(s['doc_id']),'start':s['start'],'end':s['end']} for s in spans]
@@ -15,6 +23,10 @@ class Environment:
             meta=(metadata or {}).get(port,{})
             val={'id':vid,'producer':eid,'output_port':port,'role':meta.get('role',port),'scope':dict(self.scope),'labels':meta.get('labels',[]),'source_label':next(iter(meta.get('labels',[])),None),'unit':meta.get('unit','opaque'),'scale':meta.get('scale',1),'source_spans':spans}
             for k,v in meta.items():val[k]=v
+            if decision_refs and 'adjudication_decision_refs' not in val:
+                val['adjudication_decision_refs']=decision_refs
+                val.setdefault('evidence_basis','derived_from_reviewed_input')
+                val.setdefault('decision_origin','automatic_derivation')
             if self.report.get('schema_version')=='3.0':
                 unit=val['unit'];scale=val['scale']
                 val.setdefault('quantity_kind','duration' if unit in ('day','day_fraction') else 'angle' if unit in ('du','du_fraction') else 'count' if unit in ('integer','year','year_ordinal','month','month_fraction') else 'unknown')

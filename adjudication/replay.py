@@ -3,20 +3,33 @@ import copy
 import json
 
 from .anchors import overlaps, packet_identity, validate_anchor
-from .session import branch_ancestors
+from .session import branch_ancestors, runtime_identity
 
 
 def _slot(decision):
     target = decision['targets'][0]
     action = decision['action']
     payload = decision['payload']
-    if action in ('bind_value', 'bind_call'):
-        suffix = (payload.get('consumer') or payload.get('consumer_definition_id'),
+    if action == 'select_candidate':
+        suffix = ('candidate_resolution',)
+    elif action == 'reject_candidate':
+        suffix = ('candidate_resolution',)
+    elif action in ('bind_value', 'bind_call'):
+        consumer = payload['consumer_definition_anchor']
+        suffix = (consumer['doc_id'], consumer['reading_id'], consumer['start'], consumer['end'],
                   payload.get('formal') or payload.get('input_slot'))
     elif action == 'set_quantity_semantics':
-        suffix = (payload.get('syntax_node_id'), payload.get('output_port', 'result'))
-    elif action in ('select_candidate', 'reject_candidate', 'set_scope', 'select_profile'):
-        suffix = tuple(sorted((key, str(value)) for key, value in payload.items() if key not in ('reason', 'notes')))
+        address = payload.get('semantic_output', {})
+        suffix = (address.get('definition_anchor', {}).get('doc_id'),
+                  address.get('definition_anchor', {}).get('start'),
+                  address.get('definition_anchor', {}).get('end'),
+                  address.get('construction_anchor', {}).get('doc_id'),
+                  address.get('construction_anchor', {}).get('start'),
+                  address.get('construction_anchor', {}).get('end'),
+                  address.get('construction_role'), address.get('semantic_role'),
+                  address.get('output_port'), address.get('branch_id'))
+    elif action in ('set_scope', 'select_profile'):
+        suffix = ()
     else:
         suffix = ()
     return (action, target['doc_id'], target['reading_id'], target['start'], target['end'], suffix)
@@ -31,6 +44,9 @@ def replay_session(session, packet, branch_id='main'):
     if source != session.get('source_packet'):
         return {'status': 'stale_source', 'source_packet': source, 'decision_status': {},
                 'effective': _empty_effective(), 'normalized': _normalize({'status': 'stale_source'})}
+    if runtime_identity(packet) != session.get('identity_locks'):
+        return {'status': 'stale_identity', 'source_packet': source, 'decision_status': {},
+                'effective': _empty_effective(), 'normalized': _normalize({'status': 'stale_identity'})}
     visible = branch_ancestors(session, branch_id)
     decisions = [copy.deepcopy(row) for row in session.get('decisions', []) if row['branch_id'] in visible]
     status = {row['decision_id']: {'status': 'active', 'reasons': []} for row in decisions}
@@ -64,7 +80,7 @@ def replay_session(session, packet, branch_id='main'):
     for row in decisions:
         if row['action'] == 'resegment' or status[row['decision_id']]['status'] != 'active':
             continue
-        if any(any(overlaps(row['targets'][0], segment)
+        if any(row.get('revision', 0) < segmenter.get('revision', 0) and any(overlaps(row['targets'][0], segment)
                    for segment in (segmenter['payload'].get('segments') or segmenter['targets']))
                for segmenter in segmenters):
             status[row['decision_id']] = {'status': 'needs_revalidation',
@@ -73,7 +89,9 @@ def replay_session(session, packet, branch_id='main'):
                          and status[row['decision_id']]['status'] == 'active']
     if context_decisions:
         for row in decisions:
-            if row['action'] in ('select_candidate', 'bind_value', 'bind_call') and status[row['decision_id']]['status'] == 'active':
+            if (row['action'] in ('select_candidate', 'bind_value', 'bind_call')
+                    and status[row['decision_id']]['status'] == 'active'
+                    and any(row.get('revision', 0) < context.get('revision', 0) for context in context_decisions)):
                 status[row['decision_id']] = {'status': 'needs_revalidation',
                                               'reasons': ['context_candidate_set_changed']}
     active = [row for row in decisions if status[row['decision_id']]['status'] == 'active'
@@ -124,11 +142,18 @@ def _apply(effective, row):
     elif action == 'set_scope':
         effective['scopes'][token] = payload
     elif action in ('bind_value', 'bind_call'):
-        key = ':'.join(str(value) for value in (payload.get('consumer') or payload.get('consumer_definition_id'),
-                                                 payload.get('formal') or payload.get('input_slot')))
+        consumer = payload['consumer_definition_anchor']
+        key = ':'.join(str(value) for value in (consumer['doc_id'], consumer['reading_id'], consumer['start'],
+                                                 consumer['end'], payload.get('formal') or payload.get('input_slot')))
         effective['bindings'][key] = {**payload, 'decision_id': row['decision_id'], 'target': row['targets'][0]}
     elif action == 'set_quantity_semantics':
-        key = ':'.join(str(value) for value in (payload.get('syntax_node_id'), payload.get('output_port', 'result')))
+        address = payload['semantic_output']
+        key = ':'.join(str(value) for value in (address['definition_anchor']['doc_id'],
+                                                 address['definition_anchor']['start'], address['definition_anchor']['end'],
+                                                 address['construction_anchor']['doc_id'],
+                                                 address['construction_anchor']['start'], address['construction_anchor']['end'],
+                                                 address['construction_role'], address['semantic_role'],
+                                                 address['output_port'], address['branch_id']))
         effective['quantity_semantics'][key] = {**payload, 'decision_id': row['decision_id']}
     elif action == 'select_profile':
         profile = payload.get('profile_id')

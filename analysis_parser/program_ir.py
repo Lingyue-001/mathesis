@@ -172,7 +172,7 @@ def link_entry(index, entry_id, allowed_inputs):
             if constraint:
                 constrained=defs.get(constraint.get('producer_definition_id'))
                 port=constraint.get('output_port',canonical)
-                if constrained not in all_producers or port not in constrained.get('return_ports',{}):
+                if constrained not in producers or port not in constrained.get('return_ports',{}):
                     linked.diagnostics.append({'kind':'invalid_review_binding','definition_id':ident,'formal':name,
                                                'constraint':constraint,'source_spans':d['source_spans']})
                     producers=[]

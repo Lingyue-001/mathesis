@@ -2,7 +2,7 @@ import copy
 import json
 import unittest
 
-from adjudication import append_decision, compile_reviewed, new_session
+from adjudication import append_decision as _append_decision, compile_reviewed, new_session
 from adjudication.anchors import anchor_for
 from adjudication.bundle import make_bundle
 from source_adapters.corpus import build_source_packet
@@ -23,14 +23,15 @@ class TestRealProcedure(unittest.TestCase):
         self.multiply_anchor = anchor_for(self.packet, 'sifen:38', 12, 17)
 
     def _review(self):
-        append_decision(self.session, fixture_decision(
+        _append_decision(self.session, fixture_decision(
             'D-root-input', 'declare_parameter', self.input_anchor,
-            {'name': '入蔀年', 'unit': 'year', 'root_input': True}))
-        append_decision(self.session, fixture_decision(
+            {'name': '入蔀年', 'unit': 'year', 'root_input': True, 'role': 'root_input', 'evidence_basis': 'source'}), packet=self.packet)
+        _append_decision(self.session, fixture_decision(
             'D-product-semantics', 'set_quantity_semantics', self.multiply_anchor,
-            {'syntax_node_id': 'sifen:38:ast9', 'output_port': 'result', 'unit': 'product',
-             'quantity_kind': 'composite_product', 'representation': {'kind': 'whole'},
-             'resolution_status': 'resolved'}, depends_on=['D-root-input']))
+            {'semantic_output': {'definition_anchor': anchor_for(self.packet, 'sifen:38', 0, 4),
+                                 'construction_anchor': self.multiply_anchor, 'construction_role': 'multiply',
+                                 'semantic_role': 'multiply', 'output_port': 'result', 'branch_id': 'main'},
+             'unit': 'product', 'quantity_kind': 'composite_product', 'representation': {'kind': 'whole'}}, depends_on=['D-root-input']), packet=self.packet)
 
     def test_H01_empty_review_reuses_automatic_compiler(self):
         result = compile_reviewed(self.packet, self.session)
@@ -41,16 +42,16 @@ class TestRealProcedure(unittest.TestCase):
         self._review()
         first = make_bundle(compile_reviewed(self.packet, self.session), self.session)
         second = make_bundle(compile_reviewed(self.packet, self.session), self.session)
-        self.assertEqual(first['coverage_ledger']['graph_status'], 'closed')
-        self.assertTrue(first['validation']['valid_for_complete_export'])
+        self.assertEqual(first['coverage_ledger']['graph_status'], 'partial')
+        self.assertFalse(first['validation']['valid_for_complete_export'])
         self.assertEqual(json.dumps(first['graph'], ensure_ascii=False, sort_keys=True),
                          json.dumps(second['graph'], ensure_ascii=False, sort_keys=True))
         self.assertIsNone(first['metrics']['human_active_seconds'])
 
     def test_H19_retract_restores_automatic_missing_input_gap(self):
         self._review()
-        append_decision(self.session, fixture_decision(
-            'D-retract-root', 'retract', self.input_anchor, {'decision_id': 'D-root-input'}))
+        _append_decision(self.session, fixture_decision(
+            'D-retract-root', 'retract', self.input_anchor, {'decision_id': 'D-root-input'}), packet=self.packet)
         result = compile_reviewed(self.packet, self.session)
         self.assertEqual(result['replay']['decision_status']['D-root-input']['status'], 'retracted')
         self.assertEqual(result['coverage_ledger']['graph_status'], 'partial')
@@ -59,7 +60,7 @@ class TestRealProcedure(unittest.TestCase):
     def test_H43_metadata_is_emitted_with_decision_provenance(self):
         self._review()
         graph = compile_reviewed(self.packet, self.session)['graph']
-        product = next(event for event in graph['events'] if event.get('syntax_node_id') == 'sifen:38:ast9')
+        product = next(event for event in graph['events'] if event['kind'] == 'multiply')
         value = graph['value_instances'][int(product['writes']['result'][1:]) - 1]
         self.assertEqual(product['adjudication_decision_refs'], ['D-product-semantics'])
         self.assertEqual(value['adjudication_decision_refs'], ['D-product-semantics'])

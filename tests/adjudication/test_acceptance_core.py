@@ -20,6 +20,10 @@ def decision(packet_value, decision_id, action, target, payload):
             'targets': [target], 'payload': payload, 'evidence_refs': ['fixture'], 'reason': 'test', 'depends_on': []}
 
 
+def append_fixture(source, session, row):
+    return append_decision(session, row, packet=source)
+
+
 class TestAcceptanceCore(unittest.TestCase):
     def test_H03_same_quote_has_distinct_stable_source_address(self):
         source = packet('甲甲。')
@@ -29,13 +33,14 @@ class TestAcceptanceCore(unittest.TestCase):
         source = packet('推術。', 'manual')
         anchor = anchor_for(source, 'p', 0, 2)
         session = new_session(source, 'manual')
-        append_decision(session, decision(source, 'root', 'declare_parameter', anchor,
-                                          {'name': '甲', 'unit': 'integer', 'root_input': True}))
-        append_decision(session, decision(source, 'split-and-build', 'assemble_known_structure', anchor, {
+        append_fixture(source, session, decision(source, 'root', 'declare_parameter', anchor,
+                                                  {'name': '甲', 'unit': 'integer', 'root_input': True,
+                                                   'role': 'root_input', 'evidence_basis': 'source'}))
+        append_fixture(source, session, decision(source, 'split-and-build', 'assemble_known_structure', anchor, {
             'replace_automatic': True, 'candidates': [
-                {'kind': 'task_marker', 'slots': {'marker': {'kind': 'Term', 'text': '推'},
-                                                   'target': {'kind': 'Term', 'text': '天正術'}}},
-                {'kind': 'load', 'slots': {'value': {'kind': 'Term', 'text': '甲'}}},
+                {'kind': 'task_marker', 'slots': {'marker': {'ref_kind': 'source_anchor', 'anchor': anchor},
+                                                   'target': {'ref_kind': 'source_anchor', 'anchor': anchor}}},
+                {'kind': 'load', 'slots': {'value': {'ref_kind': 'root_input', 'label': '甲'}}},
             ]}))
         result = compile_reviewed(source, session)
         self.assertEqual([row['kind'] for row in result['graph']['events']], ['input', 'load'])
@@ -45,10 +50,10 @@ class TestAcceptanceCore(unittest.TestCase):
         source = packet('推術甲。', 'multispan')
         first, second = anchor_for(source, 'p', 0, 2), anchor_for(source, 'p', 2, 3)
         session = new_session(source, 'multispan')
-        append_decision(session, decision(source, 'm', 'assemble_known_structure', first, {
+        append_fixture(source, session, decision(source, 'm', 'assemble_known_structure', first, {
             'candidates': [{'kind': 'task_marker', 'source_anchors': [first, second],
-                            'slots': {'marker': {'kind': 'Term', 'text': '推'},
-                                      'target': {'kind': 'Term', 'text': '天正術'}}}]}))
+                            'slots': {'marker': {'ref_kind': 'source_anchor', 'anchor': first},
+                                      'target': {'ref_kind': 'source_anchor', 'anchor': second}}}]}))
         result = compile_reviewed(source, session)
         node = next(row for row in result['graph']['construction_candidates'] if row['production_id'] == 'ADJUDICATION_MANUAL_V1')
         self.assertEqual(len(node['source_spans']), 2)
@@ -57,8 +62,8 @@ class TestAcceptanceCore(unittest.TestCase):
         source = packet('推天正術。推天正術。', 'scope')
         first, second = anchor_for(source, 'p', 0, 4), anchor_for(source, 'p', 5, 9)
         session = new_session(source, 'scope')
-        append_decision(session, decision(source, 'scope-1', 'set_scope', second,
-                                          {'definition_anchor': second, 'parent_definition_anchor': first}))
+        append_fixture(source, session, decision(source, 'scope-1', 'set_scope', second,
+                                                  {'definition_anchor': second, 'parent_definition_anchor': first}))
         result = compile_reviewed(source, session)
         definitions = result['graph']['program']['definitions']
         parent = next(row for row in definitions if any(span['start'] == 0 for span in row['source_spans']))
@@ -69,10 +74,10 @@ class TestAcceptanceCore(unittest.TestCase):
         source = packet('推天正術。推天正術。', 'scope-cycle')
         first, second = anchor_for(source, 'p', 0, 4), anchor_for(source, 'p', 5, 9)
         session = new_session(source, 'scope-cycle')
-        append_decision(session, decision(source, 'one', 'set_scope', first,
-                                          {'definition_anchor': first, 'parent_definition_anchor': second}))
-        append_decision(session, decision(source, 'two', 'set_scope', second,
-                                          {'definition_anchor': second, 'parent_definition_anchor': first}))
+        append_fixture(source, session, decision(source, 'one', 'set_scope', first,
+                                                  {'definition_anchor': first, 'parent_definition_anchor': second}))
+        append_fixture(source, session, decision(source, 'two', 'set_scope', second,
+                                                  {'definition_anchor': second, 'parent_definition_anchor': first}))
         with self.assertRaisesRegex(ValueError, 'scope_parent_cycle'):
             compile_reviewed(source, session)
 
@@ -114,9 +119,9 @@ class TestAcceptanceCore(unittest.TestCase):
         source = packet('推術。', 'candidate')
         anchor = anchor_for(source, 'p', 0, 2)
         session = new_session(source, 'candidate')
-        append_decision(session, decision(source, 'c1', 'select_candidate', anchor,
-                                          {'selected_candidate_id': 'not-the-only-candidate', 'candidate_set_complete': False,
-                                           'candidate_count': 9}))
+        append_fixture(source, session, decision(source, 'c1', 'select_candidate', anchor,
+                                                  {'selected_candidate_id': 'not-the-only-candidate', 'candidate_set_complete': False,
+                                                   'candidate_count': 9}))
         result = compile_reviewed(source, session)
-        self.assertIsNone(result['graph'])
-        self.assertEqual(result['review_queue']['items'][0]['details']['kind'], 'truncated_candidate_set')
+        self.assertIsNotNone(result['graph'])
+        self.assertEqual(result['coverage_ledger']['graph_status'], 'partial')

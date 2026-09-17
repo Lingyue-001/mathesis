@@ -1,8 +1,14 @@
 """Research-facing reconstruction trace derived from the compiled typed graph."""
 
-def build_reconstruction_trace(graph, source_attested_values=None, scholarly_reconstructed_values=None):
+def _comparison(computed, reference):
+    if computed is None or reference is None:
+        return {'status': 'unavailable'}
+    return {'status': 'exact' if computed == reference else 'mismatch'}
+
+def build_reconstruction_trace(graph, source_attested_values=None, scholarly_reconstructed_values=None, computed_values=None):
     source_attested_values = source_attested_values or {}
     scholarly_reconstructed_values = scholarly_reconstructed_values or {}
+    computed_values = computed_values or {}
     values = {row['id']: row for row in graph.get('value_instances', [])}
     consumers = {}
     for event in graph.get('events', []):
@@ -27,10 +33,12 @@ def build_reconstruction_trace(graph, source_attested_values=None, scholarly_rec
                              'representation': value.get('representation')})
         attested = source_attested_values.get(event['id'])
         reconstructed = scholarly_reconstructed_values.get(event['id'])
-        comparison = 'unavailable' if attested is None or reconstructed is None else ('exact' if attested == reconstructed else 'mismatch')
+        computed = next((computed_values.get(row['value_id']) for row in outputs if row['value_id'] in computed_values), None)
         steps.append({'step_id': event['id'], 'source_spans': event.get('source_spans', []),
                       'normalized_operation': event['kind'], 'formula': event.get('attributes', {}).get('formula'),
                       'operands': operands, 'unit_scale_representation': [{'port': row['port'], 'unit': row['unit'], 'scale': row['scale'], 'representation': row['representation']} for row in outputs],
                       'derived_outputs': outputs, 'source_attested_value': attested,
-                      'scholarly_reconstructed_value': reconstructed, 'comparison': {'status': comparison}})
+                      'scholarly_reconstructed_value': reconstructed, 'computed_value': computed,
+                      'comparisons': {'computed_vs_source': _comparison(computed, attested),
+                                      'computed_vs_scholar': _comparison(computed, reconstructed)}})
     return {'schema': 'StepReconstructionTrace', 'schema_version': '1.0', 'steps': steps}

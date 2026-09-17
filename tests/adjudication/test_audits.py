@@ -39,7 +39,7 @@ class TestAudits(unittest.TestCase):
         trace = build_reconstruction_trace(graph)
         self.assertEqual(trace['steps'][0]['derived_outputs'][0]['producer']['event_id'], 'e1')
         self.assertEqual(trace['steps'][0]['derived_outputs'][0]['downstream_consumers'][0]['event_id'], 'e2')
-        self.assertEqual(trace['steps'][0]['comparison']['status'], 'unavailable')
+        self.assertEqual(trace['steps'][0]['comparisons']['computed_vs_source']['status'], 'unavailable')
 
     def test_review_queue_reports_missing_input_and_unknown_quantity(self):
         graph = {'diagnostics': [{'kind': 'missing_import', 'formal': '甲', 'source_spans': []}],

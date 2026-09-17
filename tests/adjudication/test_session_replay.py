@@ -4,7 +4,7 @@ import unittest
 
 from adjudication.anchors import anchor_for
 from adjudication.replay import replay_session
-from adjudication.session import append_decision, create_branch, new_session
+from adjudication.session import append_decision as _append_decision, create_branch, new_session
 
 
 PACKET = {
@@ -28,6 +28,10 @@ def decision(decision_id, action, target, payload, depends_on=None, branch_id='m
         'evidence_refs': ['fixture:test'], 'reason': 'test decision',
         'depends_on': depends_on or [],
     }
+
+
+def append_decision(session, row):
+    return _append_decision(session, row, packet=PACKET)
 
 
 class TestSessionReplay(unittest.TestCase):
@@ -55,20 +59,27 @@ class TestSessionReplay(unittest.TestCase):
 
     def test_H18_conflicting_active_slot_requires_resolution(self):
         append_decision(self.session, decision('d1', 'bind_value', self.anchor,
-                                                {'consumer': 'def-a', 'formal': '甲',
-                                                 'producer_definition_id': 'def-x', 'output_port': 'result'}))
+                                                {'consumer_definition_anchor': self.anchor,
+                                                 'producer_definition_anchor': self.anchor, 'formal': '甲',
+                                                 'output_port': 'result'}))
         append_decision(self.session, decision('d2', 'bind_value', self.anchor,
-                                                {'consumer': 'def-a', 'formal': '甲',
-                                                 'producer_definition_id': 'def-y', 'output_port': 'result'}))
+                                                {'consumer_definition_anchor': self.anchor,
+                                                 'producer_definition_anchor': self.anchor, 'formal': '甲',
+                                                 'output_port': 'other'}))
         state = replay_session(self.session, PACKET)
         self.assertEqual(state['decision_status']['d1']['status'], 'conflicted')
         self.assertEqual(state['decision_status']['d2']['status'], 'conflicted')
 
     def test_H19_retract_restores_effective_gap_and_stales_dependent(self):
         append_decision(self.session, decision('d1', 'declare_parameter', self.anchor,
-                                                {'name': '甲', 'unit': 'integer'}))
+                                                {'name': '甲', 'unit': 'integer', 'role': 'root_input',
+                                                 'evidence_basis': 'source'}))
         append_decision(self.session, decision('d2', 'set_quantity_semantics', self.anchor,
-                                                {'syntax_node_id': 'ast-a', 'output_port': 'result',
+                                                {'semantic_output': {'definition_anchor': self.anchor,
+                                                                     'construction_anchor': self.anchor,
+                                                                     'construction_role': 'multiply',
+                                                                     'semantic_role': 'multiply',
+                                                                     'output_port': 'result', 'branch_id': 'main'},
                                                  'unit': 'integer'}, depends_on=['d1']))
         append_decision(self.session, decision('d3', 'retract', self.anchor,
                                                 {'decision_id': 'd1'}))
@@ -80,8 +91,9 @@ class TestSessionReplay(unittest.TestCase):
     def test_resegmentation_stales_overlapping_downstream_decision(self):
         later = anchor_for(PACKET, 'p:1', 2, 7)
         append_decision(self.session, decision('d1', 'bind_value', later,
-                                                {'consumer': 'def-a', 'formal': '乙',
-                                                 'producer_definition_id': 'def-x', 'output_port': 'result'}))
+                                                {'consumer_definition_anchor': self.anchor,
+                                                 'producer_definition_anchor': self.anchor, 'formal': '乙',
+                                                 'output_port': 'result'}))
         append_decision(self.session, decision('d2', 'resegment', self.anchor,
                                                 {'segments': [anchor_for(PACKET, 'p:1', 0, 4),
                                                               anchor_for(PACKET, 'p:1', 4, 7)]}))
@@ -97,8 +109,9 @@ class TestSessionReplay(unittest.TestCase):
 
     def test_H16_context_attachment_stales_prior_binding(self):
         append_decision(self.session, decision('d1', 'bind_value', self.anchor,
-                                                {'consumer': 'def-a', 'formal': '甲',
-                                                 'producer_definition_id': 'def-x', 'output_port': 'result'}))
+                                                {'consumer_definition_anchor': self.anchor,
+                                                 'producer_definition_anchor': self.anchor, 'formal': '甲',
+                                                 'output_port': 'result'}))
         append_decision(self.session, decision('d2', 'attach_context', self.anchor,
                                                 {'document': {'doc_id': 'ctx', 'reading_id': 'ctx.r', 'text': '甲，一。',
                                                               'edition_transcription': '甲，一。', 'edition_edits': []}}))

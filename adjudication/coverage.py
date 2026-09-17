@@ -6,7 +6,7 @@ def _span_key(span):
     return span['doc_id'], span.get('reading_id'), span['start'], span['end']
 
 
-def build_coverage_ledger(packet, graph, effective=None):
+def build_coverage_ledger(packet, graph, effective=None, replay=None):
     effective = effective or {}
     accounts = []
     for definition in graph.get('program', {}).get('definitions', []):
@@ -23,8 +23,8 @@ def build_coverage_ledger(packet, graph, effective=None):
         for span in value.get('source_spans', []):
             accounts.append({'span': span, 'layer': 'quantity', 'graph_node_id': value['id'],
                              'producer': value.get('producer'), 'decision_refs': value.get('adjudication_decision_refs', [])})
-    for row in effective.get('noncomputational', []):
-        accounts.append({'span': row['target'], 'layer': 'noncomputational', 'decision_refs': [row['decision_id']]})
+    # A declaration does not establish that an apparent gap is non-computational.
+    # It remains visible until compiler evidence proves it does not hide a needed node.
     for row in effective.get('deferred', []):
         accounts.append({'span': row['target'], 'layer': 'unresolved', 'decision_refs': [row['decision_id']]})
     unresolved_required_spans = []
@@ -45,15 +45,22 @@ def build_coverage_ledger(packet, graph, effective=None):
     unresolved_quantities = [value['id'] for value in values.values()
                              if value.get('resolution_status') == 'unknown']
     legal_inputs = set((effective.get('parameters') or {}).keys())
+    diagnostics = list(graph.get('diagnostics', []))
+    diagnostics.extend(graph.get('program', {}).get('linked', {}).get('diagnostics', []))
     missing_inputs = []
-    for diagnostic in graph.get('diagnostics', []):
+    for diagnostic in diagnostics:
         if diagnostic.get('kind') == 'missing_import' and diagnostic.get('formal') not in legal_inputs:
             missing_inputs.append(diagnostic)
-    invalid = [row for row in graph.get('diagnostics', [])
-               if row.get('kind') in ('type_error', 'invalid_unit_transition', 'dependency_cycle')]
+    invalid = [row for row in diagnostics
+               if row.get('kind') in ('type_error', 'invalid_unit_transition', 'dependency_cycle', 'invalid_review_binding')]
+    decision_states = (replay or {}).get('decision_status', {})
+    unstable_decisions = [decision_id for decision_id, state in decision_states.items()
+                          if state.get('status') in ('needs_revalidation', 'conflicted')]
+    noncomputational_unvalidated = [row['decision_id'] for row in effective.get('noncomputational', [])]
     if invalid:
         graph_status = 'invalid'
-    elif unresolved_required_spans or missing_node_evidence or missing_producers or unresolved_quantities or missing_inputs or graph.get('unresolved') or effective.get('deferred'):
+    elif (unresolved_required_spans or missing_node_evidence or missing_producers or unresolved_quantities or missing_inputs
+          or graph.get('unresolved') or effective.get('deferred') or unstable_decisions or noncomputational_unvalidated):
         graph_status = 'partial'
     else:
         graph_status = 'closed'
@@ -61,4 +68,7 @@ def build_coverage_ledger(packet, graph, effective=None):
             'accounts': accounts, 'unresolved_required_spans': unresolved_required_spans,
             'node_without_source_evidence': missing_node_evidence, 'derived_without_producer': missing_producers,
             'quantities_needing_semantics': unresolved_quantities,
-            'necessary_inputs_without_legal_origin': missing_inputs, 'graph_status': graph_status}
+            'necessary_inputs_without_legal_origin': missing_inputs,
+            'unstable_decisions': unstable_decisions,
+            'noncomputational_needing_validation': noncomputational_unvalidated,
+            'graph_status': graph_status}

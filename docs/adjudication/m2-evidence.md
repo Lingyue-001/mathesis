@@ -16,6 +16,30 @@ The command includes a real canonical procedure replay from
 the ordinary automatic v3.1 compile, records two `scripted_fixture` decisions,
 and recompiles through `ProgramIndex → link_entry → lower_linked`.
 
+## M2.1 correctness pass
+
+```text
+python -X utf8 -B -m unittest discover -s tests/adjudication -v
+48 tests: OK
+```
+
+`tests/adjudication/test_m21_correctness.py` is a test-only contract suite;
+M2.1 adds no production module. It records red-to-green cases for region
+resegmentation and retraction, semantic-slot conflicts and revision staleness,
+strict registry slots and explicit references, locked runtime identities,
+stable semantic output addresses, localized extension holes, provenance
+propagation, uncovered-source questions, and separate reconstruction
+comparisons. Its integrated `test_synthetic_abcd_replays_known_subgraph_and_retains_extension_hole`
+exercises automatic A, producer ambiguity B, typed manual C, and unresolved D
+through the ordinary compiler/linker/lowerer path.
+
+| M2.1 contract | Actual test ID |
+|---|---|
+| resegmentation, conflict, retraction, stale revisions | `M21CorrectnessTests.test_resegment_recompiles_candidate_region_and_retract_restores_automatic_syntax`; `test_same_candidate_slot_with_distinct_answers_conflicts`; `test_new_binding_on_segmentation_revision_is_active_then_stales_after_retraction` |
+| typed registry/reference/root/binding guards | `test_manual_registry_rejects_missing_or_bogus_slots`; `test_manual_quantity_reference_must_resolve_to_an_existing_value_or_declaration`; `test_literal_slot_requires_a_source_evidence_anchor`; `test_literal_text_must_equal_its_source_evidence_quote`; `test_source_derived_value_cannot_be_declared_as_root_by_omitting_derived_role`; `test_public_binding_rejects_runtime_definition_ids_without_semantic_anchors` |
+| closure, hole, queue and provenance | `test_unknown_structure_preserves_known_graph_and_creates_local_hole`; `test_linker_diagnostics_are_reviewed_and_invalid_binding_blocks_closure`; `test_uncovered_ledger_span_becomes_located_review_item`; `test_downstream_event_inherits_human_provenance_as_mechanically_derived` |
+| semantic address and cross-check trace | `test_semantic_output_metadata_targets_only_one_emission_from_a_load_with_decrement`; `test_trace_keeps_computed_source_and_independent_scholar_comparisons_separate` |
+
 | Requirement IDs | Actual test IDs |
 |---|---|
 | D01.013–D01.018 | `test_audits.TestAudits.*`; `test_real_procedure.TestRealProcedure.test_H20_H40_real_replay_is_closed_but_execution_is_separate`; `test_validation_metrics.TestValidationMetrics.test_H39_partial_graph_is_exportable_but_not_complete` |
