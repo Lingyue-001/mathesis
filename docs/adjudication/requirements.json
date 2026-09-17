@@ -1,5 +1,6 @@
 {
-  "status": "TRACEABILITY_PLAN_NOT_ACCEPTANCE_RESULTS",
+  "status": "M2_CORE_EVIDENCE_RECORDED_M3_M4_REMAIN_PLANNED",
+  "m2_evidence": "docs/adjudication/m2-evidence.md",
   "source_archive": {
     "files": [
       {

@@ -163,11 +163,28 @@ def link_entry(index, entry_id, allowed_inputs):
             if len(producers)>1 and getattr(index,'preferred_frame_inputs',set()):
                 framed=[x for x in producers if set(x['free_variables'])&index.preferred_frame_inputs]
                 if len(framed)==1:producers=framed
+            # An optional caller supplied constraint is deliberately expressed
+            # in Program IR terms.  The normal parser never sets it; a review
+            # compiler may do so only after it has validated definition and port
+            # compatibility.  This keeps resolution in the linker rather than
+            # patching edges after graph construction.
+            constraint=getattr(index,'binding_constraints',{}).get((ident,name))
+            if constraint:
+                constrained=defs.get(constraint.get('producer_definition_id'))
+                port=constraint.get('output_port',canonical)
+                if constrained not in all_producers or port not in constrained.get('return_ports',{}):
+                    linked.diagnostics.append({'kind':'invalid_review_binding','definition_id':ident,'formal':name,
+                                               'constraint':constraint,'source_spans':d['source_spans']})
+                    producers=[]
+                else:
+                    producers=[constrained]
             if canonical in params and (parameter_only or not producers):continue
             if name in linked.allowed_inputs or canonical in linked.allowed_inputs:continue
             item={'consumer_definition_id':ident,'formal':name,'uses':use['uses'],'candidates':[x['id'] for x in all_producers],'candidate_evidence':[{'definition_id':x['id'],'compatible':x in producers,'rejection_reason':None if x in producers else 'source query base or declared epoch frame mismatch'} for x in all_producers],'selected_definition_id':None,'selected_port':canonical,'selection_reason':None}
             if len(producers)==1:
-                source=producers[0];item.update(selected_definition_id=source['id'],selection_reason='unique source-defined return used by this formal; parameter/result namespaces remain distinct');require(source['id'],canonical)
+                source=producers[0];port=constraint.get('output_port',canonical) if constraint else canonical
+                item.update(selected_definition_id=source['id'],selected_port=port,
+                            selection_reason='reviewed producer/port constraint' if constraint else 'unique source-defined return used by this formal; parameter/result namespaces remain distinct');require(source['id'],port)
             else:
                 item['selection_reason']='multiple source producers' if producers else 'no declared root or source producer'
                 linked.diagnostics.append({'kind':'ambiguous_import' if producers else 'missing_import','definition_id':ident,'formal':name,'candidates':item['candidates'],'source_spans':d['source_spans']})

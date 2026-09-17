@@ -2,7 +2,7 @@
 
 本表在 M2 前建立。01–06 的每个正文段落、清单项与表行均保留原文定位；H01–H46 单独映射；X01–X13 补充用户约束与契约入口。
 
-**这是待实施测试计划，不是验收结果。** 拟定 test 路径/ID 尚未实现。实施时可合并测试，但必须保留 requirement ID → 实际 test ID → 运行证据关系；不得因重构删掉规格。H46 仅 M1 自动模式部分已有证据，审定模式回归仍待 M2。
+M2 core 的实际 test ID 与运行证据见 [m2-evidence.md](m2-evidence.md)；M3 UI、M4 primitive/comparison 仍是待实施项。拟定 test 路径/ID 可以合并，但必须保留 requirement ID → 实际 test ID → 运行证据关系；不得因重构删掉规格。H46 的自动模式和 M2 review-mode 回归均见该证据表。
 
 `requirements.json` 是本表机器可读版本；Markdown 是可读视图。`design/provenance.json` 锁定原文。正文中简称 `operations.py/execution.py/scoped.py` 等均指 `analysis_parser/` 内模块。
 

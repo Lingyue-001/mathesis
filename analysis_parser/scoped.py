@@ -821,6 +821,19 @@ def lower_linked(linked, environment):
                 ok=False;p.report['diagnostics'].append({'kind':'parser_exception','message':str(error),'source_spans':c['source_spans'],'definition_id':ident,'call_id':call_id})
             for event in p.report['events'][before:]:
                 event.setdefault('syntax_node_id',c['node_id']);event.setdefault('definition_id',ident);event.update(production_id=c['production_id'],procedure_id=c['procedure_id']);event.setdefault('call_id',call_id)
+                # A compiler caller may attach already-validated metadata to a
+                # syntax output.  The automatic parser sets no hook.  Applying
+                # it while the event is emitted preserves type/audit execution
+                # as the sole graph construction path.
+                for port,vid in event['writes'].items():
+                    review=getattr(p,'review_output_metadata',{}).get((c['node_id'],port))
+                    if review:
+                        p.env.values[vid].update({key:value for key,value in review.items()
+                                                  if key not in ('decision_id','decision_refs')})
+                        refs=review.get('decision_refs') or [review.get('decision_id')]
+                        p.env.values[vid]['adjudication_decision_refs']=[ref for ref in refs if ref]
+                        event['adjudication_decision_refs']=p.env.values[vid]['adjudication_decision_refs']
+                        event['evidence_status']='scholarly_calibrated'
             c['status']='selected' if ok else 'unresolved';c['selection_reason']='typed slots and linked source state' if ok else 'no compatible lowering'
             p.report['coverage']['accounted_spans' if ok else 'unparsed_spans'].extend(c['source_spans'])
             if not ok:
