@@ -34,3 +34,25 @@ The M3 browser test records actor `scripted_fixture`, not human. It verifies sou
 - The local lexical-role action is scoped source evidence. It is deliberately not a global dictionary update and does not create a graph operation by itself.
 - Numerical reconstruction calls `/api/adjudication/execute`, which recompiles then executes the reviewed graph currently in the session; it remains auxiliary to the structural review.
 - Comparison status is explicitly `unavailable`; dual reviewed graph comparison and primitive expansion remain M4 work.
+
+## M3.1 consistency repair evidence (2026-09-17)
+
+The independent audit's 14 counterexamples and five positive controls now run
+against the current repository as `tests/adjudication/test_m31_consistency.py`.
+The audit ZIP's executable is a frozen snapshot, so it remains historical
+evidence rather than an authority on current source behavior.
+
+| Shared repair | Current evidence |
+|---|---|
+| One versioned decision payload and semantic target contract; atomic candidate/manual edits | 6 counterexamples and all 5 positive controls pass |
+| One reviewed syntax snapshot for context, Program IR, methods, controls, graph, and projection | 3 syntax/context counterexamples pass |
+| One emission-time quantity metadata finalizer | 2 metadata counterexamples pass |
+| Structural audit-derived closure and explicit ontology-extension review outcome | 2 closure/extension counterexamples pass |
+| Idempotent context document attachment; failed saved-session replay stays preserved in the browser | 1 attachment counterexample; `adjudication-browser.mjs` interception test pass |
+
+Final local validation: M3.1 19/19; adjudication 71/71; parser 61/61;
+parser-v3 94/94; rescue 78/78 (including engineering 35/35); Workbench 19/19;
+reconciliation 5/5; both Workbench/Pattern Lab browser smoke tests; and Eleventy
+build all pass. `set_scope` was also replayed through the reviewed service using
+an existing canonical anchor; it produced the current reviewed graph without a
+browser graph payload.

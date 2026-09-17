@@ -86,7 +86,8 @@ templateEngineOverride: liquid
           <label>Formal / input slot <input id="binding-formal" type="text"></label>
           <label>Producer output port <input id="binding-port" type="text" value="result"></label>
           <button id="apply-binding" type="button">Bind producer / port</button>
-          <label>Query base / scope <input id="scope-value" type="text"></label>
+          <label>Procedure or stage <select id="scope-definition"></select></label>
+          <label>Query base <select id="scope-base"></select></label>
           <button id="apply-scope" type="button">Set local scope</button>
           <label>Profile <select id="profile-select"><option value="">Choose existing profile</option><option value="ST_elapsed">ST elapsed</option><option value="SF_Liu_inclusive">SF Liu inclusive</option><option value="SF_completed_four">SF completed four</option><option value="instant_lunation">instant lunation</option><option value="civil_whole_day">civil whole day</option></select></label>
           <button id="apply-profile" type="button">Select profile</button>

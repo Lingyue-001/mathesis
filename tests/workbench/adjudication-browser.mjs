@@ -30,6 +30,12 @@ try {
   await page.reload();
   await page.waitForFunction(() => document.querySelector('#decision-history').textContent.includes('set_lexical_role'));
   assert.equal(await page.locator('#decision-history').innerText(), before, 'session restores after browser reload');
+  const persistedSession = await page.evaluate(() => localStorage.getItem('mathesis.adjudication-session.v1.sifen-3-5'));
+  await page.route('**/api/adjudication/compile', route => route.fulfill({ status: 409, contentType: 'application/json', body: JSON.stringify({ error: 'transient_test_failure' }) }));
+  await page.locator('#analyze').click();
+  await page.waitForFunction(() => document.querySelector('#status').textContent.includes('已保留本地 session'), null, { timeout: 5000 });
+  assert.equal(await page.evaluate(() => localStorage.getItem('mathesis.adjudication-session.v1.sifen-3-5')), persistedSession, 'failed replay preserves the saved session');
+  await page.unroute('**/api/adjudication/compile');
   const segment = page.locator('#source button[data-doc-id="sifen:38"][data-start="12"]');
   await segment.click();
   await page.locator('#split-at').fill('14');

@@ -81,11 +81,21 @@ def _prepare_packet(packet, effective):
         prepared['selected_profiles'] = selected
     # Context attachment is deliberately limited to a complete document object;
     # it is parsed by the ordinary context compiler and never inserted as a value.
+    context_documents = prepared.setdefault('context_documents', [])
+    known_contexts = {document['doc_id']: document for document in context_documents}
     for attachment in effective['contexts']:
         document = attachment.get('document')
         if not isinstance(document, dict) or not document.get('doc_id') or not document.get('text'):
             raise ValueError('attach_context_requires_complete_document')
-        prepared.setdefault('context_documents', []).append(copy.deepcopy(document))
+        existing = known_contexts.get(document['doc_id'])
+        if existing is not None:
+            if (existing.get('reading_id'), existing.get('text'), existing.get('text_sha256')) != (
+                    document.get('reading_id'), document.get('text'), document.get('text_sha256')):
+                raise ValueError('attach_context_document_identity_conflict')
+            continue
+        copied = copy.deepcopy(document)
+        context_documents.append(copied)
+        known_contexts[copied['doc_id']] = copied
     return prepared
 
 

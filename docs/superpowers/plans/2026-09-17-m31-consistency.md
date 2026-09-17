@@ -54,5 +54,5 @@
 
 **Files:** existing Workbench UI/API/service and browser tests.
 
-- [ ] Preserve sessions on transient errors, make existing-context attachment idempotent, and display real action effects.
-- [ ] Run two-procedure browser acceptance and full regressions; update evidence and stop before M4.
+- [x] Preserve sessions on transient errors, make existing-context attachment idempotent, and display real action effects.
+- [x] Run two-procedure browser acceptance and full regressions; update evidence and stop before M4.

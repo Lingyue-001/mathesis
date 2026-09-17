@@ -1,6 +1,6 @@
 import { renderSource, markSourceSelection, revealInPanel, selectionAnchor } from './ui/source-links.js';
 import { renderStructure, renderGraph, renderRelationships, markObjects, element, action, pretty } from './ui/procedure-view.js';
-import { clearSession, exportSession, importSession, loadSession, saveSession } from './ui/adjudication-session-store.js';
+import { exportSession, importSession, loadSession, saveSession } from './ui/adjudication-session-store.js';
 
 const byId = id => document.getElementById(id);
 const base = document.documentElement.dataset.baseurl || '/';
@@ -76,8 +76,11 @@ function showCandidateOptions() {
 }
 function showIssues() { const box = byId('analysis-issues'); box.replaceChildren(); for (const issue of analysis.projection.issues) { const item = element('details', 'research-disclosure'); item.append(element('summary', '', `${issue.origin} · ${issue.kind}`), element('pre', '', json(issue))); box.append(item); } }
 function showDefinitions() {
-  for (const id of ['binding-consumer', 'binding-producer']) byId(id).replaceChildren();
-  for (const frame of analysis.projection.frames) if (frame.source_spans?.[0]) for (const id of ['binding-consumer', 'binding-producer']) byId(id).add(new Option(`${frame.label} · ${frame.id}`, frame.id));
+  for (const id of ['binding-consumer', 'binding-producer', 'scope-definition', 'scope-base']) byId(id).replaceChildren();
+  byId('scope-base').add(new Option('No explicit query base', ''));
+  for (const frame of analysis.projection.frames) if (frame.source_spans?.[0]) {
+    for (const id of ['binding-consumer', 'binding-producer', 'scope-definition', 'scope-base']) byId(id).add(new Option(`${frame.label} · ${frame.id}`, frame.id));
+  }
   const contexts = byId('context-select'); contexts.replaceChildren();
   for (const doc of analysis.graph.documents.filter(doc => doc.category === 'context_documents')) contexts.add(new Option(`${doc.doc_id} · ${doc.text}`, doc.doc_id));
 }
@@ -101,7 +104,7 @@ function consume(next) {
 }
 async function loadAnalysis() {
   const procedureId = byId('procedure').value; const revision = ++requestRevision; busy(true); byId('status').textContent = '正在调用 reviewed compiler…';
-  try { const saved = loadSession(procedureId); let next; try { next = saved ? await request('api/adjudication/compile', { procedure_id: procedureId, session: saved.session, branch_id: saved.branch_id }) : await request(`api/adjudication/${encodeURIComponent(procedureId)}`); } catch (error) { if (!saved) throw error; clearSession(procedureId); next = await request(`api/adjudication/${encodeURIComponent(procedureId)}`); } if (revision !== requestRevision) return; consume(next); byId('status').textContent = `已载入 reviewed structure · ${next.projection.review_queue.items.length} 个当前问题`; } catch (error) { if (revision === requestRevision) byId('status').textContent = `分析未完成：${error.message}`; } finally { if (revision === requestRevision) busy(false); }
+  try { const saved = loadSession(procedureId); const next = saved ? await request('api/adjudication/compile', { procedure_id: procedureId, session: saved.session, branch_id: saved.branch_id }) : await request(`api/adjudication/${encodeURIComponent(procedureId)}`); if (revision !== requestRevision) return; consume(next); byId('status').textContent = `已载入 reviewed structure · ${next.projection.review_queue.items.length} 个当前问题`; } catch (error) { if (revision === requestRevision) byId('status').textContent = `分析未完成；已保留本地 session：${error.message}`; } finally { if (revision === requestRevision) busy(false); }
 }
 async function applyDecision(row) {
   if (!selectedAnchor && !row.targets?.length) throw new Error('请先选择 source span'); const revision = ++requestRevision; busy(true); byId('session-status').textContent = '正在应用 decision 并重新编译…';
@@ -120,7 +123,7 @@ byId('assemble-known').addEventListener('click', () => { const kind = byId('manu
 byId('apply-lexical-role').addEventListener('click', () => applyDecision(makeDecision('set_lexical_role', [selectedAnchor], { contract_version: '1.0', grammatical_role: byId('lexical-role').value }, 'local occurrence grammar review')));
 byId('mark-unresolved').addEventListener('click', () => applyDecision(makeDecision('defer', [selectedAnchor], { unresolved: true }, 'retain unresolved'))); byId('request-extension').addEventListener('click', () => applyDecision(makeDecision('defer', [selectedAnchor], { schema_extension_required: true }, 'existing registry cannot express this structure')));
 byId('apply-binding').addEventListener('click', () => applyDecision(makeDecision('bind_value', [selectedAnchor], { consumer_definition_anchor: frameAnchor('binding-consumer'), producer_definition_anchor: frameAnchor('binding-producer'), formal: byId('binding-formal').value, output_port: byId('binding-port').value })));
-byId('apply-scope').addEventListener('click', () => applyDecision(makeDecision('set_scope', [selectedAnchor], { query_base: byId('scope-value').value }))); byId('apply-profile').addEventListener('click', () => applyDecision(makeDecision('select_profile', [selectedAnchor], { profile_id: byId('profile-select').value })));
+byId('apply-scope').addEventListener('click', () => { const definition = frameAnchor('scope-definition'); const base = frameAnchor('scope-base'); if (!definition) throw new Error('请选择要修改的 procedure 或 stage'); applyDecision(makeDecision('set_scope', [selectedAnchor], { definition_anchor: definition, ...(base ? { query_base_anchor: base } : {}) })); }); byId('apply-profile').addEventListener('click', () => applyDecision(makeDecision('select_profile', [selectedAnchor], { profile_id: byId('profile-select').value })));
 byId('attach-context').addEventListener('click', () => { const doc = analysis.graph.documents.find(row => row.doc_id === byId('context-select').value); applyDecision(makeDecision('attach_context', [selectedAnchor], { document: doc })); });
 byId('declare-parameter').addEventListener('click', () => applyDecision(makeDecision('declare_parameter', [selectedAnchor], { name: byId('parameter-name').value, unit: byId('parameter-unit').value, root_input: true, role: 'root_input', evidence_basis: 'scholarship' })));
 byId('create-branch').addEventListener('click', async () => { const branch = byId('branch-name').value.trim(); if (!branch) return; busy(true); try { consume(await request('api/adjudication/branch', { procedure_id: analysis.procedure.id, session: analysis.session, branch_id: branch, from_branch: analysis.branch_id })); } catch (error) { byId('session-status').textContent = `Branch rejected: ${error.message}`; } finally { busy(false); } });
