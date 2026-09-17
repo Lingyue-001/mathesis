@@ -13,6 +13,16 @@ ACTIONS = {
     'bind_value', 'bind_call', 'set_quantity_semantics', 'select_profile',
     'attach_context', 'declare_parameter', 'assemble_known_structure',
     'mark_noncomputational', 'defer', 'approve_scope', 'retract',
+    'set_lexical_role',
+}
+
+# A scholar may correct one attested occurrence's grammatical function.  These
+# labels are deliberately textual evidence, not operation kinds or global
+# dictionary entries; computational effect remains the construction compiler's
+# separate judgement.
+LEXICAL_ROLE_CONTRACT = {
+    'version': '1.0',
+    'roles': frozenset({'term', 'numeral', 'pronoun', 'function_word', 'preposition', 'particle', 'operator_cue'}),
 }
 
 
@@ -81,6 +91,12 @@ def validate_decision(session, packet, decision):
         validate_anchor(packet, payload['producer_definition_anchor'])
     if decision['action'] == 'mark_noncomputational' and (not decision['reason'] or not decision['evidence_refs']):
         raise ValueError('noncomputational_reason_and_evidence_required')
+    if decision['action'] == 'set_lexical_role':
+        payload = decision['payload']
+        if payload.get('contract_version') != LEXICAL_ROLE_CONTRACT['version']:
+            raise ValueError('unsupported_lexical_role_contract')
+        if payload.get('grammatical_role') not in LEXICAL_ROLE_CONTRACT['roles']:
+            raise ValueError('invalid_lexical_role')
     return copy.deepcopy(decision)
 
 

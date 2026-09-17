@@ -8,9 +8,11 @@ import re
 from urllib.parse import unquote, urlsplit
 
 from source_adapters.corpus import build_source_packet, list_procedures
-from workbench.service import analyze_procedure, compile_procedure
+from workbench.service import (analyze_procedure, apply_adjudication_decision,
+                               branch_adjudication, compile_adjudication,
+                               compile_procedure, execute_adjudication, open_adjudication)
 
-MAX_BODY = 32768
+MAX_BODY = 262144
 
 
 def make_server(root, port=8789, site_root=None):
@@ -52,6 +54,8 @@ def make_server(root, port=8789, site_root=None):
             try:
                 if path == '/api/procedures':
                     self.reply(200, {'procedures': list_procedures(root)})
+                elif path.startswith('/api/adjudication/'):
+                    self.reply(200, open_adjudication(root, path.removeprefix('/api/adjudication/')))
                 elif path.startswith('/api/analysis/'):
                     self.reply(200, analyze_procedure(root, path.removeprefix('/api/analysis/')))
                 elif path.startswith('/api/procedures/'):
@@ -80,9 +84,6 @@ def make_server(root, port=8789, site_root=None):
         def do_POST(self):
             if not self.same_origin():
                 return
-            if urlsplit(self.path).path != '/api/compile':
-                self.reply(404, {'error': 'not_found'})
-                return
             try:
                 if self.headers.get_content_type() != 'application/json':
                     raise ValueError('application_json_required')
@@ -92,11 +93,33 @@ def make_server(root, port=8789, site_root=None):
                 if not 0 < length <= MAX_BODY:
                     raise ValueError('invalid_body_size')
                 body = json.loads(self.rfile.read(length))
-                if not isinstance(body, dict) or set(body) != {'procedure_id', 'inputs'}:
-                    raise ValueError('expected_procedure_id_and_inputs_only')
-                if not isinstance(body['procedure_id'], str):
+                if not isinstance(body, dict) or not isinstance(body.get('procedure_id'), str):
                     raise ValueError('invalid_procedure_id')
-                self.reply(200, compile_procedure(root, body['procedure_id'], body['inputs']))
+                path = urlsplit(self.path).path
+                if path == '/api/compile':
+                    if set(body) != {'procedure_id', 'inputs'}:
+                        raise ValueError('expected_procedure_id_and_inputs_only')
+                    response = compile_procedure(root, body['procedure_id'], body['inputs'])
+                elif path == '/api/adjudication/compile':
+                    if set(body) != {'procedure_id', 'session', 'branch_id'}:
+                        raise ValueError('expected_reviewed_compile_fields')
+                    response = compile_adjudication(root, body['procedure_id'], body['session'], body['branch_id'])
+                elif path == '/api/adjudication/decision':
+                    if set(body) != {'procedure_id', 'session', 'decision', 'branch_id'}:
+                        raise ValueError('expected_reviewed_decision_fields')
+                    response = apply_adjudication_decision(root, body['procedure_id'], body['session'], body['decision'], body['branch_id'])
+                elif path == '/api/adjudication/branch':
+                    if set(body) != {'procedure_id', 'session', 'branch_id', 'from_branch'}:
+                        raise ValueError('expected_reviewed_branch_fields')
+                    response = branch_adjudication(root, body['procedure_id'], body['session'], body['branch_id'], body['from_branch'])
+                elif path == '/api/adjudication/execute':
+                    if set(body) != {'procedure_id', 'session', 'branch_id', 'inputs'}:
+                        raise ValueError('expected_reviewed_execute_fields')
+                    response = execute_adjudication(root, body['procedure_id'], body['session'], body['branch_id'], body['inputs'])
+                else:
+                    self.reply(404, {'error': 'not_found'})
+                    return
+                self.reply(200, response)
             except (ValueError, UnicodeError) as error:
                 self.reply(400, {'error': str(error)})
             except (OSError, KeyError, StopIteration):

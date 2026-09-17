@@ -8,8 +8,17 @@
 .procedure-workbench #selection-detail > article { margin-block: 1rem; }
 .procedure-workbench [hidden] { display: none; }
 .procedure-workbench .filter-box { margin-block: 1.2rem; }
+.research-stage-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.65rem; }
+.research-stage { border: 1px solid #ded4c9; border-radius: 0.4rem; padding: 0.55rem; overflow-wrap: anywhere; }
+.research-stage summary { cursor: pointer; font-weight: 600; }
+.research-stage pre { max-height: 10rem; overflow: auto; white-space: pre-wrap; font-size: 0.78rem; }
+.workbench-session-tools, .workbench-action-grid { display: flex; gap: 0.75rem; align-items: end; flex-wrap: wrap; }
+.workbench-session-tools label, .workbench-action-grid label { display: grid; gap: 0.25rem; min-width: 10rem; }
+.workbench-action-grid button { align-self: end; }
+.workbench-action-grid input, .workbench-action-grid select, .workbench-session-tools input { max-width: 16rem; }
 @media (max-width: 1000px) {
   .workbench-columns { grid-template-columns: 1fr; }
+  .research-stage-list { grid-template-columns: 1fr; }
   .procedure-workbench { padding-inline: 1rem; }
 }
 @media (max-width: 600px) {

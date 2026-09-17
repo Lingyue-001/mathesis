@@ -62,8 +62,8 @@ flowchart LR
 | `adjudication/validation.py`、`provenance.py` | 四种独立状态、完整目标 closure、evidence_basis/decision_origin/decision_refs | approved = closed = executed；丢失人工来源 |
 | `adjudication/bundle.py` | 独立 `ReviewedProcedureBundle` v1，`export_reviewed / import_reviewed`；JSON 规范，CSV 派生 | 用 SourcePacket 的版本号控制 session/bundle；CSV 冒充完整图 |
 | `adjudication/metrics.py` | 操作、槽位、修订、证据补充与 actor/time 分账 | 将 scripted replay 计入真人负担 |
-| `workbench/api.py`、`workbench/storage.py` | 本地 API、受限 session 持久化；不写 canonical corpus | 网络部署、任意文件路径/命令执行 |
-| `src/adjudication.md`、`src/js/adjudication/` | 独立页面/controller/view；UI 通过 API 使用上述模型 | import `patterns.js` 页面 state |
+| `workbench/api.py`、`workbench/service.py` | loopback same-origin API；`open/compile/apply/branch` 都经 reviewed compiler，不写 canonical corpus | 网络部署、任意文件路径/命令执行、浏览器 graph patch |
+| `src/adjudication.md`、`src/js/procedure-workbench.js`、`src/js/ui/adjudication-session-store.js` | 独立页面/controller/local session persistence；M3 source↔structure↔graph/review view | import `patterns.js` 页面 state、全局词典写回 |
 | `src/js/ui/` 与全局 CSS | 复用 source highlight、card、formatter；必要时抽取纯 utilities | 复制整套 Pattern Lab 状态机 |
 | `comparison/reviewed.py` | 研究者指定范围映射后的图属性/端口/依赖差异 | 替代旧 similarity score；自动历史判断 |
 | `analysis_parser/` 的按家族窄扩展 | M4 在既有 registry/backend 上接 P1–P5 和 S1 | passage-specific operation；把 profile/UI/comparison 堆进 parser |
@@ -76,7 +76,7 @@ canonical adapter 必须从配置指向的实际 corpus 全文解析 source IDs�
 
 Pattern Lab 继续负责浏览与既有比较。Adjudication Lab 负责 source/context、候选、自由切分/split/merge、typed slots、producer/value/port、scope/query、profile、unresolved/schema extension、保存撤销、重编译和状态。共享数据契约与纯 UI utilities；两页互不导入页面 state。
 
-M3 的首选方案是 **一个绑定 `127.0.0.1` 的 Python workbench 同时提供本地静态构建和 `/api/adjudication/*`**。浏览器 UI 与 API 同源；Eleventy 继续负责构建，开发时可单独 watch，不由两个跨域服务拼接。独立 sessions 目录默认 Git ignored；source/旧快照只读。入口仅在本地 workbench 展示，不调整线上导航与部署。M3 开工前需落实并验证端口、静态目录白名单、Windows 启动/重启、写入原子性、路径越界、Origin/写请求防护和 HTML 文本渲染；M1 未实现此服务器。
+M3 实现为 **一个绑定 `127.0.0.1` 的 Python workbench 同时提供本地静态构建和 `/api/adjudication/*`**。浏览器 UI 与 API 同源；Eleventy 继续负责构建，不由两个跨域服务拼接。session 保存在版本化浏览器 localStorage 单键中，导入或重开时由 reviewed API 重验；source/旧快照仍只读。服务只提供已构建静态目录和登记 API，核验 path/Host/Origin/JSON body，不提供 repo 浏览、shell 或 graph patch。M3 证据见 [adjudication/m3-evidence.md](adjudication/m3-evidence.md)。
 
 M4 真人试用至少记录 candidate selection、free segmentation、typed manual construction（含填槽数）、binding、profile/background、schema extension 各自次数、修订次数、真人活跃时长和研究阅读时长。分母事先锁定，agent/scripted replay 的真人时间为 null，另报软件验收。至少两个真实完整目标、无正确候选时的已知类型构造、双图映射以及各 family 的历史证据逐项交付，不能从合成测试推断史学完成。
 

@@ -14,7 +14,7 @@ try {
   await page.goto(`${origin}/adjudication/`);
   assert.equal(await page.locator('#homeSideNav a[href="/adjudication/"]').count(), 1, 'Must be a website page with shared navigation');
   await page.waitForFunction(() => document.querySelectorAll('[data-step-id]').length > 0);
-  assert.equal(requests.filter(url => url.endsWith('/api/compile')).length, 0, 'Analysis must not execute');
+  assert.equal(requests.filter(url => url.endsWith('/api/adjudication/execute')).length, 0, 'Analysis must not execute');
   assert.equal(await page.locator('#numerical-check').getAttribute('open'), null);
   assert.equal(await page.locator('#execute-form').isVisible(), false);
   assert.match(await page.locator('#source').innerText(), /置入蔀年減一/);
@@ -48,7 +48,7 @@ try {
   await page.screenshot({ path: '.cache/workbench/analysis-desktop.png', fullPage: true });
   await page.locator('#numerical-check > summary').click();
   const execute = async () => {
-    const response = page.waitForResponse(r => r.url() === `${origin}/api/compile`);
+    const response = page.waitForResponse(r => r.url() === `${origin}/api/adjudication/execute`);
     await page.locator('#execute').click();
     const value = await (await response).json();
     await page.waitForFunction(() => !document.getElementById('execute').disabled);

@@ -14,7 +14,49 @@ def _overlap(left, right):
                for a in left for b in right)
 
 
-def project_graph(report):
+def _layer_rows(graph, bundle, steps):
+    """Expose source evidence by research layer without imposing one label per character."""
+    ledger = (bundle or {}).get('coverage_ledger', {})
+    accounts = ledger.get('accounts', [])
+    layers = {
+        'L0': [{'kind': 'source_reading', 'span': {'doc_id': doc['doc_id'], 'reading_id': doc['reading_id'],
+                                                    'start': 0, 'end': len(doc['text'])},
+                'evidence_basis': 'source'} for doc in graph.get('documents', [])],
+        'L1': [], 'L2': [], 'L3': [],
+    }
+    for account in accounts:
+        layer = {'procedure': 'L1', 'stage': 'L1', 'context': 'L1', 'operation': 'L2',
+                 'control': 'L2', 'quantity': 'L3', 'unresolved': 'L3'}.get(account['layer'])
+        if layer:
+            layers[layer].append({'kind': account['layer'], 'span': account['span'],
+                                  'object_id': account.get('graph_node_id') or account.get('definition_id'),
+                                  'decision_refs': account.get('decision_refs', []),
+                                  'evidence_basis': 'compiler_or_reviewed_graph'})
+    for candidate in graph.get('construction_candidates', []):
+        for span in candidate.get('source_spans', []):
+            layers['L3'].append({'kind': 'construction_candidate', 'span': span,
+                                 'object_id': candidate.get('node_id'), 'production_id': candidate.get('production_id'),
+                                 'evidence_basis': 'parser_rule'})
+    return layers
+
+
+def _review_questions(graph, bundle):
+    queue = (bundle or {}).get('review_queue', {'items': []})
+    candidates = graph.get('construction_candidates', [])
+    questions = []
+    for index, item in enumerate(queue.get('items', [])):
+        spans = item.get('source_anchors') or item.get('source_spans') or []
+        options = [{'id': row.get('node_id'), 'kind': row.get('kind'), 'surface': row.get('text'),
+                    'production_id': row.get('production_id'), 'source_spans': row.get('source_spans', [])}
+                   for row in candidates if any(_overlap(row.get('source_spans', []), [span]) for span in spans)]
+        questions.append({**item, 'id': item.get('id', f'review-{index + 1}'),
+                          'candidate_options': options,
+                          'evidence': [{'basis': option.get('production_id'), 'source_spans': option['source_spans']}
+                                       for option in options]})
+    return questions
+
+
+def project_graph(report, bundle=None):
     graph = deepcopy(report)
     syntax = graph.get('syntax', {})
     program = graph.get('program', {})
@@ -93,10 +135,15 @@ def project_graph(report):
                     or _overlap(spans, step['source_spans'])):
                 step['issue_ids'].append(issue['id'])
 
+    review_questions = _review_questions(graph, bundle)
     return {
-        'projection_version': 1,
+        'projection_version': 2,
         'frames': frames, 'steps': steps, 'nodes': nodes, 'edges': edges,
         'quantities': quantities, 'issues': issues,
         'calls': program.get('calls', []), 'imports': program.get('imports', []),
         'branches': graph.get('branches', []),
+        'layers': _layer_rows(graph, bundle, steps),
+        'coverage': (bundle or {}).get('coverage_ledger'),
+        'review_queue': {'schema': 'ReviewQueue', 'schema_version': '1.0', 'items': review_questions},
+        'trace': (bundle or {}).get('trace'),
     }

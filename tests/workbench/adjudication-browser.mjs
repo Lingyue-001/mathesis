@@ -1,0 +1,67 @@
+// M3 browser acceptance: the page drives reviewed compilation, never graph editing.
+import assert from 'node:assert/strict';
+import { chromium } from 'playwright';
+
+const origin = process.env.WORKBENCH_URL || 'http://127.0.0.1:8789';
+const browser = await chromium.launch({ headless: true });
+try {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1050 } });
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto(`${origin}/adjudication/?actor=scripted_browser`);
+  await page.waitForFunction(() => document.querySelectorAll('[data-step-id]').length > 0);
+  assert.equal(await page.locator('#system-stages [data-stage-id]').count(), 6, 'real processing records are visible');
+  assert.equal(await page.locator('#annotation-layer').count(), 1, 'source layers are selectable');
+  assert.equal(await page.locator('#review-queue [data-review-id]').count() > 0, true, 'real compiler questions are visible');
+  const coordinateSegments = await page.evaluate(async () => {
+    const { sourceSegments } = await import('/js/ui/source-links.js');
+    return sourceSegments('𠀀a\u0301\n甲甲', [{ start: 0, end: 3 }, { start: 4, end: 6 }, { start: 5, end: 6 }]);
+  });
+  assert.deepEqual(coordinateSegments.map(row => [row.start, row.end, row.text, row.spans.length]), [[0, 3, '𠀀á', 1], [3, 4, '\n', 0], [4, 5, '甲', 1], [5, 6, '甲', 2]], 'astral, combining, newline, repeated text and multi-event spans retain code-point coordinates');
+  const source = page.locator('#source button[data-doc-id="sifen:38"][data-start="0"]');
+  await source.click();
+  assert.equal(await page.locator('#selected-anchor').getAttribute('data-doc-id'), 'sifen:38');
+  await page.locator('#lexical-role').selectOption('term');
+  const response = page.waitForResponse(r => r.url() === `${origin}/api/adjudication/decision`);
+  await page.locator('#apply-lexical-role').click();
+  assert.equal((await response).ok(), true);
+  await page.waitForFunction(() => document.querySelector('#decision-history').textContent.includes('set_lexical_role'));
+  const before = await page.locator('#decision-history').innerText();
+  await page.reload();
+  await page.waitForFunction(() => document.querySelector('#decision-history').textContent.includes('set_lexical_role'));
+  assert.equal(await page.locator('#decision-history').innerText(), before, 'session restores after browser reload');
+  const segment = page.locator('#source button[data-doc-id="sifen:38"][data-start="12"]');
+  await segment.click();
+  await page.locator('#split-at').fill('14');
+  const resegment = page.waitForResponse(r => r.url() === `${origin}/api/adjudication/decision`);
+  await page.locator('#resegment').click();
+  assert.equal((await resegment).ok(), true);
+  await page.waitForFunction(() => document.querySelector('#decision-history').textContent.includes('resegment'));
+  const retract = page.waitForResponse(r => r.url() === `${origin}/api/adjudication/decision`);
+  await page.locator('#decision-history p', { hasText: 'resegment' }).getByRole('button', { name: 'Retract' }).click();
+  assert.equal((await retract).ok(), true);
+  await page.waitForFunction(() => JSON.parse(document.querySelector('#graph-raw').textContent).adjudication.effective_decisions.segments.length === 0);
+  await page.locator('#branch-name').fill('browser-reading');
+  const branch = page.waitForResponse(r => r.url() === `${origin}/api/adjudication/branch`);
+  await page.locator('#create-branch').click();
+  assert.equal((await branch).ok(), true);
+  await page.waitForFunction(() => document.querySelector('#branch-select').value === 'browser-reading');
+  assert.equal(await page.locator('#branch-select').inputValue(), 'browser-reading');
+  const downloadPromise = page.waitForEvent('download');
+  await page.locator('#export-session').click();
+  const download = await downloadPromise;
+  const chunks = [];
+  for await (const chunk of await download.createReadStream()) chunks.push(chunk);
+  const imported = page.waitForResponse(r => r.url() === `${origin}/api/adjudication/compile`);
+  await page.locator('#import-session').setInputFiles({ name: 'session.json', mimeType: 'application/json', buffer: Buffer.concat(chunks) });
+  assert.equal((await imported).ok(), true);
+  assert.equal(await page.locator('#branch-select').inputValue(), 'browser-reading', 'export then import preserves branch replay state');
+  await page.selectOption('#procedure', 'sifen-3-7-alternative');
+  await page.waitForFunction(() => document.querySelector('#scope').textContent.includes('一术'));
+  assert.equal(await page.locator('#review-queue [data-review-id]').count() > 0, true, 'same view renders the real hole target');
+  assert.equal(await page.locator('#numerical-check').getAttribute('open'), null);
+  assert.deepEqual(errors, []);
+  console.log('M3 browser acceptance passed: stages, layers, linked source, real decision/recompile, restore, and two corpus targets.');
+} finally {
+  await browser.close();
+}

@@ -118,7 +118,7 @@ def replay_session(session, packet, branch_id='main'):
 def _empty_effective():
     return {'selected_candidates': {}, 'candidate_selection_metadata': {}, 'rejected_candidates': [], 'segments': [], 'scopes': {},
             'bindings': {}, 'quantity_semantics': {}, 'profiles': [], 'contexts': [], 'parameters': {},
-            'manual_structures': [], 'noncomputational': [], 'deferred': [], 'approved_scopes': []}
+            'manual_structures': [], 'noncomputational': [], 'deferred': [], 'approved_scopes': [], 'lexical_roles': []}
 
 
 def _anchor_token(row):
@@ -175,3 +175,7 @@ def _apply(effective, row):
     elif action == 'approve_scope':
         effective['approved_scopes'].append({**payload, 'decision_id': row['decision_id'],
                                              'target': row['targets'][0]})
+    elif action == 'set_lexical_role':
+        effective['lexical_roles'].append({**payload, 'decision_id': row['decision_id'],
+                                           'target': row['targets'][0], 'evidence_refs': row['evidence_refs'],
+                                           'reason': row['reason']})

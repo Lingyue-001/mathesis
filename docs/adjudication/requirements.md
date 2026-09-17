@@ -234,6 +234,18 @@ M2 core 的实际 test ID 与运行证据见 [m2-evidence.md](m2-evidence.md)；
 | X04 · user constraints / design contracts and example | 稳定 definition_anchor 与 role/invocation/branch 地址；校验 start<end、quote 与 hash | `adjudication/anchors.py` | `tests/adjudication/test_anchors.py` | M2 · planned_or_continuous_gate |
 | X05 · user constraints / design contracts and example | 真人负担分项 candidate/free segmentation/manual construction/binding/profile/background/extension；填槽数、修订、实际活跃/阅读时长；agent 时间不算 human | `adjudication/metrics.py` | `tests/adjudication/test_metrics.py; evaluation/adjudication-v1/human-pilot-report` | M4 · planned_or_continuous_gate |
 | X06 · user constraints / design contracts and example | 本地 same-origin UI+Python API，Windows 启动/重启、静态/session 路径及写请求边界，M3 开始前定案 | `workbench/api.py`<br>`workbench/storage.py` | `tests/workbench/test_topology.py` | M3 gate · planned_or_continuous_gate |
+
+## M3 actual implementation and evidence (2026-09-17)
+
+| Requirement groups | Implemented module boundary | Actual test IDs | Status |
+|---|---|---|---|
+| D05.001–D05.006, H38 | `src/adjudication.md`, `src/js/procedure-workbench.js`, `src/js/ui/source-links.js`, `workbench/api.py` | `tests/workbench/adjudication-browser.mjs`; `tests/workbench/test_adjudication_workflow.py` | implemented: same page, source/structure/graph/question links, real reviewed actions and replay |
+| D05.004, D06.005 | `workbench/service.py`, `workbench/projection.py` | `test_open_adjudication_returns_real_reviewed_products_and_stages`; browser acceptance | implemented: distinct processing, graph, review, execution and comparison statuses |
+| D05.009, D06.002–D06.004 | `adjudication/session.py`, `adjudication/replay.py`, `adjudication/compiler.py`, `workbench/api.py` | `tests/adjudication/test_session_replay.py`; `test_m21_correctness.py`; `test_m3_local_revision.py`; API decision test | implemented through append/replay/recompile, never graph patch |
+| D05.011–D05.013, D06.007 | `src/js/ui/adjudication-session-store.js` plus reviewed API validation | `tests/workbench/adjudication-browser.mjs` | implemented for local browser persistence, branch/retract and export/import |
+| D05.018, X06 | `workbench/api.py`, existing shared UI utilities | `tests/workbench/test_smoke.py`; both browser tests | implemented loopback same-origin/static-path/Origin boundary; Windows local run exercised |
+| D05.007–D05.008, D05.010, H44 | existing page/API boundaries | recorded in `m3-evidence.md` | partial: no all-operation generated forms, no shared on-disk session store, and no free-form note feature |
+| D05.016–D05.017, D06.008 and M4 primitive/dual-graph requirements | out of scope | — | not implemented; comparison stays unavailable |
 | X07 · user constraints / design contracts and example | Pattern Lab 六轴/行为不变，两页无页面 state import，复用共享纯 UI utilities | `src/js/adjudication/`<br>`src/js/ui/`<br>`src/js/patterns.js` | `tests/workbench/test_lab_boundaries.mjs; Pattern Lab browser smoke` | M3/M4 · planned_or_continuous_gate |
 | X08 · user constraints / design contracts and example | 生产只依赖 stdlib 与 production modules，不依赖 evaluation/review/checkpoint/history；不复制编译器 | `analysis_parser/`<br>`source_adapters/`<br>`adjudication/` | `tests/reconciliation/test_core_boundary.py; tests/adjudication/test_dependency_boundary.py` | M1–M4 · planned_or_continuous_gate |
 | X09 · user constraints / design contracts and example | 每 milestone 独立 commit/check；M1 基点先记录；M1 后停止；源数据与 frozen evidence 不覆盖 | `docs/reconciliation/` | `docs/reconciliation/evidence/verification.json; git diff/check` | M1–M4 · planned_or_continuous_gate |

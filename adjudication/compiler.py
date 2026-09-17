@@ -270,9 +270,27 @@ def _without_invalid_decisions(effective, invalid_ids):
     usable['selected_candidates'] = {
         key: value for key, value in usable.get('selected_candidates', {}).items()
         if key in usable['candidate_selection_metadata']}
-    for name in ('segments', 'contexts', 'manual_structures', 'noncomputational', 'deferred', 'approved_scopes'):
+    for name in ('segments', 'contexts', 'manual_structures', 'noncomputational', 'deferred', 'approved_scopes', 'lexical_roles'):
         usable[name] = [value for value in usable.get(name, []) if value.get('decision_id') not in invalid_ids]
     return usable
+
+
+def _apply_local_lexical_roles(parser, effective):
+    """Attach reviewed grammar evidence to matching syntax candidates only.
+
+    This cannot lower a new operation or make source text noncomputational.
+    It records a scoped compiler input for researcher inspection and future
+    construction review while keeping lexical, construction, and quantity
+    semantics distinct.
+    """
+    roles = effective.get('lexical_roles', [])
+    if not roles:
+        return
+    for candidates in parser.all_candidates.values():
+        for candidate in candidates:
+            matching = [role for role in roles if _anchor_matches(candidate, role['target'])]
+            if matching:
+                candidate.setdefault('attributes', {})['reviewed_lexical_roles'] = copy.deepcopy(matching)
 
 
 def compile_reviewed(packet, session, branch_id='main'):
@@ -289,6 +307,7 @@ def compile_reviewed(packet, session, branch_id='main'):
     parser = ScopedParser(prepared)
     invalid_manual = []
     program = _rebuild_program(parser, effective, prepared, invalid_manual)
+    _apply_local_lexical_roles(parser, effective)
     root_issues = validate_root_parameters(program, effective)
     if root_issues:
         fatal_issues.extend(root_issues)
@@ -319,7 +338,8 @@ def compile_reviewed(packet, session, branch_id='main'):
                                 'source_spans': decision_sources.get(issue['decision_id'], []), 'issue': issue}
                                for issue in fatal_issues)
     graph['adjudication'] = {'session_id': session['session_id'], 'branch_id': branch_id,
-                             'effective_decisions': replay['normalized']['effective'], 'holes': holes}
+                             'effective_decisions': replay['normalized']['effective'], 'holes': holes,
+                             'lexical_roles': copy.deepcopy(effective.get('lexical_roles', []))}
     ledger = build_coverage_ledger(prepared, graph, replay['effective'], replay)
     trace = build_reconstruction_trace(graph)
     queue = build_review_queue(graph, replay, uncovered=ledger['unresolved_required_spans'])
