@@ -1,0 +1,54 @@
+{
+  "registry_version": 1,
+  "procedures": [
+    {
+      "id": "sifen-3-5",
+      "title": "四分历 · 推天正術（Cullen Proc. 3.5）",
+      "source_id": "sifen",
+      "scholarly_locator": "Cullen, Proc. 3.5, §46, printed p. 164",
+      "provenance": {
+        "verification_kind": "agent_source_identity_check_for_integration_smoke",
+        "scholar_adjudicated": false,
+        "cullen": {
+          "source_id": "cullen-foundations",
+          "pdf_sha256": "e5cabc1ff8b8f3c80358251ce9c79a90467ae5e401fa1d7fb204baa534b3ff5c",
+          "layout_asset_name": "cullen-source-layout.txt",
+          "layout_sha256": "202b950e087fc3adf19a9dd42fd86b831f89ab86fd9d27bd8550c2d6b1240449",
+          "pdf_page_one_based": 177,
+          "chunk_id": "cullen:chunk:171",
+          "offset_unit": "unicode_code_point_in_utf8_layout_without_newline_conversion",
+          "quote": {"start": 401775, "end": 401822, "sha256": "1d032c177ddd159d457cbc3e2a461a1b33261c32fac779f5b0f479b23b60ad94"},
+          "translation": {"start": 401885, "end": 402163, "sha256": "468c8ddbecfd47971d722f88bc573b94e24e6a47be92632449bce30b8ae53066"},
+          "commentary_on_page": {"start": 402165, "end": 404104, "sha256": "fd29e01b08410b4537e51de8b46fa94177234e7461436308be717fba6f3f25f6"}
+        },
+        "source_reconstruction": {
+          "artifact": "tmp/procedure-ir/cullen-led-source-reconstruction.json",
+          "artifact_sha256": "638637a9078d701447c291198b97e30bf1f368d49533d04944af3b0f6ffad418",
+          "record_key": "Proc. 3.5",
+          "primary_span_id": "sifen:L74",
+          "suggested_adjacent_span_ids": ["sifen:L66", "sifen:L76"],
+          "recorded_quote_integrity_status": "fail",
+          "recorded_writeback_recommendation": "needs_human_review",
+          "limitation": "旧派生引文遗漏得一，故其通过状态不能继承；本次直接核对原始 Cullen 第 177 页的完整引文、译文和说明。没有修改旧审计或任何人工判断。",
+          "local_scope_selection": "采用已匹配的 primary sifen:L74；sifen:L66 为上游纪年、sifen:L76 为下游朔日，不纳入局部调用。依据 §46 译文的 Rule Factor [19] / Rule Months [235] 接入 sifen:L28 / sifen:L30 参数。"
+        },
+        "source_span_index": {
+          "artifact": "tmp/procedure-ir/source_spans.json",
+          "artifact_sha256": "859ba64eca522cca1f6b84045b43df480fceddd8cc20a0111b0944dff37d292f"
+        }
+      },
+      "scope_note": "局部过程：以入蔀年为输入，计算積月、閏餘。上游纪年换算不在本次编译范围内。",
+      "provided_scope": {"tradition": "Han_Si_fen_li"},
+      "primary_sections": [
+        {"section": 38, "reconstruction_span_id": "sifen:L74", "sha256": "7e79b4ae7a87c423ace5084aebb135562ff98469fe77989812b4519b4fe95326"}
+      ],
+      "context_sections": [
+        {"section": 15, "reconstruction_span_id": "sifen:L28", "sha256": "e75f4776bcbae78934d380d9501def21bccd2bf48ee01fe8cf53e2388eea343b"},
+        {"section": 16, "reconstruction_span_id": "sifen:L30", "sha256": "64a0fcd33f34d7a84e189d72ef00194e3c2480cad2af1536fd6e5dd947c4baa6"}
+      ],
+      "inputs": [
+        {"name": "入蔀年", "type": "integer", "minimum": 1, "maximum": 76, "required": true, "description": "蔀内序年（1–76）；留空可检查缺失输入状态。"}
+      ]
+    }
+  ]
+}

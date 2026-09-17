@@ -1,0 +1,80 @@
+// Start the same-origin workbench with the Eleventy build, then run this file.
+import assert from 'node:assert/strict';
+import { mkdir } from 'node:fs/promises';
+import { chromium } from 'playwright';
+
+const origin = process.env.WORKBENCH_URL || 'http://127.0.0.1:8789';
+const browser = await chromium.launch({ headless: true });
+try {
+  const page = await browser.newPage({ viewport: { width: 1600, height: 1100 } });
+  const errors = [];
+  const requests = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('request', request => requests.push(request.url()));
+  await page.goto(`${origin}/adjudication/`);
+  assert.equal(await page.locator('#homeSideNav a[href="/adjudication/"]').count(), 1, 'Must be a website page with shared navigation');
+  await page.waitForFunction(() => document.querySelectorAll('[data-step-id]').length > 0);
+  assert.equal(requests.filter(url => url.endsWith('/api/compile')).length, 0, 'Analysis must not execute');
+  assert.equal(await page.locator('#numerical-check').getAttribute('open'), null);
+  assert.equal(await page.locator('#execute-form').isVisible(), false);
+  assert.match(await page.locator('#source').innerText(), /置入蔀年減一/);
+  const source = page.locator('#source button[data-doc-id="sifen:38"][data-start="12"]');
+  await source.click();
+  assert.equal(await page.locator('[data-step-id="sifen:38:ast9"]').getAttribute('data-selected'), 'true');
+  assert.equal(await page.locator('[data-node-id="e7"]').getAttribute('data-selected'), 'true');
+  await page.locator('[data-step-id="sifen:38:ast12"] button').first().click();
+  assert.equal(await page.locator('#source button[data-start="18"]').getAttribute('data-selected'), 'true');
+  assert.equal(await page.locator('[data-node-id="e8"]').getAttribute('data-selected'), 'true');
+  assert.match(await page.locator('#selection-detail').innerText(), /remainder/);
+  assert.match(await page.locator('#selection-detail').innerText(), /month_fraction/);
+  await page.locator('[data-node-id="e10"]').click();
+  assert.equal(await page.locator('[data-step-id="sifen:38:ast16"]').getAttribute('data-selected'), 'true');
+  assert.equal(await page.locator('#source button[data-start="29"]').getAttribute('data-selected'), 'true');
+  assert.match(await page.locator('#analysis-issues').innerText(), /missing_import/);
+  assert.match(await page.locator('#analysis-issues').innerText(), /quantity_unresolved/);
+  await page.locator('[data-node-id="e8"]').focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await page.locator('[data-node-id="e8"]').getAttribute('data-selected'), 'true');
+  const segments = await page.evaluate(async () => {
+    const { sourceSegments } = await import('/js/ui/source-links.js');
+    return sourceSegments('𠀀甲，甲', [{ start: 0, end: 2 }, { start: 3, end: 4 }]);
+  });
+  assert.deepEqual(segments.map(s => s.text), ['𠀀甲', '，', '甲']);
+  assert.deepEqual(segments.map(s => [s.start, s.end]), [[0, 2], [2, 3], [3, 4]]);
+  await page.locator('#graph-json summary').click();
+  assert.equal(JSON.parse(await page.locator('#graph-raw').innerText()).ir_revision, '3.1-rescue');
+  await page.locator('#graph-json summary').click();
+  await mkdir('.cache/workbench', { recursive: true });
+  await page.screenshot({ path: '.cache/workbench/analysis-desktop.png', fullPage: true });
+  await page.locator('#numerical-check > summary').click();
+  const execute = async () => {
+    const response = page.waitForResponse(r => r.url() === `${origin}/api/compile`);
+    await page.locator('#execute').click();
+    const value = await (await response).json();
+    await page.waitForFunction(() => !document.getElementById('execute').disabled);
+    return value;
+  };
+  assert.equal((await execute()).summary.execution_status, 'missing_inputs');
+  await page.locator('#input-0').fill('25');
+  const success = await execute();
+  assert.equal(success.execution.named_outputs['main:積月'], 296);
+  assert.equal(success.execution.named_outputs['main:閏餘'], 16);
+  assert.match(await page.locator('#execution-status').innerText(), /executed/);
+  assert.equal(await page.locator('[data-node-id="e8"]').getAttribute('data-selected'), 'true', 'Executing must retain structure selection');
+  await page.locator('#input-0').fill('77');
+  assert.match((await execute()).error, /invalid_input/);
+  assert.equal(await page.locator('#execution-result').isVisible(), false);
+  await page.locator('#numerical-check > summary').click();
+  await page.setViewportSize({ width: 390, height: 844 });
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  await page.screenshot({ path: '.cache/workbench/analysis-mobile.png', fullPage: true });
+  await page.locator('#homeMenuToggle').click();
+  await page.locator('#homeSideNav a[href="/patterns/"]').click();
+  await page.waitForURL(`${origin}/patterns/`);
+  await page.waitForFunction(() => document.getElementById('comparisonResults').children.length > 0);
+  assert.equal(await page.locator('#patternSearch').count(), 1);
+  assert.deepEqual(errors, []);
+  console.log('Browser smoke passed: site navigation, compile-only analysis, bidirectional source/step/graph links, typed ports, uncertainty, Unicode offsets, keyboard, auxiliary execution, mobile layout, Pattern Lab entry.');
+} finally {
+  await browser.close();
+}

@@ -1,0 +1,32 @@
+/* Reusable source/object/graph interactions. Cards and type reuse style.css. */
+.research-panel { min-width: 0; }
+.research-scroll { overflow: auto; max-height: 38rem; padding: 0.3rem; }
+.research-object { scroll-margin-block: 1rem; }
+.research-object[data-selected="true"] { outline: 2px solid #86582b; outline-offset: -2px; }
+.research-object .object-select { display: block; width: 100%; }
+.object-select, .source-span { font: inherit; color: inherit; background: none; border: 0; text-align: left; cursor: pointer; }
+.object-select { padding: 0.35rem 0; }
+.source-span { display: inline; padding: 0; line-height: inherit; white-space: pre-wrap; border-bottom: 1px dotted #a98a68; }
+.object-select:focus-visible, .source-span:focus-visible, .research-graph [role="button"]:focus-visible { outline: 2px solid #86582b; outline-offset: 2px; }
+.source-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.research-tree { margin: 0; padding-left: 1rem; list-style: none; }
+.research-tree .entry-card { margin-block: 0.5rem; }
+.research-disclosure { margin-block: 1.4rem; }
+.research-disclosure > summary { cursor: pointer; font-weight: 600; }
+.research-panel pre, .research-disclosure pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 32rem; overflow: auto; }
+.research-table-wrap { overflow-x: auto; }
+.research-table { width: 100%; min-width: 44rem; border-collapse: collapse; font-size: 0.87rem; text-align: left; }
+.research-table th, .research-table td { padding: 0.45rem; border-bottom: 1px solid #ded4c9; vertical-align: top; overflow-wrap: anywhere; }
+.research-graph { display: block; width: 100%; min-width: 240px; }
+.research-graph .graph-edge { stroke: #b8a48d; fill: none; stroke-width: 1.2; }
+.research-graph .graph-edge[data-selected="true"] { stroke: #86582b; stroke-width: 2.5; }
+.research-graph marker path { fill: #86582b; }
+.research-graph [role="button"] { cursor: pointer; }
+.research-graph rect { fill: #fffdf9; stroke: #ded4c9; rx: 8px; }
+.research-graph [data-selected="true"] rect { fill: #f4eadc; stroke: #86582b; stroke-width: 2; }
+.research-graph text { fill: #3c2f22; font-size: 13px; }
+.research-graph .graph-node-id { font-size: 11px; fill: #6a5742; }
+@media (max-width: 600px) {
+  .research-properties { grid-template-columns: minmax(0, 1fr); }
+  .research-properties dd { margin-bottom: 0.7rem; }
+}
