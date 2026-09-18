@@ -1,0 +1,136 @@
+{
+  "schema_version": "PatternOperationCrosswalk/1",
+  "usage": "evaluation_only",
+  "scope": "Seven legacy operations exercised by Proc.3.5. Other forms require review. Alternatives are evaluation matches, never grammar rules.",
+  "implementation_evidence": [
+    "analysis_parser/construction_ir.py:GRAMMAR",
+    "analysis_parser/scoped.py:lower_primitive",
+    "analysis_parser/state.py:Environment.event"
+  ],
+  "operations": {
+    "set": {
+      "semantic": "load current operand",
+      "alternatives": [
+        {
+          "construction_kind": "load",
+          "event_kind": "load",
+          "read_ports": {
+            "input": "value"
+          },
+          "required_slots": []
+        }
+      ],
+      "note": "set covers the load event only, even when the construction includes decrement."
+    },
+    "subtract": {
+      "semantic": "subtract operand",
+      "alternatives": [
+        {
+          "construction_kind": "load",
+          "event_kind": "subtract",
+          "read_ports": {
+            "input": "left",
+            "parameter": "right"
+          },
+          "required_slots": [
+            "decrement"
+          ]
+        },
+        {
+          "construction_kind": "subtract",
+          "event_kind": "subtract",
+          "read_ports": {
+            "input": "left",
+            "parameter": "right"
+          },
+          "required_slots": []
+        }
+      ],
+      "note": "One load with decrement implements set and subtract; two constructions are not required."
+    },
+    "multiply": {
+      "semantic": "multiply accumulator by factor",
+      "alternatives": [
+        {
+          "construction_kind": "multiply",
+          "event_kind": "multiply",
+          "read_ports": {
+            "input": "right",
+            "parameter": "left"
+          },
+          "required_slots": []
+        },
+        {
+          "construction_kind": "multiply",
+          "event_kind": "multiply",
+          "read_ports": {
+            "input": "left",
+            "parameter": "right"
+          },
+          "required_slots": []
+        }
+      ],
+      "note": "Operand order may differ; producer dependencies must match."
+    },
+    "fill_divide": {
+      "semantic": "integer quotient and remainder",
+      "alternatives": [
+        {
+          "construction_kind": "divide",
+          "event_kind": "divmod",
+          "read_ports": {
+            "input": "dividend",
+            "parameter": "divisor"
+          },
+          "required_slots": []
+        }
+      ],
+      "note": "Both distinct quotient/remainder ports are required; not real division."
+    },
+    "name_result": {
+      "semantic": "name referenced result",
+      "alternatives": [
+        {
+          "construction_kind": "name",
+          "event_kind": "alias",
+          "read_ports": {
+            "input": "value"
+          },
+          "required_slots": []
+        }
+      ],
+      "note": "Check label and exact referenced producer output."
+    },
+    "name_remainder": {
+      "semantic": "name referenced remainder",
+      "alternatives": [
+        {
+          "construction_kind": "remainder_name",
+          "event_kind": "alias",
+          "read_ports": {
+            "input": "value"
+          },
+          "required_slots": []
+        }
+      ],
+      "note": "Remainder port must not be replaced by quotient."
+    },
+    "judge": {
+      "semantic": "inclusive lower threshold with attached judgment",
+      "alternatives": [
+        {
+          "construction_kind": "threshold",
+          "event_kind": "threshold",
+          "read_ports": {
+            "input": "value",
+            "parameter": "lower"
+          },
+          "required_slots": [
+            "lower"
+          ]
+        }
+      ],
+      "note": "Only this threshold form is mapped, not all legacy judge forms. Requires bound, inclusivity, judgment and both source spans."
+    }
+  }
+}

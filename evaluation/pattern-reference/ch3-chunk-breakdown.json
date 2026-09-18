@@ -1,0 +1,4853 @@
+[
+  {
+    "chunk_id": "cullen:ch3:chunk:0008",
+    "chunk_type": "conceptual",
+    "terms": [
+      {
+        "mention_id": "c0008_sheng4_ren2_001",
+        "term_id": "sheng_ren.sages",
+        "text": "聖人",
+        "anchor": "昔者聖人之作曆也",
+        "type": "AUTHORITY",
+        "en": "sages"
+      },
+      {
+        "mention_id": "c0008_li4_001",
+        "term_id": "li.astronomical_systems",
+        "text": "曆",
+        "anchor": "作曆也",
+        "type": "ASTRO_TERM",
+        "en": "[astronomical] systems"
+      },
+      {
+        "mention_id": "c0008_zuo4_li4_001",
+        "term_id": "zuo_li.make_astronomical_systems",
+        "text": "作曆",
+        "anchor": "聖人之作曆也",
+        "type": "KNOWLEDGE_OP",
+        "en": "made [astronomical] systems"
+      },
+      {
+        "mention_id": "c0008_guan1_001",
+        "term_id": "guan.watch",
+        "text": "觀",
+        "anchor": "觀琁璣之運",
+        "type": "KNOWLEDGE_OP",
+        "en": "watched"
+      },
+      {
+        "mention_id": "c0008_xuan2_ji1_zhi1_yun4_001",
+        "term_id": "xuan_ji_zhi_yun.turning_of_xuan_ji",
+        "text": "琁璣之運",
+        "anchor": "琁璣之運",
+        "type": "ASTRO_TERM",
+        "en": "the turning of the xuan ji"
+      },
+      {
+        "mention_id": "c0008_san1_guang1_zhi1_xing2_001",
+        "term_id": "san_guang_zhi_xing.motions_of_three_luminaries",
+        "text": "三光之行",
+        "anchor": "三光之行",
+        "type": "ASTRO_TERM",
+        "en": "the motions of the Three Luminaries"
+      },
+      {
+        "mention_id": "c0008_san1_guang1_001",
+        "term_id": "san_guang.three_luminaries",
+        "text": "三光",
+        "anchor": "三光之行",
+        "type": "ASTRO_TERM",
+        "en": "Three Luminaries (= sun, moon and stars)"
+      },
+      {
+        "mention_id": "c0008_dao4_zhi1_fa1_lian3_001",
+        "term_id": "dao_zhi_fa_lian.expansion_and_contraction_of_roads",
+        "text": "道之發斂",
+        "anchor": "道之發斂",
+        "type": "ASTRO_TERM",
+        "en": "the expansion and contraction of the Roads"
+      },
+      {
+        "mention_id": "c0008_dao4_001",
+        "term_id": "dao.roads",
+        "text": "道",
+        "anchor": "道之發斂",
+        "type": "ASTRO_TERM",
+        "en": "Roads (= paths of the sun and moon)"
+      },
+      {
+        "mention_id": "c0008_fa1_001",
+        "term_id": "fa.expansion",
+        "text": "發",
+        "anchor": "道之發斂",
+        "type": "MOTION",
+        "en": "expansion"
+      },
+      {
+        "mention_id": "c0008_lian3_001",
+        "term_id": "lian.contraction",
+        "text": "斂",
+        "anchor": "道之發斂",
+        "type": "MOTION",
+        "en": "contraction"
+      },
+      {
+        "mention_id": "c0008_jing3_zhi1_chang2_duan3_001",
+        "term_id": "jing_zhi_chang_duan.growing_and_shrinking_of_shadow",
+        "text": "景之長短",
+        "anchor": "景之長短",
+        "type": "ASTRO_TERM",
+        "en": "the growing and shrinking of the shadow"
+      },
+      {
+        "mention_id": "c0008_jing3_001",
+        "term_id": "jing.shadow",
+        "text": "景",
+        "anchor": "景之長短",
+        "type": "ASTRO_TERM",
+        "en": "shadow"
+      },
+      {
+        "mention_id": "c0008_chang2_001",
+        "term_id": "chang.growing",
+        "text": "長",
+        "anchor": "景之長短",
+        "type": "MOTION",
+        "en": "growing"
+      },
+      {
+        "mention_id": "c0008_duan3_001",
+        "term_id": "duan.shrinking",
+        "text": "短",
+        "anchor": "景之長短",
+        "type": "MOTION",
+        "en": "shrinking"
+      },
+      {
+        "mention_id": "c0008_dou3_gang1_zhi1_suo3_jian4_001",
+        "term_id": "dou_gang_zhi_suo_jian.establishment_of_dipper_mainstay",
+        "text": "斗綱 (之)[所]建",
+        "anchor": "斗綱 (之)[所]建",
+        "type": "ASTRO_TERM",
+        "en": "the establishment of the Dipper mainstay"
+      },
+      {
+        "mention_id": "c0008_dou3_gang1_001",
+        "term_id": "dou_gang.dipper_mainstay",
+        "text": "斗綱",
+        "anchor": "斗綱 (之)[所]建",
+        "type": "ASTRO_TERM",
+        "en": "Dipper mainstay"
+      },
+      {
+        "mention_id": "c0008_dou3_001",
+        "term_id": "dou.dipper",
+        "text": "斗",
+        "anchor": "斗綱 (之)[所]建",
+        "type": "ASTRO_TERM",
+        "en": "Dipper"
+      },
+      {
+        "mention_id": "c0008_jian4_001",
+        "term_id": "jian.establishment",
+        "text": "建",
+        "anchor": "斗綱 (之)[所]建",
+        "type": "MOTION",
+        "en": "establishment"
+      },
+      {
+        "mention_id": "c0008_qing1_long2_suo3_chan2_001",
+        "term_id": "qing_long_suo_chan.orbit_of_caerulean_dragon",
+        "text": "青龍所躔",
+        "anchor": "青龍所躔",
+        "type": "ASTRO_TERM",
+        "en": "the orbit of the Caerulean Dragon"
+      },
+      {
+        "mention_id": "c0008_qing1_long2_001",
+        "term_id": "qing_long.caerulean_dragon",
+        "text": "青龍",
+        "anchor": "青龍所躔",
+        "type": "ASTRO_TERM",
+        "en": "Caerulean Dragon (= sexagenary name of the year)"
+      },
+      {
+        "mention_id": "c0008_chan2_001",
+        "term_id": "chan.orbit",
+        "text": "躔",
+        "anchor": "青龍所躔",
+        "type": "MOTION",
+        "en": "orbit"
+      },
+      {
+        "mention_id": "c0008_san1_wu3_001",
+        "term_id": "san_wu.three_luminaries_and_five_planets",
+        "text": "參伍",
+        "anchor": "參伍以變",
+        "type": "ASTRO_TERM",
+        "en": "the Three [Luminaries] and the Five [Planets]"
+      },
+      {
+        "mention_id": "c0008_bian4_001",
+        "term_id": "bian.change",
+        "text": "變",
+        "anchor": "參伍以變",
+        "type": "MOTION",
+        "en": "change"
+      },
+      {
+        "mention_id": "c0008_cuo4_zong1_qi2_shu4_001",
+        "term_id": "cuo_zong_qi_shu.weave_together_numbers",
+        "text": "錯綜其數",
+        "anchor": "錯綜其數",
+        "type": "KNOWLEDGE_OP",
+        "en": "wove together the numbers"
+      },
+      {
+        "mention_id": "c0008_zhi4_shu4_001",
+        "term_id": "zhi_shu.make_methods",
+        "text": "制術",
+        "anchor": "而制術焉",
+        "type": "KNOWLEDGE_OP",
+        "en": "make them into methods [for calculation]"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "聖人",
+        "subject_id": "c0008_sheng4_ren2_001",
+        "relation": "PERFORMS",
+        "object": "觀",
+        "object_id": "c0008_guan1_001"
+      },
+      {
+        "subject": "觀",
+        "subject_id": "c0008_guan1_001",
+        "relation": "TAKES_OBJECT",
+        "object": [
+          "琁璣之運",
+          "三光之行",
+          "道之發斂",
+          "景之長短",
+          "斗綱 (之)[所]建",
+          "青龍所躔"
+        ],
+        "object_id": [
+          "c0008_xuan2_ji1_zhi1_yun4_001",
+          "c0008_san1_guang1_zhi1_xing2_001",
+          "c0008_dao4_zhi1_fa1_lian3_001",
+          "c0008_jing3_zhi1_chang2_duan3_001",
+          "c0008_dou3_gang1_zhi1_suo3_jian4_001",
+          "c0008_qing1_long2_suo3_chan2_001"
+        ]
+      },
+      {
+        "subject": "三光",
+        "subject_id": "c0008_san1_guang1_001",
+        "relation": "HAS_PART",
+        "object": [
+          "日",
+          "月",
+          "星"
+        ],
+        "object_id": [
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "subject": "參伍",
+        "subject_id": "c0008_san1_wu3_001",
+        "relation": "HAS_PART",
+        "object": [
+          "三光",
+          "五星"
+        ],
+        "object_id": [
+          "c0008_san1_guang1_001",
+          ""
+        ]
+      },
+      {
+        "subject": "道",
+        "subject_id": "c0008_dao4_001",
+        "relation": "UNDERGOES",
+        "object": [
+          "發",
+          "斂"
+        ],
+        "object_id": [
+          "c0008_fa1_001",
+          "c0008_lian3_001"
+        ]
+      },
+      {
+        "subject": "景",
+        "subject_id": "c0008_jing3_001",
+        "relation": "UNDERGOES",
+        "object": [
+          "長",
+          "短"
+        ],
+        "object_id": [
+          "c0008_chang2_001",
+          "c0008_duan3_001"
+        ]
+      },
+      {
+        "subject": "斗綱",
+        "subject_id": "c0008_dou3_gang1_001",
+        "relation": "UNDERGOES",
+        "object": "建",
+        "object_id": "c0008_jian4_001"
+      },
+      {
+        "subject": "青龍",
+        "subject_id": "c0008_qing1_long2_001",
+        "relation": "UNDERGOES",
+        "object": "躔",
+        "object_id": "c0008_chan2_001"
+      },
+      {
+        "subject": "參伍",
+        "subject_id": "c0008_san1_wu3_001",
+        "relation": "UNDERGOES",
+        "object": "變",
+        "object_id": "c0008_bian4_001"
+      },
+      {
+        "subject": "錯綜其數",
+        "subject_id": "c0008_cuo4_zong1_qi2_shu4_001",
+        "relation": "LEADS_TO",
+        "object": "制術",
+        "object_id": "c0008_zhi4_shu4_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0009",
+    "chunk_type": "conceptual",
+    "terms": [
+      {
+        "mention_id": "c0009_tian1_001",
+        "term_id": "tian.heaven",
+        "text": "天",
+        "anchor": "天之動也",
+        "type": "ASTRO_TERM",
+        "en": "Heaven"
+      },
+      {
+        "mention_id": "c0009_dong4_001",
+        "term_id": "dong.movement",
+        "text": "動",
+        "anchor": "天之動也",
+        "type": "MOTION",
+        "en": "movement"
+      },
+      {
+        "mention_id": "c0009_yi1_zhou4_yi1_ye4_001",
+        "term_id": "yi_zhou_yi_ye.solar_day",
+        "text": "一晝一夜",
+        "anchor": "一晝一夜而運過周",
+        "type": "ASTRO_TERM",
+        "en": "one day and night; complete solar day"
+      },
+      {
+        "mention_id": "c0009_yun4_001",
+        "term_id": "yun.turning",
+        "text": "運",
+        "anchor": "一晝一夜而運過周",
+        "type": "MOTION",
+        "en": "turning"
+      },
+      {
+        "mention_id": "c0009_guo4_zhou1_001",
+        "term_id": "guo_zhou.more_than_circuit",
+        "text": "過周",
+        "anchor": "一晝一夜而運過周",
+        "type": "MOTION",
+        "en": "more than a circuit"
+      },
+      {
+        "mention_id": "c0009_zhou1_001",
+        "term_id": "zhou.circuit",
+        "text": "周",
+        "anchor": "一晝一夜而運過周",
+        "type": "ASTRO_TERM",
+        "en": "circuit"
+      },
+      {
+        "mention_id": "c0009_xing1_001",
+        "term_id": "xing.star",
+        "text": "星",
+        "anchor": "星從天而西",
+        "type": "ASTRO_TERM",
+        "en": "stars; fixed stars"
+      },
+      {
+        "mention_id": "c0009_tian1_002",
+        "term_id": "tian.heaven",
+        "text": "天",
+        "anchor": "星從天而西",
+        "type": "ASTRO_TERM",
+        "en": "Heaven"
+      },
+      {
+        "mention_id": "c0009_cong2_001",
+        "term_id": "cong.follow",
+        "text": "從",
+        "anchor": "星從天而西",
+        "type": "MOTION",
+        "en": "follow"
+      },
+      {
+        "mention_id": "c0009_xi1_001",
+        "term_id": "xi.westwards",
+        "text": "西",
+        "anchor": "星從天而西",
+        "type": "MOTION",
+        "en": "moving westwards"
+      },
+      {
+        "mention_id": "c0009_ri4_001",
+        "term_id": "ri.sun",
+        "text": "日",
+        "anchor": "日違天而東",
+        "type": "ASTRO_TERM",
+        "en": "sun"
+      },
+      {
+        "mention_id": "c0009_tian1_003",
+        "term_id": "tian.heaven",
+        "text": "天",
+        "anchor": "日違天而東",
+        "type": "ASTRO_TERM",
+        "en": "Heaven"
+      },
+      {
+        "mention_id": "c0009_wei2_001",
+        "term_id": "wei.go_against",
+        "text": "違",
+        "anchor": "日違天而東",
+        "type": "MOTION",
+        "en": "goes against"
+      },
+      {
+        "mention_id": "c0009_dong1_001",
+        "term_id": "dong.eastwards",
+        "text": "東",
+        "anchor": "日違天而東",
+        "type": "MOTION",
+        "en": "moving eastwards"
+      },
+      {
+        "mention_id": "c0009_ri4_zhi1_suo3_xing2_001",
+        "term_id": "ri_zhi_suo_xing.motion_of_sun",
+        "text": "日之所行",
+        "anchor": "日之所行與運周",
+        "type": "ASTRO_TERM",
+        "en": "the motion of the sun"
+      },
+      {
+        "mention_id": "c0009_ri4_002",
+        "term_id": "ri.sun",
+        "text": "日",
+        "anchor": "日之所行與運周",
+        "type": "ASTRO_TERM",
+        "en": "sun"
+      },
+      {
+        "mention_id": "c0009_xing2_001",
+        "term_id": "xing.motion",
+        "text": "行",
+        "anchor": "日之所行與運周",
+        "type": "MOTION",
+        "en": "motion"
+      },
+      {
+        "mention_id": "c0009_yun4_zhou1_001",
+        "term_id": "yun_zhou.turning_round_circuit",
+        "text": "運周",
+        "anchor": "日之所行與運周",
+        "type": "MOTION",
+        "en": "turning round its circuit"
+      },
+      {
+        "mention_id": "c0009_ri4_zhi1_suo3_xing2_yu3_yun4_zhou1_001",
+        "term_id": "ri_zhi_suo_xing_yu_yun_zhou.motion_and_circuit",
+        "text": "日之所行與運周",
+        "anchor": "日之所行與運周",
+        "type": "ASTRO_TERM",
+        "en": "the motion of the sun and its turning round its circuit"
+      },
+      {
+        "mention_id": "c0009_zai4_tian1_cheng2_du4_001",
+        "term_id": "zai_tian_cheng_du.forms_du_in_heaven",
+        "text": "在 天成度",
+        "anchor": "在 天成度",
+        "type": "ASTRO_TERM",
+        "en": "forms the du in Heaven"
+      },
+      {
+        "mention_id": "c0009_tian1_004",
+        "term_id": "tian.heaven",
+        "text": "天",
+        "anchor": "在 天成度",
+        "type": "ASTRO_TERM",
+        "en": "Heaven"
+      },
+      {
+        "mention_id": "c0009_du4_001",
+        "term_id": "du.du",
+        "text": "度",
+        "anchor": "在 天成度",
+        "type": "ASTRO_TERM",
+        "en": "du"
+      },
+      {
+        "mention_id": "c0009_zai4_li4_cheng2_ri4_001",
+        "term_id": "zai_li_cheng_ri.forms_days_in_system",
+        "text": "在曆成日",
+        "anchor": "在曆成日",
+        "type": "ASTRO_TERM",
+        "en": "forms the days in the system"
+      },
+      {
+        "mention_id": "c0009_li4_001",
+        "term_id": "li.system",
+        "text": "曆",
+        "anchor": "在曆成日",
+        "type": "ASTRO_TERM",
+        "en": "system"
+      },
+      {
+        "mention_id": "c0009_ri4_003",
+        "term_id": "ri.day",
+        "text": "日",
+        "anchor": "在曆成日",
+        "type": "ASTRO_TERM",
+        "en": "days (= solar days)"
+      },
+      {
+        "mention_id": "c0009_ju1_001",
+        "term_id": "ju.dwells",
+        "text": "居",
+        "anchor": "居以列宿",
+        "type": "MOTION",
+        "en": "dwells"
+      },
+      {
+        "mention_id": "c0009_lie4_xiu4_001",
+        "term_id": "lie_xiu.ordered_lodges",
+        "text": "列宿",
+        "anchor": "居以列宿",
+        "type": "ASTRO_TERM",
+        "en": "ordered lodges"
+      },
+      {
+        "mention_id": "c0009_zhong1_001",
+        "term_id": "zhong.terminate",
+        "text": "終",
+        "anchor": "終于四七",
+        "type": "MOTION",
+        "en": "terminate"
+      },
+      {
+        "mention_id": "c0009_si4_qi1_001",
+        "term_id": "si_qi.four_sevens",
+        "text": "四七",
+        "anchor": "終于四七",
+        "type": "ASTRO_TERM",
+        "en": "four sevens (= twenty-eight lodges)"
+      },
+      {
+        "mention_id": "c0009_shou4_001",
+        "term_id": "shou.received",
+        "text": "受",
+        "anchor": "受以甲乙",
+        "type": "MOTION",
+        "en": "is received"
+      },
+      {
+        "mention_id": "c0009_jia3_yi3_001",
+        "term_id": "jia_yi.cyclical_signs",
+        "text": "甲乙",
+        "anchor": "受以甲乙",
+        "type": "ASTRO_TERM",
+        "en": "cyclical signs"
+      },
+      {
+        "mention_id": "c0009_zhong1_002",
+        "term_id": "zhong.terminate",
+        "text": "終",
+        "anchor": "終于六旬",
+        "type": "MOTION",
+        "en": "terminate"
+      },
+      {
+        "mention_id": "c0009_liu4_xun2_001",
+        "term_id": "liu_xun.six_decades",
+        "text": "六旬",
+        "anchor": "終于六旬",
+        "type": "ASTRO_TERM",
+        "en": "six decades"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "天",
+        "subject_id": "c0009_tian1_001",
+        "relation": "UNDERGOES",
+        "object": [
+          "動",
+          "運",
+          "過周"
+        ],
+        "object_id": [
+          "c0009_dong4_001",
+          "c0009_yun4_001",
+          "c0009_guo4_zhou1_001"
+        ]
+      },
+      {
+        "subject": "星",
+        "subject_id": "c0009_xing1_001",
+        "relation": "UNDERGOES",
+        "object": [
+          "從",
+          "西"
+        ],
+        "object_id": [
+          "c0009_cong2_001",
+          "c0009_xi1_001"
+        ]
+      },
+      {
+        "subject": "日之所行",
+        "subject_id": "c0009_ri4_zhi1_suo3_xing2_001",
+        "relation": "UNDERGOES",
+        "object": [
+          "行",
+          "運周"
+        ],
+        "object_id": [
+          "c0009_xing2_001",
+          "c0009_yun4_zhou1_001"
+        ]
+      },
+      {
+        "subject": "日之所行與運周",
+        "subject_id": "c0009_ri4_zhi1_suo3_xing2_yu3_yun4_zhou1_001",
+        "relation": "LEADS_TO",
+        "object": [
+          "度",
+          "日"
+        ],
+        "object_id": [
+          "c0009_du4_001",
+          "c0009_ri4_003"
+        ]
+      },
+      {
+        "subject": "度",
+        "subject_id": "c0009_du4_001",
+        "relation": "LOCATES_AT",
+        "object": [
+          "天",
+          "列宿",
+          "四七"
+        ],
+        "object_id": [
+          "c0009_tian1_004",
+          "c0009_lie4_xiu4_001",
+          "c0009_si4_qi1_001"
+        ]
+      },
+      {
+        "subject": "日",
+        "subject_id": "c0009_ri4_003",
+        "relation": "LOCATES_AT",
+        "object": [
+          "曆",
+          "甲乙",
+          "六旬"
+        ],
+        "object_id": [
+          "c0009_li4_001",
+          "c0009_jia3_yi3_001",
+          "c0009_liu4_xun2_001"
+        ]
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0010",
+    "chunk_type": "definition",
+    "terms": [
+      {
+        "mention_id": "c0010_ri4_001",
+        "term_id": "ri.sun",
+        "text": "日",
+        "anchor": "日月相推",
+        "type": "ASTRO_TERM",
+        "en": "sun"
+      },
+      {
+        "mention_id": "c0010_yue4_001",
+        "term_id": "yue.moon",
+        "text": "月",
+        "anchor": "日月相推",
+        "type": "ASTRO_TERM",
+        "en": "moon"
+      },
+      {
+        "mention_id": "c0010_tui1_001",
+        "term_id": "tui.push_on",
+        "text": "推",
+        "anchor": "日月相推",
+        "type": "MOTION",
+        "en": "push"
+      },
+      {
+        "mention_id": "c0010_ri4_002",
+        "term_id": "ri.sun",
+        "text": "日",
+        "anchor": "日舒月速",
+        "type": "ASTRO_TERM",
+        "en": "sun"
+      },
+      {
+        "mention_id": "c0010_shu1_001",
+        "term_id": "shu.slow",
+        "text": "舒",
+        "anchor": "日舒月速",
+        "type": "MOTION",
+        "en": "slow"
+      },
+      {
+        "mention_id": "c0010_yue4_002",
+        "term_id": "yue.moon",
+        "text": "月",
+        "anchor": "日舒月速",
+        "type": "ASTRO_TERM",
+        "en": "moon"
+      },
+      {
+        "mention_id": "c0010_su4_001",
+        "term_id": "su.fast",
+        "text": "速",
+        "anchor": "日舒月速",
+        "type": "MOTION",
+        "en": "fast"
+      },
+      {
+        "mention_id": "c0010_tong2_suo3_001",
+        "term_id": "tong_suo.share_position",
+        "text": "同[所]",
+        "anchor": "當其同[所]",
+        "type": "ASTRO_TERM",
+        "en": "share a position"
+      },
+      {
+        "mention_id": "c0010_wei4_zhi1_001",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之合朔",
+        "type": "KNOWLEDGE_OP",
+        "en": "that is called"
+      },
+      {
+        "mention_id": "c0010_he2_shuo4_001",
+        "term_id": "he_shuo.conjunction",
+        "text": "合朔",
+        "anchor": "謂之合朔",
+        "type": "ASTRO_TERM",
+        "en": "conjunction"
+      },
+      {
+        "mention_id": "c0010_shu1_002",
+        "term_id": "shu.slow",
+        "text": "舒",
+        "anchor": "舒先速後",
+        "type": "MOTION",
+        "en": "slow"
+      },
+      {
+        "mention_id": "c0010_xian1_001",
+        "term_id": "xian.ahead",
+        "text": "先",
+        "anchor": "舒先速後",
+        "type": "MOTION",
+        "en": "ahead"
+      },
+      {
+        "mention_id": "c0010_su4_002",
+        "term_id": "su.fast",
+        "text": "速",
+        "anchor": "舒先速後",
+        "type": "MOTION",
+        "en": "fast"
+      },
+      {
+        "mention_id": "c0010_hou4_001",
+        "term_id": "hou.behind",
+        "text": "後",
+        "anchor": "舒先速後",
+        "type": "MOTION",
+        "en": "behind"
+      },
+      {
+        "mention_id": "c0010_jin4_yi1_yuan3_san1_001",
+        "term_id": "jin_yi_yuan_san.one_near_three_distant",
+        "text": "近一遠三",
+        "anchor": "近一遠三",
+        "type": "ASTRO_TERM",
+        "en": "one part near and three parts distant"
+      },
+      {
+        "mention_id": "c0010_wei4_zhi1_002",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之弦",
+        "type": "KNOWLEDGE_OP",
+        "en": "that is called"
+      },
+      {
+        "mention_id": "c0010_xian2_001",
+        "term_id": "xian.crescent",
+        "text": "弦",
+        "anchor": "謂之弦",
+        "type": "ASTRO_TERM",
+        "en": "crescent"
+      },
+      {
+        "mention_id": "c0010_xiang1_yu3_001",
+        "term_id": "xiang_yu.one_another",
+        "text": "相與",
+        "anchor": "相與為衡",
+        "type": "MOTION",
+        "en": "one another"
+      },
+      {
+        "mention_id": "c0010_heng2_001",
+        "term_id": "heng.opposite",
+        "text": "衡",
+        "anchor": "相與為衡",
+        "type": "MOTION",
+        "en": "opposite one another"
+      },
+      {
+        "mention_id": "c0010_fen1_001",
+        "term_id": "fen.divide",
+        "text": "分",
+        "anchor": "分天之中",
+        "type": "MOTION",
+        "en": "divide"
+      },
+      {
+        "mention_id": "c0010_tian1_001",
+        "term_id": "tian.heaven",
+        "text": "天",
+        "anchor": "分天之中",
+        "type": "ASTRO_TERM",
+        "en": "Heaven"
+      },
+      {
+        "mention_id": "c0010_zhong1_001",
+        "term_id": "zhong.middle",
+        "text": "中",
+        "anchor": "分天之中",
+        "type": "ASTRO_TERM",
+        "en": "the middle"
+      },
+      {
+        "mention_id": "c0010_fen1_tian1_zhi1_zhong1_001",
+        "term_id": "fen_tian_zhi_zhong.divide_heaven_middle",
+        "text": "分天之中",
+        "anchor": "分天之中",
+        "type": "ASTRO_TERM",
+        "en": "divide Heaven down the middle"
+      },
+      {
+        "mention_id": "c0010_wei4_zhi1_003",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之望",
+        "type": "KNOWLEDGE_OP",
+        "en": "that is called"
+      },
+      {
+        "mention_id": "c0010_wang4_001",
+        "term_id": "wang.opposition",
+        "text": "望",
+        "anchor": "謂之望",
+        "type": "ASTRO_TERM",
+        "en": "opposition"
+      },
+      {
+        "mention_id": "c0010_su4_003",
+        "term_id": "su.fast",
+        "text": "速",
+        "anchor": "以速及舒",
+        "type": "MOTION",
+        "en": "fast"
+      },
+      {
+        "mention_id": "c0010_ji2_001",
+        "term_id": "ji.reaches",
+        "text": "及",
+        "anchor": "以速及舒",
+        "type": "MOTION",
+        "en": "reaches"
+      },
+      {
+        "mention_id": "c0010_shu1_003",
+        "term_id": "shu.slow",
+        "text": "舒",
+        "anchor": "以速及舒",
+        "type": "MOTION",
+        "en": "slow"
+      },
+      {
+        "mention_id": "c0010_guang1_jin4_ti3_fu2_001",
+        "term_id": "guang_jin_ti_fu.brilliance_exhausted_form_hidden",
+        "text": "光盡體伏",
+        "anchor": "光盡體伏",
+        "type": "ASTRO_TERM",
+        "en": "its brilliance is exhausted and its form is hidden"
+      },
+      {
+        "mention_id": "c0010_guang1_001",
+        "term_id": "guang.brilliance",
+        "text": "光",
+        "anchor": "光盡體伏",
+        "type": "ASTRO_TERM",
+        "en": "brilliance"
+      },
+      {
+        "mention_id": "c0010_jin4_001",
+        "term_id": "jin.exhausted",
+        "text": "盡",
+        "anchor": "光盡體伏",
+        "type": "MOTION",
+        "en": "exhausted"
+      },
+      {
+        "mention_id": "c0010_ti3_001",
+        "term_id": "ti.form",
+        "text": "體",
+        "anchor": "光盡體伏",
+        "type": "ASTRO_TERM",
+        "en": "form"
+      },
+      {
+        "mention_id": "c0010_fu2_001",
+        "term_id": "fu.hidden",
+        "text": "伏",
+        "anchor": "光盡體伏",
+        "type": "MOTION",
+        "en": "hidden"
+      },
+      {
+        "mention_id": "c0010_wei4_zhi1_004",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之晦",
+        "type": "KNOWLEDGE_OP",
+        "en": "that is called"
+      },
+      {
+        "mention_id": "c0010_hui4_001",
+        "term_id": "hui.darkening",
+        "text": "晦",
+        "anchor": "謂之晦",
+        "type": "ASTRO_TERM",
+        "en": "darkening [as on the last day of a lunar month]"
+      },
+      {
+        "mention_id": "c0010_hui4_002",
+        "term_id": "hui.darkening",
+        "text": "晦",
+        "anchor": "晦朔合離",
+        "type": "ASTRO_TERM",
+        "en": "darkening"
+      },
+      {
+        "mention_id": "c0010_shuo4_001",
+        "term_id": "shuo.conjunction",
+        "text": "朔",
+        "anchor": "晦朔合離",
+        "type": "ASTRO_TERM",
+        "en": "conjunction"
+      },
+      {
+        "mention_id": "c0010_he2_001",
+        "term_id": "he.joined",
+        "text": "合",
+        "anchor": "晦朔合離",
+        "type": "MOTION",
+        "en": "joined"
+      },
+      {
+        "mention_id": "c0010_li2_001",
+        "term_id": "li.separated",
+        "text": "離",
+        "anchor": "晦朔合離",
+        "type": "MOTION",
+        "en": "separated"
+      },
+      {
+        "mention_id": "c0010_hui4_shuo4_he2_li2_001",
+        "term_id": "hui_shuo_he_li.darkening_conjunction_joined_separated",
+        "text": "晦朔合離",
+        "anchor": "晦朔合離",
+        "type": "ASTRO_TERM",
+        "en": "darkening and conjunction have joined and separated"
+      },
+      {
+        "mention_id": "c0010_dou3_jian4_001",
+        "term_id": "dou_jian.dipper_establishment",
+        "text": "斗建",
+        "anchor": "斗建 移辰",
+        "type": "ASTRO_TERM",
+        "en": "Dipper Establishment"
+      },
+      {
+        "mention_id": "c0010_yi2_chen2_001",
+        "term_id": "yi_chen.shifts_by_sign",
+        "text": "移辰",
+        "anchor": "斗建 移辰",
+        "type": "MOTION",
+        "en": "shifts by a sign"
+      },
+      {
+        "mention_id": "c0010_chen2_001",
+        "term_id": "chen.sign",
+        "text": "辰",
+        "anchor": "斗建 移辰",
+        "type": "ASTRO_TERM",
+        "en": "sign"
+      },
+      {
+        "mention_id": "c0010_wei4_zhi1_005",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之[月]",
+        "type": "KNOWLEDGE_OP",
+        "en": "that is called"
+      },
+      {
+        "mention_id": "c0010_yue4_003",
+        "term_id": "yue.month",
+        "text": "[月]",
+        "anchor": "謂之[月]",
+        "type": "ASTRO_TERM",
+        "en": "month"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "日",
+        "subject_id": "c0010_ri4_001",
+        "relation": "UNDERGOES",
+        "object": "推",
+        "object_id": "c0010_tui1_001"
+      },
+      {
+        "subject": "月",
+        "subject_id": "c0010_yue4_001",
+        "relation": "UNDERGOES",
+        "object": "推",
+        "object_id": "c0010_tui1_001"
+      },
+      {
+        "subject": "日",
+        "subject_id": "c0010_ri4_002",
+        "relation": "UNDERGOES",
+        "object": "舒",
+        "object_id": "c0010_shu1_001"
+      },
+      {
+        "subject": "月",
+        "subject_id": "c0010_yue4_002",
+        "relation": "UNDERGOES",
+        "object": "速",
+        "object_id": "c0010_su4_001"
+      },
+      {
+        "subject": "同[所]",
+        "subject_id": "c0010_tong2_suo3_001",
+        "relation": "DEFINES",
+        "object": "合朔",
+        "object_id": "c0010_he2_shuo4_001"
+      },
+      {
+        "subject": "舒",
+        "subject_id": "c0010_shu1_002",
+        "relation": "UNDERGOES",
+        "object": "先",
+        "object_id": "c0010_xian1_001"
+      },
+      {
+        "subject": "速",
+        "subject_id": "c0010_su4_002",
+        "relation": "UNDERGOES",
+        "object": "後",
+        "object_id": "c0010_hou4_001"
+      },
+      {
+        "subject": "近一遠三",
+        "subject_id": "c0010_jin4_yi1_yuan3_san1_001",
+        "relation": "DEFINES",
+        "object": "弦",
+        "object_id": "c0010_xian2_001"
+      },
+      {
+        "subject": "分天之中",
+        "subject_id": "c0010_fen1_tian1_zhi1_zhong1_001",
+        "relation": "DEFINES",
+        "object": "望",
+        "object_id": "c0010_wang4_001"
+      },
+      {
+        "subject": "速",
+        "subject_id": "c0010_su4_003",
+        "relation": "UNDERGOES",
+        "object": "及",
+        "object_id": "c0010_ji2_001"
+      },
+      {
+        "subject": "光",
+        "subject_id": "c0010_guang1_001",
+        "relation": "UNDERGOES",
+        "object": "盡",
+        "object_id": "c0010_jin4_001"
+      },
+      {
+        "subject": "體",
+        "subject_id": "c0010_ti3_001",
+        "relation": "UNDERGOES",
+        "object": "伏",
+        "object_id": "c0010_fu2_001"
+      },
+      {
+        "subject": "光盡體伏",
+        "subject_id": "c0010_guang1_jin4_ti3_fu2_001",
+        "relation": "DEFINES",
+        "object": "晦",
+        "object_id": "c0010_hui4_001"
+      },
+      {
+        "subject": "晦朔合離",
+        "subject_id": "c0010_hui4_shuo4_he2_li2_001",
+        "relation": "LEADS_TO",
+        "object": "斗建 移辰",
+        "object_id": "c0010_yi2_chen2_001"
+      },
+      {
+        "subject": "斗建",
+        "subject_id": "c0010_dou3_jian4_001",
+        "relation": "UNDERGOES",
+        "object": "移辰",
+        "object_id": "c0010_yi2_chen2_001"
+      },
+      {
+        "subject": "晦朔合離",
+        "subject_id": "c0010_hui4_shuo4_he2_li2_001",
+        "relation": "DEFINES",
+        "object": "[月]",
+        "object_id": "c0010_yue4_003"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0012",
+    "chunk_type": "definition",
+    "terms": [
+      {
+        "mention_id": "c0012_ri4_001",
+        "term_id": "ri.sun",
+        "text": "日",
+        "anchor": "日月之(術)[行]",
+        "type": "ASTRO_TERM",
+        "en": "sun"
+      },
+      {
+        "mention_id": "c0012_yue4_001",
+        "term_id": "yue.moon",
+        "text": "月",
+        "anchor": "日月之(術)[行]",
+        "type": "ASTRO_TERM",
+        "en": "moon"
+      },
+      {
+        "mention_id": "c0012_shu4_xing2_001",
+        "term_id": "shu_xing.motion",
+        "text": "(術)[行]",
+        "anchor": "日月之(術)[行]",
+        "type": "MOTION",
+        "en": "motion"
+      },
+      {
+        "mention_id": "c0012_ri4_yue4_zhi1_shu4_xing2_001",
+        "term_id": "ri_yue_zhi_shu_xing.motion_of_sun_and_moon",
+        "text": "日月之(術)[行]",
+        "anchor": "日月之(術)[行]",
+        "type": "ASTRO_TERM",
+        "en": "the motion of the sun and moon"
+      },
+      {
+        "mention_id": "c0012_dong1_001",
+        "term_id": "dong.winter",
+        "text": "冬",
+        "anchor": "則有冬有夏",
+        "type": "ASTRO_TERM",
+        "en": "winter"
+      },
+      {
+        "mention_id": "c0012_xia4_001",
+        "term_id": "xia.summer",
+        "text": "夏",
+        "anchor": "則有冬有夏",
+        "type": "ASTRO_TERM",
+        "en": "summer"
+      },
+      {
+        "mention_id": "c0012_dong1_xia4_zhi1_jian1_001",
+        "term_id": "dong_xia_zhi_jian.between_winter_and_summer",
+        "text": "冬夏之閒",
+        "anchor": "冬夏之閒",
+        "type": "ASTRO_TERM",
+        "en": "Between winter and summer"
+      },
+      {
+        "mention_id": "c0012_dong1_002",
+        "term_id": "dong.winter",
+        "text": "冬",
+        "anchor": "冬夏之閒",
+        "type": "ASTRO_TERM",
+        "en": "winter"
+      },
+      {
+        "mention_id": "c0012_xia4_002",
+        "term_id": "xia.summer",
+        "text": "夏",
+        "anchor": "冬夏之閒",
+        "type": "ASTRO_TERM",
+        "en": "summer"
+      },
+      {
+        "mention_id": "c0012_chun1_001",
+        "term_id": "chun.spring",
+        "text": "春",
+        "anchor": "則有春有秋",
+        "type": "ASTRO_TERM",
+        "en": "spring"
+      },
+      {
+        "mention_id": "c0012_qiu1_001",
+        "term_id": "qiu.autumn",
+        "text": "秋",
+        "anchor": "則有春有秋",
+        "type": "ASTRO_TERM",
+        "en": "autumn"
+      },
+      {
+        "mention_id": "c0012_ri4_002",
+        "term_id": "ri.sun",
+        "text": "日",
+        "anchor": "日行北陸",
+        "type": "ASTRO_TERM",
+        "en": "sun"
+      },
+      {
+        "mention_id": "c0012_xing2_001",
+        "term_id": "xing.moves",
+        "text": "行",
+        "anchor": "日行北陸",
+        "type": "MOTION",
+        "en": "moves through"
+      },
+      {
+        "mention_id": "c0012_bei3_lu4_001",
+        "term_id": "bei_lu.northern_regions",
+        "text": "北陸",
+        "anchor": "日行北陸",
+        "type": "ASTRO_TERM",
+        "en": "northern regions"
+      },
+      {
+        "mention_id": "c0012_ri4_xing2_bei3_lu4_001",
+        "term_id": "ri_xing_bei_lu.sun_moves_northern_regions",
+        "text": "日行北陸",
+        "anchor": "日行北陸謂之 冬",
+        "type": "ASTRO_TERM",
+        "en": "the sun moves through the northern regions"
+      },
+      {
+        "mention_id": "c0012_wei4_zhi1_001",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之 冬",
+        "type": "KNOWLEDGE_OP",
+        "en": "that is called"
+      },
+      {
+        "mention_id": "c0012_dong1_003",
+        "term_id": "dong.winter",
+        "text": "冬",
+        "anchor": "謂之 冬",
+        "type": "ASTRO_TERM",
+        "en": "winter"
+      },
+      {
+        "mention_id": "c0012_xi1_lu4_001",
+        "term_id": "xi_lu.western_regions",
+        "text": "西陸",
+        "anchor": "西陸謂之春",
+        "type": "ASTRO_TERM",
+        "en": "western regions"
+      },
+      {
+        "mention_id": "c0012_wei4_zhi1_002",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之春",
+        "type": "KNOWLEDGE_OP",
+        "en": "it is called"
+      },
+      {
+        "mention_id": "c0012_chun1_002",
+        "term_id": "chun.spring",
+        "text": "春",
+        "anchor": "謂之春",
+        "type": "ASTRO_TERM",
+        "en": "spring"
+      },
+      {
+        "mention_id": "c0012_nan2_lu4_001",
+        "term_id": "nan_lu.southern_regions",
+        "text": "南陸",
+        "anchor": "南陸謂之夏",
+        "type": "ASTRO_TERM",
+        "en": "southern regions"
+      },
+      {
+        "mention_id": "c0012_wei4_zhi1_003",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之夏",
+        "type": "KNOWLEDGE_OP",
+        "en": "it is called"
+      },
+      {
+        "mention_id": "c0012_xia4_003",
+        "term_id": "xia.summer",
+        "text": "夏",
+        "anchor": "謂之夏",
+        "type": "ASTRO_TERM",
+        "en": "summer"
+      },
+      {
+        "mention_id": "c0012_dong1_lu4_001",
+        "term_id": "dong_lu.eastern_regions",
+        "text": "東陸",
+        "anchor": "東陸謂之秋",
+        "type": "ASTRO_TERM",
+        "en": "eastern regions"
+      },
+      {
+        "mention_id": "c0012_wei4_zhi1_004",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之秋",
+        "type": "KNOWLEDGE_OP",
+        "en": "it is called"
+      },
+      {
+        "mention_id": "c0012_qiu1_002",
+        "term_id": "qiu.autumn",
+        "text": "秋",
+        "anchor": "謂之秋",
+        "type": "ASTRO_TERM",
+        "en": "autumn"
+      },
+      {
+        "mention_id": "c0012_ri4_dao4_fa1_nan2_001",
+        "term_id": "ri_dao_fa_nan.sun_path_extends_southwards",
+        "text": "日道發南",
+        "anchor": "日道發南",
+        "type": "MOTION",
+        "en": "the sun’s path extends out southwards"
+      },
+      {
+        "mention_id": "c0012_qu4_ji2_mi2_yuan3_001",
+        "term_id": "qu_ji_mi_yuan.goes_further_from_pole",
+        "text": "去極彌遠",
+        "anchor": "去極彌遠",
+        "type": "MOTION",
+        "en": "goes ever further from the pole"
+      },
+      {
+        "mention_id": "c0012_qi2_jing3_mi2_chang2_001",
+        "term_id": "qi_jing_mi_chang.shadow_ever_longer",
+        "text": "其景彌長",
+        "anchor": "其景彌長",
+        "type": "MOTION",
+        "en": "the shadow becomes ever longer"
+      },
+      {
+        "mention_id": "c0012_yuan3_chang2_nai3_ji2_001",
+        "term_id": "yuan_chang_nai_ji.distance_length_extreme",
+        "text": "遠長乃極",
+        "anchor": "遠長乃極",
+        "type": "MOTION",
+        "en": "distance and length reach their extreme"
+      },
+      {
+        "mention_id": "c0012_dong1_nai3_zhi4_yan1_001",
+        "term_id": "dong_nai_zhi_yan.winter_culminates",
+        "text": "冬乃至焉",
+        "anchor": "冬乃至焉",
+        "type": "ASTRO_TERM",
+        "en": "winter culminates there"
+      },
+      {
+        "mention_id": "c0012_ri4_003",
+        "term_id": "ri.sun",
+        "text": "日",
+        "anchor": "日道發南",
+        "type": "ASTRO_TERM",
+        "en": "sun"
+      },
+      {
+        "mention_id": "c0012_dao4_001",
+        "term_id": "dao.path",
+        "text": "道",
+        "anchor": "日道發南",
+        "type": "ASTRO_TERM",
+        "en": "path"
+      },
+      {
+        "mention_id": "c0012_ri4_dao4_001",
+        "term_id": "ri_dao.sun_path",
+        "text": "日道",
+        "anchor": "日道發南",
+        "type": "ASTRO_TERM",
+        "en": "sun’s path"
+      },
+      {
+        "mention_id": "c0012_fa1_001",
+        "term_id": "fa.extends_out",
+        "text": "發",
+        "anchor": "日道發南",
+        "type": "MOTION",
+        "en": "extends out"
+      },
+      {
+        "mention_id": "c0012_nan2_001",
+        "term_id": "nan.southwards",
+        "text": "南",
+        "anchor": "日道發南",
+        "type": "MOTION",
+        "en": "southwards"
+      },
+      {
+        "mention_id": "c0012_qu4_001",
+        "term_id": "qu.goes",
+        "text": "去",
+        "anchor": "去極彌遠",
+        "type": "MOTION",
+        "en": "goes"
+      },
+      {
+        "mention_id": "c0012_ji2_001",
+        "term_id": "ji.pole",
+        "text": "極",
+        "anchor": "去極彌遠",
+        "type": "ASTRO_TERM",
+        "en": "the pole"
+      },
+      {
+        "mention_id": "c0012_mi2_yuan3_001",
+        "term_id": "mi_yuan.ever_further",
+        "text": "彌遠",
+        "anchor": "去極彌遠",
+        "type": "MOTION",
+        "en": "ever further"
+      },
+      {
+        "mention_id": "c0012_qu4_ji2_mi2_yuan3_002",
+        "term_id": "qu_ji_mi_yuan.goes_further_from_pole",
+        "text": "去極彌遠",
+        "anchor": "去極彌遠",
+        "type": "MOTION",
+        "en": "goes ever further from the pole"
+      },
+      {
+        "mention_id": "c0012_jing3_001",
+        "term_id": "jing.shadow",
+        "text": "景",
+        "anchor": "其景彌長",
+        "type": "ASTRO_TERM",
+        "en": "shadow"
+      },
+      {
+        "mention_id": "c0012_mi2_chang2_001",
+        "term_id": "mi_chang.ever_longer",
+        "text": "彌長",
+        "anchor": "其景彌長",
+        "type": "MOTION",
+        "en": "ever longer"
+      },
+      {
+        "mention_id": "c0012_yuan3_001",
+        "term_id": "yuan.distance",
+        "text": "遠",
+        "anchor": "遠長乃極",
+        "type": "ASTRO_TERM",
+        "en": "distance"
+      },
+      {
+        "mention_id": "c0012_chang2_001",
+        "term_id": "chang.length",
+        "text": "長",
+        "anchor": "遠長乃極",
+        "type": "ASTRO_TERM",
+        "en": "length"
+      },
+      {
+        "mention_id": "c0012_ji2_002",
+        "term_id": "ji.extreme",
+        "text": "極",
+        "anchor": "遠長乃極",
+        "type": "MOTION",
+        "en": "reach their extreme"
+      },
+      {
+        "mention_id": "c0012_yuan3_chang2_nai3_ji2_002",
+        "term_id": "yuan_chang_nai_ji.distance_length_extreme",
+        "text": "遠長乃極",
+        "anchor": "遠長乃極",
+        "type": "ASTRO_TERM",
+        "en": "distance and length reach their extreme"
+      },
+      {
+        "mention_id": "c0012_dong1_004",
+        "term_id": "dong.winter",
+        "text": "冬",
+        "anchor": "冬乃至焉",
+        "type": "ASTRO_TERM",
+        "en": "winter"
+      },
+      {
+        "mention_id": "c0012_zhi4_001",
+        "term_id": "zhi.culminates",
+        "text": "至",
+        "anchor": "冬乃至焉",
+        "type": "MOTION",
+        "en": "culminates"
+      },
+      {
+        "mention_id": "c0012_dong1_nai3_zhi4_yan1_002",
+        "term_id": "dong_nai_zhi_yan.winter_culminates",
+        "text": "冬乃至焉",
+        "anchor": "冬乃至焉",
+        "type": "ASTRO_TERM",
+        "en": "winter culminates there"
+      },
+      {
+        "mention_id": "c0012_ri4_dao4_lian3_bei3_001",
+        "term_id": "ri_dao_lian_bei.sun_path_draws_northwards",
+        "text": "日道斂北",
+        "anchor": "日道斂北",
+        "type": "MOTION",
+        "en": "the sun’s path draws in towards the north"
+      },
+      {
+        "mention_id": "c0012_qu4_ji2_mi2_jin4_001",
+        "term_id": "qu_ji_mi_jin.goes_closer_to_pole",
+        "text": "去極彌近",
+        "anchor": "去極彌近",
+        "type": "MOTION",
+        "en": "goes ever closer to the pole"
+      },
+      {
+        "mention_id": "c0012_qi2_jing3_mi2_duan3_001",
+        "term_id": "qi_jing_mi_duan.shadow_ever_shorter",
+        "text": "其景彌短",
+        "anchor": "其景彌短",
+        "type": "MOTION",
+        "en": "the shadow is ever shorter"
+      },
+      {
+        "mention_id": "c0012_jin4_duan3_nai3_ji2_001",
+        "term_id": "jin_duan_nai_ji.nearness_shortness_extreme",
+        "text": "近短乃極",
+        "anchor": "近短乃極",
+        "type": "MOTION",
+        "en": "nearness and shortness reach their extreme"
+      },
+      {
+        "mention_id": "c0012_xia4_nai3_zhi4_yan1_001",
+        "term_id": "xia_nai_zhi_yan.summer_culminates",
+        "text": "夏乃至焉",
+        "anchor": "夏乃至焉",
+        "type": "ASTRO_TERM",
+        "en": "summer culminates there"
+      },
+      {
+        "mention_id": "c0012_ri4_004",
+        "term_id": "ri.sun",
+        "text": "日",
+        "anchor": "日道斂北",
+        "type": "ASTRO_TERM",
+        "en": "sun"
+      },
+      {
+        "mention_id": "c0012_dao4_002",
+        "term_id": "dao.path",
+        "text": "道",
+        "anchor": "日道斂北",
+        "type": "ASTRO_TERM",
+        "en": "path"
+      },
+      {
+        "mention_id": "c0012_ri4_dao4_002",
+        "term_id": "ri_dao.sun_path",
+        "text": "日道",
+        "anchor": "日道斂北",
+        "type": "ASTRO_TERM",
+        "en": "sun’s path"
+      },
+      {
+        "mention_id": "c0012_lian3_001",
+        "term_id": "lian.draws_in",
+        "text": "斂",
+        "anchor": "日道斂北",
+        "type": "MOTION",
+        "en": "draws in"
+      },
+      {
+        "mention_id": "c0012_bei3_001",
+        "term_id": "bei.north",
+        "text": "北",
+        "anchor": "日道斂北",
+        "type": "MOTION",
+        "en": "towards the north"
+      },
+      {
+        "mention_id": "c0012_qu4_002",
+        "term_id": "qu.goes",
+        "text": "去",
+        "anchor": "去極彌近",
+        "type": "MOTION",
+        "en": "goes"
+      },
+      {
+        "mention_id": "c0012_ji2_003",
+        "term_id": "ji.pole",
+        "text": "極",
+        "anchor": "去極彌近",
+        "type": "ASTRO_TERM",
+        "en": "the pole"
+      },
+      {
+        "mention_id": "c0012_mi2_jin4_001",
+        "term_id": "mi_jin.ever_closer",
+        "text": "彌近",
+        "anchor": "去極彌近",
+        "type": "MOTION",
+        "en": "ever closer"
+      },
+      {
+        "mention_id": "c0012_qu4_ji2_mi2_jin4_002",
+        "term_id": "qu_ji_mi_jin.goes_closer_to_pole",
+        "text": "去極彌近",
+        "anchor": "去極彌近",
+        "type": "MOTION",
+        "en": "goes ever closer to the pole"
+      },
+      {
+        "mention_id": "c0012_jing3_002",
+        "term_id": "jing.shadow",
+        "text": "景",
+        "anchor": "其景彌短",
+        "type": "ASTRO_TERM",
+        "en": "shadow"
+      },
+      {
+        "mention_id": "c0012_mi2_duan3_001",
+        "term_id": "mi_duan.ever_shorter",
+        "text": "彌短",
+        "anchor": "其景彌短",
+        "type": "MOTION",
+        "en": "ever shorter"
+      },
+      {
+        "mention_id": "c0012_jin4_001",
+        "term_id": "jin.nearness",
+        "text": "近",
+        "anchor": "近短乃極",
+        "type": "ASTRO_TERM",
+        "en": "nearness"
+      },
+      {
+        "mention_id": "c0012_duan3_001",
+        "term_id": "duan.shortness",
+        "text": "短",
+        "anchor": "近短乃極",
+        "type": "ASTRO_TERM",
+        "en": "shortness"
+      },
+      {
+        "mention_id": "c0012_ji2_004",
+        "term_id": "ji.extreme",
+        "text": "極",
+        "anchor": "近短乃極",
+        "type": "MOTION",
+        "en": "extreme"
+      },
+      {
+        "mention_id": "c0012_jin4_duan3_nai3_ji2_002",
+        "term_id": "jin_duan_nai_ji.nearness_shortness_extreme",
+        "text": "近短乃極",
+        "anchor": "近短乃極",
+        "type": "ASTRO_TERM",
+        "en": "nearness and shortness reach their extreme"
+      },
+      {
+        "mention_id": "c0012_xia4_004",
+        "term_id": "xia.summer",
+        "text": "夏",
+        "anchor": "夏乃至焉",
+        "type": "ASTRO_TERM",
+        "en": "summer"
+      },
+      {
+        "mention_id": "c0012_zhi4_002",
+        "term_id": "zhi.culminates",
+        "text": "至",
+        "anchor": "夏乃至焉",
+        "type": "MOTION",
+        "en": "culminates"
+      },
+      {
+        "mention_id": "c0012_xia4_nai3_zhi4_yan1_002",
+        "term_id": "xia_nai_zhi_yan.summer_culminates",
+        "text": "夏乃至焉",
+        "anchor": "夏乃至焉",
+        "type": "ASTRO_TERM",
+        "en": "summer culminates there"
+      },
+      {
+        "mention_id": "c0012_er4_zhi4_zhi1_zhong1_001",
+        "term_id": "er_zhi_zhi_zhong.between_two_extremes",
+        "text": "二至之中",
+        "anchor": "二至之中",
+        "type": "ASTRO_TERM",
+        "en": "Between the two extremes"
+      },
+      {
+        "mention_id": "c0012_dao4_qi2_jing3_zheng4_001",
+        "term_id": "dao_qi_jing_zheng.path_even_shadow_true",
+        "text": "道齊景正",
+        "anchor": "道齊景正",
+        "type": "ASTRO_TERM",
+        "en": "the path is even and the shadow is true"
+      },
+      {
+        "mention_id": "c0012_chun1_qiu1_fen1_yan1_001",
+        "term_id": "chun_qiu_fen_yan.spring_autumn_divided",
+        "text": "春秋分焉",
+        "anchor": "春秋分焉",
+        "type": "ASTRO_TERM",
+        "en": "spring and autumn are divided there"
+      },
+      {
+        "mention_id": "c0012_er4_zhi4_001",
+        "term_id": "er_zhi.two_extremes",
+        "text": "二至",
+        "anchor": "二至之中",
+        "type": "ASTRO_TERM",
+        "en": "two extremes =(summer solstice and winter solstice)"
+      },
+      {
+        "mention_id": "c0012_zhi4_003",
+        "term_id": "zhi.extremes",
+        "text": "至",
+        "anchor": "二至之中",
+        "type": "ASTRO_TERM",
+        "en": "extremes"
+      },
+      {
+        "mention_id": "c0012_zhong1_001",
+        "term_id": "zhong.between",
+        "text": "中",
+        "anchor": "二至之中",
+        "type": "ASTRO_TERM",
+        "en": "Between"
+      },
+      {
+        "mention_id": "c0012_dao4_qi2_001",
+        "term_id": "dao_qi.path_even",
+        "text": "道齊",
+        "anchor": "道齊景正",
+        "type": "ASTRO_TERM",
+        "en": "the path is even"
+      },
+      {
+        "mention_id": "c0012_dao4_003",
+        "term_id": "dao.path",
+        "text": "道",
+        "anchor": "道齊景正",
+        "type": "ASTRO_TERM",
+        "en": "path"
+      },
+      {
+        "mention_id": "c0012_qi2_001",
+        "term_id": "qi.even",
+        "text": "齊",
+        "anchor": "道齊景正",
+        "type": "MOTION",
+        "en": "even"
+      },
+      {
+        "mention_id": "c0012_jing3_zheng4_001",
+        "term_id": "jing_zheng.shadow_true",
+        "text": "景正",
+        "anchor": "道齊景正",
+        "type": "ASTRO_TERM",
+        "en": "the shadow is true"
+      },
+      {
+        "mention_id": "c0012_jing3_003",
+        "term_id": "jing.shadow",
+        "text": "景",
+        "anchor": "道齊景正",
+        "type": "ASTRO_TERM",
+        "en": "shadow"
+      },
+      {
+        "mention_id": "c0012_zheng4_001",
+        "term_id": "zheng.true",
+        "text": "正",
+        "anchor": "道齊景正",
+        "type": "MOTION",
+        "en": "true"
+      },
+      {
+        "mention_id": "c0012_chun1_qiu1_001",
+        "term_id": "chun_qiu.spring_and_autumn",
+        "text": "春秋",
+        "anchor": "春秋分焉",
+        "type": "ASTRO_TERM",
+        "en": "spring and autumn"
+      },
+      {
+        "mention_id": "c0012_chun1_003",
+        "term_id": "chun.spring",
+        "text": "春",
+        "anchor": "春秋分焉",
+        "type": "ASTRO_TERM",
+        "en": "spring"
+      },
+      {
+        "mention_id": "c0012_qiu1_003",
+        "term_id": "qiu.autumn",
+        "text": "秋",
+        "anchor": "春秋分焉",
+        "type": "ASTRO_TERM",
+        "en": "autumn"
+      },
+      {
+        "mention_id": "c0012_fen1_001",
+        "term_id": "fen.divided",
+        "text": "分",
+        "anchor": "春秋分焉",
+        "type": "MOTION",
+        "en": "divided"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "日道",
+        "subject_id": "c0012_ri4_dao4_001",
+        "relation": "UNDERGOES",
+        "object": "發南",
+        "object_id": "c0012_ri4_dao4_fa1_nan2_001"
+      },
+      {
+        "subject": "日道發南",
+        "subject_id": "c0012_ri4_dao4_fa1_nan2_001",
+        "relation": "LEADS_TO",
+        "object": "去極彌遠",
+        "object_id": "c0012_qu4_ji2_mi2_yuan3_001"
+      },
+      {
+        "subject": "去極彌遠",
+        "subject_id": "c0012_qu4_ji2_mi2_yuan3_001",
+        "relation": "LEADS_TO",
+        "object": "其景彌長",
+        "object_id": "c0012_qi2_jing3_mi2_chang2_001"
+      },
+      {
+        "subject": "其景彌長",
+        "subject_id": "c0012_qi2_jing3_mi2_chang2_001",
+        "relation": "LEADS_TO",
+        "object": "遠長乃極",
+        "object_id": "c0012_yuan3_chang2_nai3_ji2_001"
+      },
+      {
+        "subject": "遠長乃極",
+        "subject_id": "c0012_yuan3_chang2_nai3_ji2_001",
+        "relation": "LEADS_TO",
+        "object": "冬乃至焉",
+        "object_id": "c0012_dong1_nai3_zhi4_yan1_001"
+      },
+      {
+        "subject": "日道",
+        "subject_id": "c0012_ri4_dao4_002",
+        "relation": "UNDERGOES",
+        "object": "斂北",
+        "object_id": "c0012_ri4_dao4_lian3_bei3_001"
+      },
+      {
+        "subject": "日道斂北",
+        "subject_id": "c0012_ri4_dao4_lian3_bei3_001",
+        "relation": "LEADS_TO",
+        "object": "去極彌近",
+        "object_id": "c0012_qu4_ji2_mi2_jin4_001"
+      },
+      {
+        "subject": "去極彌近",
+        "subject_id": "c0012_qu4_ji2_mi2_jin4_001",
+        "relation": "LEADS_TO",
+        "object": "其景彌短",
+        "object_id": "c0012_qi2_jing3_mi2_duan3_001"
+      },
+      {
+        "subject": "其景彌短",
+        "subject_id": "c0012_qi2_jing3_mi2_duan3_001",
+        "relation": "LEADS_TO",
+        "object": "近短乃極",
+        "object_id": "c0012_jin4_duan3_nai3_ji2_001"
+      },
+      {
+        "subject": "近短乃極",
+        "subject_id": "c0012_jin4_duan3_nai3_ji2_001",
+        "relation": "LEADS_TO",
+        "object": "夏乃至焉",
+        "object_id": "c0012_xia4_nai3_zhi4_yan1_001"
+      },
+      {
+        "subject": "二至之中",
+        "subject_id": "c0012_er4_zhi4_zhi1_zhong1_001",
+        "relation": "LEADS_TO",
+        "object": "道齊景正",
+        "object_id": "c0012_dao4_qi2_jing3_zheng4_001"
+      },
+      {
+        "subject": "道齊景正",
+        "subject_id": "c0012_dao4_qi2_jing3_zheng4_001",
+        "relation": "LEADS_TO",
+        "object": "春秋分焉",
+        "object_id": "c0012_chun1_qiu1_fen1_yan1_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0013",
+    "chunk_type": "definition",
+    "terms": [
+      {
+        "mention_id": "c0013_ri4_001",
+        "term_id": "ri.sun",
+        "text": "日",
+        "anchor": "日周于天",
+        "type": "ASTRO_TERM",
+        "en": "sun"
+      },
+      {
+        "mention_id": "c0013_zhou1_001",
+        "term_id": "zhou.circuit",
+        "text": "周",
+        "anchor": "日周于天",
+        "type": "MOTION",
+        "en": "circuits round"
+      },
+      {
+        "mention_id": "c0013_tian1_001",
+        "term_id": "tian.heaven",
+        "text": "天",
+        "anchor": "日周于天",
+        "type": "ASTRO_TERM",
+        "en": "Heaven"
+      },
+      {
+        "mention_id": "c0013_ri4_zhou1_yu2_tian1_001",
+        "term_id": "ri_zhou_yu_tian.sun_circuits_heaven",
+        "text": "日周于天",
+        "anchor": "日周于天",
+        "type": "ASTRO_TERM",
+        "en": "sun circuits round Heaven"
+      },
+      {
+        "mention_id": "c0013_han2_001",
+        "term_id": "han.cold",
+        "text": "寒",
+        "anchor": "一寒一暑",
+        "type": "ASTRO_TERM",
+        "en": "cold"
+      },
+      {
+        "mention_id": "c0013_shu3_001",
+        "term_id": "shu.heat",
+        "text": "暑",
+        "anchor": "一寒一暑",
+        "type": "ASTRO_TERM",
+        "en": "heat"
+      },
+      {
+        "mention_id": "c0013_yi1_han2_yi1_shu3_001",
+        "term_id": "yi_han_yi_shu.one_cold_one_heat",
+        "text": "一寒一暑",
+        "anchor": "一寒一暑",
+        "type": "ASTRO_TERM",
+        "en": "one cold and one heat"
+      },
+      {
+        "mention_id": "c0013_si4_shi2_001",
+        "term_id": "si_shi.four_seasons",
+        "text": "四時",
+        "anchor": "四時備成",
+        "type": "ASTRO_TERM",
+        "en": "the four seasons"
+      },
+      {
+        "mention_id": "c0013_bei4_cheng2_001",
+        "term_id": "bei_cheng.complete",
+        "text": "備成",
+        "anchor": "四時備成",
+        "type": "MOTION",
+        "en": "complete"
+      },
+      {
+        "mention_id": "c0013_si4_shi2_bei4_cheng2_001",
+        "term_id": "si_shi_bei_cheng.four_seasons_complete",
+        "text": "四時備成",
+        "anchor": "四時備成",
+        "type": "ASTRO_TERM",
+        "en": "four seasons are all complete"
+      },
+      {
+        "mention_id": "c0013_wan4_wu4_001",
+        "term_id": "wan_wu.myriad_creatures",
+        "text": "萬物",
+        "anchor": "萬物畢改",
+        "type": "ASTRO_TERM",
+        "en": "myriad creatures"
+      },
+      {
+        "mention_id": "c0013_bi4_gai3_001",
+        "term_id": "bi_gai.all_changed",
+        "text": "畢改",
+        "anchor": "萬物畢改",
+        "type": "MOTION",
+        "en": "changed"
+      },
+      {
+        "mention_id": "c0013_wan4_wu4_bi4_gai3_001",
+        "term_id": "wan_wu_bi_gai.myriad_creatures_changed",
+        "text": "萬物畢改",
+        "anchor": "萬物畢改",
+        "type": "ASTRO_TERM",
+        "en": "myriad creatures are all changed"
+      },
+      {
+        "mention_id": "c0013_she4_ti2_001",
+        "term_id": "she_ti.sheti",
+        "text": "攝提",
+        "anchor": "攝提遷次",
+        "type": "ASTRO_TERM",
+        "en": "sheti =(12 cyclical characters referring to years)"
+      },
+      {
+        "mention_id": "c0013_qian1_ci4_001",
+        "term_id": "qian_ci.shift_station",
+        "text": "遷次",
+        "anchor": "攝提遷次",
+        "type": "MOTION",
+        "en": "shift their station"
+      },
+      {
+        "mention_id": "c0013_qian1_001",
+        "term_id": "qian.shift",
+        "text": "遷",
+        "anchor": "攝提遷次",
+        "type": "MOTION",
+        "en": "shift"
+      },
+      {
+        "mention_id": "c0013_ci4_001",
+        "term_id": "ci.station",
+        "text": "次",
+        "anchor": "攝提遷次",
+        "type": "ASTRO_TERM",
+        "en": "station"
+      },
+      {
+        "mention_id": "c0013_she4_ti2_qian1_ci4_001",
+        "term_id": "she_ti_qian_ci.sheti_shift_station",
+        "text": "攝提遷次",
+        "anchor": "攝提遷次",
+        "type": "ASTRO_TERM",
+        "en": "sheti shift their station"
+      },
+      {
+        "mention_id": "c0013_qing1_long2_001",
+        "term_id": "qing_long.caerulean_dragon",
+        "text": "青龍",
+        "anchor": "青龍移辰",
+        "type": "ASTRO_TERM",
+        "en": "Caerulean Dragon (= sexagenary name of the year)"
+      },
+      {
+        "mention_id": "c0013_yi2_chen2_001",
+        "term_id": "yi_chen.move_mark_point",
+        "text": "移辰",
+        "anchor": "青龍移辰",
+        "type": "MOTION",
+        "en": "moves its mark-point"
+      },
+      {
+        "mention_id": "c0013_yi2_001",
+        "term_id": "yi.move",
+        "text": "移",
+        "anchor": "青龍移辰",
+        "type": "MOTION",
+        "en": "moves"
+      },
+      {
+        "mention_id": "c0013_chen2_001",
+        "term_id": "chen.mark_point",
+        "text": "辰",
+        "anchor": "青龍移辰",
+        "type": "ASTRO_TERM",
+        "en": "mark-point"
+      },
+      {
+        "mention_id": "c0013_qing1_long2_yi2_chen2_001",
+        "term_id": "qing_long_yi_chen.caerulean_dragon_moves_mark_point",
+        "text": "青龍移辰",
+        "anchor": "青龍移辰",
+        "type": "ASTRO_TERM",
+        "en": "Caerulean Dragon moves its mark-point"
+      },
+      {
+        "mention_id": "c0013_sui4_definition_001",
+        "term_id": "sui.definition_conditions",
+        "text": "日周于天， 一寒一暑， 四時備成， 萬物畢改， 攝提遷次， 青龍移辰",
+        "anchor": "日周于天， 一寒一暑， 四時備成， 萬物畢改， 攝提遷次， 青龍移辰， 謂之歲",
+        "type": "ASTRO_TERM",
+        "en": "The sun circuits round Heaven: there is one cold and one heat, the four seasons are all complete, the myriad creatures are all changed, the sheti ... shift their station, and the Caerulean Dragon ... moves its mark-point"
+      },
+      {
+        "mention_id": "c0013_wei4_zhi1_001",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之歲",
+        "type": "KNOWLEDGE_OP",
+        "en": "This is called"
+      },
+      {
+        "mention_id": "c0013_sui4_001",
+        "term_id": "sui.sui",
+        "text": "歲",
+        "anchor": "謂之歲",
+        "type": "ASTRO_TERM",
+        "en": "sui"
+      },
+      {
+        "mention_id": "c0013_sui4_002",
+        "term_id": "sui.solar_cycle",
+        "text": "歲",
+        "anchor": "歲 首至也",
+        "type": "ASTRO_TERM",
+        "en": "sui =(solar cycle)"
+      },
+      {
+        "mention_id": "c0013_shou3_001",
+        "term_id": "shou.head",
+        "text": "首",
+        "anchor": "歲 首至也",
+        "type": "ASTRO_TERM",
+        "en": "head"
+      },
+      {
+        "mention_id": "c0013_sui4_shou3_001",
+        "term_id": "sui_shou.head_of_sui",
+        "text": "歲 首",
+        "anchor": "歲 首至也",
+        "type": "ASTRO_TERM",
+        "en": "The head of the sui"
+      },
+      {
+        "mention_id": "c0013_zhi4_001",
+        "term_id": "zhi.winter_solstice",
+        "text": "至",
+        "anchor": "歲 首至也",
+        "type": "ASTRO_TERM",
+        "en": "[winter] solstice"
+      },
+      {
+        "mention_id": "c0013_yue4_001",
+        "term_id": "yue.month",
+        "text": "月",
+        "anchor": "月首朔也",
+        "type": "ASTRO_TERM",
+        "en": "yue"
+      },
+      {
+        "mention_id": "c0013_yue4_shou3_001",
+        "term_id": "yue_shou.head_of_yue",
+        "text": "月首",
+        "anchor": "月首朔也",
+        "type": "ASTRO_TERM",
+        "en": "head of the yue"
+      },
+      {
+        "mention_id": "c0013_shuo4_001",
+        "term_id": "shuo.conjunction",
+        "text": "朔",
+        "anchor": "月首朔也",
+        "type": "ASTRO_TERM",
+        "en": "conjunction"
+      },
+      {
+        "mention_id": "c0013_zhi4_002",
+        "term_id": "zhi.solstice",
+        "text": "至",
+        "anchor": "至朔同日",
+        "type": "ASTRO_TERM",
+        "en": "solstice"
+      },
+      {
+        "mention_id": "c0013_shuo4_002",
+        "term_id": "shuo.conjunction",
+        "text": "朔",
+        "anchor": "至朔同日",
+        "type": "ASTRO_TERM",
+        "en": "conjunction"
+      },
+      {
+        "mention_id": "c0013_tong2_001",
+        "term_id": "tong.same",
+        "text": "同",
+        "anchor": "至朔同日",
+        "type": "MOTION",
+        "en": "fall on the same"
+      },
+      {
+        "mention_id": "c0013_ri4_002",
+        "term_id": "ri.day",
+        "text": "日",
+        "anchor": "至朔同日",
+        "type": "ASTRO_TERM",
+        "en": "day"
+      },
+      {
+        "mention_id": "c0013_zhi4_shuo4_tong2_ri4_001",
+        "term_id": "zhi_shuo_tong_ri.solstice_conjunction_same_day",
+        "text": "至朔同日",
+        "anchor": "至朔同日謂之章",
+        "type": "ASTRO_TERM",
+        "en": "the solstice and the conjunction fall on the same day"
+      },
+      {
+        "mention_id": "c0013_wei4_zhi1_002",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之章",
+        "type": "KNOWLEDGE_OP",
+        "en": "that is called"
+      },
+      {
+        "mention_id": "c0013_zhang1_001",
+        "term_id": "zhang.rule_head",
+        "text": "章",
+        "anchor": "謂之章",
+        "type": "ASTRO_TERM",
+        "en": "Rule [Head]"
+      },
+      {
+        "mention_id": "c0013_tong2_002",
+        "term_id": "tong.same",
+        "text": "同",
+        "anchor": "同在日首",
+        "type": "MOTION",
+        "en": "this takes place"
+      },
+      {
+        "mention_id": "c0013_ri4_shou3_001",
+        "term_id": "ri_shou.head_of_day",
+        "text": "日首",
+        "anchor": "同在日首",
+        "type": "ASTRO_TERM",
+        "en": "head of a day =(midnight)"
+      },
+      {
+        "mention_id": "c0013_tong2_zai4_ri4_shou3_001",
+        "term_id": "tong_zai_ri_shou.same_at_head_of_day",
+        "text": "同在日首",
+        "anchor": "同在日首謂之蔀",
+        "type": "ASTRO_TERM",
+        "en": "this takes place at the head of a day [i.e. midnight]"
+      },
+      {
+        "mention_id": "c0013_wei4_zhi1_003",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之蔀",
+        "type": "KNOWLEDGE_OP",
+        "en": "this is called"
+      },
+      {
+        "mention_id": "c0013_bu4_001",
+        "term_id": "bu.obscuration_head",
+        "text": "蔀",
+        "anchor": "謂之蔀",
+        "type": "ASTRO_TERM",
+        "en": "Obscuration [Head]"
+      },
+      {
+        "mention_id": "c0013_bu4_002",
+        "term_id": "bu.obscuration",
+        "text": "蔀",
+        "anchor": "蔀終六旬",
+        "type": "ASTRO_TERM",
+        "en": "Obscuration"
+      },
+      {
+        "mention_id": "c0013_zhong1_001",
+        "term_id": "zhong.terminated",
+        "text": "終",
+        "anchor": "蔀終六旬",
+        "type": "MOTION",
+        "en": "terminated"
+      },
+      {
+        "mention_id": "c0013_liu4_xun2_001",
+        "term_id": "liu_xun.six_decades",
+        "text": "六旬",
+        "anchor": "蔀終六旬",
+        "type": "ASTRO_TERM",
+        "en": "six decades"
+      },
+      {
+        "mention_id": "c0013_bu4_zhong1_liu4_xun2_001",
+        "term_id": "bu_zhong_liu_xun.obscuration_terminated_six_decades",
+        "text": "蔀終六旬",
+        "anchor": "蔀終六旬謂之紀",
+        "type": "ASTRO_TERM",
+        "en": "an Obscuration has terminated the six decades"
+      },
+      {
+        "mention_id": "c0013_wei4_zhi1_004",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之紀",
+        "type": "KNOWLEDGE_OP",
+        "en": "that is called"
+      },
+      {
+        "mention_id": "c0013_ji4_001",
+        "term_id": "ji.era_head",
+        "text": "紀",
+        "anchor": "謂之紀",
+        "type": "ASTRO_TERM",
+        "en": "Era [Head]"
+      },
+      {
+        "mention_id": "c0013_sui4_003",
+        "term_id": "sui.solar_cycle",
+        "text": "歲",
+        "anchor": "歲 朔又復",
+        "type": "ASTRO_TERM",
+        "en": "sui =(solar cycle)"
+      },
+      {
+        "mention_id": "c0013_shuo4_003",
+        "term_id": "shuo.conjunction",
+        "text": "朔",
+        "anchor": "歲 朔又復",
+        "type": "ASTRO_TERM",
+        "en": "conjunction"
+      },
+      {
+        "mention_id": "c0013_you4_fu4_001",
+        "term_id": "you_fu.both_return",
+        "text": "又復",
+        "anchor": "歲 朔又復",
+        "type": "MOTION",
+        "en": "both return"
+      },
+      {
+        "mention_id": "c0013_sui4_shuo4_you4_fu4_001",
+        "term_id": "sui_shuo_you_fu.sui_conjunction_both_return",
+        "text": "歲 朔又復",
+        "anchor": "歲 朔又復謂之元",
+        "type": "ASTRO_TERM",
+        "en": "the sui and the conjunction both return"
+      },
+      {
+        "mention_id": "c0013_wei4_zhi1_005",
+        "term_id": "wei_zhi.called",
+        "text": "謂之",
+        "anchor": "謂之元",
+        "type": "KNOWLEDGE_OP",
+        "en": "that is called"
+      },
+      {
+        "mention_id": "c0013_yuan2_001",
+        "term_id": "yuan.origin_head",
+        "text": "元",
+        "anchor": "謂之元",
+        "type": "ASTRO_TERM",
+        "en": "Origin [Head]"
+      },
+      {
+        "mention_id": "c0013_ri4_003",
+        "term_id": "ri.day",
+        "text": "日",
+        "anchor": "日以實之",
+        "type": "ASTRO_TERM",
+        "en": "day"
+      },
+      {
+        "mention_id": "c0013_shi2_001",
+        "term_id": "shi.fill",
+        "text": "實",
+        "anchor": "日以實之",
+        "type": "KNOWLEDGE_OP",
+        "en": "fills"
+      },
+      {
+        "mention_id": "c0013_ri4_yi3_shi2_zhi1_001",
+        "term_id": "ri_yi_shi_zhi.day_fills",
+        "text": "日以實之",
+        "anchor": "日以實之",
+        "type": "KNOWLEDGE_OP",
+        "en": "for the day one fills it"
+      },
+      {
+        "mention_id": "c0013_yue4_002",
+        "term_id": "yue.month",
+        "text": "月",
+        "anchor": "月以閏之",
+        "type": "ASTRO_TERM",
+        "en": "yue"
+      },
+      {
+        "mention_id": "c0013_run4_001",
+        "term_id": "run.intercalate",
+        "text": "閏",
+        "anchor": "月以閏之",
+        "type": "KNOWLEDGE_OP",
+        "en": "intercalates"
+      },
+      {
+        "mention_id": "c0013_yue4_yi3_run4_zhi1_001",
+        "term_id": "yue_yi_run_zhi.month_intercalates",
+        "text": "月以閏之",
+        "anchor": "月以閏之",
+        "type": "KNOWLEDGE_OP",
+        "en": "for the yue one intercalates it"
+      },
+      {
+        "mention_id": "c0013_shi2_002",
+        "term_id": "shi.season",
+        "text": "時",
+        "anchor": "時以分之",
+        "type": "ASTRO_TERM",
+        "en": "season"
+      },
+      {
+        "mention_id": "c0013_fen1_001",
+        "term_id": "fen.divide",
+        "text": "分",
+        "anchor": "時以分之",
+        "type": "KNOWLEDGE_OP",
+        "en": "divides"
+      },
+      {
+        "mention_id": "c0013_shi2_yi3_fen1_zhi1_001",
+        "term_id": "shi_yi_fen_zhi.season_divides",
+        "text": "時以分之",
+        "anchor": "時以分之",
+        "type": "KNOWLEDGE_OP",
+        "en": "for the season one divides it"
+      },
+      {
+        "mention_id": "c0013_sui4_004",
+        "term_id": "sui.sui",
+        "text": "歲",
+        "anchor": "歲以周之",
+        "type": "ASTRO_TERM",
+        "en": "sui"
+      },
+      {
+        "mention_id": "c0013_zhou1_002",
+        "term_id": "zhou.circuit",
+        "text": "周",
+        "anchor": "歲以周之",
+        "type": "KNOWLEDGE_OP",
+        "en": "circuits"
+      },
+      {
+        "mention_id": "c0013_sui4_yi3_zhou1_zhi1_001",
+        "term_id": "sui_yi_zhou_zhi.sui_circuits",
+        "text": "歲以周之",
+        "anchor": "歲以周之",
+        "type": "KNOWLEDGE_OP",
+        "en": "for the sui one circuits it"
+      },
+      {
+        "mention_id": "c0013_zhang1_002",
+        "term_id": "zhang.rule",
+        "text": "章",
+        "anchor": "章以明之",
+        "type": "ASTRO_TERM",
+        "en": "Rule"
+      },
+      {
+        "mention_id": "c0013_ming2_001",
+        "term_id": "ming.illuminate",
+        "text": "明",
+        "anchor": "章以明之",
+        "type": "KNOWLEDGE_OP",
+        "en": "illuminates"
+      },
+      {
+        "mention_id": "c0013_zhang1_yi3_ming2_zhi1_001",
+        "term_id": "zhang_yi_ming_zhi.rule_illuminates",
+        "text": "章以明之",
+        "anchor": "章以明之",
+        "type": "KNOWLEDGE_OP",
+        "en": "for the Rule one illuminates it"
+      },
+      {
+        "mention_id": "c0013_bu4_003",
+        "term_id": "bu.obscuration",
+        "text": "蔀",
+        "anchor": "蔀以部之",
+        "type": "ASTRO_TERM",
+        "en": "Obscuration"
+      },
+      {
+        "mention_id": "c0013_bu4_004",
+        "term_id": "bu.section",
+        "text": "部",
+        "anchor": "蔀以部之",
+        "type": "KNOWLEDGE_OP",
+        "en": "sections"
+      },
+      {
+        "mention_id": "c0013_bu4_yi3_bu4_zhi1_001",
+        "term_id": "bu_yi_bu_zhi.obscuration_sections",
+        "text": "蔀以部之",
+        "anchor": "蔀以部之",
+        "type": "KNOWLEDGE_OP",
+        "en": "for the Obscuration one sections it"
+      },
+      {
+        "mention_id": "c0013_ji4_002",
+        "term_id": "ji.era",
+        "text": "紀",
+        "anchor": "紀以記之",
+        "type": "ASTRO_TERM",
+        "en": "Era"
+      },
+      {
+        "mention_id": "c0013_ji4_003",
+        "term_id": "ji.record",
+        "text": "記",
+        "anchor": "紀以記之",
+        "type": "KNOWLEDGE_OP",
+        "en": "records"
+      },
+      {
+        "mention_id": "c0013_ji4_yi3_ji4_zhi1_001",
+        "term_id": "ji_yi_ji_zhi.era_records",
+        "text": "紀以記之",
+        "anchor": "紀以記之",
+        "type": "KNOWLEDGE_OP",
+        "en": "for the Era one records it"
+      },
+      {
+        "mention_id": "c0013_yuan2_002",
+        "term_id": "yuan.origin",
+        "text": "元",
+        "anchor": "元以原之",
+        "type": "ASTRO_TERM",
+        "en": "Origin"
+      },
+      {
+        "mention_id": "c0013_yuan2_003",
+        "term_id": "yuan.trace_to_source",
+        "text": "原",
+        "anchor": "元以原之",
+        "type": "KNOWLEDGE_OP",
+        "en": "traces it to the source"
+      },
+      {
+        "mention_id": "c0013_yuan2_yi3_yuan2_zhi1_001",
+        "term_id": "yuan_yi_yuan_zhi.origin_traces_source",
+        "text": "元以原之",
+        "anchor": "元以原之",
+        "type": "KNOWLEDGE_OP",
+        "en": "for the Origin one traces it to the source"
+      },
+      {
+        "mention_id": "c0013_bian4_hua4_001",
+        "term_id": "bian_hua.transformations",
+        "text": "變化",
+        "anchor": "變化萬殊",
+        "type": "MOTION",
+        "en": "transformations"
+      },
+      {
+        "mention_id": "c0013_wan4_shu1_001",
+        "term_id": "wan_shu.myriad_variations",
+        "text": "萬殊",
+        "anchor": "變化萬殊",
+        "type": "ASTRO_TERM",
+        "en": "a myriad variations"
+      },
+      {
+        "mention_id": "c0013_bian4_hua4_wan4_shu1_001",
+        "term_id": "bian_hua_wan_shu.transformations_myriad_variations",
+        "text": "變化萬殊",
+        "anchor": "變化萬殊",
+        "type": "ASTRO_TERM",
+        "en": "transformations and a myriad variations"
+      },
+      {
+        "mention_id": "c0013_ying2_001",
+        "term_id": "ying.expansion",
+        "text": "贏",
+        "anchor": "贏朒無方",
+        "type": "MOTION",
+        "en": "expansions"
+      },
+      {
+        "mention_id": "c0013_nu4_001",
+        "term_id": "nu.contraction",
+        "text": "朒",
+        "anchor": "贏朒無方",
+        "type": "MOTION",
+        "en": "contraction"
+      },
+      {
+        "mention_id": "c0013_wu2_fang1_001",
+        "term_id": "wu_fang.without_limitation",
+        "text": "無方",
+        "anchor": "贏朒無方",
+        "type": "ASTRO_TERM",
+        "en": "without limitation"
+      },
+      {
+        "mention_id": "c0013_ying2_nu4_wu2_fang1_001",
+        "term_id": "ying_nu_wu_fang.expansion_contraction_without_limitation",
+        "text": "贏朒無方",
+        "anchor": "贏朒無方",
+        "type": "ASTRO_TERM",
+        "en": "expansions and contraction without limitation"
+      },
+      {
+        "mention_id": "c0013_jie2_xi4_001",
+        "term_id": "jie_xi.bound_up",
+        "text": "結系",
+        "anchor": "結系于 此",
+        "type": "KNOWLEDGE_OP",
+        "en": "bound up with"
+      },
+      {
+        "mention_id": "c0013_bing3_001",
+        "term_id": "bing.endowed",
+        "text": "稟",
+        "anchor": "稟正焉",
+        "type": "KNOWLEDGE_OP",
+        "en": "endowed"
+      },
+      {
+        "mention_id": "c0013_zheng4_001",
+        "term_id": "zheng.rectified",
+        "text": "正",
+        "anchor": "稟正焉",
+        "type": "KNOWLEDGE_OP",
+        "en": "rectified"
+      },
+      {
+        "mention_id": "c0013_bing3_zheng4_001",
+        "term_id": "bing_zheng.endowed_rectified",
+        "text": "稟正",
+        "anchor": "稟正焉",
+        "type": "KNOWLEDGE_OP",
+        "en": "endowed and rectified"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "日",
+        "subject_id": "c0013_ri4_001",
+        "relation": "UNDERGOES",
+        "object": "周",
+        "object_id": "c0013_zhou1_001"
+      },
+      {
+        "subject": "日周于天",
+        "subject_id": "c0013_ri4_zhou1_yu2_tian1_001",
+        "relation": "LOCATES_AT",
+        "object": "天",
+        "object_id": "c0013_tian1_001"
+      },
+      {
+        "subject": "四時",
+        "subject_id": "c0013_si4_shi2_001",
+        "relation": "UNDERGOES",
+        "object": "備成",
+        "object_id": "c0013_bei4_cheng2_001"
+      },
+      {
+        "subject": "萬物",
+        "subject_id": "c0013_wan4_wu4_001",
+        "relation": "UNDERGOES",
+        "object": "畢改",
+        "object_id": "c0013_bi4_gai3_001"
+      },
+      {
+        "subject": "攝提",
+        "subject_id": "c0013_she4_ti2_001",
+        "relation": "UNDERGOES",
+        "object": "遷次",
+        "object_id": "c0013_qian1_ci4_001"
+      },
+      {
+        "subject": "青龍",
+        "subject_id": "c0013_qing1_long2_001",
+        "relation": "UNDERGOES",
+        "object": "移辰",
+        "object_id": "c0013_yi2_chen2_001"
+      },
+      {
+        "subject": "日周于天， 一寒一暑， 四時備成， 萬物畢改， 攝提遷次， 青龍移辰",
+        "subject_id": "c0013_sui4_definition_001",
+        "relation": "DEFINES",
+        "object": "歲",
+        "object_id": "c0013_sui4_001"
+      },
+      {
+        "subject": "至",
+        "subject_id": "c0013_zhi4_001",
+        "relation": "DEFINES",
+        "object": "歲 首",
+        "object_id": "c0013_sui4_shou3_001"
+      },
+      {
+        "subject": "朔",
+        "subject_id": "c0013_shuo4_001",
+        "relation": "DEFINES",
+        "object": "月首",
+        "object_id": "c0013_yue4_shou3_001"
+      },
+      {
+        "subject": "至朔同日",
+        "subject_id": "c0013_zhi4_shuo4_tong2_ri4_001",
+        "relation": "DEFINES",
+        "object": "章",
+        "object_id": "c0013_zhang1_001"
+      },
+      {
+        "subject": "同在日首",
+        "subject_id": "c0013_tong2_zai4_ri4_shou3_001",
+        "relation": "DEFINES",
+        "object": "蔀",
+        "object_id": "c0013_bu4_001"
+      },
+      {
+        "subject": "蔀終六旬",
+        "subject_id": "c0013_bu4_zhong1_liu4_xun2_001",
+        "relation": "DEFINES",
+        "object": "紀",
+        "object_id": "c0013_ji4_001"
+      },
+      {
+        "subject": "歲 朔又復",
+        "subject_id": "c0013_sui4_shuo4_you4_fu4_001",
+        "relation": "DEFINES",
+        "object": "元",
+        "object_id": "c0013_yuan2_001"
+      },
+      {
+        "subject": "實",
+        "subject_id": "c0013_shi2_001",
+        "relation": "TAKES_OBJECT",
+        "object": "日",
+        "object_id": "c0013_ri4_003"
+      },
+      {
+        "subject": "閏",
+        "subject_id": "c0013_run4_001",
+        "relation": "TAKES_OBJECT",
+        "object": "月",
+        "object_id": "c0013_yue4_002"
+      },
+      {
+        "subject": "分",
+        "subject_id": "c0013_fen1_001",
+        "relation": "TAKES_OBJECT",
+        "object": "時",
+        "object_id": "c0013_shi2_002"
+      },
+      {
+        "subject": "周",
+        "subject_id": "c0013_zhou1_002",
+        "relation": "TAKES_OBJECT",
+        "object": "歲",
+        "object_id": "c0013_sui4_004"
+      },
+      {
+        "subject": "明",
+        "subject_id": "c0013_ming2_001",
+        "relation": "TAKES_OBJECT",
+        "object": "章",
+        "object_id": "c0013_zhang1_002"
+      },
+      {
+        "subject": "部",
+        "subject_id": "c0013_bu4_004",
+        "relation": "TAKES_OBJECT",
+        "object": "蔀",
+        "object_id": "c0013_bu4_003"
+      },
+      {
+        "subject": "記",
+        "subject_id": "c0013_ji4_003",
+        "relation": "TAKES_OBJECT",
+        "object": "紀",
+        "object_id": "c0013_ji4_002"
+      },
+      {
+        "subject": "原",
+        "subject_id": "c0013_yuan2_003",
+        "relation": "TAKES_OBJECT",
+        "object": "元",
+        "object_id": "c0013_yuan2_002"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0026",
+    "chunk_type": "procedure",
+    "terms": [
+      {
+        "mention_id": "c0026_yue4_da4_001",
+        "term_id": "yue.month",
+        "text": "月(大)",
+        "anchor": "月(大)四時推移",
+        "type": "ASTRO_TERM",
+        "en": "months"
+      },
+      {
+        "mention_id": "c0026_si4_shi2_001",
+        "term_id": "si_shi.four_seasons",
+        "text": "四時",
+        "anchor": "四時推移",
+        "type": "ASTRO_TERM",
+        "en": "four seasons"
+      },
+      {
+        "mention_id": "c0026_tui1_yi2_001",
+        "term_id": "tui_yi.shift",
+        "text": "推移",
+        "anchor": "四時推移",
+        "type": "MOTION",
+        "en": "shift"
+      },
+      {
+        "mention_id": "c0026_si4_shi2_tui1_yi2_001",
+        "term_id": "si_shi_tui_yi.four_seasons_shift",
+        "text": "四時推移",
+        "anchor": "四時推移",
+        "type": "MOTION",
+        "en": "four seasons shift [in relation to them]"
+      },
+      {
+        "mention_id": "c0026_zhi4_001",
+        "term_id": "zhi.set_out",
+        "text": "置",
+        "anchor": "故置十二中",
+        "type": "CALC_OP",
+        "en": "sets out"
+      },
+      {
+        "mention_id": "c0026_shi2_er4_zhong1_001",
+        "term_id": "shi_er_zhong.twelve_medial_qi",
+        "text": "十二中",
+        "anchor": "置十二中",
+        "type": "ASTRO_TERM",
+        "en": "12 Medial [Qi]"
+      },
+      {
+        "mention_id": "c0026_zhong1_001",
+        "term_id": "zhong.medial_qi",
+        "text": "中",
+        "anchor": "十二中",
+        "type": "ASTRO_TERM",
+        "en": "Medial [Qi]"
+      },
+      {
+        "mention_id": "c0026_ding4_001",
+        "term_id": "ding.fix",
+        "text": "定",
+        "anchor": "以定月位",
+        "type": "KNOWLEDGE_OP",
+        "en": "fix"
+      },
+      {
+        "mention_id": "c0026_yue4_wei4_001",
+        "term_id": "yue_wei.month_places",
+        "text": "月位",
+        "anchor": "定月位",
+        "type": "ASTRO_TERM",
+        "en": "places of the months"
+      },
+      {
+        "mention_id": "c0026_ding4_yue4_wei4_001",
+        "term_id": "ding_yue_wei.fix_month_places",
+        "text": "定月位",
+        "anchor": "以定月位",
+        "type": "KNOWLEDGE_OP",
+        "en": "fix the places of the months"
+      },
+      {
+        "mention_id": "c0026_shuo4_001",
+        "term_id": "shuo.conjunction",
+        "text": "朔",
+        "anchor": "有朔而無中者",
+        "type": "ASTRO_TERM",
+        "en": "conjunction"
+      },
+      {
+        "mention_id": "c0026_zhong1_002",
+        "term_id": "zhong.medial_qi",
+        "text": "中",
+        "anchor": "無中者",
+        "type": "ASTRO_TERM",
+        "en": "Medial [Qi]"
+      },
+      {
+        "mention_id": "c0026_you3_shuo4_er2_wu2_zhong1_zhe3_001",
+        "term_id": "you_shuo_wu_zhong.intercalary_month_condition",
+        "text": "有朔而無中者",
+        "anchor": "有朔而無中者為閏月",
+        "type": "ASTRO_TERM",
+        "en": "conjunction occurs without a Medial [Qi]"
+      },
+      {
+        "mention_id": "c0026_run4_yue4_001",
+        "term_id": "run_yue.intercalary_month",
+        "text": "閏月",
+        "anchor": "為閏月",
+        "type": "ASTRO_TERM",
+        "en": "intercalary month"
+      },
+      {
+        "mention_id": "c0026_zhong1_003",
+        "term_id": "zhong.medial_qi",
+        "text": "中",
+        "anchor": "中之始(日) [曰]節",
+        "type": "ASTRO_TERM",
+        "en": "Medial [Qi]"
+      },
+      {
+        "mention_id": "c0026_zhong1_zhi1_shi3_ri4_001",
+        "term_id": "zhong_zhi_shi.start_of_medial_qi",
+        "text": "中之始(日)",
+        "anchor": "中之始(日) [曰]節",
+        "type": "ASTRO_TERM",
+        "en": "start of a Medial [Qi]"
+      },
+      {
+        "mention_id": "c0026_yue1_001",
+        "term_id": "yue.called",
+        "text": "[曰]",
+        "anchor": "中之始(日) [曰]節",
+        "type": "KNOWLEDGE_OP",
+        "en": "is called"
+      },
+      {
+        "mention_id": "c0026_jie2_001",
+        "term_id": "jie.nodal_qi",
+        "text": "節",
+        "anchor": "[曰]節",
+        "type": "ASTRO_TERM",
+        "en": "Nodal [Qi]"
+      },
+      {
+        "mention_id": "c0026_zhong1_004",
+        "term_id": "zhong.medial_qi",
+        "text": "中",
+        "anchor": "與中為二十四氣",
+        "type": "ASTRO_TERM",
+        "en": "Medials"
+      },
+      {
+        "mention_id": "c0026_er4_shi2_si4_qi4_001",
+        "term_id": "er_shi_si_qi.twenty_four_qi",
+        "text": "二十四氣",
+        "anchor": "為二十四氣",
+        "type": "ASTRO_TERM",
+        "en": "24 qi"
+      },
+      {
+        "mention_id": "c0026_qi4_001",
+        "term_id": "qi.qi",
+        "text": "氣",
+        "anchor": "二十四氣",
+        "type": "ASTRO_TERM",
+        "en": "qi"
+      },
+      {
+        "mention_id": "c0026_chu2_001",
+        "term_id": "chu.cast_out",
+        "text": "除",
+        "anchor": "以除一歲日",
+        "type": "CALC_OP",
+        "en": "casts out from"
+      },
+      {
+        "mention_id": "c0026_yi1_sui4_ri4_001",
+        "term_id": "yi_sui_ri.days_of_one_year",
+        "text": "一歲日",
+        "anchor": "除一歲日",
+        "type": "QUANTITY",
+        "en": "days of one year"
+      },
+      {
+        "mention_id": "c0026_yi1_qi4_zhi1_ri4_shu4_001",
+        "term_id": "yi_qi_zhi_ri_shu.days_in_one_qi",
+        "text": "一氣之日數",
+        "anchor": "為一氣之日數也",
+        "type": "QUANTITY",
+        "en": "number of days in one qi"
+      },
+      {
+        "mention_id": "c0026_qi2_fen1_001",
+        "term_id": "qi_fen.fractions",
+        "text": "其分",
+        "anchor": "其分積而成日",
+        "type": "QUANTITY",
+        "en": "fractions"
+      },
+      {
+        "mention_id": "c0026_yi1_qi4_zhi1_fen1_001",
+        "term_id": "yi_qi_zhi_fen.fractions_of_one_qi",
+        "text": "一氣之分",
+        "anchor": "其分積而成日",
+        "type": "QUANTITY",
+        "en": "fractions of one qi"
+      },
+      {
+        "mention_id": "c0026_ji1_001",
+        "term_id": "ji.accumulate",
+        "text": "積",
+        "anchor": "其分積",
+        "type": "CALC_OP",
+        "en": "accumulate"
+      },
+      {
+        "mention_id": "c0026_cheng2_ri4_001",
+        "term_id": "cheng_ri.complete_one_day",
+        "text": "成日",
+        "anchor": "積而成日",
+        "type": "CALC_OP",
+        "en": "complete one day"
+      },
+      {
+        "mention_id": "c0026_ri4_001",
+        "term_id": "ri.day",
+        "text": "日",
+        "anchor": "積而成日",
+        "type": "QUANTITY",
+        "en": "day"
+      },
+      {
+        "mention_id": "c0026_qi2_fen1_ji1_er2_cheng2_ri4_001",
+        "term_id": "qi_fen_ji_cheng_ri.fractions_accumulate_complete_day",
+        "text": "其分積而成日",
+        "anchor": "其分積而成日為 沒",
+        "type": "CALC_OP",
+        "en": "fractions accumulate to complete one day"
+      },
+      {
+        "mention_id": "c0026_mo4_001",
+        "term_id": "mo.extinction",
+        "text": "沒",
+        "anchor": "為 沒",
+        "type": "ASTRO_TERM",
+        "en": "Extinction"
+      },
+      {
+        "mention_id": "c0026_bing4_001",
+        "term_id": "bing.add_up",
+        "text": "并",
+        "anchor": "并歲氣之分",
+        "type": "CALC_OP",
+        "en": "adds up"
+      },
+      {
+        "mention_id": "c0026_sui4_qi4_001",
+        "term_id": "sui_qi.qi_of_a_year",
+        "text": "歲氣",
+        "anchor": "歲氣之分",
+        "type": "ASTRO_TERM",
+        "en": "qi of a year"
+      },
+      {
+        "mention_id": "c0026_sui4_001",
+        "term_id": "sui.year",
+        "text": "歲",
+        "anchor": "歲氣之分",
+        "type": "ASTRO_TERM",
+        "en": "year"
+      },
+      {
+        "mention_id": "c0026_sui4_qi4_zhi1_fen1_001",
+        "term_id": "sui_qi_zhi_fen.fractions_of_qi_of_year",
+        "text": "歲氣之分",
+        "anchor": "并歲氣之分",
+        "type": "QUANTITY",
+        "en": "fractions of the qi of a year"
+      },
+      {
+        "mention_id": "c0026_ru2_fa3_001",
+        "term_id": "ru_fa.accord_with_factor_makes_one",
+        "text": "如法為一",
+        "anchor": "如法為一歲沒",
+        "type": "CALC_OP",
+        "en": "accord with their factor, that makes one"
+      },
+      {
+        "mention_id": "c0026_ru2_001",
+        "term_id": "ru.accord_with",
+        "text": "如",
+        "anchor": "如法",
+        "type": "CALC_OP",
+        "en": "accord with"
+      },
+      {
+        "mention_id": "c0026_fa3_001",
+        "term_id": "fa.factor",
+        "text": "法",
+        "anchor": "如法",
+        "type": "PARAMETER",
+        "en": "factor"
+      },
+      {
+        "mention_id": "c0026_bing4_sui4_qi4_zhi1_fen1_ru2_fa3_001",
+        "term_id": "bing_sui_qi_zhi_fen_ru_fa.year_qi_fractions_accord_factor",
+        "text": "并歲氣之分， 如法",
+        "anchor": "并歲氣之分， 如法為一歲沒",
+        "type": "CALC_OP",
+        "en": "adds up the fractions of the qi of a year, then if these accord with their factor"
+      },
+      {
+        "mention_id": "c0026_yi1_sui4_mo4_001",
+        "term_id": "yi_sui_mo.year_extinction",
+        "text": "一歲沒",
+        "anchor": "為一歲沒",
+        "type": "ASTRO_TERM",
+        "en": "Year Extinction"
+      },
+      {
+        "mention_id": "c0026_mo4_002",
+        "term_id": "mo.extinction",
+        "text": "沒",
+        "anchor": "為一歲沒",
+        "type": "ASTRO_TERM",
+        "en": "Extinction"
+      },
+      {
+        "mention_id": "c0026_mo4_fen1_001",
+        "term_id": "mo_fen.extinction_fractions",
+        "text": "沒分",
+        "anchor": "沒分于終中",
+        "type": "QUANTITY",
+        "en": "Extinction fractions"
+      },
+      {
+        "mention_id": "c0026_zhong1_zhong1_001",
+        "term_id": "zhong_zhong.terminating_medials",
+        "text": "終中",
+        "anchor": "沒分于終中",
+        "type": "ASTRO_TERM",
+        "en": "terminating Medials"
+      },
+      {
+        "mention_id": "c0026_zhong1_zhong1_zhi1_mo4_fen1_001",
+        "term_id": "zhong_zhong_zhi_mo_fen.extinction_fractions_of_terminating_medials",
+        "text": "終中之沒分",
+        "anchor": "沒分于終中",
+        "type": "QUANTITY",
+        "en": "Extinction fractions of the terminating Medials"
+      },
+      {
+        "mention_id": "c0026_zhong1_005",
+        "term_id": "zhong.medial_qi",
+        "text": "中",
+        "anchor": "中終于冬至",
+        "type": "ASTRO_TERM",
+        "en": "Medials"
+      },
+      {
+        "mention_id": "c0026_zhong1_dong1_zhi4_001",
+        "term_id": "zhong.terminate",
+        "text": "終",
+        "anchor": "中終于冬至",
+        "type": "MOTION",
+        "en": "terminated"
+      },
+      {
+        "mention_id": "c0026_dong1_zhi4_001",
+        "term_id": "dong_zhi.winter_solstice",
+        "text": "冬至",
+        "anchor": "中終于冬至",
+        "type": "ASTRO_TERM",
+        "en": "winter solstice"
+      },
+      {
+        "mention_id": "c0026_zhong1_zhong1_yu2_dong1_zhi4_001",
+        "term_id": "zhong_zhong_yu_dong_zhi.medials_terminated_at_winter_solstice",
+        "text": "中終于冬至",
+        "anchor": "中終于冬至",
+        "type": "ASTRO_TERM",
+        "en": "Medials are terminated at the winter solstice"
+      },
+      {
+        "mention_id": "c0026_dong1_zhi4_002",
+        "term_id": "dong_zhi.winter_solstice",
+        "text": "冬至",
+        "anchor": "冬至之分積",
+        "type": "ASTRO_TERM",
+        "en": "winter solstice"
+      },
+      {
+        "mention_id": "c0026_dong1_zhi4_zhi1_fen1_001",
+        "term_id": "dong_zhi_zhi_fen.fractions_at_winter_solstice",
+        "text": "冬至之分",
+        "anchor": "冬至之分積",
+        "type": "QUANTITY",
+        "en": "fractions at the winter solstice"
+      },
+      {
+        "mention_id": "c0026_ji1_002",
+        "term_id": "ji.accumulate",
+        "text": "積",
+        "anchor": "冬至之分積",
+        "type": "CALC_OP",
+        "en": "accumulate"
+      },
+      {
+        "mention_id": "c0026_ru2_qi2_fa3_001",
+        "term_id": "ru_qi_fa.accord_with_their_factor_gets_one",
+        "text": "如其 法得一",
+        "anchor": "如其 法得一日",
+        "type": "CALC_OP",
+        "en": "accord with their factor, one gets one"
+      },
+      {
+        "mention_id": "c0026_fa3_002",
+        "term_id": "fa.factor",
+        "text": "法",
+        "anchor": "如其 法得一日",
+        "type": "PARAMETER",
+        "en": "factor"
+      },
+      {
+        "mention_id": "c0026_de2_001",
+        "term_id": "de.obtain",
+        "text": "得",
+        "anchor": "如其 法得一日",
+        "type": "CALC_OP",
+        "en": "gets"
+      },
+      {
+        "mention_id": "c0026_yi1_ri4_001",
+        "term_id": "yi_ri.one_day",
+        "text": "一日",
+        "anchor": "得一日",
+        "type": "QUANTITY",
+        "en": "one day"
+      },
+      {
+        "mention_id": "c0026_ri4_002",
+        "term_id": "ri.day",
+        "text": "日",
+        "anchor": "得一日",
+        "type": "QUANTITY",
+        "en": "day"
+      },
+      {
+        "mention_id": "c0026_si4_sui4_001",
+        "term_id": "si_sui.four_years",
+        "text": "四歲",
+        "anchor": "四歲而終",
+        "type": "QUANTITY",
+        "en": "four years"
+      },
+      {
+        "mention_id": "c0026_zhong1_si4_sui4_001",
+        "term_id": "zhong.conclude",
+        "text": "終",
+        "anchor": "四歲而終",
+        "type": "MOTION",
+        "en": "concluded"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "四時",
+        "subject_id": "c0026_si4_shi2_001",
+        "relation": "UNDERGOES",
+        "object": "推移",
+        "object_id": "c0026_tui1_yi2_001"
+      },
+      {
+        "subject": "有朔而無中者",
+        "subject_id": "c0026_you3_shuo4_er2_wu2_zhong1_zhe3_001",
+        "relation": "DEFINES",
+        "object": "閏月",
+        "object_id": "c0026_run4_yue4_001"
+      },
+      {
+        "subject": "中之始(日)",
+        "subject_id": "c0026_zhong1_zhi1_shi3_ri4_001",
+        "relation": "DEFINES",
+        "object": "節",
+        "object_id": "c0026_jie2_001"
+      },
+      {
+        "subject": "二十四氣",
+        "subject_id": "c0026_er4_shi2_si4_qi4_001",
+        "relation": "HAS_PART",
+        "object": [
+          "節",
+          "中"
+        ],
+        "object_id": [
+          "c0026_jie2_001",
+          "c0026_zhong1_004"
+        ]
+      },
+      {
+        "subject": "其分積而成日",
+        "subject_id": "c0026_qi2_fen1_ji1_er2_cheng2_ri4_001",
+        "relation": "DEFINES",
+        "object": "沒",
+        "object_id": "c0026_mo4_001"
+      },
+      {
+        "subject": "并歲氣之分， 如法",
+        "subject_id": "c0026_bing4_sui4_qi4_zhi1_fen1_ru2_fa3_001",
+        "relation": "DEFINES",
+        "object": "一歲沒",
+        "object_id": "c0026_yi1_sui4_mo4_001"
+      },
+      {
+        "subject": "中",
+        "subject_id": "c0026_zhong1_005",
+        "relation": "UNDERGOES",
+        "object": "終",
+        "object_id": "c0026_zhong1_dong1_zhi4_001"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "phrase": "置十二中以定月位",
+        "op": "set",
+        "input": "十二中",
+        "parameter": "",
+        "output": "月位"
+      },
+      {
+        "order": 2,
+        "phrase": "有朔而無中者為閏月",
+        "op": "judge",
+        "input": "朔；中",
+        "parameter": "presence(朔)=true;presence(中)=false",
+        "output": "閏月"
+      },
+      {
+        "order": 3,
+        "phrase": "中之始(日) [曰]節",
+        "op": "name_result",
+        "input": "中之始(日)",
+        "parameter": "",
+        "output": "節"
+      },
+      {
+        "order": 4,
+        "phrase": "與中為二十四氣",
+        "op": "name_result",
+        "input": "節；中",
+        "parameter": "",
+        "output": "二十四氣"
+      },
+      {
+        "order": 5,
+        "phrase": "以除一歲日， 為一氣之日數也",
+        "op": "divide",
+        "input": "一歲日",
+        "parameter": "二十四氣",
+        "output": "一氣之日數"
+      },
+      {
+        "order": 6,
+        "phrase": "其分",
+        "op": "name_remainder",
+        "input": "一氣之日數",
+        "parameter": "其分",
+        "output": "一氣之分"
+      },
+      {
+        "order": 7,
+        "phrase": "其分積而成日",
+        "op": "add",
+        "input": "一氣之分",
+        "parameter": "threshold=日",
+        "output": "成日"
+      },
+      {
+        "order": 8,
+        "phrase": "為 沒",
+        "op": "name_result",
+        "input": "成日",
+        "parameter": "",
+        "output": "沒"
+      },
+      {
+        "order": 9,
+        "phrase": "并歲氣之分",
+        "op": "add",
+        "input": "一氣之分",
+        "parameter": "二十四氣",
+        "output": "歲氣之分"
+      },
+      {
+        "order": 10,
+        "phrase": "如法為一歲沒",
+        "op": "fill_divide",
+        "input": "歲氣之分",
+        "parameter": "法",
+        "output": "一歲沒"
+      },
+      {
+        "order": 11,
+        "phrase": "沒分于終中",
+        "op": "distribute",
+        "input": "沒分",
+        "parameter": "終中",
+        "output": "終中之沒分"
+      },
+      {
+        "order": 12,
+        "phrase": "冬至之分積如其 法得一日",
+        "op": "fill_divide",
+        "input": "冬至之分",
+        "parameter": "法",
+        "output": "一日"
+      },
+      {
+        "order": 13,
+        "phrase": "四歲而終",
+        "op": "count",
+        "input": "歲",
+        "parameter": "四歲",
+        "output": "cycle_completed"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0028",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0028_yuan2_fa3_001",
+        "term_id": "yuan_fa.origin_factor",
+        "text": "元法",
+        "anchor": "元法， 四千五百六十",
+        "type": "PARAMETER",
+        "en": "Origin Factor"
+      },
+      {
+        "mention_id": "c0028_si4_qian1_wu3_bai3_liu4_shi2_001",
+        "term_id": "yuan_fa.value.4560",
+        "text": "四千五百六十",
+        "anchor": "元法， 四千五百六十",
+        "type": "PARAMETER",
+        "en": "4560"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "元法",
+        "subject_id": "c0028_yuan2_fa3_001",
+        "relation": "HAS_VALUE",
+        "object": "四千五百六十",
+        "object_id": "c0028_si4_qian1_wu3_bai3_liu4_shi2_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0029",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0029_ji4_fa3_001",
+        "term_id": "ji_fa.era_factor",
+        "text": "紀法",
+        "anchor": "紀法， 千五百二十",
+        "type": "PARAMETER",
+        "en": "Era Factor"
+      },
+      {
+        "mention_id": "c0029_qian1_wu3_bai3_er4_shi2_001",
+        "term_id": "ji_fa.value.1520",
+        "text": "千五百二十",
+        "anchor": "紀法， 千五百二十",
+        "type": "PARAMETER",
+        "en": "1520"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "紀法",
+        "subject_id": "c0029_ji4_fa3_001",
+        "relation": "HAS_VALUE",
+        "object": "千五百二十",
+        "object_id": "c0029_qian1_wu3_bai3_er4_shi2_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0030",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0030_ji4_yue4_001",
+        "term_id": "ji_yue.era_months",
+        "text": "紀月",
+        "anchor": "紀月， 萬八千八百",
+        "type": "PARAMETER",
+        "en": "Era Months"
+      },
+      {
+        "mention_id": "c0030_wan4_ba1_qian1_ba1_bai3_001",
+        "term_id": "ji_yue.value.18800",
+        "text": "萬八千八百",
+        "anchor": "紀月， 萬八千八百",
+        "type": "PARAMETER",
+        "en": "18,800"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "紀月",
+        "subject_id": "c0030_ji4_yue4_001",
+        "relation": "HAS_VALUE",
+        "object": "萬八千八百",
+        "object_id": "c0030_wan4_ba1_qian1_ba1_bai3_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0031",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0031_bu4_fa3_001",
+        "term_id": "bu_fa.obscuration_factor",
+        "text": "蔀法",
+        "anchor": "蔀法， 七十六",
+        "type": "PARAMETER",
+        "en": "Obscuration Factor"
+      },
+      {
+        "mention_id": "c0031_qi1_shi2_liu4_001",
+        "term_id": "bu_fa.value.76",
+        "text": "七十六",
+        "anchor": "蔀法， 七十六",
+        "type": "PARAMETER",
+        "en": "76"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "蔀法",
+        "subject_id": "c0031_bu4_fa3_001",
+        "relation": "HAS_VALUE",
+        "object": "七十六",
+        "object_id": "c0031_qi1_shi2_liu4_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0032",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0032_bu4_yue4_001",
+        "term_id": "bu_yue.obscuration_months",
+        "text": "蔀月",
+        "anchor": "蔀月， 九百四十",
+        "type": "PARAMETER",
+        "en": "Obscuration Months"
+      },
+      {
+        "mention_id": "c0032_jiu3_bai3_si4_shi2_001",
+        "term_id": "bu_yue.value.940",
+        "text": "九百四十",
+        "anchor": "蔀月， 九百四十",
+        "type": "PARAMETER",
+        "en": "940"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "蔀月",
+        "subject_id": "c0032_bu4_yue4_001",
+        "relation": "HAS_VALUE",
+        "object": "九百四十",
+        "object_id": "c0032_jiu3_bai3_si4_shi2_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0033",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0033_zhang1_fa3_001",
+        "term_id": "zhang_fa.rule_factor",
+        "text": "章法",
+        "anchor": "章法， 十九",
+        "type": "PARAMETER",
+        "en": "Rule Factor"
+      },
+      {
+        "mention_id": "c0033_shi2_jiu3_001",
+        "term_id": "zhang_fa.value.19",
+        "text": "十九",
+        "anchor": "章法， 十九",
+        "type": "PARAMETER",
+        "en": "19"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "章法",
+        "subject_id": "c0033_zhang1_fa3_001",
+        "relation": "HAS_VALUE",
+        "object": "十九",
+        "object_id": "c0033_shi2_jiu3_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0034",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0034_zhang1_yue4_001",
+        "term_id": "zhang_yue.rule_months",
+        "text": "章月",
+        "anchor": "章月， 二百三十五",
+        "type": "PARAMETER",
+        "en": "Rule Months"
+      },
+      {
+        "mention_id": "c0034_er4_bai3_san1_shi2_wu3_001",
+        "term_id": "zhang_yue.value.235",
+        "text": "二百三十五",
+        "anchor": "章月， 二百三十五",
+        "type": "PARAMETER",
+        "en": "235"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "章月",
+        "subject_id": "c0034_zhang1_yue4_001",
+        "relation": "HAS_VALUE",
+        "object": "二百三十五",
+        "object_id": "c0034_er4_bai3_san1_shi2_wu3_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0035",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0035_zhou1_tian1_001",
+        "term_id": "zhou_tian.circuits_of_heaven",
+        "text": "周天",
+        "anchor": "周天， 千四百六十一",
+        "type": "PARAMETER",
+        "en": "Circuits of Heaven"
+      },
+      {
+        "mention_id": "c0035_qian1_si4_bai3_liu4_shi2_yi1_001",
+        "term_id": "zhou_tian.value.1461",
+        "text": "千四百六十一",
+        "anchor": "周天， 千四百六十一",
+        "type": "PARAMETER",
+        "en": "1461"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "周天",
+        "subject_id": "c0035_zhou1_tian1_001",
+        "relation": "HAS_VALUE",
+        "object": "千四百六十一",
+        "object_id": "c0035_qian1_si4_bai3_liu4_shi2_yi1_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0036",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0036_ri4_fa3_001",
+        "term_id": "ri_fa.day_factor",
+        "text": "日法",
+        "anchor": "日法， 四",
+        "type": "PARAMETER",
+        "en": "Day Factor"
+      },
+      {
+        "mention_id": "c0036_si4_001",
+        "term_id": "ri_fa.value.4",
+        "text": "四",
+        "anchor": "日法， 四",
+        "type": "PARAMETER",
+        "en": "4"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "日法",
+        "subject_id": "c0036_ri4_fa3_001",
+        "relation": "HAS_VALUE",
+        "object": "四",
+        "object_id": "c0036_si4_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0037",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0037_bu4_ri4_001",
+        "term_id": "bu_ri.obscuration_days",
+        "text": "蔀日",
+        "anchor": "蔀日， 二萬七千七百五十九",
+        "type": "PARAMETER",
+        "en": "Obscuration Days"
+      },
+      {
+        "mention_id": "c0037_er4_wan4_qi1_qian1_qi1_bai3_wu3_shi2_jiu3_001",
+        "term_id": "bu_ri.value.27759",
+        "text": "二萬七千七百五十九",
+        "anchor": "蔀日， 二萬七千七百五十九",
+        "type": "PARAMETER",
+        "en": "27,759"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "蔀日",
+        "subject_id": "c0037_bu4_ri4_001",
+        "relation": "HAS_VALUE",
+        "object": "二萬七千七百五十九",
+        "object_id": "c0037_er4_wan4_qi1_qian1_qi1_bai3_wu3_shi2_jiu3_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0038",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0038_mo4_shu4_001",
+        "term_id": "mo_shu.extinction_number",
+        "text": "沒數",
+        "anchor": "沒數， 二十一． (為章閏)[^11]",
+        "type": "PARAMETER",
+        "en": "Extinction Number"
+      },
+      {
+        "mention_id": "c0038_er4_shi2_yi1_001",
+        "term_id": "mo_shu.value.21",
+        "text": "二十一",
+        "anchor": "沒數， 二十一． (為章閏)[^11]",
+        "type": "PARAMETER",
+        "en": "21"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "沒數",
+        "subject_id": "c0038_mo4_shu4_001",
+        "relation": "HAS_VALUE",
+        "object": "二十一",
+        "object_id": "c0038_er4_shi2_yi1_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0039",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0039_tong1_fa3_001",
+        "term_id": "tong_fa.compatibility_factor",
+        "text": "通法",
+        "anchor": "通法， 四百八十七",
+        "type": "PARAMETER",
+        "en": "Compatibility Factor"
+      },
+      {
+        "mention_id": "c0039_si4_bai3_ba1_shi2_qi1_001",
+        "term_id": "tong_fa.value.487",
+        "text": "四百八十七",
+        "anchor": "通法， 四百八十七",
+        "type": "PARAMETER",
+        "en": "487"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "通法",
+        "subject_id": "c0039_tong1_fa3_001",
+        "relation": "HAS_VALUE",
+        "object": "四百八十七",
+        "object_id": "c0039_si4_bai3_ba1_shi2_qi1_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0040",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0040_mo4_fa3_001",
+        "term_id": "mo_fa.extinction_factor",
+        "text": "沒法",
+        "anchor": "沒法， 七， (因為章閏).[^12]",
+        "type": "PARAMETER",
+        "en": "Extinction Factor"
+      },
+      {
+        "mention_id": "c0040_qi1_001",
+        "term_id": "mo_fa.value.7",
+        "text": "七",
+        "anchor": "沒法， 七， (因為章閏).[^12]",
+        "type": "PARAMETER",
+        "en": "7"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "沒法",
+        "subject_id": "c0040_mo4_fa3_001",
+        "relation": "HAS_VALUE",
+        "object": "七",
+        "object_id": "c0040_qi1_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0041",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0041_ri4_yu2_001",
+        "term_id": "ri_yu.day_remainder",
+        "text": "日餘",
+        "anchor": "日餘， 百六十八",
+        "type": "PARAMETER",
+        "en": "Day Remainder"
+      },
+      {
+        "mention_id": "c0041_bai3_liu4_shi2_ba1_001",
+        "term_id": "ri_yu.value.168",
+        "text": "百六十八",
+        "anchor": "日餘， 百六十八",
+        "type": "PARAMETER",
+        "en": "168"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "日餘",
+        "subject_id": "c0041_ri4_yu2_001",
+        "relation": "HAS_VALUE",
+        "object": "百六十八",
+        "object_id": "c0041_bai3_liu4_shi2_ba1_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0042",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0042_zhong1_fa3_001",
+        "term_id": "zhong_fa.medial_qi_factor",
+        "text": "中法",
+        "anchor": "中法，(四)[三]十二",
+        "type": "PARAMETER",
+        "en": "Medial [Qi] Factor"
+      },
+      {
+        "mention_id": "c0042_si4_san1_shi2_er4_001",
+        "term_id": "zhong_fa.value.32",
+        "text": "(四)[三]十二",
+        "anchor": "中法，(四)[三]十二",
+        "type": "PARAMETER",
+        "en": "32"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "中法",
+        "subject_id": "c0042_zhong1_fa3_001",
+        "relation": "HAS_VALUE",
+        "object": "(四)[三]十二",
+        "object_id": "c0042_si4_san1_shi2_er4_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0043",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0043_da4_zhou1_001",
+        "term_id": "da_zhou.greater_circuits",
+        "text": "大周",
+        "anchor": "大周， 三十四萬三千三百三十五",
+        "type": "PARAMETER",
+        "en": "Greater Circuits"
+      },
+      {
+        "mention_id": "c0043_san1_shi2_si4_wan4_san1_qian1_san1_bai3_san1_shi2_wu3_001",
+        "term_id": "da_zhou.value.343335",
+        "text": "三十四萬三千三百三十五",
+        "anchor": "大周， 三十四萬三千三百三十五",
+        "type": "PARAMETER",
+        "en": "343,335"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "大周",
+        "subject_id": "c0043_da4_zhou1_001",
+        "relation": "HAS_VALUE",
+        "object": "三十四萬三千三百三十五",
+        "object_id": "c0043_san1_shi2_si4_wan4_san1_qian1_san1_bai3_san1_shi2_wu3_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0044",
+    "chunk_type": "parameter",
+    "terms": [
+      {
+        "mention_id": "c0044_yue4_zhou1_001",
+        "term_id": "yue_zhou.lunar_circuits",
+        "text": "月周",
+        "anchor": "月周千一十六",
+        "type": "PARAMETER",
+        "en": "Lunar Circuits"
+      },
+      {
+        "mention_id": "c0044_qian1_yi1_shi2_liu4_001",
+        "term_id": "yue_zhou.value.1016",
+        "text": "千一十六",
+        "anchor": "月周千一十六",
+        "type": "PARAMETER",
+        "en": "1016"
+      }
+    ],
+    "relations": [
+      {
+        "subject": "月周",
+        "subject_id": "c0044_yue4_zhou1_001",
+        "relation": "HAS_VALUE",
+        "object": "千一十六",
+        "object_id": "c0044_qian1_yi1_shi2_liu4_001"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0055",
+    "chunk_type": "procedure",
+    "terms": [
+      {
+        "mention_id": "c0055_tui1_tian1_zheng4_shu4_001",
+        "term_id": "tui_tian_zheng_shu.predict_celestial_standard_method",
+        "text": "推天正術",
+        "anchor": "推天正術",
+        "type": "CALC_OP",
+        "en": "To predict the Celestial Standard [Month]"
+      },
+      {
+        "mention_id": "c0055_tui1_001",
+        "term_id": "tui.predict",
+        "text": "推",
+        "anchor": "推天正術",
+        "type": "CALC_OP",
+        "en": "predict"
+      },
+      {
+        "mention_id": "c0055_tian1_zheng4_shu4_001",
+        "term_id": "tian_zheng_shu.celestial_standard_method",
+        "text": "天正",
+        "anchor": "推天正術",
+        "type": "ASTRO_TERM",
+        "en": "Celestial Standard =(Celestial Standard Month)"
+      },
+      {
+        "mention_id": "c0055_shu4_001",
+        "term_id": "shu.method",
+        "text": "術",
+        "anchor": "推天正術",
+        "type": "CALC_OP",
+        "en": "method"
+      },
+      {
+        "mention_id": "c0055_zhi4_001",
+        "term_id": "zhi.set_out",
+        "text": "置",
+        "anchor": "置入蔀年減一",
+        "type": "CALC_OP",
+        "en": "Set out"
+      },
+      {
+        "mention_id": "c0055_ru4_bu4_nian2_001",
+        "term_id": "ru_bu_nian.years_into_obscuration",
+        "text": "入蔀年",
+        "anchor": "置入蔀年減一",
+        "type": "QUANTITY",
+        "en": "years into the Obscuration"
+      },
+      {
+        "mention_id": "c0055_ru4_bu4_001",
+        "term_id": "ru_bu.into_obscuration",
+        "text": "入蔀",
+        "anchor": "入蔀年",
+        "type": "ASTRO_TERM",
+        "en": "into the Obscuration"
+      },
+      {
+        "mention_id": "c0055_bu4_001",
+        "term_id": "bu.obscuration",
+        "text": "蔀",
+        "anchor": "入蔀年",
+        "type": "ASTRO_TERM",
+        "en": "Obscuration"
+      },
+      {
+        "mention_id": "c0055_jian3_001",
+        "term_id": "jian.subtract",
+        "text": "減",
+        "anchor": "置入蔀年減一",
+        "type": "CALC_OP",
+        "en": "subtract"
+      },
+      {
+        "mention_id": "c0055_yi1_001",
+        "term_id": "yi.one",
+        "text": "一",
+        "anchor": "減一",
+        "type": "QUANTITY",
+        "en": "one"
+      },
+      {
+        "mention_id": "c0055_zhang1_yue4_001",
+        "term_id": "zhang_yue.rule_months",
+        "text": "章月",
+        "anchor": "以章月乘之",
+        "type": "PARAMETER",
+        "en": "Rule Months [235]"
+      },
+      {
+        "mention_id": "c0055_cheng2_001",
+        "term_id": "cheng.multiply",
+        "text": "乘",
+        "anchor": "以章月乘之",
+        "type": "CALC_OP",
+        "en": "Multiply"
+      },
+      {
+        "mention_id": "c0055_man3_zhang1_fa3_de2_yi1_001",
+        "term_id": "man_fa_de_yi.fill_divide",
+        "text": "滿章法得一",
+        "anchor": "滿章法得一",
+        "type": "CALC_OP",
+        "en": "Count one for each Rule Factor [19] filled"
+      },
+      {
+        "mention_id": "c0055_man3_001",
+        "term_id": "man.fill",
+        "text": "滿",
+        "anchor": "滿章法得一",
+        "type": "CALC_OP",
+        "en": "filled"
+      },
+      {
+        "mention_id": "c0055_zhang1_fa3_001",
+        "term_id": "zhang_fa.rule_factor",
+        "text": "章法",
+        "anchor": "滿章法得一",
+        "type": "PARAMETER",
+        "en": "Rule Factor [19]"
+      },
+      {
+        "mention_id": "c0055_de2_yi1_001",
+        "term_id": "de_yi.count_one",
+        "text": "得一",
+        "anchor": "滿章法得一",
+        "type": "CALC_OP",
+        "en": "Count one"
+      },
+      {
+        "mention_id": "c0055_ming2_wei2_001",
+        "term_id": "ming_wei.name_as",
+        "text": "名為",
+        "anchor": "名為積月",
+        "type": "CALC_OP",
+        "en": "Call this"
+      },
+      {
+        "mention_id": "c0055_ji1_yue4_001",
+        "term_id": "ji_yue.accumulated_months",
+        "text": "積月",
+        "anchor": "名為積月",
+        "type": "QUANTITY",
+        "en": "Accumulated Months"
+      },
+      {
+        "mention_id": "c0055_bu4_man3_wei2_001",
+        "term_id": "bu_man_wei.name_remainder_as",
+        "text": "不滿為",
+        "anchor": "不滿為閏餘",
+        "type": "CALC_OP",
+        "en": "The remainder is"
+      },
+      {
+        "mention_id": "c0055_run4_yu2_001",
+        "term_id": "run_yu.intercalation_remainder",
+        "text": "閏餘",
+        "anchor": "不滿為閏餘",
+        "type": "QUANTITY",
+        "en": "Intercalation Remainder"
+      },
+      {
+        "mention_id": "c0055_shi2_er4_001",
+        "term_id": "threshold.value.12",
+        "text": "十二",
+        "anchor": "十二以上, 其歲有閏",
+        "type": "QUANTITY",
+        "en": "12"
+      },
+      {
+        "mention_id": "c0055_qi2_sui4_you3_run4_001",
+        "term_id": "qi_sui_you_run.year_has_intercalation",
+        "text": "其歲有閏",
+        "anchor": "其歲有閏",
+        "type": "ASTRO_TERM",
+        "en": "this year has an intercalation"
+      },
+      {
+        "mention_id": "c0055_sui4_001",
+        "term_id": "sui.year",
+        "text": "歲",
+        "anchor": "其歲有閏",
+        "type": "ASTRO_TERM",
+        "en": "year"
+      },
+      {
+        "mention_id": "c0055_run4_001",
+        "term_id": "run.intercalation",
+        "text": "閏",
+        "anchor": "其歲有閏",
+        "type": "ASTRO_TERM",
+        "en": "intercalation"
+      }
+    ],
+    "relations": [],
+    "steps": [
+      {
+        "order": 1,
+        "phrase": "置入蔀年",
+        "op": "set",
+        "input": "入蔀年",
+        "parameter": "",
+        "output": "out1"
+      },
+      {
+        "order": 2,
+        "phrase": "減一",
+        "op": "subtract",
+        "input": "out1",
+        "parameter": "一",
+        "output": "out2"
+      },
+      {
+        "order": 3,
+        "phrase": "以章月乘之",
+        "op": "multiply",
+        "input": "out2",
+        "parameter": "章月",
+        "output": "out3"
+      },
+      {
+        "order": 4,
+        "phrase": "滿章法得一",
+        "op": "fill_divide",
+        "input": "out3",
+        "parameter": "章法",
+        "output": "quotient=quot4;remainder=rem4"
+      },
+      {
+        "order": 5,
+        "phrase": "名為積月",
+        "op": "name_result",
+        "input": "quot4",
+        "parameter": "",
+        "output": "積月"
+      },
+      {
+        "order": 6,
+        "phrase": "不滿為閏餘",
+        "op": "name_remainder",
+        "input": "rem4",
+        "parameter": "",
+        "output": "閏餘"
+      },
+      {
+        "order": 7,
+        "phrase": "十二以上, 其歲有閏",
+        "op": "judge",
+        "input": "閏餘",
+        "parameter": "value(閏餘)>=十二",
+        "output": "其歲有閏"
+      }
+    ]
+  },
+  {
+    "chunk_id": "cullen:ch3:chunk:0056",
+    "chunk_type": "procedure",
+    "terms": [
+      {
+        "mention_id": "c0056_tui1_tian1_zheng4_shuo4_ri4_001",
+        "term_id": "tui_tian_zheng_shuo_ri.predict_celestial_standard_conjunction_day",
+        "text": "推天正朔日",
+        "anchor": "推天正朔日",
+        "type": "CALC_OP",
+        "en": "To predict the day of Celestial Standard Conjunction"
+      },
+      {
+        "mention_id": "c0056_tui1_001",
+        "term_id": "tui.predict",
+        "text": "推",
+        "anchor": "推天正朔日",
+        "type": "CALC_OP",
+        "en": "predict"
+      },
+      {
+        "mention_id": "c0056_tian1_zheng4_shuo4_ri4_001",
+        "term_id": "tian_zheng_shuo_ri.celestial_standard_conjunction_day",
+        "text": "天正朔日",
+        "anchor": "推天正朔日",
+        "type": "QUANTITY",
+        "en": "day of Celestial Standard Conjunction"
+      },
+      {
+        "mention_id": "c0056_tian1_zheng4_001",
+        "term_id": "tian_zheng.celestial_standard",
+        "text": "天正",
+        "anchor": "推天正朔日",
+        "type": "ASTRO_TERM",
+        "en": "Celestial Standard"
+      },
+      {
+        "mention_id": "c0056_shuo4_ri4_001",
+        "term_id": "shuo_ri.conjunction_day",
+        "text": "朔日",
+        "anchor": "朔日",
+        "type": "QUANTITY",
+        "en": "conjunction day"
+      },
+      {
+        "mention_id": "c0056_zhi4_ru4_bu4_ji1_yue4_001",
+        "term_id": "zhi_ru_bu_ji_yue.set_accumulated_months_into_obscuration",
+        "text": "置入蔀積月",
+        "anchor": "置入蔀積月",
+        "type": "CALC_OP",
+        "en": "Set out the Accumulated Months into the Obscuration"
+      },
+      {
+        "mention_id": "c0056_zhi4_001",
+        "term_id": "zhi.set_out",
+        "text": "置",
+        "anchor": "置入蔀積月",
+        "type": "CALC_OP",
+        "en": "Set out"
+      },
+      {
+        "mention_id": "c0056_ru4_bu4_ji1_yue4_001",
+        "term_id": "ru_bu_ji_yue.accumulated_months_into_obscuration",
+        "text": "入蔀積月",
+        "anchor": "置入蔀積月",
+        "type": "QUANTITY",
+        "en": "Accumulated Months into the Obscuration"
+      },
+      {
+        "mention_id": "c0056_ru4_bu4_001",
+        "term_id": "ru_bu.into_obscuration",
+        "text": "入蔀",
+        "anchor": "置入蔀積月",
+        "type": "ASTRO_TERM",
+        "en": "into the Obscuration"
+      },
+      {
+        "mention_id": "c0056_bu4_001",
+        "term_id": "bu.obscuration",
+        "text": "蔀",
+        "anchor": "置入蔀積月",
+        "type": "ASTRO_TERM",
+        "en": "Obscuration"
+      },
+      {
+        "mention_id": "c0056_ji1_yue4_001",
+        "term_id": "ji_yue.accumulated_months",
+        "text": "積月",
+        "anchor": "入蔀積月",
+        "type": "QUANTITY",
+        "en": "Accumulated Months"
+      },
+      {
+        "mention_id": "c0056_yi3_bu4_ri4_cheng2_zhi1_001",
+        "term_id": "yi_bu_ri_cheng_zhi.multiply_by_obscuration_days",
+        "text": "以蔀日乘之",
+        "anchor": "以蔀日乘之",
+        "type": "CALC_OP",
+        "en": "Multiply by Obscuration Days [27,759]"
+      },
+      {
+        "mention_id": "c0056_bu4_ri4_001",
+        "term_id": "bu_ri.obscuration_days",
+        "text": "蔀日",
+        "anchor": "以蔀日乘之",
+        "type": "PARAMETER",
+        "en": "Obscuration Days [27,759]"
+      },
+      {
+        "mention_id": "c0056_cheng2_001",
+        "term_id": "cheng.multiply",
+        "text": "乘",
+        "anchor": "以蔀日乘之",
+        "type": "CALC_OP",
+        "en": "Multiply"
+      },
+      {
+        "mention_id": "c0056_man3_bu4_yue4_de2_yi1_001",
+        "term_id": "man_bu_yue_de_yi.fill_divide_by_obscuration_months",
+        "text": "滿蔀月得一",
+        "anchor": "滿蔀月得一",
+        "type": "CALC_OP",
+        "en": "Count one for each Obscuration Months [940] filled"
+      },
+      {
+        "mention_id": "c0056_man3_001",
+        "term_id": "man.fill",
+        "text": "滿",
+        "anchor": "滿蔀月得一",
+        "type": "CALC_OP",
+        "en": "filled"
+      },
+      {
+        "mention_id": "c0056_bu4_yue4_001",
+        "term_id": "bu_yue.obscuration_months",
+        "text": "蔀月",
+        "anchor": "滿蔀月得一",
+        "type": "PARAMETER",
+        "en": "Obscuration Months [940]"
+      },
+      {
+        "mention_id": "c0056_de2_yi1_001",
+        "term_id": "de_yi.count_one",
+        "text": "得一",
+        "anchor": "滿蔀月得一",
+        "type": "CALC_OP",
+        "en": "Count one"
+      },
+      {
+        "mention_id": "c0056_ming2_wei2_ji1_ri4_001",
+        "term_id": "ming_wei_ji_ri.name_as_accumulated_days",
+        "text": "名為積日",
+        "anchor": "名為積日",
+        "type": "CALC_OP",
+        "en": "Call that Accumulated Days"
+      },
+      {
+        "mention_id": "c0056_ming2_wei2_001",
+        "term_id": "ming_wei.name_result_as",
+        "text": "名為",
+        "anchor": "名為積日",
+        "type": "CALC_OP",
+        "en": "Call that"
+      },
+      {
+        "mention_id": "c0056_ji1_ri4_001",
+        "term_id": "ji_ri.accumulated_days",
+        "text": "積日",
+        "anchor": "名為積日",
+        "type": "QUANTITY",
+        "en": "Accumulated Days"
+      },
+      {
+        "mention_id": "c0056_bu4_man3_wei2_xiao3_yu2_001",
+        "term_id": "bu_man_wei_xiao_yu.name_remainder_as_lesser_remainder",
+        "text": "不滿為小餘",
+        "anchor": "不滿為小餘",
+        "type": "CALC_OP",
+        "en": "The remainder is the Lesser Remainder"
+      },
+      {
+        "mention_id": "c0056_bu4_man3_wei2_001",
+        "term_id": "bu_man_wei.name_remainder_as",
+        "text": "不滿為",
+        "anchor": "不滿為小餘",
+        "type": "CALC_OP",
+        "en": "The remainder is"
+      },
+      {
+        "mention_id": "c0056_xiao3_yu2_001",
+        "term_id": "xiao_yu.lesser_remainder",
+        "text": "小餘",
+        "anchor": "不滿為小餘",
+        "type": "QUANTITY",
+        "en": "Lesser Remainder"
+      },
+      {
+        "mention_id": "c0056_ji1_ri4_002",
+        "term_id": "ji_ri.accumulated_days",
+        "text": "積日",
+        "anchor": "積日以六十 除去之",
+        "type": "QUANTITY",
+        "en": "Accumulated Days"
+      },
+      {
+        "mention_id": "c0056_ji1_ri4_yi3_liu4_shi2_chu2_qu4_zhi1_001",
+        "term_id": "ji_ri_yi_liu_shi_chu_qu_zhi.cast_out_60_from_accumulated_days",
+        "text": "積日以六十 除去之",
+        "anchor": "積日以六十 除去之",
+        "type": "CALC_OP",
+        "en": "Cast out 60 from the Accumulated Days"
+      },
+      {
+        "mention_id": "c0056_liu4_shi2_001",
+        "term_id": "liu_shi.modulus_60",
+        "text": "六十",
+        "anchor": "積日以六十 除去之",
+        "type": "QUANTITY",
+        "en": "60"
+      },
+      {
+        "mention_id": "c0056_chu2_qu4_zhi1_001",
+        "term_id": "chu_qu_zhi.cast_out",
+        "text": "除去之",
+        "anchor": "積日以六十 除去之",
+        "type": "CALC_OP",
+        "en": "Cast out"
+      },
+      {
+        "mention_id": "c0056_qi2_yu2_wei2_da4_yu2_001",
+        "term_id": "qi_yu_wei_da_yu.name_remainder_as_greater_remainder",
+        "text": "其餘為大餘",
+        "anchor": "其餘為大餘",
+        "type": "CALC_OP",
+        "en": "The remainder is the Greater Remainder"
+      },
+      {
+        "mention_id": "c0056_qi2_yu2_wei2_001",
+        "term_id": "qi_yu_wei.name_remainder_as",
+        "text": "其餘為",
+        "anchor": "其餘為大餘",
+        "type": "CALC_OP",
+        "en": "The remainder is"
+      },
+      {
+        "mention_id": "c0056_da4_yu2_001",
+        "term_id": "da_yu.greater_remainder",
+        "text": "大餘",
+        "anchor": "其餘為大餘",
+        "type": "QUANTITY",
+        "en": "Greater Remainder"
+      },
+      {
+        "mention_id": "c0056_suo3_ru4_bu4_ming2_001",
+        "term_id": "suo_ru_bu_ming.sexagenary_name_of_obscuration",
+        "text": "所入蔀名",
+        "anchor": "以所入蔀名命之",
+        "type": "ASTRO_TERM",
+        "en": "[sexagenary] name of the Obscuration"
+      },
+      {
+        "mention_id": "c0056_ming4_zhi1_001",
+        "term_id": "ming_zhi.count_off",
+        "text": "命之",
+        "anchor": "以所入蔀名命之",
+        "type": "CALC_OP",
+        "en": "Count off"
+      },
+      {
+        "mention_id": "c0056_suan4_jin4_zhi1_wai4_001",
+        "term_id": "suan_jin_zhi_wai.outside_the_exhausted_count",
+        "text": "筭盡之外",
+        "anchor": "筭盡之外",
+        "type": "CALC_OP",
+        "en": "outside the exhausted count"
+      },
+      {
+        "mention_id": "c0056_qian2_nian2_tian1_zheng4_shi2_yi1_yue4_shuo4_ri4_001",
+        "term_id": "qian_nian_tian_zheng_shi_yi_yue_shuo_ri.previous_year_celestial_standard_eleventh_month_conjunction_day",
+        "text": "前年天正十一月朔日",
+        "anchor": "前年天正十一月朔日 也",
+        "type": "QUANTITY",
+        "en": "the day of Celestial Standard Conjunction in the eleventh [civil] month preceding the [civil] year"
+      },
+      {
+        "mention_id": "c0056_xiao3_yu2_002",
+        "term_id": "xiao_yu.lesser_remainder",
+        "text": "小餘",
+        "anchor": "小餘四百四十一以上",
+        "type": "QUANTITY",
+        "en": "Lesser Remainder"
+      },
+      {
+        "mention_id": "c0056_si4_bai3_si4_shi2_yi1_001",
+        "term_id": "threshold.value.441",
+        "text": "四百四十一",
+        "anchor": "小餘四百四十一以上",
+        "type": "QUANTITY",
+        "en": "441"
+      },
+      {
+        "mention_id": "c0056_qi2_yue4_da4_001",
+        "term_id": "qi_yue_da.month_is_long",
+        "text": "其月大",
+        "anchor": "其月大",
+        "type": "ASTRO_TERM",
+        "en": "the month is long"
+      },
+      {
+        "mention_id": "c0056_qiu2_hou4_yue4_shuo4_001",
+        "term_id": "qiu_hou_yue_shuo.seek_next_month_conjunction",
+        "text": "求後月朔",
+        "anchor": "求後月朔",
+        "type": "CALC_OP",
+        "en": "To find the conjunction day of the next month"
+      },
+      {
+        "mention_id": "c0056_qiu2_001",
+        "term_id": "qiu.seek",
+        "text": "求",
+        "anchor": "求後月朔",
+        "type": "CALC_OP",
+        "en": "find"
+      },
+      {
+        "mention_id": "c0056_hou4_yue4_shuo4_001",
+        "term_id": "hou_yue_shuo.next_month_conjunction",
+        "text": "後月朔",
+        "anchor": "求後月朔",
+        "type": "QUANTITY",
+        "en": "the conjunction day of the next month"
+      },
+      {
+        "mention_id": "c0056_jia1_da4_yu2_er4_shi2_jiu3_001",
+        "term_id": "jia_da_yu_er_shi_jiu.add_29_to_greater_remainder",
+        "text": "加大餘二十九",
+        "anchor": "加大餘二十九",
+        "type": "CALC_OP",
+        "en": "add 29 to the Greater Remainder"
+      },
+      {
+        "mention_id": "c0056_jia1_001",
+        "term_id": "jia.add",
+        "text": "加",
+        "anchor": "加大餘二十九",
+        "type": "CALC_OP",
+        "en": "add"
+      },
+      {
+        "mention_id": "c0056_da4_yu2_002",
+        "term_id": "da_yu.greater_remainder",
+        "text": "大餘",
+        "anchor": "加大餘二十九",
+        "type": "QUANTITY",
+        "en": "Greater Remainder"
+      },
+      {
+        "mention_id": "c0056_er4_shi2_jiu3_001",
+        "term_id": "addend.value.29",
+        "text": "二十九",
+        "anchor": "加大餘二十九",
+        "type": "QUANTITY",
+        "en": "29"
+      },
+      {
+        "mention_id": "c0056_xiao3_yu2_003",
+        "term_id": "xiao_yu.lesser_remainder",
+        "text": "小餘",
+        "anchor": "小餘四百九十 [九]",
+        "type": "QUANTITY",
+        "en": "Lesser Remainder"
+      },
+      {
+        "mention_id": "c0056_si4_bai3_jiu3_shi2_jiu3_001",
+        "term_id": "addend.value.499",
+        "text": "四百九十 [九]",
+        "anchor": "小餘四百九十 [九]",
+        "type": "QUANTITY",
+        "en": "499"
+      },
+      {
+        "mention_id": "c0056_xiao3_yu2_man3_bu4_yue4_de2_yi1_001",
+        "term_id": "xiao_yu_man_bu_yue_de_yi.lesser_remainder_fill_divide_by_obscuration_months",
+        "text": "小餘滿蔀月得一",
+        "anchor": "小餘滿蔀月得一",
+        "type": "CALC_OP",
+        "en": "Count one each time the Lesser Remainder fills Obscuration Months [940]"
+      },
+      {
+        "mention_id": "c0056_xiao3_yu2_004",
+        "term_id": "xiao_yu.lesser_remainder",
+        "text": "小餘",
+        "anchor": "小餘滿蔀月得一",
+        "type": "QUANTITY",
+        "en": "Lesser Remainder"
+      },
+      {
+        "mention_id": "c0056_man3_002",
+        "term_id": "man.fill",
+        "text": "滿",
+        "anchor": "小餘滿蔀月得一",
+        "type": "CALC_OP",
+        "en": "fills"
+      },
+      {
+        "mention_id": "c0056_bu4_yue4_002",
+        "term_id": "bu_yue.obscuration_months",
+        "text": "蔀月",
+        "anchor": "小餘滿蔀月得一",
+        "type": "PARAMETER",
+        "en": "Obscuration Months [940]"
+      },
+      {
+        "mention_id": "c0056_de2_yi1_002",
+        "term_id": "de_yi.count_one",
+        "text": "得一",
+        "anchor": "小餘滿蔀月得一",
+        "type": "CALC_OP",
+        "en": "Count one"
+      },
+      {
+        "mention_id": "c0056_shang4_jia1_da4_yu2_001",
+        "term_id": "shang_jia_da_yu.carry_up_to_greater_remainder",
+        "text": "上加大餘",
+        "anchor": "上加大餘",
+        "type": "CALC_OP",
+        "en": "Take that unit up to the Greater Remainder"
+      },
+      {
+        "mention_id": "c0056_shang4_jia1_001",
+        "term_id": "shang_jia.carry_up_add",
+        "text": "上加",
+        "anchor": "上加大餘",
+        "type": "CALC_OP",
+        "en": "Take that unit up to"
+      },
+      {
+        "mention_id": "c0056_da4_yu2_003",
+        "term_id": "da_yu.greater_remainder",
+        "text": "大餘",
+        "anchor": "上加大餘",
+        "type": "QUANTITY",
+        "en": "Greater Remainder"
+      },
+      {
+        "mention_id": "c0056_hou4_yue4_da4_yu2_001",
+        "term_id": "hou_yue_da_yu.next_month_greater_remainder",
+        "text": "後月大餘",
+        "anchor": "上加大餘",
+        "type": "QUANTITY",
+        "en": "next month Greater Remainder"
+      },
+      {
+        "mention_id": "c0056_ming4_zhi1_ru2_qian2_001",
+        "term_id": "ming_zhi_ru_qian.count_off_as_before",
+        "text": "命之如前",
+        "anchor": "命之如前",
+        "type": "CALC_OP",
+        "en": "Count off as before"
+      }
+    ],
+    "relations": [],
+    "steps": [
+      {
+        "order": 1,
+        "phrase": "置入蔀積月",
+        "op": "set",
+        "input": "入蔀積月",
+        "parameter": "",
+        "output": "out1"
+      },
+      {
+        "order": 2,
+        "phrase": "以蔀日乘之",
+        "op": "multiply",
+        "input": "out1",
+        "parameter": "蔀日",
+        "output": "out2"
+      },
+      {
+        "order": 3,
+        "phrase": "滿蔀月得一",
+        "op": "fill_divide",
+        "input": "out2",
+        "parameter": "蔀月",
+        "output": "quotient=quot3;remainder=rem3"
+      },
+      {
+        "order": 4,
+        "phrase": "名為積日",
+        "op": "name_result",
+        "input": "quot3",
+        "parameter": "",
+        "output": "積日"
+      },
+      {
+        "order": 5,
+        "phrase": "不滿為小餘",
+        "op": "name_remainder",
+        "input": "rem3",
+        "parameter": "",
+        "output": "小餘"
+      },
+      {
+        "order": 6,
+        "phrase": "積日以六十 除去之",
+        "op": "remove_modulus",
+        "input": "積日",
+        "parameter": "六十",
+        "output": "remainder=rem6"
+      },
+      {
+        "order": 7,
+        "phrase": "其餘為大餘",
+        "op": "name_remainder",
+        "input": "rem6",
+        "parameter": "",
+        "output": "大餘"
+      },
+      {
+        "order": 8,
+        "phrase": "以所入蔀名命之， 筭盡之外， 則前年天正十一月朔日 也",
+        "op": "count",
+        "input": "大餘",
+        "parameter": "start=所入蔀名;cycle=六十;advance=input;return=after_exhaustion",
+        "output": "前年天正十一月朔日"
+      },
+      {
+        "order": 9,
+        "phrase": "小餘四百四十一以上， 其月大",
+        "op": "judge",
+        "input": "小餘",
+        "parameter": ">=四百四十一",
+        "output": "其月大"
+      },
+      {
+        "order": 10,
+        "phrase": "求後月朔",
+        "op": "seek",
+        "input": "前年天正十一月朔日；大餘；小餘",
+        "parameter": "",
+        "output": "後月朔"
+      },
+      {
+        "order": 11,
+        "phrase": "加大餘二十九",
+        "op": "add",
+        "input": "大餘",
+        "parameter": "二十九",
+        "output": "out11"
+      },
+      {
+        "order": 12,
+        "phrase": "小餘四百九十 [九]",
+        "op": "add",
+        "input": "小餘",
+        "parameter": "四百九十 [九]",
+        "output": "out12"
+      },
+      {
+        "order": 13,
+        "phrase": "小餘滿蔀月得一",
+        "op": "fill_divide",
+        "input": "out12",
+        "parameter": "蔀月",
+        "output": "quotient=quot13;remainder=rem13"
+      },
+      {
+        "order": 14,
+        "phrase": "上加大餘",
+        "op": "add",
+        "input": "out11",
+        "parameter": "quot13",
+        "output": "後月大餘"
+      },
+      {
+        "order": 15,
+        "phrase": "命之如前",
+        "op": "count",
+        "input": "後月大餘",
+        "parameter": "start=所入蔀名;cycle=六十;advance=input;return=after_exhaustion",
+        "output": "後月朔"
+      }
+    ]
+  }
+]

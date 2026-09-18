@@ -1,0 +1,45 @@
+{
+  "actor": "automated_software_tests",
+  "baseline_head": "ece6f5dc983ee22488d8777a52f92efe26f2beda",
+  "byte_identical_outputs": [
+    "batch.json",
+    "batch.md",
+    "comparison.json",
+    "comparison.md",
+    "imported.json",
+    "proc-3.5.json",
+    "sha256.json",
+    "summary.json"
+  ],
+  "parser_and_crosswalk_hashes_unchanged": true,
+  "raw_annotation_byte_identity": true,
+  "second_process_hash_seed": 91,
+  "source_excerpt_field_identity": true,
+  "tests": {
+    "importer": {
+      "log_sha256": "9c378c395c1eb26993e3a61674be14bf3a39c15b64360cbcfd988f17ed706001",
+      "status": "passed",
+      "tests": 22
+    },
+    "parser": {
+      "log_sha256": "9f7ee6389f580d85819d5bf11a9f1acf64a45d2e576b504731da985953babe7c",
+      "status": "passed",
+      "tests": 61
+    },
+    "parser_rescue": {
+      "log_sha256": "b76106181b9befe7ababfa4838ff82b234353ba9cefdeff087c2148fc3c63212",
+      "status": "passed",
+      "tests": 78
+    },
+    "parser_v3": {
+      "log_sha256": "2d63f34e8d3ac6da0d9947a684b5836c242e2be800976acd41f28998c7527ae6",
+      "status": "passed",
+      "tests": 94
+    },
+    "reconciliation": {
+      "log_sha256": "c0683ba7e5f67de5f9be6b693f164740fb76b8c964eada1156c2f25ac4e03381",
+      "status": "passed",
+      "tests": 5
+    }
+  }
+}

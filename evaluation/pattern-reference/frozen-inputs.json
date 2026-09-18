@@ -1,0 +1,27 @@
+{
+  "baseline_head": "ece6f5dc983ee22488d8777a52f92efe26f2beda",
+  "policy": "Frozen parser and existing crosswalk; no rule or operation additions during reference import/evaluation.",
+  "sha256": {
+    "analysis_parser/__init__.py": "004b6198115f5dda99bdb8be7bf1349b7ee901ada7d05339698ca40d735aa48d",
+    "analysis_parser/audit.py": "2b803f237b6c1aefbf2be375e20850dd13088d790521845f32c03b349f78cdbe",
+    "analysis_parser/construction_ir.py": "68e31dfa7f2d429cd8b558fd0bc1e9f06287677f1acfbf2a14e6a4721f91b296",
+    "analysis_parser/context_compiler.py": "fb38a2f72054cb1de6b88fb2bfccbf79a904865459535886726ae65e5f6f7562",
+    "analysis_parser/control_ir.py": "2d2ebde9929a4f8ca749268f02b9476caeacb5b569c5669af45ec6e6b771c7f3",
+    "analysis_parser/execution.py": "83d9e4fc59b9c1c1815e17e22aea568cf390e02b93bb6a2e9666ddf3863878fc",
+    "analysis_parser/inputs.py": "e934e2ca237f0ca0d0ee2235d4a515fa5e3bb005927234e7d25dbbd000bedf7e",
+    "analysis_parser/lexical.py": "4489c6a8450abb6af59c0f3aefff0be7574a0bbe0d3076678a6633e4b5ece6e3",
+    "analysis_parser/ontology.py": "32882f02368476579164f8020c43ce48d5d39ffd76c5e854cc76d57cfdccb30a",
+    "analysis_parser/operations.py": "d0a3ab04b6ad4e340655d0eb76f307f6b6dac2ce113b98a1e1d1f138ae767d07",
+    "analysis_parser/pipeline.py": "5029c2422c8443561f455220d43c9186059015ff0663c417d5cafbbf0b1ce060",
+    "analysis_parser/program_ir.py": "2e5badc04b6cf3ff8273dd8e160777712c09e7c1a3f520dc6795f0c92eb3dd4e",
+    "analysis_parser/quantity_semantics.py": "79fe3397cbfb7a1fee56ca0e9d5825656c2448d2fbff1f2ce5757c416af6a698",
+    "analysis_parser/resources.py": "1fd03413726c0756b620b8dfc9b5fb127eb3e8019e5090f585ba7de2cfebc96c",
+    "analysis_parser/scoped.py": "5c64284867a5e20e9dc18dbfa629b24e3981a6b7f34c9b4dd0913ffe36d3bd97",
+    "analysis_parser/state.py": "0c3d168ef7a93e1672552b0359f6158d2bdd727bdb98c3f416a5dd6d1f707142",
+    "analysis_parser/syntax_ir.py": "619c18db05a0b77ac0217b7cd892ea0841b449af98924a15b0403e705e7c0380",
+    "evaluation/pattern-reference/operation-crosswalk.json": "b13bd2733544ab905f767044d6c8ed1da8576f6f2bc2c8d9031bc6a5556c3ca4",
+    "evaluation/pattern-reference/ch3-chunk-breakdown.json": "28be0ab6e820c9b89c68b7816a396f55731d8a4b01d23d35fea42df1d2fc47fe",
+    "evaluation/pattern-reference/source-chunks.json": "025431ba0a137736ef85eeb852ff3b1786a2c2dba7721fad343b33cf2f8d04a8",
+    "calendars-四分历.md": "dd3a0784732f8ac77a87a3bb02b83cf4cff57fdf92b349de57d43020811d4b8d"
+  }
+}

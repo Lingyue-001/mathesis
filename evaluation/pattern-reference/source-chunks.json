@@ -1,0 +1,366 @@
+{
+  "schema_version": "PatternSourceExcerpts/1",
+  "upstream_sha256": "aa200fca4438e5296310fc0f523fb554f1293c6e458cc4cceb4d2c1d7b96e46b",
+  "upstream_path": "tmp/procedure-ir/cullen-ch3-chunks.json",
+  "selection": "Exact field projection for chunk IDs present in full annotation JSON; no rewritten text.",
+  "chunks": [
+    {
+      "id": "cullen:ch3:chunk:0008",
+      "source_text_zh": "昔者聖人之作曆也， 觀琁璣之運， 三光之行， 道之發斂， 景之長短， 斗綱 (之)[所]建， 青龍所躔， 參伍以變， 錯綜其數， 而制術焉．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "142",
+        "142"
+      ],
+      "pdf_pages": [
+        155,
+        155
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0009",
+      "source_text_zh": "天之動也， 一晝一夜而運過周， 星從天而西， 日違天而東． 日之所行與運周， 在 天成度， 在曆成日． 居以列宿， 終于四七， 受以甲乙， 終于六旬．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "142",
+        "143"
+      ],
+      "pdf_pages": [
+        155,
+        156
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0010",
+      "source_text_zh": "日月相推， 日舒月速， 當其同[所]， 謂之合朔． 舒先速後， 近一遠三， 謂之弦. 相與為衡， 分天之中， 謂之望． 以速及舒， 光盡體伏， 謂之晦． 晦朔合離， 斗建 移辰， 謂之[月]．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "143",
+        "143"
+      ],
+      "pdf_pages": [
+        156,
+        156
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0012",
+      "source_text_zh": "日月之(術)[行]， 則有冬有夏 ；冬夏之閒， 則有春有秋． 是故日行北陸謂之 冬， 西陸謂之春， 南陸謂之夏， 東陸謂之秋． 日道發南， 去極彌遠， 其景彌長, 遠長乃極， 冬乃至焉． 日道斂北， 去極彌近， 其景彌短， 近短乃極， 夏乃至焉. 二至之中， 道齊景正， 春秋分焉．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "143",
+        "144"
+      ],
+      "pdf_pages": [
+        156,
+        157
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0013",
+      "source_text_zh": "日周于天， 一寒一暑， 四時備成， 萬物畢改， 攝提遷次， 青龍移辰， 謂之歲．歲 首至也， 月首朔也． 至朔同日謂之章， 同在日首謂之蔀， 蔀終六旬謂之紀，歲 朔又復謂之元． 是故日以實之， 月以閏之， 時以分之，歲以周之， 章以明之， 蔀以部之， 紀以記之， 元以原之． 然後雖有變化萬殊， 贏朒無方， 莫不結系于 此而稟正焉．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "144",
+        "145"
+      ],
+      "pdf_pages": [
+        157,
+        158
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0026",
+      "source_text_zh": "月(大)四時推移， 故置十二中以定月位． 有朔而無中者為閏月． 中之始(日) [曰]節， 與中為二十四氣． 以除一歲日， 為一氣之日數也． 其分積而成日為 沒 ，并歲氣之分， 如法為一歲沒． 沒分于終中， 中終于冬至， 冬至之分積如其 法得一日， 四歲而終．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "152",
+        "153"
+      ],
+      "pdf_pages": [
+        165,
+        166
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0028",
+      "source_text_zh": "元法， 四千五百六十．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "154",
+        "154"
+      ],
+      "pdf_pages": [
+        167,
+        167
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0029",
+      "source_text_zh": "紀法， 千五百二十．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "154",
+        "154"
+      ],
+      "pdf_pages": [
+        167,
+        167
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0030",
+      "source_text_zh": "紀月， 萬八千八百．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "154",
+        "154"
+      ],
+      "pdf_pages": [
+        167,
+        167
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0031",
+      "source_text_zh": "蔀法， 七十六．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "154",
+        "154"
+      ],
+      "pdf_pages": [
+        167,
+        167
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0032",
+      "source_text_zh": "蔀月， 九百四十．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "154",
+        "155"
+      ],
+      "pdf_pages": [
+        167,
+        168
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0033",
+      "source_text_zh": "章法， 十九．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "155",
+        "155"
+      ],
+      "pdf_pages": [
+        168,
+        168
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0034",
+      "source_text_zh": "章月， 二百三十五．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "155",
+        "155"
+      ],
+      "pdf_pages": [
+        168,
+        168
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0035",
+      "source_text_zh": "周天， 千四百六十一．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "155",
+        "155"
+      ],
+      "pdf_pages": [
+        168,
+        168
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0036",
+      "source_text_zh": "日法， 四．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "155",
+        "156"
+      ],
+      "pdf_pages": [
+        168,
+        169
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0037",
+      "source_text_zh": "蔀日， 二萬七千七百五十九．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "156",
+        "156"
+      ],
+      "pdf_pages": [
+        169,
+        169
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0038",
+      "source_text_zh": "沒數， 二十一． (為章閏)[^11]",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "156",
+        "156"
+      ],
+      "pdf_pages": [
+        169,
+        169
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0039",
+      "source_text_zh": "通法， 四百八十七．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "156",
+        "156"
+      ],
+      "pdf_pages": [
+        169,
+        169
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0040",
+      "source_text_zh": "沒法， 七， (因為章閏).[^12]",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "156",
+        "156"
+      ],
+      "pdf_pages": [
+        169,
+        169
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0041",
+      "source_text_zh": "日餘， 百六十八．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "156",
+        "156"
+      ],
+      "pdf_pages": [
+        169,
+        169
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0042",
+      "source_text_zh": "中法，(四)[三]十二．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "156",
+        "157"
+      ],
+      "pdf_pages": [
+        169,
+        170
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0043",
+      "source_text_zh": "大周， 三十四萬三千三百三十五．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "157",
+        "157"
+      ],
+      "pdf_pages": [
+        170,
+        170
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0044",
+      "source_text_zh": "月周千一十六．",
+      "procedure_ids": [],
+      "procedure_titles": [],
+      "book_pages": [
+        "157",
+        "157"
+      ],
+      "pdf_pages": [
+        170,
+        170
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0055",
+      "source_text_zh": "推天正術， 置入蔀年減一， 以章月乘之， 滿章法得一， 名為積月， 不滿為閏餘， 十二以上, 其歲有閏．",
+      "procedure_ids": [
+        "Proc. 3.5"
+      ],
+      "procedure_titles": [
+        "To predict the Celestial Standard [Month]:"
+      ],
+      "book_pages": [
+        "164",
+        "165"
+      ],
+      "pdf_pages": [
+        177,
+        178
+      ]
+    },
+    {
+      "id": "cullen:ch3:chunk:0056",
+      "source_text_zh": "推天正朔日， 置入蔀積月， 以蔀日乘之， 滿蔀月得一， 名為積日， 不滿為小餘， 積日以六十 除去之， 其餘為大餘， 以所入蔀名命之， 筭盡之外， 則前年天正十一月朔日 也． 小餘四百四十一以上， 其月大． 求後月朔， 加大餘二十九， 小餘四百九十 [九]， 小餘滿蔀月得一， 上加大餘， 命之如前．",
+      "procedure_ids": [
+        "Proc. 3.6"
+      ],
+      "procedure_titles": [
+        "T o predict the day of Celestial Standard Conjunction:"
+      ],
+      "book_pages": [
+        "165",
+        "166"
+      ],
+      "pdf_pages": [
+        178,
+        179
+      ]
+    }
+  ]
+}
