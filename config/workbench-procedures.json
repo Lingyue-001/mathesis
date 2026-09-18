@@ -39,12 +39,12 @@
       },
       "scope_note": "局部过程：以入蔀年为输入，计算積月、閏餘。上游纪年换算不在本次编译范围内。",
       "provided_scope": {"tradition": "Han_Si_fen_li"},
-      "primary_sections": [
-        {"section": 38, "reconstruction_span_id": "sifen:L74", "sha256": "7e79b4ae7a87c423ace5084aebb135562ff98469fe77989812b4519b4fe95326"}
+      "primary_units": [
+        {"unit_id": "sifen:section:38", "reconstruction_span_id": "sifen:L74", "sha256": "7e79b4ae7a87c423ace5084aebb135562ff98469fe77989812b4519b4fe95326"}
       ],
-      "context_sections": [
-        {"section": 15, "reconstruction_span_id": "sifen:L28", "sha256": "e75f4776bcbae78934d380d9501def21bccd2bf48ee01fe8cf53e2388eea343b"},
-        {"section": 16, "reconstruction_span_id": "sifen:L30", "sha256": "64a0fcd33f34d7a84e189d72ef00194e3c2480cad2af1536fd6e5dd947c4baa6"}
+      "context_units": [
+        {"unit_id": "sifen:section:15", "reconstruction_span_id": "sifen:L28", "sha256": "e75f4776bcbae78934d380d9501def21bccd2bf48ee01fe8cf53e2388eea343b"},
+        {"unit_id": "sifen:section:16", "reconstruction_span_id": "sifen:L30", "sha256": "64a0fcd33f34d7a84e189d72ef00194e3c2480cad2af1536fd6e5dd947c4baa6"}
       ],
       "inputs": [
         {"name": "入蔀年", "type": "integer", "minimum": 1, "maximum": 76, "required": true, "description": "蔀内序年（1–76）；留空可检查缺失输入状态。"}
@@ -65,13 +65,13 @@
       },
       "scope_note": "一术：以大周、年、周天和蔀日表达天正朔日；M3 仅展示自动结果及真实缺口。",
       "provided_scope": {"tradition": "Han_Si_fen_li"},
-      "primary_sections": [
-        {"section": 40, "reconstruction_span_id": "sifen:L76", "sha256": "e87280a32daecc51c2ae9fa0d6ad3e652a3e41bae482383c64a1b7db797e4636"}
+      "primary_units": [
+        {"unit_id": "sifen:section:40", "reconstruction_span_id": "sifen:L76", "sha256": "e87280a32daecc51c2ae9fa0d6ad3e652a3e41bae482383c64a1b7db797e4636"}
       ],
-      "context_sections": [
-        {"section": 17, "reconstruction_span_id": "sifen:L32", "sha256": "a8e8d8625f7ef790c7341422f116d64ed367fd221faae565784766eb0908813a"},
-        {"section": 19, "reconstruction_span_id": "sifen:L36", "sha256": "97bacf43e8c3998942ffa50fffcbb7a6eb0796ae4ceb5f326209b9077e7d41c3"},
-        {"section": 25, "reconstruction_span_id": "sifen:L48", "sha256": "f5763e1fe04ac4b6b4ccc1cae87fa08268bc52d34fa3c09d91a3e18e3ba7c8ea"}
+      "context_units": [
+        {"unit_id": "sifen:section:17", "reconstruction_span_id": "sifen:L32", "sha256": "a8e8d8625f7ef790c7341422f116d64ed367fd221faae565784766eb0908813a"},
+        {"unit_id": "sifen:section:19", "reconstruction_span_id": "sifen:L36", "sha256": "97bacf43e8c3998942ffa50fffcbb7a6eb0796ae4ceb5f326209b9077e7d41c3"},
+        {"unit_id": "sifen:section:25", "reconstruction_span_id": "sifen:L48", "sha256": "f5763e1fe04ac4b6b4ccc1cae87fa08268bc52d34fa3c09d91a3e18e3ba7c8ea"}
       ],
       "inputs": []
     }

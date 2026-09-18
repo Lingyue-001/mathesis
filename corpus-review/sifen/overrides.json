@@ -1,0 +1,6300 @@
+{
+  "schema_version": "mathesis.corpus_overrides/1.3",
+  "_notes": [
+    "所有人工修改的统一 delta log：merge / split / retype / relation correction 均记录于此，不限于少数例外。Accept 记录在 auto.human_review。",
+    "operations 保存基于原始 source spans 的规范化当前决定；history 保存撤销所需的先前决定与 review 状态，不参与 parser。",
+    "When operations is non-empty, source_lock is required and pins corrections to one corpus byte hash: { source_id, sha256 }.",
+    "Supported operations: set_type, set_relations, merge_units, split_unit.",
+    "Text corrections are not accepted here until they carry a versioned source-to-reading mapping."
+  ],
+  "operations": [
+    {
+      "op": "set_type",
+      "target_spans": [
+        [
+          1876,
+          1884
+        ]
+      ],
+      "type": "parameter",
+      "id": "override:9a1c56e75c23fa0450e9",
+      "time": "2026-09-18T21:38:22.078106+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 14
+    }
+  ],
+  "history": [
+    {
+      "time": "2026-09-18T20:44:11.926148+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 1,
+      "action": "merge_down",
+      "source_spans": [
+        [
+          3596,
+          3630
+        ],
+        [
+          3637,
+          3700
+        ],
+        [
+          3707,
+          3757
+        ]
+      ],
+      "supersedes": [],
+      "reverts": null,
+      "before": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [
+          {
+            "op": "merge_units",
+            "targets": [
+              [
+                [
+                  3596,
+                  3630
+                ]
+              ],
+              [
+                [
+                  3637,
+                  3700
+                ],
+                [
+                  3707,
+                  3757
+                ]
+              ]
+            ],
+            "id": "override:23c05b8424d4058ee8b4",
+            "time": "2026-09-18T20:44:11.926148+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 1
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [
+            {
+              "time": "2026-09-18T20:44:11.926148+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 1,
+              "status": "modified",
+              "override_ids": [
+                "override:23c05b8424d4058ee8b4"
+              ],
+              "source_spans": [
+                [
+                  3596,
+                  3630
+                ],
+                [
+                  3637,
+                  3700
+                ],
+                [
+                  3707,
+                  3757
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:55-56": [
+            {
+              "time": "2026-09-18T20:44:11.926148+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 1,
+              "status": "modified",
+              "override_ids": [
+                "override:23c05b8424d4058ee8b4"
+              ],
+              "source_spans": [
+                [
+                  3596,
+                  3630
+                ],
+                [
+                  3637,
+                  3700
+                ],
+                [
+                  3707,
+                  3757
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T20:44:24.953175+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 2,
+      "action": "undo",
+      "source_spans": [
+        [
+          3596,
+          3630
+        ],
+        [
+          3637,
+          3700
+        ],
+        [
+          3707,
+          3757
+        ]
+      ],
+      "supersedes": [
+        1
+      ],
+      "reverts": 1,
+      "before": {
+        "operations": [
+          {
+            "op": "merge_units",
+            "targets": [
+              [
+                [
+                  3596,
+                  3630
+                ]
+              ],
+              [
+                [
+                  3637,
+                  3700
+                ],
+                [
+                  3707,
+                  3757
+                ]
+              ]
+            ],
+            "id": "override:23c05b8424d4058ee8b4",
+            "time": "2026-09-18T20:44:11.926148+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 1
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [
+            {
+              "time": "2026-09-18T20:44:11.926148+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 1,
+              "status": "modified",
+              "override_ids": [
+                "override:23c05b8424d4058ee8b4"
+              ],
+              "source_spans": [
+                [
+                  3596,
+                  3630
+                ],
+                [
+                  3637,
+                  3700
+                ],
+                [
+                  3707,
+                  3757
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:55-56": [
+            {
+              "time": "2026-09-18T20:44:11.926148+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 1,
+              "status": "modified",
+              "override_ids": [
+                "override:23c05b8424d4058ee8b4"
+              ],
+              "source_spans": [
+                [
+                  3596,
+                  3630
+                ],
+                [
+                  3637,
+                  3700
+                ],
+                [
+                  3707,
+                  3757
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T20:48:41.499392+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 3,
+      "action": "accept",
+      "source_spans": [
+        [
+          9,
+          11
+        ]
+      ],
+      "supersedes": [],
+      "reverts": null,
+      "before": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T20:51:07.585360+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 4,
+      "action": "accept",
+      "source_spans": [
+        [
+          3389,
+          3423
+        ]
+      ],
+      "supersedes": [],
+      "reverts": null,
+      "before": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T20:51:16.147645+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 5,
+      "action": "accept",
+      "source_spans": [
+        [
+          3389,
+          3423
+        ]
+      ],
+      "supersedes": [
+        4
+      ],
+      "reverts": null,
+      "before": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T20:52:02.091801+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 6,
+      "action": "accept",
+      "source_spans": [
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ],
+      "supersedes": [],
+      "reverts": null,
+      "before": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T21:07:55.165523+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 7,
+      "action": "merge_up",
+      "source_spans": [
+        [
+          3214,
+          3258
+        ],
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ],
+      "supersedes": [
+        6
+      ],
+      "reverts": null,
+      "before": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [
+          {
+            "op": "merge_units",
+            "targets": [
+              [
+                [
+                  3214,
+                  3258
+                ]
+              ],
+              [
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            ],
+            "id": "override:863afc25acc2d442d248",
+            "time": "2026-09-18T21:07:55.165523+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 7
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:07:55.165523+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 7,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:07:55.165523+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 7,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T21:08:04.914256+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 8,
+      "action": "undo",
+      "source_spans": [
+        [
+          3214,
+          3258
+        ],
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ],
+      "supersedes": [
+        6,
+        7
+      ],
+      "reverts": 7,
+      "before": {
+        "operations": [
+          {
+            "op": "merge_units",
+            "targets": [
+              [
+                [
+                  3214,
+                  3258
+                ]
+              ],
+              [
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            ],
+            "id": "override:863afc25acc2d442d248",
+            "time": "2026-09-18T21:07:55.165523+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 7
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:07:55.165523+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 7,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:07:55.165523+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 7,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T21:08:18.236203+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 9,
+      "action": "merge_up",
+      "source_spans": [
+        [
+          3214,
+          3258
+        ],
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ],
+      "supersedes": [
+        6
+      ],
+      "reverts": null,
+      "before": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [
+          {
+            "op": "merge_units",
+            "targets": [
+              [
+                [
+                  3214,
+                  3258
+                ]
+              ],
+              [
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            ],
+            "id": "override:863afc25acc2d442d248",
+            "time": "2026-09-18T21:08:18.236203+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 9
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:08:18.236203+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 9,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:08:18.236203+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 9,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T21:09:37.322312+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 10,
+      "action": "undo",
+      "source_spans": [
+        [
+          3214,
+          3258
+        ],
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ],
+      "supersedes": [
+        6,
+        9
+      ],
+      "reverts": 9,
+      "before": {
+        "operations": [
+          {
+            "op": "merge_units",
+            "targets": [
+              [
+                [
+                  3214,
+                  3258
+                ]
+              ],
+              [
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            ],
+            "id": "override:863afc25acc2d442d248",
+            "time": "2026-09-18T21:08:18.236203+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 9
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:08:18.236203+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 9,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:08:18.236203+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 9,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T21:09:40.509034+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 11,
+      "action": "merge_up",
+      "source_spans": [
+        [
+          3214,
+          3258
+        ],
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ],
+      "supersedes": [
+        6
+      ],
+      "reverts": null,
+      "before": {
+        "operations": [],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [
+          {
+            "op": "merge_units",
+            "targets": [
+              [
+                [
+                  3214,
+                  3258
+                ]
+              ],
+              [
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            ],
+            "id": "override:863afc25acc2d442d248",
+            "time": "2026-09-18T21:09:40.509034+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 11
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T21:19:10.291510+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 12,
+      "action": "split_unit",
+      "source_spans": [
+        [
+          3214,
+          3258
+        ],
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ],
+      "supersedes": [
+        6,
+        11
+      ],
+      "reverts": null,
+      "before": {
+        "operations": [
+          {
+            "op": "merge_units",
+            "targets": [
+              [
+                [
+                  3214,
+                  3258
+                ]
+              ],
+              [
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            ],
+            "id": "override:863afc25acc2d442d248",
+            "time": "2026-09-18T21:09:40.509034+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 11
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [
+          {
+            "op": "set_type",
+            "target_spans": [
+              [
+                3265,
+                3341
+              ],
+              [
+                3348,
+                3382
+              ]
+            ],
+            "type": "alternative_procedure",
+            "id": "override:6b9d6a2f56d10f872b1a",
+            "time": "2026-09-18T21:19:10.291510+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 12
+          },
+          {
+            "op": "set_relations",
+            "target_spans": [
+              [
+                3265,
+                3341
+              ],
+              [
+                3348,
+                3382
+              ]
+            ],
+            "relations": [
+              {
+                "kind": "alternative_of_candidate",
+                "confidence": "low",
+                "basis": "nearest preceding procedure + marker 一術",
+                "target_spans": [
+                  [
+                    3089,
+                    3207
+                  ]
+                ]
+              }
+            ],
+            "id": "override:0805cc485efbf993e5ff",
+            "time": "2026-09-18T21:19:10.291510+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 12
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [
+                "override:6b9d6a2f56d10f872b1a",
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T21:20:38.581601+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 13,
+      "action": "set_type",
+      "source_spans": [
+        [
+          3214,
+          3258
+        ],
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ],
+      "supersedes": [
+        6,
+        11,
+        12
+      ],
+      "reverts": null,
+      "before": {
+        "operations": [
+          {
+            "op": "set_type",
+            "target_spans": [
+              [
+                3265,
+                3341
+              ],
+              [
+                3348,
+                3382
+              ]
+            ],
+            "type": "alternative_procedure",
+            "id": "override:6b9d6a2f56d10f872b1a",
+            "time": "2026-09-18T21:19:10.291510+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 12
+          },
+          {
+            "op": "set_relations",
+            "target_spans": [
+              [
+                3265,
+                3341
+              ],
+              [
+                3348,
+                3382
+              ]
+            ],
+            "relations": [
+              {
+                "kind": "alternative_of_candidate",
+                "confidence": "low",
+                "basis": "nearest preceding procedure + marker 一術",
+                "target_spans": [
+                  [
+                    3089,
+                    3207
+                  ]
+                ]
+              }
+            ],
+            "id": "override:0805cc485efbf993e5ff",
+            "time": "2026-09-18T21:19:10.291510+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 12
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [
+                "override:6b9d6a2f56d10f872b1a",
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [
+          {
+            "op": "set_relations",
+            "target_spans": [
+              [
+                3265,
+                3341
+              ],
+              [
+                3348,
+                3382
+              ]
+            ],
+            "relations": [
+              {
+                "kind": "alternative_of_candidate",
+                "confidence": "low",
+                "basis": "nearest preceding procedure + marker 一術",
+                "target_spans": [
+                  [
+                    3089,
+                    3207
+                  ]
+                ]
+              }
+            ],
+            "id": "override:0805cc485efbf993e5ff",
+            "time": "2026-09-18T21:19:10.291510+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 12
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:20:38.581601+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 13,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [
+                "override:6b9d6a2f56d10f872b1a",
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:20:38.581601+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 13,
+              "status": "modified",
+              "override_ids": [
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T21:38:22.078106+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 14,
+      "action": "set_type",
+      "source_spans": [
+        [
+          1876,
+          1884
+        ]
+      ],
+      "supersedes": [],
+      "reverts": null,
+      "before": {
+        "operations": [
+          {
+            "op": "set_relations",
+            "target_spans": [
+              [
+                3265,
+                3341
+              ],
+              [
+                3348,
+                3382
+              ]
+            ],
+            "relations": [
+              {
+                "kind": "alternative_of_candidate",
+                "confidence": "low",
+                "basis": "nearest preceding procedure + marker 一術",
+                "target_spans": [
+                  [
+                    3089,
+                    3207
+                  ]
+                ]
+              }
+            ],
+            "id": "override:0805cc485efbf993e5ff",
+            "time": "2026-09-18T21:19:10.291510+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 12
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:20:38.581601+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 13,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [
+                "override:6b9d6a2f56d10f872b1a",
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:20:38.581601+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 13,
+              "status": "modified",
+              "override_ids": [
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [
+          {
+            "op": "set_type",
+            "target_spans": [
+              [
+                1876,
+                1884
+              ]
+            ],
+            "type": "parameter",
+            "id": "override:9a1c56e75c23fa0450e9",
+            "time": "2026-09-18T21:38:22.078106+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 14
+          },
+          {
+            "op": "set_relations",
+            "target_spans": [
+              [
+                3265,
+                3341
+              ],
+              [
+                3348,
+                3382
+              ]
+            ],
+            "relations": [
+              {
+                "kind": "alternative_of_candidate",
+                "confidence": "low",
+                "basis": "nearest preceding procedure + marker 一術",
+                "target_spans": [
+                  [
+                    3089,
+                    3207
+                  ]
+                ]
+              }
+            ],
+            "id": "override:0805cc485efbf993e5ff",
+            "time": "2026-09-18T21:19:10.291510+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 12
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [
+            {
+              "time": "2026-09-18T21:38:22.078106+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 14,
+              "status": "modified",
+              "override_ids": [
+                "override:9a1c56e75c23fa0450e9"
+              ],
+              "source_spans": [
+                [
+                  1876,
+                  1884
+                ]
+              ]
+            }
+          ],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:20:38.581601+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 13,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [
+                "override:6b9d6a2f56d10f872b1a",
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:20:38.581601+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 13,
+              "status": "modified",
+              "override_ids": [
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    },
+    {
+      "time": "2026-09-18T21:47:05.380429+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "删除由旧版合并/拆分重放误继承的 alternative_of_candidate；推日与推合朔均为独立 procedure。",
+      "revision": 15,
+      "action": "set_relations",
+      "source_spans": [
+        [
+          3214,
+          3258
+        ],
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ],
+      "supersedes": [
+        6,
+        11,
+        12,
+        13
+      ],
+      "reverts": null,
+      "before": {
+        "operations": [
+          {
+            "op": "set_type",
+            "target_spans": [
+              [
+                1876,
+                1884
+              ]
+            ],
+            "type": "parameter",
+            "id": "override:9a1c56e75c23fa0450e9",
+            "time": "2026-09-18T21:38:22.078106+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 14
+          },
+          {
+            "op": "set_relations",
+            "target_spans": [
+              [
+                3265,
+                3341
+              ],
+              [
+                3348,
+                3382
+              ]
+            ],
+            "relations": [
+              {
+                "kind": "alternative_of_candidate",
+                "confidence": "low",
+                "basis": "nearest preceding procedure + marker 一術",
+                "target_spans": [
+                  [
+                    3089,
+                    3207
+                  ]
+                ]
+              }
+            ],
+            "id": "override:0805cc485efbf993e5ff",
+            "time": "2026-09-18T21:19:10.291510+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 12
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [
+            {
+              "time": "2026-09-18T21:38:22.078106+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 14,
+              "status": "modified",
+              "override_ids": [
+                "override:9a1c56e75c23fa0450e9"
+              ],
+              "source_spans": [
+                [
+                  1876,
+                  1884
+                ]
+              ]
+            }
+          ],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:20:38.581601+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 13,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [
+                "override:6b9d6a2f56d10f872b1a",
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:20:38.581601+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 13,
+              "status": "modified",
+              "override_ids": [
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      },
+      "after": {
+        "operations": [
+          {
+            "op": "set_type",
+            "target_spans": [
+              [
+                1876,
+                1884
+              ]
+            ],
+            "type": "parameter",
+            "id": "override:9a1c56e75c23fa0450e9",
+            "time": "2026-09-18T21:38:22.078106+00:00",
+            "actor": {
+              "type": "human",
+              "id": "Ling"
+            },
+            "note": "",
+            "revision": 14
+          }
+        ],
+        "reviews": {
+          "sifen:section:1": [
+            {
+              "time": "2026-09-18T20:48:41.499392+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 3,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:section:2": [],
+          "sifen:section:3": [],
+          "sifen:section:4": [],
+          "sifen:section:5": [],
+          "sifen:section:6": [],
+          "sifen:section:7": [],
+          "sifen:section:8": [],
+          "sifen:section:9": [],
+          "sifen:section:10": [],
+          "sifen:section:11": [],
+          "sifen:section:12": [],
+          "sifen:section:13": [],
+          "sifen:section:14": [],
+          "sifen:section:15": [],
+          "sifen:section:16": [],
+          "sifen:section:17": [],
+          "sifen:section:18": [],
+          "sifen:section:19": [],
+          "sifen:section:20": [],
+          "sifen:section:21": [],
+          "sifen:section:22": [],
+          "sifen:section:23": [
+            {
+              "time": "2026-09-18T21:38:22.078106+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 14,
+              "status": "modified",
+              "override_ids": [
+                "override:9a1c56e75c23fa0450e9"
+              ],
+              "source_spans": [
+                [
+                  1876,
+                  1884
+                ]
+              ]
+            }
+          ],
+          "sifen:section:24": [],
+          "sifen:section:25": [],
+          "sifen:section:26": [],
+          "sifen:section:27": [],
+          "sifen:section:28": [],
+          "sifen:section:29": [],
+          "sifen:section:30": [],
+          "sifen:section:31": [],
+          "sifen:section:32": [],
+          "sifen:section:33": [],
+          "sifen:section:34": [],
+          "sifen:sections:35-36": [],
+          "sifen:section:37": [],
+          "sifen:section:38": [],
+          "sifen:section:39": [],
+          "sifen:section:40": [],
+          "sifen:sections:41-42": [],
+          "sifen:section:43": [],
+          "sifen:section:44": [],
+          "sifen:section:45": [],
+          "sifen:section:46": [],
+          "sifen:section:47": [],
+          "sifen:section:48": [
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:20:38.581601+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 13,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:47:05.380429+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "删除由旧版合并/拆分重放误继承的 alternative_of_candidate；推日与推合朔均为独立 procedure。",
+              "revision": 15,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:sections:49-50": [
+            {
+              "time": "2026-09-18T20:52:02.091801+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 6,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T21:09:40.509034+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 11,
+              "status": "modified",
+              "override_ids": [
+                "override:863afc25acc2d442d248"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:19:10.291510+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 12,
+              "status": "modified",
+              "override_ids": [
+                "override:6b9d6a2f56d10f872b1a",
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:20:38.581601+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 13,
+              "status": "modified",
+              "override_ids": [
+                "override:0805cc485efbf993e5ff"
+              ],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            },
+            {
+              "time": "2026-09-18T21:47:05.380429+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "删除由旧版合并/拆分重放误继承的 alternative_of_candidate；推日与推合朔均为独立 procedure。",
+              "revision": 15,
+              "status": "modified",
+              "override_ids": [],
+              "source_spans": [
+                [
+                  3214,
+                  3258
+                ],
+                [
+                  3265,
+                  3341
+                ],
+                [
+                  3348,
+                  3382
+                ]
+              ]
+            }
+          ],
+          "sifen:section:51": [
+            {
+              "time": "2026-09-18T20:51:07.585360+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 4,
+              "status": "accepted",
+              "override_ids": []
+            },
+            {
+              "time": "2026-09-18T20:51:16.147645+00:00",
+              "actor": {
+                "type": "human",
+                "id": "Ling"
+              },
+              "note": "",
+              "revision": 5,
+              "status": "accepted",
+              "override_ids": []
+            }
+          ],
+          "sifen:sections:52-53": [],
+          "sifen:section:54": [],
+          "sifen:sections:55-56": [],
+          "sifen:sections:57-59": [],
+          "sifen:sections:60-61": [],
+          "sifen:sections:62-63": [],
+          "sifen:section:64": [],
+          "sifen:sections:65-67": [],
+          "sifen:section:68": [],
+          "sifen:section:69": [],
+          "sifen:section:70": [],
+          "sifen:section:71": [],
+          "sifen:section:72": [],
+          "sifen:section:73": [],
+          "sifen:section:74": [],
+          "sifen:section:75": [],
+          "sifen:section:76": [],
+          "sifen:section:77": [],
+          "sifen:section:78": [],
+          "sifen:section:79": [],
+          "sifen:section:80": [],
+          "sifen:section:81": [],
+          "sifen:sections:82-85": [],
+          "sifen:section:86": [],
+          "sifen:section:87": [],
+          "sifen:section:88": [],
+          "sifen:section:89": [],
+          "sifen:section:90": [],
+          "sifen:section:91": [],
+          "sifen:section:92": [],
+          "sifen:section:93": [],
+          "sifen:section:94": [],
+          "sifen:section:95": [],
+          "sifen:section:96": [],
+          "sifen:section:97": [],
+          "sifen:section:98": [],
+          "sifen:section:99": [],
+          "sifen:section:100": []
+        }
+      }
+    }
+  ],
+  "source_lock": {
+    "source_id": "sifen",
+    "sha256": "dd3a0784732f8ac77a87a3bb02b83cf4cff57fdf92b349de57d43020811d4b8d"
+  }
+}

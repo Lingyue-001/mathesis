@@ -1,0 +1,17 @@
+{
+  "schema_version": "mathesis.corpus_review_workspace/1.0",
+  "source_id": "sifen",
+  "source_path": "calendars-四分历.md",
+  "source_sha": "dd3a0784732f8ac77a87a3bb02b83cf4cff57fdf92b349de57d43020811d4b8d",
+  "auto_sha": "ffa1473800b070118584fa27165015bb0cac8624b912e0913fc4b47469aa24bb",
+  "override_sha": "bf829aac05cbc28d37b2fe71bff35f887b4c2f6d3b2f7bb9c63118ce3efe9e57",
+  "effective_sha": "bef2d35ee558329d2e5cecf172c26a2bafdd35e2d3b594364f46f6c179eaac48",
+  "review_revision": "5b1b2cae6a30c3d420bb8fe2d4e856ef2ee133f8fadc96e87448f1349acb3f11",
+  "review_status": {
+    "total": 86,
+    "reviewed": 5,
+    "accepted": 2,
+    "modified": 3,
+    "unreviewed": 81
+  }
+}

@@ -4,6 +4,8 @@ import importlib
 import json
 from pathlib import Path
 import shutil
+import subprocess
+import sys
 import tempfile
 import threading
 import unittest
@@ -31,26 +33,29 @@ class AdapterTests(unittest.TestCase):
             self.assertEqual(hashlib.sha256(doc['text'].encode()).hexdigest(), doc['text_sha256'])
         self.assertIn('置入蔀年減一', packet['primary_documents'][0]['text'])
 
-    def test_adapter_needs_no_evaluation_or_reconstruction_cache(self):
+    def test_adapter_uses_a_validated_effective_corpus_index(self):
         adapter = self.adapter()
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            (root / 'config').mkdir()
+            (root / 'config').mkdir(parents=True)
             for name in ('calendrical-ir-pipeline.json', 'workbench-procedures.json'):
                 shutil.copyfile(ROOT / 'config' / name, root / 'config' / name)
             shutil.copyfile(ROOT / 'calendars-四分历.md', root / 'calendars-四分历.md')
+            with self.assertRaisesRegex(FileNotFoundError, 'effective_corpus_index_missing'):
+                adapter.build_source_packet(root, 'sifen-3-5')
+            subprocess.run([sys.executable, '-B', str(ROOT / 'scripts/corpus/extract_sifen_units.py'), '--root', str(root)], check=True)
             self.assertEqual(adapter.build_source_packet(root, 'sifen-3-5')['source_packet'],
                              adapter.build_source_packet(ROOT, 'sifen-3-5')['source_packet'])
             path = root / 'calendars-四分历.md'
             raw = path.read_bytes()
             path.write_bytes(raw.replace('章法，十九'.encode(), '章法，十八'.encode()))
-            with self.assertRaisesRegex(ValueError, 'source_changed'):
+            with self.assertRaisesRegex(ValueError, 'corpus_index_source_hash_mismatch'):
                 adapter.build_source_packet(root, 'sifen-3-5')
             path.write_bytes(raw + b'\n38\tduplicate\n')
-            with self.assertRaisesRegex(ValueError, 'ambiguous_source_section'):
+            with self.assertRaisesRegex(ValueError, 'corpus_index_source_hash_mismatch'):
                 adapter.build_source_packet(root, 'sifen-3-5')
             path.write_bytes(b''.join(line for line in raw.splitlines(keepends=True) if not line.startswith(b'38\t')))
-            with self.assertRaisesRegex(ValueError, 'missing_source_section'):
+            with self.assertRaisesRegex(ValueError, 'corpus_index_source_hash_mismatch'):
                 adapter.build_source_packet(root, 'sifen-3-5')
 
     def test_unknown_procedure_is_not_a_path(self):

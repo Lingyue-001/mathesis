@@ -111,6 +111,29 @@ try {
   await page.setViewportSize({ width: 390, height: 844 });
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
   await page.screenshot({ path: '.cache/workbench/analysis-mobile.png', fullPage: true });
+  // A unit changed in the separate segmentation tool while this page was open.
+  // API dependency propagation is tested against real edits in Python; here
+  // exercise the browser's treatment of the returned stale status.
+  let releaseOld, firstSeen;
+  const holdOld = new Promise(resolve => { releaseOld = resolve; });
+  const sawFirst = new Promise(resolve => { firstSeen = resolve; });
+  let statusRequests = 0;
+  await page.route('**/api/artifacts/status', async route => {
+    const old = ++statusRequests === 1;
+    if (old) { firstSeen(); await holdOld; }
+    await route.fulfill({ contentType: 'application/json', body: JSON.stringify({
+      freshness:[{kind:'graph',status:old ? 'valid' : 'stale',reasons:old ? [] : ['unit_changed_or_missing:sifen:section:38']}]
+    })});
+  });
+  await page.evaluate(() => window.dispatchEvent(new Event('focus')));
+  await sawFirst;
+  await page.evaluate(() => window.dispatchEvent(new Event('focus')));
+  await page.waitForFunction(() => document.getElementById('status').textContent.includes('STALE'));
+  const oldResponse = page.waitForResponse(r => r.url().endsWith('/api/artifacts/status'));
+  releaseOld();
+  await (await oldResponse).finished();
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  assert.equal(await page.locator('#execute').isDisabled(), true);
   await page.locator('#homeMenuToggle').click();
   await page.locator('#homeSideNav a[href="/patterns/"]').click();
   await page.waitForURL(`${origin}/patterns/`);

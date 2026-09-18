@@ -6,6 +6,12 @@ from adjudication.bundle import make_bundle
 from source_adapters.corpus import build_source_packet
 from workbench.projection import project_graph
 from workbench.presentation import build_presentation
+from source_adapters.dependencies import artifact
+
+
+def _artifacts(packet, graph):
+    parser = artifact('parser', graph, packet=packet)
+    return [parser, artifact('graph', graph, parents=[parser])]
 
 
 def analyze_procedure(root, procedure_id):
@@ -14,6 +20,7 @@ def analyze_procedure(root, procedure_id):
     projection = project_graph(graph)
     return {
         **source, 'graph': graph, 'projection': projection,
+        'artifacts': _artifacts(source['source_packet'], graph),
         'summary': {
             'graph_status': 'issues' if projection['issues'] else 'compiled',
             'execution_status': 'not_run',
@@ -54,6 +61,8 @@ def compile_procedure(root, procedure_id, inputs):
         'unresolved': unresolved,
         'graph': graph,
         'execution': execution,
+        'artifacts': [*source['artifacts'], artifact('execution', {'inputs': inputs, 'execution': execution},
+                                                   parents=[source['artifacts'][-1]])],
     }
 
 
@@ -135,6 +144,8 @@ def _reviewed_response(source, session, branch_id):
             **{key: reference[key] for key in ('graph', 'projection', 'stages', 'summary')},
         }
     response['presentation'] = build_presentation(response)
+    response['artifacts'] = _artifacts(source['source_packet'], graph) if graph is not None else []
+    bundle['artifacts'] = response['artifacts']
     return response
 
 
@@ -168,6 +179,9 @@ def execute_adjudication(root, procedure_id, session, branch_id, inputs):
     execution = execute(result['graph'], inputs)
     missing = any(row.get('cause') == 'requires_explicit_input' for row in execution.get('unresolved', []))
     result['execution'] = execution
+    result['artifacts'] = [*result['artifacts'], artifact('execution', {'inputs': inputs, 'execution': execution},
+                                                       parents=[result['artifacts'][-1]])]
+    result['bundle']['artifacts'] = result['artifacts']
     result['summary'] = {**result['summary'], 'execution_graph': 'reviewed',
                          'execution_status': 'missing_inputs' if missing else 'unresolved' if execution.get('unresolved') else 'executed'}
     result['presentation'] = build_presentation(result)

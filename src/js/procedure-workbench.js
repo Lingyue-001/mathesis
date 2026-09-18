@@ -9,6 +9,8 @@ const scriptedActor = new URLSearchParams(location.search).get('actor') === 'scr
 let analysis;
 let selectedAnchor;
 let requestRevision = 0;
+let requestBusy = false;
+let freshnessRevision = 0;
 
 async function request(path, body) {
   const response = await fetch(`${base.replace(/\/?$/, '/')}${path}`, body === undefined ? {} : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: json(body) });
@@ -18,9 +20,10 @@ async function request(path, body) {
   return value;
 }
 function busy(value) {
+  requestBusy = value;
   for (const node of document.querySelectorAll('.procedure-workbench button, .procedure-workbench select, .procedure-workbench input')) {
     const mutatesReview = node.closest('[aria-labelledby="decision-title"], #execute-form') || ['create-branch', 'branch-name', 'branch-select'].includes(node.id);
-    if (node.id !== 'import-session') node.disabled = value || Boolean(analysis?.referenceOnly && mutatesReview);
+    if (node.id !== 'import-session') node.disabled = value || Boolean((analysis?.referenceOnly || analysis?.corpusStale) && mutatesReview);
   }
 }
 function actor() { return scriptedActor ? { type: 'scripted_fixture', id: 'browser-test' } : { type: 'human', id: 'local-workbench' }; }
@@ -81,6 +84,32 @@ function selectQuestion(question, location) {
   select(steps.map(s => s.id), steps.flatMap(s => s.event_ids), spans, question.label);
   if (spans[0]) chooseAnchor(spans[0]);
 }
+async function checkCorpusFreshness() {
+  const current = analysis, revision = requestRevision;
+  if (!current?.artifacts?.length || requestBusy) return !current?.corpusStale;
+  const checkRevision = ++freshnessRevision;
+  try {
+    const result = await request('api/artifacts/status', {procedure_id: current.procedure.id, artifacts: current.artifacts});
+    if (analysis !== current || revision !== requestRevision || checkRevision !== freshnessRevision) return false;
+    current.freshness = result.freshness;
+    current.corpusStale = result.freshness.some(item => item.status === 'stale');
+    if (current.corpusStale) {
+      byId('status').textContent = 'STALE：此分析所依赖的 corpus 分块已修改。旧结构保留，请重新分析后继续判断。';
+      byId('execution-status').textContent = 'STALE：旧执行记录需要重新核验。';
+    }
+    busy(false);
+    return !current.corpusStale;
+  } catch {
+    if (analysis === current && revision === requestRevision && checkRevision === freshnessRevision) {
+      current.corpusStale = true;
+      byId('status').textContent = '无法核对 corpus 当前版本，请连接本地服务后重新分析。';
+      busy(false);
+    }
+    return false;
+  }
+}
+window.addEventListener('focus', () => { void checkCorpusFreshness(); });
+document.addEventListener('visibilitychange', () => { if (!document.hidden) void checkCorpusFreshness(); });
 function renderQuestions() {
   const box = byId('review-queue'); box.replaceChildren();
   const summary = byId('review-summary'); summary.replaceChildren();
@@ -185,6 +214,7 @@ async function loadAnalysis() {
   try { const saved = loadSession(procedureId); const next = saved ? await request('api/adjudication/compile', { procedure_id: procedureId, session: saved.session, branch_id: saved.branch_id }) : await request(`api/adjudication/${encodeURIComponent(procedureId)}`); if (revision !== requestRevision) return; consume(next); } catch (error) { if (revision === requestRevision) byId('status').textContent = `分析未完成；已保留本地 session：${error.message}`; } finally { if (revision === requestRevision) busy(false); }
 }
 async function applyDecision(row) {
+  if (!await checkCorpusFreshness()) return;
   if (analysis?.referenceOnly) throw new Error('旧 session 待重验；自动参考为只读。');
   if (!selectedAnchor && !row.targets?.length) throw new Error('请先选择 source span'); const revision = ++requestRevision; busy(true); byId('session-status').textContent = '正在应用 decision 并重新编译…';
   try { const next = await request('api/adjudication/decision', { procedure_id: analysis.procedure.id, session: analysis.session, decision: row, branch_id: analysis.branch_id }); if (revision === requestRevision) consume(next); } catch (error) { if (revision === requestRevision) byId('session-status').textContent = `Decision rejected: ${error.message}`; } finally { if (revision === requestRevision) busy(false); }
@@ -208,6 +238,6 @@ byId('declare-parameter').addEventListener('click', () => applyDecision(makeDeci
 byId('create-branch').addEventListener('click', async () => { const branch = byId('branch-name').value.trim(); if (!branch) return; busy(true); try { consume(await request('api/adjudication/branch', { procedure_id: analysis.procedure.id, session: analysis.session, branch_id: branch, from_branch: analysis.branch_id })); } catch (error) { byId('session-status').textContent = `Branch rejected: ${error.message}`; } finally { busy(false); } });
 byId('export-session').addEventListener('click', () => { const blob = new Blob([exportSession(analysis.procedure.id, analysis.session, analysis.branch_id)], { type: 'application/json' }); const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = `${analysis.procedure.id}-${analysis.branch_id}-session.json`; link.click(); setTimeout(() => URL.revokeObjectURL(link.href), 0); });
 byId('import-session').addEventListener('change', async event => { const file = event.target.files[0]; if (!file || !analysis) return; try { const saved = importSession(await file.text(), analysis.procedure.id); consume(await request('api/adjudication/compile', { procedure_id: analysis.procedure.id, session: saved.session, branch_id: saved.branch_id })); } catch (error) { byId('session-status').textContent = `Import rejected: ${error.message}`; } });
-byId('execute-form').addEventListener('submit', async event => { event.preventDefault(); if (!analysis) return; busy(true); byId('execution-result').hidden = true; try { const inputs = {}; for (const field of byId('inputs').querySelectorAll('input')) { const text = field.value.trim(); if (text) { if (!/^\d+$/.test(text) || !Number.isSafeInteger(Number(text))) throw new Error(`${field.name} 请输入整数`); inputs[field.name] = Number(text); } } const result = await request('api/adjudication/execute', { procedure_id: analysis.procedure.id, session: analysis.session, branch_id: analysis.branch_id, inputs }); byId('execution-status').textContent = result.presentation.session_text; byId('outputs').textContent = result.presentation.execution_text; byId('execution-raw').textContent = json(result.execution); byId('execution-result').hidden = false; } catch (error) { byId('execution-status').textContent = `数值验证未完成：${error.message}`; } finally { busy(false); } });
+byId('execute-form').addEventListener('submit', async event => { event.preventDefault(); if (!analysis || !await checkCorpusFreshness()) return; busy(true); byId('execution-result').hidden = true; try { const inputs = {}; for (const field of byId('inputs').querySelectorAll('input')) { const text = field.value.trim(); if (text) { if (!/^\d+$/.test(text) || !Number.isSafeInteger(Number(text))) throw new Error(`${field.name} 请输入整数`); inputs[field.name] = Number(text); } } const result = await request('api/adjudication/execute', { procedure_id: analysis.procedure.id, session: analysis.session, branch_id: analysis.branch_id, inputs }); analysis.artifacts = result.artifacts; byId('execution-status').textContent = result.presentation.session_text; byId('outputs').textContent = result.presentation.execution_text; byId('execution-raw').textContent = json(result.execution); byId('execution-result').hidden = false; } catch (error) { byId('execution-status').textContent = `数值验证未完成：${error.message}`; } finally { busy(false); } });
 
 try { const response = await request('api/procedures'); for (const procedure of response.procedures) byId('procedure').add(new Option(procedure.title, procedure.id)); if (!response.procedures.length) throw new Error('没有已登记的 procedure'); await loadAnalysis(); } catch (error) { byId('status').textContent = `无法载入：${error.message}`; }

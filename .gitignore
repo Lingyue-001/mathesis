@@ -24,6 +24,11 @@ tmp/procedure-ir/*.md
 tmp/procedure-ir/stabilization-checkpoint/**
 tmp/ctext_cache/**
 tmp/ctext-static-build/**
+tmp/corpus-index/**
+tmp/segmentation-review-tests/**
+corpus-review/*/effective.json
+corpus-review/*/.segmentation*
+corpus-review/*/.*.tmp
 
 # Local agent skill installations
 .agents/skills/**

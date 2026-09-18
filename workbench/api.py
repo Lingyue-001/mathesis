@@ -9,6 +9,7 @@ from urllib.parse import unquote, urlsplit
 
 from source_adapters.corpus import build_source_packet, list_procedures
 from workbench.presentation import ontology_reference
+from source_adapters.dependencies import validate as validate_artifacts
 from workbench.service import (analyze_procedure, apply_adjudication_decision,
                                branch_adjudication, compile_adjudication,
                                compile_procedure, execute_adjudication, open_adjudication)
@@ -99,7 +100,11 @@ def make_server(root, port=8789, site_root=None):
                 if not isinstance(body, dict) or not isinstance(body.get('procedure_id'), str):
                     raise ValueError('invalid_procedure_id')
                 path = urlsplit(self.path).path
-                if path == '/api/compile':
+                if path == '/api/artifacts/status':
+                    if set(body) != {'procedure_id', 'artifacts'}:
+                        raise ValueError('expected_artifact_status_fields')
+                    response = {'freshness': validate_artifacts(root, body['artifacts'])}
+                elif path == '/api/compile':
                     if set(body) != {'procedure_id', 'inputs'}:
                         raise ValueError('expected_procedure_id_and_inputs_only')
                     response = compile_procedure(root, body['procedure_id'], body['inputs'])

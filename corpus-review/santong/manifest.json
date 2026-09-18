@@ -1,0 +1,17 @@
+{
+  "schema_version": "mathesis.corpus_review_workspace/1.0",
+  "source_id": "santong",
+  "source_path": "calendars-三统历.md",
+  "source_sha": "a165ade33890b3adfd2b54633f1f808e0ac52a6ce7f6a9363863ad3357c7c565",
+  "auto_sha": "a92b73a2251a5e0011a41b92ff1d94d92471200a90fad72a7736b55c4f740e02",
+  "override_sha": "ede15e9ebdafe68166667cbacfdaee9bf85c6af595c65e336dce217fc8ec2341",
+  "effective_sha": "399809d7bfb8a7d0062535b736f471badfa17e221f56cefa5bb99da79c98217b",
+  "review_revision": "5e2727f67c3f2e4377a61876bc53ae3ff5cb72529982f38129a4fbc376c3f627",
+  "review_status": {
+    "total": 171,
+    "reviewed": 0,
+    "accepted": 0,
+    "modified": 0,
+    "unreviewed": 171
+  }
+}

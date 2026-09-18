@@ -1,0 +1,4848 @@
+{
+  "schema_version": "mathesis.corpus_unit_index/1.0",
+  "source": {
+    "source_id": "sifen",
+    "path": "calendars-四分历.md",
+    "sha256": "dd3a0784732f8ac77a87a3bb02b83cf4cff57fdf92b349de57d43020811d4b8d",
+    "offset_unit": "unicode_code_point_in_utf8_decoded_bytes",
+    "numbered_section_count": 100
+  },
+  "method": {
+    "mode": "automatic",
+    "uses_cullen_segmentation": false,
+    "manual_policy": "Overrides are explicit review metadata; source text is not overwritten."
+  },
+  "units": [
+    {
+      "id": "sifen:section:1",
+      "type": "heading",
+      "sections": [
+        1
+      ],
+      "text_original": "曆法",
+      "text_effective": "曆法",
+      "source_spans": [
+        {
+          "section": 1,
+          "text": "曆法",
+          "start": 9,
+          "end": 11,
+          "line": 2
+        }
+      ],
+      "detection": {
+        "rule": "short_heading",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": [
+        {
+          "time": "2026-09-18T20:48:41.499392+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 3,
+          "status": "accepted",
+          "override_ids": []
+        }
+      ]
+    },
+    {
+      "id": "sifen:section:2",
+      "type": "discourse",
+      "sections": [
+        2
+      ],
+      "text_original": "昔者聖人之作曆也，觀琁璣之運，三光之行，道之發斂，景之長短，斗綱之建，青龍所躔，參伍以變，錯綜其數，而制術焉。",
+      "text_effective": "昔者聖人之作曆也，觀琁璣之運，三光之行，道之發斂，景之長短，斗綱之建，青龍所躔，參伍以變，錯綜其數，而制術焉。",
+      "source_spans": [
+        {
+          "section": 2,
+          "text": "昔者聖人之作曆也，觀琁璣之運，三光之行，道之發斂，景之長短，斗綱之建，青龍所躔，參伍以變，錯綜其數，而制術焉。",
+          "start": 15,
+          "end": 70,
+          "line": 3
+        }
+      ],
+      "detection": {
+        "rule": "fallback",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:3",
+      "type": "parameter",
+      "sections": [
+        3
+      ],
+      "text_original": "天之動也，一晝一夜而運過周，星從天而西，日違天而東。日之所行與運周，在天成度，在曆成日。居以列宿，終于四七，受以甲乙，終于六旬。日月相推，日舒月速，當其同，謂之合朔。舒先速後，近一遠三，謂之弦。相與為衡，分天之中，謂之望。以速及舒，光盡體伏，謂之晦。晦朔合離，斗建移辰，謂之。日月之術，則有冬有夏；冬夏之閒，則有春有秋。是故日行北陸謂之冬，西陸謂之春，南陸謂之夏，東陸謂之秋。日道發南，去極彌遠，其景彌長，遠長乃極，冬乃至焉。日道斂北，去極彌近，其景彌短，近短乃極，夏乃至焉。二至之中，道齊景正，春秋分焉。",
+      "text_effective": "天之動也，一晝一夜而運過周，星從天而西，日違天而東。日之所行與運周，在天成度，在曆成日。居以列宿，終于四七，受以甲乙，終于六旬。日月相推，日舒月速，當其同，謂之合朔。舒先速後，近一遠三，謂之弦。相與為衡，分天之中，謂之望。以速及舒，光盡體伏，謂之晦。晦朔合離，斗建移辰，謂之。日月之術，則有冬有夏；冬夏之閒，則有春有秋。是故日行北陸謂之冬，西陸謂之春，南陸謂之夏，東陸謂之秋。日道發南，去極彌遠，其景彌長，遠長乃極，冬乃至焉。日道斂北，去極彌近，其景彌短，近短乃極，夏乃至焉。二至之中，道齊景正，春秋分焉。",
+      "source_spans": [
+        {
+          "section": 3,
+          "text": "天之動也，一晝一夜而運過周，星從天而西，日違天而東。日之所行與運周，在天成度，在曆成日。居以列宿，終于四七，受以甲乙，終于六旬。日月相推，日舒月速，當其同，謂之合朔。舒先速後，近一遠三，謂之弦。相與為衡，分天之中，謂之望。以速及舒，光盡體伏，謂之晦。晦朔合離，斗建移辰，謂之。日月之術，則有冬有夏；冬夏之閒，則有春有秋。是故日行北陸謂之冬，西陸謂之春，南陸謂之夏，東陸謂之秋。日道發南，去極彌遠，其景彌長，遠長乃極，冬乃至焉。日道斂北，去極彌近，其景彌短，近短乃極，夏乃至焉。二至之中，道齊景正，春秋分焉。",
+          "start": 74,
+          "end": 327,
+          "line": 4
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "天之動也",
+          "value_text": "一",
+          "note": "晝一夜而運過周，星從天而西，日違天而東。日之所行與運周，在天成度，在曆成日。居以列宿，終于四七，受以甲乙，終于六旬。日月相推，日舒月速，當其同，謂之合朔。舒先速後，近一遠三，謂之弦。相與為衡，分天之中，謂之望。以速及舒，光盡體伏，謂之晦。晦朔合離，斗建移辰，謂之。日月之術，則有冬有夏；冬夏之閒，則有春有秋。是故日行北陸謂之冬，西陸謂之春，南陸謂之夏，東陸謂之秋。日道發南，去極彌遠，其景彌長，遠長乃極，冬乃至焉。日道斂北，去極彌近，其景彌短，近短乃極，夏乃至焉。二至之中，道齊景正，春秋分焉。"
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:4",
+      "type": "parameter",
+      "sections": [
+        4
+      ],
+      "text_original": "日周于天，一寒一暑，四時備成，萬物畢改，攝提遷次，青龍移辰，謂之歲。歲首至也，月首朔也。至朔同日謂之章，同在日首謂之蔀，蔀終六旬謂之紀，歲朔又復謂之元。是故日以實之，月以閏之，時以分之，歲以周之，章以明之，蔀以部之，紀以記之，元以原之。然後雖有變化萬殊，贏朒無方，莫不結系于此而岙正焉。",
+      "text_effective": "日周于天，一寒一暑，四時備成，萬物畢改，攝提遷次，青龍移辰，謂之歲。歲首至也，月首朔也。至朔同日謂之章，同在日首謂之蔀，蔀終六旬謂之紀，歲朔又復謂之元。是故日以實之，月以閏之，時以分之，歲以周之，章以明之，蔀以部之，紀以記之，元以原之。然後雖有變化萬殊，贏朒無方，莫不結系于此而岙正焉。",
+      "source_spans": [
+        {
+          "section": 4,
+          "text": "日周于天，一寒一暑，四時備成，萬物畢改，攝提遷次，青龍移辰，謂之歲。歲首至也，月首朔也。至朔同日謂之章，同在日首謂之蔀，蔀終六旬謂之紀，歲朔又復謂之元。是故日以實之，月以閏之，時以分之，歲以周之，章以明之，蔀以部之，紀以記之，元以原之。然後雖有變化萬殊，贏朒無方，莫不結系于此而岙正焉。",
+          "start": 333,
+          "end": 476,
+          "line": 6
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "日周于天",
+          "value_text": "一",
+          "note": "寒一暑，四時備成，萬物畢改，攝提遷次，青龍移辰，謂之歲。歲首至也，月首朔也。至朔同日謂之章，同在日首謂之蔀，蔀終六旬謂之紀，歲朔又復謂之元。是故日以實之，月以閏之，時以分之，歲以周之，章以明之，蔀以部之，紀以記之，元以原之。然後雖有變化萬殊，贏朒無方，莫不結系于此而岙正焉。"
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:5",
+      "type": "discourse",
+      "sections": [
+        5
+      ],
+      "text_original": "極建其中，道營于外，琁衡追日，以察斂，光道生焉。孔壺為漏，浮箭為刻，下漏數刻，以考中星，昏明生焉。日有光道，月有九行，九行出入而交生焉。朔會望衡，鄰於所交，虧薄生焉。月有晦朔，星有合見，月有弦望，星有留逆，其歸一也，步術生焉。金、水承陽，先後日下，速則先日，遲而後留，留而後逆，逆與日違，違而後速，速與日競，競又先日，遲速順逆，晨夕生焉。日、月、五緯各有終原，而七元生焉。見伏有日，留行有度，而率數生焉。參差齊之，多少均之，會終生焉。引而伸之，觸而長之，探賾索隱，鉤深致遠，無幽辟潛伏，而不以其精者然。故陰陽有分，寒暑有節，天地貞觀，日月貞明。",
+      "text_effective": "極建其中，道營于外，琁衡追日，以察斂，光道生焉。孔壺為漏，浮箭為刻，下漏數刻，以考中星，昏明生焉。日有光道，月有九行，九行出入而交生焉。朔會望衡，鄰於所交，虧薄生焉。月有晦朔，星有合見，月有弦望，星有留逆，其歸一也，步術生焉。金、水承陽，先後日下，速則先日，遲而後留，留而後逆，逆與日違，違而後速，速與日競，競又先日，遲速順逆，晨夕生焉。日、月、五緯各有終原，而七元生焉。見伏有日，留行有度，而率數生焉。參差齊之，多少均之，會終生焉。引而伸之，觸而長之，探賾索隱，鉤深致遠，無幽辟潛伏，而不以其精者然。故陰陽有分，寒暑有節，天地貞觀，日月貞明。",
+      "source_spans": [
+        {
+          "section": 5,
+          "text": "極建其中，道營于外，琁衡追日，以察斂，光道生焉。孔壺為漏，浮箭為刻，下漏數刻，以考中星，昏明生焉。日有光道，月有九行，九行出入而交生焉。朔會望衡，鄰於所交，虧薄生焉。月有晦朔，星有合見，月有弦望，星有留逆，其歸一也，步術生焉。金、水承陽，先後日下，速則先日，遲而後留，留而後逆，逆與日違，違而後速，速與日競，競又先日，遲速順逆，晨夕生焉。日、月、五緯各有終原，而七元生焉。見伏有日，留行有度，而率數生焉。參差齊之，多少均之，會終生焉。引而伸之，觸而長之，探賾索隱，鉤深致遠，無幽辟潛伏，而不以其精者然。故陰陽有分，寒暑有節，天地貞觀，日月貞明。",
+          "start": 482,
+          "end": 754,
+          "line": 8
+        }
+      ],
+      "detection": {
+        "rule": "fallback",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:6",
+      "type": "discourse",
+      "sections": [
+        6
+      ],
+      "text_original": "若夫祐術開業，淳燿天光，重黎其上也。承聖帝之命若昊天，典曆象三辰，以授民事，立閏定時，以成歲功，羲和其隆也。取象金火，革命創制，治曆明時，應天順民，湯、武其盛也。及王德之衰也，無道之君亂之於上，頑愚之史失之於下。夏后之時，羲和淫湎，廢時亂日，胤乃征之。紂作淫虐，喪其甲子，武王誅之。夫能貞而明之者，其興也勃焉；回而敗之者，其亡也忽焉。巍巍乎若道天地之綱紀，帝王之壯事，是以聖人寶焉，君子勤之。",
+      "text_effective": "若夫祐術開業，淳燿天光，重黎其上也。承聖帝之命若昊天，典曆象三辰，以授民事，立閏定時，以成歲功，羲和其隆也。取象金火，革命創制，治曆明時，應天順民，湯、武其盛也。及王德之衰也，無道之君亂之於上，頑愚之史失之於下。夏后之時，羲和淫湎，廢時亂日，胤乃征之。紂作淫虐，喪其甲子，武王誅之。夫能貞而明之者，其興也勃焉；回而敗之者，其亡也忽焉。巍巍乎若道天地之綱紀，帝王之壯事，是以聖人寶焉，君子勤之。",
+      "source_spans": [
+        {
+          "section": 6,
+          "text": "若夫祐術開業，淳燿天光，重黎其上也。承聖帝之命若昊天，典曆象三辰，以授民事，立閏定時，以成歲功，羲和其隆也。取象金火，革命創制，治曆明時，應天順民，湯、武其盛也。及王德之衰也，無道之君亂之於上，頑愚之史失之於下。夏后之時，羲和淫湎，廢時亂日，胤乃征之。紂作淫虐，喪其甲子，武王誅之。夫能貞而明之者，其興也勃焉；回而敗之者，其亡也忽焉。巍巍乎若道天地之綱紀，帝王之壯事，是以聖人寶焉，君子勤之。",
+          "start": 760,
+          "end": 956,
+          "line": 10
+        }
+      ],
+      "detection": {
+        "rule": "fallback",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:7",
+      "type": "discourse",
+      "sections": [
+        7
+      ],
+      "text_original": "夫曆有聖人之德六焉：以本氣者尚其體，以綜數者尚其文，以考類者尚其象，以作事者尚其時，以占往者尚其源，以知來者尚其流。大業載之，吉凶生焉，是以君子將有興焉，咨焉而以從事，受命而莫之違也。若夫用天因地，揆時施教，頒諸明堂，以為民極者，莫大乎月令。帝王之大司備矣，天下之能事畢矣。過此而往，群忌苟禁，君子未之或知也。",
+      "text_effective": "夫曆有聖人之德六焉：以本氣者尚其體，以綜數者尚其文，以考類者尚其象，以作事者尚其時，以占往者尚其源，以知來者尚其流。大業載之，吉凶生焉，是以君子將有興焉，咨焉而以從事，受命而莫之違也。若夫用天因地，揆時施教，頒諸明堂，以為民極者，莫大乎月令。帝王之大司備矣，天下之能事畢矣。過此而往，群忌苟禁，君子未之或知也。",
+      "source_spans": [
+        {
+          "section": 7,
+          "text": "夫曆有聖人之德六焉：以本氣者尚其體，以綜數者尚其文，以考類者尚其象，以作事者尚其時，以占往者尚其源，以知來者尚其流。大業載之，吉凶生焉，是以君子將有興焉，咨焉而以從事，受命而莫之違也。若夫用天因地，揆時施教，頒諸明堂，以為民極者，莫大乎月令。帝王之大司備矣，天下之能事畢矣。過此而往，群忌苟禁，君子未之或知也。",
+          "start": 962,
+          "end": 1117,
+          "line": 12
+        }
+      ],
+      "detection": {
+        "rule": "fallback",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:8",
+      "type": "discourse",
+      "sections": [
+        8
+      ],
+      "text_original": "斗之二十一度，去極至遠也，日在焉而冬至，群物於是乎生。故律首黃鍾，曆始冬至，月先建子，時平夜半。當漢高皇帝受命四十有五歲，陽在上章，陰在執徐，冬十有一月甲子夜半朔旦冬至，日月閏積之數皆自此始，立元正朔，謂之漢曆。又上兩元，而月食五星之元，並發端焉。",
+      "text_effective": "斗之二十一度，去極至遠也，日在焉而冬至，群物於是乎生。故律首黃鍾，曆始冬至，月先建子，時平夜半。當漢高皇帝受命四十有五歲，陽在上章，陰在執徐，冬十有一月甲子夜半朔旦冬至，日月閏積之數皆自此始，立元正朔，謂之漢曆。又上兩元，而月食五星之元，並發端焉。",
+      "source_spans": [
+        {
+          "section": 8,
+          "text": "斗之二十一度，去極至遠也，日在焉而冬至，群物於是乎生。故律首黃鍾，曆始冬至，月先建子，時平夜半。當漢高皇帝受命四十有五歲，陽在上章，陰在執徐，冬十有一月甲子夜半朔旦冬至，日月閏積之數皆自此始，立元正朔，謂之漢曆。又上兩元，而月食五星之元，並發端焉。",
+          "start": 1123,
+          "end": 1247,
+          "line": 14
+        }
+      ],
+      "detection": {
+        "rule": "fallback",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:9",
+      "type": "computational_exposition",
+      "sections": [
+        9
+      ],
+      "text_original": "曆數之生也，乃立儀、表，以校日景。景長則日遠，天度之端也。日發其端，周而為歲，然其景不復，四周千四百六十一日，而景復初，是則日行之終。以周除日，得三百六十五四分度之一，為歲之日數。日日行一度，亦為天度。察日月俱發度端，日行十九周，月行二百五十四周，復會于端，是則月行之終也。以日周除月周，得一歲周天之數。以日一周減之，餘十二十九分之七，則月行過周及日行之數也，為一歲之月。以除一歲日，為一月之數。月之餘分積滿其法，得一月，月成則其歲。月大四時推移，故置十二中以定月位。有朔而無中者為閏月。中之始日節，與中為二十四氣。以除一歲日，為一氣之日數也。其分積而成日為沒，并歲氣之分，如法為一歲沒。沒分于終中，中終于冬至，冬至之分積如其法得一日，四歲而終。月分成閏，閏七而盡，其歲十九，名之曰章。章首分盡，四之俱終，名之曰蔀。以一歲日乘之，為蔀之日數也。以甲子命之，二十而復其初，是以二十蔀為紀。紀歲青龍未終，三終歲後復青龍為元。",
+      "text_effective": "曆數之生也，乃立儀、表，以校日景。景長則日遠，天度之端也。日發其端，周而為歲，然其景不復，四周千四百六十一日，而景復初，是則日行之終。以周除日，得三百六十五四分度之一，為歲之日數。日日行一度，亦為天度。察日月俱發度端，日行十九周，月行二百五十四周，復會于端，是則月行之終也。以日周除月周，得一歲周天之數。以日一周減之，餘十二十九分之七，則月行過周及日行之數也，為一歲之月。以除一歲日，為一月之數。月之餘分積滿其法，得一月，月成則其歲。月大四時推移，故置十二中以定月位。有朔而無中者為閏月。中之始日節，與中為二十四氣。以除一歲日，為一氣之日數也。其分積而成日為沒，并歲氣之分，如法為一歲沒。沒分于終中，中終于冬至，冬至之分積如其法得一日，四歲而終。月分成閏，閏七而盡，其歲十九，名之曰章。章首分盡，四之俱終，名之曰蔀。以一歲日乘之，為蔀之日數也。以甲子命之，二十而復其初，是以二十蔀為紀。紀歲青龍未終，三終歲後復青龍為元。",
+      "source_spans": [
+        {
+          "section": 9,
+          "text": "曆數之生也，乃立儀、表，以校日景。景長則日遠，天度之端也。日發其端，周而為歲，然其景不復，四周千四百六十一日，而景復初，是則日行之終。以周除日，得三百六十五四分度之一，為歲之日數。日日行一度，亦為天度。察日月俱發度端，日行十九周，月行二百五十四周，復會于端，是則月行之終也。以日周除月周，得一歲周天之數。以日一周減之，餘十二十九分之七，則月行過周及日行之數也，為一歲之月。以除一歲日，為一月之數。月之餘分積滿其法，得一月，月成則其歲。月大四時推移，故置十二中以定月位。有朔而無中者為閏月。中之始日節，與中為二十四氣。以除一歲日，為一氣之日數也。其分積而成日為沒，并歲氣之分，如法為一歲沒。沒分于終中，中終于冬至，冬至之分積如其法得一日，四歲而終。月分成閏，閏七而盡，其歲十九，名之曰章。章首分盡，四之俱終，名之曰蔀。以一歲日乘之，為蔀之日數也。以甲子命之，二十而復其初，是以二十蔀為紀。紀歲青龍未終，三終歲後復青龍為元。",
+          "start": 1253,
+          "end": 1663,
+          "line": 16
+        }
+      ],
+      "detection": {
+        "rule": "operation_cue_density_without_procedure_marker",
+        "confidence": "low"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:10",
+      "type": "parameter",
+      "sections": [
+        10
+      ],
+      "text_original": "元法，四千五百六十。",
+      "text_effective": "元法，四千五百六十。",
+      "source_spans": [
+        {
+          "section": 10,
+          "text": "元法，四千五百六十。",
+          "start": 1670,
+          "end": 1680,
+          "line": 18
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "元法",
+          "value_text": "四千五百六十",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:11",
+      "type": "parameter",
+      "sections": [
+        11
+      ],
+      "text_original": "紀法，千五百二十。",
+      "text_effective": "紀法，千五百二十。",
+      "source_spans": [
+        {
+          "section": 11,
+          "text": "紀法，千五百二十。",
+          "start": 1687,
+          "end": 1696,
+          "line": 20
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "紀法",
+          "value_text": "千五百二十",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:12",
+      "type": "parameter",
+      "sections": [
+        12
+      ],
+      "text_original": "紀月，萬八千八百。",
+      "text_effective": "紀月，萬八千八百。",
+      "source_spans": [
+        {
+          "section": 12,
+          "text": "紀月，萬八千八百。",
+          "start": 1703,
+          "end": 1712,
+          "line": 22
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "紀月",
+          "value_text": "萬八千八百",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:13",
+      "type": "parameter",
+      "sections": [
+        13
+      ],
+      "text_original": "蔀法，七十六。",
+      "text_effective": "蔀法，七十六。",
+      "source_spans": [
+        {
+          "section": 13,
+          "text": "蔀法，七十六。",
+          "start": 1719,
+          "end": 1726,
+          "line": 24
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "蔀法",
+          "value_text": "七十六",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:14",
+      "type": "parameter",
+      "sections": [
+        14
+      ],
+      "text_original": "蔀月，九百四十。",
+      "text_effective": "蔀月，九百四十。",
+      "source_spans": [
+        {
+          "section": 14,
+          "text": "蔀月，九百四十。",
+          "start": 1733,
+          "end": 1741,
+          "line": 26
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "蔀月",
+          "value_text": "九百四十",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:15",
+      "type": "parameter",
+      "sections": [
+        15
+      ],
+      "text_original": "章法，十九。",
+      "text_effective": "章法，十九。",
+      "source_spans": [
+        {
+          "section": 15,
+          "text": "章法，十九。",
+          "start": 1748,
+          "end": 1754,
+          "line": 28
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "章法",
+          "value_text": "十九",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:16",
+      "type": "parameter",
+      "sections": [
+        16
+      ],
+      "text_original": "章月，二百三十五。",
+      "text_effective": "章月，二百三十五。",
+      "source_spans": [
+        {
+          "section": 16,
+          "text": "章月，二百三十五。",
+          "start": 1761,
+          "end": 1770,
+          "line": 30
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "章月",
+          "value_text": "二百三十五",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:17",
+      "type": "parameter",
+      "sections": [
+        17
+      ],
+      "text_original": "周天，千四百六十一。",
+      "text_effective": "周天，千四百六十一。",
+      "source_spans": [
+        {
+          "section": 17,
+          "text": "周天，千四百六十一。",
+          "start": 1777,
+          "end": 1787,
+          "line": 32
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "周天",
+          "value_text": "千四百六十一",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:18",
+      "type": "parameter",
+      "sections": [
+        18
+      ],
+      "text_original": "日法，四。",
+      "text_effective": "日法，四。",
+      "source_spans": [
+        {
+          "section": 18,
+          "text": "日法，四。",
+          "start": 1794,
+          "end": 1799,
+          "line": 34
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "日法",
+          "value_text": "四",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:19",
+      "type": "parameter",
+      "sections": [
+        19
+      ],
+      "text_original": "蔀日，二萬七千七百五十九。",
+      "text_effective": "蔀日，二萬七千七百五十九。",
+      "source_spans": [
+        {
+          "section": 19,
+          "text": "蔀日，二萬七千七百五十九。",
+          "start": 1806,
+          "end": 1819,
+          "line": 36
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "蔀日",
+          "value_text": "二萬七千七百五十九",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:20",
+      "type": "parameter",
+      "sections": [
+        20
+      ],
+      "text_original": "沒數，二十一。為章閏",
+      "text_effective": "沒數，二十一。為章閏",
+      "source_spans": [
+        {
+          "section": 20,
+          "text": "沒數，二十一。為章閏",
+          "start": 1826,
+          "end": 1836,
+          "line": 38
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "沒數",
+          "value_text": "二十一",
+          "note": "為章閏"
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:21",
+      "type": "parameter",
+      "sections": [
+        21
+      ],
+      "text_original": "通法，四百八十七。",
+      "text_effective": "通法，四百八十七。",
+      "source_spans": [
+        {
+          "section": 21,
+          "text": "通法，四百八十七。",
+          "start": 1843,
+          "end": 1852,
+          "line": 40
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "通法",
+          "value_text": "四百八十七",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:22",
+      "type": "parameter",
+      "sections": [
+        22
+      ],
+      "text_original": "沒法，七，因為章閏。",
+      "text_effective": "沒法，七，因為章閏。",
+      "source_spans": [
+        {
+          "section": 22,
+          "text": "沒法，七，因為章閏。",
+          "start": 1859,
+          "end": 1869,
+          "line": 42
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "沒法",
+          "value_text": "七",
+          "note": "因為章閏。"
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:23",
+      "type": "discourse",
+      "sections": [
+        23
+      ],
+      "text_original": "日餘，百六十八。",
+      "text_effective": "日餘，百六十八。",
+      "source_spans": [
+        {
+          "section": 23,
+          "text": "日餘，百六十八。",
+          "start": 1876,
+          "end": 1884,
+          "line": 44
+        }
+      ],
+      "detection": {
+        "rule": "fallback",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": [
+        {
+          "time": "2026-09-18T21:38:22.078106+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 14,
+          "status": "modified",
+          "override_ids": [
+            "override:9a1c56e75c23fa0450e9"
+          ],
+          "source_spans": [
+            [
+              1876,
+              1884
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sifen:section:24",
+      "type": "parameter",
+      "sections": [
+        24
+      ],
+      "text_original": "中法，四十二。",
+      "text_effective": "中法，四十二。",
+      "source_spans": [
+        {
+          "section": 24,
+          "text": "中法，四十二。",
+          "start": 1891,
+          "end": 1898,
+          "line": 46
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "中法",
+          "value_text": "四十二",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:25",
+      "type": "parameter",
+      "sections": [
+        25
+      ],
+      "text_original": "大周，三十四萬三千三百三十五。",
+      "text_effective": "大周，三十四萬三千三百三十五。",
+      "source_spans": [
+        {
+          "section": 25,
+          "text": "大周，三十四萬三千三百三十五。",
+          "start": 1905,
+          "end": 1920,
+          "line": 48
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "大周",
+          "value_text": "三十四萬三千三百三十五",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:26",
+      "type": "discourse",
+      "sections": [
+        26
+      ],
+      "text_original": "月周千一十六。",
+      "text_effective": "月周千一十六。",
+      "source_spans": [
+        {
+          "section": 26,
+          "text": "月周千一十六。",
+          "start": 1927,
+          "end": 1934,
+          "line": 50
+        }
+      ],
+      "detection": {
+        "rule": "fallback",
+        "confidence": "medium"
+      },
+      "parameters": [
+        {
+          "name": "月周",
+          "value_text": "千一十六",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:27",
+      "type": "computational_exposition",
+      "sections": [
+        27
+      ],
+      "text_original": "月食數之生也，乃記月食之既者。率二十三食而復既，其月食百三十五，率之相除，得五百二十三之二十而一食。以除一歲之月，得歲有再食五百一十三分之五十〈五〉也。分終其法，因以與蔀相約，得四與二十七，互之，會二千五十二，二十而與元會。",
+      "text_effective": "月食數之生也，乃記月食之既者。率二十三食而復既，其月食百三十五，率之相除，得五百二十三之二十而一食。以除一歲之月，得歲有再食五百一十三分之五十〈五〉也。分終其法，因以與蔀相約，得四與二十七，互之，會二千五十二，二十而與元會。",
+      "source_spans": [
+        {
+          "section": 27,
+          "text": "月食數之生也，乃記月食之既者。率二十三食而復既，其月食百三十五，率之相除，得五百二十三之二十而一食。以除一歲之月，得歲有再食五百一十三分之五十〈五〉也。分終其法，因以與蔀相約，得四與二十七，互之，會二千五十二，二十而與元會。",
+          "start": 1941,
+          "end": 2053,
+          "line": 52
+        }
+      ],
+      "detection": {
+        "rule": "operation_cue_density_without_procedure_marker",
+        "confidence": "low"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:28",
+      "type": "parameter",
+      "sections": [
+        28
+      ],
+      "text_original": "元會，四萬一千四十。",
+      "text_effective": "元會，四萬一千四十。",
+      "source_spans": [
+        {
+          "section": 28,
+          "text": "元會，四萬一千四十。",
+          "start": 2060,
+          "end": 2070,
+          "line": 54
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "元會",
+          "value_text": "四萬一千四十",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:29",
+      "type": "parameter",
+      "sections": [
+        29
+      ],
+      "text_original": "蔀會，三千五十三。",
+      "text_effective": "蔀會，三千五十三。",
+      "source_spans": [
+        {
+          "section": 29,
+          "text": "蔀會，三千五十三。",
+          "start": 2077,
+          "end": 2086,
+          "line": 56
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "蔀會",
+          "value_text": "三千五十三",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:30",
+      "type": "parameter",
+      "sections": [
+        30
+      ],
+      "text_original": "歲數，五百一十三。",
+      "text_effective": "歲數，五百一十三。",
+      "source_spans": [
+        {
+          "section": 30,
+          "text": "歲數，五百一十三。",
+          "start": 2093,
+          "end": 2102,
+          "line": 58
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "歲數",
+          "value_text": "五百一十三",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:31",
+      "type": "parameter",
+      "sections": [
+        31
+      ],
+      "text_original": "食數，千八十一。",
+      "text_effective": "食數，千八十一。",
+      "source_spans": [
+        {
+          "section": 31,
+          "text": "食數，千八十一。",
+          "start": 2109,
+          "end": 2117,
+          "line": 60
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "食數",
+          "value_text": "千八十一",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:32",
+      "type": "parameter",
+      "sections": [
+        32
+      ],
+      "text_original": "月數，百二十五。",
+      "text_effective": "月數，百二十五。",
+      "source_spans": [
+        {
+          "section": 32,
+          "text": "月數，百二十五。",
+          "start": 2124,
+          "end": 2132,
+          "line": 62
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "月數",
+          "value_text": "百二十五",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:33",
+      "type": "parameter",
+      "sections": [
+        33
+      ],
+      "text_original": "食法，二十二。",
+      "text_effective": "食法，二十二。",
+      "source_spans": [
+        {
+          "section": 33,
+          "text": "食法，二十二。",
+          "start": 2139,
+          "end": 2146,
+          "line": 64
+        }
+      ],
+      "detection": {
+        "rule": "compact_name_value_declaration",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "name": "食法",
+          "value_text": "二十二",
+          "note": null
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:34",
+      "type": "procedure",
+      "sections": [
+        34
+      ],
+      "text_original": "推入蔀術曰：以元法除去上元，其餘以紀法除之，所得數從天紀，筭外則所入紀也。不滿紀法者，入紀年數也。以蔀法除之，所得數從甲子蔀起，筭外，所入紀歲名命之，筭上，即所求年太歲所在。",
+      "text_effective": "推入蔀術曰：以元法除去上元，其餘以紀法除之，所得數從天紀，筭外則所入紀也。不滿紀法者，入紀年數也。以蔀法除之，所得數從甲子蔀起，筭外，所入紀歲名命之，筭上，即所求年太歲所在。",
+      "source_spans": [
+        {
+          "section": 34,
+          "text": "推入蔀術曰：以元法除去上元，其餘以紀法除之，所得數從天紀，筭外則所入紀也。不滿紀法者，入紀年數也。以蔀法除之，所得數從甲子蔀起，筭外，所入紀歲名命之，筭上，即所求年太歲所在。",
+          "start": 2153,
+          "end": 2240,
+          "line": 66
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            34
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:sections:35-36",
+      "type": "procedure",
+      "sections": [
+        35,
+        36
+      ],
+      "text_original": "推月食所入蔀會年，以元會除去上元，其餘以蔀會除之，所得以七十二乘之，滿六十除去之，餘以二十除所得數，從天紀，筭之起外，所以入紀，不滿二十者，數從甲子蔀起，筭外，所入蔀會也。其初不滿蔀會者，入蔀會年數也，各以不入紀歲名命之，筭上，即所求年蔀。",
+      "text_effective": "推月食所入蔀會年，以元會除去上元，其餘以蔀會除之，所得以七十二乘之，滿六十除去之，餘以二十除所得數，從天紀，筭之起外，所以入紀，不滿二十者，數從甲子蔀起，筭外，所入蔀會也。其初不滿蔀會者，入蔀會年數也，各以不入紀歲名命之，筭上，即所求年蔀。",
+      "source_spans": [
+        {
+          "section": 35,
+          "text": "推月食所入蔀會年，以元會除去上元，其餘以蔀會除之，所得以七十二乘之，滿六十除去之，餘以二十除所得數，從天紀，筭之起外，所以入紀，不滿二十者，數從甲子蔀起，筭外，所入蔀會也。其初不滿蔀會者，入蔀會年數也，各以",
+          "start": 2247,
+          "end": 2350,
+          "line": 68
+        },
+        {
+          "section": 36,
+          "text": "不入紀歲名命之，筭上，即所求年蔀。",
+          "start": 2357,
+          "end": 2374,
+          "line": 70
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            35,
+            36
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:37",
+      "type": "table",
+      "sections": [
+        37
+      ],
+      "text_original": "[TABLE]",
+      "text_effective": "[TABLE]",
+      "source_spans": [
+        {
+          "section": 37,
+          "text": "[TABLE]",
+          "start": 2381,
+          "end": 2388,
+          "line": 72
+        }
+      ],
+      "detection": {
+        "rule": "marker:[TABLE]",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:38",
+      "type": "procedure",
+      "sections": [
+        38
+      ],
+      "text_original": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏。",
+      "text_effective": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏。",
+      "source_spans": [
+        {
+          "section": 38,
+          "text": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏。",
+          "start": 2395,
+          "end": 2440,
+          "line": 74
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            38
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:39",
+      "type": "procedure",
+      "sections": [
+        39
+      ],
+      "text_original": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也。小餘四百四十一以上，其月大。求後月朔，加大餘二十九，小餘四百九十〈九〉，小餘滿蔀月得一，上加大餘，命之如前。",
+      "text_effective": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也。小餘四百四十一以上，其月大。求後月朔，加大餘二十九，小餘四百九十〈九〉，小餘滿蔀月得一，上加大餘，命之如前。",
+      "source_spans": [
+        {
+          "section": 39,
+          "text": "推天正朔日，置入蔀積月，以蔀日乘之，滿蔀月得一，名為積日，不滿為小餘，積日以六十除去之，其餘為大餘，以所入蔀名命之，筭盡之外，則前年天正十一月朔日也。小餘四百四十一以上，其月大。求後月朔，加大餘二十九，小餘四百九十〈九〉，小餘滿蔀月得一，上加大餘，命之如前。",
+          "start": 2447,
+          "end": 2576,
+          "line": 76
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            39
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:40",
+      "type": "alternative_procedure",
+      "sections": [
+        40
+      ],
+      "text_original": "一術，以大周乘年，周天乘減之，餘滿蔀日，則天正朔日也。",
+      "text_effective": "一術，以大周乘年，周天乘減之，餘滿蔀日，則天正朔日也。",
+      "source_spans": [
+        {
+          "section": 40,
+          "text": "一術，以大周乘年，周天乘減之，餘滿蔀日，則天正朔日也。",
+          "start": 2583,
+          "end": 2610,
+          "line": 78
+        }
+      ],
+      "detection": {
+        "rule": "marker:一術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [
+        {
+          "kind": "alternative_of_candidate",
+          "target_id": "sifen:section:39",
+          "confidence": "low",
+          "basis": "nearest preceding procedure + marker 一術"
+        }
+      ],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:sections:41-42",
+      "type": "procedure",
+      "sections": [
+        41,
+        42
+      ],
+      "text_original": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
+      "text_effective": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
+      "source_spans": [
+        {
+          "section": 41,
+          "text": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。",
+          "start": 2617,
+          "end": 2686,
+          "line": 80
+        },
+        {
+          "section": 42,
+          "text": "求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
+          "start": 2693,
+          "end": 2718,
+          "line": 82
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            41,
+            42
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        },
+        {
+          "sections": [
+            42
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:43",
+      "type": "procedure",
+      "sections": [
+        43
+      ],
+      "text_original": "推閏月所在，以閏餘減章法，餘以十二乘之，滿章閏數得一，滿四以上亦得一筭之數，從前年十一月起，筭盡之外，閏月也。或進退，以中氣定之。",
+      "text_effective": "推閏月所在，以閏餘減章法，餘以十二乘之，滿章閏數得一，滿四以上亦得一筭之數，從前年十一月起，筭盡之外，閏月也。或進退，以中氣定之。",
+      "source_spans": [
+        {
+          "section": 43,
+          "text": "推閏月所在，以閏餘減章法，餘以十二乘之，滿章閏數得一，滿四以上亦得一筭之數，從前年十一月起，筭盡之外，閏月也。或進退，以中氣定之。",
+          "start": 2725,
+          "end": 2790,
+          "line": 84
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            43
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:44",
+      "type": "procedure",
+      "sections": [
+        44
+      ],
+      "text_original": "推弦、望日，因其月朔大小餘之數，皆加大餘七，小餘三百五十九四分三，小餘滿蔀月得一，加大餘，大餘命如法，得上弦。又加得望，次下弦，又後月朔。其弦、望小餘二百六十以下，每以百刻乘之，滿蔀月得一刻，不滿其數近節氣夜漏之半者，以筭上為日。",
+      "text_effective": "推弦、望日，因其月朔大小餘之數，皆加大餘七，小餘三百五十九四分三，小餘滿蔀月得一，加大餘，大餘命如法，得上弦。又加得望，次下弦，又後月朔。其弦、望小餘二百六十以下，每以百刻乘之，滿蔀月得一刻，不滿其數近節氣夜漏之半者，以筭上為日。",
+      "source_spans": [
+        {
+          "section": 44,
+          "text": "推弦、望日，因其月朔大小餘之數，皆加大餘七，小餘三百五十九四分三，小餘滿蔀月得一，加大餘，大餘命如法，得上弦。又加得望，次下弦，又後月朔。其弦、望小餘二百六十以下，每以百刻乘之，滿蔀月得一刻，不滿其數近節氣夜漏之半者，以筭上為日。",
+          "start": 2797,
+          "end": 2912,
+          "line": 86
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            44
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:45",
+      "type": "procedure",
+      "sections": [
+        45
+      ],
+      "text_original": "推沒滅術，置入蔀年減一，以沒數乘之，滿日法得一，名為積沒，不盡為沒餘。以通法乘積沒，滿沒法得一，名為大餘，不盡為小餘。大餘滿六十除去之，其餘以蔀名命之，筭盡之外，前年冬至前沒日也。求後沒，加大餘六十九，小餘四，小餘滿沒法，從大餘，命之如前，無分為滅。",
+      "text_effective": "推沒滅術，置入蔀年減一，以沒數乘之，滿日法得一，名為積沒，不盡為沒餘。以通法乘積沒，滿沒法得一，名為大餘，不盡為小餘。大餘滿六十除去之，其餘以蔀名命之，筭盡之外，前年冬至前沒日也。求後沒，加大餘六十九，小餘四，小餘滿沒法，從大餘，命之如前，無分為滅。",
+      "source_spans": [
+        {
+          "section": 45,
+          "text": "推沒滅術，置入蔀年減一，以沒數乘之，滿日法得一，名為積沒，不盡為沒餘。以通法乘積沒，滿沒法得一，名為大餘，不盡為小餘。大餘滿六十除去之，其餘以蔀名命之，筭盡之外，前年冬至前沒日也。求後沒，加大餘六十九，小餘四，小餘滿沒法，從大餘，命之如前，無分為滅。",
+          "start": 2919,
+          "end": 3044,
+          "line": 88
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            45
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:46",
+      "type": "alternative_procedure",
+      "sections": [
+        46
+      ],
+      "text_original": "一術，以為五乘冬至小餘，以減通法，餘滿沒法得一，則天正後沒也。",
+      "text_effective": "一術，以為五乘冬至小餘，以減通法，餘滿沒法得一，則天正後沒也。",
+      "source_spans": [
+        {
+          "section": 46,
+          "text": "一術，以為五乘冬至小餘，以減通法，餘滿沒法得一，則天正後沒也。",
+          "start": 3051,
+          "end": 3082,
+          "line": 90
+        }
+      ],
+      "detection": {
+        "rule": "marker:一術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [
+        {
+          "kind": "alternative_of_candidate",
+          "target_id": "sifen:section:45",
+          "confidence": "low",
+          "basis": "nearest preceding procedure + marker 一術"
+        }
+      ],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:47",
+      "type": "procedure",
+      "sections": [
+        47
+      ],
+      "text_original": "推合朔所在度，置入蔀積月以日乘之，滿大周除去之，其餘滿蔀月得一，名為積度，不盡為餘分。積度加斗二十一度，加二百三十五分，以宿次除之，不滿宿，則日月合朔所在星度也。求後合朔，加度二十九，加分四百九十九，分滿蔀月得一度，經斗除二百三十五分。",
+      "text_effective": "推合朔所在度，置入蔀積月以日乘之，滿大周除去之，其餘滿蔀月得一，名為積度，不盡為餘分。積度加斗二十一度，加二百三十五分，以宿次除之，不滿宿，則日月合朔所在星度也。求後合朔，加度二十九，加分四百九十九，分滿蔀月得一度，經斗除二百三十五分。",
+      "source_spans": [
+        {
+          "section": 47,
+          "text": "推合朔所在度，置入蔀積月以日乘之，滿大周除去之，其餘滿蔀月得一，名為積度，不盡為餘分。積度加斗二十一度，加二百三十五分，以宿次除之，不滿宿，則日月合朔所在星度也。求後合朔，加度二十九，加分四百九十九，分滿蔀月得一度，經斗除二百三十五分。",
+          "start": 3089,
+          "end": 3207,
+          "line": 92
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            47
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:48",
+      "type": "alternative_procedure",
+      "sections": [
+        48
+      ],
+      "text_original": "一術，以閏餘乘周天，以減大周餘，滿蔀月得一，合以斗二十一度四分一，則天正合朔日月所在度。",
+      "text_effective": "一術，以閏餘乘周天，以減大周餘，滿蔀月得一，合以斗二十一度四分一，則天正合朔日月所在度。",
+      "source_spans": [
+        {
+          "section": 48,
+          "text": "一術，以閏餘乘周天，以減大周餘，滿蔀月得一，合以斗二十一度四分一，則天正合朔日月所在度。",
+          "start": 3214,
+          "end": 3258,
+          "line": 94
+        }
+      ],
+      "detection": {
+        "rule": "marker:一術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [
+        {
+          "kind": "alternative_of_candidate",
+          "target_id": "sifen:section:47",
+          "confidence": "low",
+          "basis": "nearest preceding procedure + marker 一術"
+        }
+      ],
+      "member_roles": [],
+      "human_review": [
+        {
+          "time": "2026-09-18T21:09:40.509034+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 11,
+          "status": "modified",
+          "override_ids": [
+            "override:863afc25acc2d442d248"
+          ],
+          "source_spans": [
+            [
+              3214,
+              3258
+            ],
+            [
+              3265,
+              3341
+            ],
+            [
+              3348,
+              3382
+            ]
+          ]
+        },
+        {
+          "time": "2026-09-18T21:19:10.291510+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 12,
+          "status": "modified",
+          "override_ids": [],
+          "source_spans": [
+            [
+              3214,
+              3258
+            ],
+            [
+              3265,
+              3341
+            ],
+            [
+              3348,
+              3382
+            ]
+          ]
+        },
+        {
+          "time": "2026-09-18T21:20:38.581601+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 13,
+          "status": "modified",
+          "override_ids": [],
+          "source_spans": [
+            [
+              3214,
+              3258
+            ],
+            [
+              3265,
+              3341
+            ],
+            [
+              3348,
+              3382
+            ]
+          ]
+        },
+        {
+          "time": "2026-09-18T21:47:05.380429+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "删除由旧版合并/拆分重放误继承的 alternative_of_candidate；推日与推合朔均为独立 procedure。",
+          "revision": 15,
+          "status": "modified",
+          "override_ids": [],
+          "source_spans": [
+            [
+              3214,
+              3258
+            ],
+            [
+              3265,
+              3341
+            ],
+            [
+              3348,
+              3382
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sifen:sections:49-50",
+      "type": "procedure",
+      "sections": [
+        49,
+        50
+      ],
+      "text_original": "推日所在度，置入蔀積日之數，以蔀法乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一度，加十九分，以宿次除去之，則夜半日所在宿度也。求次日，加一度。求次月，大加三十度，小加二十九度，經斗除十〈九〉分。",
+      "text_effective": "推日所在度，置入蔀積日之數，以蔀法乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一度，加十九分，以宿次除去之，則夜半日所在宿度也。求次日，加一度。求次月，大加三十度，小加二十九度，經斗除十〈九〉分。",
+      "source_spans": [
+        {
+          "section": 49,
+          "text": "推日所在度，置入蔀積日之數，以蔀法乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一度，加十九分，以宿次除去之，則夜半日所在宿度也。",
+          "start": 3265,
+          "end": 3341,
+          "line": 96
+        },
+        {
+          "section": 50,
+          "text": "求次日，加一度。求次月，大加三十度，小加二十九度，經斗除十〈九〉分。",
+          "start": 3348,
+          "end": 3382,
+          "line": 98
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            49,
+            50
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        },
+        {
+          "sections": [
+            50
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        }
+      ],
+      "human_review": [
+        {
+          "time": "2026-09-18T20:52:02.091801+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 6,
+          "status": "accepted",
+          "override_ids": []
+        },
+        {
+          "time": "2026-09-18T21:09:40.509034+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 11,
+          "status": "modified",
+          "override_ids": [
+            "override:863afc25acc2d442d248"
+          ],
+          "source_spans": [
+            [
+              3214,
+              3258
+            ],
+            [
+              3265,
+              3341
+            ],
+            [
+              3348,
+              3382
+            ]
+          ]
+        },
+        {
+          "time": "2026-09-18T21:19:10.291510+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 12,
+          "status": "modified",
+          "override_ids": [
+            "override:6b9d6a2f56d10f872b1a",
+            "override:0805cc485efbf993e5ff"
+          ],
+          "source_spans": [
+            [
+              3214,
+              3258
+            ],
+            [
+              3265,
+              3341
+            ],
+            [
+              3348,
+              3382
+            ]
+          ]
+        },
+        {
+          "time": "2026-09-18T21:20:38.581601+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 13,
+          "status": "modified",
+          "override_ids": [
+            "override:0805cc485efbf993e5ff"
+          ],
+          "source_spans": [
+            [
+              3214,
+              3258
+            ],
+            [
+              3265,
+              3341
+            ],
+            [
+              3348,
+              3382
+            ]
+          ]
+        },
+        {
+          "time": "2026-09-18T21:47:05.380429+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "删除由旧版合并/拆分重放误继承的 alternative_of_candidate；推日与推合朔均为独立 procedure。",
+          "revision": 15,
+          "status": "modified",
+          "override_ids": [],
+          "source_spans": [
+            [
+              3214,
+              3258
+            ],
+            [
+              3265,
+              3341
+            ],
+            [
+              3348,
+              3382
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sifen:section:51",
+      "type": "alternative_procedure",
+      "sections": [
+        51
+      ],
+      "text_original": "一術，以朔小餘減合度分，即日夜半所在。其分三百二十五約之，十九乘之。",
+      "text_effective": "一術，以朔小餘減合度分，即日夜半所在。其分三百二十五約之，十九乘之。",
+      "source_spans": [
+        {
+          "section": 51,
+          "text": "一術，以朔小餘減合度分，即日夜半所在。其分三百二十五約之，十九乘之。",
+          "start": 3389,
+          "end": 3423,
+          "line": 100
+        }
+      ],
+      "detection": {
+        "rule": "marker:一術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [
+        {
+          "kind": "alternative_of_candidate",
+          "target_id": "sifen:sections:49-50",
+          "confidence": "low",
+          "basis": "nearest preceding procedure + marker 一術"
+        }
+      ],
+      "member_roles": [],
+      "human_review": [
+        {
+          "time": "2026-09-18T20:51:07.585360+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 4,
+          "status": "accepted",
+          "override_ids": []
+        },
+        {
+          "time": "2026-09-18T20:51:16.147645+00:00",
+          "actor": {
+            "type": "human",
+            "id": "Ling"
+          },
+          "note": "",
+          "revision": 5,
+          "status": "accepted",
+          "override_ids": []
+        }
+      ]
+    },
+    {
+      "id": "sifen:sections:52-53",
+      "type": "procedure",
+      "sections": [
+        52,
+        53
+      ],
+      "text_original": "推月所在度，置入蔀積日之數，以月周乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一十〈九〉分，除如上法，則所求之日夜半月所在宿度也。求次日，加十三度二十八分。求次月，大加三十五度六十一分，月小二十二度三十三分，分滿法得一度，經斗除十九分。其冬下旬月在張、心署之，謂盡漏分後盡漏盡也。",
+      "text_effective": "推月所在度，置入蔀積日之數，以月周乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一十〈九〉分，除如上法，則所求之日夜半月所在宿度也。求次日，加十三度二十八分。求次月，大加三十五度六十一分，月小二十二度三十三分，分滿法得一度，經斗除十九分。其冬下旬月在張、心署之，謂盡漏分後盡漏盡也。",
+      "source_spans": [
+        {
+          "section": 52,
+          "text": "推月所在度，置入蔀積日之數，以月周乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一十〈九〉分，除如上法，則所求之日夜半月所在宿度也。",
+          "start": 3430,
+          "end": 3507,
+          "line": 102
+        },
+        {
+          "section": 53,
+          "text": "求次日，加十三度二十八分。求次月，大加三十五度六十一分，月小二十二度三十三分，分滿法得一度，經斗除十九分。其冬下旬月在張、心署之，謂盡漏分後盡漏盡也。",
+          "start": 3514,
+          "end": 3589,
+          "line": 104
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            52,
+            53
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        },
+        {
+          "sections": [
+            53
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:54",
+      "type": "alternative_procedure",
+      "sections": [
+        54
+      ],
+      "text_original": "一術，以蔀法除朔小餘，所得以減日半度也。餘以減分，即月夜半所在度也。",
+      "text_effective": "一術，以蔀法除朔小餘，所得以減日半度也。餘以減分，即月夜半所在度也。",
+      "source_spans": [
+        {
+          "section": 54,
+          "text": "一術，以蔀法除朔小餘，所得以減日半度也。餘以減分，即月夜半所在度也。",
+          "start": 3596,
+          "end": 3630,
+          "line": 106
+        }
+      ],
+      "detection": {
+        "rule": "marker:一術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [
+        {
+          "kind": "alternative_of_candidate",
+          "target_id": "sifen:sections:52-53",
+          "confidence": "low",
+          "basis": "nearest preceding procedure + marker 一術"
+        }
+      ],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:sections:55-56",
+      "type": "procedure",
+      "sections": [
+        55,
+        56
+      ],
+      "text_original": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。求昏日所入度，以夜半到明日所行分分減蔀法，其餘即夜半到昏所行分也。以加夜半所在度分，為昏日所在度也。",
+      "text_effective": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。求昏日所入度，以夜半到明日所行分分減蔀法，其餘即夜半到昏所行分也。以加夜半所在度分，為昏日所在度也。",
+      "source_spans": [
+        {
+          "section": 55,
+          "text": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。",
+          "start": 3637,
+          "end": 3700,
+          "line": 108
+        },
+        {
+          "section": 56,
+          "text": "求昏日所入度，以夜半到明日所行分分減蔀法，其餘即夜半到昏所行分也。以加夜半所在度分，為昏日所在度也。",
+          "start": 3707,
+          "end": 3757,
+          "line": 110
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            55,
+            56
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        },
+        {
+          "sections": [
+            56
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:sections:57-59",
+      "type": "procedure",
+      "sections": [
+        57,
+        58,
+        59
+      ],
+      "text_original": "推月明所入度分術曰：置其節氣夜半之數，以月周乘之，以二百除之，為積分。積分滿蔀法得一，以增夜半度，即明月所在度也。求昏月所入度：以明積分減月周，其餘滿蔀法得一度，加夜半，則昏月所在度也。",
+      "text_effective": "推月明所入度分術曰：置其節氣夜半之數，以月周乘之，以二百除之，為積分。積分滿蔀法得一，以增夜半度，即明月所在度也。求昏月所入度：以明積分減月周，其餘滿蔀法得一度，加夜半，則昏月所在度也。",
+      "source_spans": [
+        {
+          "section": 57,
+          "text": "推月明所入度分術曰：置其節氣夜半",
+          "start": 3764,
+          "end": 3780,
+          "line": 112
+        },
+        {
+          "section": 58,
+          "text": "之數，以月周乘之，以二百除之，為積分。積分滿蔀法得一，以增夜半度，即明月所在度也。",
+          "start": 3787,
+          "end": 3828,
+          "line": 114
+        },
+        {
+          "section": 59,
+          "text": "求昏月所入度：以明積分減月周，其餘滿蔀法得一度，加夜半，則昏月所在度也。",
+          "start": 3835,
+          "end": 3871,
+          "line": 116
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            57,
+            58,
+            59
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        },
+        {
+          "sections": [
+            59
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:sections:60-61",
+      "type": "procedure",
+      "sections": [
+        60,
+        61
+      ],
+      "text_original": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。求望、下弦，加除如前法，小分四從大分，滿蔀月從度。",
+      "text_effective": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。求望、下弦，加除如前法，小分四從大分，滿蔀月從度。",
+      "source_spans": [
+        {
+          "section": 60,
+          "text": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。",
+          "start": 3878,
+          "end": 3929,
+          "line": 118
+        },
+        {
+          "section": 61,
+          "text": "求望、下弦，加除如前法，小分四從大分，滿蔀月從度。",
+          "start": 3936,
+          "end": 3961,
+          "line": 120
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            60,
+            61
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        },
+        {
+          "sections": [
+            61
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:sections:62-63",
+      "type": "procedure",
+      "sections": [
+        62,
+        63
+      ],
+      "text_original": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。求望、下弦，加除如前分，滿蔀月從度。",
+      "text_effective": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。求望、下弦，加除如前分，滿蔀月從度。",
+      "source_spans": [
+        {
+          "section": 62,
+          "text": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。",
+          "start": 3968,
+          "end": 4021,
+          "line": 122
+        },
+        {
+          "section": 63,
+          "text": "求望、下弦，加除如前分，滿蔀月從度。",
+          "start": 4028,
+          "end": 4046,
+          "line": 124
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            62,
+            63
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        },
+        {
+          "sections": [
+            63
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:64",
+      "type": "procedure",
+      "sections": [
+        64
+      ],
+      "text_original": "推月食術曰：置入蔀會年數，減一，以食數乘之，滿歲數得一，名曰積食，不滿為食餘。以月數乘積，滿食法得一，名為積月，不滿為月餘分。積月以章月除去之，其餘為入章月數。當先除入章閏，乃以十二除去之，不滿者命以十一月，筭盡之外，則前年十一月前食月也。求入章閏者，置入章月，以章閏乘之，滿章月得一，則入章閏數也。餘分滿二百二十四以上至二百三十一，為食在閏月。閏或進退，以朔日定之。求後食，加五百二十分，滿法得一月數，命之如法，其分盡食筭上。",
+      "text_effective": "推月食術曰：置入蔀會年數，減一，以食數乘之，滿歲數得一，名曰積食，不滿為食餘。以月數乘積，滿食法得一，名為積月，不滿為月餘分。積月以章月除去之，其餘為入章月數。當先除入章閏，乃以十二除去之，不滿者命以十一月，筭盡之外，則前年十一月前食月也。求入章閏者，置入章月，以章閏乘之，滿章月得一，則入章閏數也。餘分滿二百二十四以上至二百三十一，為食在閏月。閏或進退，以朔日定之。求後食，加五百二十分，滿法得一月數，命之如法，其分盡食筭上。",
+      "source_spans": [
+        {
+          "section": 64,
+          "text": "推月食術曰：置入蔀會年數，減一，以食數乘之，滿歲數得一，名曰積食，不滿為食餘。以月數乘積，滿食法得一，名為積月，不滿為月餘分。積月以章月除去之，其餘為入章月數。當先除入章閏，乃以十二除去之，不滿者命以十一月，筭盡之外，則前年十一月前食月也。求入章閏者，置入章月，以章閏乘之，滿章月得一，則入章閏數也。餘分滿二百二十四以上至二百三十一，為食在閏月。閏或進退，以朔日定之。求後食，加五百二十分，滿法得一月數，命之如法，其分盡食筭上。",
+          "start": 4053,
+          "end": 4267,
+          "line": 126
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            64
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:sections:65-67",
+      "type": "procedure",
+      "sections": [
+        65,
+        66,
+        67
+      ],
+      "text_original": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。求後食朔及日，皆加大餘二十七，小餘六百一十五。其月餘分不滿二十者，又加大餘二十九，小餘四百九十九。其食小餘者，當以漏刻課之，夜漏未盡，以筭上為日。",
+      "text_effective": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。求後食朔及日，皆加大餘二十七，小餘六百一十五。其月餘分不滿二十者，又加大餘二十九，小餘四百九十九。其食小餘者，當以漏刻課之，夜漏未盡，以筭上為日。",
+      "source_spans": [
+        {
+          "section": 65,
+          "text": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。",
+          "start": 4274,
+          "end": 4357,
+          "line": 128
+        },
+        {
+          "section": 66,
+          "text": "求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。",
+          "start": 4364,
+          "end": 4403,
+          "line": 130
+        },
+        {
+          "section": 67,
+          "text": "求後食朔及日，皆加大餘二十七，小餘六百一十五。其月餘分不滿二十者，又加大餘二十九，小餘四百九十九。其食小餘者，當以漏刻課之，夜漏未盡，以筭上為日。",
+          "start": 4410,
+          "end": 4483,
+          "line": 132
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            65,
+            66,
+            67
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        },
+        {
+          "sections": [
+            66
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        },
+        {
+          "sections": [
+            67
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:68",
+      "type": "alternative_procedure",
+      "sections": [
+        68
+      ],
+      "text_original": "一術，以歲數去上元，餘以為積月，以百一十二乘之，滿月數去之，餘滿食法得一，則天正後食。",
+      "text_effective": "一術，以歲數去上元，餘以為積月，以百一十二乘之，滿月數去之，餘滿食法得一，則天正後食。",
+      "source_spans": [
+        {
+          "section": 68,
+          "text": "一術，以歲數去上元，餘以為積月，以百一十二乘之，滿月數去之，餘滿食法得一，則天正後食。",
+          "start": 4490,
+          "end": 4533,
+          "line": 134
+        }
+      ],
+      "detection": {
+        "rule": "marker:一術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [
+        {
+          "kind": "alternative_of_candidate",
+          "target_id": "sifen:sections:65-67",
+          "confidence": "low",
+          "basis": "nearest preceding procedure + marker 一術"
+        }
+      ],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:69",
+      "type": "procedure",
+      "sections": [
+        69
+      ],
+      "text_original": "推諸加時，以十二乘小餘，先減如法之半，得一時，其餘乃以法除之，所得筭之數從夜半子起，筭盡之外，則所加時也。",
+      "text_effective": "推諸加時，以十二乘小餘，先減如法之半，得一時，其餘乃以法除之，所得筭之數從夜半子起，筭盡之外，則所加時也。",
+      "source_spans": [
+        {
+          "section": 69,
+          "text": "推諸加時，以十二乘小餘，先減如法之半，得一時，其餘乃以法除之，所得筭之數從夜半子起，筭盡之外，則所加時也。",
+          "start": 4540,
+          "end": 4593,
+          "line": 136
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            69
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:70",
+      "type": "procedure",
+      "sections": [
+        70
+      ],
+      "text_original": "推諸上水漏刻：以百乘其小餘，滿其法得一刻；不滿法法什之，滿法得一分。積刻先減所入節氣夜漏之半，其餘為晝上水之數。過晝漏去之，餘為夜上水數。其刻不滿夜漏半者，乃減之，餘為昨夜未晝，其弦望其日。",
+      "text_effective": "推諸上水漏刻：以百乘其小餘，滿其法得一刻；不滿法法什之，滿法得一分。積刻先減所入節氣夜漏之半，其餘為晝上水之數。過晝漏去之，餘為夜上水數。其刻不滿夜漏半者，乃減之，餘為昨夜未晝，其弦望其日。",
+      "source_spans": [
+        {
+          "section": 70,
+          "text": "推諸上水漏刻：以百乘其小餘，滿其法得一刻；不滿法法什之，滿法得一分。積刻先減所入節氣夜漏之半，其餘為晝上水之數。過晝漏去之，餘為夜上水數。其刻不滿夜漏半者，乃減之，餘為昨夜未晝，其弦望其日。",
+          "start": 4600,
+          "end": 4695,
+          "line": 138
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            70
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:71",
+      "type": "computational_exposition",
+      "sections": [
+        71
+      ],
+      "text_original": "五星數之生也，各記於日，與周天度相約而為率。以章法乘周率為用法，章月乘日率，如月法，為積月月餘。以月之月乘積，為朔大小餘。乘為入月日餘。以日法乘周率為日度法，以率去日率，餘以乘周天，如日度法，為度之餘也。日率相約取之，得二千九百九十萬一千六百二十一億五十八萬二千三百，而五星終，如蔀之數，與元通。",
+      "text_effective": "五星數之生也，各記於日，與周天度相約而為率。以章法乘周率為用法，章月乘日率，如月法，為積月月餘。以月之月乘積，為朔大小餘。乘為入月日餘。以日法乘周率為日度法，以率去日率，餘以乘周天，如日度法，為度之餘也。日率相約取之，得二千九百九十萬一千六百二十一億五十八萬二千三百，而五星終，如蔀之數，與元通。",
+      "source_spans": [
+        {
+          "section": 71,
+          "text": "五星數之生也，各記於日，與周天度相約而為率。以章法乘周率為用法，章月乘日率，如月法，為積月月餘。以月之月乘積，為朔大小餘。乘為入月日餘。以日法乘周率為日度法，以率去日率，餘以乘周天，如日度法，為度之餘也。日率相約取之，得二千九百九十萬一千六百二十一億五十八萬二千三百，而五星終，如蔀之數，與元通。",
+          "start": 4702,
+          "end": 4850,
+          "line": 140
+        }
+      ],
+      "detection": {
+        "rule": "operation_cue_density_without_procedure_marker",
+        "confidence": "low"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:72",
+      "type": "parameter_block",
+      "sections": [
+        72
+      ],
+      "text_original": "木，周率，四千三百二十七。日率，四千七百二十五。合積月，十三。月餘，四萬一千六百六。月法，八萬二千二百一十三。大餘，二十三。小餘，八百四十七。虛分，九十三。入月日，十五。日餘，萬四千六百四十七。日度法，萬七千三百八。積度，三十三。度餘，萬三百一十四。",
+      "text_effective": "木，周率，四千三百二十七。日率，四千七百二十五。合積月，十三。月餘，四萬一千六百六。月法，八萬二千二百一十三。大餘，二十三。小餘，八百四十七。虛分，九十三。入月日，十五。日餘，萬四千六百四十七。日度法，萬七千三百八。積度，三十三。度餘，萬三百一十四。",
+      "source_spans": [
+        {
+          "section": 72,
+          "text": "木，周率，四千三百二十七。日率，四千七百二十五。合積月，十三。月餘，四萬一千六百六。月法，八萬二千二百一十三。大餘，二十三。小餘，八百四十七。虛分，九十三。入月日，十五。日餘，萬四千六百四十七。日度法，萬七千三百八。積度，三十三。度餘，萬三百一十四。",
+          "start": 4857,
+          "end": 4982,
+          "line": 142
+        }
+      ],
+      "detection": {
+        "rule": "five_planet_repeated_name_value_fields",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "scope": "木",
+          "name": "日率",
+          "value_text": "四千七百二十五"
+        },
+        {
+          "scope": "木",
+          "name": "合積月",
+          "value_text": "十三"
+        },
+        {
+          "scope": "木",
+          "name": "月餘",
+          "value_text": "四萬一千六百六"
+        },
+        {
+          "scope": "木",
+          "name": "月法",
+          "value_text": "八萬二千二百一十三"
+        },
+        {
+          "scope": "木",
+          "name": "大餘",
+          "value_text": "二十三"
+        },
+        {
+          "scope": "木",
+          "name": "小餘",
+          "value_text": "八百四十七"
+        },
+        {
+          "scope": "木",
+          "name": "虛分",
+          "value_text": "九十三"
+        },
+        {
+          "scope": "木",
+          "name": "入月日",
+          "value_text": "十五"
+        },
+        {
+          "scope": "木",
+          "name": "日餘",
+          "value_text": "萬四千六百四十七"
+        },
+        {
+          "scope": "木",
+          "name": "日度法",
+          "value_text": "萬七千三百八"
+        },
+        {
+          "scope": "木",
+          "name": "積度",
+          "value_text": "三十三"
+        },
+        {
+          "scope": "木",
+          "name": "度餘",
+          "value_text": "萬三百一十四"
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:73",
+      "type": "parameter_block",
+      "sections": [
+        73
+      ],
+      "text_original": "火，周率，八百七十九。日率，千八百七十六。合積月，二十六。月餘，六千六百三十四。月法，萬六千七百一。大餘，四十七。小餘，七百五十四。虛分，一百八十六。入月日，十一。日餘，千八百七十二。日度法，三千五百一十六。積度，四十九。度餘，一百一十四。",
+      "text_effective": "火，周率，八百七十九。日率，千八百七十六。合積月，二十六。月餘，六千六百三十四。月法，萬六千七百一。大餘，四十七。小餘，七百五十四。虛分，一百八十六。入月日，十一。日餘，千八百七十二。日度法，三千五百一十六。積度，四十九。度餘，一百一十四。",
+      "source_spans": [
+        {
+          "section": 73,
+          "text": "火，周率，八百七十九。日率，千八百七十六。合積月，二十六。月餘，六千六百三十四。月法，萬六千七百一。大餘，四十七。小餘，七百五十四。虛分，一百八十六。入月日，十一。日餘，千八百七十二。日度法，三千五百一十六。積度，四十九。度餘，一百一十四。",
+          "start": 4989,
+          "end": 5109,
+          "line": 144
+        }
+      ],
+      "detection": {
+        "rule": "five_planet_repeated_name_value_fields",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "scope": "火",
+          "name": "日率",
+          "value_text": "千八百七十六"
+        },
+        {
+          "scope": "火",
+          "name": "合積月",
+          "value_text": "二十六"
+        },
+        {
+          "scope": "火",
+          "name": "月餘",
+          "value_text": "六千六百三十四"
+        },
+        {
+          "scope": "火",
+          "name": "月法",
+          "value_text": "萬六千七百一"
+        },
+        {
+          "scope": "火",
+          "name": "大餘",
+          "value_text": "四十七"
+        },
+        {
+          "scope": "火",
+          "name": "小餘",
+          "value_text": "七百五十四"
+        },
+        {
+          "scope": "火",
+          "name": "虛分",
+          "value_text": "一百八十六"
+        },
+        {
+          "scope": "火",
+          "name": "入月日",
+          "value_text": "十一"
+        },
+        {
+          "scope": "火",
+          "name": "日餘",
+          "value_text": "千八百七十二"
+        },
+        {
+          "scope": "火",
+          "name": "日度法",
+          "value_text": "三千五百一十六"
+        },
+        {
+          "scope": "火",
+          "name": "積度",
+          "value_text": "四十九"
+        },
+        {
+          "scope": "火",
+          "name": "度餘",
+          "value_text": "一百一十四"
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:74",
+      "type": "parameter_block",
+      "sections": [
+        74
+      ],
+      "text_original": "土，周率，九千九十六。日率，九千四百一十五。合積月，十二。月餘，十三萬八千六百三十七。月法，十七萬二千八百二十四。大餘，五十四。小餘，三百四十八。虛分，五百九十二。入月日，二十三。日餘，二千一百六十三。日度法，三萬六千三百八十四。積度，十二。度餘，二萬九千四百五十一。",
+      "text_effective": "土，周率，九千九十六。日率，九千四百一十五。合積月，十二。月餘，十三萬八千六百三十七。月法，十七萬二千八百二十四。大餘，五十四。小餘，三百四十八。虛分，五百九十二。入月日，二十三。日餘，二千一百六十三。日度法，三萬六千三百八十四。積度，十二。度餘，二萬九千四百五十一。",
+      "source_spans": [
+        {
+          "section": 74,
+          "text": "土，周率，九千九十六。日率，九千四百一十五。合積月，十二。月餘，十三萬八千六百三十七。月法，十七萬二千八百二十四。大餘，五十四。小餘，三百四十八。虛分，五百九十二。入月日，二十三。日餘，二千一百六十三。日度法，三萬六千三百八十四。積度，十二。度餘，二萬九千四百五十一。",
+          "start": 5116,
+          "end": 5250,
+          "line": 146
+        }
+      ],
+      "detection": {
+        "rule": "five_planet_repeated_name_value_fields",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "scope": "土",
+          "name": "日率",
+          "value_text": "九千四百一十五"
+        },
+        {
+          "scope": "土",
+          "name": "合積月",
+          "value_text": "十二"
+        },
+        {
+          "scope": "土",
+          "name": "月餘",
+          "value_text": "十三萬八千六百三十七"
+        },
+        {
+          "scope": "土",
+          "name": "月法",
+          "value_text": "十七萬二千八百二十四"
+        },
+        {
+          "scope": "土",
+          "name": "大餘",
+          "value_text": "五十四"
+        },
+        {
+          "scope": "土",
+          "name": "小餘",
+          "value_text": "三百四十八"
+        },
+        {
+          "scope": "土",
+          "name": "虛分",
+          "value_text": "五百九十二"
+        },
+        {
+          "scope": "土",
+          "name": "入月日",
+          "value_text": "二十三"
+        },
+        {
+          "scope": "土",
+          "name": "日餘",
+          "value_text": "二千一百六十三"
+        },
+        {
+          "scope": "土",
+          "name": "日度法",
+          "value_text": "三萬六千三百八十四"
+        },
+        {
+          "scope": "土",
+          "name": "積度",
+          "value_text": "十二"
+        },
+        {
+          "scope": "土",
+          "name": "度餘",
+          "value_text": "二萬九千四百五十一"
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:75",
+      "type": "parameter_block",
+      "sections": [
+        75
+      ],
+      "text_original": "金，周率，五千八百三十。日率，四千六百六十一。合積月，九。月餘，九萬八千四百五。月法，十〈一〉萬七百七十。大餘，二十五。小餘，七百三十一。虛分，二百九。入月日，二十六。日餘，二百八十一。日度法，二萬三千三百二十。積度，二百九十二。度餘，二百八十一。",
+      "text_effective": "金，周率，五千八百三十。日率，四千六百六十一。合積月，九。月餘，九萬八千四百五。月法，十〈一〉萬七百七十。大餘，二十五。小餘，七百三十一。虛分，二百九。入月日，二十六。日餘，二百八十一。日度法，二萬三千三百二十。積度，二百九十二。度餘，二百八十一。",
+      "source_spans": [
+        {
+          "section": 75,
+          "text": "金，周率，五千八百三十。日率，四千六百六十一。合積月，九。月餘，九萬八千四百五。月法，十〈一〉萬七百七十。大餘，二十五。小餘，七百三十一。虛分，二百九。入月日，二十六。日餘，二百八十一。日度法，二萬三千三百二十。積度，二百九十二。度餘，二百八十一。",
+          "start": 5257,
+          "end": 5381,
+          "line": 148
+        }
+      ],
+      "detection": {
+        "rule": "five_planet_repeated_name_value_fields",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "scope": "金",
+          "name": "日率",
+          "value_text": "四千六百六十一"
+        },
+        {
+          "scope": "金",
+          "name": "合積月",
+          "value_text": "九"
+        },
+        {
+          "scope": "金",
+          "name": "月餘",
+          "value_text": "九萬八千四百五"
+        },
+        {
+          "scope": "金",
+          "name": "月法",
+          "value_text": "十〈一〉萬七百七十"
+        },
+        {
+          "scope": "金",
+          "name": "大餘",
+          "value_text": "二十五"
+        },
+        {
+          "scope": "金",
+          "name": "小餘",
+          "value_text": "七百三十一"
+        },
+        {
+          "scope": "金",
+          "name": "虛分",
+          "value_text": "二百九"
+        },
+        {
+          "scope": "金",
+          "name": "入月日",
+          "value_text": "二十六"
+        },
+        {
+          "scope": "金",
+          "name": "日餘",
+          "value_text": "二百八十一"
+        },
+        {
+          "scope": "金",
+          "name": "日度法",
+          "value_text": "二萬三千三百二十"
+        },
+        {
+          "scope": "金",
+          "name": "積度",
+          "value_text": "二百九十二"
+        },
+        {
+          "scope": "金",
+          "name": "度餘",
+          "value_text": "二百八十一"
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:76",
+      "type": "parameter_block",
+      "sections": [
+        76
+      ],
+      "text_original": "水，周率，萬一千九百八。日率，千八百八十九。合積月，一。月餘，二十一萬七千六百六十〈三〉。月法，二十二萬六千二百五十二。大餘，二十九。小餘，四百九十九。虛分，四百四十九〈一〉。入月日，二十七。日餘，四萬四千八百五。日度法，四萬七千六百三十一。積度，五十七。度餘四萬四千八百五。",
+      "text_effective": "水，周率，萬一千九百八。日率，千八百八十九。合積月，一。月餘，二十一萬七千六百六十〈三〉。月法，二十二萬六千二百五十二。大餘，二十九。小餘，四百九十九。虛分，四百四十九〈一〉。入月日，二十七。日餘，四萬四千八百五。日度法，四萬七千六百三十一。積度，五十七。度餘四萬四千八百五。",
+      "source_spans": [
+        {
+          "section": 76,
+          "text": "水，周率，萬一千九百八。日率，千八百八十九。合積月，一。月餘，二十一萬七千六百六十〈三〉。月法，二十二萬六千二百五十二。大餘，二十九。小餘，四百九十九。虛分，四百四十九〈一〉。入月日，二十七。日餘，四萬四千八百五。日度法，四萬七千六百三十一。積度，五十七。度餘四萬四千八百五。",
+          "start": 5388,
+          "end": 5526,
+          "line": 150
+        }
+      ],
+      "detection": {
+        "rule": "five_planet_repeated_name_value_fields",
+        "confidence": "high"
+      },
+      "parameters": [
+        {
+          "scope": "水",
+          "name": "日率",
+          "value_text": "千八百八十九"
+        },
+        {
+          "scope": "水",
+          "name": "合積月",
+          "value_text": "一"
+        },
+        {
+          "scope": "水",
+          "name": "月餘",
+          "value_text": "二十一萬七千六百六十〈三〉"
+        },
+        {
+          "scope": "水",
+          "name": "月法",
+          "value_text": "二十二萬六千二百五十二"
+        },
+        {
+          "scope": "水",
+          "name": "大餘",
+          "value_text": "二十九"
+        },
+        {
+          "scope": "水",
+          "name": "小餘",
+          "value_text": "四百九十九"
+        },
+        {
+          "scope": "水",
+          "name": "虛分",
+          "value_text": "四百四十九〈一〉"
+        },
+        {
+          "scope": "水",
+          "name": "入月日",
+          "value_text": "二十七"
+        },
+        {
+          "scope": "水",
+          "name": "日餘",
+          "value_text": "四萬四千八百五"
+        },
+        {
+          "scope": "水",
+          "name": "日度法",
+          "value_text": "四萬七千六百三十一"
+        },
+        {
+          "scope": "水",
+          "name": "積度",
+          "value_text": "五十七"
+        }
+      ],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:77",
+      "type": "procedure",
+      "sections": [
+        77
+      ],
+      "text_original": "推五星術，置上元以來，盡所求年，以周率乘之，滿日率得一，名為積合；不盡名合餘。餘以周率除之，不得焉退歲；無所得，星合其年，得一合前年，二合前二年。金、水積合奇為晨，偶為夕。其不滿周率者反減之，餘為度分。",
+      "text_effective": "推五星術，置上元以來，盡所求年，以周率乘之，滿日率得一，名為積合；不盡名合餘。餘以周率除之，不得焉退歲；無所得，星合其年，得一合前年，二合前二年。金、水積合奇為晨，偶為夕。其不滿周率者反減之，餘為度分。",
+      "source_spans": [
+        {
+          "section": 77,
+          "text": "推五星術，置上元以來，盡所求年，以周率乘之，滿日率得一，名為積合；不盡名合餘。餘以周率除之，不得焉退歲；無所得，星合其年，得一合前年，二合前二年。金、水積合奇為晨，偶為夕。其不滿周率者反減之，餘為度分。",
+          "start": 5533,
+          "end": 5634,
+          "line": 152
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            77
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:78",
+      "type": "procedure",
+      "sections": [
+        78
+      ],
+      "text_original": "推星合月，以合積月乘積合為小積，又以月餘乘積合，滿其月法得一，從小積為月餘。積月滿紀月去之，餘為入紀月。每以章閏乘之，滿章月得一為閏；不盡為閏餘。以閏減入紀月，其餘以十二去之，餘為入歲月數，從天正十一月起，筭外，星合所在之月也。其閏滿二百二十四以上至二百三十一星合閏月。閏或進退，以朔制之。",
+      "text_effective": "推星合月，以合積月乘積合為小積，又以月餘乘積合，滿其月法得一，從小積為月餘。積月滿紀月去之，餘為入紀月。每以章閏乘之，滿章月得一為閏；不盡為閏餘。以閏減入紀月，其餘以十二去之，餘為入歲月數，從天正十一月起，筭外，星合所在之月也。其閏滿二百二十四以上至二百三十一星合閏月。閏或進退，以朔制之。",
+      "source_spans": [
+        {
+          "section": 78,
+          "text": "推星合月，以合積月乘積合為小積，又以月餘乘積合，滿其月法得一，從小積為月餘。積月滿紀月去之，餘為入紀月。每以章閏乘之，滿章月得一為閏；不盡為閏餘。以閏減入紀月，其餘以十二去之，餘為入歲月數，從天正十一月起，筭外，星合所在之月也。其閏滿二百二十四以上至二百三十一星合閏月。閏或進退，以朔制之。",
+          "start": 5641,
+          "end": 5786,
+          "line": 154
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            78
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:79",
+      "type": "procedure",
+      "sections": [
+        79
+      ],
+      "text_original": "推朔日，以蔀日乘之入紀月，滿蔀月得一為積日，不盡為小餘。積日滿六十去之，餘為大餘，命以甲子，筭外，星合月朔日。",
+      "text_effective": "推朔日，以蔀日乘之入紀月，滿蔀月得一為積日，不盡為小餘。積日滿六十去之，餘為大餘，命以甲子，筭外，星合月朔日。",
+      "source_spans": [
+        {
+          "section": 79,
+          "text": "推朔日，以蔀日乘之入紀月，滿蔀月得一為積日，不盡為小餘。積日滿六十去之，餘為大餘，命以甲子，筭外，星合月朔日。",
+          "start": 5793,
+          "end": 5848,
+          "line": 156
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            79
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:80",
+      "type": "procedure",
+      "sections": [
+        80
+      ],
+      "text_original": "推入月日，以蔀日乘月餘，以其月法乘朔小餘，從之，以四千四百六十五約之，所得得滿日度法得一，為入月日，不盡為日餘。以朔命入月日，筭外，星合日也。",
+      "text_effective": "推入月日，以蔀日乘月餘，以其月法乘朔小餘，從之，以四千四百六十五約之，所得得滿日度法得一，為入月日，不盡為日餘。以朔命入月日，筭外，星合日也。",
+      "source_spans": [
+        {
+          "section": 80,
+          "text": "推入月日，以蔀日乘月餘，以其月法乘朔小餘，從之，以四千四百六十五約之，所得得滿日度法得一，為入月日，不盡為日餘。以朔命入月日，筭外，星合日也。",
+          "start": 5855,
+          "end": 5926,
+          "line": 158
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            80
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:81",
+      "type": "procedure",
+      "sections": [
+        81
+      ],
+      "text_original": "推合度，以周天乘度分，滿日度法得一為積度，不盡為度餘。以斗二十一四分之一命度，筭外，星合所在度也。",
+      "text_effective": "推合度，以周天乘度分，滿日度法得一為積度，不盡為度餘。以斗二十一四分之一命度，筭外，星合所在度也。",
+      "source_spans": [
+        {
+          "section": 81,
+          "text": "推合度，以周天乘度分，滿日度法得一為積度，不盡為度餘。以斗二十一四分之一命度，筭外，星合所在度也。",
+          "start": 5933,
+          "end": 5982,
+          "line": 160
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            81
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:sections:82-85",
+      "type": "alternative_procedure",
+      "sections": [
+        82,
+        83,
+        84,
+        85
+      ],
+      "text_original": "一術，加退歲一，以減上元，滿八十除去之，餘以沒數乘之，滿日法得一，為大餘，不盡為小餘。以甲子命大餘，則星合歲天正冬至日也。以周率小餘，并度餘，餘滿日度法從度，即正後星合日數也，命以冬至。求後合月，加合積月於入歲月，加月餘於月餘，滿其月法得一，從入歲月。入歲月滿十二去之，有閏計焉，餘命如前，筭外，後合月也。餘一加晨得夕，加夕得晨。求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。求合度，以積度度餘加今所得，餘滿日度法得一從度，命如前，經斗除如周率矣。",
+      "text_effective": "一術，加退歲一，以減上元，滿八十除去之，餘以沒數乘之，滿日法得一，為大餘，不盡為小餘。以甲子命大餘，則星合歲天正冬至日也。以周率小餘，并度餘，餘滿日度法從度，即正後星合日數也，命以冬至。求後合月，加合積月於入歲月，加月餘於月餘，滿其月法得一，從入歲月。入歲月滿十二去之，有閏計焉，餘命如前，筭外，後合月也。餘一加晨得夕，加夕得晨。求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。求合度，以積度度餘加今所得，餘滿日度法得一從度，命如前，經斗除如周率矣。",
+      "source_spans": [
+        {
+          "section": 82,
+          "text": "一術，加退歲一，以減上元，滿八十除去之，餘以沒數乘之，滿日法得一，為大餘，不盡為小餘。以甲子命大餘，則星合歲天正冬至日也。以周率小餘，并度餘，餘滿日度法從度，即正後星合日數也，命以冬至。求後合月，加合積月於入歲月，加月餘於月餘，滿其月法得一，從入歲月。入歲月滿十二去之，有閏計焉，餘命如前，筭外，後合月也。餘一加晨得夕，加夕得晨。",
+          "start": 5989,
+          "end": 6154,
+          "line": 162
+        },
+        {
+          "section": 83,
+          "text": "求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。",
+          "start": 6161,
+          "end": 6206,
+          "line": 164
+        },
+        {
+          "section": 84,
+          "text": "求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。",
+          "start": 6213,
+          "end": 6293,
+          "line": 166
+        },
+        {
+          "section": 85,
+          "text": "求合度，以積度度餘加今所得，餘滿日度法得一從度，命如前，經斗除如周率矣。",
+          "start": 6300,
+          "end": 6336,
+          "line": 168
+        }
+      ],
+      "detection": {
+        "rule": "marker:一術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [
+        {
+          "kind": "alternative_of_candidate",
+          "target_id": "sifen:section:81",
+          "confidence": "low",
+          "basis": "nearest preceding procedure + marker 一術"
+        }
+      ],
+      "member_roles": [
+        {
+          "sections": [
+            83
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        },
+        {
+          "sections": [
+            84
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        },
+        {
+          "sections": [
+            85
+          ],
+          "role": "followup",
+          "rule": "marker:求"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:86",
+      "type": "reference_data",
+      "sections": [
+        86
+      ],
+      "text_original": "木，晨伏，十六日七千二百二十分半，行二度萬三千八百一十一分，在日後十三度有奇，而見東方。見順，日行五十八分度之十一，五十八日行十一度，微遲，日行九分，五十八日行九度。留不行，二十五日。旋逆，日行七分度之一，八十四日進十二度。復留，二十五日。復順，五十八日行九度，又五十八日行十一度，在日前十三度有奇，而夕伏西方。除伏逆，一見三百六十六日，行二十八度。伏復十六日七千二百二十分半，行二度萬三千八百一十一分，而與日合。凡一終，三百九十八日有萬四千六百四十一分，行星三十二度與萬三百一十四分，通率日行四千七百二十五分之三百九十八。",
+      "text_effective": "木，晨伏，十六日七千二百二十分半，行二度萬三千八百一十一分，在日後十三度有奇，而見東方。見順，日行五十八分度之十一，五十八日行十一度，微遲，日行九分，五十八日行九度。留不行，二十五日。旋逆，日行七分度之一，八十四日進十二度。復留，二十五日。復順，五十八日行九度，又五十八日行十一度，在日前十三度有奇，而夕伏西方。除伏逆，一見三百六十六日，行二十八度。伏復十六日七千二百二十分半，行二度萬三千八百一十一分，而與日合。凡一終，三百九十八日有萬四千六百四十一分，行星三十二度與萬三百一十四分，通率日行四千七百二十五分之三百九十八。",
+      "source_spans": [
+        {
+          "section": 86,
+          "text": "木，晨伏，十六日七千二百二十分半，行二度萬三千八百一十一分，在日後十三度有奇，而見東方。見順，日行五十八分度之十一，五十八日行十一度，微遲，日行九分，五十八日行九度。留不行，二十五日。旋逆，日行七分度之一，八十四日進十二度。復留，二十五日。復順，五十八日行九度，又五十八日行十一度，在日前十三度有奇，而夕伏西方。除伏逆，一見三百六十六日，行二十八度。伏復十六日七千二百二十分半，行二度萬三千八百一十一分，而與日合。凡一終，三百九十八日有萬四千六百四十一分，行星三十二度與萬三百一十四分，通率日行四千七百二十五分之三百九十八。",
+          "start": 6343,
+          "end": 6605,
+          "line": 170
+        }
+      ],
+      "detection": {
+        "rule": "planet_motion_record",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:87",
+      "type": "reference_data",
+      "sections": [
+        87
+      ],
+      "text_original": "火，晨伏，七十一日二千六百九十四分，行五十五度二千二百五十四分半，在日後十六度有奇，而見東方。見順，日行二十三分度之十四，八十四日行一十二度。微遲，日行十二分，九十二日行四十八度。留不行，十一日。旋逆，日行六十二分度之十七，六十二日退十七度。復留，十一日。復順，九十二日，行四十八度，又百八十四日行百一十二度，在日前十六度有奇，而夕伏西方。除伏逆，一見六百三十六日，行〈三〉百三度。伏復，七十一日二千六百九十四分，行五十五度二千二百五十四分半，而與日合。凡一終，七百七十九日有千八百七十二分，行星四百一十四度與九百九十三分。通率日行千八百七十六分之九百九十七。",
+      "text_effective": "火，晨伏，七十一日二千六百九十四分，行五十五度二千二百五十四分半，在日後十六度有奇，而見東方。見順，日行二十三分度之十四，八十四日行一十二度。微遲，日行十二分，九十二日行四十八度。留不行，十一日。旋逆，日行六十二分度之十七，六十二日退十七度。復留，十一日。復順，九十二日，行四十八度，又百八十四日行百一十二度，在日前十六度有奇，而夕伏西方。除伏逆，一見六百三十六日，行〈三〉百三度。伏復，七十一日二千六百九十四分，行五十五度二千二百五十四分半，而與日合。凡一終，七百七十九日有千八百七十二分，行星四百一十四度與九百九十三分。通率日行千八百七十六分之九百九十七。",
+      "source_spans": [
+        {
+          "section": 87,
+          "text": "火，晨伏，七十一日二千六百九十四分，行五十五度二千二百五十四分半，在日後十六度有奇，而見東方。見順，日行二十三分度之十四，八十四日行一十二度。微遲，日行十二分，九十二日行四十八度。留不行，十一日。旋逆，日行六十二分度之十七，六十二日退十七度。復留，十一日。復順，九十二日，行四十八度，又百八十四日行百一十二度，在日前十六度有奇，而夕伏西方。除伏逆，一見六百三十六日，行〈三〉百三度。伏復，七十一日二千六百九十四分，行五十五度二千二百五十四分半，而與日合。凡一終，七百七十九日有千八百七十二分，行星四百一十四度與九百九十三分。通率日行千八百七十六分之九百九十七。",
+          "start": 6612,
+          "end": 6892,
+          "line": 172
+        }
+      ],
+      "detection": {
+        "rule": "planet_motion_record",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:88",
+      "type": "reference_data",
+      "sections": [
+        88
+      ],
+      "text_original": "土，晨伏，十九日千八十一分半，行三度萬四千七百二十五分半，在日後十五度有奇，而見東方。見順，日行四十三分度之三，八十六日行六度。留不行，三十三日。旋逆，日行十七分度之一百二，日退六度。復留，三十三日。復順，八十六日，行六度，在日前十五度有奇，而夕伏西方。除伏逆，〈一〉見三百四十日，行六度。伏復，十九日千八十一分半，行三度萬四千七百二十五分半，與日合。凡一終，三百七十八日有二千一百六十三分，行星十二度與二萬九千四百五十一分。通率日行九千四百一十五分之三百一十九。",
+      "text_effective": "土，晨伏，十九日千八十一分半，行三度萬四千七百二十五分半，在日後十五度有奇，而見東方。見順，日行四十三分度之三，八十六日行六度。留不行，三十三日。旋逆，日行十七分度之一百二，日退六度。復留，三十三日。復順，八十六日，行六度，在日前十五度有奇，而夕伏西方。除伏逆，〈一〉見三百四十日，行六度。伏復，十九日千八十一分半，行三度萬四千七百二十五分半，與日合。凡一終，三百七十八日有二千一百六十三分，行星十二度與二萬九千四百五十一分。通率日行九千四百一十五分之三百一十九。",
+      "source_spans": [
+        {
+          "section": 88,
+          "text": "土，晨伏，十九日千八十一分半，行三度萬四千七百二十五分半，在日後十五度有奇，而見東方。見順，日行四十三分度之三，八十六日行六度。留不行，三十三日。旋逆，日行十七分度之一百二，日退六度。復留，三十三日。復順，八十六日，行六度，在日前十五度有奇，而夕伏西方。除伏逆，〈一〉見三百四十日，行六度。伏復，十九日千八十一分半，行三度萬四千七百二十五分半，與日合。凡一終，三百七十八日有二千一百六十三分，行星十二度與二萬九千四百五十一分。通率日行九千四百一十五分之三百一十九。",
+          "start": 6899,
+          "end": 7131,
+          "line": 174
+        }
+      ],
+      "detection": {
+        "rule": "planet_motion_record",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:89",
+      "type": "reference_data",
+      "sections": [
+        89
+      ],
+      "text_original": "金，晨伏，五日，退四度，在日後九度，而見東方。見逆，日行五分度之三，十日，退六度。留不行，八日。順，日行行四十六分度之三十三，四十六日行三十三度。而，日行一度九十〈一〉分度之十五，九十一日行百六度。益疾，日行一度二十二分，九十一日行百一十三度，在日後九度，而晨伏東方。除伏逆，一見二百四十六日，行二百四十六度。伏四十一日二百八十一分，行五十度二百八十一分，而與日合。一合二百九十二日〈二〉百八十一分，行星如之。",
+      "text_effective": "金，晨伏，五日，退四度，在日後九度，而見東方。見逆，日行五分度之三，十日，退六度。留不行，八日。順，日行行四十六分度之三十三，四十六日行三十三度。而，日行一度九十〈一〉分度之十五，九十一日行百六度。益疾，日行一度二十二分，九十一日行百一十三度，在日後九度，而晨伏東方。除伏逆，一見二百四十六日，行二百四十六度。伏四十一日二百八十一分，行五十度二百八十一分，而與日合。一合二百九十二日〈二〉百八十一分，行星如之。",
+      "source_spans": [
+        {
+          "section": 89,
+          "text": "金，晨伏，五日，退四度，在日後九度，而見東方。見逆，日行五分度之三，十日，退六度。留不行，八日。順，日行行四十六分度之三十三，四十六日行三十三度。而，日行一度九十〈一〉分度之十五，九十一日行百六度。益疾，日行一度二十二分，九十一日行百一十三度，在日後九度，而晨伏東方。除伏逆，一見二百四十六日，行二百四十六度。伏四十一日二百八十一分，行五十度二百八十一分，而與日合。一合二百九十二日〈二〉百八十一分，行星如之。",
+          "start": 7138,
+          "end": 7343,
+          "line": 176
+        }
+      ],
+      "detection": {
+        "rule": "planet_motion_record",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:90",
+      "type": "reference_data",
+      "sections": [
+        90
+      ],
+      "text_original": "金，夕伏，四十一日二百八十一分，行五十度二百八十一分，在日前九度，而見西方。見順，疾，日行一度九十一分度之二十二，九十一日行百一十三度。微遲，日行一度十五分，九十一日行百六度。而進，日行四十六分度之三十三，四十六日行三十三度。留不行，八日。旋逆，日行五分度之三，十日退六度，在日前九度，而夕伏西方。除伏逆，一見二百四十六日，行二百四十六度，伏五日，退四度而後合。凡三合一終，五百八十四日有五百六十二分，行星如之。通率日行一度。",
+      "text_effective": "金，夕伏，四十一日二百八十一分，行五十度二百八十一分，在日前九度，而見西方。見順，疾，日行一度九十一分度之二十二，九十一日行百一十三度。微遲，日行一度十五分，九十一日行百六度。而進，日行四十六分度之三十三，四十六日行三十三度。留不行，八日。旋逆，日行五分度之三，十日退六度，在日前九度，而夕伏西方。除伏逆，一見二百四十六日，行二百四十六度，伏五日，退四度而後合。凡三合一終，五百八十四日有五百六十二分，行星如之。通率日行一度。",
+      "source_spans": [
+        {
+          "section": 90,
+          "text": "金，夕伏，四十一日二百八十一分，行五十度二百八十一分，在日前九度，而見西方。見順，疾，日行一度九十一分度之二十二，九十一日行百一十三度。微遲，日行一度十五分，九十一日行百六度。而進，日行四十六分度之三十三，四十六日行三十三度。留不行，八日。旋逆，日行五分度之三，十日退六度，在日前九度，而夕伏西方。除伏逆，一見二百四十六日，行二百四十六度，伏五日，退四度而後合。凡三合一終，五百八十四日有五百六十二分，行星如之。通率日行一度。",
+          "start": 7350,
+          "end": 7563,
+          "line": 178
+        }
+      ],
+      "detection": {
+        "rule": "planet_motion_record",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:91",
+      "type": "reference_data",
+      "sections": [
+        91
+      ],
+      "text_original": "水，晨伏，九日，退七度，在日後十六度，而見東方。見逆，一日退一度。留不得，二日。旋順，日行九分度之八，九日行八度。而疾，日行一度四分度之一，二十日行二十五度，在日後十六度，而晨伏東方。除伏逆，一見，三十二日，行三十二度，伏十六日四萬四千八百五分，行三十二度四萬四千八百五分，而與日合。一合五十七日有四萬四千八百五分，行星如之。",
+      "text_effective": "水，晨伏，九日，退七度，在日後十六度，而見東方。見逆，一日退一度。留不得，二日。旋順，日行九分度之八，九日行八度。而疾，日行一度四分度之一，二十日行二十五度，在日後十六度，而晨伏東方。除伏逆，一見，三十二日，行三十二度，伏十六日四萬四千八百五分，行三十二度四萬四千八百五分，而與日合。一合五十七日有四萬四千八百五分，行星如之。",
+      "source_spans": [
+        {
+          "section": 91,
+          "text": "水，晨伏，九日，退七度，在日後十六度，而見東方。見逆，一日退一度。留不得，二日。旋順，日行九分度之八，九日行八度。而疾，日行一度四分度之一，二十日行二十五度，在日後十六度，而晨伏東方。除伏逆，一見，三十二日，行三十二度，伏十六日四萬四千八百五分，行三十二度四萬四千八百五分，而與日合。一合五十七日有四萬四千八百五分，行星如之。",
+          "start": 7570,
+          "end": 7733,
+          "line": 180
+        }
+      ],
+      "detection": {
+        "rule": "planet_motion_record",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:92",
+      "type": "reference_data",
+      "sections": [
+        92
+      ],
+      "text_original": "水，夕伏，十六日四萬四千八百五分，行三十二度四萬四千八百五分，在日前十六度，而見西方。見順，疾，日行一度四分度之一，二十日行二十五度。而遲，日行九分度之八，九日行八度。留不行，二日。逆，一日退一度，在日前十六度，而夕伏西方。除伏逆，一見三十二日，行三十〈二〉度，伏九日，退七度而復合。凡再合一終，百一十五日有四萬一千九百七十八分，行星如之。通率日行一度。",
+      "text_effective": "水，夕伏，十六日四萬四千八百五分，行三十二度四萬四千八百五分，在日前十六度，而見西方。見順，疾，日行一度四分度之一，二十日行二十五度。而遲，日行九分度之八，九日行八度。留不行，二日。逆，一日退一度，在日前十六度，而夕伏西方。除伏逆，一見三十二日，行三十〈二〉度，伏九日，退七度而復合。凡再合一終，百一十五日有四萬一千九百七十八分，行星如之。通率日行一度。",
+      "source_spans": [
+        {
+          "section": 92,
+          "text": "水，夕伏，十六日四萬四千八百五分，行三十二度四萬四千八百五分，在日前十六度，而見西方。見順，疾，日行一度四分度之一，二十日行二十五度。而遲，日行九分度之八，九日行八度。留不行，二日。逆，一日退一度，在日前十六度，而夕伏西方。除伏逆，一見三十二日，行三十〈二〉度，伏九日，退七度而復合。凡再合一終，百一十五日有四萬一千九百七十八分，行星如之。通率日行一度。",
+          "start": 7740,
+          "end": 7917,
+          "line": 182
+        }
+      ],
+      "detection": {
+        "rule": "planet_motion_record",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:93",
+      "type": "procedure",
+      "sections": [
+        93
+      ],
+      "text_original": "步術，以步法伏日度分，如星合日度餘，命之如前，得星見日度也。術分母乘之，分日如度法而一，分不盡如法半以上，亦得一，而日加所行分，滿其母得一度。逆順母不同，以當行之母乘故分，如故母，如一也。留者承前，逆則減之，伏不書度。經斗除如行母，四分具一。其分有損益，前後相放。其以赤道命度，進加退減之。其步以黃道。",
+      "text_effective": "步術，以步法伏日度分，如星合日度餘，命之如前，得星見日度也。術分母乘之，分日如度法而一，分不盡如法半以上，亦得一，而日加所行分，滿其母得一度。逆順母不同，以當行之母乘故分，如故母，如一也。留者承前，逆則減之，伏不書度。經斗除如行母，四分具一。其分有損益，前後相放。其以赤道命度，進加退減之。其步以黃道。",
+      "source_spans": [
+        {
+          "section": 93,
+          "text": "步術，以步法伏日度分，如星合日度餘，命之如前，得星見日度也。術分母乘之，分日如度法而一，分不盡如法半以上，亦得一，而日加所行分，滿其母得一度。逆順母不同，以當行之母乘故分，如故母，如一也。留者承前，逆則減之，伏不書度。經斗除如行母，四分具一。其分有損益，前後相放。其以赤道命度，進加退減之。其步以黃道。",
+          "start": 7924,
+          "end": 8075,
+          "line": 184
+        }
+      ],
+      "detection": {
+        "rule": "marker:推/步術",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [
+        {
+          "sections": [
+            93
+          ],
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        }
+      ],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:94",
+      "type": "table",
+      "sections": [
+        94
+      ],
+      "text_original": "[TABLE]",
+      "text_effective": "[TABLE]",
+      "source_spans": [
+        {
+          "section": 94,
+          "text": "[TABLE]",
+          "start": 8082,
+          "end": 8089,
+          "line": 186
+        }
+      ],
+      "detection": {
+        "rule": "marker:[TABLE]",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:95",
+      "type": "table",
+      "sections": [
+        95
+      ],
+      "text_original": "[TABLE]",
+      "text_effective": "[TABLE]",
+      "source_spans": [
+        {
+          "section": 95,
+          "text": "[TABLE]",
+          "start": 8096,
+          "end": 8103,
+          "line": 188
+        }
+      ],
+      "detection": {
+        "rule": "marker:[TABLE]",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:96",
+      "type": "computational_exposition",
+      "sections": [
+        96
+      ],
+      "text_original": "黃道去極，日景之生，據儀、表也。漏刻之生，以去極遠近差乘節氣之差。如遠近而差一刻，以相增損。昏明之生，以天度乘晝漏，夜漏減三〈之，二〉百而一，為定度。以減天度，餘為明；加定度一為昏。其餘四之，如法為少。〈二為半，三為太，〉不盡，三之，如法為強，餘半法以上以成強。強三為少，少四為度，其強二為少弱也。又以日度餘為少強，而各加焉。",
+      "text_effective": "黃道去極，日景之生，據儀、表也。漏刻之生，以去極遠近差乘節氣之差。如遠近而差一刻，以相增損。昏明之生，以天度乘晝漏，夜漏減三〈之，二〉百而一，為定度。以減天度，餘為明；加定度一為昏。其餘四之，如法為少。〈二為半，三為太，〉不盡，三之，如法為強，餘半法以上以成強。強三為少，少四為度，其強二為少弱也。又以日度餘為少強，而各加焉。",
+      "source_spans": [
+        {
+          "section": 96,
+          "text": "黃道去極，日景之生，據儀、表也。漏刻之生，以去極遠近差乘節氣之差。如遠近而差一刻，以相增損。昏明之生，以天度乘晝漏，夜漏減三〈之，二〉百而一，為定度。以減天度，餘為明；加定度一為昏。其餘四之，如法為少。〈二為半，三為太，〉不盡，三之，如法為強，餘半法以上以成強。強三為少，少四為度，其強二為少弱也。又以日度餘為少強，而各加焉。",
+          "start": 8110,
+          "end": 8273,
+          "line": 190
+        }
+      ],
+      "detection": {
+        "rule": "operation_cue_density_without_procedure_marker",
+        "confidence": "low"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:97",
+      "type": "table",
+      "sections": [
+        97
+      ],
+      "text_original": "[TABLE]",
+      "text_effective": "[TABLE]",
+      "source_spans": [
+        {
+          "section": 97,
+          "text": "[TABLE]",
+          "start": 8280,
+          "end": 8287,
+          "line": 192
+        }
+      ],
+      "detection": {
+        "rule": "marker:[TABLE]",
+        "confidence": "high"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:98",
+      "type": "computational_exposition",
+      "sections": [
+        98
+      ],
+      "text_original": "中星以日所在為正，日行四歲乃終，置所求年二十四氣小餘四之，如法為少、大，餘不盡，三之，如法為強、弱，以減節氣昏明中星，而各定矣。強，正；弱，直也。其強弱相減，同名相去，異名從之。從強進少為弱，從弱退少而強。從上元太歲在庚辰以來，盡熹平三年，歲在甲寅，積九千四百五十五歲也。",
+      "text_effective": "中星以日所在為正，日行四歲乃終，置所求年二十四氣小餘四之，如法為少、大，餘不盡，三之，如法為強、弱，以減節氣昏明中星，而各定矣。強，正；弱，直也。其強弱相減，同名相去，異名從之。從強進少為弱，從弱退少而強。從上元太歲在庚辰以來，盡熹平三年，歲在甲寅，積九千四百五十五歲也。",
+      "source_spans": [
+        {
+          "section": 98,
+          "text": "中星以日所在為正，日行四歲乃終，置所求年二十四氣小餘四之，如法為少、大，餘不盡，三之，如法為強、弱，以減節氣昏明中星，而各定矣。強，正；弱，直也。其強弱相減，同名相去，異名從之。從強進少為弱，從弱退少而強。從上元太歲在庚辰以來，盡熹平三年，歲在甲寅，積九千四百五十五歲也。",
+          "start": 8294,
+          "end": 8430,
+          "line": 194
+        }
+      ],
+      "detection": {
+        "rule": "operation_cue_density_without_procedure_marker",
+        "confidence": "low"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:99",
+      "type": "computational_exposition",
+      "sections": [
+        99
+      ],
+      "text_original": "論曰：易有太極，是生兩儀。兩儀之分尚矣，乃有皇犧。皇犧之有天下也，未有書計。歷載彌久，暨於黃帝，班示文章，重黎記註，象應著名，始終相驗，準度追元，乃立曆數。天難諶斯，是以五、三迄于來今，各有改作，不通用。故黃帝造曆，元起辛卯，而顓頊用乙卯，虞用戊午，夏用丙寅，殷用甲寅，周用丁巳，魯用庚子。漢興承秦，初用乙卯，至武帝元封，不與天合，乃會術士作太初曆，元以丁丑。王莽之際，劉歆作三統，追太初前世一元，得五星會庚戌之歲，以為上元。太初曆到章帝元和，旋復疏闊，徵能術者課校諸曆，定朔稽元，追漢三十五年庚辰之歲，追朔一日，乃與天合，以為四分曆元。加六百五元一紀，上得庚申。有近於緯，而歲不攝提，以辨曆者得開其說，而其元垬與緯同，同則或不得於天。然曆之興廢，以疏密課，固不主於元。光和元年中，議郎蔡邕、郎中劉洪補續律曆志，邕能著文，清濁鍾律，洪能為筭，述敘三光。今考論其業，義指博通，術數略舉，是以集錄為上下篇，放續前志，以備一家。",
+      "text_effective": "論曰：易有太極，是生兩儀。兩儀之分尚矣，乃有皇犧。皇犧之有天下也，未有書計。歷載彌久，暨於黃帝，班示文章，重黎記註，象應著名，始終相驗，準度追元，乃立曆數。天難諶斯，是以五、三迄于來今，各有改作，不通用。故黃帝造曆，元起辛卯，而顓頊用乙卯，虞用戊午，夏用丙寅，殷用甲寅，周用丁巳，魯用庚子。漢興承秦，初用乙卯，至武帝元封，不與天合，乃會術士作太初曆，元以丁丑。王莽之際，劉歆作三統，追太初前世一元，得五星會庚戌之歲，以為上元。太初曆到章帝元和，旋復疏闊，徵能術者課校諸曆，定朔稽元，追漢三十五年庚辰之歲，追朔一日，乃與天合，以為四分曆元。加六百五元一紀，上得庚申。有近於緯，而歲不攝提，以辨曆者得開其說，而其元垬與緯同，同則或不得於天。然曆之興廢，以疏密課，固不主於元。光和元年中，議郎蔡邕、郎中劉洪補續律曆志，邕能著文，清濁鍾律，洪能為筭，述敘三光。今考論其業，義指博通，術數略舉，是以集錄為上下篇，放續前志，以備一家。",
+      "source_spans": [
+        {
+          "section": 99,
+          "text": "論曰：易有太極，是生兩儀。兩儀之分尚矣，乃有皇犧。皇犧之有天下也，未有書計。歷載彌久，暨於黃帝，班示文章，重黎記註，象應著名，始終相驗，準度追元，乃立曆數。天難諶斯，是以五、三迄于來今，各有改作，不通用。故黃帝造曆，元起辛卯，而顓頊用乙卯，虞用戊午，夏用丙寅，殷用甲寅，周用丁巳，魯用庚子。漢興承秦，初用乙卯，至武帝元封，不與天合，乃會術士作太初曆，元以丁丑。王莽之際，劉歆作三統，追太初前世一元，得五星會庚戌之歲，以為上元。太初曆到章帝元和，旋復疏闊，徵能術者課校諸曆，定朔稽元，追漢三十五年庚辰之歲，追朔一日，乃與天合，以為四分曆元。加六百五元一紀，上得庚申。有近於緯，而歲不攝提，以辨曆者得開其說，而其元垬與緯同，同則或不得於天。然曆之興廢，以疏密課，固不主於元。光和元年中，議郎蔡邕、郎中劉洪補續律曆志，邕能著文，清濁鍾律，洪能為筭，述敘三光。今考論其業，義指博通，術數略舉，是以集錄為上下篇，放續前志，以備一家。",
+          "start": 8437,
+          "end": 8848,
+          "line": 196
+        }
+      ],
+      "detection": {
+        "rule": "operation_cue_density_without_procedure_marker",
+        "confidence": "low"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    },
+    {
+      "id": "sifen:section:100",
+      "type": "discourse",
+      "sections": [
+        100
+      ],
+      "text_original": "贊曰：象因物生，數本杪曶。律均前起，準調後發。該覈衡琁，檢會日月。",
+      "text_effective": "贊曰：象因物生，數本杪曶。律均前起，準調後發。該覈衡琁，檢會日月。",
+      "source_spans": [
+        {
+          "section": 100,
+          "text": "贊曰：象因物生，數本杪曶。律均前起，準調後發。該覈衡琁，檢會日月。",
+          "start": 8856,
+          "end": 8889,
+          "line": 198
+        }
+      ],
+      "detection": {
+        "rule": "fallback",
+        "confidence": "medium"
+      },
+      "parameters": [],
+      "relations": [],
+      "member_roles": [],
+      "human_review": []
+    }
+  ],
+  "parameter_index": {
+    "天之動也": [
+      {
+        "unit_id": "sifen:section:3",
+        "sections": [
+          3
+        ],
+        "value_text": "一",
+        "note": "晝一夜而運過周，星從天而西，日違天而東。日之所行與運周，在天成度，在曆成日。居以列宿，終于四七，受以甲乙，終于六旬。日月相推，日舒月速，當其同，謂之合朔。舒先速後，近一遠三，謂之弦。相與為衡，分天之中，謂之望。以速及舒，光盡體伏，謂之晦。晦朔合離，斗建移辰，謂之。日月之術，則有冬有夏；冬夏之閒，則有春有秋。是故日行北陸謂之冬，西陸謂之春，南陸謂之夏，東陸謂之秋。日道發南，去極彌遠，其景彌長，遠長乃極，冬乃至焉。日道斂北，去極彌近，其景彌短，近短乃極，夏乃至焉。二至之中，道齊景正，春秋分焉。"
+      }
+    ],
+    "日周于天": [
+      {
+        "unit_id": "sifen:section:4",
+        "sections": [
+          4
+        ],
+        "value_text": "一",
+        "note": "寒一暑，四時備成，萬物畢改，攝提遷次，青龍移辰，謂之歲。歲首至也，月首朔也。至朔同日謂之章，同在日首謂之蔀，蔀終六旬謂之紀，歲朔又復謂之元。是故日以實之，月以閏之，時以分之，歲以周之，章以明之，蔀以部之，紀以記之，元以原之。然後雖有變化萬殊，贏朒無方，莫不結系于此而岙正焉。"
+      }
+    ],
+    "元法": [
+      {
+        "unit_id": "sifen:section:10",
+        "sections": [
+          10
+        ],
+        "value_text": "四千五百六十"
+      }
+    ],
+    "紀法": [
+      {
+        "unit_id": "sifen:section:11",
+        "sections": [
+          11
+        ],
+        "value_text": "千五百二十"
+      }
+    ],
+    "紀月": [
+      {
+        "unit_id": "sifen:section:12",
+        "sections": [
+          12
+        ],
+        "value_text": "萬八千八百"
+      }
+    ],
+    "蔀法": [
+      {
+        "unit_id": "sifen:section:13",
+        "sections": [
+          13
+        ],
+        "value_text": "七十六"
+      }
+    ],
+    "蔀月": [
+      {
+        "unit_id": "sifen:section:14",
+        "sections": [
+          14
+        ],
+        "value_text": "九百四十"
+      }
+    ],
+    "章法": [
+      {
+        "unit_id": "sifen:section:15",
+        "sections": [
+          15
+        ],
+        "value_text": "十九"
+      }
+    ],
+    "章月": [
+      {
+        "unit_id": "sifen:section:16",
+        "sections": [
+          16
+        ],
+        "value_text": "二百三十五"
+      }
+    ],
+    "周天": [
+      {
+        "unit_id": "sifen:section:17",
+        "sections": [
+          17
+        ],
+        "value_text": "千四百六十一"
+      }
+    ],
+    "日法": [
+      {
+        "unit_id": "sifen:section:18",
+        "sections": [
+          18
+        ],
+        "value_text": "四"
+      }
+    ],
+    "蔀日": [
+      {
+        "unit_id": "sifen:section:19",
+        "sections": [
+          19
+        ],
+        "value_text": "二萬七千七百五十九"
+      }
+    ],
+    "沒數": [
+      {
+        "unit_id": "sifen:section:20",
+        "sections": [
+          20
+        ],
+        "value_text": "二十一",
+        "note": "為章閏"
+      }
+    ],
+    "通法": [
+      {
+        "unit_id": "sifen:section:21",
+        "sections": [
+          21
+        ],
+        "value_text": "四百八十七"
+      }
+    ],
+    "沒法": [
+      {
+        "unit_id": "sifen:section:22",
+        "sections": [
+          22
+        ],
+        "value_text": "七",
+        "note": "因為章閏。"
+      }
+    ],
+    "中法": [
+      {
+        "unit_id": "sifen:section:24",
+        "sections": [
+          24
+        ],
+        "value_text": "四十二"
+      }
+    ],
+    "大周": [
+      {
+        "unit_id": "sifen:section:25",
+        "sections": [
+          25
+        ],
+        "value_text": "三十四萬三千三百三十五"
+      }
+    ],
+    "月周": [
+      {
+        "unit_id": "sifen:section:26",
+        "sections": [
+          26
+        ],
+        "value_text": "千一十六"
+      }
+    ],
+    "元會": [
+      {
+        "unit_id": "sifen:section:28",
+        "sections": [
+          28
+        ],
+        "value_text": "四萬一千四十"
+      }
+    ],
+    "蔀會": [
+      {
+        "unit_id": "sifen:section:29",
+        "sections": [
+          29
+        ],
+        "value_text": "三千五十三"
+      }
+    ],
+    "歲數": [
+      {
+        "unit_id": "sifen:section:30",
+        "sections": [
+          30
+        ],
+        "value_text": "五百一十三"
+      }
+    ],
+    "食數": [
+      {
+        "unit_id": "sifen:section:31",
+        "sections": [
+          31
+        ],
+        "value_text": "千八十一"
+      }
+    ],
+    "月數": [
+      {
+        "unit_id": "sifen:section:32",
+        "sections": [
+          32
+        ],
+        "value_text": "百二十五"
+      }
+    ],
+    "食法": [
+      {
+        "unit_id": "sifen:section:33",
+        "sections": [
+          33
+        ],
+        "value_text": "二十二"
+      }
+    ],
+    "木::日率": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "四千七百二十五",
+        "scope": "木"
+      }
+    ],
+    "日率": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "四千七百二十五",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "千八百七十六",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "九千四百一十五",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "四千六百六十一",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "千八百八十九",
+        "scope": "水"
+      }
+    ],
+    "木::合積月": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "十三",
+        "scope": "木"
+      }
+    ],
+    "合積月": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "十三",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "二十六",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "十二",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "九",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "一",
+        "scope": "水"
+      }
+    ],
+    "木::月餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "四萬一千六百六",
+        "scope": "木"
+      }
+    ],
+    "月餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "四萬一千六百六",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "六千六百三十四",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "十三萬八千六百三十七",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "九萬八千四百五",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "二十一萬七千六百六十〈三〉",
+        "scope": "水"
+      }
+    ],
+    "木::月法": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "八萬二千二百一十三",
+        "scope": "木"
+      }
+    ],
+    "月法": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "八萬二千二百一十三",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "萬六千七百一",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "十七萬二千八百二十四",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "十〈一〉萬七百七十",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "二十二萬六千二百五十二",
+        "scope": "水"
+      }
+    ],
+    "木::大餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "二十三",
+        "scope": "木"
+      }
+    ],
+    "大餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "二十三",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "四十七",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "五十四",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二十五",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "二十九",
+        "scope": "水"
+      }
+    ],
+    "木::小餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "八百四十七",
+        "scope": "木"
+      }
+    ],
+    "小餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "八百四十七",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "七百五十四",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "三百四十八",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "七百三十一",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "四百九十九",
+        "scope": "水"
+      }
+    ],
+    "木::虛分": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "九十三",
+        "scope": "木"
+      }
+    ],
+    "虛分": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "九十三",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "一百八十六",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "五百九十二",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二百九",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "四百四十九〈一〉",
+        "scope": "水"
+      }
+    ],
+    "木::入月日": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "十五",
+        "scope": "木"
+      }
+    ],
+    "入月日": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "十五",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "十一",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "二十三",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二十六",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "二十七",
+        "scope": "水"
+      }
+    ],
+    "木::日餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "萬四千六百四十七",
+        "scope": "木"
+      }
+    ],
+    "日餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "萬四千六百四十七",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "千八百七十二",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "二千一百六十三",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二百八十一",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "四萬四千八百五",
+        "scope": "水"
+      }
+    ],
+    "木::日度法": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "萬七千三百八",
+        "scope": "木"
+      }
+    ],
+    "日度法": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "萬七千三百八",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "三千五百一十六",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "三萬六千三百八十四",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二萬三千三百二十",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "四萬七千六百三十一",
+        "scope": "水"
+      }
+    ],
+    "木::積度": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "三十三",
+        "scope": "木"
+      }
+    ],
+    "積度": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "三十三",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "四十九",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "十二",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二百九十二",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "五十七",
+        "scope": "水"
+      }
+    ],
+    "木::度餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "萬三百一十四",
+        "scope": "木"
+      }
+    ],
+    "度餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "萬三百一十四",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "一百一十四",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "二萬九千四百五十一",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二百八十一",
+        "scope": "金"
+      }
+    ],
+    "火::日率": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "千八百七十六",
+        "scope": "火"
+      }
+    ],
+    "火::合積月": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "二十六",
+        "scope": "火"
+      }
+    ],
+    "火::月餘": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "六千六百三十四",
+        "scope": "火"
+      }
+    ],
+    "火::月法": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "萬六千七百一",
+        "scope": "火"
+      }
+    ],
+    "火::大餘": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "四十七",
+        "scope": "火"
+      }
+    ],
+    "火::小餘": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "七百五十四",
+        "scope": "火"
+      }
+    ],
+    "火::虛分": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "一百八十六",
+        "scope": "火"
+      }
+    ],
+    "火::入月日": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "十一",
+        "scope": "火"
+      }
+    ],
+    "火::日餘": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "千八百七十二",
+        "scope": "火"
+      }
+    ],
+    "火::日度法": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "三千五百一十六",
+        "scope": "火"
+      }
+    ],
+    "火::積度": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "四十九",
+        "scope": "火"
+      }
+    ],
+    "火::度餘": [
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "一百一十四",
+        "scope": "火"
+      }
+    ],
+    "土::日率": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "九千四百一十五",
+        "scope": "土"
+      }
+    ],
+    "土::合積月": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "十二",
+        "scope": "土"
+      }
+    ],
+    "土::月餘": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "十三萬八千六百三十七",
+        "scope": "土"
+      }
+    ],
+    "土::月法": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "十七萬二千八百二十四",
+        "scope": "土"
+      }
+    ],
+    "土::大餘": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "五十四",
+        "scope": "土"
+      }
+    ],
+    "土::小餘": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "三百四十八",
+        "scope": "土"
+      }
+    ],
+    "土::虛分": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "五百九十二",
+        "scope": "土"
+      }
+    ],
+    "土::入月日": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "二十三",
+        "scope": "土"
+      }
+    ],
+    "土::日餘": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "二千一百六十三",
+        "scope": "土"
+      }
+    ],
+    "土::日度法": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "三萬六千三百八十四",
+        "scope": "土"
+      }
+    ],
+    "土::積度": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "十二",
+        "scope": "土"
+      }
+    ],
+    "土::度餘": [
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "二萬九千四百五十一",
+        "scope": "土"
+      }
+    ],
+    "金::日率": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "四千六百六十一",
+        "scope": "金"
+      }
+    ],
+    "金::合積月": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "九",
+        "scope": "金"
+      }
+    ],
+    "金::月餘": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "九萬八千四百五",
+        "scope": "金"
+      }
+    ],
+    "金::月法": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "十〈一〉萬七百七十",
+        "scope": "金"
+      }
+    ],
+    "金::大餘": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二十五",
+        "scope": "金"
+      }
+    ],
+    "金::小餘": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "七百三十一",
+        "scope": "金"
+      }
+    ],
+    "金::虛分": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二百九",
+        "scope": "金"
+      }
+    ],
+    "金::入月日": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二十六",
+        "scope": "金"
+      }
+    ],
+    "金::日餘": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二百八十一",
+        "scope": "金"
+      }
+    ],
+    "金::日度法": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二萬三千三百二十",
+        "scope": "金"
+      }
+    ],
+    "金::積度": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二百九十二",
+        "scope": "金"
+      }
+    ],
+    "金::度餘": [
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二百八十一",
+        "scope": "金"
+      }
+    ],
+    "水::日率": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "千八百八十九",
+        "scope": "水"
+      }
+    ],
+    "水::合積月": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "一",
+        "scope": "水"
+      }
+    ],
+    "水::月餘": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "二十一萬七千六百六十〈三〉",
+        "scope": "水"
+      }
+    ],
+    "水::月法": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "二十二萬六千二百五十二",
+        "scope": "水"
+      }
+    ],
+    "水::大餘": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "二十九",
+        "scope": "水"
+      }
+    ],
+    "水::小餘": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "四百九十九",
+        "scope": "水"
+      }
+    ],
+    "水::虛分": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "四百四十九〈一〉",
+        "scope": "水"
+      }
+    ],
+    "水::入月日": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "二十七",
+        "scope": "水"
+      }
+    ],
+    "水::日餘": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "四萬四千八百五",
+        "scope": "水"
+      }
+    ],
+    "水::日度法": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "四萬七千六百三十一",
+        "scope": "水"
+      }
+    ],
+    "水::積度": [
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "五十七",
+        "scope": "水"
+      }
+    ]
+  },
+  "review_queue": [
+    {
+      "kind": "computational_text_without_explicit_procedure_marker",
+      "unit_id": "sifen:section:9",
+      "sections": [
+        9
+      ]
+    },
+    {
+      "kind": "computational_text_without_explicit_procedure_marker",
+      "unit_id": "sifen:section:27",
+      "sections": [
+        27
+      ]
+    },
+    {
+      "kind": "confirm_alternative_relation",
+      "unit_id": "sifen:section:40",
+      "candidate_target": "sifen:section:39"
+    },
+    {
+      "kind": "confirm_alternative_relation",
+      "unit_id": "sifen:section:46",
+      "candidate_target": "sifen:section:45"
+    },
+    {
+      "kind": "confirm_alternative_relation",
+      "unit_id": "sifen:section:48",
+      "candidate_target": "sifen:section:47"
+    },
+    {
+      "kind": "confirm_alternative_relation",
+      "unit_id": "sifen:section:51",
+      "candidate_target": "sifen:sections:49-50"
+    },
+    {
+      "kind": "confirm_alternative_relation",
+      "unit_id": "sifen:section:54",
+      "candidate_target": "sifen:sections:52-53"
+    },
+    {
+      "kind": "confirm_alternative_relation",
+      "unit_id": "sifen:section:68",
+      "candidate_target": "sifen:sections:65-67"
+    },
+    {
+      "kind": "computational_text_without_explicit_procedure_marker",
+      "unit_id": "sifen:section:71",
+      "sections": [
+        71
+      ]
+    },
+    {
+      "kind": "confirm_alternative_relation",
+      "unit_id": "sifen:section:82",
+      "candidate_target": "sifen:section:81"
+    },
+    {
+      "kind": "computational_text_without_explicit_procedure_marker",
+      "unit_id": "sifen:section:96",
+      "sections": [
+        96
+      ]
+    },
+    {
+      "kind": "computational_text_without_explicit_procedure_marker",
+      "unit_id": "sifen:section:98",
+      "sections": [
+        98
+      ]
+    },
+    {
+      "kind": "computational_text_without_explicit_procedure_marker",
+      "unit_id": "sifen:section:99",
+      "sections": [
+        99
+      ]
+    },
+    {
+      "kind": "confirm_physical_continuation_join",
+      "left_section": 35,
+      "right_section": 36,
+      "confidence": "medium",
+      "reason": "nonterminal/incomplete ending + no strong new-unit marker"
+    },
+    {
+      "kind": "confirm_physical_continuation_join",
+      "left_section": 57,
+      "right_section": 58,
+      "confidence": "medium",
+      "reason": "nonterminal/incomplete ending + no strong new-unit marker"
+    }
+  ],
+  "boundary_events": [
+    {
+      "kind": "physical_continuation_join",
+      "left_section": 35,
+      "right_section": 36,
+      "confidence": "medium",
+      "reason": "nonterminal/incomplete ending + no strong new-unit marker"
+    },
+    {
+      "kind": "physical_continuation_join",
+      "left_section": 57,
+      "right_section": 58,
+      "confidence": "medium",
+      "reason": "nonterminal/incomplete ending + no strong new-unit marker"
+    }
+  ]
+}

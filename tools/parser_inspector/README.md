@@ -1,0 +1,182 @@
+# Parser Inspector
+
+双击 `run.bat`，打开 <http://127.0.0.1:8501>。首次运行需要 Python 3.10+ 和网络；依赖安装到本目录 `.venv/`。关闭命令窗口或按 Ctrl+C 停止。
+
+## Corpus Segmentation Review
+
+侧栏选择 **Segmentation Review**，顶部 **Source** 选择 corpus，然后填写审阅者、选择 Auto unit。来源选项来自后端对根目录 `calendars-*.md` 的扫描与既有 `config/calendrical-ir-pipeline.json → inputs.source_texts` registry 的交集；界面不维护历法名单。当前支持四分历、三统历、九执历，分别使用 `sifen / santong / jiuzhi` 稳定 ID。
+
+侧栏 **Corpus Full Text** 或 Review 的 Source 旁 **Full text** 按钮进入全文连读工作区。读取当前 `effective.json`，按 source offset 顺序完整显示所有分块，每段以同配色类型标签和节号开头；包含未审块，不另造数据或重新解析。来源已变更时明确显示 STALE。**返回 Review** 保留当前 corpus、选块与审阅者；有未保存草稿时不能跳转，先保存或放弃。
+
+显示 Review progress、Modified、Accepted unchanged、Unreviewed 和 Revision。重新打开默认定位首个 UNREVIEWED，也可点 **Resume review**。左边保留机器原始文本、类型、detection、relations、review queue；右边是唯一的 Effective 编辑区，包含合拆／类型／关系控件。原文使用与输入色块一致的柔和底色：合并时标出移入当前块的文字，拆分时标出归入新块的文字，按精确 source offsets 比较，重复原句不混淆。类型／关系变化用普通文字说明，不给类型标签或整段原文染色；正文不改写。来源之间的文件、锁、revision、Undo 和页面编辑状态独立。
+
+文本块选择器、关系目标选择器及邻块预览仅显示到首个标点前的正文，**不含标点**，保留节号／坐标区分重复首句。未审是默认状态，不加标记；仅显示「已审·原样接受／已审·已修改／待重审」。保存后保留当前选块，仅主动点击 Resume 才跳到首个未审块。Auto 和 Effective 卡片中的 alternative 关联原文完整显示；目标拆分后逐块显示并保留待复核提示。**上一块／下一块** 按 Auto 的原文顺序切换。类型、关系或拆分边界有未保存修改时提示先保存，并禁用块、来源、Resume 和工作区切换；可明确选择放弃草稿。保存一个面板不会丢弃其他面板的草稿；先保存类型／关系，再保存拆分。草稿不属于已经落盘的审阅决定，关闭浏览器不能依赖草稿恢复。
+
+Auto／Effective 下拉选项带类型色签，与「分块类型说明」共用配色：术文及计算性说明为蓝色系，参数项／组为绿色系，参考数据／表格为暖黄色系，标题／论述为淡紫色系；同组以明暗区分，标签保留完整类型名。仅为显示分组，不改变 taxonomy。沿用原生搜索与键盘选择；色签通过当前固定 Streamlit 版本的 listbox／option 索引样式显示，浏览器回归检查搜索后类型对应及说明配色，升级 Streamlit 时需重跑。
+
+- **Accept** 原样接受 auto 单元，只增加 `human_review`，不增加 override operation。
+- **Change type / Edit relation** 使用表单修改当前 effective 块。关系按具体原文跨度绑定，重复原句不混用。`alternative_of*` 只允许属于 `alternative_procedure` 的块；将块改为 `procedure` 会同时清除不兼容的 alternative 关系。每条已有关系都有直接的「删除关系」按钮。
+- **分块类型说明** 在 Change type 内解释全部九种类型及其边界；这些是文献分块类型，不是 parser operation 或完成度。
+- **Edit relation** 仅提供固定 corpus 结构关系：`alternative_of_candidate`（待确认另一术法）与 `alternative_of`（人工确认另一术法）。可确认机器候选、改目标或删除；UI 无任意名称输入，后端重放也拒绝未登记关系。该关系不证明算法／数值等价。`followup` 属于合并块的 `member_roles`，用 Split/Merge 管理归属；dependency/data-flow 留给 parser/graph。本页不建立 context/binding 关系。
+- **Merge ↑ / ↓** 仅合并相邻 effective 块的正文与边界，保留当前正在编辑块的类型和关系，不吸收邻块的 alternative 类型／关系；类型与术文关联分别由 Change type／Edit relation 决定。邻块原有判断仍保存在 Auto 和历史中。旧 merge 记录按原含义回放，不自动改写人工历史。**Split** 点击原文字后边界（可多选、再次点击取消），预览后保存。合并后仍能拆分，拆分后仍能合并。
+- **Undo** 撤销当前 source 的最近一次操作；**Reset** 恢复当前块及与之通过合拆关联的区域；**退回最初** 恢复整个 corpus 到机器初始状态。三者都保留历史并可 Undo。审阅记录可对单个 revision 使用「撤销此更改」；若该 revision 后已有同区域修改，系统拒绝猜测，改用明确的「恢复到之前／之后」状态。其他来源／区域的独立审阅保留。
+- 保存即时更新三个数据文件和 manifest，并自动刷新；关闭服务／浏览器后仍可恢复。无需最终 Submit。未确认的表单／拆分选择仍是草稿，点保存才成为决定。多页面同时打开时自动同步新状态，旧页面动作不自动重放，也不会覆盖新决定。
+- **审阅记录 → View before / after** 显示每次操作的前后分块、类型、关系和审阅状态；记录人、身份、UTC 时间、revision、备注、替代／撤销关系。只有点选的记录才重放展示。
+
+文件职责：
+
+| 文件 | 职责 |
+| --- | --- |
+| `corpus-review/<source_id>/auto.json` | 机器字段保持原始结果，`human_review` 保存人工审阅记录；保留进 Git |
+| `corpus-review/<source_id>/overrides.json` | 唯一 canonical 人工决定文件；`operations` 是当前规范化决定，`history` 永久保留 Accept／修改／Reset／Undo 的 before、after、revision、supersedes、reverts；保留进 Git |
+| `corpus-review/<source_id>/effective.json` | 重放后的有效 corpus，adapter 从这里按已登记选择取文本；可重建，Git 忽略 |
+| `corpus-review/<source_id>/manifest.json` | source_id、source_path、source_sha、auto_sha、override_sha、effective_sha、review_revision、review_status；保留进 Git |
+
+manifest 的文件 SHA 对应实际 UTF-8 文件字节；revision 对应三个数据文件的组合 hash，不包含 manifest 自身，避免循环 hash。review_status 给出当前 source 的进度计数；它不是 parser 语义完整性或人工历史结论。文件混版、source SHA 变化均阻断写入和 adapter 读取。
+
+`human_review: []` 为尚未审阅；记录含 `status: accepted / modified`、UTC `time`、`actor`、`override_ids`、可选 `note`；modified 同时记录本次关联区域的 `source_spans`。自动化测试使用 `scripted_test` / `automated_browser`，不记为真人审阅。
+
+override schema **1.2** 保持四种有效操作，使用原始来源中半开区间 `[[start,end], ...]`：
+
+| 操作 | payload |
+| --- | --- |
+| `set_type` | `target_spans`, `type`（已有分块类型列表） |
+| `set_relations` | `target_spans`, `relations: [{kind, target_spans, ...}]` |
+| `merge_units` | `targets: [source_spans, ...]`（相邻块） |
+| `split_unit` | `target_spans`, `groups: [{source_spans, type, relations}, ...]`（完整且不重叠的分区） |
+
+后端把 UI 的最终分块规范化为这些操作；派生 ID 不是编辑输入。旧 1.0 的 unit-ID / 整节 payload 仍可读取。关系目标被拆成多块时保留原始目标跨度并标 `needs_review`，不猜选新块。文本校读仍不在本流程中。
+
+旧 history 在下一次保存时按原顺序分配 revision；历史上被旧 Undo 删除的记录无法恢复，不补造。新 Undo 追加事件并恢复当前状态，永不 pop 原事件。Reset 清除当前区域的有效决定／review 标记，但原决定继续留在 history。未增加 round-complete 按钮：完成一轮是可选的 baseline 标记，不是保存的前置步骤。
+
+现有模块的工作流：
+
+```text
+calendars-*.md ∩ 已登记 source_texts
+  → corpus_index.list_review_sources() → UI Source 下拉
+  → corpus_index.build_auto_index(root, source_id) → auto.json
+  → 同一 Segmentation Review 页面 → corpus_review.apply(..., source_id)
+  → 更新 human_review + 规范化 overrides
+  → corpus_index.effective_from_auto() → effective.json
+  → 四文件事务更新 manifest → Auto / Effective 与进度刷新
+  → corpus.build_source_packet() 按已有 procedure manifest 选择正文/context
+  → 原有 parser
+```
+
+`corpus_index.py` 复用原抽取和纯重放逻辑；`corpus_review.py` 负责每个 source 的持久化与迁移；同一个 `segmentation_review.py` 渲染所有来源。没有新增历法专用页面或 parser 规则。九执历跨卷重复节号保留 occurrence 与原始字符坐标，unit/document ID 不再冲突。
+
+保存使用每 source 文件锁、原子替换和短期事务日志；日志仅用于中断恢复。旧四分历三文件由原抽取命令一次迁入，保存成功后清理旧位置；人工记录与 Undo 保留，不并行维护两套数据。
+
+重新抽取仍用原命令：
+
+```powershell
+python -X utf8 -B scripts/corpus/extract_sifen_units.py
+python -X utf8 -B scripts/corpus/extract_sifen_units.py --source-id santong
+python -X utf8 -B scripts/corpus/extract_sifen_units.py --source-id jiuzhi
+```
+
+保留原命令文件名以兼容已有调用，通过 `--source-id` 复用，不另造三套命令。新增同格式的 `calendars-乾象历.md` 后，只需在同一 registry 登记唯一 ID/path，即出现在 Source 下拉；页面「生成 corpus index」初始化其工作区。
+
+当前沿用编号正文抽取规则，不纳入文件前未编号的导言。新来源的 type/detection 是沿用规则的机器候选，未声称其识别精度已获人工验证；九执历 review 读取全份编号正文，不受旧编译 calibration 的 include_patterns 限制。
+
+同一 source SHA 且机器单元未变时恢复已有 review；来源 SHA 或已审单元机器字段变化时阻断并保留旧文件。**auto 已包含人工审阅记录，不当作缓存忽略或删除**；新 clone 中缺少 effective 时，用上述命令或 UI 重新生成即可。
+
+已登记 procedure 的正文/context 选择仍受 manifest 的 unit ID 和文本 SHA 约束。若合拆改变了它选择的单元，旧 procedure 会明确报缺失／来源变化，不会偷偷退回 md 或采用猜测 context；本页不自动重写 procedure manifest。
+
+检查：
+
+```powershell
+tools/parser_inspector/.venv/Scripts/python.exe -X utf8 -B -m unittest tests.test_segmentation_review tests.test_corpus_index tests.test_corpus_dependencies tools.parser_inspector.test_inspector tests.workbench.test_smoke
+node tests/segmentation-review-browser.mjs
+```
+
+## 完整文件链与职责
+
+```text
+tools/parser_inspector/run.bat
+  → app.py：选择 Segmentation Review / Parser stages
+
+calendars-*.md + config/calendrical-ir-pipeline.json (source_texts registry)
+  → scripts/corpus/extract_sifen_units.py --source-id <id>（CLI，UI 也可调用同一生成函数）
+  → source_adapters/corpus_review.py: regenerate()
+  → source_adapters/corpus_index.py: build_auto_index()
+  → corpus-review/<id>/auto.json（机器结果 + 当前 human_review）
+
+segmentation_review.py：显示 Auto，编辑右侧 Effective
+  → corpus_review.apply()：检查 revision、来源 SHA、actor、source spans
+  → corpus_index._apply_overrides() / normalize_operations()：生成规范化有效 deltas
+  → overrides.json：operations 当前状态 + history 永久事件
+  → corpus_index.effective_from_auto()：只重放 active operations
+  → effective.json + manifest.json：有效素材与文件校验/审阅统计
+  → 自动刷新页面（无手动 reload、无最终提交保存）
+
+effective.json + config/workbench-procedures.json (primary_units / context_units)
+  → source_adapters/corpus.py: build_source_packet()
+     校验原 md 的 SHA/坐标；正文/context 取自有效 unit，不重新猜切分
+  → SourcePacket 3.0（每个 document 携带 unit_id + unit_index_sha256）
+  ├─ Inspector runner.py → analysis_parser.inputs.documents()
+  │                     → analysis_parser.lexical.tokenize_candidates()
+  │                     → analysis_parser.construction_ir.parse_syntax()
+  │                     → analysis_parser.pipeline.parse_packet()
+  │                     → tools/parser_inspector/output/current/*.json 原生输出
+  └─ workbench/api.py → workbench/service.py
+                       → parse_packet() / adjudication.compiler.compile_reviewed()
+                       → workbench.projection / presentation → 站内研究页面
+                       → analysis_parser.execution.execute()（辅助核验）
+
+source_adapters/dependencies.py（两条运行路径共享，无 parser import）
+  → unit_hash()：编译相关内容的 hash，不含 human_review/审阅者/时间
+  → artifact()：parser → graph → execution；comparison 可引用多个 parent
+  → validate()：逐 unit 对比，沿 artifact parent 递归判断 valid / stale
+  → Inspector run.json / Workbench response、bundle 中的 artifacts
+```
+
+`dependencies.py` 是本轮唯一新增的生产模块：它独立负责跨 Inspector／Workbench 的结果依赖契约。放进 review store 会混合审阅事务与结果生命周期；放进任一 UI 则会造成另一 UI 复制。因此通过窄的 hash / artifact / validate 接口共享。
+
+**失效检查是读取时进行，不是后台调度器。** Segmentation Review 保存后刷新 Inspector current 的 `run.json` freshness；进入 Parser stages 时也核对，原生 JSON 不改。Workbench 返回页面焦点、恢复可见或准备操作时调用同源 `/api/artifacts/status`，陈旧结果保留、禁止在旧结果上继续判断／执行，需重新分析。响应比当前页面旧时丢弃，不能覆盖新状态。
+
+每个 artifact 记录 kind、内容 hash、parents 和实际正文/context 的 source_id、unit_id、effective hash；不依赖整个 corpus 的 review_revision。Accept unchanged 不导致失效。只改 §39，只有依赖它的 parser、后继 graph/execution 和多父 comparison stale；若 §40 的 context 确实引用 §39，它也应 stale。merge/split 后旧 unit 消失，同样视为依赖失效。重新编译范围是受影响 procedure；未实现编译器内部的 event 级增量重算。
+
+`valid` 只表示输入仍匹配，不等于语义正确／人工审定／图闭合。外部直接改原始 md 仍触发已有来源 SHA 阻断，必须先重新核验来源；本轮没有放宽该保护。历史导出若没有 artifacts，不能追溯宣称已经有局部失效记录。当前 Inspector 仍只有一个 current；Workbench 浏览器持久化 session、重新打开重编译，没有另建 parser 历史结果库。comparison 的依赖传播契约已测，未新增比较算法或 M4 功能。
+
+回归入口：`tests/test_segmentation_review.py`（保存、history、Undo、续审、并发）、`tests/test_corpus_dependencies.py`（局部/传递失效与真实运行路径/API）、`tests/test_corpus_index.py`（抽取与重放）、`tools/parser_inspector/test_inspector.py`（原生输出）、`tests/segmentation-review-browser.mjs`（实际浏览器）。
+
+2026-09-18 本轮验证（基点 HEAD `52c7754`，未提交／未 push）：corpus index 8、依赖 6、segmentation review 15、Inspector 7、Workbench 27、adjudication 71、parser 61／94／78、reconciliation 5，共 372 项 Python 测试通过；CText 4 项、Eleventy build、Segmentation Review 浏览器及两套 Workbench 浏览器通过。包含旧有效性响应晚到不得解除 stale 的浏览器反例。测试身份为 scripted_test／automated_browser，真实 corpus 的人工审阅未被测试改写。原有测试仍会发出 Streamlit 裸测试上下文提示及一处旧 ResourceWarning，不影响通过结果。可选 round-complete 标记未添加；没有新增比较计算或 event 级增量编译。
+
+浏览器验收使用三份真实 corpus 的临时副本和 Unicode 坐标夹具，验证来源切换、进度及 Undo 隔离，不写入当前 corpus 的人工记录。报告与截图位于忽略目录 `tmp/segmentation-review-tests/`。
+
+## Parser stages
+
+1. 选择粘贴原文，或选择现有 corpus adapter 登记的 procedure（包含正文与 context）。
+2. 点击 Lexical、Constructions 或 Compile。后两者自动运行前置层；不需要逐个点击。
+3. 在三个标签页查看紧凑 JSON 和对应的绝对文件路径：每条的 ID、位置、性质集中一行，文本及其他内容放下一行，嵌套字段行内显示。所有字段保留；需要时展开「树状 JSON」。这只改变界面排版，输出文件仍保持原有缩进格式。
+
+调用路径：`documents()` → `tokenize_candidates(doc, {})` → `parse_syntax(tokens, doc)`；完整编译直接调用 `parse_packet(packet)`。不执行数值计算、不调用 reviewed compiler，不载入人工 reference。Corpus 输入直接来自已有 `source_adapters.corpus.build_source_packet()`；粘贴文本仅包装为 SourcePacket 3.0，不自动提供 tradition、profile 或背景。
+
+`app.py` 只负责 Streamlit 输入和 JSON 显示；`runner.py` 只负责调用现有 stage、序列化和固定路径写入。没有复制 parser 实现。
+
+所有输出固定在 `output/current/`，每次点击运行先覆盖全部下列文件。JSON `null` 表示本次未运行该层，`[]` 表示实际运行后返回空列表。切换输入会隐藏旧显示，直到重新运行；磁盘保留最近一次运行。不要同时用多个标签页运行：它们共用同一个 current。
+
+| 文件 | 原始内容 |
+| --- | --- |
+| `packet.json` | 实际 SourcePacket 输入 |
+| `documents.json` | parser 自己的 source/analysis 坐标预处理结果 |
+| `lexical_candidates.json` | `tokenize_candidates()` 返回的全部候选，按 document 顺序连接 |
+| `syntax.json` | 各 document 的 `SyntaxResult.to_dict()`，含原生 syntax diagnostics |
+| `construction_candidates.json` | `SyntaxResult.candidates()` 原始 proposed 候选 |
+| `construction_selection.json` | 编译器返回的完整 `construction_candidates`，保留 selected / unresolved 等原生状态 |
+| `events.json`、`values.json` | 编译器的 `events`、`value_instances` |
+| `diagnostics.json`、`unresolved.json` | 编译器顶层的对应字段 |
+| `program.json` | 完整 program IR，包含 `linked.diagnostics`；不与顶层 diagnostics 合并 |
+| `compiler_report.json` | `parse_packet()` 完整返回值，无字段删减 |
+| `run.json` | inspector 调用状态／异常、artifact 依赖和 freshness；不是 parser diagnostics |
+
+构式候选阶段不会宣称构式已被选中；selected 状态只有实际编译后才有。所有 JSON 仅进行 UTF-8、缩进序列化，没有额外语义 projection。原始输入保留换行；分析文本和 span 映射由 parser 的 `documents()` 生成。
+
+检查（仓库根目录运行）：
+
+```powershell
+tools/parser_inspector/.venv/Scripts/python.exe -B -m unittest tools.parser_inspector.test_inspector
+```
+
+测试会覆盖 current。`.venv/` 与 `output/` 已在本目录忽略，不作为源码提交。自动测试可用 `run.bat --no-browser` 启动同一服务。
