@@ -147,36 +147,49 @@ source_adapters/dependencies.py（两条运行路径共享，无 parser import�
 
 ## Parser stages
 
-1. 选择粘贴原文，或选择现有 corpus adapter 登记的 procedure（包含正文与 context）。
-2. 点击 Lexical、Constructions 或 Compile。后两者自动运行前置层；不需要逐个点击。
-3. 在三个标签页查看紧凑 JSON 和对应的绝对文件路径：每条的 ID、位置、性质集中一行，文本及其他内容放下一行，嵌套字段行内显示。所有字段保留；需要时展开「树状 JSON」。这只改变界面排版，输出文件仍保持原有缩进格式。
+当前入口为只读 R1–R4 研究视图，固定 Primary 为 `sifen:section:39`。
+通过 `build_source_packet_from_units()` 读取 effective unit，Context 为空，
+scope 为 `Han_Si_fen_li`。没有 Primary picker 或人工操作按钮。
 
-调用路径：`documents()` → `tokenize_candidates(doc, {})` → `parse_syntax(tokens, doc)`；完整编译直接调用 `parse_packet(packet)`。不执行数值计算、不调用 reviewed compiler，不载入人工 reference。当前 Parser Inspector 只接受粘贴文本，不显示 corpus preset；`build_source_packet_from_units()` 供后端调用方以已选择的 effective unit 构造 SourcePacket。粘贴文本不自动提供 tradition、profile 或背景。
+`readable.compile_view()` 每次读取分别调用一次 `parse_packet(packet)` 和
+`compile_reviewed(packet, new_session(...))`。后者返回 bundle；
+`bundle['graph']` 是原生 report，可直接使用同一个
+`evaluation.semantic_regression.project_report()`。
+不重跑 tokenize、syntax 或 link，不写 baseline、session、审阅记录或 output/current。
 
-`app.py` 只负责 Streamlit 输入和 JSON 显示；`runner.py` 只负责调用现有 stage、序列化和固定路径写入。没有复制 parser 实现。
+页面持续显示原文，点击对象的原文证据按 Unicode code-point offsets 高亮。
+R1–R4 仅在 presentation 按原文位置排序，canonical snapshot 不变。
+R1 是 Lexical candidates，类型表示 parser edge，不等于确认词性；Syntax 默认折叠，
+“查看全部 parser edges”保留全部记录及原文顺序。
+R2 通过同一 canonical projector 将候选关联回 report，读取 production_id，
+从既有 GRAMMAR 表取精确 pattern；syntax slots 只显示后端记录的跨度。
+report 没有保存 slot 使用的完整 lexical edge 路径，明确显示 provenance unavailable。
+操作只通过 event.syntax_node_id 关联，逐项显示 reads/writes，未推断 slot → port。
+量角色只引用 call formal_bindings/return_ports 或明确的 value.role；不将未返回量猜成 intermediate。
+R3 按 Program IR.parent 嵌套；无 parent 的 MethodSlice 独立显示，已有调用关系单独标注。
+R4 按 formal 聚合，保留每个定义的使用位置、候选及连接状态。诊断只通过显式名称或
+formal binding 的 value/labels 加精确使用跨度关联；不确定的诊断独立保留。
+ontology 的 definition/methodology 可展开，selected 文案为“机器编译采用；未经人工确认”。
 
-所有输出固定在 `output/current/`，每次点击运行先覆盖全部下列文件。JSON `null` 表示本次未运行该层，`[]` 表示实际运行后返回空列表。切换输入会隐藏旧显示，直到重新运行；磁盘保留最近一次运行。不要同时用多个标签页运行：它们共用同一个 current。
+默认阅读层采用 progressive disclosure：每层只说明一次研究问题与 parser 模块来源。
+R2 以原文计算表达为单位，直接显示运算、参与量的端口角色、结果和后续使用；
+后续关系只读取相同 value ID 的 reads、显式 alias 与返回记录，不按同名量拼接。
+除法保留 dividend/divisor/quotient/remainder，缺失端口显示“尚未确定”。
+方法引用显示复用片段、传入角色、返回量和后续使用。
+R3 使用“过程／计算段／可复用计算片段”，合并需要接入的量，展示已有承接关系；
+正常的 parent=null 不报缺失。R4 分开显示当前来源和预期端口，将相关诊断收在同一量下面。
+grammar、完整 slots、ontology、event/port、原始 provenance 保留在“查看机器依据／技术详情”，
+无 slots 的记录不提示 slot provenance unavailable。缺失来源和未知数量关系仍在默认层提示。
 
-| 文件 | 原始内容 |
-| --- | --- |
-| `packet.json` | 实际 SourcePacket 输入 |
-| `documents.json` | parser 自己的 source/analysis 坐标预处理结果 |
-| `lexical_candidates.json` | `tokenize_candidates()` 返回的全部候选，按 document 顺序连接 |
-| `syntax.json` | 各 document 的 `SyntaxResult.to_dict()`，含原生 syntax diagnostics |
-| `construction_candidates.json` | `SyntaxResult.candidates()` 原始 proposed 候选 |
-| `construction_selection.json` | 编译器返回的完整 `construction_candidates`，保留 selected / unresolved 等原生状态 |
-| `events.json`、`values.json` | 编译器的 `events`、`value_instances` |
-| `diagnostics.json`、`unresolved.json` | 编译器顶层的对应字段 |
-| `program.json` | 完整 program IR，包含 `linked.diagnostics`；不与顶层 diagnostics 合并 |
-| `compiler_report.json` | `parse_packet()` 完整返回值，无字段删减 |
-| `run.json` | inspector 调用状态／异常、artifact 依赖和 freshness；不是 parser diagnostics |
+页面空 session 时只显示一份 machine result；实际比较相等才写
+**reviewed = automatic / no human decisions**。
+即使 session 为空，也不假设结果相等。若有差异，显示“编译路径差异”并提供折叠详情；
+若 reviewed graph 不可用，显示 replay 状态，不将其当作空结果或成功。
+当前无人工决定，不能把差异解释成人工修改或阶段确认。
 
-构式候选阶段不会宣称构式已被选中；selected 状态只有实际编译后才有。所有 JSON 仅进行 UTF-8、缩进序列化，没有额外语义 projection。原始输入保留换行；分析文本和 span 映射由 parser 的 `documents()` 生成。
-
-检查（仓库根目录运行）：
+原有 `runner.py` 保留供原始 parser 输出测试和诊断调用，不是另一套 UI 工作流。
+检查：
 
 ```powershell
-tools/parser_inspector/.venv/Scripts/python.exe -B -m unittest tools.parser_inspector.test_inspector
+tools/parser_inspector/.venv/Scripts/python.exe -X utf8 -B -m unittest tools.parser_inspector.test_readable tools.parser_inspector.test_inspector tests.test_semantic_regression
 ```
-
-测试会覆盖 current。`.venv/` 与 `output/` 已在本目录忽略，不作为源码提交。自动测试可用 `run.bat --no-browser` 启动同一服务。

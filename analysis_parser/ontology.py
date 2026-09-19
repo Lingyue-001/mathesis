@@ -10,13 +10,369 @@ from .construction_ir import GRAMMAR
 VERSION = '1.0'
 REGISTRY = {}
 
+# The second reading is concise, authored English for researcher-facing use.
+# It is separate from the Chinese label and the longer Chinese methodology.
+# Inspector presentation does not select it yet; keeping the language here
+# means that later presentation code reads one canonical vocabulary.
+_DEFINITION_EN = {}
+INSPECTOR_DEFAULT_CATEGORIES = frozenset({'operation', 'construction', 'syntax', 'frame', 'cause'})
+TECHNICAL_ONLY_ENGLISH = frozenset({
+    *{('profile', code) for code in (
+        'ST_elapsed', 'SF_Liu_inclusive', 'SF_completed_four', 'instant_lunation', 'civil_whole_day',
+        'ST_intercalation_Cullen_Liu_GT', 'ST_intercalation_GE_contrast',
+        'C2017_ST_Jupiter_parameter_roles_v1', 'C2017_ST_local_year_count_v1',
+        'C2017_ST_Jupiter_station_rate_v1', 'C2017_ST_Section_four_Rules_conditional_v1',
+        'C2017_ST_origin_month_day_frame_v1', 'C2017_ST_concordance_midnight_frame_v1',
+    )},
+    ('action_variant', 'defer:unresolved'), ('action_variant', 'defer:schema_extension_required'),
+})
+
+# Short authored English for ordinary researcher-facing UI.  These are never
+# derived from backend codes.  Source-text targets remain source text elsewhere.
+_LABEL_EN = {
+    ('operation', 'input'): 'Input quantity', ('operation', 'literal'): 'Literal value',
+    ('operation', 'parameter'): 'Parameter', ('operation', 'load'): 'Load quantity',
+    ('operation', 'multiply'): 'Multiply', ('operation', 'add'): 'Add',
+    ('operation', 'subtract'): 'Subtract', ('operation', 'divmod'): 'Divide with remainder',
+    ('operation', 'cycle_reduce'): 'Reduce by cycle', ('operation', 'alias'): 'Name quantity',
+    ('operation', 'threshold'): 'Test threshold', ('operation', 'count'): 'Count from origin',
+    ('operation', 'year_scan'): 'Step through years', ('operation', 'interval_scale'): 'Scale interval',
+    ('operation', 'method_call'): 'Call method', ('operation', 'select'): 'Select result',
+    ('operation', 'lookup'): 'Look up value', ('operation', 'rescale'): 'Rescale quantity',
+    ('operation', 'fraction'): 'Form fraction', ('operation', 'convert'): 'Convert units',
+    ('operation', 'epoch_frame'): 'Set epoch frame', ('operation', 'repeat'): 'Repeat calculation',
+    ('operation', 'cycle_lift'): 'Lift cycle position', ('operation', 'event_sequence'): 'Generate event sequence',
+    ('operation', 'boundary_call'): 'Apply boundary rule', ('operation', 'framed_origin'): 'Set framed origin',
+    ('operation', 'initial_instant'): 'Set initial instant', ('operation', 'judgment'): 'Record judgment',
+
+    ('construction', 'task_marker'): 'Procedure heading', ('construction', 'query_marker'): 'Calculation-stage heading',
+    ('construction', 'update_count'): 'Update and count', ('construction', 'numeral_predicate'): 'Multiply by numeral',
+    ('construction', 'denominator_declaration'): 'Declare denominator', ('construction', 'multiply'): 'Multiply',
+    ('construction', 'multiply_focus'): 'Multiply current quantity', ('construction', 'subtract'): 'Subtract',
+    ('construction', 'update'): 'Update quantity', ('construction', 'pair_increment'): 'Add named increment',
+    ('construction', 'load'): 'Load quantity', ('construction', 'divide'): 'Divide with remainder',
+    ('construction', 'cycle_divide'): 'Reduce by cycle', ('construction', 'divide_by'): 'Divide by named divisor',
+    ('construction', 'pending_cycle'): 'Incomplete cycle reduction', ('construction', 'loop_threshold'): 'Loop threshold',
+    ('construction', 'remainder_name'): 'Name remainder', ('construction', 'name'): 'Name quantity',
+    ('construction', 'receiver_add'): 'Add to receiver', ('construction', 'count_origin'): 'Set counting origin',
+    ('construction', 'count_command'): 'Count from named origin', ('construction', 'count_remainder'): 'Count from remainder',
+    ('construction', 'threshold'): 'Threshold condition', ('construction', 'add'): 'Add quantity',
+    ('construction', 'recur_increment'): 'Add recurring increment', ('construction', 'double_interval'): 'Double interval',
+    ('construction', 'mixed_compact'): 'Mixed whole-and-fraction value', ('construction', 'declaration'): 'Declare value',
+    ('construction', 'parameter_alias'): 'Alias parameter', ('construction', 'mixed_duration'): 'Mixed duration',
+    ('construction', 'reuse_operation'): 'Repeat previous operation', ('construction', 'epoch_load'): 'Load elapsed epoch years',
+    ('construction', 'method_value_reference'): 'Apply referenced method', ('construction', 'scalar_value'): 'Declare scalar',
+    ('construction', 'scalar_name'): 'Name scalar', ('construction', 'schedule_row'): 'Schedule-table row',
+    ('construction', 'scan_length'): 'Repeated subtraction length', ('construction', 'epoch_divide'): 'Divide epoch accumulation',
+    ('construction', 'entry_cycle'): 'Enter cycle', ('construction', 'entry_remainder_divide'): 'Divide entry remainder',
+    ('construction', 'concordance_case'): 'Concordance branch', ('construction', 'conditional_count'): 'Conditional count',
+    ('construction', 'method_reference'): 'Use previous method', ('construction', 'use_denominator'): 'Reuse denominator',
+    ('construction', 'complete_cycle'): 'Complete cycle reduction', ('construction', 'judgment'): 'Judgment statement',
+    ('construction', 'annotation'): 'Explanatory text', ('construction', 'boundary'): 'Event-boundary statement',
+    ('construction', 'concordance_pending'): 'Incomplete concordance step', ('construction', 'concordance_remainder'): 'Concordance remainder',
+    ('construction', 'concordance_select'): 'Select concordance branch', ('construction', 'epoch_elapsed'): 'Elapsed epoch quantity',
+    ('construction', 'epoch_inclusive'): 'Inclusive epoch count', ('construction', 'era_index'): 'Era index',
+    ('construction', 'loop_result'): 'Loop result', ('construction', 'nominal'): 'Nominal expression',
+    ('construction', 'obscuration_index'): 'Obscuration-cycle index', ('construction', 'temporal_anchor'): 'Temporal reference',
+    ('construction', 'year_name'): 'Name year', ('construction', 'unclassified'): 'Unclassified expression',
+
+    ('syntax', 'UnsupportedConstruction'): 'Unparsed construction', ('syntax', 'Sequence'): 'Construction sequence',
+    ('syntax', 'Term'): 'Term candidate', ('syntax', 'Number'): 'Numeral candidate',
+    ('syntax', 'Anaphor'): 'Anaphoric candidate', ('syntax', 'Syntax'): 'Low-level syntax edge',
+    ('frame', 'ProcedureDef'): 'Procedure', ('frame', 'QueryDef'): 'Calculation stage',
+    ('frame', 'MethodSlice'): 'Reusable method', ('frame', 'ContextDef'): 'Background context',
+
+    ('port', 'result'): 'Result', ('port', 'value'): 'Operand', ('port', 'left'): 'Left operand',
+    ('port', 'right'): 'Right operand', ('port', 'dividend'): 'Dividend', ('port', 'divisor'): 'Divisor',
+    ('port', 'quotient'): 'Quotient', ('port', 'remainder'): 'Remainder', ('port', 'lower'): 'Lower bound',
+    ('port', 'offset'): 'Offset', ('port', 'origin'): 'Counting origin', ('port', 'cycle'): 'Cycle length',
+    ('port', 'amount'): 'Increment', ('port', 'receiver'): 'Receiver', ('port', 'label'): 'Name',
+    ('port', 'marker'): 'Heading marker', ('port', 'target'): 'Target', ('port', 'decrement'): 'Decrement',
+    ('port', 'factor'): 'Multiplier', ('port', 'denominator'): 'Denominator', ('port', 'numerator'): 'Numerator',
+    ('port', 'whole'): 'Whole part',
+
+    ('role', 'external_input'): 'External input', ('role', 'root_input'): 'Root input',
+    ('role', 'missing_upstream'): 'Upstream source missing', ('role', 'parameter'): 'Parameter',
+    ('role', 'literal'): 'Literal value', ('role', 'predicate'): 'Judgment result',
+    ('role', 'quotient'): 'Quotient', ('role', 'remainder'): 'Remainder',
+    ('role', 'result'): 'Result', ('role', 'accumulator'): 'Accumulator', ('role', 'offset'): 'Offset',
+    ('lexical_role', 'term'): 'Term', ('lexical_role', 'numeral'): 'Numeral',
+    ('lexical_role', 'pronoun'): 'Pronoun', ('lexical_role', 'function_word'): 'Function word',
+    ('lexical_role', 'preposition'): 'Preposition', ('lexical_role', 'particle'): 'Particle',
+    ('lexical_role', 'operator_cue'): 'Operation cue',
+    ('candidate_state', 'proposed'): 'Machine proposal', ('candidate_state', 'selected'): 'Used by machine compile',
+    ('candidate_state', 'rejected'): 'Excluded from current compile', ('candidate_state', 'unresolved'): 'Not yet lowered',
+
+    ('cause', 'unresolved_parser'): 'Source text not yet parsed', ('cause', 'incomplete_construction'): 'Construction incomplete',
+    ('cause', 'missing_import'): 'Input source missing', ('cause', 'unknown_quantity_semantics'): 'Quantity meaning unresolved',
+    ('cause', 'unknown_quantity'): 'Quantity unidentified', ('cause', 'stale_identity'): 'Runtime version changed',
+    ('cause', 'stale_source'): 'Source version changed', ('cause', 'multiple_active_decisions_for_slot'): 'Conflicting review decisions',
+    ('cause', 'schema_extension_required'): 'Type system insufficient', ('cause', 'binding_not_structurally_compatible'): 'Binding incompatible',
+    ('cause', 'necessary_source_not_accounted'): 'Source text not yet accounted for', ('cause', 'requires_external_data'): 'External source required',
+    ('cause', 'missing_query_base'): 'Calculation base missing', ('cause', 'ambiguous_import'): 'Multiple possible quantity sources',
+    ('cause', 'ambiguous_operation_import'): 'Multiple possible operation sources', ('cause', 'missing_operation_import'): 'Operation source missing',
+    ('cause', 'UnsupportedConstruction'): 'Construction unsupported', ('cause', 'unclassified'): 'Expression unclassified',
+    ('cause', 'unresolved'): 'Still unresolved', ('cause', 'quantity_unresolved'): 'Quantity unresolved',
+    ('cause', 'invalid_human_decision'): 'Review decision invalid', ('cause', 'invalid_quantity_semantics'): 'Quantity interpretation invalid',
+    ('cause', 'invalid_parameter_declaration'): 'Parameter declaration invalid', ('cause', 'requires_conversion_evidence'): 'Conversion evidence required',
+    ('cause', 'truncated_candidate_set'): 'Candidate set incomplete', ('cause', 'graph_not_closed'): 'Data-flow graph incomplete',
+    ('cause', 'required_control_marked_noncomputational'): 'Required control text excluded', ('cause', 'incompatible_units'): 'Units incompatible',
+    ('cause', 'incompatible_time_origin'): 'Time origins incompatible', ('cause', 'compatible'): 'Structurally compatible',
+    ('cause', 'upstream_segmentation_changed'): 'Source segmentation changed', ('cause', 'context_candidate_set_changed'): 'Context candidates changed',
+    ('cause', 'missing_dependency'): 'Required dependency missing', ('cause', 'dependency_retracted'): 'Required dependency retracted',
+    ('cause', 'unknown_retraction_target'): 'Retraction target missing', ('cause', 'missing_read_port'): 'Required input port missing',
+    ('cause', 'dangling_read'): 'Input reference unresolved', ('cause', 'invalid_output_port'): 'Output port inconsistent',
+    ('cause', 'lost_division_port'): 'Division output incomplete', ('cause', 'missing_source'): 'Source evidence missing',
+    ('cause', 'invalid_source_span'): 'Source span invalid', ('cause', 'missing_producer'): 'Quantity producer missing',
+    ('cause', 'cross_query_dependency'): 'Cross-stage dependency unresolved', ('cause', 'invalid_time_frame'): 'Time frame inconsistent',
+    ('cause', 'remainder_producer_corruption'): 'Remainder source inconsistent', ('cause', 'full_accumulation_corruption'): 'Accumulation source inconsistent',
+    ('cause', 'parameter_identity_corruption'): 'Parameter source inconsistent', ('cause', 'dependency_cycle'): 'Dependency cycle',
+
+    ('issue', 'missing_input'): 'Input needs a source', ('issue', 'no_legal_candidate'): 'Construction needs review',
+    ('issue', 'quantity_semantics'): 'Quantity meaning needs review', ('issue', 'stale_session'): 'Review session needs revalidation',
+    ('issue', 'decision_conflict'): 'Review decisions conflict', ('issue', 'invalid_review_binding'): 'Binding failed validation',
+    ('issue', 'ontology_extension_required'): 'Type system needs extension', ('issue', 'producer_or_port_ambiguity'): 'Quantity source is ambiguous',
+    ('issue', 'missing_context_or_profile'): 'Background information missing', ('issue', 'invalid_graph_structure'): 'Data-flow structure invalid',
+    ('issue', 'stale_decision'): 'Decision needs revalidation', ('issue', 'uncovered_source'): 'Source text still unexplained',
+    ('issue', 'invalid_human_decision'): 'Review decision did not apply',
+
+    ('action', 'select_candidate'): 'Accept candidate', ('action', 'reject_candidate'): 'Reject candidate',
+    ('action', 'resegment'): 'Change span', ('action', 'set_scope'): 'Set calculation scope',
+    ('action', 'bind_value'): 'Bind quantity source', ('action', 'bind_call'): 'Bind method call',
+    ('action', 'set_quantity_semantics'): 'Describe quantity', ('action', 'select_profile'): 'Select interpretation',
+    ('action', 'attach_context'): 'Add context source', ('action', 'declare_parameter'): 'Declare external parameter',
+    ('action', 'assemble_known_structure'): 'Add known construction', ('action', 'mark_noncomputational'): 'Mark as non-computational',
+    ('action', 'defer'): 'Leave unresolved', ('action', 'approve_scope'): 'Approve scope',
+    ('action', 'retract'): 'Retract decision', ('action', 'set_lexical_role'): 'Set lexical role',
+
+    ('unit', 'integer'): 'Integer', ('unit', 'year'): 'Year', ('unit', 'year_ordinal'): 'Year ordinal',
+    ('unit', 'year_index'): 'Year index', ('unit', 'month'): 'Month', ('unit', 'month_fraction'): 'Fraction of a month',
+    ('unit', 'day'): 'Day', ('unit', 'day_fraction'): 'Fraction of a day', ('unit', 'du'): 'Degree (du)',
+    ('unit', 'du_fraction'): 'Fraction of a degree', ('unit', 'boolean'): 'Boolean', ('unit', 'status'): 'Status',
+    ('unit', 'opaque'): 'Unit unresolved', ('unit', 'product'): 'Product unit unresolved', ('unit', 'unknown'): 'Unit unknown',
+    ('unit', 'cycle'): 'Cycle count', ('unit', 'ordinal'): 'Ordinal position', ('unit', 'month_ordinal'): 'Month ordinal',
+    ('unit', 'month_name_index'): 'Month-name index', ('unit', 'intercalary_month'): 'Intercalary-month count',
+    ('unit', 'medial'): 'Medial-qi count', ('unit', 'medial_fraction'): 'Fraction of a medial qi',
+    ('unit', 'station'): 'Station index', ('unit', 'station_fraction'): 'Fraction of a station',
+    ('unit', 'planet_event'): 'Planetary-event count', ('unit', 'table_column'): 'Table-column index',
+    ('unit', 'day_index'): 'Day index', ('unit', 'boundary_status'): 'Boundary status',
+    ('unit', 'epoch_identity'): 'Epoch reference', ('unit', 'event_sequence'): 'Event sequence',
+    ('quantity_kind', 'count'): 'Count', ('quantity_kind', 'duration'): 'Duration', ('quantity_kind', 'angle'): 'Angle',
+    ('quantity_kind', 'predicate'): 'Judgment', ('quantity_kind', 'status'): 'Status', ('quantity_kind', 'reference'): 'Reference',
+    ('quantity_kind', 'sequence'): 'Sequence', ('quantity_kind', 'unknown'): 'Type unresolved',
+    ('representation', 'whole'): 'Whole-unit value', ('representation', 'fraction_numerator'): 'Fraction numerator',
+    ('representation', 'fraction'): 'Fraction',
+    ('evidence', 'text_overt'): 'Explicit in source', ('evidence', 'declared_edited'): 'Edited reading',
+    ('evidence', 'mechanically_derived'): 'Mechanically derived', ('evidence', 'source_explicit'): 'Source evidence',
+    ('evidence', 'parser_rule'): 'Parser rule', ('evidence', 'human_selected'): 'Selected by researcher',
+    ('evidence', 'human_constructed'): 'Constructed by researcher', ('evidence', 'scholarship'): 'Scholarly interpretation',
+    ('evidence', 'scripted_fixture'): 'Automated test fixture', ('evidence', 'human'): 'Researcher action', ('evidence', 'agent'): 'Agent action',
+    ('resolution_state', 'resolved'): 'Resolved', ('resolution_state', 'unknown'): 'Unresolved',
+    ('graph_state', 'closed'): 'Data flow complete', ('graph_state', 'partial'): 'Data flow incomplete',
+    ('graph_state', 'invalid'): 'Structure invalid', ('graph_state', 'compiled'): 'Structure compiled', ('graph_state', 'issues'): 'Needs review',
+    ('review_state', 'draft'): 'Draft', ('review_state', 'in_review'): 'In review', ('review_state', 'approved'): 'Review recorded',
+    ('review_state', 'needs_review'): 'Needs review', ('review_state', 'completed'): 'Review queue completed', ('review_state', 'needs_revalidation'): 'Needs revalidation',
+    ('execution_state', 'not_run'): 'Not executed', ('execution_state', 'not_requested'): 'Execution not requested',
+    ('execution_state', 'missing_inputs'): 'Inputs missing', ('execution_state', 'unresolved'): 'Execution blocked by unresolved items',
+    ('execution_state', 'unsupported'): 'Execution unsupported', ('execution_state', 'failed'): 'Execution failed', ('execution_state', 'executed'): 'Execution completed',
+    ('comparison_state', 'unavailable'): 'No independent comparison', ('comparison_state', 'exact'): 'Exact match',
+    ('comparison_state', 'compatible'): 'Compatible', ('comparison_state', 'mismatch'): 'Mismatch',
+    ('comparison_state', 'blocked'): 'Comparison blocked', ('comparison_state', 'scoped_ready'): 'Scope ready for comparison', ('comparison_state', 'ready'): 'Ready for comparison',
+    ('session_state', 'ok'): 'Session current', ('session_state', 'stale_source'): 'Source changed',
+    ('session_state', 'stale_identity'): 'Runtime changed', ('session_state', 'active'): 'Active decision',
+    ('session_state', 'retracted'): 'Retracted decision', ('session_state', 'conflicted'): 'Conflicting decision', ('session_state', 'needs_revalidation'): 'Needs revalidation',
+    ('stage_state', 'not_run'): 'Not run', ('stage_state', 'processing'): 'Processing',
+    ('stage_state', 'completed'): 'Analysis produced', ('stage_state', 'needs_review'): 'Needs review',
+    ('stage_state', 'blocked'): 'Blocked', ('stage_state', 'stale'): 'Stale',
+    ('severity', 'blocking'): 'Blocking', ('severity', 'review'): 'Review required',
+    ('artifact', 'source_packet'): 'Analysis input', ('artifact', 'documents'): 'Source documents',
+    ('artifact', 'tokens'): 'Lexical candidates', ('artifact', 'construction_candidates'): 'Construction candidates',
+    ('artifact', 'definitions'): 'Calculation structure', ('artifact', 'values'): 'Quantities',
+    ('artifact', 'events'): 'Operations', ('artifact', 'graph_status'): 'Data-flow status',
+    ('artifact', 'unresolved_required_spans'): 'Unexplained required source', ('artifact', 'review_questions'): 'Review questions',
+    ('validation_state', 'true'): 'Ready for complete export', ('validation_state', 'false'): 'Complete export blocked',
+    ('control_end', 'judgment'): 'End at judgment', ('symbol', 'unresolved_focus'): 'Current operand unresolved',
+}
+
+
+def _register_english(category, rows):
+    for line in rows.strip().splitlines():
+        code, definition_en = line.strip().split('|', 1)
+        _DEFINITION_EN[category, code] = definition_en
+
+
+_register_english('operation', '''
+input|Provides a quantity through an input node in the graph.
+literal|Creates a value from a numeral in the source text.
+parameter|Supplies a parameter from a compiled background declaration.
+load|Makes an input quantity the current operand.
+multiply|Reads two operands and produces their product.
+add|Reads two operands and produces their sum.
+subtract|Produces a difference from the recorded left and right operands.
+divmod|Produces separate quotient and remainder outputs from a division.
+cycle_reduce|Divides by a recorded cycle quantity and retains quotient and remainder.
+alias|Creates a named reference to an existing quantity.
+threshold|Tests a recorded quantity against a recorded boundary.
+count|Counts from a recorded origin using a recorded offset.
+year_scan|Subtracts month counts through an existing sequence of year lengths.
+interval_scale|Scales an interval by a recorded multiplier.
+method_call|Calls an already compiled method through recorded ports.
+select|Chooses an output using an existing condition.
+lookup|Reads data from an existing table row and column.
+rescale|Changes a quantity's representation scale using recorded evidence.
+fraction|Forms a fraction from a whole part, numerator, and denominator.
+convert|Converts units using a recorded rate.
+epoch_frame|Establishes a recorded epoch reference.
+repeat|Runs an established repeated body with a stopping condition.
+cycle_lift|Uses an existing model to lift a residual quantity into a full local epoch coordinate.
+event_sequence|Generates an ordered event sequence from a recorded origin and interval.
+boundary_call|Compares using the selected boundary interpretation.
+framed_origin|Places an origin within a recorded epoch frame.
+initial_instant|Establishes an initial instant from a recorded interpretation.
+judgment|Records the result of an existing judgment.
+''')
+
+_register_english('construction', '''
+task_marker|Text identified as an entry point for a procedure.
+query_marker|Text identified as an entry point for a query.
+update_count|An expression combining a quantity update with counting.
+numeral_predicate|An expression in which a numeral cues multiplication.
+denominator_declaration|An expression specifying a denominator for subsequent calculation.
+multiply|An expression with a multiplication construction.
+multiply_focus|A multiplication expression whose operand is the current quantity.
+subtract|An expression with a subtraction construction.
+update|An expression that explicitly updates a receiver quantity.
+pair_increment|An expression linking a name with an increment.
+load|An expression that loads an operand.
+divide|An expression that divides by a specified divisor to obtain quotient and remainder.
+cycle_divide|An expression that removes complete cycles by division.
+divide_by|An expression explicitly naming a divisor and a dividend.
+pending_cycle|A recognized expression that needs a following construction to determine its calculation.
+loop_threshold|An expression marking a boundary in a repeated process.
+remainder_name|An expression that names a remainder quantity.
+name|An expression that names a quantity.
+receiver_add|An expression that combines a current quantity into a receiver.
+count_origin|An expression stating where counting begins.
+count_command|An expression directing counting from an origin.
+count_remainder|An expression that counts from a remainder quantity.
+threshold|An expression stating a boundary relation.
+add|An expression stating that a quantity is added.
+recur_increment|An expression stating a subsequent increment.
+double_interval|An expression stating that an interval is doubled.
+mixed_compact|A compact expression with whole and fractional parts.
+declaration|An expression linking a name and a literal value.
+parameter_alias|An expression assigning another name to a background quantity.
+mixed_duration|A duration expression with whole and fractional parts.
+reuse_operation|An expression referring to an earlier operation.
+epoch_load|An expression loading years counted from an epoch.
+method_value_reference|An expression referring to a method that processes a quantity.
+scalar_value|An expression declaring a scalar value.
+scalar_name|An expression naming a scalar.
+schedule_row|An expression recording a relation between years and cumulative counts.
+scan_length|An expression recording a length to be repeatedly subtracted.
+epoch_divide|A division performed on a quantity accumulated from an epoch.
+entry_cycle|An expression recording the reduction step that enters a cycle.
+entry_remainder_divide|An expression continuing division of the remainder on entry to a cycle.
+concordance_case|An expression recording one branch of a concordance calculation.
+conditional_count|An expression that counts when a condition is met.
+method_reference|An expression referring to the preceding method.
+use_denominator|An expression using a denominator stated earlier.
+complete_cycle|The continuation recognized for a cycle-reduction construction.
+judgment|An expression recording a judgment conclusion.
+annotation|Explanatory text recognized by a rule.
+boundary|An expression concerning an event boundary.
+concordance_pending|A concordance expression awaiting subsequent structure.
+concordance_remainder|A remainder expression within a concordance calculation.
+concordance_select|A selection expression within a concordance calculation.
+epoch_elapsed|An expression for a quantity elapsed from an epoch.
+epoch_inclusive|An epoch count that includes its starting position.
+era_index|An expression for an era index.
+loop_result|An expression recording the result of a repeated process.
+nominal|An expression currently identified as nominal.
+obscuration_index|An expression for an obscuration-cycle index.
+temporal_anchor|An expression specifying a temporal reference.
+year_name|An expression assigning a name to a year.
+unclassified|An expression for which the current rule assigns no category.
+''')
+
+_register_english('syntax', '''
+UnsupportedConstruction|A construction the current rules do not explain.
+Sequence|A sequence of constructions in recorded order.
+Term|A lexical item occurrence recognized at this location.
+Number|A numeral occurrence recognized at this location.
+Anaphor|An anaphoric expression recognized at this location.
+Syntax|A syntactic edge recognized at this location.
+''')
+
+_register_english('frame', '''
+ProcedureDef|A procedure range recorded by the program structure.
+QueryDef|A query or calculation stage established from an existing base state.
+MethodSlice|A compiler-extracted range that can be referenced as a method.
+ContextDef|A range that provides background declarations.
+''')
+
+_register_english('cause', '''
+unresolved_parser|The current rules do not explain this source segment.
+incomplete_construction|The current construction awaits a rule-required continuation.
+missing_import|A required input has not been bound.
+unknown_quantity_semantics|The meaning of the quantity remains to be determined.
+unknown_quantity|The current structure cannot identify the referenced quantity.
+stale_identity|Existing review decisions must be revalidated because the runtime identity changed.
+stale_source|Existing review decisions must be revalidated because the source version changed.
+multiple_active_decisions_for_slot|The same judgment target has conflicting active decisions.
+schema_extension_required|The current type catalogue cannot express the required structure.
+binding_not_structurally_compatible|The specified binding fails the backend structural check.
+necessary_source_not_accounted|This source span has not yet been structurally accounted for.
+requires_external_data|The current operation still requires sourced external material.
+missing_query_base|The current query has no determined base state.
+ambiguous_import|The current quantity has more than one candidate source.
+ambiguous_operation_import|The current operation has more than one candidate source.
+missing_operation_import|The current operation refers to an unbound input.
+UnsupportedConstruction|The current rules do not explain this source segment.
+unclassified|The current rules assign no category to this expression.
+unresolved|The current structure still contains unexplained content.
+quantity_unresolved|The meaning of the quantity remains to be determined.
+invalid_human_decision|The current decision does not pass compilation checks.
+invalid_quantity_semantics|The quantity description does not satisfy current constraints.
+invalid_parameter_declaration|This quantity cannot be treated as a root input under the current declaration.
+requires_conversion_evidence|The conversion still needs explicit evidence.
+truncated_candidate_set|The current record does not contain the complete candidate set.
+graph_not_closed|The graph does not satisfy the closure conditions for complete export.
+required_control_marked_noncomputational|A required control span is marked as non-computational.
+incompatible_units|The two units do not pass compatibility checks.
+incompatible_time_origin|The two temporal references do not pass compatibility checks.
+compatible|This structural compatibility check passed.
+upstream_segmentation_changed|The decision depends on a segmentation that changed upstream.
+context_candidate_set_changed|The decision depends on a background candidate set that changed.
+missing_dependency|A required upstream decision is absent from the current branch.
+dependency_retracted|A required upstream decision was retracted.
+unknown_retraction_target|The current branch does not contain the requested retraction target.
+missing_read_port|The operation lacks a required input port.
+dangling_read|The referenced input quantity is absent from the current graph.
+invalid_output_port|The quantity's producer and recorded output port do not agree.
+lost_division_port|The division does not retain both required quotient and remainder ports.
+missing_source|The node has no recorded source evidence.
+invalid_source_span|The node span does not match the current source text.
+missing_producer|A derived quantity has no producer in the current graph.
+cross_query_dependency|A cross-query quantity reference did not pass verification.
+invalid_time_frame|The current temporal frame did not pass structural checks.
+remainder_producer_corruption|The remainder name points to a different output port.
+full_accumulation_corruption|The accumulation receiver does not agree with the explicit name.
+parameter_identity_corruption|The parameter does not originate from a declaration node.
+dependency_cycle|The current dependency relation contains a cycle.
+''')
+
 
 def _register(category, rows, required, prohibited, parent=None):
     for line in rows.strip().splitlines():
         code, label, definition = line.strip().split('|', 2)
+        definition_en = _DEFINITION_EN.get((category, code))
+        if category in INSPECTOR_DEFAULT_CATEGORIES and not definition_en:
+            raise ValueError(f'missing_english_definition:{category}:{code}')
         REGISTRY[category, code] = {
             'code': code, 'category': category, 'hierarchy': [category, parent, code] if parent else [category, code],
-            'label': label, 'definition': definition,
+            'label': label, 'label_en': _LABEL_EN.get((category, code)), 'definition': definition,
+            'definition_en': definition_en,
             'methodology': definition + '；此名称描述后端记录的类型或状态，须结合原文证据与依赖检查阅读。',
             'required_fields': list(required), 'must_not_infer': list(prohibited),
         }
@@ -35,6 +391,13 @@ def codes(category):
 
 def label(category, code):
     return entry(category, code)['label']
+
+
+def label_en(category, code):
+    value = entry(category, code)['label_en']
+    if not value:
+        raise ValueError(f'missing_english_label:{category}:{code}')
+    return value
 
 
 _register('operation', '''

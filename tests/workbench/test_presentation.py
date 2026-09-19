@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class PresentationTests(unittest.TestCase):
     def test_registry_exhaustiveness_and_entry_contract(self):
-        from analysis_parser.ontology import REGISTRY, codes, entry
+        from analysis_parser.ontology import REGISTRY, codes, entry, label_en, INSPECTOR_DEFAULT_CATEGORIES
         from analysis_parser.construction_ir import GRAMMAR, EXACT
         from adjudication.registry import OPERATION_CONTRACTS, QUANTITY_UNITS
         from adjudication.session import ACTIONS
@@ -26,8 +26,23 @@ class PresentationTests(unittest.TestCase):
             self.assertEqual(item['code'], code)
             for field in ('category', 'hierarchy', 'label', 'definition', 'methodology', 'required_fields', 'must_not_infer'):
                 self.assertTrue(item[field], (domain, code, field))
+            if domain in INSPECTOR_DEFAULT_CATEGORIES:
+                self.assertTrue(item['definition_en'], (domain, code, 'definition_en'))
         with self.assertRaisesRegex(ValueError, 'unregistered_ontology_code'):
             entry('review_state', 'new_unregistered_state')
+
+    def test_authored_english_labels_are_available_without_code_generation(self):
+        from analysis_parser.ontology import REGISTRY, label_en, TECHNICAL_ONLY_ENGLISH
+        unsupported = TECHNICAL_ONLY_ENGLISH
+        missing = {(domain, code) for (domain, code), item in REGISTRY.items()
+                   if not item['label_en']} - unsupported
+        self.assertEqual(missing, set())
+        self.assertEqual(label_en('operation', 'divmod'), 'Divide with remainder')
+        self.assertEqual(label_en('port', 'dividend'), 'Dividend')
+        with self.assertRaisesRegex(ValueError, 'missing_english_label'):
+            label_en('action_variant', 'defer:unresolved')
+        with self.assertRaisesRegex(ValueError, 'missing_english_label'):
+            label_en('profile', 'ST_elapsed')
 
     def test_semantic_goldens_and_must_not_say(self):
         from workbench.presentation import present_question

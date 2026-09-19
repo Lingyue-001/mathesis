@@ -72,60 +72,31 @@ class InspectorTests(unittest.TestCase):
 
 
 class AppTests(unittest.TestCase):
-    def test_compact_display_groups_fields_without_changing_data_or_files(self):
+    def test_global_language_toggle_changes_shell_and_readable_view_without_writing_outputs(self):
         from streamlit.testing.v1 import AppTest
         before = {p.name: p.read_bytes() for p in runner.OUTPUT.glob('*.json')}
-        text = '𠀀大周\n<script>甲</script>'
-        packet = runner.text_packet(text)
-        records = [
-            {'id': 't1', 'kind': 'Term', 'text': text, 'start': 0, 'end': len(text),
-             'source_span': {'doc_id': 'pasted', 'start': 0, 'end': len(text), 'quote': text}},
-            {'id': 't2', 'kind': 'Number', 'text': '一', 'value': 1, 'start': 1, 'end': 2},
-        ]
-        snapshot = dict.fromkeys(runner.FILES)
-        snapshot.update({'packet.json': packet, 'lexical_candidates.json': records,
-                         'run.json': {'status': 'complete', 'completed_stages': ['lexical']}})
-        app = AppTest.from_file(str(Path(__file__).with_name('app.py')))
-        app.session_state['pasted_text'] = text
-        app.session_state['snapshot_packet'] = packet
-        app.session_state['snapshot'] = snapshot
-        app.run()
-        self.assertFalse(app.exception)
-        compact = [item.value for item in app.code if json.loads(item.value) == records]
-        self.assertEqual(len(compact), 1)
-        lines = compact[0].splitlines()
-        self.assertEqual(len(lines), 6)  # Brackets plus two lines per record.
-        self.assertIn('"id": "t1"', lines[1])
-        self.assertIn('"kind": "Term"', lines[1])
-        self.assertIn('"start": 0', lines[1])
-        self.assertIn('"text":', lines[2])
-        self.assertIn('"source_span":', lines[2])
-        self.assertIn(records, [json.loads(item.value) for item in app.json])
-        self.assertEqual(app.session_state['snapshot'], snapshot)
-        self.assertEqual(before, {p.name: p.read_bytes() for p in runner.OUTPUT.glob('*.json')})
-
-    def test_paste_run_shows_raw_json_paths_and_clears_stale_view(self):
-        from streamlit.testing.v1 import AppTest
         app = AppTest.from_file(str(Path(__file__).with_name('app.py'))).run()
         self.assertFalse(app.exception)
-        # A pasted textarea value is committed on blur; disabled buttons cannot
-        # trigger that interaction in a real browser.
-        self.assertFalse(app.button(key='compile').disabled)
-        app.button(key='compile').click().run()
+        self.assertFalse(app.error)
+        self.assertEqual([button.label for button in app.button], ['EN', 'CH'])
+        self.assertEqual(app.radio[0].label, 'Workspace')
         self.assertEqual(len(app.json), 0)
-        app.text_area(key='pasted_text').set_value('以大周乘年。').run()
-        app.button(key='compile').click().run()
-        self.assertFalse(app.exception)
-        saved = json.loads((runner.OUTPUT / 'compiler_report.json').read_text(encoding='utf-8'))
-        rendered = [json.loads(item.value) for item in app.json]
-        self.assertIn(saved, rendered)
-        self.assertIn(saved['events'], rendered)
-        self.assertTrue(any('events.json' in item.value for item in app.caption))
-        app.text_area(key='pasted_text').set_value('大周三百。').run()
-        self.assertEqual(len(app.json), 0)
-        app.button(key='lexical').click().run()
-        self.assertFalse(app.exception)
-        self.assertIsNone(json.loads((runner.OUTPUT / 'compiler_report.json').read_text(encoding='utf-8')))
+        self.assertEqual(len(app.text_area), 0)
+        frames = app.get('iframe')
+        self.assertEqual(len(frames), 1)
+        html = frames[0].proto.srcdoc
+        self.assertIn('sifen:section:39', html)
+        self.assertIn('no human decisions', html)
+        self.assertIn('applyLanguage("en")', html)
+        for layer in ('R1', 'R2', 'R3', 'R4'):
+            self.assertIn(f'id="{layer}"', html)
+        app.button[1].click().run()
+        self.assertEqual([button.label for button in app.button], ['EN', 'CH'])
+        self.assertEqual(app.radio[0].label, '工作区')
+        self.assertIn('applyLanguage("zh")', app.get('iframe')[0].proto.srcdoc)
+        app.button[0].click().run()
+        self.assertEqual(app.radio[0].label, 'Workspace')
+        self.assertEqual(before, {p.name: p.read_bytes() for p in runner.OUTPUT.glob('*.json')})
 
     def test_inspector_has_no_registered_corpus_input(self):
         from streamlit.testing.v1 import AppTest

@@ -1,0 +1,7086 @@
+{
+  "baseline_kind": "current_machine_observation_not_gold",
+  "cases": {
+    "sifen:section:38": {
+      "R1": [
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 17,
+            "quote": "之",
+            "start": 16
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 41,
+            "quote": "其",
+            "start": 40
+          },
+          "surface": "其"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 11,
+            "quote": "一",
+            "start": 10
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 23,
+            "quote": "一",
+            "start": 22
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 37,
+            "quote": "二",
+            "start": 36
+          },
+          "surface": "二"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 37,
+            "quote": "十二",
+            "start": 35
+          },
+          "surface": "十二"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 1,
+            "quote": "推",
+            "start": 0
+          },
+          "surface": "推"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 10,
+            "quote": "減",
+            "start": 9
+          },
+          "surface": "減"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 11,
+            "quote": "一",
+            "start": 10
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 12,
+            "quote": "，",
+            "start": 11
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 13,
+            "quote": "以",
+            "start": 12
+          },
+          "surface": "以"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 14,
+            "quote": "章",
+            "start": 13
+          },
+          "surface": "章"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 15,
+            "quote": "月",
+            "start": 14
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 16,
+            "quote": "乘",
+            "start": 15
+          },
+          "surface": "乘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 17,
+            "quote": "之",
+            "start": 16
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 18,
+            "quote": "，",
+            "start": 17
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 19,
+            "quote": "滿",
+            "start": 18
+          },
+          "surface": "滿"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 2,
+            "quote": "天",
+            "start": 1
+          },
+          "surface": "天"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 20,
+            "quote": "章",
+            "start": 19
+          },
+          "surface": "章"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 21,
+            "quote": "法",
+            "start": 20
+          },
+          "surface": "法"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 22,
+            "quote": "得",
+            "start": 21
+          },
+          "surface": "得"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 23,
+            "quote": "一",
+            "start": 22
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 24,
+            "quote": "，",
+            "start": 23
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 25,
+            "quote": "名",
+            "start": 24
+          },
+          "surface": "名"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 26,
+            "quote": "為",
+            "start": 25
+          },
+          "surface": "為"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 27,
+            "quote": "積",
+            "start": 26
+          },
+          "surface": "積"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 28,
+            "quote": "月",
+            "start": 27
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 29,
+            "quote": "，",
+            "start": 28
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 3,
+            "quote": "正",
+            "start": 2
+          },
+          "surface": "正"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 30,
+            "quote": "不",
+            "start": 29
+          },
+          "surface": "不"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 31,
+            "quote": "滿",
+            "start": 30
+          },
+          "surface": "滿"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 32,
+            "quote": "為",
+            "start": 31
+          },
+          "surface": "為"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 33,
+            "quote": "閏",
+            "start": 32
+          },
+          "surface": "閏"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 34,
+            "quote": "餘",
+            "start": 33
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 35,
+            "quote": "，",
+            "start": 34
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 36,
+            "quote": "十",
+            "start": 35
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 37,
+            "quote": "二",
+            "start": 36
+          },
+          "surface": "二"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 38,
+            "quote": "以",
+            "start": 37
+          },
+          "surface": "以"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 39,
+            "quote": "上",
+            "start": 38
+          },
+          "surface": "上"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 4,
+            "quote": "術",
+            "start": 3
+          },
+          "surface": "術"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 40,
+            "quote": "，",
+            "start": 39
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 41,
+            "quote": "其",
+            "start": 40
+          },
+          "surface": "其"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 42,
+            "quote": "歲",
+            "start": 41
+          },
+          "surface": "歲"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 43,
+            "quote": "有",
+            "start": 42
+          },
+          "surface": "有"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 44,
+            "quote": "閏",
+            "start": 43
+          },
+          "surface": "閏"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 45,
+            "quote": "。",
+            "start": 44
+          },
+          "surface": "。"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 5,
+            "quote": "，",
+            "start": 4
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 6,
+            "quote": "置",
+            "start": 5
+          },
+          "surface": "置"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 7,
+            "quote": "入",
+            "start": 6
+          },
+          "surface": "入"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 8,
+            "quote": "蔀",
+            "start": 7
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 9,
+            "quote": "年",
+            "start": 8
+          },
+          "surface": "年"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 15,
+            "quote": "月",
+            "start": 14
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 15,
+            "quote": "章月",
+            "start": 13
+          },
+          "surface": "章月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 21,
+            "quote": "法",
+            "start": 20
+          },
+          "surface": "法"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 21,
+            "quote": "章法",
+            "start": 19
+          },
+          "surface": "章法"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 28,
+            "quote": "月",
+            "start": 27
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 28,
+            "quote": "積月",
+            "start": 26
+          },
+          "surface": "積月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 34,
+            "quote": "閏餘",
+            "start": 32
+          },
+          "surface": "閏餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 34,
+            "quote": "餘",
+            "start": 33
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 4,
+            "quote": "天正術",
+            "start": 1
+          },
+          "surface": "天正術"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 4,
+            "quote": "正術",
+            "start": 2
+          },
+          "surface": "正術"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 4,
+            "quote": "術",
+            "start": 3
+          },
+          "surface": "術"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 44,
+            "quote": "有閏",
+            "start": 42
+          },
+          "surface": "有閏"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 44,
+            "quote": "歲有閏",
+            "start": 41
+          },
+          "surface": "歲有閏"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 44,
+            "quote": "閏",
+            "start": 43
+          },
+          "surface": "閏"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 9,
+            "quote": "入蔀年",
+            "start": 6
+          },
+          "surface": "入蔀年"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 9,
+            "quote": "年",
+            "start": 8
+          },
+          "surface": "年"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:38",
+            "end": 9,
+            "quote": "蔀年",
+            "start": 7
+          },
+          "surface": "蔀年"
+        }
+      ],
+      "R2": [
+        {
+          "kind": "divide",
+          "slots": {
+            "divisor": {
+              "kind": "Term",
+              "text": "章法"
+            },
+            "value": {
+              "kind": "Term",
+              "text": ""
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:38",
+              "end": 23,
+              "quote": "滿章法得一",
+              "start": 18
+            }
+          ],
+          "status": "selected",
+          "surface": "滿章法得一"
+        },
+        {
+          "kind": "judgment",
+          "slots": {},
+          "source_spans": [
+            {
+              "doc_id": "sifen:38",
+              "end": 44,
+              "quote": "其歲有閏",
+              "start": 40
+            }
+          ],
+          "status": "selected",
+          "surface": "其歲有閏"
+        },
+        {
+          "kind": "load",
+          "slots": {
+            "decrement": {
+              "kind": "Number",
+              "text": "一"
+            },
+            "value": {
+              "kind": "Term",
+              "text": "入蔀年"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:38",
+              "end": 11,
+              "quote": "置入蔀年減一",
+              "start": 5
+            }
+          ],
+          "status": "selected",
+          "surface": "置入蔀年減一"
+        },
+        {
+          "kind": "multiply",
+          "slots": {
+            "left": {
+              "kind": "Term",
+              "text": "章月"
+            },
+            "right": {
+              "kind": "Anaphor",
+              "text": "之"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:38",
+              "end": 17,
+              "quote": "以章月乘之",
+              "start": 12
+            }
+          ],
+          "status": "selected",
+          "surface": "以章月乘之"
+        },
+        {
+          "kind": "name",
+          "slots": {
+            "label": {
+              "kind": "Term",
+              "text": "積月"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:38",
+              "end": 28,
+              "quote": "名為積月",
+              "start": 24
+            }
+          ],
+          "status": "selected",
+          "surface": "名為積月"
+        },
+        {
+          "kind": "remainder_name",
+          "slots": {
+            "label": {
+              "kind": "Term",
+              "text": "閏餘"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:38",
+              "end": 34,
+              "quote": "不滿為閏餘",
+              "start": 29
+            }
+          ],
+          "status": "selected",
+          "surface": "不滿為閏餘"
+        },
+        {
+          "kind": "task_marker",
+          "slots": {
+            "marker": {
+              "kind": "Term",
+              "text": "推"
+            },
+            "target": {
+              "kind": "Term",
+              "text": "天正術"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:38",
+              "end": 4,
+              "quote": "推天正術",
+              "start": 0
+            }
+          ],
+          "status": "selected",
+          "surface": "推天正術"
+        },
+        {
+          "kind": "threshold",
+          "slots": {
+            "lower": {
+              "kind": "Number",
+              "text": "十二"
+            },
+            "value": {
+              "kind": "Term",
+              "text": ""
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:38",
+              "end": 39,
+              "quote": "十二以上",
+              "start": 35
+            },
+            {
+              "doc_id": "sifen:38",
+              "end": 44,
+              "quote": "其歲有閏",
+              "start": 40
+            }
+          ],
+          "status": "selected",
+          "surface": "十二以上"
+        }
+      ],
+      "R3": [
+        {
+          "defined_values": {
+            "積月": {
+              "port": "result"
+            },
+            "閏餘": {
+              "port": "remainder"
+            }
+          },
+          "domain_label": "new_moon",
+          "formal_inputs": {
+            "入蔀年": {
+              "roles": [
+                "value"
+              ]
+            },
+            "章月": {
+              "roles": [
+                "left"
+              ]
+            },
+            "章法": {
+              "roles": [
+                "divisor"
+              ]
+            }
+          },
+          "free_variables": {
+            "入蔀年": {
+              "roles": [
+                "value"
+              ]
+            },
+            "章月": {
+              "roles": [
+                "left"
+              ]
+            },
+            "章法": {
+              "roles": [
+                "divisor"
+              ]
+            }
+          },
+          "goal_surface": "天正術",
+          "kind": "ProcedureDef",
+          "return_ports": {
+            "閏餘": {
+              "port": "remainder"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:38",
+              "end": 11,
+              "quote": "置入蔀年減一",
+              "start": 5
+            },
+            {
+              "doc_id": "sifen:38",
+              "end": 17,
+              "quote": "以章月乘之",
+              "start": 12
+            },
+            {
+              "doc_id": "sifen:38",
+              "end": 23,
+              "quote": "滿章法得一",
+              "start": 18
+            },
+            {
+              "doc_id": "sifen:38",
+              "end": 28,
+              "quote": "名為積月",
+              "start": 24
+            },
+            {
+              "doc_id": "sifen:38",
+              "end": 34,
+              "quote": "不滿為閏餘",
+              "start": 29
+            },
+            {
+              "doc_id": "sifen:38",
+              "end": 39,
+              "quote": "十二以上",
+              "start": 35
+            },
+            {
+              "doc_id": "sifen:38",
+              "end": 4,
+              "quote": "推天正術",
+              "start": 0
+            },
+            {
+              "doc_id": "sifen:38",
+              "end": 44,
+              "quote": "其歲有閏",
+              "start": 40
+            }
+          ]
+        }
+      ],
+      "R4": {
+        "imports": [
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "new_moon",
+              "goal_surface": "天正術",
+              "kind": "ProcedureDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:38",
+                  "end": 11,
+                  "quote": "置入蔀年減一",
+                  "start": 5
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 17,
+                  "quote": "以章月乘之",
+                  "start": 12
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 23,
+                  "quote": "滿章法得一",
+                  "start": 18
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 28,
+                  "quote": "名為積月",
+                  "start": 24
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 34,
+                  "quote": "不滿為閏餘",
+                  "start": 29
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 39,
+                  "quote": "十二以上",
+                  "start": 35
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 4,
+                  "quote": "推天正術",
+                  "start": 0
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 44,
+                  "quote": "其歲有閏",
+                  "start": 40
+                }
+              ]
+            },
+            "formal": "入蔀年",
+            "selected_definition": null,
+            "selected_port": "入蔀年",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:38",
+                "end": 11,
+                "quote": "置入蔀年減一",
+                "start": 5
+              }
+            ]
+          },
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "new_moon",
+              "goal_surface": "天正術",
+              "kind": "ProcedureDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:38",
+                  "end": 11,
+                  "quote": "置入蔀年減一",
+                  "start": 5
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 17,
+                  "quote": "以章月乘之",
+                  "start": 12
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 23,
+                  "quote": "滿章法得一",
+                  "start": 18
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 28,
+                  "quote": "名為積月",
+                  "start": 24
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 34,
+                  "quote": "不滿為閏餘",
+                  "start": 29
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 39,
+                  "quote": "十二以上",
+                  "start": 35
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 4,
+                  "quote": "推天正術",
+                  "start": 0
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 44,
+                  "quote": "其歲有閏",
+                  "start": 40
+                }
+              ]
+            },
+            "formal": "章月",
+            "selected_definition": null,
+            "selected_port": "章月",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:38",
+                "end": 17,
+                "quote": "以章月乘之",
+                "start": 12
+              }
+            ]
+          },
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "new_moon",
+              "goal_surface": "天正術",
+              "kind": "ProcedureDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:38",
+                  "end": 11,
+                  "quote": "置入蔀年減一",
+                  "start": 5
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 17,
+                  "quote": "以章月乘之",
+                  "start": 12
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 23,
+                  "quote": "滿章法得一",
+                  "start": 18
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 28,
+                  "quote": "名為積月",
+                  "start": 24
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 34,
+                  "quote": "不滿為閏餘",
+                  "start": 29
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 39,
+                  "quote": "十二以上",
+                  "start": 35
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 4,
+                  "quote": "推天正術",
+                  "start": 0
+                },
+                {
+                  "doc_id": "sifen:38",
+                  "end": 44,
+                  "quote": "其歲有閏",
+                  "start": 40
+                }
+              ]
+            },
+            "formal": "章法",
+            "selected_definition": null,
+            "selected_port": "章法",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:38",
+                "end": 23,
+                "quote": "滿章法得一",
+                "start": 18
+              }
+            ]
+          }
+        ],
+        "missing_dependencies": [
+          {
+            "cause": "requires_external_data",
+            "missing_inputs": [
+              "章月"
+            ],
+            "reason": "Parameter value is not declared in runtime context",
+            "source_spans": [
+              {
+                "doc_id": "sifen:38",
+                "end": 17,
+                "quote": "以章月乘之",
+                "start": 12
+              }
+            ]
+          },
+          {
+            "cause": "requires_external_data",
+            "missing_inputs": [
+              "章法"
+            ],
+            "reason": "Parameter value is not declared in runtime context",
+            "source_spans": [
+              {
+                "doc_id": "sifen:38",
+                "end": 23,
+                "quote": "滿章法得一",
+                "start": 18
+              }
+            ]
+          },
+          {
+            "cause": "unknown_quantity",
+            "missing_inputs": [],
+            "reason": "no declared contextual rate or compatible fraction carry",
+            "source_spans": [
+              {
+                "doc_id": "sifen:38",
+                "end": 23,
+                "quote": "滿章法得一",
+                "start": 18
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "sifen:section:39": {
+      "R1": [
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 126,
+            "quote": "之",
+            "start": 125
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 17,
+            "quote": "之",
+            "start": 16
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 43,
+            "quote": "之",
+            "start": 42
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 45,
+            "quote": "其",
+            "start": 44
+          },
+          "surface": "其"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 57,
+            "quote": "之",
+            "start": 56
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 61,
+            "quote": "之",
+            "start": 60
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 86,
+            "quote": "其",
+            "start": 85
+          },
+          "surface": "其"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 100,
+            "quote": "九",
+            "start": 99
+          },
+          "surface": "九"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 100,
+            "quote": "二十九",
+            "start": 97
+          },
+          "surface": "二十九"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 100,
+            "quote": "十九",
+            "start": 98
+          },
+          "surface": "十九"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 107,
+            "quote": "九十",
+            "start": 105
+          },
+          "surface": "九十"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 107,
+            "quote": "十",
+            "start": 106
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 107,
+            "quote": "四百九十",
+            "start": 103
+          },
+          "surface": "四百九十"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 107,
+            "quote": "百九十",
+            "start": 104
+          },
+          "surface": "百九十"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 109,
+            "quote": "九",
+            "start": 108
+          },
+          "surface": "九"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 118,
+            "quote": "一",
+            "start": 117
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 23,
+            "quote": "一",
+            "start": 22
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 40,
+            "quote": "六十",
+            "start": 38
+          },
+          "surface": "六十"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 40,
+            "quote": "十",
+            "start": 39
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 70,
+            "quote": "一",
+            "start": 69
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 70,
+            "quote": "十一",
+            "start": 68
+          },
+          "surface": "十一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 82,
+            "quote": "一",
+            "start": 81
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 82,
+            "quote": "十一",
+            "start": 80
+          },
+          "surface": "十一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 82,
+            "quote": "四十一",
+            "start": 79
+          },
+          "surface": "四十一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 82,
+            "quote": "四百四十一",
+            "start": 77
+          },
+          "surface": "四百四十一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 82,
+            "quote": "百四十一",
+            "start": 78
+          },
+          "surface": "百四十一"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 1,
+            "quote": "推",
+            "start": 0
+          },
+          "surface": "推"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 10,
+            "quote": "積",
+            "start": 9
+          },
+          "surface": "積"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 100,
+            "quote": "九",
+            "start": 99
+          },
+          "surface": "九"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 101,
+            "quote": "，",
+            "start": 100
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 102,
+            "quote": "小",
+            "start": 101
+          },
+          "surface": "小"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 103,
+            "quote": "餘",
+            "start": 102
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 104,
+            "quote": "四",
+            "start": 103
+          },
+          "surface": "四"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 105,
+            "quote": "百",
+            "start": 104
+          },
+          "surface": "百"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 106,
+            "quote": "九",
+            "start": 105
+          },
+          "surface": "九"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 107,
+            "quote": "十",
+            "start": 106
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 108,
+            "quote": "〈",
+            "start": 107
+          },
+          "surface": "〈"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 109,
+            "quote": "九",
+            "start": 108
+          },
+          "surface": "九"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 11,
+            "quote": "月",
+            "start": 10
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 110,
+            "quote": "〉",
+            "start": 109
+          },
+          "surface": "〉"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 111,
+            "quote": "，",
+            "start": 110
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 112,
+            "quote": "小",
+            "start": 111
+          },
+          "surface": "小"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 113,
+            "quote": "餘",
+            "start": 112
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 114,
+            "quote": "滿",
+            "start": 113
+          },
+          "surface": "滿"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 115,
+            "quote": "蔀",
+            "start": 114
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 116,
+            "quote": "月",
+            "start": 115
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 117,
+            "quote": "得",
+            "start": 116
+          },
+          "surface": "得"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 118,
+            "quote": "一",
+            "start": 117
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 119,
+            "quote": "，",
+            "start": 118
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 12,
+            "quote": "，",
+            "start": 11
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 120,
+            "quote": "上",
+            "start": 119
+          },
+          "surface": "上"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 121,
+            "quote": "加",
+            "start": 120
+          },
+          "surface": "加"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 122,
+            "quote": "大",
+            "start": 121
+          },
+          "surface": "大"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 123,
+            "quote": "餘",
+            "start": 122
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 124,
+            "quote": "，",
+            "start": 123
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 125,
+            "quote": "命",
+            "start": 124
+          },
+          "surface": "命"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 126,
+            "quote": "之",
+            "start": 125
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 127,
+            "quote": "如",
+            "start": 126
+          },
+          "surface": "如"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 128,
+            "quote": "前",
+            "start": 127
+          },
+          "surface": "前"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 129,
+            "quote": "。",
+            "start": 128
+          },
+          "surface": "。"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 13,
+            "quote": "以",
+            "start": 12
+          },
+          "surface": "以"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 14,
+            "quote": "蔀",
+            "start": 13
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 15,
+            "quote": "日",
+            "start": 14
+          },
+          "surface": "日"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 16,
+            "quote": "乘",
+            "start": 15
+          },
+          "surface": "乘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 17,
+            "quote": "之",
+            "start": 16
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 18,
+            "quote": "，",
+            "start": 17
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 19,
+            "quote": "滿",
+            "start": 18
+          },
+          "surface": "滿"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 2,
+            "quote": "天",
+            "start": 1
+          },
+          "surface": "天"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 20,
+            "quote": "蔀",
+            "start": 19
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 21,
+            "quote": "月",
+            "start": 20
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 22,
+            "quote": "得",
+            "start": 21
+          },
+          "surface": "得"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 23,
+            "quote": "一",
+            "start": 22
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 24,
+            "quote": "，",
+            "start": 23
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 25,
+            "quote": "名",
+            "start": 24
+          },
+          "surface": "名"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 26,
+            "quote": "為",
+            "start": 25
+          },
+          "surface": "為"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 27,
+            "quote": "積",
+            "start": 26
+          },
+          "surface": "積"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 28,
+            "quote": "日",
+            "start": 27
+          },
+          "surface": "日"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 29,
+            "quote": "，",
+            "start": 28
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 3,
+            "quote": "正",
+            "start": 2
+          },
+          "surface": "正"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 30,
+            "quote": "不",
+            "start": 29
+          },
+          "surface": "不"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 31,
+            "quote": "滿",
+            "start": 30
+          },
+          "surface": "滿"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 32,
+            "quote": "為",
+            "start": 31
+          },
+          "surface": "為"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 33,
+            "quote": "小",
+            "start": 32
+          },
+          "surface": "小"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 34,
+            "quote": "餘",
+            "start": 33
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 35,
+            "quote": "，",
+            "start": 34
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 36,
+            "quote": "積",
+            "start": 35
+          },
+          "surface": "積"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 37,
+            "quote": "日",
+            "start": 36
+          },
+          "surface": "日"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 38,
+            "quote": "以",
+            "start": 37
+          },
+          "surface": "以"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 39,
+            "quote": "六",
+            "start": 38
+          },
+          "surface": "六"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 4,
+            "quote": "朔",
+            "start": 3
+          },
+          "surface": "朔"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 40,
+            "quote": "十",
+            "start": 39
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 41,
+            "quote": "除",
+            "start": 40
+          },
+          "surface": "除"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 42,
+            "quote": "去",
+            "start": 41
+          },
+          "surface": "去"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 43,
+            "quote": "之",
+            "start": 42
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 44,
+            "quote": "，",
+            "start": 43
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 45,
+            "quote": "其",
+            "start": 44
+          },
+          "surface": "其"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 46,
+            "quote": "餘",
+            "start": 45
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 47,
+            "quote": "為",
+            "start": 46
+          },
+          "surface": "為"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 48,
+            "quote": "大",
+            "start": 47
+          },
+          "surface": "大"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 49,
+            "quote": "餘",
+            "start": 48
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 5,
+            "quote": "日",
+            "start": 4
+          },
+          "surface": "日"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 50,
+            "quote": "，",
+            "start": 49
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 51,
+            "quote": "以",
+            "start": 50
+          },
+          "surface": "以"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 52,
+            "quote": "所",
+            "start": 51
+          },
+          "surface": "所"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 53,
+            "quote": "入",
+            "start": 52
+          },
+          "surface": "入"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 54,
+            "quote": "蔀",
+            "start": 53
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 55,
+            "quote": "名",
+            "start": 54
+          },
+          "surface": "名"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 56,
+            "quote": "命",
+            "start": 55
+          },
+          "surface": "命"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 57,
+            "quote": "之",
+            "start": 56
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 58,
+            "quote": "，",
+            "start": 57
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 59,
+            "quote": "筭",
+            "start": 58
+          },
+          "surface": "筭"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 6,
+            "quote": "，",
+            "start": 5
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 60,
+            "quote": "盡",
+            "start": 59
+          },
+          "surface": "盡"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 61,
+            "quote": "之",
+            "start": 60
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 62,
+            "quote": "外",
+            "start": 61
+          },
+          "surface": "外"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 63,
+            "quote": "，",
+            "start": 62
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 64,
+            "quote": "則",
+            "start": 63
+          },
+          "surface": "則"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 65,
+            "quote": "前",
+            "start": 64
+          },
+          "surface": "前"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 66,
+            "quote": "年",
+            "start": 65
+          },
+          "surface": "年"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 67,
+            "quote": "天",
+            "start": 66
+          },
+          "surface": "天"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 68,
+            "quote": "正",
+            "start": 67
+          },
+          "surface": "正"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 69,
+            "quote": "十",
+            "start": 68
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 7,
+            "quote": "置",
+            "start": 6
+          },
+          "surface": "置"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 70,
+            "quote": "一",
+            "start": 69
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 71,
+            "quote": "月",
+            "start": 70
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 72,
+            "quote": "朔",
+            "start": 71
+          },
+          "surface": "朔"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 73,
+            "quote": "日",
+            "start": 72
+          },
+          "surface": "日"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 74,
+            "quote": "也",
+            "start": 73
+          },
+          "surface": "也"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 75,
+            "quote": "。",
+            "start": 74
+          },
+          "surface": "。"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 76,
+            "quote": "小",
+            "start": 75
+          },
+          "surface": "小"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 77,
+            "quote": "餘",
+            "start": 76
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 78,
+            "quote": "四",
+            "start": 77
+          },
+          "surface": "四"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 79,
+            "quote": "百",
+            "start": 78
+          },
+          "surface": "百"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 8,
+            "quote": "入",
+            "start": 7
+          },
+          "surface": "入"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 80,
+            "quote": "四",
+            "start": 79
+          },
+          "surface": "四"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 81,
+            "quote": "十",
+            "start": 80
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 82,
+            "quote": "一",
+            "start": 81
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 83,
+            "quote": "以",
+            "start": 82
+          },
+          "surface": "以"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 84,
+            "quote": "上",
+            "start": 83
+          },
+          "surface": "上"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 85,
+            "quote": "，",
+            "start": 84
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 86,
+            "quote": "其",
+            "start": 85
+          },
+          "surface": "其"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 87,
+            "quote": "月",
+            "start": 86
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 88,
+            "quote": "大",
+            "start": 87
+          },
+          "surface": "大"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 89,
+            "quote": "。",
+            "start": 88
+          },
+          "surface": "。"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 9,
+            "quote": "蔀",
+            "start": 8
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 90,
+            "quote": "求",
+            "start": 89
+          },
+          "surface": "求"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 91,
+            "quote": "後",
+            "start": 90
+          },
+          "surface": "後"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 92,
+            "quote": "月",
+            "start": 91
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 93,
+            "quote": "朔",
+            "start": 92
+          },
+          "surface": "朔"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 94,
+            "quote": "，",
+            "start": 93
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 95,
+            "quote": "加",
+            "start": 94
+          },
+          "surface": "加"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 96,
+            "quote": "大",
+            "start": 95
+          },
+          "surface": "大"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 97,
+            "quote": "餘",
+            "start": 96
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 98,
+            "quote": "二",
+            "start": 97
+          },
+          "surface": "二"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 99,
+            "quote": "十",
+            "start": 98
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 103,
+            "quote": "小餘",
+            "start": 101
+          },
+          "surface": "小餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 103,
+            "quote": "餘",
+            "start": 102
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 108,
+            "quote": "〈",
+            "start": 107
+          },
+          "surface": "〈"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 11,
+            "quote": "入蔀積月",
+            "start": 7
+          },
+          "surface": "入蔀積月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 11,
+            "quote": "月",
+            "start": 10
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 11,
+            "quote": "積月",
+            "start": 9
+          },
+          "surface": "積月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 11,
+            "quote": "蔀積月",
+            "start": 8
+          },
+          "surface": "蔀積月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 110,
+            "quote": "〉",
+            "start": 109
+          },
+          "surface": "〉"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 113,
+            "quote": "小餘",
+            "start": 111
+          },
+          "surface": "小餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 113,
+            "quote": "餘",
+            "start": 112
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 116,
+            "quote": "月",
+            "start": 115
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 116,
+            "quote": "蔀月",
+            "start": 114
+          },
+          "surface": "蔀月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 123,
+            "quote": "大餘",
+            "start": 121
+          },
+          "surface": "大餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 123,
+            "quote": "餘",
+            "start": 122
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 128,
+            "quote": "前",
+            "start": 127
+          },
+          "surface": "前"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 128,
+            "quote": "如前",
+            "start": 126
+          },
+          "surface": "如前"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 14,
+            "quote": "蔀",
+            "start": 13
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 15,
+            "quote": "蔀日",
+            "start": 13
+          },
+          "surface": "蔀日"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 21,
+            "quote": "月",
+            "start": 20
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 21,
+            "quote": "蔀月",
+            "start": 19
+          },
+          "surface": "蔀月"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 27,
+            "quote": "積",
+            "start": 26
+          },
+          "surface": "積"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 28,
+            "quote": "積日",
+            "start": 26
+          },
+          "surface": "積日"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 34,
+            "quote": "小餘",
+            "start": 32
+          },
+          "surface": "小餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 34,
+            "quote": "餘",
+            "start": 33
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 36,
+            "quote": "積",
+            "start": 35
+          },
+          "surface": "積"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 37,
+            "quote": "積日",
+            "start": 35
+          },
+          "surface": "積日"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 4,
+            "quote": "天正朔",
+            "start": 1
+          },
+          "surface": "天正朔"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 4,
+            "quote": "朔",
+            "start": 3
+          },
+          "surface": "朔"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 4,
+            "quote": "正朔",
+            "start": 2
+          },
+          "surface": "正朔"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 46,
+            "quote": "餘",
+            "start": 45
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 49,
+            "quote": "大餘",
+            "start": 47
+          },
+          "surface": "大餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 49,
+            "quote": "餘",
+            "start": 48
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 54,
+            "quote": "入蔀",
+            "start": 52
+          },
+          "surface": "入蔀"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 54,
+            "quote": "所入蔀",
+            "start": 51
+          },
+          "surface": "所入蔀"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 54,
+            "quote": "蔀",
+            "start": 53
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 55,
+            "quote": "所入蔀名",
+            "start": 51
+          },
+          "surface": "所入蔀名"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 55,
+            "quote": "蔀名",
+            "start": 53
+          },
+          "surface": "蔀名"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 60,
+            "quote": "盡",
+            "start": 59
+          },
+          "surface": "盡"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 60,
+            "quote": "筭盡",
+            "start": 58
+          },
+          "surface": "筭盡"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 62,
+            "quote": "外",
+            "start": 61
+          },
+          "surface": "外"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 68,
+            "quote": "前年天正",
+            "start": 64
+          },
+          "surface": "前年天正"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 68,
+            "quote": "天正",
+            "start": 66
+          },
+          "surface": "天正"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 68,
+            "quote": "年天正",
+            "start": 65
+          },
+          "surface": "年天正"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 68,
+            "quote": "正",
+            "start": 67
+          },
+          "surface": "正"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 72,
+            "quote": "月朔",
+            "start": 70
+          },
+          "surface": "月朔"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 72,
+            "quote": "朔",
+            "start": 71
+          },
+          "surface": "朔"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 77,
+            "quote": "小餘",
+            "start": 75
+          },
+          "surface": "小餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 77,
+            "quote": "餘",
+            "start": 76
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 88,
+            "quote": "大",
+            "start": 87
+          },
+          "surface": "大"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 88,
+            "quote": "月大",
+            "start": 86
+          },
+          "surface": "月大"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 93,
+            "quote": "後月朔",
+            "start": 90
+          },
+          "surface": "後月朔"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 93,
+            "quote": "月朔",
+            "start": 91
+          },
+          "surface": "月朔"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 93,
+            "quote": "朔",
+            "start": 92
+          },
+          "surface": "朔"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 97,
+            "quote": "大餘",
+            "start": 95
+          },
+          "surface": "大餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:39",
+            "end": 97,
+            "quote": "餘",
+            "start": 96
+          },
+          "surface": "餘"
+        }
+      ],
+      "R2": [
+        {
+          "kind": "annotation",
+          "slots": {},
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 62,
+              "quote": "筭盡之外",
+              "start": 58
+            }
+          ],
+          "status": "selected",
+          "surface": "筭盡之外"
+        },
+        {
+          "kind": "annotation",
+          "slots": {},
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 74,
+              "quote": "則前年天正十一月朔日也",
+              "start": 63
+            }
+          ],
+          "status": "selected",
+          "surface": "則前年天正十一月朔日也"
+        },
+        {
+          "kind": "count_command",
+          "slots": {
+            "origin": {
+              "kind": "Term",
+              "text": "所入蔀名"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 57,
+              "quote": "以所入蔀名命之",
+              "start": 50
+            }
+          ],
+          "status": "selected",
+          "surface": "以所入蔀名命之"
+        },
+        {
+          "kind": "cycle_divide",
+          "slots": {
+            "divisor": {
+              "kind": "Number",
+              "text": "六十"
+            },
+            "value": {
+              "kind": "Term",
+              "text": "積日"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 43,
+              "quote": "積日以六十除去之",
+              "start": 35
+            }
+          ],
+          "status": "selected",
+          "surface": "積日以六十除去之"
+        },
+        {
+          "kind": "divide",
+          "slots": {
+            "divisor": {
+              "kind": "Term",
+              "text": "蔀月"
+            },
+            "value": {
+              "kind": "Term",
+              "text": ""
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 23,
+              "quote": "滿蔀月得一",
+              "start": 18
+            }
+          ],
+          "status": "selected",
+          "surface": "滿蔀月得一"
+        },
+        {
+          "kind": "divide",
+          "slots": {
+            "divisor": {
+              "kind": "Term",
+              "text": "蔀月"
+            },
+            "value": {
+              "kind": "Term",
+              "text": "小餘"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 118,
+              "quote": "小餘滿蔀月得一",
+              "start": 111
+            }
+          ],
+          "status": "selected",
+          "surface": "小餘滿蔀月得一"
+        },
+        {
+          "kind": "judgment",
+          "slots": {},
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 88,
+              "quote": "其月大",
+              "start": 85
+            }
+          ],
+          "status": "selected",
+          "surface": "其月大"
+        },
+        {
+          "kind": "load",
+          "slots": {
+            "value": {
+              "kind": "Term",
+              "text": "入蔀積月"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 11,
+              "quote": "置入蔀積月",
+              "start": 6
+            }
+          ],
+          "status": "selected",
+          "surface": "置入蔀積月"
+        },
+        {
+          "kind": "method_reference",
+          "slots": {},
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 128,
+              "quote": "命之如前",
+              "start": 124
+            }
+          ],
+          "status": "selected",
+          "surface": "命之如前"
+        },
+        {
+          "kind": "multiply",
+          "slots": {
+            "left": {
+              "kind": "Term",
+              "text": "蔀日"
+            },
+            "right": {
+              "kind": "Anaphor",
+              "text": "之"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 17,
+              "quote": "以蔀日乘之",
+              "start": 12
+            }
+          ],
+          "status": "selected",
+          "surface": "以蔀日乘之"
+        },
+        {
+          "kind": "name",
+          "slots": {
+            "label": {
+              "kind": "Term",
+              "text": "積日"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 28,
+              "quote": "名為積日",
+              "start": 24
+            }
+          ],
+          "status": "selected",
+          "surface": "名為積日"
+        },
+        {
+          "kind": "pair_increment",
+          "slots": {
+            "amount": {
+              "kind": "Number",
+              "text": "二十九"
+            },
+            "receiver": {
+              "kind": "Term",
+              "text": "大餘"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 100,
+              "quote": "加大餘二十九",
+              "start": 94
+            }
+          ],
+          "status": "selected",
+          "surface": "加大餘二十九"
+        },
+        {
+          "kind": "receiver_add",
+          "slots": {
+            "receiver": {
+              "kind": "Term",
+              "text": "大餘"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 123,
+              "quote": "上加大餘",
+              "start": 119
+            }
+          ],
+          "status": "selected",
+          "surface": "上加大餘"
+        },
+        {
+          "kind": "remainder_name",
+          "slots": {
+            "label": {
+              "kind": "Term",
+              "text": "大餘"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 49,
+              "quote": "其餘為大餘",
+              "start": 44
+            }
+          ],
+          "status": "selected",
+          "surface": "其餘為大餘"
+        },
+        {
+          "kind": "remainder_name",
+          "slots": {
+            "label": {
+              "kind": "Term",
+              "text": "小餘"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 34,
+              "quote": "不滿為小餘",
+              "start": 29
+            }
+          ],
+          "status": "selected",
+          "surface": "不滿為小餘"
+        },
+        {
+          "kind": "task_marker",
+          "slots": {
+            "marker": {
+              "kind": "Term",
+              "text": "推"
+            },
+            "target": {
+              "kind": "Term",
+              "text": "天正朔日"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 5,
+              "quote": "推天正朔日",
+              "start": 0
+            }
+          ],
+          "status": "selected",
+          "surface": "推天正朔日"
+        },
+        {
+          "kind": "task_marker",
+          "slots": {
+            "marker": {
+              "kind": "Term",
+              "text": "求"
+            },
+            "target": {
+              "kind": "Term",
+              "text": "後月朔"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 93,
+              "quote": "求後月朔",
+              "start": 89
+            }
+          ],
+          "status": "selected",
+          "surface": "求後月朔"
+        },
+        {
+          "kind": "threshold",
+          "slots": {
+            "lower": {
+              "kind": "Number",
+              "text": "四百四十一"
+            },
+            "value": {
+              "kind": "Term",
+              "text": "小餘"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 84,
+              "quote": "小餘四百四十一以上",
+              "start": 75
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 88,
+              "quote": "其月大",
+              "start": 85
+            }
+          ],
+          "status": "selected",
+          "surface": "小餘四百四十一以上"
+        },
+        {
+          "kind": "unclassified",
+          "slots": {},
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 110,
+              "quote": "小餘四百九十〈九〉",
+              "start": 101
+            }
+          ],
+          "status": "unresolved",
+          "surface": "小餘四百九十〈九〉"
+        }
+      ],
+      "R3": [
+        {
+          "defined_values": {
+            "大餘": {
+              "port": "remainder"
+            },
+            "小餘": {
+              "port": "remainder"
+            },
+            "積日": {
+              "port": "result"
+            }
+          },
+          "domain_label": "new_moon",
+          "formal_inputs": {
+            "之": {
+              "roles": []
+            },
+            "入蔀積月": {
+              "roles": []
+            },
+            "所入蔀名": {
+              "roles": []
+            },
+            "蔀日": {
+              "roles": []
+            },
+            "蔀月": {
+              "roles": []
+            }
+          },
+          "free_variables": {
+            "之": {
+              "roles": []
+            },
+            "入蔀積月": {
+              "roles": []
+            },
+            "所入蔀名": {
+              "roles": []
+            },
+            "蔀日": {
+              "roles": []
+            },
+            "蔀月": {
+              "roles": []
+            }
+          },
+          "goal_surface": "天正朔日",
+          "kind": "ProcedureDef",
+          "return_ports": {
+            "大餘": {
+              "port": "remainder"
+            },
+            "小餘": {
+              "port": "remainder"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 11,
+              "quote": "置入蔀積月",
+              "start": 6
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 17,
+              "quote": "以蔀日乘之",
+              "start": 12
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 23,
+              "quote": "滿蔀月得一",
+              "start": 18
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 28,
+              "quote": "名為積日",
+              "start": 24
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 34,
+              "quote": "不滿為小餘",
+              "start": 29
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 43,
+              "quote": "積日以六十除去之",
+              "start": 35
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 49,
+              "quote": "其餘為大餘",
+              "start": 44
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 5,
+              "quote": "推天正朔日",
+              "start": 0
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 57,
+              "quote": "以所入蔀名命之",
+              "start": 50
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 62,
+              "quote": "筭盡之外",
+              "start": 58
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 74,
+              "quote": "則前年天正十一月朔日也",
+              "start": 63
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 84,
+              "quote": "小餘四百四十一以上",
+              "start": 75
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 88,
+              "quote": "其月大",
+              "start": 85
+            }
+          ]
+        },
+        {
+          "defined_values": {
+            "大餘": {
+              "port": "remainder"
+            },
+            "小餘": {
+              "port": "remainder"
+            },
+            "積日": {
+              "port": "result"
+            }
+          },
+          "domain_label": "new_moon",
+          "formal_inputs": {
+            "入蔀積月": {
+              "roles": [
+                "value"
+              ]
+            },
+            "所入蔀名": {
+              "roles": [
+                "origin"
+              ]
+            },
+            "蔀日": {
+              "roles": [
+                "left"
+              ]
+            },
+            "蔀月": {
+              "roles": [
+                "divisor"
+              ]
+            }
+          },
+          "free_variables": {
+            "入蔀積月": {
+              "roles": [
+                "value"
+              ]
+            },
+            "所入蔀名": {
+              "roles": [
+                "origin"
+              ]
+            },
+            "蔀日": {
+              "roles": [
+                "left"
+              ]
+            },
+            "蔀月": {
+              "roles": [
+                "divisor"
+              ]
+            }
+          },
+          "goal_surface": "天正朔日",
+          "kind": "QueryDef",
+          "return_ports": {
+            "大餘": {
+              "port": "remainder"
+            },
+            "小餘": {
+              "port": "remainder"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 11,
+              "quote": "置入蔀積月",
+              "start": 6
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 17,
+              "quote": "以蔀日乘之",
+              "start": 12
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 23,
+              "quote": "滿蔀月得一",
+              "start": 18
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 28,
+              "quote": "名為積日",
+              "start": 24
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 34,
+              "quote": "不滿為小餘",
+              "start": 29
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 43,
+              "quote": "積日以六十除去之",
+              "start": 35
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 49,
+              "quote": "其餘為大餘",
+              "start": 44
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 5,
+              "quote": "推天正朔日",
+              "start": 0
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 57,
+              "quote": "以所入蔀名命之",
+              "start": 50
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 62,
+              "quote": "筭盡之外",
+              "start": 58
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 74,
+              "quote": "則前年天正十一月朔日也",
+              "start": 63
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 84,
+              "quote": "小餘四百四十一以上",
+              "start": 75
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 88,
+              "quote": "其月大",
+              "start": 85
+            }
+          ]
+        },
+        {
+          "defined_values": {
+            "大餘": {
+              "port": "result"
+            }
+          },
+          "domain_label": null,
+          "formal_inputs": {
+            "大餘": {
+              "roles": [
+                "receiver"
+              ]
+            },
+            "小餘": {
+              "roles": [
+                "value"
+              ]
+            },
+            "蔀月": {
+              "roles": [
+                "divisor"
+              ]
+            }
+          },
+          "free_variables": {
+            "大餘": {
+              "roles": [
+                "receiver"
+              ]
+            },
+            "小餘": {
+              "roles": [
+                "value"
+              ]
+            },
+            "蔀月": {
+              "roles": [
+                "divisor"
+              ]
+            }
+          },
+          "goal_surface": "後月朔",
+          "kind": "QueryDef",
+          "return_ports": {
+            "大餘": {
+              "port": "result"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 100,
+              "quote": "加大餘二十九",
+              "start": 94
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 110,
+              "quote": "小餘四百九十〈九〉",
+              "start": 101
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 118,
+              "quote": "小餘滿蔀月得一",
+              "start": 111
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 123,
+              "quote": "上加大餘",
+              "start": 119
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 128,
+              "quote": "命之如前",
+              "start": 124
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 93,
+              "quote": "求後月朔",
+              "start": 89
+            }
+          ]
+        },
+        {
+          "defined_values": {},
+          "domain_label": null,
+          "formal_inputs": {
+            "cycle": {
+              "roles": []
+            },
+            "offset": {
+              "roles": []
+            },
+            "origin": {
+              "roles": []
+            }
+          },
+          "free_variables": {
+            "cycle": {
+              "roles": []
+            },
+            "offset": {
+              "roles": []
+            },
+            "origin": {
+              "roles": []
+            }
+          },
+          "goal_surface": null,
+          "kind": "MethodSlice",
+          "return_ports": {
+            "remainder": {
+              "port": null
+            },
+            "result": {
+              "port": null
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:39",
+              "end": 43,
+              "quote": "積日以六十除去之",
+              "start": 35
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 49,
+              "quote": "其餘為大餘",
+              "start": 44
+            },
+            {
+              "doc_id": "sifen:39",
+              "end": 57,
+              "quote": "以所入蔀名命之",
+              "start": 50
+            }
+          ]
+        }
+      ],
+      "R4": {
+        "imports": [
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "new_moon",
+              "goal_surface": "天正朔日",
+              "kind": "QueryDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:39",
+                  "end": 11,
+                  "quote": "置入蔀積月",
+                  "start": 6
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 17,
+                  "quote": "以蔀日乘之",
+                  "start": 12
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 23,
+                  "quote": "滿蔀月得一",
+                  "start": 18
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 28,
+                  "quote": "名為積日",
+                  "start": 24
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 34,
+                  "quote": "不滿為小餘",
+                  "start": 29
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 43,
+                  "quote": "積日以六十除去之",
+                  "start": 35
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 49,
+                  "quote": "其餘為大餘",
+                  "start": 44
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 5,
+                  "quote": "推天正朔日",
+                  "start": 0
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 57,
+                  "quote": "以所入蔀名命之",
+                  "start": 50
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 62,
+                  "quote": "筭盡之外",
+                  "start": 58
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 74,
+                  "quote": "則前年天正十一月朔日也",
+                  "start": 63
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 84,
+                  "quote": "小餘四百四十一以上",
+                  "start": 75
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 88,
+                  "quote": "其月大",
+                  "start": 85
+                }
+              ]
+            },
+            "formal": "入蔀積月",
+            "selected_definition": null,
+            "selected_port": "積月",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 11,
+                "quote": "置入蔀積月",
+                "start": 6
+              }
+            ]
+          },
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "new_moon",
+              "goal_surface": "天正朔日",
+              "kind": "QueryDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:39",
+                  "end": 11,
+                  "quote": "置入蔀積月",
+                  "start": 6
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 17,
+                  "quote": "以蔀日乘之",
+                  "start": 12
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 23,
+                  "quote": "滿蔀月得一",
+                  "start": 18
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 28,
+                  "quote": "名為積日",
+                  "start": 24
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 34,
+                  "quote": "不滿為小餘",
+                  "start": 29
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 43,
+                  "quote": "積日以六十除去之",
+                  "start": 35
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 49,
+                  "quote": "其餘為大餘",
+                  "start": 44
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 5,
+                  "quote": "推天正朔日",
+                  "start": 0
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 57,
+                  "quote": "以所入蔀名命之",
+                  "start": 50
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 62,
+                  "quote": "筭盡之外",
+                  "start": 58
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 74,
+                  "quote": "則前年天正十一月朔日也",
+                  "start": 63
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 84,
+                  "quote": "小餘四百四十一以上",
+                  "start": 75
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 88,
+                  "quote": "其月大",
+                  "start": 85
+                }
+              ]
+            },
+            "formal": "所入蔀名",
+            "selected_definition": null,
+            "selected_port": "所入蔀名",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 57,
+                "quote": "以所入蔀名命之",
+                "start": 50
+              }
+            ]
+          },
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "new_moon",
+              "goal_surface": "天正朔日",
+              "kind": "QueryDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:39",
+                  "end": 11,
+                  "quote": "置入蔀積月",
+                  "start": 6
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 17,
+                  "quote": "以蔀日乘之",
+                  "start": 12
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 23,
+                  "quote": "滿蔀月得一",
+                  "start": 18
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 28,
+                  "quote": "名為積日",
+                  "start": 24
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 34,
+                  "quote": "不滿為小餘",
+                  "start": 29
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 43,
+                  "quote": "積日以六十除去之",
+                  "start": 35
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 49,
+                  "quote": "其餘為大餘",
+                  "start": 44
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 5,
+                  "quote": "推天正朔日",
+                  "start": 0
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 57,
+                  "quote": "以所入蔀名命之",
+                  "start": 50
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 62,
+                  "quote": "筭盡之外",
+                  "start": 58
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 74,
+                  "quote": "則前年天正十一月朔日也",
+                  "start": 63
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 84,
+                  "quote": "小餘四百四十一以上",
+                  "start": 75
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 88,
+                  "quote": "其月大",
+                  "start": 85
+                }
+              ]
+            },
+            "formal": "蔀日",
+            "selected_definition": null,
+            "selected_port": "蔀日",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 17,
+                "quote": "以蔀日乘之",
+                "start": 12
+              }
+            ]
+          },
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "new_moon",
+              "goal_surface": "天正朔日",
+              "kind": "QueryDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:39",
+                  "end": 11,
+                  "quote": "置入蔀積月",
+                  "start": 6
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 17,
+                  "quote": "以蔀日乘之",
+                  "start": 12
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 23,
+                  "quote": "滿蔀月得一",
+                  "start": 18
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 28,
+                  "quote": "名為積日",
+                  "start": 24
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 34,
+                  "quote": "不滿為小餘",
+                  "start": 29
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 43,
+                  "quote": "積日以六十除去之",
+                  "start": 35
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 49,
+                  "quote": "其餘為大餘",
+                  "start": 44
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 5,
+                  "quote": "推天正朔日",
+                  "start": 0
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 57,
+                  "quote": "以所入蔀名命之",
+                  "start": 50
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 62,
+                  "quote": "筭盡之外",
+                  "start": 58
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 74,
+                  "quote": "則前年天正十一月朔日也",
+                  "start": 63
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 84,
+                  "quote": "小餘四百四十一以上",
+                  "start": 75
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 88,
+                  "quote": "其月大",
+                  "start": 85
+                }
+              ]
+            },
+            "formal": "蔀月",
+            "selected_definition": null,
+            "selected_port": "蔀月",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 23,
+                "quote": "滿蔀月得一",
+                "start": 18
+              }
+            ]
+          },
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": null,
+              "goal_surface": "後月朔",
+              "kind": "QueryDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:39",
+                  "end": 100,
+                  "quote": "加大餘二十九",
+                  "start": 94
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 110,
+                  "quote": "小餘四百九十〈九〉",
+                  "start": 101
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 118,
+                  "quote": "小餘滿蔀月得一",
+                  "start": 111
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 123,
+                  "quote": "上加大餘",
+                  "start": 119
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 128,
+                  "quote": "命之如前",
+                  "start": 124
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 93,
+                  "quote": "求後月朔",
+                  "start": 89
+                }
+              ]
+            },
+            "formal": "蔀月",
+            "selected_definition": null,
+            "selected_port": "蔀月",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 118,
+                "quote": "小餘滿蔀月得一",
+                "start": 111
+              }
+            ]
+          },
+          {
+            "candidates": [
+              {
+                "domain_label": "new_moon",
+                "goal_surface": "天正朔日",
+                "kind": "QueryDef",
+                "source_spans": [
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 11,
+                    "quote": "置入蔀積月",
+                    "start": 6
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 17,
+                    "quote": "以蔀日乘之",
+                    "start": 12
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 23,
+                    "quote": "滿蔀月得一",
+                    "start": 18
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 28,
+                    "quote": "名為積日",
+                    "start": 24
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 34,
+                    "quote": "不滿為小餘",
+                    "start": 29
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 43,
+                    "quote": "積日以六十除去之",
+                    "start": 35
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 49,
+                    "quote": "其餘為大餘",
+                    "start": 44
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 5,
+                    "quote": "推天正朔日",
+                    "start": 0
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 57,
+                    "quote": "以所入蔀名命之",
+                    "start": 50
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 62,
+                    "quote": "筭盡之外",
+                    "start": 58
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 74,
+                    "quote": "則前年天正十一月朔日也",
+                    "start": 63
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 84,
+                    "quote": "小餘四百四十一以上",
+                    "start": 75
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 88,
+                    "quote": "其月大",
+                    "start": 85
+                  }
+                ]
+              }
+            ],
+            "consumer": {
+              "domain_label": null,
+              "goal_surface": "後月朔",
+              "kind": "QueryDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:39",
+                  "end": 100,
+                  "quote": "加大餘二十九",
+                  "start": 94
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 110,
+                  "quote": "小餘四百九十〈九〉",
+                  "start": 101
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 118,
+                  "quote": "小餘滿蔀月得一",
+                  "start": 111
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 123,
+                  "quote": "上加大餘",
+                  "start": 119
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 128,
+                  "quote": "命之如前",
+                  "start": 124
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 93,
+                  "quote": "求後月朔",
+                  "start": 89
+                }
+              ]
+            },
+            "formal": "大餘",
+            "selected_definition": {
+              "domain_label": "new_moon",
+              "goal_surface": "天正朔日",
+              "kind": "QueryDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:39",
+                  "end": 11,
+                  "quote": "置入蔀積月",
+                  "start": 6
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 17,
+                  "quote": "以蔀日乘之",
+                  "start": 12
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 23,
+                  "quote": "滿蔀月得一",
+                  "start": 18
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 28,
+                  "quote": "名為積日",
+                  "start": 24
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 34,
+                  "quote": "不滿為小餘",
+                  "start": 29
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 43,
+                  "quote": "積日以六十除去之",
+                  "start": 35
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 49,
+                  "quote": "其餘為大餘",
+                  "start": 44
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 5,
+                  "quote": "推天正朔日",
+                  "start": 0
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 57,
+                  "quote": "以所入蔀名命之",
+                  "start": 50
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 62,
+                  "quote": "筭盡之外",
+                  "start": 58
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 74,
+                  "quote": "則前年天正十一月朔日也",
+                  "start": 63
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 84,
+                  "quote": "小餘四百四十一以上",
+                  "start": 75
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 88,
+                  "quote": "其月大",
+                  "start": 85
+                }
+              ]
+            },
+            "selected_port": "大餘",
+            "selection_reason": "unique source-defined return used by this formal; parameter/result namespaces remain distinct",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 100,
+                "quote": "加大餘二十九",
+                "start": 94
+              }
+            ]
+          },
+          {
+            "candidates": [
+              {
+                "domain_label": "new_moon",
+                "goal_surface": "天正朔日",
+                "kind": "QueryDef",
+                "source_spans": [
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 11,
+                    "quote": "置入蔀積月",
+                    "start": 6
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 17,
+                    "quote": "以蔀日乘之",
+                    "start": 12
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 23,
+                    "quote": "滿蔀月得一",
+                    "start": 18
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 28,
+                    "quote": "名為積日",
+                    "start": 24
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 34,
+                    "quote": "不滿為小餘",
+                    "start": 29
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 43,
+                    "quote": "積日以六十除去之",
+                    "start": 35
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 49,
+                    "quote": "其餘為大餘",
+                    "start": 44
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 5,
+                    "quote": "推天正朔日",
+                    "start": 0
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 57,
+                    "quote": "以所入蔀名命之",
+                    "start": 50
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 62,
+                    "quote": "筭盡之外",
+                    "start": 58
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 74,
+                    "quote": "則前年天正十一月朔日也",
+                    "start": 63
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 84,
+                    "quote": "小餘四百四十一以上",
+                    "start": 75
+                  },
+                  {
+                    "doc_id": "sifen:39",
+                    "end": 88,
+                    "quote": "其月大",
+                    "start": 85
+                  }
+                ]
+              }
+            ],
+            "consumer": {
+              "domain_label": null,
+              "goal_surface": "後月朔",
+              "kind": "QueryDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:39",
+                  "end": 100,
+                  "quote": "加大餘二十九",
+                  "start": 94
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 110,
+                  "quote": "小餘四百九十〈九〉",
+                  "start": 101
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 118,
+                  "quote": "小餘滿蔀月得一",
+                  "start": 111
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 123,
+                  "quote": "上加大餘",
+                  "start": 119
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 128,
+                  "quote": "命之如前",
+                  "start": 124
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 93,
+                  "quote": "求後月朔",
+                  "start": 89
+                }
+              ]
+            },
+            "formal": "小餘",
+            "selected_definition": {
+              "domain_label": "new_moon",
+              "goal_surface": "天正朔日",
+              "kind": "QueryDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:39",
+                  "end": 11,
+                  "quote": "置入蔀積月",
+                  "start": 6
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 17,
+                  "quote": "以蔀日乘之",
+                  "start": 12
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 23,
+                  "quote": "滿蔀月得一",
+                  "start": 18
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 28,
+                  "quote": "名為積日",
+                  "start": 24
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 34,
+                  "quote": "不滿為小餘",
+                  "start": 29
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 43,
+                  "quote": "積日以六十除去之",
+                  "start": 35
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 49,
+                  "quote": "其餘為大餘",
+                  "start": 44
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 5,
+                  "quote": "推天正朔日",
+                  "start": 0
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 57,
+                  "quote": "以所入蔀名命之",
+                  "start": 50
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 62,
+                  "quote": "筭盡之外",
+                  "start": 58
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 74,
+                  "quote": "則前年天正十一月朔日也",
+                  "start": 63
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 84,
+                  "quote": "小餘四百四十一以上",
+                  "start": 75
+                },
+                {
+                  "doc_id": "sifen:39",
+                  "end": 88,
+                  "quote": "其月大",
+                  "start": 85
+                }
+              ]
+            },
+            "selected_port": "小餘",
+            "selection_reason": "unique source-defined return used by this formal; parameter/result namespaces remain distinct",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 118,
+                "quote": "小餘滿蔀月得一",
+                "start": 111
+              }
+            ]
+          }
+        ],
+        "missing_dependencies": [
+          {
+            "cause": "requires_external_data",
+            "missing_inputs": [
+              "count_cycle"
+            ],
+            "reason": "No source-defined current instance",
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 57,
+                "quote": "以所入蔀名命之",
+                "start": 50
+              }
+            ]
+          },
+          {
+            "cause": "requires_external_data",
+            "missing_inputs": [
+              "蔀日"
+            ],
+            "reason": "Parameter value is not declared in runtime context",
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 17,
+                "quote": "以蔀日乘之",
+                "start": 12
+              }
+            ]
+          },
+          {
+            "cause": "requires_external_data",
+            "missing_inputs": [
+              "蔀月"
+            ],
+            "reason": "Parameter value is not declared in runtime context",
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 118,
+                "quote": "小餘滿蔀月得一",
+                "start": 111
+              }
+            ]
+          },
+          {
+            "cause": "requires_external_data",
+            "missing_inputs": [
+              "蔀月"
+            ],
+            "reason": "Parameter value is not declared in runtime context",
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 23,
+                "quote": "滿蔀月得一",
+                "start": 18
+              }
+            ]
+          },
+          {
+            "cause": "unknown_quantity",
+            "missing_inputs": [],
+            "reason": "no declared contextual rate or compatible fraction carry",
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 118,
+                "quote": "小餘滿蔀月得一",
+                "start": 111
+              }
+            ]
+          },
+          {
+            "cause": "unknown_quantity",
+            "missing_inputs": [],
+            "reason": "no declared contextual rate or compatible fraction carry",
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 23,
+                "quote": "滿蔀月得一",
+                "start": 18
+              }
+            ]
+          },
+          {
+            "cause": "unknown_quantity",
+            "missing_inputs": [],
+            "reason": null,
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 123,
+                "quote": "上加大餘",
+                "start": 119
+              }
+            ]
+          },
+          {
+            "cause": "unresolved_parser",
+            "missing_inputs": [
+              "unparsed_instruction"
+            ],
+            "reason": null,
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 110,
+                "quote": "小餘四百九十〈九〉",
+                "start": 101
+              }
+            ]
+          },
+          {
+            "cause": "unresolved_parser",
+            "missing_inputs": [
+              "積月"
+            ],
+            "reason": "No source-defined current instance",
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 11,
+                "quote": "置入蔀積月",
+                "start": 6
+              }
+            ]
+          },
+          {
+            "cause": "unresolved_parser",
+            "missing_inputs": [],
+            "reason": "no remainder compatible with day",
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 49,
+                "quote": "其餘為大餘",
+                "start": 44
+              }
+            ]
+          },
+          {
+            "cause": "unresolved_parser",
+            "missing_inputs": [],
+            "reason": "no remainder compatible with day_fraction",
+            "source_spans": [
+              {
+                "doc_id": "sifen:39",
+                "end": 34,
+                "quote": "不滿為小餘",
+                "start": 29
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "sifen:section:41": {
+      "R1": [
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 20,
+            "quote": "之",
+            "start": 19
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 46,
+            "quote": "之",
+            "start": 45
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 48,
+            "quote": "其",
+            "start": 47
+          },
+          "surface": "其"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 54,
+            "quote": "之",
+            "start": 53
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 58,
+            "quote": "之",
+            "start": 57
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Anaphor",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 66,
+            "quote": "之",
+            "start": 65
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 14,
+            "quote": "一",
+            "start": 13
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 26,
+            "quote": "一",
+            "start": 25
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 4,
+            "quote": "二十四",
+            "start": 1
+          },
+          "surface": "二十四"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 4,
+            "quote": "十四",
+            "start": 2
+          },
+          "surface": "十四"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 4,
+            "quote": "四",
+            "start": 3
+          },
+          "surface": "四"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 43,
+            "quote": "六十",
+            "start": 41
+          },
+          "surface": "六十"
+        },
+        {
+          "kind": "Number",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 43,
+            "quote": "十",
+            "start": 42
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 1,
+            "quote": "推",
+            "start": 0
+          },
+          "surface": "推"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 10,
+            "quote": "入",
+            "start": 9
+          },
+          "surface": "入"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 11,
+            "quote": "蔀",
+            "start": 10
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 12,
+            "quote": "年",
+            "start": 11
+          },
+          "surface": "年"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 13,
+            "quote": "減",
+            "start": 12
+          },
+          "surface": "減"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 14,
+            "quote": "一",
+            "start": 13
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 15,
+            "quote": "，",
+            "start": 14
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 16,
+            "quote": "以",
+            "start": 15
+          },
+          "surface": "以"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 17,
+            "quote": "月",
+            "start": 16
+          },
+          "surface": "月"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 18,
+            "quote": "餘",
+            "start": 17
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 19,
+            "quote": "乘",
+            "start": 18
+          },
+          "surface": "乘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 2,
+            "quote": "二",
+            "start": 1
+          },
+          "surface": "二"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 20,
+            "quote": "之",
+            "start": 19
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 21,
+            "quote": "，",
+            "start": 20
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 22,
+            "quote": "滿",
+            "start": 21
+          },
+          "surface": "滿"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 23,
+            "quote": "中",
+            "start": 22
+          },
+          "surface": "中"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 24,
+            "quote": "法",
+            "start": 23
+          },
+          "surface": "法"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 25,
+            "quote": "得",
+            "start": 24
+          },
+          "surface": "得"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 26,
+            "quote": "一",
+            "start": 25
+          },
+          "surface": "一"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 27,
+            "quote": "，",
+            "start": 26
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 28,
+            "quote": "名",
+            "start": 27
+          },
+          "surface": "名"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 29,
+            "quote": "曰",
+            "start": 28
+          },
+          "surface": "曰"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 3,
+            "quote": "十",
+            "start": 2
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 30,
+            "quote": "大",
+            "start": 29
+          },
+          "surface": "大"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 31,
+            "quote": "餘",
+            "start": 30
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 32,
+            "quote": "，",
+            "start": 31
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 33,
+            "quote": "不",
+            "start": 32
+          },
+          "surface": "不"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 34,
+            "quote": "滿",
+            "start": 33
+          },
+          "surface": "滿"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 35,
+            "quote": "為",
+            "start": 34
+          },
+          "surface": "為"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 36,
+            "quote": "小",
+            "start": 35
+          },
+          "surface": "小"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 37,
+            "quote": "餘",
+            "start": 36
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 38,
+            "quote": "，",
+            "start": 37
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 39,
+            "quote": "大",
+            "start": 38
+          },
+          "surface": "大"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 4,
+            "quote": "四",
+            "start": 3
+          },
+          "surface": "四"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 40,
+            "quote": "餘",
+            "start": 39
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 41,
+            "quote": "滿",
+            "start": 40
+          },
+          "surface": "滿"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 42,
+            "quote": "六",
+            "start": 41
+          },
+          "surface": "六"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 43,
+            "quote": "十",
+            "start": 42
+          },
+          "surface": "十"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 44,
+            "quote": "除",
+            "start": 43
+          },
+          "surface": "除"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 45,
+            "quote": "去",
+            "start": 44
+          },
+          "surface": "去"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 46,
+            "quote": "之",
+            "start": 45
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 47,
+            "quote": "，",
+            "start": 46
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 48,
+            "quote": "其",
+            "start": 47
+          },
+          "surface": "其"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 49,
+            "quote": "餘",
+            "start": 48
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 5,
+            "quote": "氣",
+            "start": 4
+          },
+          "surface": "氣"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 50,
+            "quote": "以",
+            "start": 49
+          },
+          "surface": "以"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 51,
+            "quote": "蔀",
+            "start": 50
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 52,
+            "quote": "名",
+            "start": 51
+          },
+          "surface": "名"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 53,
+            "quote": "命",
+            "start": 52
+          },
+          "surface": "命"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 54,
+            "quote": "之",
+            "start": 53
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 55,
+            "quote": "，",
+            "start": 54
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 56,
+            "quote": "筭",
+            "start": 55
+          },
+          "surface": "筭"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 57,
+            "quote": "盡",
+            "start": 56
+          },
+          "surface": "盡"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 58,
+            "quote": "之",
+            "start": 57
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 59,
+            "quote": "外",
+            "start": 58
+          },
+          "surface": "外"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 6,
+            "quote": "術",
+            "start": 5
+          },
+          "surface": "術"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 60,
+            "quote": "，",
+            "start": 59
+          },
+          "surface": "，"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 61,
+            "quote": "則",
+            "start": 60
+          },
+          "surface": "則"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 62,
+            "quote": "前",
+            "start": 61
+          },
+          "surface": "前"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 63,
+            "quote": "年",
+            "start": 62
+          },
+          "surface": "年"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 64,
+            "quote": "冬",
+            "start": 63
+          },
+          "surface": "冬"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 65,
+            "quote": "至",
+            "start": 64
+          },
+          "surface": "至"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 66,
+            "quote": "之",
+            "start": 65
+          },
+          "surface": "之"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 67,
+            "quote": "日",
+            "start": 66
+          },
+          "surface": "日"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 68,
+            "quote": "也",
+            "start": 67
+          },
+          "surface": "也"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 69,
+            "quote": "。",
+            "start": 68
+          },
+          "surface": "。"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 7,
+            "quote": "曰",
+            "start": 6
+          },
+          "surface": "曰"
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 8,
+            "quote": "：",
+            "start": 7
+          },
+          "surface": "："
+        },
+        {
+          "kind": "Syntax",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 9,
+            "quote": "置",
+            "start": 8
+          },
+          "surface": "置"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 12,
+            "quote": "入蔀年",
+            "start": 9
+          },
+          "surface": "入蔀年"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 12,
+            "quote": "年",
+            "start": 11
+          },
+          "surface": "年"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 12,
+            "quote": "蔀年",
+            "start": 10
+          },
+          "surface": "蔀年"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 18,
+            "quote": "月餘",
+            "start": 16
+          },
+          "surface": "月餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 18,
+            "quote": "餘",
+            "start": 17
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 24,
+            "quote": "中法",
+            "start": 22
+          },
+          "surface": "中法"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 24,
+            "quote": "法",
+            "start": 23
+          },
+          "surface": "法"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 31,
+            "quote": "大餘",
+            "start": 29
+          },
+          "surface": "大餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 31,
+            "quote": "餘",
+            "start": 30
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 37,
+            "quote": "小餘",
+            "start": 35
+          },
+          "surface": "小餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 37,
+            "quote": "餘",
+            "start": 36
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 40,
+            "quote": "大餘",
+            "start": 38
+          },
+          "surface": "大餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 40,
+            "quote": "餘",
+            "start": 39
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 49,
+            "quote": "餘",
+            "start": 48
+          },
+          "surface": "餘"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 51,
+            "quote": "蔀",
+            "start": 50
+          },
+          "surface": "蔀"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 52,
+            "quote": "蔀名",
+            "start": 50
+          },
+          "surface": "蔀名"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 57,
+            "quote": "盡",
+            "start": 56
+          },
+          "surface": "盡"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 57,
+            "quote": "筭盡",
+            "start": 55
+          },
+          "surface": "筭盡"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 59,
+            "quote": "外",
+            "start": 58
+          },
+          "surface": "外"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 6,
+            "quote": "氣術",
+            "start": 4
+          },
+          "surface": "氣術"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 6,
+            "quote": "術",
+            "start": 5
+          },
+          "surface": "術"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 65,
+            "quote": "冬至",
+            "start": 63
+          },
+          "surface": "冬至"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 65,
+            "quote": "前年冬至",
+            "start": 61
+          },
+          "surface": "前年冬至"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 65,
+            "quote": "年冬至",
+            "start": 62
+          },
+          "surface": "年冬至"
+        },
+        {
+          "kind": "Term",
+          "source_span": {
+            "doc_id": "sifen:41",
+            "end": 65,
+            "quote": "至",
+            "start": 64
+          },
+          "surface": "至"
+        }
+      ],
+      "R2": [
+        {
+          "kind": "annotation",
+          "slots": {},
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 59,
+              "quote": "筭盡之外",
+              "start": 55
+            }
+          ],
+          "status": "selected",
+          "surface": "筭盡之外"
+        },
+        {
+          "kind": "annotation",
+          "slots": {},
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 68,
+              "quote": "則前年冬至之日也",
+              "start": 60
+            }
+          ],
+          "status": "selected",
+          "surface": "則前年冬至之日也"
+        },
+        {
+          "kind": "count_command",
+          "slots": {
+            "origin": {
+              "kind": "Term",
+              "text": "蔀名"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 54,
+              "quote": "其餘以蔀名命之",
+              "start": 47
+            }
+          ],
+          "status": "selected",
+          "surface": "其餘以蔀名命之"
+        },
+        {
+          "kind": "cycle_divide",
+          "slots": {
+            "divisor": {
+              "kind": "Number",
+              "text": "六十"
+            },
+            "value": {
+              "kind": "Term",
+              "text": "大餘"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 46,
+              "quote": "大餘滿六十除去之",
+              "start": 38
+            }
+          ],
+          "status": "selected",
+          "surface": "大餘滿六十除去之"
+        },
+        {
+          "kind": "divide",
+          "slots": {
+            "divisor": {
+              "kind": "Term",
+              "text": "中法"
+            },
+            "value": {
+              "kind": "Term",
+              "text": ""
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 26,
+              "quote": "滿中法得一",
+              "start": 21
+            }
+          ],
+          "status": "selected",
+          "surface": "滿中法得一"
+        },
+        {
+          "kind": "load",
+          "slots": {
+            "decrement": {
+              "kind": "Number",
+              "text": "一"
+            },
+            "value": {
+              "kind": "Term",
+              "text": "入蔀年"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 14,
+              "quote": "置入蔀年減一",
+              "start": 8
+            }
+          ],
+          "status": "selected",
+          "surface": "置入蔀年減一"
+        },
+        {
+          "kind": "multiply",
+          "slots": {
+            "left": {
+              "kind": "Term",
+              "text": "月餘"
+            },
+            "right": {
+              "kind": "Anaphor",
+              "text": "之"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 20,
+              "quote": "以月餘乘之",
+              "start": 15
+            }
+          ],
+          "status": "selected",
+          "surface": "以月餘乘之"
+        },
+        {
+          "kind": "name",
+          "slots": {
+            "label": {
+              "kind": "Term",
+              "text": "大餘"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 31,
+              "quote": "名曰大餘",
+              "start": 27
+            }
+          ],
+          "status": "selected",
+          "surface": "名曰大餘"
+        },
+        {
+          "kind": "remainder_name",
+          "slots": {
+            "label": {
+              "kind": "Term",
+              "text": "小餘"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 37,
+              "quote": "不滿為小餘",
+              "start": 32
+            }
+          ],
+          "status": "unresolved",
+          "surface": "不滿為小餘"
+        },
+        {
+          "kind": "task_marker",
+          "slots": {
+            "marker": {
+              "kind": "Term",
+              "text": "推"
+            },
+            "target": {
+              "kind": "Term",
+              "text": "二十四氣術曰"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 7,
+              "quote": "推二十四氣術曰",
+              "start": 0
+            }
+          ],
+          "status": "selected",
+          "surface": "推二十四氣術曰"
+        }
+      ],
+      "R3": [
+        {
+          "defined_values": {
+            "大餘": {
+              "port": "result"
+            },
+            "小餘": {
+              "port": "remainder"
+            }
+          },
+          "domain_label": "winter",
+          "formal_inputs": {
+            "中法": {
+              "roles": [
+                "divisor"
+              ]
+            },
+            "入蔀年": {
+              "roles": [
+                "value"
+              ]
+            },
+            "月餘": {
+              "roles": [
+                "left"
+              ]
+            },
+            "蔀名": {
+              "roles": [
+                "origin"
+              ]
+            }
+          },
+          "free_variables": {
+            "中法": {
+              "roles": [
+                "divisor"
+              ]
+            },
+            "入蔀年": {
+              "roles": [
+                "value"
+              ]
+            },
+            "月餘": {
+              "roles": [
+                "left"
+              ]
+            },
+            "蔀名": {
+              "roles": [
+                "origin"
+              ]
+            }
+          },
+          "goal_surface": "二十四氣術曰",
+          "kind": "ProcedureDef",
+          "return_ports": {
+            "小餘": {
+              "port": "remainder"
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 14,
+              "quote": "置入蔀年減一",
+              "start": 8
+            },
+            {
+              "doc_id": "sifen:41",
+              "end": 20,
+              "quote": "以月餘乘之",
+              "start": 15
+            },
+            {
+              "doc_id": "sifen:41",
+              "end": 26,
+              "quote": "滿中法得一",
+              "start": 21
+            },
+            {
+              "doc_id": "sifen:41",
+              "end": 31,
+              "quote": "名曰大餘",
+              "start": 27
+            },
+            {
+              "doc_id": "sifen:41",
+              "end": 37,
+              "quote": "不滿為小餘",
+              "start": 32
+            },
+            {
+              "doc_id": "sifen:41",
+              "end": 46,
+              "quote": "大餘滿六十除去之",
+              "start": 38
+            },
+            {
+              "doc_id": "sifen:41",
+              "end": 54,
+              "quote": "其餘以蔀名命之",
+              "start": 47
+            },
+            {
+              "doc_id": "sifen:41",
+              "end": 59,
+              "quote": "筭盡之外",
+              "start": 55
+            },
+            {
+              "doc_id": "sifen:41",
+              "end": 68,
+              "quote": "則前年冬至之日也",
+              "start": 60
+            },
+            {
+              "doc_id": "sifen:41",
+              "end": 7,
+              "quote": "推二十四氣術曰",
+              "start": 0
+            }
+          ]
+        },
+        {
+          "defined_values": {},
+          "domain_label": null,
+          "formal_inputs": {
+            "cycle": {
+              "roles": []
+            },
+            "offset": {
+              "roles": []
+            },
+            "origin": {
+              "roles": []
+            }
+          },
+          "free_variables": {
+            "cycle": {
+              "roles": []
+            },
+            "offset": {
+              "roles": []
+            },
+            "origin": {
+              "roles": []
+            }
+          },
+          "goal_surface": null,
+          "kind": "MethodSlice",
+          "return_ports": {
+            "remainder": {
+              "port": null
+            },
+            "result": {
+              "port": null
+            }
+          },
+          "source_spans": [
+            {
+              "doc_id": "sifen:41",
+              "end": 46,
+              "quote": "大餘滿六十除去之",
+              "start": 38
+            },
+            {
+              "doc_id": "sifen:41",
+              "end": 54,
+              "quote": "其餘以蔀名命之",
+              "start": 47
+            }
+          ]
+        }
+      ],
+      "R4": {
+        "imports": [
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "winter",
+              "goal_surface": "二十四氣術曰",
+              "kind": "ProcedureDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:41",
+                  "end": 14,
+                  "quote": "置入蔀年減一",
+                  "start": 8
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 20,
+                  "quote": "以月餘乘之",
+                  "start": 15
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 26,
+                  "quote": "滿中法得一",
+                  "start": 21
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 31,
+                  "quote": "名曰大餘",
+                  "start": 27
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 37,
+                  "quote": "不滿為小餘",
+                  "start": 32
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 46,
+                  "quote": "大餘滿六十除去之",
+                  "start": 38
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 54,
+                  "quote": "其餘以蔀名命之",
+                  "start": 47
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 59,
+                  "quote": "筭盡之外",
+                  "start": 55
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 68,
+                  "quote": "則前年冬至之日也",
+                  "start": 60
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 7,
+                  "quote": "推二十四氣術曰",
+                  "start": 0
+                }
+              ]
+            },
+            "formal": "中法",
+            "selected_definition": null,
+            "selected_port": "中法",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:41",
+                "end": 26,
+                "quote": "滿中法得一",
+                "start": 21
+              }
+            ]
+          },
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "winter",
+              "goal_surface": "二十四氣術曰",
+              "kind": "ProcedureDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:41",
+                  "end": 14,
+                  "quote": "置入蔀年減一",
+                  "start": 8
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 20,
+                  "quote": "以月餘乘之",
+                  "start": 15
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 26,
+                  "quote": "滿中法得一",
+                  "start": 21
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 31,
+                  "quote": "名曰大餘",
+                  "start": 27
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 37,
+                  "quote": "不滿為小餘",
+                  "start": 32
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 46,
+                  "quote": "大餘滿六十除去之",
+                  "start": 38
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 54,
+                  "quote": "其餘以蔀名命之",
+                  "start": 47
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 59,
+                  "quote": "筭盡之外",
+                  "start": 55
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 68,
+                  "quote": "則前年冬至之日也",
+                  "start": 60
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 7,
+                  "quote": "推二十四氣術曰",
+                  "start": 0
+                }
+              ]
+            },
+            "formal": "入蔀年",
+            "selected_definition": null,
+            "selected_port": "入蔀年",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:41",
+                "end": 14,
+                "quote": "置入蔀年減一",
+                "start": 8
+              }
+            ]
+          },
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "winter",
+              "goal_surface": "二十四氣術曰",
+              "kind": "ProcedureDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:41",
+                  "end": 14,
+                  "quote": "置入蔀年減一",
+                  "start": 8
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 20,
+                  "quote": "以月餘乘之",
+                  "start": 15
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 26,
+                  "quote": "滿中法得一",
+                  "start": 21
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 31,
+                  "quote": "名曰大餘",
+                  "start": 27
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 37,
+                  "quote": "不滿為小餘",
+                  "start": 32
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 46,
+                  "quote": "大餘滿六十除去之",
+                  "start": 38
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 54,
+                  "quote": "其餘以蔀名命之",
+                  "start": 47
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 59,
+                  "quote": "筭盡之外",
+                  "start": 55
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 68,
+                  "quote": "則前年冬至之日也",
+                  "start": 60
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 7,
+                  "quote": "推二十四氣術曰",
+                  "start": 0
+                }
+              ]
+            },
+            "formal": "月餘",
+            "selected_definition": null,
+            "selected_port": "月餘",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:41",
+                "end": 20,
+                "quote": "以月餘乘之",
+                "start": 15
+              }
+            ]
+          },
+          {
+            "candidates": [],
+            "consumer": {
+              "domain_label": "winter",
+              "goal_surface": "二十四氣術曰",
+              "kind": "ProcedureDef",
+              "source_spans": [
+                {
+                  "doc_id": "sifen:41",
+                  "end": 14,
+                  "quote": "置入蔀年減一",
+                  "start": 8
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 20,
+                  "quote": "以月餘乘之",
+                  "start": 15
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 26,
+                  "quote": "滿中法得一",
+                  "start": 21
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 31,
+                  "quote": "名曰大餘",
+                  "start": 27
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 37,
+                  "quote": "不滿為小餘",
+                  "start": 32
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 46,
+                  "quote": "大餘滿六十除去之",
+                  "start": 38
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 54,
+                  "quote": "其餘以蔀名命之",
+                  "start": 47
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 59,
+                  "quote": "筭盡之外",
+                  "start": 55
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 68,
+                  "quote": "則前年冬至之日也",
+                  "start": 60
+                },
+                {
+                  "doc_id": "sifen:41",
+                  "end": 7,
+                  "quote": "推二十四氣術曰",
+                  "start": 0
+                }
+              ]
+            },
+            "formal": "蔀名",
+            "selected_definition": null,
+            "selected_port": "蔀名",
+            "selection_reason": "no declared root or source producer",
+            "use_source_spans": [
+              {
+                "doc_id": "sifen:41",
+                "end": 54,
+                "quote": "其餘以蔀名命之",
+                "start": 47
+              }
+            ]
+          }
+        ],
+        "missing_dependencies": [
+          {
+            "cause": "requires_external_data",
+            "missing_inputs": [
+              "count_cycle"
+            ],
+            "reason": "No source-defined current instance",
+            "source_spans": [
+              {
+                "doc_id": "sifen:41",
+                "end": 54,
+                "quote": "其餘以蔀名命之",
+                "start": 47
+              }
+            ]
+          },
+          {
+            "cause": "requires_external_data",
+            "missing_inputs": [
+              "中法"
+            ],
+            "reason": "Parameter value is not declared in runtime context",
+            "source_spans": [
+              {
+                "doc_id": "sifen:41",
+                "end": 26,
+                "quote": "滿中法得一",
+                "start": 21
+              }
+            ]
+          },
+          {
+            "cause": "unknown_quantity",
+            "missing_inputs": [],
+            "reason": "no declared contextual rate or compatible fraction carry",
+            "source_spans": [
+              {
+                "doc_id": "sifen:41",
+                "end": 26,
+                "quote": "滿中法得一",
+                "start": 21
+              }
+            ]
+          },
+          {
+            "cause": "unresolved_parser",
+            "missing_inputs": [
+              "unparsed_instruction"
+            ],
+            "reason": null,
+            "source_spans": [
+              {
+                "doc_id": "sifen:41",
+                "end": 37,
+                "quote": "不滿為小餘",
+                "start": 32
+              }
+            ]
+          },
+          {
+            "cause": "unresolved_parser",
+            "missing_inputs": [
+              "月餘"
+            ],
+            "reason": "No source-defined current instance",
+            "source_spans": [
+              {
+                "doc_id": "sifen:41",
+                "end": 20,
+                "quote": "以月餘乘之",
+                "start": 15
+              }
+            ]
+          },
+          {
+            "cause": "unresolved_parser",
+            "missing_inputs": [],
+            "reason": "no remainder compatible with day_fraction",
+            "source_spans": [
+              {
+                "doc_id": "sifen:41",
+                "end": 37,
+                "quote": "不滿為小餘",
+                "start": 32
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "schema": "SemanticRegressionBaseline/1"
+}
