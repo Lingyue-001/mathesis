@@ -2,6 +2,7 @@
 from html import escape
 from collections import defaultdict, deque
 import json
+import hashlib
 
 from adjudication import compile_reviewed, new_session
 from analysis_parser.ontology import REGISTRY, label, label_en
@@ -27,7 +28,7 @@ LAYERS = {
 }
 
 
-def compile_view(packet):
+def compile_view(packet, *, include_term_semantics=False, term_regions=None):
     """One automatic compile and one empty-session compile; no persisted state."""
     automatic_report = parse_packet(packet)
     session = new_session(packet, 'inspector:read-only')
@@ -40,9 +41,18 @@ def compile_view(packet):
             if field not in graph:
                 raise ValueError('reviewed_report_field_missing: ' + field)
     reviewed = project_report(graph) if graph is not None else None
-    return {'packet': packet, 'session': session, 'automatic_report': automatic_report,
+    view = {'packet': packet, 'session': session, 'automatic_report': automatic_report,
             'compilation': compilation, 'automatic': automatic, 'reviewed': reviewed,
             'diff': diff_projection(automatic, reviewed) if reviewed is not None else None}
+    if include_term_semantics:
+        try:
+            from domain_kernel.engine import suggest_packet_semantics
+            view['term_semantics'] = suggest_packet_semantics(packet, term_regions=term_regions)
+            view['term_semantics_status'] = {'status': 'complete'}
+        except Exception as error:
+            view['term_semantics'] = None
+            view['term_semantics_status'] = {'status': 'error', 'error': type(error).__name__ + ': ' + str(error)}
+    return view
 
 
 def _text(value):
@@ -558,6 +568,154 @@ def _layer_content(layer, projection, report, document):
                    for item, raw in _paired('R2', projection[layer], report))
 
 
+def _term_tree(node, nodes, ancestors=()):
+    """Only child_ids define the ordered term tree; expression is never traversed."""
+    if node['id'] in ancestors:
+        raise ValueError('cyclic term child_ids')
+    parts = ['<li data-term-node="' + _text(node['id']) + '">' + _text(node['span']['quote'])]
+    parts.append(' <small>cue_id: ' + _text(node.get('cue_id')) + ' · rule_id: '
+                 + _text(node.get('rule_id')) + '</small>')
+    rules = []
+    if node.get('child_ids'):
+        parts.append('<ol class="children">')
+        for child_id in node['child_ids']:
+            child_html, child_rules = _term_tree(nodes[child_id], nodes, (*ancestors, node['id']))
+            parts.append(child_html)
+            rules.extend(child_rules)
+        parts.append('</ol>')
+    if node.get('rule_id'):
+        rules.append(node['rule_id'])
+    return ''.join(parts) + '</li>', rules
+
+
+def _term_candidate(node, nodes, regions, metadata, document):
+    tree, rules = _term_tree(node, nodes)
+    parts = ['<div class="use" data-term-candidate="' + _text(node['id']) + '">',
+             '<h4>' + _ui('Meaning', '候选解释') + '</h4><pre>' + _text(json.dumps(
+                 node.get('expression', {'proposes': node.get('proposes')}), ensure_ascii=False, indent=2)) + '</pre>',
+             '<h4>' + _ui('How derived', '如何得到') + '</h4>',
+             '<p>cue_id: ' + _text(node.get('cue_id')) + ' · rule_id: ' + _text(node.get('rule_id')) + '</p>',
+             '<details><summary>' + _ui('Ordered term composition', '有序构词过程') + ' · '
+             + _text(' → '.join(rules) or node.get('method')) + '</summary>',
+             '<div data-term-tree="' + _text(node['id']) + '"><ol>' + tree + '</ol></div>',
+             _technical({key: node[key] for key in ('id', 'method', 'child_ids', 'alternative_group') if key in node}),
+             '</details><h4>' + _ui('Evidence', '依据') + '</h4>',
+             '<p>' + _ui('Source span', '原文跨度') + ': ' + _evidence([node['span']], document) + '</p>',
+             '<details><summary>' + _ui('Lexical / composition rule and provenance', '词素／组合规则及解释来源')
+             + '</summary>']
+    for category, ident in (('lexical_cues', node.get('cue_id')),
+                            ('composition_rules', node.get('rule_id'))):
+        if ident:
+            record = metadata.get(category, {}).get(ident) or metadata.get('fixed_expressions', {}).get(ident)
+            parts.append('<p>' + _text(ident) + '</p>' + (_technical(record) if record else ''))
+    parts.append('<p>provenance_ids · ' + _ui('Interpretive evidence; not computational producers.',
+                                            '解释依据；不是计算 producer。') + '</p>')
+    for ident in node['provenance_ids']:
+        source = metadata.get('sources', {}).get(ident)
+        parts.append('<p>' + _text(ident) + '</p>' + (_technical(source) if source else ''))
+    if node.get('region_ids'):
+        parts.append(_technical([regions[ident] for ident in node['region_ids']]))
+    parts.extend(['</details><h4>' + _ui('Current status / Why still suggestion-only', '当前状态／为何仍只是建议') + '</h4>',
+                  '<p>' + _ui('Support', '支持状态') + ': ' + _text(node['support_status']) + '</p>',
+                  '<p>' + _ui('Local composition constraints', '局部组合约束') + ': ' + _text(node['constraint_status']) + '</p>',
+                  '<p>' + _ui('Authorization', '授权状态') + ': ' + _text(node['authorization_status']) + '</p>'])
+    pending = {key: value for key, value in node['precondition_checks'].items() if value == 'underdetermined'}
+    if pending:
+        parts.append('<p class="gap">' + _ui('Undetermined preconditions', '未决前提') + ': '
+                     + _text(json.dumps(pending, ensure_ascii=False)) + '</p>')
+    parts.append('<p>' + _ui('Still suggestion-only: K1 has no authority to set runtime semantics or enter lowering.',
+                            '仍仅为建议：K1 无权设定运行时语义或进入 lowering。') + '</p></div>')
+    return ''.join(parts)
+
+
+def _term_bundle(bundle, doc, metadata, registry_hash, document):
+    identity = bundle['identity']
+    if (bundle['schema'] != 'TermSemanticCandidates/1' or
+            any(identity[key] != doc[field] for key, field in (
+                ('doc_id', 'doc_id'), ('reading_id', 'reading_id'), ('source_sha256', 'actual_sha256')))):
+        raise ValueError('term bundle source identity mismatch')
+    parts = ['<h3>' + _text(identity['doc_id']) + '</h3>']
+    if registry_hash != identity['registry_sha256']:
+        metadata = {}
+        parts.append('<p class="notice">' + _ui('Registry metadata unavailable; original evidence IDs retained.',
+                                                'Registry 来源信息不可用；保留原始依据 ID。') + '</p>')
+    if bundle['truncated']:
+        parts.append('<p class="notice">' + _ui('Candidate set truncated; displayed alternatives are not exhaustive.',
+                                                '候选集已截断；当前展示的替代解释并不穷尽。') + '</p>')
+    candidates = bundle['candidates'] + bundle['fixed_expression_candidates']
+    nodes = {node['id']: node for node in candidates}
+    if len(nodes) != len(candidates):
+        raise ValueError('duplicate term candidate ID')
+    regions = {region['id']: region for region in bundle['regions']}
+    groups = defaultdict(list)
+    for node in candidates:
+        span = node['span']
+        if (any(span[key] != identity[key] for key in ('doc_id', 'reading_id', 'source_sha256'))
+                or not (0 <= span['start'] < span['end'] <= len(doc['text']))
+                or doc['text'][span['start']:span['end']] != span['quote']):
+            raise ValueError('term candidate source span mismatch')
+        groups[(span['start'], span['end'])].append(node)
+    composed = {span for span, rows in groups.items()
+                if any(n.get('method') == 'composition' or 'proposes' in n for n in rows)}
+    maximal = {span for span in composed if not any(
+        other != span and other[0] <= span[0] and span[1] <= other[1] for other in composed)}
+    if not candidates:
+        parts.append('<p>' + _ui('No term semantic candidates in this bundle.', '此候选包未生成术语语义候选。') + '</p>')
+    elif not composed:
+        parts.append('<p>' + _ui('No composition candidates; lexical cues / opaque components remain available below.',
+                                '尚无组合候选；下方仍可查看词素提示／未解释成分。') + '</p>')
+    secondary = []
+    for span, rows in sorted(groups.items()):
+        # Source order between occurrences; original bundle order within an occurrence.
+        bases = []
+        for node in rows:
+            for region_id in node.get('region_ids', []):
+                basis = regions[region_id]['basis']
+                if basis not in bases:
+                    bases.append(basis)
+        content = '<article><h3>' + _evidence([rows[0]['span']], document) + '</h3>'
+        content += '<p>' + _ui('Region basis', '区域依据') + ': ' + _text(', '.join(bases) or 'unrecorded') + '</p>'
+        content += ''.join(_term_candidate(n, nodes, regions, metadata, document) for n in rows) + '</article>'
+        (parts if span in maximal else secondary).append(content)
+    if secondary:
+        parts.append('<details><summary>' + _ui('Contained compositions, lexical cues and opaque components',
+                                                '内部组合、词素提示及未解释成分') + '</summary>'
+                     + ''.join(secondary) + '</details>')
+    return ''.join(parts)
+
+
+def _term_semantics_section(view, document):
+    """Read existing bundles only. Failure here cannot take R1–R4 down with it."""
+    if 'term_semantics' not in view and 'term_semantics_status' not in view:
+        return ''
+    heading = '<section id="term-semantics"><h2>' + _ui('Term semantic candidates', '术语语义候选') + '</h2>'
+    try:
+        if view['term_semantics_status']['status'] != 'complete':
+            raise ValueError(view['term_semantics_status'].get('error', 'candidate generation incomplete'))
+        # Metadata is read from the same runtime registry projection used in bundle identity.
+        # Never call the generator or its grammar-preview validator from presentation.
+        from analysis_parser.inputs import documents
+        from domain_kernel.engine import load_kernel
+        metadata, registry_hash = {}, None
+        try:
+            registry = load_kernel()
+            registry_hash = hashlib.sha256(json.dumps(registry, ensure_ascii=False, sort_keys=True,
+                                                       separators=(',', ':')).encode('utf-8')).hexdigest()
+            metadata = {key: {row['id']: row for row in registry[key]}
+                        for key in ('sources', 'lexical_cues', 'composition_rules', 'fixed_expressions')}
+        except Exception:
+            pass  # A missing/mismatched registry hides metadata, never the original IDs.
+        docs = {doc['doc_id']: doc for doc in documents(view['packet'])}
+        content = '<p>' + _ui('Alternatives are unranked. grammar_candidate denotes a Domain Kernel grammar preview, not parser adoption.',
+                             '替代解释不排名。grammar_candidate 来自 Domain Kernel 语法预览，不表示 parser 已采用。') + '</p>'
+        content += ''.join(_term_bundle(bundle, docs[doc_id], metadata, registry_hash, document)
+                           for doc_id, bundle in view['term_semantics'].items())
+        return heading + content + '</section>'
+    except Exception as error:
+        return (heading + '<p class="notice">' + _ui('Term semantic candidates unavailable', '术语语义候选区块不可用')
+                + ': ' + _text(type(error).__name__ + ': ' + str(error)) + '</p></section>')
+
+
 _STYLE = '''
 body {font: 15px/1.6 system-ui, sans-serif; color:#222; background:white; margin:0 12px}
 * {box-sizing:border-box} a {color:#175d9b} small {color:#555} p {margin:4px 0}
@@ -682,6 +840,8 @@ def render_html(view, language='en'):
                                  + '<h3>空 session 路径</h3>' + _table(layer, [change['after']], document))
                 parts.append('</details>')
         parts.append('</section>')
+        if layer == 'R2':
+            parts.append(_term_semantics_section(view, document))
     parts.append('<p>R1–R4 是同一 report 的阅读层次；不表示人工确认或阶段通过。</p>')
     return ''.join(parts) + f'<script>{_SCRIPT}</script><script>applyLanguage({json.dumps(language)});</script></body></html>'
 
@@ -694,7 +854,7 @@ def render(root, language='en'):
     try:
         packet = build_source_packet_from_units(root, 'sifen', [PRIMARY], context_unit_ids=[],
                                                 provided_scope={'tradition': 'Han_Si_fen_li'})
-        view = compile_view(packet)
+        view = compile_view(packet, include_term_semantics=True)
         st.iframe(render_html(view, language), height=850)
     except (ValueError, OSError, KeyError) as error:
         st.error(f'读取或编译未完成：{error}')

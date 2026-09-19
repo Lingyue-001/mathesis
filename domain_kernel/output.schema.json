@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathesis.local/domain-kernel/output.schema.json",
+  "type": "object",
+  "properties": {
+    "schema": {
+      "const": "TermSemanticCandidates/1"
+    },
+    "identity": {
+      "type": "object",
+      "properties": {
+        "doc_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reading_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "registry_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "schema_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "engine_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "dependency_hashes": {
+          "type": "object",
+          "required": [
+            "analysis_parser.inputs",
+            "analysis_parser.lexical",
+            "analysis_parser.construction_ir",
+            "analysis_parser.syntax_ir"
+          ],
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "options": {
+          "type": "object",
+          "properties": {
+            "max_candidates": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "term_regions": {
+              "type": "array",
+              "items": {
+                "$ref": "kernel.schema.json#/$defs/SourceAnchor"
+              }
+            }
+          },
+          "required": [
+            "max_candidates",
+            "term_regions"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "doc_id",
+        "reading_id",
+        "source_sha256",
+        "registry_sha256",
+        "schema_sha256",
+        "engine_sha256",
+        "dependency_hashes",
+        "options"
+      ],
+      "additionalProperties": false
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "kernel.schema.json#/$defs/SemanticCandidate"
+          },
+          {
+            "required": [
+              "analysis_range",
+              "region_ids",
+              "generated_by",
+              "precondition_checks"
+            ],
+            "properties": {
+              "claim_authority": {
+                "const": "S"
+              },
+              "support_status": {
+                "const": "proposed"
+              },
+              "authorization_status": {
+                "const": "not_authorized"
+              },
+              "authorization_refs": {
+                "const": []
+              },
+              "expression": {
+                "$ref": "kernel.schema.json#/$defs/Expression"
+              },
+              "span": {
+                "$ref": "kernel.schema.json#/$defs/SourceAnchor"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "fixed_expression_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "span": {
+            "$ref": "kernel.schema.json#/$defs/SourceAnchor"
+          },
+          "analysis_range": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "integer",
+                "minimum": 1
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "rule_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "proposes": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alternative_group": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim_authority": {
+            "const": "S"
+          },
+          "support_status": {
+            "const": "proposed"
+          },
+          "authorization_status": {
+            "const": "not_authorized"
+          },
+          "authorization_refs": {
+            "const": []
+          },
+          "constraint_status": {
+            "const": "underdetermined"
+          },
+          "provenance_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "precondition_checks": {
+            "type": "object",
+            "additionalProperties": {
+              "enum": [
+                "unchecked",
+                "compatible",
+                "incompatible",
+                "underdetermined"
+              ]
+            }
+          },
+          "generated_by": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "span",
+          "analysis_range",
+          "rule_id",
+          "proposes",
+          "alternative_group",
+          "claim_authority",
+          "support_status",
+          "authorization_status",
+          "authorization_refs",
+          "constraint_status",
+          "provenance_ids",
+          "precondition_checks",
+          "generated_by"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "span": {
+            "$ref": "kernel.schema.json#/$defs/SourceAnchor"
+          },
+          "analysis_range": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "integer",
+                "minimum": 1
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "basis": {
+            "enum": [
+              "explicit_selection",
+              "grammar_candidate"
+            ]
+          },
+          "origins": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "parent_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "slot": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "node_id": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "parent_id",
+                "slot",
+                "node_id"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "span",
+          "analysis_range",
+          "basis",
+          "origins"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "truncated": {
+      "type": "boolean"
+    },
+    "syntax_preview": {
+      "type": "object",
+      "required": [
+        "nodes",
+        "roots",
+        "diagnostics",
+        "token_coverage"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "identity",
+    "candidates",
+    "fixed_expression_candidates",
+    "regions",
+    "diagnostics",
+    "truncated",
+    "syntax_preview"
+  ],
+  "additionalProperties": false
+}

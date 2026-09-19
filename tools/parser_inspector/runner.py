@@ -38,7 +38,7 @@ def text_packet(text):
     }
 
 
-def run(packet, stage, *, root=ROOT):
+def run(packet, stage, *, root=ROOT, include_term_semantics=False, term_regions=None):
     """Run up to a stage. Null files mean not run, never an empty result.
 
     SyntaxResult.to_dict()/candidates() are parser-owned serializers. Selection
@@ -50,6 +50,8 @@ def run(packet, stage, *, root=ROOT):
     with _LOCK:
         OUTPUT.mkdir(parents=True, exist_ok=True)
         result = {}
+        candidate_filename = "term_semantic_candidates.json"
+        (OUTPUT / candidate_filename).unlink(missing_ok=True)
 
         def save(filename, value):
             (OUTPUT / filename).write_text(
@@ -62,6 +64,8 @@ def run(packet, stage, *, root=ROOT):
         progress = {'requested_stage': stage, 'completed_stages': [], 'status': 'running',
                     'corpus_root': str(Path(root).resolve())}
         save('run.json', progress)
+        if include_term_semantics:
+            save(candidate_filename, None)
         try:
             save('packet.json', packet)
             docs = documents(packet)
@@ -86,7 +90,7 @@ def run(packet, stage, *, root=ROOT):
                     save(filename, report[key])
                 progress['completed_stages'].append('compile')
             parser = artifact('parser', {name: value for name, value in result.items()
-                                         if name not in ('run.json', 'packet.json')}, packet=packet)
+                                         if name not in ('run.json', 'packet.json', candidate_filename)}, packet=packet)
             progress['artifacts'] = [parser]
             if stage == 'compile':
                 progress['artifacts'].append(artifact('graph', report, parents=[parser]))
@@ -94,6 +98,19 @@ def run(packet, stage, *, root=ROOT):
             progress['status'] = 'complete'
         except Exception:
             progress.update(status='error', error=traceback.format_exc())
+        if include_term_semantics:
+            if progress['status'] != 'complete':
+                progress['term_semantics'] = {'status': 'blocked', 'reason': 'Native stage failed.'}
+            else:
+                try:
+                    from domain_kernel.engine import suggest_packet_semantics
+                    candidates = suggest_packet_semantics(packet, term_regions=term_regions)
+                    candidate_artifact = artifact('term_semantics', candidates, packet=packet)
+                    save(candidate_filename, candidates)
+                    progress['term_semantics'] = {'status': 'complete', 'artifact': candidate_artifact}
+                except Exception:
+                    save(candidate_filename, None)
+                    progress['term_semantics'] = {'status': 'error', 'error': traceback.format_exc()}
         save('run.json', progress)
         return result
 

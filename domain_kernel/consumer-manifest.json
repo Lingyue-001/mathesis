@@ -1,0 +1,149 @@
+{
+  "schema": "DomainKernelConsumers/1",
+  "capabilities": [
+    {
+      "id": "compositional_candidates",
+      "status": "suggestion_only",
+      "producer": [
+        "domain_kernel/engine.py::suggest_term_semantics"
+      ],
+      "validator": [
+        "domain_kernel/engine.py::validate_term_bundle"
+      ],
+      "consumer": [
+        "domain_kernel/engine.py::suggest_packet_semantics"
+      ],
+      "allowed_effect": "Emit source-grounded S-only hypotheses; no unit, scale, instance or execution authority.",
+      "effect_test": [
+        "tests/domain_kernel/test_engine.py::EngineTests.test_nested_composition_without_terms",
+        "tests/domain_kernel/test_engine.py::EngineTests.test_registry_rules_are_consumed_and_input_is_unchanged",
+        "tests/domain_kernel/test_engine.py::EngineTests.test_all_authored_probe_derivations_are_generated",
+        "tests/domain_kernel/test_engine.py::EngineTests.test_candidate_limit_avoids_quadratic_interval_allocation",
+        "tests/domain_kernel/test_engine.py::EngineTests.test_all_rules_have_observable_effect_without_whole_terms"
+      ]
+    },
+    {
+      "id": "shared_candidate_schema",
+      "status": "suggestion_only",
+      "producer": [
+        "domain_kernel/engine.py::suggest_packet_semantics"
+      ],
+      "validator": [
+        "domain_kernel/engine.py::validate_term_bundle"
+      ],
+      "consumer": [
+        "tools/parser_inspector/runner.py::run",
+        "tools/parser_inspector/readable.py::compile_view",
+        "tools/parser_inspector/readable.py::render_html"
+      ],
+      "allowed_effect": "Validate shape offline and verify source/type/derivation at runtime.",
+      "effect_test": [
+        "tests/domain_kernel/test_engine.py::EngineTests.test_schema_offline_and_shared_axes",
+        "tests/domain_kernel/test_engine.py::EngineTests.test_validator_rejects_corrupt_identity_structure_and_authority",
+        "tests/domain_kernel/test_engine.py::EngineTests.test_fixed_validator_rejects_rehashed_contract_and_authority_changes",
+        "tests/domain_kernel/test_engine.py::EngineTests.test_region_provenance_must_resolve_to_actual_selection_or_syntax"
+      ]
+    },
+    {
+      "id": "optional_inspector_output",
+      "status": "suggestion_only",
+      "producer": [
+        "domain_kernel/engine.py::suggest_packet_semantics"
+      ],
+      "validator": [
+        "domain_kernel/engine.py::validate_term_bundle"
+      ],
+      "consumer": [
+        "tools/parser_inspector/runner.py::run",
+        "tools/parser_inspector/readable.py::compile_view"
+      ],
+      "allowed_effect": "Backend opt-in remains default off. Fixed Inspector enables read-only term candidates after R2; source and R1–R4 HTML, native reports and reviewed graph remain unchanged. No decisions or runtime authority.",
+      "effect_test": [
+        "tools/parser_inspector/test_term_semantics.py::TermSemanticsTests.test_native_reports_artifacts_html_and_both_entrypoints",
+        "tools/parser_inspector/test_term_semantics.py::TermSemanticsTests.test_candidate_failure_is_separate_and_clears_previous_result",
+        "tools/parser_inspector/test_term_semantics.py::TermSemanticsTests.test_switching_off_removes_owned_file_and_preserves_old_bytes",
+        "tools/parser_inspector/test_term_semantics.py::TermPresentationTests.test_real_primary_readonly_section_position_and_all_alternatives",
+        "tools/parser_inspector/test_term_semantics.py::TermPresentationTests.test_tree_uses_ordered_child_ids_not_expression_arguments",
+        "tools/parser_inspector/test_term_semantics.py::TermPresentationTests.test_failures_are_local_including_malformed_trees"
+      ]
+    },
+    {
+      "id": "reproducible_docs",
+      "status": "implemented",
+      "producer": [
+        "domain_kernel/docs.py::render_documents"
+      ],
+      "validator": [
+        "domain_kernel/docs.py::validate_manifest"
+      ],
+      "consumer": [
+        "domain_kernel/docs.py::main"
+      ],
+      "allowed_effect": "Generate and check reference docs; no CI or website hook.",
+      "effect_test": [
+        "tests/domain_kernel/test_docs.py::DocumentationTests.test_check_detects_stale_docs_without_writing",
+        "tests/domain_kernel/test_docs.py::DocumentationTests.test_manifest_checks_real_symbols_and_effect_tests"
+      ]
+    },
+    {
+      "id": "existing_local_lexical_role",
+      "status": "metadata_only",
+      "producer": [
+        "adjudication/compiler.py::_apply_local_lexical_roles"
+      ],
+      "validator": [
+        "adjudication/compiler.py::compile_reviewed"
+      ],
+      "consumer": [
+        "adjudication/compiler.py::compile_reviewed"
+      ],
+      "allowed_effect": "Existing reviewed lexical metadata only; no new domain decision routing.",
+      "effect_test": []
+    },
+    {
+      "id": "term_candidate_selection",
+      "status": "planned",
+      "producer": [],
+      "validator": [],
+      "consumer": [],
+      "allowed_effect": "Future adaptation to existing adjudication/compiler inputs.",
+      "effect_test": []
+    },
+    {
+      "id": "input_count_coordinates",
+      "status": "planned",
+      "producer": [],
+      "validator": [],
+      "consumer": [],
+      "allowed_effect": "Future explicit index base, origin and boundary inputs.",
+      "effect_test": []
+    },
+    {
+      "id": "reading_selection",
+      "status": "planned",
+      "producer": [],
+      "validator": [],
+      "consumer": [],
+      "allowed_effect": "Future reading selection via existing source/replay contracts.",
+      "effect_test": []
+    },
+    {
+      "id": "unified_authorization_gate",
+      "status": "planned",
+      "producer": [],
+      "validator": [],
+      "consumer": [],
+      "allowed_effect": "Future applicability checks replacing old heading/profile overreach.",
+      "effect_test": []
+    },
+    {
+      "id": "automatic_resume",
+      "status": "planned",
+      "producer": [],
+      "validator": [],
+      "consumer": [],
+      "allowed_effect": "Future authorized recompilation via existing compile_reviewed, not a new state machine.",
+      "effect_test": []
+    }
+  ]
+}

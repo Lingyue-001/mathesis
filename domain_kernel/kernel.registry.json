@@ -1,0 +1,2157 @@
+{
+  "schema_version": "0.1.0-review2",
+  "artifact_kind": "design_registry_not_runtime",
+  "baseline_commit": "63ed5c2b12dbe6501f5f607ec7a062c9e7b50d46",
+  "sources": [
+    {
+      "id": "S-C8",
+      "kind": "scholarship",
+      "title": "Cullen 2017, The Foundations of Celestial Reckoning",
+      "locator": "printed p.8; local PDF p.21",
+      "checked_by": "local_pdf_text",
+      "supports": [
+        "月可指天体、lunation 或 civil month；歲可指 solar cycle 或 civil year；本书历法语境下年指 civil year。"
+      ],
+      "limits": [
+        "这里的 sense inventory 是针对本书材料；不宣称跨全部时代穷尽词义。"
+      ]
+    },
+    {
+      "id": "S-C23",
+      "kind": "scholarship",
+      "title": "Cullen 2017",
+      "locator": "printed pp.22–23, §1.5.2; local PDF pp.35–36",
+      "checked_by": "local_pdf_text",
+      "supports": [
+        "三统的日法81、月法2392与整数化表示；商余与分母共同表示混合数。"
+      ],
+      "limits": [
+        "数值81不可传播到四分历；这里的位形叙述不能替代对具体物质操作的独立研究。"
+      ]
+    },
+    {
+      "id": "S-CCONST",
+      "kind": "edited_primary_and_scholarship",
+      "title": "Cullen 2017, Han Quarter Remainder system",
+      "locator": "printed pp.154–157, §§19–35; local PDF pp.167–170",
+      "checked_by": "local_pdf_text_and_page",
+      "supports": [
+        "章法19、章月235、蔀法76、蔀月940、蔀日27759、日法4；中法的校读32。"
+      ],
+      "limits": [
+        "原文声明给出名字和数值；单位与转换关系仍需相应解释；Cullen 的校读不是 repo 底本文字。"
+      ]
+    },
+    {
+      "id": "S-C46",
+      "kind": "edited_primary_and_scholarship",
+      "title": "Cullen 2017, Proc.3.5",
+      "locator": "printed pp.164–165, §46; local PDF pp.177–178",
+      "checked_by": "local_pdf_text_and_page",
+      "supports": [
+        "入蔀年在此为年序位；减一用于蔀首至本年年首的经过年数；235/19 换算；閏餘的月分表示；12阈值比较原始余数。"
+      ],
+      "limits": [
+        "序位减一的解释需要起始序号与端点约定；不能推广到任意 X−1。"
+      ]
+    },
+    {
+      "id": "S-C47",
+      "kind": "edited_primary_and_scholarship",
+      "title": "Cullen 2017, Proc.3.6",
+      "locator": "printed pp.165–166, §47; local PDF pp.178–179",
+      "checked_by": "local_pdf_text",
+      "supports": [
+        "积月乘27759再除940；商为积日；小余为以940作分母的日分分子；随后积日按60取余；第二年例为354、348、54。"
+      ],
+      "limits": [
+        "日名还需要蔀首日及计数约定；赋day单位不提供日名。"
+      ]
+    },
+    {
+      "id": "S-C49",
+      "kind": "edited_primary_and_scholarship",
+      "title": "Cullen 2017, Proc.3.8",
+      "locator": "printed p.167, §49; local PDF p.180",
+      "checked_by": "local_pdf_text",
+      "supports": [
+        "日餘168、中法32；168/32=21/4是删去整60日后的一年余日；下一气增15日7/32。"
+      ],
+      "limits": [
+        "168/32不是完整年长；本段还校读月餘为日餘；选择中法32不等于同时选择另一处校读。"
+      ]
+    },
+    {
+      "id": "S-C79",
+      "kind": "edited_primary_and_scholarship",
+      "title": "Cullen 2017, Proc.3.36 and Jupiter constants",
+      "locator": "printed pp.187–190, §§79–90; local PDF pp.200–203",
+      "checked_by": "local_pdf_text_and_page",
+      "supports": [
+        "日率译作Solar Rate，表示太阳周行数/solar cycles；周率为行星与太阳会合次数；同一段有相应月法构造。"
+      ],
+      "limits": [
+        "以日率乘月率为本包人工构造的词法压力样例；本轮没有为月率登记对应的历史定义。"
+      ]
+    },
+    {
+      "id": "S-L67",
+      "kind": "scholarship",
+      "title": "刘洪涛 2003，《古代历法计算法》",
+      "locator": "printed pp.66–67, eqs.(3.7)–(3.9); local PDF pp.86–87",
+      "checked_by": "local_pdf_page_visual",
+      "supports": [
+        "入蔀年减一；235/19换算；余数与闰年阈值；63年例：766月、余16；换算22620日、余594。"
+      ],
+      "limits": [
+        "本轮核对的是上述局部页；没有校验全书。"
+      ]
+    },
+    {
+      "id": "S-L69",
+      "kind": "scholarship",
+      "title": "刘洪涛 2003，《古代历法计算法》",
+      "locator": "printed p.69, eqs.(3.11)–(3.12); local PDF p.89",
+      "checked_by": "local_pdf_page_visual",
+      "supports": [
+        "168/32=21/4余日；每气15又7/32日；两种分母表示。"
+      ],
+      "limits": [
+        "完整年长与年余日须分别记录。"
+      ]
+    },
+    {
+      "id": "S-BK314",
+      "kind": "scholarship",
+      "title": "Bréard and Kiel, “實如法而一”: Division and Equality in Early Chinese Mathematical Texts",
+      "locator": "ASIA 80(1), printed pp.313–315; local PDF pp.1–3; DOI 10.1515/asia-2025-0025",
+      "checked_by": "uploaded_text",
+      "supports": [
+        "實如法而一是固定技术表达；从非技术的日常词义逐字解释会失败；dividend/divisor角色需技术构式。"
+      ],
+      "limits": [
+        "技术表述支持除法候选，不授权答案恒等于1；本包组合规则是工程建模提案。"
+      ]
+    },
+    {
+      "id": "S-DTI8",
+      "kind": "historical_software_documentation",
+      "title": "DISHAS table interface documentation V2, August 2018",
+      "locator": "PDF pp.8–9, Validation / Prediction tools",
+      "checked_by": "uploaded_text",
+      "supports": [
+        "区分suggested与validated；预测需用户确认。"
+      ],
+      "limits": [
+        "该2018文档明确说验证后丢失生成来源记忆；MATHesis这里提出确认后仍永久保留，不声称照搬该行为；未核实DISHAS当前代码。"
+      ]
+    },
+    {
+      "id": "S-REPO",
+      "kind": "repository_snapshot",
+      "title": "Lingyue-001/mathesis",
+      "locator": "First checked at 2973dc7014cca300768f54cc9e28139387ac4ef8; rechecked at 63ed5c2b12dbe6501f5f607ec7a062c9e7b50d46 with unchanged calendars-四分历.md blob 16d2b4c8953c7850a5a26264692de44ef13e71e9; source numbered entries 18,24,38–41,71–72",
+      "checked_by": "github_connector_read",
+      "supports": [
+        "原文转录含日法四、中法四十二；天正和朔日术文；二十四气段写月餘；日率出现在五星部分。"
+      ],
+      "limits": [
+        "该转录不自动等于critical edition；本轮保留相同原文blob，未校改原文。旧2973基点只保留为首次证据定位，当前工程基点见baseline_commit。"
+      ]
+    },
+    {
+      "id": "S-ENG",
+      "kind": "project_design",
+      "title": "MATHesis Domain Kernel v0.1 review2",
+      "locator": "2026-09-19; present design package",
+      "checked_by": "authored_specification",
+      "supports": [
+        "构造器、类型化组合、逐字段授权、人工循环、文档生成与验收标准是本项目工程提案。"
+      ],
+      "limits": [
+        "纸面预期不能作为引擎实测；schema通过不证明语义正确或泛化。"
+      ]
+    },
+    {
+      "id": "S-JSON",
+      "kind": "technical_standard",
+      "title": "JSON Schema Draft 2020-12",
+      "locator": "https://json-schema.org/draft/2020-12/json-schema-core ; https://json-schema.org/draft/2020-12/json-schema-validation",
+      "checked_by": "official_web",
+      "supports": [
+        "使用$defs、$ref、required、additionalProperties、oneOf描述结构。"
+      ],
+      "limits": [
+        "JSON Schema检查结构，跨记录语义、scope gate、消费者实际行为仍需独立检查。"
+      ]
+    },
+    {
+      "id": "S-PROV",
+      "kind": "technical_standard",
+      "title": "W3C PROV-O",
+      "locator": "https://www.w3.org/TR/prov-o/",
+      "checked_by": "official_web",
+      "supports": [
+        "区分来源实体、生成活动和操作者，为本包provenance字段设计提供参考。"
+      ],
+      "limits": [
+        "本包采用JSON表示，不宣称RDF/PROV-O合规。"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "body.sun",
+      "label_zh": "太阳",
+      "family": "astral_body",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C79"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "body.moon",
+      "label_zh": "月体",
+      "family": "astral_body",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C8"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "time.day",
+      "label_zh": "日相关量",
+      "family": "quantity_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C47"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "time.month",
+      "label_zh": "月相关量",
+      "family": "quantity_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C8"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "time.lunation",
+      "label_zh": "lunation",
+      "family": "quantity_concept",
+      "parent_ids": [
+        "time.month"
+      ],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C8"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "time.civil_month",
+      "label_zh": "民用月",
+      "family": "quantity_concept",
+      "parent_ids": [
+        "time.month"
+      ],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C8"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "time.year",
+      "label_zh": "年相关量",
+      "family": "quantity_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C8"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "time.civil_year",
+      "label_zh": "民用年",
+      "family": "quantity_concept",
+      "parent_ids": [
+        "time.year"
+      ],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C8"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "time.solar_cycle",
+      "label_zh": "太阳周期",
+      "family": "quantity_concept",
+      "parent_ids": [
+        "time.year"
+      ],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C8",
+        "S-C79"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "measure.du",
+      "label_zh": "度相关量",
+      "family": "quantity_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C79"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "compute.accumulation",
+      "label_zh": "累计/汇集结果提示",
+      "family": "computational_cue",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C46",
+        "S-C47"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "compute.residual",
+      "label_zh": "余量提示",
+      "family": "computational_cue",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C46",
+        "S-C47"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "compute.factor",
+      "label_zh": "计算参数提示",
+      "family": "computational_cue",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C23",
+        "S-BK314"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "compute.rate",
+      "label_zh": "率/比值参数提示",
+      "family": "computational_cue",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C79"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "compute.part",
+      "label_zh": "分/分部表示提示",
+      "family": "computational_cue",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C23"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "compute.number",
+      "label_zh": "数/数量提示",
+      "family": "computational_cue",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-REPO"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "relation.entry",
+      "label_zh": "进入/局部定位提示",
+      "family": "relation_cue",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C46"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "scope.calendar_cycle",
+      "label_zh": "历算周期类别",
+      "family": "scope_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "scope.zhang",
+      "label_zh": "章",
+      "family": "scope_concept",
+      "parent_ids": [
+        "scope.calendar_cycle"
+      ],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "scope.bu",
+      "label_zh": "蔀",
+      "family": "scope_concept",
+      "parent_ids": [
+        "scope.calendar_cycle"
+      ],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "scope.ji",
+      "label_zh": "紀",
+      "family": "scope_concept",
+      "parent_ids": [
+        "scope.calendar_cycle"
+      ],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "scope.yuan",
+      "label_zh": "元周期",
+      "family": "scope_concept",
+      "parent_ids": [
+        "scope.calendar_cycle"
+      ],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "frame.origin",
+      "label_zh": "起算参照",
+      "family": "frame_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "event.conjunction",
+      "label_zh": "日月会合事件",
+      "family": "event_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C47"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "event.full_moon",
+      "label_zh": "望事件",
+      "family": "event_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-REPO"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "event.solstice",
+      "label_zh": "冬至事件",
+      "family": "event_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C49"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "event.qi",
+      "label_zh": "气事件",
+      "family": "event_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C49"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    },
+    {
+      "id": "calendar.intercalation",
+      "label_zh": "置闰",
+      "family": "calendar_concept",
+      "parent_ids": [],
+      "definition_status": "bounded_candidate_vocabulary",
+      "evidence_ids": [
+        "S-C46"
+      ],
+      "default_effect": "suggest",
+      "note": "概念类别不提供数值、计算单位、起点或producer绑定。"
+    }
+  ],
+  "lexical_cues": [
+    {
+      "id": "LC01",
+      "form": "日",
+      "sense_concept_ids": [
+        "body.sun",
+        "time.day"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C47",
+        "S-C79"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC02",
+      "form": "月",
+      "sense_concept_ids": [
+        "body.moon",
+        "time.month",
+        "time.lunation",
+        "time.civil_month"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C8"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC03",
+      "form": "年",
+      "sense_concept_ids": [
+        "time.civil_year",
+        "time.year"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C8"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC04",
+      "form": "歲",
+      "sense_concept_ids": [
+        "time.solar_cycle",
+        "time.civil_year"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C79",
+        "S-C8"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC05",
+      "form": "度",
+      "sense_concept_ids": [
+        "measure.du"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C79"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC06",
+      "form": "積",
+      "sense_concept_ids": [
+        "compute.accumulation"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C46",
+        "S-C47"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC07",
+      "form": "餘",
+      "sense_concept_ids": [
+        "compute.residual"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C46",
+        "S-C47"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC08",
+      "form": "法",
+      "sense_concept_ids": [
+        "compute.factor"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-BK314",
+        "S-C23"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC09",
+      "form": "率",
+      "sense_concept_ids": [
+        "compute.rate"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C79"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC10",
+      "form": "分",
+      "sense_concept_ids": [
+        "compute.part"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C23"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC11",
+      "form": "數",
+      "sense_concept_ids": [
+        "compute.number"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-REPO"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC12",
+      "form": "入",
+      "sense_concept_ids": [
+        "relation.entry"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C46"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC13",
+      "form": "章",
+      "sense_concept_ids": [
+        "scope.zhang"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC14",
+      "form": "蔀",
+      "sense_concept_ids": [
+        "scope.bu"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC15",
+      "form": "紀",
+      "sense_concept_ids": [
+        "scope.ji"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC16",
+      "form": "元",
+      "sense_concept_ids": [
+        "scope.yuan",
+        "frame.origin"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC17",
+      "form": "朔",
+      "sense_concept_ids": [
+        "event.conjunction"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C47"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC18",
+      "form": "合朔",
+      "sense_concept_ids": [
+        "event.conjunction"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C47"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC19",
+      "form": "望",
+      "sense_concept_ids": [
+        "event.full_moon"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-REPO"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC20",
+      "form": "冬至",
+      "sense_concept_ids": [
+        "event.solstice"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C49"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC21",
+      "form": "氣",
+      "sense_concept_ids": [
+        "event.qi"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C49"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    },
+    {
+      "id": "LC22",
+      "form": "閏",
+      "sense_concept_ids": [
+        "calendar.intercalation"
+      ],
+      "effect": "suggest",
+      "evidence_ids": [
+        "S-C46"
+      ],
+      "lexical_status": "lexical_cue_not_tokenization_command",
+      "condition": "必须保留原文跨度和所用reading；这里只列历算语境候选；功能词/动词等其他用法由构式层处理。"
+    }
+  ],
+  "constructors": [
+    {
+      "id": "accumulation",
+      "label_zh": "累计某量",
+      "arguments": {
+        "quantity": "quantity_expression"
+      },
+      "result_sort": "quantity_expression",
+      "relation_kind": "associated_with"
+    },
+    {
+      "id": "residual_of",
+      "label_zh": "与X关联的余量",
+      "arguments": {
+        "associate": "semantic_expression"
+      },
+      "result_sort": "quantity_expression",
+      "relation_kind": "associated_with"
+    },
+    {
+      "id": "factor_for",
+      "label_zh": "与X关联的计算参数",
+      "arguments": {
+        "associate": "semantic_expression"
+      },
+      "result_sort": "quantity_expression",
+      "relation_kind": "associated_with"
+    },
+    {
+      "id": "rate_for",
+      "label_zh": "与X关联的率参数",
+      "arguments": {
+        "associate": "semantic_expression"
+      },
+      "result_sort": "quantity_expression",
+      "relation_kind": "associated_with"
+    },
+    {
+      "id": "part_of_quantity",
+      "label_zh": "与X关联的分部",
+      "arguments": {
+        "associate": "semantic_expression"
+      },
+      "result_sort": "quantity_expression",
+      "relation_kind": "associated_with"
+    },
+    {
+      "id": "localized_quantity",
+      "label_zh": "在某范围内的量",
+      "arguments": {
+        "scope": "scope_expression",
+        "quantity": "quantity_expression"
+      },
+      "result_sort": "quantity_expression",
+      "relation_kind": "localized_in"
+    },
+    {
+      "id": "scoped_quantity",
+      "label_zh": "与某范围关联的量",
+      "arguments": {
+        "scope": "scope_expression",
+        "quantity": "quantity_expression"
+      },
+      "result_sort": "quantity_expression",
+      "relation_kind": "associated_with"
+    },
+    {
+      "id": "number_of",
+      "label_zh": "与X关联的数量",
+      "arguments": {
+        "associate": "semantic_expression"
+      },
+      "result_sort": "quantity_expression",
+      "relation_kind": "associated_with"
+    }
+  ],
+  "composition_rules": [
+    {
+      "id": "C01",
+      "label_zh": "積Q",
+      "pattern": [
+        {
+          "kind": "cue",
+          "cue_id": "LC06"
+        },
+        {
+          "kind": "variable",
+          "name": "Q",
+          "sort": "quantity_expression"
+        }
+      ],
+      "preconditions": [
+        "same_reading",
+        "ordered_adjacent_spans",
+        "nominal_term_region",
+        "typed_arguments"
+      ],
+      "build": {
+        "op": "accumulation",
+        "arguments_from": {
+          "quantity": "$Q"
+        }
+      },
+      "effect": "propose_candidate",
+      "evidence_ids": [
+        "S-ENG"
+      ],
+      "non_claim": "通用组合是假说生成规则；不是文献声称所有同形词都符合该规则。",
+      "forbidden_effects": [
+        "set_runtime_unit",
+        "bind_producer",
+        "supply_numeric_constant",
+        "select_reading",
+        "authorize_conversion"
+      ]
+    },
+    {
+      "id": "C02",
+      "label_zh": "X餘",
+      "pattern": [
+        {
+          "kind": "variable",
+          "name": "X",
+          "sort": "semantic_expression"
+        },
+        {
+          "kind": "cue",
+          "cue_id": "LC07"
+        }
+      ],
+      "preconditions": [
+        "same_reading",
+        "ordered_adjacent_spans",
+        "nominal_term_region",
+        "typed_arguments"
+      ],
+      "build": {
+        "op": "residual_of",
+        "arguments_from": {
+          "associate": "$X"
+        }
+      },
+      "effect": "propose_candidate",
+      "evidence_ids": [
+        "S-ENG"
+      ],
+      "non_claim": "通用组合是假说生成规则；不是文献声称所有同形词都符合该规则。",
+      "forbidden_effects": [
+        "set_runtime_unit",
+        "bind_producer",
+        "supply_numeric_constant",
+        "select_reading",
+        "authorize_conversion"
+      ]
+    },
+    {
+      "id": "C03",
+      "label_zh": "X法",
+      "pattern": [
+        {
+          "kind": "variable",
+          "name": "X",
+          "sort": "semantic_expression"
+        },
+        {
+          "kind": "cue",
+          "cue_id": "LC08"
+        }
+      ],
+      "preconditions": [
+        "same_reading",
+        "ordered_adjacent_spans",
+        "nominal_term_region",
+        "typed_arguments"
+      ],
+      "build": {
+        "op": "factor_for",
+        "arguments_from": {
+          "associate": "$X"
+        }
+      },
+      "effect": "propose_candidate",
+      "evidence_ids": [
+        "S-ENG"
+      ],
+      "non_claim": "通用组合是假说生成规则；不是文献声称所有同形词都符合该规则。",
+      "forbidden_effects": [
+        "set_runtime_unit",
+        "bind_producer",
+        "supply_numeric_constant",
+        "select_reading",
+        "authorize_conversion"
+      ]
+    },
+    {
+      "id": "C04",
+      "label_zh": "X率",
+      "pattern": [
+        {
+          "kind": "variable",
+          "name": "X",
+          "sort": "semantic_expression"
+        },
+        {
+          "kind": "cue",
+          "cue_id": "LC09"
+        }
+      ],
+      "preconditions": [
+        "same_reading",
+        "ordered_adjacent_spans",
+        "nominal_term_region",
+        "typed_arguments"
+      ],
+      "build": {
+        "op": "rate_for",
+        "arguments_from": {
+          "associate": "$X"
+        }
+      },
+      "effect": "propose_candidate",
+      "evidence_ids": [
+        "S-ENG"
+      ],
+      "non_claim": "通用组合是假说生成规则；不是文献声称所有同形词都符合该规则。",
+      "forbidden_effects": [
+        "set_runtime_unit",
+        "bind_producer",
+        "supply_numeric_constant",
+        "select_reading",
+        "authorize_conversion"
+      ]
+    },
+    {
+      "id": "C05",
+      "label_zh": "X分",
+      "pattern": [
+        {
+          "kind": "variable",
+          "name": "X",
+          "sort": "semantic_expression"
+        },
+        {
+          "kind": "cue",
+          "cue_id": "LC10"
+        }
+      ],
+      "preconditions": [
+        "same_reading",
+        "ordered_adjacent_spans",
+        "nominal_term_region",
+        "typed_arguments"
+      ],
+      "build": {
+        "op": "part_of_quantity",
+        "arguments_from": {
+          "associate": "$X"
+        }
+      },
+      "effect": "propose_candidate",
+      "evidence_ids": [
+        "S-ENG"
+      ],
+      "non_claim": "通用组合是假说生成规则；不是文献声称所有同形词都符合该规则。",
+      "forbidden_effects": [
+        "set_runtime_unit",
+        "bind_producer",
+        "supply_numeric_constant",
+        "select_reading",
+        "authorize_conversion"
+      ]
+    },
+    {
+      "id": "C06",
+      "label_zh": "入SQ",
+      "pattern": [
+        {
+          "kind": "cue",
+          "cue_id": "LC12"
+        },
+        {
+          "kind": "variable",
+          "name": "S",
+          "sort": "scope_expression"
+        },
+        {
+          "kind": "variable",
+          "name": "Q",
+          "sort": "quantity_expression"
+        }
+      ],
+      "preconditions": [
+        "same_reading",
+        "ordered_adjacent_spans",
+        "nominal_term_region",
+        "typed_arguments"
+      ],
+      "build": {
+        "op": "localized_quantity",
+        "arguments_from": {
+          "scope": "$S",
+          "quantity": "$Q"
+        }
+      },
+      "effect": "propose_candidate",
+      "evidence_ids": [
+        "S-ENG"
+      ],
+      "non_claim": "通用组合是假说生成规则；不是文献声称所有同形词都符合该规则。",
+      "forbidden_effects": [
+        "set_runtime_unit",
+        "bind_producer",
+        "supply_numeric_constant",
+        "select_reading",
+        "authorize_conversion"
+      ]
+    },
+    {
+      "id": "C07",
+      "label_zh": "SQ",
+      "pattern": [
+        {
+          "kind": "variable",
+          "name": "S",
+          "sort": "scope_expression"
+        },
+        {
+          "kind": "variable",
+          "name": "Q",
+          "sort": "quantity_expression"
+        }
+      ],
+      "preconditions": [
+        "same_reading",
+        "ordered_adjacent_spans",
+        "nominal_term_region",
+        "typed_arguments"
+      ],
+      "build": {
+        "op": "scoped_quantity",
+        "arguments_from": {
+          "scope": "$S",
+          "quantity": "$Q"
+        }
+      },
+      "effect": "propose_candidate",
+      "evidence_ids": [
+        "S-ENG"
+      ],
+      "non_claim": "通用组合是假说生成规则；不是文献声称所有同形词都符合该规则。",
+      "forbidden_effects": [
+        "set_runtime_unit",
+        "bind_producer",
+        "supply_numeric_constant",
+        "select_reading",
+        "authorize_conversion"
+      ]
+    },
+    {
+      "id": "C09",
+      "label_zh": "X數",
+      "pattern": [
+        {
+          "kind": "variable",
+          "name": "X",
+          "sort": "semantic_expression"
+        },
+        {
+          "kind": "cue",
+          "cue_id": "LC11"
+        }
+      ],
+      "preconditions": [
+        "same_reading",
+        "ordered_adjacent_spans",
+        "nominal_term_region",
+        "typed_arguments"
+      ],
+      "build": {
+        "op": "number_of",
+        "arguments_from": {
+          "associate": "$X"
+        }
+      },
+      "effect": "propose_candidate",
+      "evidence_ids": [
+        "S-ENG"
+      ],
+      "non_claim": "通用组合是假说生成规则；不是文献声称所有同形词都符合该规则。",
+      "forbidden_effects": [
+        "set_runtime_unit",
+        "bind_producer",
+        "supply_numeric_constant",
+        "select_reading",
+        "authorize_conversion"
+      ]
+    }
+  ],
+  "fixed_expressions": [
+    {
+      "id": "C08",
+      "form": "實如法而一",
+      "proposes": "division_construction",
+      "effect": "propose_candidate",
+      "evidence_ids": [
+        "S-BK314"
+      ],
+      "required_context": "technical_computational_expression",
+      "policy": "保留整式候选及与组成候选的alternative_group；不按字符串长度或分数自动删除其他解释。",
+      "forbidden_effects": [
+        "literal_answer_one",
+        "drop_operand_bindings",
+        "override_reading",
+        "force_runtime_result"
+      ]
+    }
+  ],
+  "scoped_facts": [
+    {
+      "id": "F-SF-CH-M",
+      "subject": "章月",
+      "predicate": "numeric_declaration",
+      "value": 235,
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "solar_lunar",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "assertion_kind": "edited_primary_statement",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": false,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-CH-Y",
+      "subject": "章法",
+      "predicate": "numeric_declaration",
+      "value": 19,
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "solar_lunar",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "assertion_kind": "edited_primary_statement",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": false,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-BU-M",
+      "subject": "蔀月",
+      "predicate": "numeric_declaration",
+      "value": 940,
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "solar_lunar",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "assertion_kind": "edited_primary_statement",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": false,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-BU-D",
+      "subject": "蔀日",
+      "predicate": "numeric_declaration",
+      "value": 27759,
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "solar_lunar",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "assertion_kind": "edited_primary_statement",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": false,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-BU-Y",
+      "subject": "蔀法",
+      "predicate": "numeric_declaration",
+      "value": 76,
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "solar_lunar",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "assertion_kind": "edited_primary_statement",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": false,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-YM",
+      "subject": "year_to_lunation",
+      "predicate": "conversion_model",
+      "value": {
+        "numerator_fact": "F-SF-CH-M",
+        "denominator_fact": "F-SF-CH-Y",
+        "from": "completed_year_count",
+        "to": "lunation_count",
+        "frame_relation": "common_obscuration_origin",
+        "preconditions": [
+          "year_coordinate_confirmed",
+          "model_selected",
+          "parameter_bindings_valid"
+        ]
+      },
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "solar_lunar",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-C46",
+        "S-CCONST"
+      ],
+      "assertion_kind": "scholarly_interpretation",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": true,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-MD",
+      "subject": "lunation_to_day",
+      "predicate": "conversion_model",
+      "value": {
+        "numerator_fact": "F-SF-BU-D",
+        "denominator_fact": "F-SF-BU-M",
+        "from": "lunation_count",
+        "to": "day_duration",
+        "preconditions": [
+          "lunation_kind_confirmed",
+          "model_selected",
+          "parameter_bindings_valid"
+        ]
+      },
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "solar_lunar",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-C47",
+        "S-CCONST"
+      ],
+      "assertion_kind": "scholarly_interpretation",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": true,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-COORD",
+      "subject": "入蔀年@§46",
+      "predicate": "counting_convention",
+      "value": {
+        "coordinate_kind": "ordinal",
+        "index_base": 1,
+        "boundary": "start_of_current_year",
+        "origin": "current_obscuration_start",
+        "step_unit": "year",
+        "result_of_subtract_one": "completed_year_count"
+      },
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "SF.46",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-C46",
+        "S-L67"
+      ],
+      "assertion_kind": "scholarly_interpretation",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": true,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-FA4",
+      "subject": "日法",
+      "predicate": "numeric_declaration",
+      "value": 4,
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "solar_lunar",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-CCONST"
+      ],
+      "assertion_kind": "edited_primary_statement",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": false,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-ST-FA81",
+      "subject": "日法",
+      "predicate": "numeric_parameter",
+      "value": 81,
+      "scope": {
+        "tradition": "San_tong_li",
+        "section": "lunar_scaling",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-C23"
+      ],
+      "assertion_kind": "scholarly_interpretation",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": true,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-ZF42",
+      "subject": "中法",
+      "predicate": "numeric_declaration",
+      "value": 42,
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "solar_lunar",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-REPO"
+      ],
+      "assertion_kind": "repo_transcription",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": false,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-ZF32",
+      "subject": "中法",
+      "predicate": "edited_numeric_declaration",
+      "value": 32,
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "solar_lunar",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-CCONST",
+        "S-L69"
+      ],
+      "assertion_kind": "editorial_reading",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": true,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-SOLAR",
+      "subject": "日率@planetary",
+      "predicate": "semantic_interpretation",
+      "value": {
+        "referent": "solar_cycle_count",
+        "role": "ratio_parameter",
+        "counterpart": "周率",
+        "not_inferred": "day^-1"
+      },
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "planetary",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-C79"
+      ],
+      "assertion_kind": "scholarly_interpretation",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": true,
+      "runtime_loaded": false
+    },
+    {
+      "id": "F-SF-RESIDUAL",
+      "subject": "日餘/中法@§49",
+      "predicate": "residual_model",
+      "value": {
+        "numerator": 168,
+        "denominator": 32,
+        "value": "21/4",
+        "whole_days_omitted_per_year": 360,
+        "kind": "annual_day_residue"
+      },
+      "scope": {
+        "tradition": "Han_Si_fen_li",
+        "section": "SF.49",
+        "astral_body": null
+      },
+      "evidence_ids": [
+        "S-C49",
+        "S-L69"
+      ],
+      "assertion_kind": "scholarly_interpretation",
+      "eligibility": "scope_and_prerequisites_must_match",
+      "selection_required": true,
+      "runtime_loaded": false
+    }
+  ],
+  "human_actions": [
+    {
+      "id": "resegment",
+      "stage": "O/S",
+      "effect": "重新划分当前原文区间并重新解析",
+      "current_status": "consumer_present_read_only_verified",
+      "validation": "阅读版本与跨度有效；保留覆盖与拆分记录",
+      "resume_from": "lexical_candidates"
+    },
+    {
+      "id": "set_lexical_role",
+      "stage": "S/C",
+      "effect": "确定该出现处的语法功能；计划作为候选生成/筛选输入",
+      "current_status": "metadata_only_in_current_compiler",
+      "validation": "语法角色与数量角色分开；不得自动跳过必要操作",
+      "resume_from": "lexical_or_construction_selection"
+    },
+    {
+      "id": "select_candidate",
+      "stage": "S/C",
+      "effect": "选择当前候选；新增term_domain适配后支持领域候选",
+      "current_status": "construction_candidates_only",
+      "validation": "候选ID属于当前snapshot和target；领域候选不冒充构式ID",
+      "resume_from": "selected_candidate_dependencies"
+    },
+    {
+      "id": "set_quantity_semantics",
+      "stage": "C/A",
+      "effect": "说明指定数量的kind、unit、representation等",
+      "current_status": "semantic_output_consumer_present",
+      "validation": "现有API需完整semantic_output地址；输入量/计数坐标字段需新增稳定目标适配",
+      "resume_from": "quantity_constraints"
+    },
+    {
+      "id": "bind_value",
+      "stage": "C/A",
+      "effect": "绑定具体producer与output_port",
+      "current_status": "consumer_present_read_only_verified",
+      "validation": "相容类型、frame、query、source；仅同名不得建立绑定",
+      "resume_from": "dataflow_linking"
+    },
+    {
+      "id": "bind_call",
+      "stage": "C/A",
+      "effect": "绑定既有方法/过程调用",
+      "current_status": "consumer_present_read_only_verified",
+      "validation": "调用签名、实参端口、适用范围匹配",
+      "resume_from": "call_linking"
+    },
+    {
+      "id": "attach_context",
+      "stage": "O/C",
+      "effect": "添加有出处的完整背景文档",
+      "current_status": "consumer_present_read_only_verified",
+      "validation": "不把学者数值伪装成原文；相同doc_id不可冲突",
+      "resume_from": "context_compilation"
+    },
+    {
+      "id": "select_profile",
+      "stage": "A",
+      "effect": "选择有范围的解释集合",
+      "current_status": "selection_present_unified_gate_missing",
+      "validation": "ID存在只是第一步；还需scope、前提、冲突、consumer效应检查",
+      "resume_from": "applicability"
+    },
+    {
+      "id": "declare_parameter",
+      "stage": "C/A",
+      "effect": "声明合法根输入",
+      "current_status": "consumer_present_read_only_verified",
+      "validation": "不能把应由术文算出的输出随意当根输入；本次数值另需提供",
+      "resume_from": "input_linking"
+    },
+    {
+      "id": "assemble_known_structure",
+      "stage": "S/C",
+      "effect": "当机器没有候选时，按同一有限schema填写操作、槽位与原文证据",
+      "current_status": "limited_operation_consumer_present",
+      "validation": "仅使用现有operation签名；领域term构造器与扩展类型尚需适配",
+      "resume_from": "program_rebuild"
+    },
+    {
+      "id": "proposed.compose_term_candidate",
+      "stage": "S/C",
+      "effect": "用同一组合构造器填写scope、quantity等槽位，补出缺失的词义候选",
+      "current_status": "proposed_not_implemented",
+      "validation": "要求子项、跨度、构造器、证据；结果仍为候选",
+      "resume_from": "semantic_candidates"
+    },
+    {
+      "id": "proposed.select_reading",
+      "stage": "O",
+      "effect": "选择现有reading或有证据的校读并派生新的analysis文本",
+      "current_status": "proposed_adapter_not_implemented",
+      "validation": "保留底本；更新reading/hash/坐标映射；依赖旧reading的决定需重验",
+      "resume_from": "source_mapping"
+    },
+    {
+      "id": "defer",
+      "stage": "any",
+      "effect": "保留未决或提出schema扩展要求",
+      "current_status": "consumer_present_read_only_verified",
+      "validation": "扩展请求不会自动增加executor操作",
+      "resume_from": "unaffected_regions_only"
+    },
+    {
+      "id": "retract",
+      "stage": "any",
+      "effect": "撤销决定及依赖授权，重新运行受影响部分",
+      "current_status": "replay_present_incremental_resume_unverified",
+      "validation": "保留历史记录；后代待重验；独立证据仍可另行支持",
+      "resume_from": "earliest_affected_stage"
+    }
+  ],
+  "relations": [
+    {
+      "id": "associated_with",
+      "meaning": "暂只确定某量或参数与一个概念有关",
+      "example": "rate_for(sun)与太阳有关",
+      "not_equivalent_to": "per_unit_or_same_quantity",
+      "layer": "semantic",
+      "label_zh": "概念关联",
+      "label_en": "Associated with"
+    },
+    {
+      "id": "subtype_of",
+      "meaning": "概念类型的上下位",
+      "example": "civil_month → month",
+      "not_equivalent_to": "has_part",
+      "layer": "semantic",
+      "label_zh": "概念上下位",
+      "label_en": "Subtype of"
+    },
+    {
+      "id": "has_part",
+      "meaning": "候选词义组合树包含有序直接成分；保留词素提示叶节点；由child_ids投影",
+      "example": "積月 → 積 [component_index=0], 月 [component_index=1]",
+      "not_equivalent_to": "unordered_part_of_or_dataflow_or_expression_argument_order",
+      "layer": "term_composition",
+      "label_zh": "有序直接成分",
+      "label_en": "Ordered component"
+    },
+    {
+      "id": "derived_from",
+      "meaning": "候选或解释依赖证据、规则及前提的认识来源；仅属于provenance层",
+      "example": "candidate → rule C06 / child candidates / cited interpretation",
+      "not_equivalent_to": "reads_writes_producer_output_port_or_source_order",
+      "layer": "provenance",
+      "label_zh": "解释依据",
+      "label_en": "Interpretive derivation"
+    },
+    {
+      "id": "produces",
+      "meaning": "现有event.writes输出端口的显示投影；不新增运行时produces字段",
+      "example": "DIVMOD.writes.quotient → v1; DIVMOD.writes.remainder → v2",
+      "not_equivalent_to": "quotient包含remainder",
+      "layer": "dataflow",
+      "label_zh": "产出量",
+      "label_en": "Produces"
+    },
+    {
+      "id": "reads",
+      "meaning": "consumer使用具体producer的端口",
+      "example": "next_multiply reads previous quotient",
+      "not_equivalent_to": "same_name",
+      "layer": "dataflow",
+      "label_zh": "读取量",
+      "label_en": "Reads"
+    },
+    {
+      "id": "localized_in",
+      "meaning": "数量表达的历法语义范围；与原文地址及具体范围实例绑定分开",
+      "example": "localized_quantity(scope.bu, accumulation(time.month))；scope.bu为概念候选",
+      "not_equivalent_to": "source_span_or_confirmed_scope_instance",
+      "layer": "semantic",
+      "label_zh": "历法语义范围",
+      "label_en": "Semantic scope"
+    },
+    {
+      "id": "alternative_to",
+      "meaning": "同一判断位置的互斥解释候选",
+      "example": "日 as sun / day",
+      "not_equivalent_to": "both_confirmed",
+      "layer": "semantic",
+      "label_zh": "替代解释",
+      "label_en": "Alternative interpretation"
+    },
+    {
+      "id": "authorizes",
+      "meaning": "满足规则的证据/决定授权某一字段",
+      "example": "reading decision authorizes literal32",
+      "not_equivalent_to": "authorizes_all_semantics",
+      "layer": "authorization",
+      "label_zh": "授权字段",
+      "label_en": "Authorizes facet"
+    }
+  ],
+  "phases": {
+    "O": "observe source",
+    "S": "suggest candidate",
+    "C": "check constraints",
+    "A": "authorize field-scoped semantic claim",
+    "E": "execute a closed authorized region"
+  },
+  "phase_note": "OSCA是权限/处理维度；并非整个过程必须一次依次通过的单一状态机。E另列执行准备状态；不同字段和图区域可以处于不同阶段。 OSCA是处理活动，状态使用独立三轴；各轴仍需授权一致性校验。构词组件序列独立于语义参数槽与证据列表。",
+  "required_external_checks": [
+    "span_hash_reading_integrity",
+    "typed_constructor_arguments",
+    "cross_reference_integrity",
+    "scope_applicability",
+    "authorization_dependencies",
+    "consumer_effect",
+    "stale_replay_invalidation",
+    "no_test_leakage"
+  ],
+  "status": "reviewable_specification_engine_not_implemented",
+  "predicate_contracts": [
+    {
+      "id": "source_integrity",
+      "meaning": "原文hash、reading、半开跨度、quote一致",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "accepted_construction",
+      "meaning": "构式及操作数角色已由有效解析或人工决定确认",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "selected_reading_valid",
+      "meaning": "该字面量来自当前明确选用的reading",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "explicit_semantic_support",
+      "meaning": "赋义字段有明确词法/构式/声明证据，不能只有标题",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "all_scope_fields_match",
+      "meaning": "规则声明的所有适用字段匹配；未给出的必要字段保持未决",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "required_inputs_typed",
+      "meaning": "模型输入量种类与计数/表示前提已确认",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "valid_parameter_bindings",
+      "meaning": "参数绑定到同一模型下的具体声明/来源",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "explicit_interpretation_selection",
+      "meaning": "需要选择的学者解释/profile已经显式选用",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "no_conflicting_claims",
+      "meaning": "本目标、字段、分支不存在未解决的互斥决定",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "active_decision_validated",
+      "meaning": "决定目标、版本、payload、理由与证据已校验且未撤销",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "independent_premises",
+      "meaning": "授权证明不以本候选自身为前提；防止循环自证",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "authorized_premise_facets",
+      "meaning": "被传播的每个前提字段已获本分支有效授权；后代不得超过前提与所用规则的授权范围",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "execution_facets_authorized",
+      "meaning": "本次局部执行需要的量种、计数坐标、表示、转换及绑定字段已有有效授权；不要求与该运算无关的历史知识齐备",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "dependency_closure",
+      "meaning": "所执行局部图的必要依赖与端口已闭合",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "executor_support",
+      "meaning": "现有executor支持这个操作契约",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    },
+    {
+      "id": "inputs_present",
+      "meaning": "本次数值输入已提供；符号可表达不等于可算出数字",
+      "missing_result": "underdetermined",
+      "conflict_result": "incompatible",
+      "implementation_status": "proposed_contract_not_engine"
+    }
+  ],
+  "authority_rules": [
+    {
+      "id": "A-HEADING",
+      "knowledge_source": "heading",
+      "allow_effects": [
+        "propose_domain",
+        "delimit_source_scope"
+      ],
+      "deny_effects": [
+        "set_unit",
+        "bind_producer",
+        "select_model"
+      ],
+      "requires_all": [
+        "source_integrity"
+      ],
+      "grant_scope": "specified_facets_or_region_only",
+      "implementation_status": "proposed_not_implemented",
+      "evidence_ids": [
+        "S-ENG"
+      ]
+    },
+    {
+      "id": "A-CUE",
+      "knowledge_source": "lexical_or_compositional",
+      "allow_effects": [
+        "propose_semantic_claim"
+      ],
+      "deny_effects": [
+        "set_runtime_semantics",
+        "supply_numeric_constant",
+        "bind_producer"
+      ],
+      "requires_all": [
+        "source_integrity"
+      ],
+      "grant_scope": "specified_facets_or_region_only",
+      "implementation_status": "proposed_not_implemented",
+      "evidence_ids": [
+        "S-ENG"
+      ]
+    },
+    {
+      "id": "A-GRAMMAR",
+      "knowledge_source": "accepted_grammar",
+      "allow_effects": [
+        "authorize_operation",
+        "constrain_operand_roles"
+      ],
+      "deny_effects": [
+        "infer_historical_unit_without_support"
+      ],
+      "requires_all": [
+        "source_integrity",
+        "accepted_construction",
+        "independent_premises"
+      ],
+      "grant_scope": "specified_facets_or_region_only",
+      "implementation_status": "proposed_not_implemented",
+      "evidence_ids": [
+        "S-ENG"
+      ]
+    },
+    {
+      "id": "A-EXPLICIT",
+      "knowledge_source": "explicit_quantity_expression",
+      "allow_effects": [
+        "authorize_explicit_semantic_facet"
+      ],
+      "deny_effects": [
+        "authorize_unmentioned_scale_or_origin"
+      ],
+      "requires_all": [
+        "source_integrity",
+        "accepted_construction",
+        "explicit_semantic_support",
+        "no_conflicting_claims"
+      ],
+      "grant_scope": "specified_facets_or_region_only",
+      "implementation_status": "proposed_not_implemented",
+      "evidence_ids": [
+        "S-ENG"
+      ]
+    },
+    {
+      "id": "A-DECL",
+      "knowledge_source": "source_declaration",
+      "allow_effects": [
+        "authorize_local_literal",
+        "identify_local_declaration"
+      ],
+      "deny_effects": [
+        "globalize_numeric_value",
+        "authorize_conversion_from_numbers_alone"
+      ],
+      "requires_all": [
+        "source_integrity",
+        "selected_reading_valid"
+      ],
+      "grant_scope": "specified_facets_or_region_only",
+      "implementation_status": "proposed_not_implemented",
+      "evidence_ids": [
+        "S-ENG"
+      ]
+    },
+    {
+      "id": "A-MODEL",
+      "knowledge_source": "scoped_interpretation",
+      "allow_effects": [
+        "authorize_stated_model_facets"
+      ],
+      "deny_effects": [
+        "cross_scope_effect",
+        "authorize_unrelated_facets"
+      ],
+      "requires_all": [
+        "all_scope_fields_match",
+        "required_inputs_typed",
+        "valid_parameter_bindings",
+        "explicit_interpretation_selection",
+        "independent_premises",
+        "no_conflicting_claims"
+      ],
+      "grant_scope": "specified_facets_or_region_only",
+      "implementation_status": "proposed_not_implemented",
+      "evidence_ids": [
+        "S-ENG"
+      ]
+    },
+    {
+      "id": "A-HUMAN",
+      "knowledge_source": "human_decision",
+      "allow_effects": [
+        "authorize_declared_facets",
+        "supply_local_constraint"
+      ],
+      "deny_effects": [
+        "silent_global_rule_promotion",
+        "invent_unsupported_executor_operation"
+      ],
+      "requires_all": [
+        "active_decision_validated",
+        "all_scope_fields_match",
+        "no_conflicting_claims"
+      ],
+      "grant_scope": "specified_facets_or_region_only",
+      "implementation_status": "proposed_not_implemented",
+      "evidence_ids": [
+        "S-ENG"
+      ]
+    },
+    {
+      "id": "A-PROPAGATE",
+      "knowledge_source": "derived_constraint",
+      "allow_effects": [
+        "propagate_authorized_facets"
+      ],
+      "deny_effects": [
+        "promote_sole_surviving_guess_to_fact"
+      ],
+      "requires_all": [
+        "required_inputs_typed",
+        "authorized_premise_facets",
+        "independent_premises",
+        "no_conflicting_claims"
+      ],
+      "grant_scope": "specified_facets_or_region_only",
+      "implementation_status": "proposed_not_implemented",
+      "evidence_ids": [
+        "S-ENG"
+      ]
+    },
+    {
+      "id": "A-EXEC",
+      "knowledge_source": "closed_authorized_region",
+      "allow_effects": [
+        "execute_selected_region"
+      ],
+      "deny_effects": [
+        "claim_whole_procedure_complete_from_partial_region"
+      ],
+      "requires_all": [
+        "dependency_closure",
+        "execution_facets_authorized",
+        "executor_support",
+        "inputs_present",
+        "no_conflicting_claims"
+      ],
+      "grant_scope": "specified_facets_or_region_only",
+      "implementation_status": "proposed_not_implemented",
+      "evidence_ids": [
+        "S-ENG"
+      ]
+    }
+  ],
+  "projection_contracts": {
+    "composition_children": {
+      "source_field": "child_ids",
+      "order": "source_reading_order",
+      "index_base": 0,
+      "edge_relation": "has_part",
+      "derived_edge_index": "component_index",
+      "preserve_cue_leaves": true,
+      "id_array_order_affects_identity": true
+    },
+    "epistemic_derivation": {
+      "relation": "derived_from",
+      "layer": "provenance",
+      "source_fields": [
+        "provenance_ids",
+        "rule_id",
+        "cue_id",
+        "child_ids",
+        "premise_ids",
+        "evidence_ids",
+        "generated_by"
+      ],
+      "runtime_port_authority": false
+    },
+    "computational": {
+      "layer": "dataflow",
+      "native_reads": "reads",
+      "native_writes": "writes",
+      "value_producer": "producer",
+      "value_port": "output_port",
+      "writes_display_relation": "produces",
+      "forbid_provenance_as_ports": true,
+      "update_policy": "recorded_operations_only"
+    },
+    "semantic_scope": {
+      "relation": "localized_in",
+      "label_zh": "历法语义范围",
+      "label_en": "Semantic scope",
+      "source_location_fields": [
+        "span",
+        "source_spans"
+      ],
+      "concept_is_instance": false,
+      "relation_aliases": []
+    },
+    "candidate_status": {
+      "axes": [
+        "support_status",
+        "constraint_status",
+        "authorization_status"
+      ],
+      "shared_definition": "#/$defs/StatusAxes",
+      "ordering": "independent_axes",
+      "reject_legacy_single_axis": true,
+      "execution_requires_separate_gate": true
+    }
+  }
+}
