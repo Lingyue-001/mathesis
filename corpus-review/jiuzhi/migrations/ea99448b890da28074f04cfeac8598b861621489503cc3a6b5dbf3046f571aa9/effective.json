@@ -8,9 +8,8 @@
     "numbered_section_count": 79
   },
   "method": {
-    "mode": "automatic",
+    "mode": "automatic_plus_human_overrides",
     "uses_cullen_segmentation": false,
-    "segmentation_rules": "nonoverlap-independent-queries/2",
     "manual_policy": "Overrides are explicit review metadata; source text is not overwritten."
   },
   "units": [
@@ -2431,5 +2430,10 @@
       ]
     }
   ],
-  "boundary_events": []
+  "boundary_events": [],
+  "overrides": {
+    "path": "corpus-review/jiuzhi/overrides.json",
+    "sha256": "a41c949ee21f9176ec30511c39c7b62216ed7d8f73a7966f6abf082bb27f933c"
+  },
+  "auto_sha256": "c1f866450b08a7ceffddfa5ef91de68283fde2761ed64ee5593209284568e586"
 }

@@ -10,7 +10,6 @@
   "method": {
     "mode": "automatic",
     "uses_cullen_segmentation": false,
-    "segmentation_rules": "nonoverlap-independent-queries/2",
     "manual_policy": "Overrides are explicit review metadata; source text is not overwritten."
   },
   "units": [

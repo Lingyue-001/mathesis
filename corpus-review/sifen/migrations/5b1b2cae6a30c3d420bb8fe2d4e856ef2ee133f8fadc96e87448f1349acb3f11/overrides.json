@@ -9,50 +9,22 @@
   ],
   "operations": [
     {
-      "op": "merge_units",
-      "targets": [
-        [
-          [
-            3265,
-            3341
-          ]
-        ],
-        [
-          [
-            3348,
-            3382
-          ]
-        ]
-      ],
-      "new_id": "sifen:sections:49-50",
-      "id": "override:fa16a2d637448553971c"
-    },
-    {
-      "op": "set_relations",
+      "op": "set_type",
       "target_spans": [
         [
-          3389,
-          3423
+          1876,
+          1884
         ]
       ],
-      "relations": [
-        {
-          "kind": "alternative_of_candidate",
-          "confidence": "low",
-          "basis": "nearest preceding procedure + marker 一術",
-          "target_spans": [
-            [
-              3265,
-              3341
-            ],
-            [
-              3348,
-              3382
-            ]
-          ]
-        }
-      ],
-      "id": "override:721334e31e496b826dbd"
+      "type": "parameter",
+      "id": "override:9a1c56e75c23fa0450e9",
+      "time": "2026-09-18T21:38:22.078106+00:00",
+      "actor": {
+        "type": "human",
+        "id": "Ling"
+      },
+      "note": "",
+      "revision": 14
     }
   ],
   "history": [
@@ -6324,17 +6296,5 @@
   "source_lock": {
     "source_id": "sifen",
     "sha256": "dd3a0784732f8ac77a87a3bb02b83cf4cff57fdf92b349de57d43020811d4b8d"
-  },
-  "rule_migrations": [
-    {
-      "archive": "corpus-review/sifen/migrations/5b1b2cae6a30c3d420bb8fe2d4e856ef2ee133f8fadc96e87448f1349acb3f11",
-      "hashes": {
-        "auto.json": "ffa1473800b070118584fa27165015bb0cac8624b912e0913fc4b47469aa24bb",
-        "overrides.json": "bf829aac05cbc28d37b2fe71bff35f887b4c2f6d3b2f7bb9c63118ce3efe9e57",
-        "effective.json": "bef2d35ee558329d2e5cecf172c26a2bafdd35e2d3b594364f46f6c179eaac48",
-        "manifest.json": "aa65857adb36514d9e3b9c00c72c755e020b0592a133cee820ca81618ac15e6e"
-      },
-      "through_revision": 15
-    }
-  ]
+  }
 }

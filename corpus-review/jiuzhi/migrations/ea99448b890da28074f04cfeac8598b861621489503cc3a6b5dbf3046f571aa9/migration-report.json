@@ -1,0 +1,116 @@
+{
+  "schema": "CorpusRuleMigration/1",
+  "source_id": "jiuzhi",
+  "original_revision": "ea99448b890da28074f04cfeac8598b861621489503cc3a6b5dbf3046f571aa9",
+  "changes": [],
+  "unit_counts": {
+    "old_auto": 79,
+    "new_auto": 79,
+    "old_effective": 79,
+    "new_effective": 79
+  },
+  "reviewed_original_units": [],
+  "preserved_history_events": 0,
+  "affected_effective_units": [],
+  "references": [
+    {
+      "path": "config/workbench-procedures.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/compiler_report.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/construction_candidates.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/construction_selection.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/diagnostics.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/documents.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/events.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/lexical_candidates.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/packet.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/program.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/run.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/syntax.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/unresolved.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/values.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    }
+  ],
+  "inventory_errors": [],
+  "inventory_scope": [
+    "config",
+    "tmp",
+    "output",
+    "outputs",
+    "workbench",
+    "corpus-review",
+    "tools/parser_inspector/output"
+  ],
+  "browser_local_sessions": "Not enumerable from disk; retained, with source/engine locks checked on reuse.",
+  "engine_change": "Compiler identity changes invalidate old compiled sessions; no automatic relock.",
+  "pending_questions": [],
+  "proposed_operations": [],
+  "archive": "corpus-review/jiuzhi/migrations/ea99448b890da28074f04cfeac8598b861621489503cc3a6b5dbf3046f571aa9"
+}

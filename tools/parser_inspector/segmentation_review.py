@@ -8,6 +8,21 @@ from source_adapters import corpus_index as index
 from source_adapters import corpus_review as store
 
 
+def proposal_text(question):
+    """Show the actual two-sided extraction evidence, without inventing a join."""
+    rows = [question['kind']]
+    for side, label in (('left', '左段'), ('right', '右段')):
+        evidence = question.get(side)
+        if evidence:
+            section = f" §{evidence['section']}" if 'section' in evidence else ''
+            rows.append(f"{label}{section}：{evidence['text']}")
+    for condition in question.get('conditions', []):
+        rows.append('条件：' + (f"{condition['rule']} → {condition['match']}" if isinstance(condition, dict) else condition))
+    if question.get('reason'):
+        rows.append('依据：' + question['reason'])
+    return '\n'.join(rows)
+
+
 # Presentation only: related document types share hue, with distinct lightness.
 _TYPE_TONES = {
     'procedure': (214, 91), 'alternative_procedure': (214, 84),
@@ -398,7 +413,7 @@ def render(root):
             for source_unit in originals)]
         st.caption('Machine review queue（人工审阅状态另列）')
         for question in questions:
-            st.text(question['kind'])
+            st.text(proposal_text(question))
         if not questions:
             st.caption('没有机器排队问题；仍可人工审阅。')
     with right:

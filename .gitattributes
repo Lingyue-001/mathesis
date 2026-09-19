@@ -9,3 +9,5 @@
 /tests/parser_rescue/** -text
 /reports/v3/** -text
 /docs/adjudication/design/** -text
+# Review manifests and immutable migration archives lock exact serialized bytes.
+/corpus-review/** -text

@@ -1,0 +1,7 @@
+{
+  "schema_version": "mathesis.corpus_overrides/1.1",
+  "_notes": [
+    "所有人工修改的统一 delta log；Accept 仅记录在 auto.human_review。"
+  ],
+  "operations": []
+}

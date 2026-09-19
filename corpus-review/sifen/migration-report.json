@@ -1,0 +1,668 @@
+{
+  "schema": "CorpusRuleMigration/1",
+  "source_id": "sifen",
+  "original_revision": "5b1b2cae6a30c3d420bb8fe2d4e856ef2ee133f8fadc96e87448f1349acb3f11",
+  "changes": [
+    {
+      "old_id": "sifen:section:23",
+      "sections": [
+        23
+      ],
+      "source_spans": [
+        [
+          1876,
+          1884
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:23"
+      ],
+      "old_type": "discourse",
+      "new_types": [
+        "parameter"
+      ],
+      "reviewed": true,
+      "changed_fields": [
+        "type",
+        "parameters"
+      ]
+    },
+    {
+      "old_id": "sifen:sections:41-42",
+      "sections": [
+        41,
+        42
+      ],
+      "source_spans": [
+        [
+          2617,
+          2686
+        ],
+        [
+          2693,
+          2718
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:41",
+        "sifen:section:42"
+      ],
+      "old_type": "procedure",
+      "new_types": [
+        "procedure",
+        "procedure"
+      ],
+      "reviewed": false,
+      "changed_fields": [
+        "source_spans",
+        "type",
+        "text_original",
+        "text_effective",
+        "relations",
+        "parameters",
+        "member_roles"
+      ]
+    },
+    {
+      "old_id": "sifen:sections:49-50",
+      "sections": [
+        49,
+        50
+      ],
+      "source_spans": [
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:49",
+        "sifen:section:50"
+      ],
+      "old_type": "procedure",
+      "new_types": [
+        "procedure",
+        "procedure"
+      ],
+      "reviewed": true,
+      "changed_fields": [
+        "source_spans",
+        "type",
+        "text_original",
+        "text_effective",
+        "relations",
+        "parameters",
+        "member_roles"
+      ]
+    },
+    {
+      "old_id": "sifen:section:51",
+      "sections": [
+        51
+      ],
+      "source_spans": [
+        [
+          3389,
+          3423
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:51"
+      ],
+      "old_type": "alternative_procedure",
+      "new_types": [
+        "alternative_procedure"
+      ],
+      "reviewed": true,
+      "changed_fields": [
+        "relations"
+      ]
+    },
+    {
+      "old_id": "sifen:sections:52-53",
+      "sections": [
+        52,
+        53
+      ],
+      "source_spans": [
+        [
+          3430,
+          3507
+        ],
+        [
+          3514,
+          3589
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:52",
+        "sifen:section:53"
+      ],
+      "old_type": "procedure",
+      "new_types": [
+        "procedure",
+        "procedure"
+      ],
+      "reviewed": false,
+      "changed_fields": [
+        "source_spans",
+        "type",
+        "text_original",
+        "text_effective",
+        "relations",
+        "parameters",
+        "member_roles"
+      ]
+    },
+    {
+      "old_id": "sifen:section:54",
+      "sections": [
+        54
+      ],
+      "source_spans": [
+        [
+          3596,
+          3630
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:54"
+      ],
+      "old_type": "alternative_procedure",
+      "new_types": [
+        "alternative_procedure"
+      ],
+      "reviewed": false,
+      "changed_fields": [
+        "relations"
+      ]
+    },
+    {
+      "old_id": "sifen:sections:55-56",
+      "sections": [
+        55,
+        56
+      ],
+      "source_spans": [
+        [
+          3637,
+          3700
+        ],
+        [
+          3707,
+          3757
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:55",
+        "sifen:section:56"
+      ],
+      "old_type": "procedure",
+      "new_types": [
+        "procedure",
+        "procedure"
+      ],
+      "reviewed": false,
+      "changed_fields": [
+        "source_spans",
+        "type",
+        "text_original",
+        "text_effective",
+        "relations",
+        "parameters",
+        "member_roles"
+      ]
+    },
+    {
+      "old_id": "sifen:sections:57-59",
+      "sections": [
+        57,
+        58,
+        59
+      ],
+      "source_spans": [
+        [
+          3764,
+          3780
+        ],
+        [
+          3787,
+          3828
+        ],
+        [
+          3835,
+          3871
+        ]
+      ],
+      "new_ids": [
+        "sifen:sections:57-58",
+        "sifen:section:59"
+      ],
+      "old_type": "procedure",
+      "new_types": [
+        "procedure",
+        "procedure"
+      ],
+      "reviewed": false,
+      "changed_fields": [
+        "source_spans",
+        "type",
+        "text_original",
+        "text_effective",
+        "relations",
+        "parameters",
+        "member_roles"
+      ]
+    },
+    {
+      "old_id": "sifen:sections:60-61",
+      "sections": [
+        60,
+        61
+      ],
+      "source_spans": [
+        [
+          3878,
+          3929
+        ],
+        [
+          3936,
+          3961
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:60",
+        "sifen:section:61"
+      ],
+      "old_type": "procedure",
+      "new_types": [
+        "procedure",
+        "procedure"
+      ],
+      "reviewed": false,
+      "changed_fields": [
+        "source_spans",
+        "type",
+        "text_original",
+        "text_effective",
+        "relations",
+        "parameters",
+        "member_roles"
+      ]
+    },
+    {
+      "old_id": "sifen:sections:62-63",
+      "sections": [
+        62,
+        63
+      ],
+      "source_spans": [
+        [
+          3968,
+          4021
+        ],
+        [
+          4028,
+          4046
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:62",
+        "sifen:section:63"
+      ],
+      "old_type": "procedure",
+      "new_types": [
+        "procedure",
+        "procedure"
+      ],
+      "reviewed": false,
+      "changed_fields": [
+        "source_spans",
+        "type",
+        "text_original",
+        "text_effective",
+        "relations",
+        "parameters",
+        "member_roles"
+      ]
+    },
+    {
+      "old_id": "sifen:sections:65-67",
+      "sections": [
+        65,
+        66,
+        67
+      ],
+      "source_spans": [
+        [
+          4274,
+          4357
+        ],
+        [
+          4364,
+          4403
+        ],
+        [
+          4410,
+          4483
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:65",
+        "sifen:section:66",
+        "sifen:section:67"
+      ],
+      "old_type": "procedure",
+      "new_types": [
+        "procedure",
+        "procedure",
+        "procedure"
+      ],
+      "reviewed": false,
+      "changed_fields": [
+        "source_spans",
+        "type",
+        "text_original",
+        "text_effective",
+        "relations",
+        "parameters",
+        "member_roles"
+      ]
+    },
+    {
+      "old_id": "sifen:section:68",
+      "sections": [
+        68
+      ],
+      "source_spans": [
+        [
+          4490,
+          4533
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:68"
+      ],
+      "old_type": "alternative_procedure",
+      "new_types": [
+        "alternative_procedure"
+      ],
+      "reviewed": false,
+      "changed_fields": [
+        "relations"
+      ]
+    },
+    {
+      "old_id": "sifen:sections:82-85",
+      "sections": [
+        82,
+        83,
+        84,
+        85
+      ],
+      "source_spans": [
+        [
+          5989,
+          6154
+        ],
+        [
+          6161,
+          6206
+        ],
+        [
+          6213,
+          6293
+        ],
+        [
+          6300,
+          6336
+        ]
+      ],
+      "new_ids": [
+        "sifen:section:82",
+        "sifen:section:83",
+        "sifen:section:84",
+        "sifen:section:85"
+      ],
+      "old_type": "alternative_procedure",
+      "new_types": [
+        "alternative_procedure",
+        "procedure",
+        "procedure",
+        "procedure"
+      ],
+      "reviewed": false,
+      "changed_fields": [
+        "source_spans",
+        "type",
+        "text_original",
+        "text_effective",
+        "relations",
+        "parameters",
+        "member_roles"
+      ]
+    }
+  ],
+  "unit_counts": {
+    "old_auto": 86,
+    "new_auto": 98,
+    "old_effective": 86,
+    "new_effective": 97
+  },
+  "reviewed_original_units": [
+    {
+      "id": "sifen:section:1",
+      "source_spans": [
+        [
+          9,
+          11
+        ]
+      ]
+    },
+    {
+      "id": "sifen:section:23",
+      "source_spans": [
+        [
+          1876,
+          1884
+        ]
+      ]
+    },
+    {
+      "id": "sifen:section:48",
+      "source_spans": [
+        [
+          3214,
+          3258
+        ]
+      ]
+    },
+    {
+      "id": "sifen:sections:49-50",
+      "source_spans": [
+        [
+          3265,
+          3341
+        ],
+        [
+          3348,
+          3382
+        ]
+      ]
+    },
+    {
+      "id": "sifen:section:51",
+      "source_spans": [
+        [
+          3389,
+          3423
+        ]
+      ]
+    }
+  ],
+  "preserved_history_events": 15,
+  "affected_effective_units": [
+    "sifen:sections:41-42",
+    "sifen:sections:52-53",
+    "sifen:section:54",
+    "sifen:sections:55-56",
+    "sifen:sections:57-59",
+    "sifen:sections:60-61",
+    "sifen:sections:62-63",
+    "sifen:sections:65-67",
+    "sifen:section:68",
+    "sifen:sections:82-85"
+  ],
+  "references": [
+    {
+      "path": "config/workbench-procedures.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/compiler_report.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/construction_candidates.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/construction_selection.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/diagnostics.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/documents.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/events.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/lexical_candidates.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/packet.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/program.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/run.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/syntax.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/unresolved.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    },
+    {
+      "path": "tools/parser_inspector/output/current/values.json",
+      "affected_unit_ids": [],
+      "session_or_model": false,
+      "action": "retain; validate selected unit hashes and engine identity on next use"
+    }
+  ],
+  "inventory_errors": [],
+  "inventory_scope": [
+    "config",
+    "tmp",
+    "output",
+    "outputs",
+    "workbench",
+    "corpus-review",
+    "tools/parser_inspector/output"
+  ],
+  "browser_local_sessions": "Not enumerable from disk; retained, with source/engine locks checked on reuse.",
+  "engine_change": "Compiler identity changes invalidate old compiled sessions; no automatic relock.",
+  "pending_questions": [],
+  "proposed_operations": [
+    {
+      "op": "merge_units",
+      "targets": [
+        [
+          [
+            3265,
+            3341
+          ]
+        ],
+        [
+          [
+            3348,
+            3382
+          ]
+        ]
+      ],
+      "new_id": "sifen:sections:49-50",
+      "id": "override:fa16a2d637448553971c"
+    },
+    {
+      "op": "set_relations",
+      "target_spans": [
+        [
+          3389,
+          3423
+        ]
+      ],
+      "relations": [
+        {
+          "kind": "alternative_of_candidate",
+          "confidence": "low",
+          "basis": "nearest preceding procedure + marker 一術",
+          "target_spans": [
+            [
+              3265,
+              3341
+            ],
+            [
+              3348,
+              3382
+            ]
+          ]
+        }
+      ],
+      "id": "override:721334e31e496b826dbd"
+    }
+  ],
+  "archive": "corpus-review/sifen/migrations/5b1b2cae6a30c3d420bb8fe2d4e856ef2ee133f8fadc96e87448f1349acb3f11"
+}

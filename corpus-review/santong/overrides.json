@@ -3,5 +3,21 @@
   "_notes": [
     "所有人工修改的统一 delta log；Accept 仅记录在 auto.human_review。"
   ],
-  "operations": []
+  "operations": [],
+  "source_lock": {
+    "source_id": "santong",
+    "sha256": "a165ade33890b3adfd2b54633f1f808e0ac52a6ce7f6a9363863ad3357c7c565"
+  },
+  "rule_migrations": [
+    {
+      "archive": "corpus-review/santong/migrations/5e2727f67c3f2e4377a61876bc53ae3ff5cb72529982f38129a4fbc376c3f627",
+      "hashes": {
+        "auto.json": "a92b73a2251a5e0011a41b92ff1d94d92471200a90fad72a7736b55c4f740e02",
+        "overrides.json": "ede15e9ebdafe68166667cbacfdaee9bf85c6af595c65e336dce217fc8ec2341",
+        "effective.json": "399809d7bfb8a7d0062535b736f471badfa17e221f56cefa5bb99da79c98217b",
+        "manifest.json": "be52d5a7602966feb3408ccdf48b8438db781f54d3dc17c521744057f519fc31"
+      },
+      "through_revision": 0
+    }
+  ]
 }

@@ -14,8 +14,11 @@ SCHEMA_VERSION = 'mathesis.corpus_unit_index/1.0'
 SECTION_RE = re.compile(r'^(?P<section>\d+)[ \t]+(?P<text>[^\r\n]+)', re.MULTILINE)
 TABLE_RE = re.compile(r'^\[TABLE\]$', re.I)
 NUMERALS = '零〇一二三四五六七八九十百千萬万億亿兆兩两半'
-OPERATION_CUES = ('置', '乘', '除', '減', '加', '滿', '不滿', '餘', '得', '筭', '算', '命', '并', '約', '求')
-INCOMPLETE_SUFFIXES = ('以', '各以', '其', '之', '所', '為', '則', '而', '乃', '從', '并', '減', '加', '乘', '除', '置', '滿', '不滿', '夜半')
+OPERATION_CUES = ('置', '乘', '除', '減', '加', '滿', '不滿', '餘', '得', '筭', '算', '命', '并', '約')
+# Remainder names are legitimate parameters; 求 still excludes a query name.
+PARAMETER_NAME_EXCLUSIONS = ('置', '乘', '除', '減', '加', '滿', '得', '筭', '算', '命', '并', '約', '求')
+CUE_RE = re.compile('|'.join(map(re.escape, sorted(OPERATION_CUES, key=len, reverse=True))))
+INCOMPLETE_SUFFIXES = ('以', '各以', '其', '之', '所', '為', '則', '而', '乃', '從', '并', '減', '加', '乘', '除', '置', '滿', '不滿')
 PLANET_LABELS = {'周率', '日率', '合積月', '月餘', '月法', '大餘', '小餘', '虛分', '入月日', '日餘', '日度法', '積度', '度餘'}
 
 
@@ -79,10 +82,10 @@ def _parameter_fields(text):
     match = re.match(rf'^([^，。；：]{{1,12}})，\s*([{NUMERALS}]+)(.*)$', value)
     if match:
         name, numeral, tail = (part.strip() for part in match.groups())
-        if len(name) <= 8 and not any(cue in name for cue in OPERATION_CUES):
+        if len(name) <= 8 and not any(cue in name for cue in PARAMETER_NAME_EXCLUSIONS):
             return [{'name': name, 'value_text': numeral, 'note': tail.lstrip('，。；:：').strip() or None}]
     match = re.match(rf'^([^零〇一二三四五六七八九十百千萬万億亿兆兩两半，。；：]{{1,8}})([{NUMERALS}]+)[。.]?$', value)
-    if match and not any(cue in match.group(1) for cue in OPERATION_CUES):
+    if match and not any(cue in match.group(1) for cue in PARAMETER_NAME_EXCLUSIONS):
         return [{'name': match.group(1).strip(), 'value_text': match.group(2).strip(), 'note': None}]
     if value[:1] not in '木火土金水' or sum(label in value for label in PLANET_LABELS) < 3:
         return []
@@ -108,6 +111,11 @@ def _parameter_index(units):
     return index
 
 
+def cue_count(text):
+    """Left-to-right, longest-at-position, nonoverlapping operation cues."""
+    return sum(1 for _ in CUE_RE.finditer(text))
+
+
 def _classify(text):
     value = text.strip()
     if TABLE_RE.fullmatch(value):
@@ -118,13 +126,13 @@ def _classify(text):
         return 'procedure_root', 'high' if '術' in value[:24] else 'medium', 'marker:推/步術'
     if value.startswith('求'):
         return 'procedure_followup', 'medium', 'marker:求'
-    if re.match(rf'^([^，。；：]{{1,8}})，([{NUMERALS}]+)', value) and not any(cue in value.split('，', 1)[0] for cue in OPERATION_CUES):
+    if re.match(rf'^([^，。；：]{{1,8}})，([{NUMERALS}]+)', value) and not any(cue in value.split('，', 1)[0] for cue in PARAMETER_NAME_EXCLUSIONS):
         return 'parameter', 'high', 'compact_name_value_declaration'
     if value[:1] in '木火土金水' and sum(label in value for label in PLANET_LABELS) >= 3:
         return 'parameter_block', 'high', 'five_planet_repeated_name_value_fields'
     if value[:1] in '木火土金水' and ('晨伏' in value or '夕伏' in value):
         return 'reference_data', 'medium', 'planet_motion_record'
-    count = sum(value.count(cue) for cue in OPERATION_CUES)
+    count = cue_count(value)
     if count >= 4:
         return 'computational_exposition', 'low', 'operation_cue_density_without_procedure_marker'
     if len(value) <= 8 and not re.search(r'[，。；：]', value) and not re.search(rf'[{NUMERALS}]', value):
@@ -150,13 +158,23 @@ def _unit_id(sections, source_id, members):
     return base + (f"@{members[0]['start']}" if any('occurrence' in s for s in members) else '')
 
 
-def _is_continuation(previous, following):
+def _continuation_conditions(previous, following):
     text = previous['text'].strip()
     next_text = following['text'].strip()
     next_kind, _, _ = _classify(next_text)
     if re.search(r'[。！？；]$', text) or next_kind in {'table', 'alternative_procedure', 'procedure_root', 'procedure_followup', 'parameter', 'parameter_block', 'heading'}:
-        return False
-    return text.endswith(INCOMPLETE_SUFFIXES) or (_classify(text)[0] in {'procedure_root', 'computational_exposition'} and next_text.startswith(('之', '其', '以', '不', '所')))
+        return []
+    conditions = []
+    suffix = next((s for s in sorted(INCOMPLETE_SUFFIXES, key=len, reverse=True) if text.endswith(s)), None)
+    if suffix:
+        conditions.append({'rule': 'incomplete_suffix', 'match': suffix})
+    if _classify(text)[0] in {'procedure_root', 'computational_exposition'} and next_text.startswith(('之', '其', '以', '不', '所')):
+        conditions.append({'rule': 'computational_left_anaphoric_right', 'match': next_text[0]})
+    return conditions
+
+
+def _is_continuation(previous, following):
+    return bool(_continuation_conditions(previous, following))
 
 
 def _physical_spans(sections):
@@ -164,10 +182,14 @@ def _physical_spans(sections):
     position = 0
     while position < len(sections):
         members = [sections[position]]
-        while position + 1 < len(sections) and _is_continuation(members[-1], sections[position + 1]):
+        while position + 1 < len(sections):
             following = sections[position + 1]
+            conditions = _continuation_conditions(members[-1], following)
+            if not conditions:
+                break
             boundary_events.append({'kind': 'physical_continuation_join', 'left_section': members[-1]['section'],
                                     'right_section': following['section'], 'confidence': 'medium',
+                                    'left': dict(members[-1]), 'right': dict(following), 'conditions': conditions,
                                     'reason': 'nonterminal/incomplete ending + no strong new-unit marker'})
             members.append(following)
             position += 1
@@ -176,38 +198,30 @@ def _physical_spans(sections):
     return spans, boundary_events
 
 
-def _build_units(sections, source_id='sifen'):
+def _build_units(spans, source_id='sifen'):
     units, review = [], []
-    active = None
     last_procedure = None
-    for members in _physical_spans(sections)[0]:
+    for members in spans:
         text = ''.join(member['text'] for member in members)
         kind, confidence, rule = _classify(text)
-        if kind == 'procedure_followup' and active is not None:
-            target = units[active]
-            old_id = target['id']
-            target['sections'].extend(member['section'] for member in members)
-            target['source_spans'].extend(dict(member) for member in members)
-            target['text_original'] += text
-            target['text_effective'] += text
-            target['id'] = _unit_id(target['sections'], source_id, target['source_spans'])
-            target['member_roles'].append({'sections': [member['section'] for member in members], 'role': 'followup', 'rule': rule})
-            for unit in units:
-                for relation in unit['relations']:
-                    if relation.get('target_id') == old_id:
-                        relation['target_id'] = target['id']
-            last_procedure = target['id']
-            continue
         unit = _new_unit(members, 'procedure' if kind == 'procedure_root' else kind, confidence, rule, source_id)
         if kind == 'procedure_root':
             unit['member_roles'].append({'sections': unit['sections'], 'role': 'procedure_root', 'rule': rule})
-            active = len(units)
             last_procedure = unit['id']
         elif kind == 'procedure_followup':
             unit['type'] = 'procedure'
-            unit['member_roles'].append({'sections': unit['sections'], 'role': 'unattached_followup', 'rule': rule})
-            review.append({'kind': 'unattached_followup', 'unit_id': unit['id'], 'sections': unit['sections']})
-            active = len(units)
+            unit['member_roles'].append({'sections': unit['sections'], 'role': 'query_candidate', 'rule': rule})
+            previous = units[-1] if units else None
+            if previous and previous['type'] in {'procedure', 'alternative_procedure'}:
+                review.append({'kind': 'confirm_followup_grouping', 'unit_id': unit['id'], 'sections': unit['sections'],
+                               'candidate_target': previous['id'], 'confidence': 'low',
+                               'left': {'text': previous['text_original'], 'source_spans': unit_anchor(previous)},
+                               'right': {'text': text, 'source_spans': unit_anchor(unit)},
+                               'conditions': ['adjacent_procedure', 'marker:求'],
+                               'choices': ['independent_procedure', 'followup_query'],
+                               'reason': '邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。'})
+            else:
+                review.append({'kind': 'unattached_followup', 'unit_id': unit['id'], 'sections': unit['sections']})
             last_procedure = unit['id']
         elif kind == 'alternative_procedure':
             if last_procedure:
@@ -216,10 +230,8 @@ def _build_units(sections, source_id='sifen'):
                 review.append({'kind': 'confirm_alternative_relation', 'unit_id': unit['id'], 'candidate_target': last_procedure})
             else:
                 review.append({'kind': 'alternative_without_predecessor', 'unit_id': unit['id']})
-            active = len(units)
             last_procedure = unit['id']
         else:
-            active = None
             if kind == 'computational_exposition':
                 review.append({'kind': 'computational_text_without_explicit_procedure_marker', 'unit_id': unit['id'], 'sections': unit['sections']})
         units.append(unit)
@@ -353,6 +365,8 @@ def _review_unit(base, anchor, kind, relations):
                 'human_review': [r for u in base if overlaps(unit_anchor(u), anchor) for r in u['human_review']]}
     unit['type'] = kind
     unit['relations'] = copy.deepcopy(relations)
+    unit['human_review'] = [record for i, record in enumerate(unit['human_review'])
+                            if record not in unit['human_review'][:i]]
     return unit
 
 
@@ -452,7 +466,8 @@ def normalize_operations(auto, final):
             continue
         anchor = unit_anchor({'source_spans': [s for u in originals for s in u['source_spans']]})
         if len(originals) > 1:
-            operations.append({'op': 'merge_units', 'targets': [unit_anchor(u) for u in originals]})
+            operations.append({'op': 'merge_units', 'targets': [unit_anchor(u) for u in originals],
+                               **({'new_id': reviewed[0]['id']} if len(reviewed) == 1 else {})})
         if len(reviewed) > 1:
             operations.append({'op': 'split_unit', 'target_spans': anchor, 'groups': [
                 {'source_spans': unit_anchor(u), 'type': u['type'],
@@ -474,8 +489,8 @@ def normalize_operations(auto, final):
 def build_auto_index(root, source_id='sifen'):
     source, path, raw, text = read_registered_source(root, source_id)
     sections = numbered_sections(text)
-    units, review = _build_units(sections, source_id)
-    _, boundary_events = _physical_spans(sections)
+    spans, boundary_events = _physical_spans(sections)
+    units, review = _build_units(spans, source_id)
     review.extend({**event, 'kind': 'confirm_physical_continuation_join'} for event in boundary_events)
     return {
         'schema_version': SCHEMA_VERSION,
@@ -483,6 +498,7 @@ def build_auto_index(root, source_id='sifen'):
                    'sha256': hashlib.sha256(raw).hexdigest(), 'offset_unit': 'unicode_code_point_in_utf8_decoded_bytes',
                    'numbered_section_count': len(sections)},
         'method': {'mode': 'automatic', 'uses_cullen_segmentation': False,
+                   'segmentation_rules': 'nonoverlap-independent-queries/2',
                    'manual_policy': 'Overrides are explicit review metadata; source text is not overwritten.'},
         'units': _normalize(units), 'parameter_index': _parameter_index(units),
         'review_queue': review, 'boundary_events': boundary_events,

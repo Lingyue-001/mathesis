@@ -203,7 +203,7 @@ class ReviewTests(unittest.TestCase):
         self.assertEqual(self.state()['overrides']['operations'], [])
 
     def test_merge_keeps_active_unit_metadata_instead_of_importing_neighbor_alternative(self):
-        for sections, action in [([49, 50], 'merge_up'), ([47], 'merge_down')]:
+        for sections, action in [([49], 'merge_up'), ([47], 'merge_down')]:
             with self.subTest(sections=sections, action=action):
                 before = self.state()
                 active = next(u for u in before['effective']['units'] if u['sections'] == sections)
@@ -223,15 +223,15 @@ class ReviewTests(unittest.TestCase):
         # Existing snapshots must still replay byte-for-byte; new UI actions pin
         # active metadata explicitly instead of changing legacy merge defaults.
         base = self.state()['auto']['units']
-        active = next(u for u in base if u['sections'] == [49, 50])
+        active = next(u for u in base if u['sections'] == [49])
         neighbor = next(u for u in base if u['sections'] == [48])
         legacy = {'operations': [{'op':'merge_units', 'targets': [index.unit_anchor(neighbor), index.unit_anchor(active)]}]}
         old = next(u for u in index._apply_overrides(base, legacy) if 48 in u['sections'])
         self.assertEqual(old['type'], 'alternative_procedure')
         self.act('set_type', active, type='alternative_procedure')
-        active = next(u for u in self.state()['effective']['units'] if u['sections'] == [49, 50])
+        active = next(u for u in self.state()['effective']['units'] if u['sections'] == [49])
         self.act('set_relations', active, relations=[{'kind':'alternative_of', 'target_spans':index.unit_anchor(self.unit(38))}])
-        active = next(u for u in self.state()['effective']['units'] if u['sections'] == [49, 50])
+        active = next(u for u in self.state()['effective']['units'] if u['sections'] == [49])
         relations = index._anchored_relations(active['relations'], self.state()['effective']['units'])
         self.act('merge_up', active)
         merged = next(u for u in self.state()['effective']['units'] if 48 in u['sections'])
@@ -347,7 +347,7 @@ class ReviewTests(unittest.TestCase):
     def test_legacy_bad_relation_can_be_deleted_directly_despite_incomplete_new_relation(self):
         # Reproduce the historic bad delta without asking today's action API to create it.
         state = self.state()
-        target = next(u for u in state['auto']['units'] if u['sections'] == [49,50])
+        target = next(u for u in state['auto']['units'] if u['sections'] == [49])
         state['overrides']['operations'] = [{'op':'set_relations', 'target_spans':index.unit_anchor(target),
             'relations':[{'kind':'alternative_of_candidate', 'target_spans':index.unit_anchor(self.unit(47)),
                           'basis':'nearest preceding procedure + marker 一術'}]}]
@@ -357,11 +357,11 @@ class ReviewTests(unittest.TestCase):
         app = AppTest.from_function(_review_app, args=(str(self.root),), default_timeout=30).run()
         app.text_input(key='seg_reviewer').set_value('legacy-cleanup-test').run()
         app.selectbox(key='seg_actor').select('scripted_test').run()
-        position = next(i for i,u in enumerate(self.state()['auto']['units']) if u['sections'] == [49,50])
+        position = next(i for i,u in enumerate(self.state()['auto']['units']) if u['sections'] == [49])
         app.selectbox(key='seg_auto:sifen').select(position).run()
         app.button(key='seg_delete_relation:0:sifen').click().run()
         self.assertFalse(app.exception)
-        unit = next(u for u in self.state()['effective']['units'] if u['sections'] == [49,50])
+        unit = next(u for u in self.state()['effective']['units'] if u['sections'] == [49])
         self.assertEqual(unit['relations'], [])
         self.assertEqual(unit['type'], 'procedure')
 

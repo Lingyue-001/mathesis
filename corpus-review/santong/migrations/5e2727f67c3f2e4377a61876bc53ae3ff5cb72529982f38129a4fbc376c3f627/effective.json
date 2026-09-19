@@ -8,9 +8,8 @@
     "numbered_section_count": 172
   },
   "method": {
-    "mode": "automatic",
+    "mode": "automatic_plus_human_overrides",
     "uses_cullen_segmentation": false,
-    "segmentation_rules": "nonoverlap-independent-queries/2",
     "manual_policy": "Overrides are explicit review metadata; source text is not overwritten."
   },
   "units": [
@@ -2887,13 +2886,14 @@
       "human_review": []
     },
     {
-      "id": "santong:section:102",
+      "id": "santong:sections:102-103",
       "type": "procedure",
       "sections": [
-        102
+        102,
+        103
       ],
-      "text_original": "推冬至，以算馀乘人统岁数，盈统法得一，名曰大馀，不盈者名曰小馀。除数如法，则所求冬至日也。",
-      "text_effective": "推冬至，以算馀乘人统岁数，盈统法得一，名曰大馀，不盈者名曰小馀。除数如法，则所求冬至日也。",
+      "text_original": "推冬至，以算馀乘人统岁数，盈统法得一，名曰大馀，不盈者名曰小馀。除数如法，则所求冬至日也。求八节，加大馀四十五，小馀千一百。求二十四气，三其小馀，加大馀十五，小馀千一十。",
+      "text_effective": "推冬至，以算馀乘人统岁数，盈统法得一，名曰大馀，不盈者名曰小馀。除数如法，则所求冬至日也。求八节，加大馀四十五，小馀千一百。求二十四气，三其小馀，加大馀十五，小馀千一十。",
       "source_spans": [
         {
           "section": 102,
@@ -2901,6 +2901,13 @@
           "start": 6961,
           "end": 7006,
           "line": 111
+        },
+        {
+          "section": 103,
+          "text": "求八节，加大馀四十五，小馀千一百。求二十四气，三其小馀，加大馀十五，小馀千一十。",
+          "start": 7011,
+          "end": 7051,
+          "line": 112
         }
       ],
       "detection": {
@@ -2912,43 +2919,17 @@
       "member_roles": [
         {
           "sections": [
-            102
+            102,
+            103
           ],
           "role": "procedure_root",
           "rule": "marker:推/步術"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "santong:section:103",
-      "type": "procedure",
-      "sections": [
-        103
-      ],
-      "text_original": "求八节，加大馀四十五，小馀千一百。求二十四气，三其小馀，加大馀十五，小馀千一十。",
-      "text_effective": "求八节，加大馀四十五，小馀千一百。求二十四气，三其小馀，加大馀十五，小馀千一十。",
-      "source_spans": [
-        {
-          "section": 103,
-          "text": "求八节，加大馀四十五，小馀千一百。求二十四气，三其小馀，加大馀十五，小馀千一十。",
-          "start": 7011,
-          "end": 7051,
-          "line": 112
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
+        },
         {
           "sections": [
             103
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
         }
       ],
@@ -3194,7 +3175,7 @@
     },
     {
       "id": "santong:section:111",
-      "type": "discourse",
+      "type": "computational_exposition",
       "sections": [
         111
       ],
@@ -3210,8 +3191,8 @@
         }
       ],
       "detection": {
-        "rule": "fallback",
-        "confidence": "medium"
+        "rule": "operation_cue_density_without_procedure_marker",
+        "confidence": "low"
       },
       "parameters": [],
       "relations": [],
@@ -5207,40 +5188,11 @@
       ]
     },
     {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "santong:section:103",
+      "kind": "computational_text_without_explicit_procedure_marker",
+      "unit_id": "santong:section:111",
       "sections": [
-        103
-      ],
-      "candidate_target": "santong:section:102",
-      "confidence": "low",
-      "left": {
-        "text": "推冬至，以算馀乘人统岁数，盈统法得一，名曰大馀，不盈者名曰小馀。除数如法，则所求冬至日也。",
-        "source_spans": [
-          [
-            6961,
-            7006
-          ]
-        ]
-      },
-      "right": {
-        "text": "求八节，加大馀四十五，小馀千一百。求二十四气，三其小馀，加大馀十五，小馀千一十。",
-        "source_spans": [
-          [
-            7011,
-            7051
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
+        111
+      ]
     },
     {
       "kind": "computational_text_without_explicit_procedure_marker",
@@ -5250,5 +5202,10 @@
       ]
     }
   ],
-  "boundary_events": []
+  "boundary_events": [],
+  "overrides": {
+    "path": "corpus-review/santong/overrides.json",
+    "sha256": "a41c949ee21f9176ec30511c39c7b62216ed7d8f73a7966f6abf082bb27f933c"
+  },
+  "auto_sha256": "27b8cd5a8b72418afb62ae0c25ea9a3af5e779d6c7a120c173086de6b6405131"
 }

@@ -63,6 +63,13 @@ def validate_action_payload(packet, action, payload, targets):
     elif action == 'set_scope':
         _require(payload, 'definition_anchor')
         validate_anchor(packet, payload['definition_anchor'])
+        if payload.get('procedure_role') not in (None, 'independent', 'followup'):
+            raise ValueError('invalid_procedure_role')
+        if payload.get('procedure_role') == 'followup':
+            _require(payload, 'parent_definition_anchor', 'query_base_anchor')
+        if payload.get('procedure_role') == 'independent' and any(
+                payload.get(key) for key in ('parent_definition_anchor', 'query_base_anchor')):
+            raise ValueError('independent_procedure_has_no_parent_or_base')
         for name in ('parent_definition_anchor', 'query_base_anchor'):
             if payload.get(name) is not None:
                 validate_anchor(packet, payload[name])

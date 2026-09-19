@@ -3,15 +3,15 @@
   "source_id": "sifen",
   "source_path": "calendars-四分历.md",
   "source_sha": "dd3a0784732f8ac77a87a3bb02b83cf4cff57fdf92b349de57d43020811d4b8d",
-  "auto_sha": "ffa1473800b070118584fa27165015bb0cac8624b912e0913fc4b47469aa24bb",
-  "override_sha": "bf829aac05cbc28d37b2fe71bff35f887b4c2f6d3b2f7bb9c63118ce3efe9e57",
-  "effective_sha": "bef2d35ee558329d2e5cecf172c26a2bafdd35e2d3b594364f46f6c179eaac48",
-  "review_revision": "5b1b2cae6a30c3d420bb8fe2d4e856ef2ee133f8fadc96e87448f1349acb3f11",
+  "auto_sha": "b174a55c5767fbd688f521f10495f495081197c2f1c105713f70bb792d059b65",
+  "override_sha": "b55e177b87b2e71a24a67c7f7282d7bbb6597e2d05de475784a09b3b07cb9347",
+  "effective_sha": "66dbdfe4ebae5b3e3d8ee7154d664c39f9a44e353bb2c2ccfde3693fa4d52313",
+  "review_revision": "6d5c52d99f09f1f03b5ced353e770b21a500bf85f5270a16bec59972c091d354",
   "review_status": {
-    "total": 86,
-    "reviewed": 5,
+    "total": 98,
+    "reviewed": 6,
     "accepted": 2,
-    "modified": 3,
-    "unreviewed": 81
+    "modified": 4,
+    "unreviewed": 92
   }
 }

@@ -18,12 +18,20 @@ ROOT = Path(__file__).resolve().parents[1]
 class CorpusIndexTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        subprocess.run([sys.executable, '-B', str(ROOT / 'scripts/corpus/extract_sifen_units.py'), '--root', str(ROOT)],
+        cls.directory = tempfile.TemporaryDirectory()
+        cls.addClassCleanup(cls.directory.cleanup)
+        cls.root = Path(cls.directory.name)
+        (cls.root / 'config').mkdir()
+        for name in ('calendrical-ir-pipeline.json', 'workbench-procedures.json'):
+            shutil.copyfile(ROOT / 'config' / name, cls.root / 'config' / name)
+        for path in ROOT.glob('calendars-*.md'):
+            shutil.copyfile(path, cls.root / path.name)
+        subprocess.run([sys.executable, '-B', str(ROOT / 'scripts/corpus/extract_sifen_units.py'), '--root', str(cls.root)],
                        check=True, capture_output=True, text=True)
 
     def test_effective_index_preserves_raw_byte_coordinates(self):
-        index = build_effective_index(ROOT, 'sifen')
-        raw = (ROOT / 'calendars-四分历.md').read_bytes()
+        index = build_effective_index(self.root, 'sifen')
+        raw = (self.root / 'calendars-四分历.md').read_bytes()
         text = raw.decode('utf-8')
         self.assertGreater(raw.count(b'\r\n'), 0)
         self.assertEqual(index['source']['sha256'], hashlib.sha256(raw).hexdigest())
@@ -39,7 +47,7 @@ class CorpusIndexTests(unittest.TestCase):
         }
         for procedure_id, (primary_ids, context_ids) in expected.items():
             with self.subTest(procedure_id=procedure_id):
-                packet = build_source_packet(ROOT, procedure_id)['source_packet']
+                packet = build_source_packet(self.root, procedure_id)['source_packet']
                 documents = packet['primary_documents'] + packet['context_documents']
                 self.assertEqual([doc['source']['unit_id'] for doc in packet['primary_documents']], primary_ids)
                 self.assertEqual([doc['source']['unit_id'] for doc in packet['context_documents']], context_ids)
@@ -67,24 +75,24 @@ class CorpusIndexTests(unittest.TestCase):
                 build_source_packet(root, 'sifen-3-5')
 
     def test_corpus_index_is_not_a_parser_input(self):
-        packet = build_source_packet(ROOT, 'sifen-3-5')['source_packet']
+        packet = build_source_packet(self.root, 'sifen-3-5')['source_packet']
         self.assertNotIn('corpus_index', packet)
         self.assertNotIn('unit_relations', packet)
         self.assertNotIn('review_queue', packet)
 
     def test_index_keeps_parameter_candidates_separate_from_parser_input(self):
-        index = build_effective_index(ROOT, 'sifen')
+        index = build_effective_index(self.root, 'sifen')
         chapter_rule = next(unit for unit in index['units'] if unit['id'] == 'sifen:section:15')
         self.assertEqual(chapter_rule['parameters'], [{'name': '章法', 'value_text': '十九', 'note': None}])
         self.assertEqual(index['parameter_index']['章法'][0]['unit_id'], 'sifen:section:15')
-        packet = build_source_packet(ROOT, 'sifen-3-5')['source_packet']
+        packet = build_source_packet(self.root, 'sifen-3-5')['source_packet']
         self.assertNotIn('parameters', packet['context_documents'][0])
 
     def test_extraction_command_writes_repeatable_auto_and_effective_artifacts(self):
         script = ROOT / 'scripts/corpus/extract_sifen_units.py'
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
-            command = [sys.executable, '-B', str(script), '--root', str(ROOT), '--output-dir', str(output)]
+            command = [sys.executable, '-B', str(script), '--root', str(self.root), '--output-dir', str(output)]
             subprocess.run(command, check=True, capture_output=True, text=True)
             first = {name: (output / name).read_bytes() for name in ('sifen-units.auto.json', 'sifen-units.effective.json')}
             subprocess.run(command, check=True, capture_output=True, text=True)
@@ -111,7 +119,7 @@ class CorpusIndexTests(unittest.TestCase):
             ]}), encoding='utf-8')
             with self.assertRaisesRegex(ValueError, 'override_source_lock_required'):
                 build_effective_index(root, 'sifen')
-            override.write_text(json.dumps({'source_lock': {'source_id': 'sifen', 'sha256': build_effective_index(ROOT, 'sifen')['source']['sha256']}, 'operations': [
+            override.write_text(json.dumps({'source_lock': {'source_id': 'sifen', 'sha256': build_effective_index(self.root, 'sifen')['source']['sha256']}, 'operations': [
                 {'op': 'replace_text', 'target_id': 'sifen:section:15', 'text': '章法，十八。'}
             ]}), encoding='utf-8')
             with self.assertRaisesRegex(ValueError, 'replace_text_requires_versioned_reading_mapping'):
@@ -124,7 +132,7 @@ class CorpusIndexTests(unittest.TestCase):
             (root / 'corpus-review/sifen').mkdir(parents=True)
             shutil.copyfile(ROOT / 'config/calendrical-ir-pipeline.json', root / 'config/calendrical-ir-pipeline.json')
             shutil.copyfile(ROOT / 'calendars-四分历.md', root / 'calendars-四分历.md')
-            source_hash = build_effective_index(ROOT, 'sifen')['source']['sha256']
+            source_hash = build_effective_index(self.root, 'sifen')['source']['sha256']
             (root / 'corpus-review/sifen/overrides.json').write_text(json.dumps({
                 'source_lock': {'source_id': 'sifen', 'sha256': source_hash},
                 'operations': [{'op': 'set_relations', 'target_id': 'sifen:section:15',

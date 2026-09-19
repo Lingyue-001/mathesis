@@ -3,15 +3,15 @@
   "source_id": "santong",
   "source_path": "calendars-三统历.md",
   "source_sha": "a165ade33890b3adfd2b54633f1f808e0ac52a6ce7f6a9363863ad3357c7c565",
-  "auto_sha": "a92b73a2251a5e0011a41b92ff1d94d92471200a90fad72a7736b55c4f740e02",
-  "override_sha": "ede15e9ebdafe68166667cbacfdaee9bf85c6af595c65e336dce217fc8ec2341",
-  "effective_sha": "399809d7bfb8a7d0062535b736f471badfa17e221f56cefa5bb99da79c98217b",
-  "review_revision": "5e2727f67c3f2e4377a61876bc53ae3ff5cb72529982f38129a4fbc376c3f627",
+  "auto_sha": "508c549229b0fc1eac190e75f1fba4f6e4a531b1950cc08638a4b6393a6ef0ef",
+  "override_sha": "d3ebe5607340629806005b0442cf611f2aebb5ef6e3ab3282b064b67af52b61c",
+  "effective_sha": "4256230a8e4378989fed06540d3f05ed21452e12f331a202efb90e4edd320e93",
+  "review_revision": "244fe2ee9d9c954c6596021bbe81214ef80b1e43d85a76328267e865383ad3a9",
   "review_status": {
-    "total": 171,
+    "total": 172,
     "reviewed": 0,
     "accepted": 0,
     "modified": 0,
-    "unreviewed": 171
+    "unreviewed": 172
   }
 }

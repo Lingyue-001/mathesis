@@ -27,10 +27,11 @@ def compile_frames(doc, candidates, index, domains):
     for i,c in enumerate(candidates):
         kind=c['kind'];slots=c['slots'];target=slots.get('target',{}).get('text')
         is_head=kind in ('task_marker','query_marker')
-        if is_head and owner is not None and target=='中部二十四氣':
+        independent=c.get('attributes',{}).get('reviewed_procedure_role')=='independent'
+        if is_head and not independent and owner is not None and target=='中部二十四氣':
             annotation=definition('Annotation',c,target,current['id']);annotation['body']=[c.get('node_id',i)]
             c['procedure_id']=owner['id'];c['definition_id']=current['id'];continue
-        if is_head and (owner is None or slots.get('marker',{}).get('text')=='推'):
+        if is_head and (independent or owner is None or slots.get('marker',{}).get('text')=='推'):
             owner=current=definition('ProcedureDef',c,target)
         elif is_head:
             if current is owner:
@@ -144,6 +145,8 @@ def link_entry(index, entry_id, allowed_inputs):
             linked.diagnostics.append({'kind':'dependency_cycle','definition_id':ident,'cycle':visiting[visiting.index(ident):]+[ident]});return
         if visited.get(ident,0)>=requested[ident]:return
         visiting.append(ident);body=cs[:requested[ident]];_,uses=static_interface(body)
+        if d.get('reviewed_base_definition_id'):
+            require(d['reviewed_base_definition_id'])
         initial_frame=getattr(index,'initial_frame',None)
         if initial_frame and d['source_role']=='primary':
             for receiver in ('大餘','小餘'):uses.pop(receiver,None)

@@ -195,6 +195,19 @@ def _rebuild_program(parser, effective, packet, invalid_manual=None):
         streams[document_id].sort(key=_candidate_sort_key)
     for document_id in streams:
         streams[document_id].sort(key=_candidate_sort_key)
+    # Ownership is applied to the source marker before frame generation, so an
+    # independent 求 actually starts a new definition rather than relabelling a
+    # completed graph. Ordinary automatic compilation never supplies this flag.
+    for payload in effective.get('scopes', {}).values():
+        if payload.get('procedure_role') != 'independent':
+            continue
+        target = payload['definition_anchor']
+        markers = [candidate for candidate in streams.get(target['doc_id'], [])
+                   if candidate['kind'] in ('task_marker', 'query_marker')
+                   and _anchor_matches(candidate, target)]
+        if len(markers) != 1:
+            raise ValueError('procedure_choice_requires_unique_marker')
+        markers[0].setdefault('attributes', {})['reviewed_procedure_role'] = 'independent'
     changed_documents = {row['target']['doc_id'] for row in effective.get('segments', [])}
     changed_documents.update(row['target']['doc_id'] for row in effective.get('manual_structures', []))
     syntax_results = {
@@ -217,13 +230,26 @@ def _rebuild_program(parser, effective, packet, invalid_manual=None):
         definition = next(row for row in rebuilt.definitions if row['id'] == definition_id)
         parent_anchor = payload.get('parent_definition_anchor')
         if parent_anchor:
-            parent = _definition_for_anchor(rebuilt, parent_anchor)
+            parent = _definition_for_anchor(rebuilt, parent_anchor, owner=True)
             if parent == definition_id:
                 raise ValueError('scope_parent_cycle')
             definition['parent'] = parent
+            if payload.get('procedure_role') == 'followup':
+                definition['kind'] = 'QueryDef'
+                for stream in streams.values():
+                    for candidate in stream:
+                        if candidate.get('definition_id') == definition_id:
+                            candidate['procedure_id'] = parent
         base_anchor = payload.get('query_base_anchor')
         if base_anchor:
-            definition['base_ref'] = _definition_for_anchor(rebuilt, base_anchor) + ':base'
+            base = _definition_for_anchor(rebuilt, base_anchor, owner=True)
+            if payload.get('procedure_role') == 'followup':
+                if base != definition.get('parent'):
+                    raise ValueError('followup_base_must_match_parent')
+                initial = next((d for d in rebuilt.definitions
+                                if d.get('parent') == base and d.get('is_initial')), None)
+                definition['reviewed_base_definition_id'] = initial['id'] if initial else base
+            definition['base_ref'] = base + ':base'
     parents = {definition['id']: definition.get('parent') for definition in rebuilt.definitions}
     for definition_id in parents:
         seen = set()
@@ -251,9 +277,11 @@ def _rebuild_program(parser, effective, packet, invalid_manual=None):
     return rebuilt
 
 
-def _definition_for_anchor(program, anchor):
+def _definition_for_anchor(program, anchor, *, owner=False):
     matches = [definition for definition in program.definitions
                if any(overlaps(span, anchor) for span in definition.get('source_spans', []))]
+    if owner:
+        matches = [d for d in matches if d['kind'] == 'ProcedureDef']
     if len(matches) != 1:
         raise ValueError('ambiguous_definition_anchor')
     return matches[0]['id']
@@ -362,6 +390,11 @@ def compile_reviewed(packet, session, branch_id='main'):
                if payload.get('root_input', True)}
     entries = [definition['id'] for definition in program.definitions
                if definition['kind'] == 'ProcedureDef' and definition['source_role'] == 'primary' and not definition.get('parent')]
+    # A separately selected, explicitly reviewed follow-up remains a primary
+    # entry even when its source base is supplied as Context.
+    primary_ids = {d['id'] for d in program.definitions if d['source_role'] == 'primary'}
+    entries.extend(d['id'] for d in program.definitions if d['source_role'] == 'primary'
+                   and d['kind'] == 'QueryDef' and d.get('parent') not in primary_ids)
     graph = lower_linked(link_entry(program, entries, allowed), parser)
     holes = [{'kind': 'ExtensionRequired', 'decision_id': row['decision_id'],
               'source_anchors': [row['target']], 'reason': row['reason']}

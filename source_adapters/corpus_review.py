@@ -116,7 +116,22 @@ def _load(root, source_id='sifen'):
     out_of_sync = (manifest != _manifest(auto, raw) or auto['source']['source_id'] != source_id
                    or effective.get('auto_sha256') != index._sha(json.dumps(auto, ensure_ascii=False, sort_keys=True))
                    or effective.get('overrides', {}).get('sha256') != index._sha(json.dumps(overrides, ensure_ascii=False, sort_keys=True)))
+    baselines = []
+    for migration in overrides.get('rule_migrations', []):
+        archive = (Path(root) / migration['archive']).resolve()
+        if not archive.is_relative_to(workspace(root, source_id) / 'migrations'):
+            raise ValueError('history_archive_outside_workspace')
+        saved = {}
+        for name, expected in migration['hashes'].items():
+            if name not in ('auto.json', 'overrides.json', 'effective.json', 'manifest.json'):
+                raise ValueError('invalid_history_archive_file')
+            data = (archive / name).read_bytes()
+            if hashlib.sha256(data).hexdigest() != expected:
+                raise ValueError('history_archive_changed')
+            saved[name.removesuffix('.json')] = json.loads(data)
+        baselines.append({'through_revision': migration['through_revision'], **saved})
     return {'auto': auto, 'overrides': overrides, 'effective': effective, 'manifest': manifest,
+            'history_baselines': baselines,
             'revision': hashlib.sha256(b'\0'.join(raw)).hexdigest(),
             'stale': source_changed or out_of_sync,
             'stale_reason': 'source_changed' if source_changed else 'index_out_of_sync' if out_of_sync else None}
@@ -140,6 +155,7 @@ def active_history(overrides):
 
 
 def _history_snapshot(state, entry, side):
+    state = _history_baseline(state, entry)
     if side == 'before':
         return entry['before']
     if side != 'after':
@@ -151,17 +167,28 @@ def _history_snapshot(state, entry, side):
         'reviews': {u['id']: u['human_review'] for u in state['auto']['units']}})
 
 
+def _history_baseline(state, entry):
+    revision = entry.get('revision', state['overrides'].get('history', []).index(entry) + 1)
+    return next((base for base in state.get('history_baselines', [])
+                 if revision <= base['through_revision']), state)
+
+
 def history_states(state, entry):
     """Materialize a historical before/after using the same anchored replayer."""
     result = []
     for snapshot in (_history_snapshot(state, entry, 'before'), _history_snapshot(state, entry, 'after')):
-        auto = copy.deepcopy(state['auto'])
+        auto = copy.deepcopy(_history_baseline(state, entry)['auto'])
         for unit in auto['units']:
             unit['human_review'] = snapshot['reviews'].get(unit['id'], [])
         effective = index.effective_from_auto(auto, {'operations': snapshot['operations'],
             'source_lock': {key: auto['source'][key] for key in ('source_id', 'sha256')}})
         result.append(effective['units'])
     return result
+
+
+def migrate_rules(root, source_id='sifen', *, apply=False):
+    from .corpus_migration import migrate
+    return migrate(root, source_id, apply=apply)
 
 
 def regenerate(root, output_dir=None, source_id='sifen'):
@@ -185,6 +212,8 @@ def regenerate(root, output_dir=None, source_id='sifen'):
         old = index._json(old_auto) if old_auto.exists() else None
         if old is None and overrides.get('history'):
             raise ValueError('reviewed_auto_missing: restore auto before regeneration')
+        if old and old.get('method', {}).get('segmentation_rules') != auto['method'].get('segmentation_rules'):
+            raise ValueError('rule_migration_required: run extraction --migration-report then --migrate-rules; originals retained')
         if old and any(u.get('human_review') for u in old['units']):
             if old['source']['sha256'] != auto['source']['sha256']:
                 raise ValueError('source_changed: existing human_review is stale; originals retained')
@@ -264,9 +293,22 @@ def apply(root, action, anchor, payload, *, revision, actor, note='', source_id=
             entry = candidates[-1]
             reverts = entry['revision']
             touched = entry['source_spans']
-            overrides['operations'] = copy.deepcopy(entry['before']['operations'])
-            for unit in auto['units']:
-                unit['human_review'] = copy.deepcopy(entry['before']['reviews'].get(unit['id'], []))
+            if _history_baseline(state, entry) is state:
+                overrides['operations'] = copy.deepcopy(entry['before']['operations'])
+                for unit in auto['units']:
+                    unit['human_review'] = copy.deepcopy(entry['before']['reviews'].get(unit['id'], []))
+            else:
+                from .corpus_migration import transfer_reviews
+                restored = history_states(state, entry)[0]
+                snapshot = _history_snapshot(state, entry, 'before')
+                touched = _region(auto, {'units': units + restored}, entry['source_spans'],
+                                  previous['operations'] + snapshot['operations'])
+                final = index._normalize(
+                    [u for u in units if not index.overlaps(touched, index.unit_anchor(u))] +
+                    [u for u in restored if index.overlaps(touched, index.unit_anchor(u))])
+                overrides['operations'] = index.normalize_operations(auto, final)
+                transfer_reviews({'units': [u for u in auto['units']
+                    if index.overlaps(touched, index.unit_anchor(u))]}, {'units': restored})
         elif action in ('restore_revision', 'revert_revision'):
             entry = next((h for h in overrides.get('history', []) if h['revision'] == payload.get('revision_id')), None)
             if entry is None or not index.overlaps(anchor, entry['source_spans']):
@@ -289,9 +331,14 @@ def apply(root, action, anchor, payload, *, revision, actor, note='', source_id=
                    if index.overlaps(touched, index.unit_anchor(u))):
                 raise ValueError('alternative_requires_alternative_procedure: 旧错误状态仅供查看，不能恢复；请选择更早记录或退回最初。')
             overrides['operations'] = index.normalize_operations(auto, final)
-            for unit in auto['units']:
-                if index.overlaps(touched, index.unit_anchor(unit)):
-                    unit['human_review'] = copy.deepcopy(snapshot['reviews'].get(unit['id'], []))
+            if _history_baseline(state, entry) is not state:
+                from .corpus_migration import transfer_reviews
+                transfer_reviews({'units': [u for u in auto['units']
+                    if index.overlaps(touched, index.unit_anchor(u))]}, {'units': restored})
+            else:
+                for unit in auto['units']:
+                    if index.overlaps(touched, index.unit_anchor(unit)):
+                        unit['human_review'] = copy.deepcopy(snapshot['reviews'].get(unit['id'], []))
         else:
             if action == 'accept':
                 target = next((u for u in auto['units'] if index.unit_anchor(u) == anchor), None)

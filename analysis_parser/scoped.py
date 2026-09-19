@@ -406,7 +406,7 @@ class ScopedParser(Parser):
         self.save_base();super().start_query(label,spans)
         definition=next((d for d in self.program.definitions if d['id']==self.env.scope.get('definition_id')),None)
         if definition and definition['kind']=='QueryDef':
-            definition['base_value_ids']=dict(self.env.main)
+            definition['base_value_ids']=dict(self.current_reviewed_base if getattr(self,'current_reviewed_base',None) is not None else self.env.main)
             self.report['branches'][-1].update(definition_id=definition['id'],parent=definition['parent'],base_ref=definition['base_ref'])
     def export_threshold(self,e):
         if e and e['kind']=='threshold':
@@ -793,7 +793,7 @@ def lower_linked(linked, environment):
     p.program.imports.extend(linked.imports)
     p.report['program']['executed_definition_ids']=list(linked.order)
     byid={d['id']:d for d in p.program.definitions};docs={d['doc_id']:d for d in p.docs}
-    outputs={};calls={};last_doc=None
+    outputs={};calls={};last_doc=None;base_snapshots={}
     for ident in linked.order:
         definition=byid[ident]
         candidates=[c for stream in p.all_candidates.values() for c in stream if c.get('definition_id')==ident and c['node_id'] in linked.bodies[ident]]
@@ -820,6 +820,14 @@ def lower_linked(linked, environment):
             continuation=dict(p.env.main) if owner['domain_label'] is None and candidates[0]['kind']=='numeral_predicate' and p.task=='winter' else None
             p.switch(task,candidates[0]['source_spans'],base=continuation,procedure_id=owner['id'])
             p.env.scope['procedure_id']=owner['id']
+        p.current_reviewed_base=None
+        if definition.get('reviewed_base_definition_id'):
+            saved=base_snapshots.get(definition['reviewed_base_definition_id'])
+            if saved is None:raise ValueError('reviewed_query_base_unavailable')
+            p.current_reviewed_base=dict(saved['values'])
+            p.env.main=dict(saved['values']);p.env.active=p.env.main;p.states[p.task]=p.env.main
+            for key,value in saved['parser'].items():setattr(p,key,copy.deepcopy(value))
+            for key,value in saved['environment'].items():setattr(p.env,key,copy.deepcopy(value))
         p.env.active.update(imported);p.env.scope.update(definition_id=ident,call_id=call_id)
         if p.program.initial_frame and definition['source_role']=='primary' and definition['kind']=='QueryDef':
             if not getattr(p,'linked_initial_base',None):
@@ -836,7 +844,7 @@ def lower_linked(linked, environment):
                 p.env.main=dict(p.linked_initial_base);p.env.active=dict(p.linked_initial_base);p.states[p.task]=p.env.main
                 definition['base_value_ids']=dict(p.linked_initial_base)
         if definition['kind']=='QueryDef':
-            call['base_ref']=definition.get('base_ref');call['base_value_ids']=dict(p.env.main)
+            call['base_ref']=definition.get('base_ref');call['base_value_ids']=dict(p.current_reviewed_base if p.current_reviewed_base is not None else p.env.main)
             call['parent_definition_id']=definition.get('parent')
         before_call=len(p.report['events']);before_bindings=len(p.report['bindings'])
         for c in candidates:
@@ -880,6 +888,10 @@ def lower_linked(linked, environment):
         remaining=[c for stream in p.all_candidates.values() for c in stream if c['source_spans'][0]['doc_id']==p.doc['doc_id'] and c['analysis_range'][0]>candidates[-1]['analysis_range'][0] and c['definition_id'] in linked.order]
         if not remaining:p.finish_task_document(candidates[-1]['source_spans'])
         p.abandon_pending_cycle('pending cycle reached EOF')
+        if any(d.get('reviewed_base_definition_id')==ident for d in byid.values()):
+            base_snapshots[ident]={'values':dict(p.env.active),
+                'parser':{key:copy.deepcopy(getattr(p,key,None)) for key in ('day_denominator','cycle_divisor','count_method','declared_divisor')},
+                'environment':{key:copy.deepcopy(getattr(p.env,key,None)) for key in ('focus','last_receiver','remainders','products')}}
     p.temporal_views()
     from .audit import audit
     p.report['diagnostics'].extend(audit(p.report))

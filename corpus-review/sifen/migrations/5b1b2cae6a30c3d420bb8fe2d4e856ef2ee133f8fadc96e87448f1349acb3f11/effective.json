@@ -8,9 +8,8 @@
     "numbered_section_count": 100
   },
   "method": {
-    "mode": "automatic",
+    "mode": "automatic_plus_human_overrides",
     "uses_cullen_segmentation": false,
-    "segmentation_rules": "nonoverlap-independent-queries/2",
     "manual_policy": "Overrides are explicit review metadata; source text is not overwritten."
   },
   "units": [
@@ -706,16 +705,10 @@
         }
       ],
       "detection": {
-        "rule": "compact_name_value_declaration",
-        "confidence": "high"
+        "rule": "fallback",
+        "confidence": "medium"
       },
-      "parameters": [
-        {
-          "name": "日餘",
-          "value_text": "百六十八",
-          "note": null
-        }
-      ],
+      "parameters": [],
       "relations": [],
       "member_roles": [],
       "human_review": [
@@ -1250,22 +1243,29 @@
       "relations": [
         {
           "kind": "alternative_of_candidate",
-          "target_id": "sifen:section:39",
           "confidence": "low",
-          "basis": "nearest preceding procedure + marker 一術"
+          "basis": "nearest preceding procedure + marker 一術",
+          "target_spans": [
+            [
+              2447,
+              2576
+            ]
+          ],
+          "target_id": "sifen:section:39"
         }
       ],
       "member_roles": [],
       "human_review": []
     },
     {
-      "id": "sifen:section:41",
+      "id": "sifen:sections:41-42",
       "type": "procedure",
       "sections": [
-        41
+        41,
+        42
       ],
-      "text_original": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。",
-      "text_effective": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。",
+      "text_original": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
+      "text_effective": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
       "source_spans": [
         {
           "section": 41,
@@ -1273,6 +1273,13 @@
           "start": 2617,
           "end": 2686,
           "line": 80
+        },
+        {
+          "section": 42,
+          "text": "求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
+          "start": 2693,
+          "end": 2718,
+          "line": 82
         }
       ],
       "detection": {
@@ -1284,43 +1291,17 @@
       "member_roles": [
         {
           "sections": [
-            41
+            41,
+            42
           ],
           "role": "procedure_root",
           "rule": "marker:推/步術"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:42",
-      "type": "procedure",
-      "sections": [
-        42
-      ],
-      "text_original": "求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
-      "text_effective": "求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
-      "source_spans": [
-        {
-          "section": 42,
-          "text": "求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
-          "start": 2693,
-          "end": 2718,
-          "line": 82
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
+        },
         {
           "sections": [
             42
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
         }
       ],
@@ -1453,9 +1434,15 @@
       "relations": [
         {
           "kind": "alternative_of_candidate",
-          "target_id": "sifen:section:45",
           "confidence": "low",
-          "basis": "nearest preceding procedure + marker 一術"
+          "basis": "nearest preceding procedure + marker 一術",
+          "target_spans": [
+            [
+              2919,
+              3044
+            ]
+          ],
+          "target_id": "sifen:section:45"
         }
       ],
       "member_roles": [],
@@ -1520,9 +1507,15 @@
       "relations": [
         {
           "kind": "alternative_of_candidate",
-          "target_id": "sifen:section:47",
           "confidence": "low",
-          "basis": "nearest preceding procedure + marker 一術"
+          "basis": "nearest preceding procedure + marker 一術",
+          "target_spans": [
+            [
+              3089,
+              3207
+            ]
+          ],
+          "target_id": "sifen:section:47"
         }
       ],
       "member_roles": [],
@@ -1632,13 +1625,14 @@
       ]
     },
     {
-      "id": "sifen:section:49",
+      "id": "sifen:sections:49-50",
       "type": "procedure",
       "sections": [
-        49
+        49,
+        50
       ],
-      "text_original": "推日所在度，置入蔀積日之數，以蔀法乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一度，加十九分，以宿次除去之，則夜半日所在宿度也。",
-      "text_effective": "推日所在度，置入蔀積日之數，以蔀法乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一度，加十九分，以宿次除去之，則夜半日所在宿度也。",
+      "text_original": "推日所在度，置入蔀積日之數，以蔀法乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一度，加十九分，以宿次除去之，則夜半日所在宿度也。求次日，加一度。求次月，大加三十度，小加二十九度，經斗除十〈九〉分。",
+      "text_effective": "推日所在度，置入蔀積日之數，以蔀法乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一度，加十九分，以宿次除去之，則夜半日所在宿度也。求次日，加一度。求次月，大加三十度，小加二十九度，經斗除十〈九〉分。",
       "source_spans": [
         {
           "section": 49,
@@ -1646,6 +1640,13 @@
           "start": 3265,
           "end": 3341,
           "line": 96
+        },
+        {
+          "section": 50,
+          "text": "求次日，加一度。求次月，大加三十度，小加二十九度，經斗除十〈九〉分。",
+          "start": 3348,
+          "end": 3382,
+          "line": 98
         }
       ],
       "detection": {
@@ -1657,162 +1658,17 @@
       "member_roles": [
         {
           "sections": [
-            49
+            49,
+            50
           ],
           "role": "procedure_root",
           "rule": "marker:推/步術"
-        }
-      ],
-      "human_review": [
-        {
-          "time": "2026-09-18T20:52:02.091801+00:00",
-          "actor": {
-            "type": "human",
-            "id": "Ling"
-          },
-          "note": "",
-          "revision": 6,
-          "status": "accepted",
-          "override_ids": []
         },
-        {
-          "time": "2026-09-18T21:09:40.509034+00:00",
-          "actor": {
-            "type": "human",
-            "id": "Ling"
-          },
-          "note": "",
-          "revision": 11,
-          "status": "modified",
-          "override_ids": [
-            "override:863afc25acc2d442d248"
-          ],
-          "source_spans": [
-            [
-              3214,
-              3258
-            ],
-            [
-              3265,
-              3341
-            ],
-            [
-              3348,
-              3382
-            ]
-          ]
-        },
-        {
-          "time": "2026-09-18T21:19:10.291510+00:00",
-          "actor": {
-            "type": "human",
-            "id": "Ling"
-          },
-          "note": "",
-          "revision": 12,
-          "status": "modified",
-          "override_ids": [
-            "override:6b9d6a2f56d10f872b1a",
-            "override:0805cc485efbf993e5ff"
-          ],
-          "source_spans": [
-            [
-              3214,
-              3258
-            ],
-            [
-              3265,
-              3341
-            ],
-            [
-              3348,
-              3382
-            ]
-          ]
-        },
-        {
-          "time": "2026-09-18T21:20:38.581601+00:00",
-          "actor": {
-            "type": "human",
-            "id": "Ling"
-          },
-          "note": "",
-          "revision": 13,
-          "status": "modified",
-          "override_ids": [
-            "override:0805cc485efbf993e5ff"
-          ],
-          "source_spans": [
-            [
-              3214,
-              3258
-            ],
-            [
-              3265,
-              3341
-            ],
-            [
-              3348,
-              3382
-            ]
-          ]
-        },
-        {
-          "time": "2026-09-18T21:47:05.380429+00:00",
-          "actor": {
-            "type": "human",
-            "id": "Ling"
-          },
-          "note": "删除由旧版合并/拆分重放误继承的 alternative_of_candidate；推日与推合朔均为独立 procedure。",
-          "revision": 15,
-          "status": "modified",
-          "override_ids": [],
-          "source_spans": [
-            [
-              3214,
-              3258
-            ],
-            [
-              3265,
-              3341
-            ],
-            [
-              3348,
-              3382
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "id": "sifen:section:50",
-      "type": "procedure",
-      "sections": [
-        50
-      ],
-      "text_original": "求次日，加一度。求次月，大加三十度，小加二十九度，經斗除十〈九〉分。",
-      "text_effective": "求次日，加一度。求次月，大加三十度，小加二十九度，經斗除十〈九〉分。",
-      "source_spans": [
-        {
-          "section": 50,
-          "text": "求次日，加一度。求次月，大加三十度，小加二十九度，經斗除十〈九〉分。",
-          "start": 3348,
-          "end": 3382,
-          "line": 98
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
         {
           "sections": [
             50
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
         }
       ],
@@ -1962,9 +1818,19 @@
       "relations": [
         {
           "kind": "alternative_of_candidate",
-          "target_id": "sifen:section:50",
           "confidence": "low",
-          "basis": "nearest preceding procedure + marker 一術"
+          "basis": "nearest preceding procedure + marker 一術",
+          "target_spans": [
+            [
+              3265,
+              3341
+            ],
+            [
+              3348,
+              3382
+            ]
+          ],
+          "target_id": "sifen:sections:49-50"
         }
       ],
       "member_roles": [],
@@ -1994,13 +1860,14 @@
       ]
     },
     {
-      "id": "sifen:section:52",
+      "id": "sifen:sections:52-53",
       "type": "procedure",
       "sections": [
-        52
+        52,
+        53
       ],
-      "text_original": "推月所在度，置入蔀積日之數，以月周乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一十〈九〉分，除如上法，則所求之日夜半月所在宿度也。",
-      "text_effective": "推月所在度，置入蔀積日之數，以月周乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一十〈九〉分，除如上法，則所求之日夜半月所在宿度也。",
+      "text_original": "推月所在度，置入蔀積日之數，以月周乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一十〈九〉分，除如上法，則所求之日夜半月所在宿度也。求次日，加十三度二十八分。求次月，大加三十五度六十一分，月小二十二度三十三分，分滿法得一度，經斗除十九分。其冬下旬月在張、心署之，謂盡漏分後盡漏盡也。",
+      "text_effective": "推月所在度，置入蔀積日之數，以月周乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一十〈九〉分，除如上法，則所求之日夜半月所在宿度也。求次日，加十三度二十八分。求次月，大加三十五度六十一分，月小二十二度三十三分，分滿法得一度，經斗除十九分。其冬下旬月在張、心署之，謂盡漏分後盡漏盡也。",
       "source_spans": [
         {
           "section": 52,
@@ -2008,6 +1875,13 @@
           "start": 3430,
           "end": 3507,
           "line": 102
+        },
+        {
+          "section": 53,
+          "text": "求次日，加十三度二十八分。求次月，大加三十五度六十一分，月小二十二度三十三分，分滿法得一度，經斗除十九分。其冬下旬月在張、心署之，謂盡漏分後盡漏盡也。",
+          "start": 3514,
+          "end": 3589,
+          "line": 104
         }
       ],
       "detection": {
@@ -2019,43 +1893,17 @@
       "member_roles": [
         {
           "sections": [
-            52
+            52,
+            53
           ],
           "role": "procedure_root",
           "rule": "marker:推/步術"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:53",
-      "type": "procedure",
-      "sections": [
-        53
-      ],
-      "text_original": "求次日，加十三度二十八分。求次月，大加三十五度六十一分，月小二十二度三十三分，分滿法得一度，經斗除十九分。其冬下旬月在張、心署之，謂盡漏分後盡漏盡也。",
-      "text_effective": "求次日，加十三度二十八分。求次月，大加三十五度六十一分，月小二十二度三十三分，分滿法得一度，經斗除十九分。其冬下旬月在張、心署之，謂盡漏分後盡漏盡也。",
-      "source_spans": [
-        {
-          "section": 53,
-          "text": "求次日，加十三度二十八分。求次月，大加三十五度六十一分，月小二十二度三十三分，分滿法得一度，經斗除十九分。其冬下旬月在張、心署之，謂盡漏分後盡漏盡也。",
-          "start": 3514,
-          "end": 3589,
-          "line": 104
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
+        },
         {
           "sections": [
             53
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
         }
       ],
@@ -2086,22 +1934,33 @@
       "relations": [
         {
           "kind": "alternative_of_candidate",
-          "target_id": "sifen:section:53",
           "confidence": "low",
-          "basis": "nearest preceding procedure + marker 一術"
+          "basis": "nearest preceding procedure + marker 一術",
+          "target_spans": [
+            [
+              3430,
+              3507
+            ],
+            [
+              3514,
+              3589
+            ]
+          ],
+          "target_id": "sifen:sections:52-53"
         }
       ],
       "member_roles": [],
       "human_review": []
     },
     {
-      "id": "sifen:section:55",
+      "id": "sifen:sections:55-56",
       "type": "procedure",
       "sections": [
-        55
+        55,
+        56
       ],
-      "text_original": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。",
-      "text_effective": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。",
+      "text_original": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。求昏日所入度，以夜半到明日所行分分減蔀法，其餘即夜半到昏所行分也。以加夜半所在度分，為昏日所在度也。",
+      "text_effective": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。求昏日所入度，以夜半到明日所行分分減蔀法，其餘即夜半到昏所行分也。以加夜半所在度分，為昏日所在度也。",
       "source_spans": [
         {
           "section": 55,
@@ -2109,6 +1968,13 @@
           "start": 3637,
           "end": 3700,
           "line": 108
+        },
+        {
+          "section": 56,
+          "text": "求昏日所入度，以夜半到明日所行分分減蔀法，其餘即夜半到昏所行分也。以加夜半所在度分，為昏日所在度也。",
+          "start": 3707,
+          "end": 3757,
+          "line": 110
         }
       ],
       "detection": {
@@ -2120,57 +1986,32 @@
       "member_roles": [
         {
           "sections": [
-            55
+            55,
+            56
           ],
           "role": "procedure_root",
           "rule": "marker:推/步術"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:56",
-      "type": "procedure",
-      "sections": [
-        56
-      ],
-      "text_original": "求昏日所入度，以夜半到明日所行分分減蔀法，其餘即夜半到昏所行分也。以加夜半所在度分，為昏日所在度也。",
-      "text_effective": "求昏日所入度，以夜半到明日所行分分減蔀法，其餘即夜半到昏所行分也。以加夜半所在度分，為昏日所在度也。",
-      "source_spans": [
-        {
-          "section": 56,
-          "text": "求昏日所入度，以夜半到明日所行分分減蔀法，其餘即夜半到昏所行分也。以加夜半所在度分，為昏日所在度也。",
-          "start": 3707,
-          "end": 3757,
-          "line": 110
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
+        },
         {
           "sections": [
             56
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
         }
       ],
       "human_review": []
     },
     {
-      "id": "sifen:sections:57-58",
+      "id": "sifen:sections:57-59",
       "type": "procedure",
       "sections": [
         57,
-        58
+        58,
+        59
       ],
-      "text_original": "推月明所入度分術曰：置其節氣夜半之數，以月周乘之，以二百除之，為積分。積分滿蔀法得一，以增夜半度，即明月所在度也。",
-      "text_effective": "推月明所入度分術曰：置其節氣夜半之數，以月周乘之，以二百除之，為積分。積分滿蔀法得一，以增夜半度，即明月所在度也。",
+      "text_original": "推月明所入度分術曰：置其節氣夜半之數，以月周乘之，以二百除之，為積分。積分滿蔀法得一，以增夜半度，即明月所在度也。求昏月所入度：以明積分減月周，其餘滿蔀法得一度，加夜半，則昏月所在度也。",
+      "text_effective": "推月明所入度分術曰：置其節氣夜半之數，以月周乘之，以二百除之，為積分。積分滿蔀法得一，以增夜半度，即明月所在度也。求昏月所入度：以明積分減月周，其餘滿蔀法得一度，加夜半，則昏月所在度也。",
       "source_spans": [
         {
           "section": 57,
@@ -2185,6 +2026,13 @@
           "start": 3787,
           "end": 3828,
           "line": 114
+        },
+        {
+          "section": 59,
+          "text": "求昏月所入度：以明積分減月周，其餘滿蔀法得一度，加夜半，則昏月所在度也。",
+          "start": 3835,
+          "end": 3871,
+          "line": 116
         }
       ],
       "detection": {
@@ -2197,56 +2045,31 @@
         {
           "sections": [
             57,
-            58
+            58,
+            59
           ],
           "role": "procedure_root",
           "rule": "marker:推/步術"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:59",
-      "type": "procedure",
-      "sections": [
-        59
-      ],
-      "text_original": "求昏月所入度：以明積分減月周，其餘滿蔀法得一度，加夜半，則昏月所在度也。",
-      "text_effective": "求昏月所入度：以明積分減月周，其餘滿蔀法得一度，加夜半，則昏月所在度也。",
-      "source_spans": [
-        {
-          "section": 59,
-          "text": "求昏月所入度：以明積分減月周，其餘滿蔀法得一度，加夜半，則昏月所在度也。",
-          "start": 3835,
-          "end": 3871,
-          "line": 116
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
+        },
         {
           "sections": [
             59
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
         }
       ],
       "human_review": []
     },
     {
-      "id": "sifen:section:60",
+      "id": "sifen:sections:60-61",
       "type": "procedure",
       "sections": [
-        60
+        60,
+        61
       ],
-      "text_original": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。",
-      "text_effective": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。",
+      "text_original": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。求望、下弦，加除如前法，小分四從大分，滿蔀月從度。",
+      "text_effective": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。求望、下弦，加除如前法，小分四從大分，滿蔀月從度。",
       "source_spans": [
         {
           "section": 60,
@@ -2254,34 +2077,7 @@
           "start": 3878,
           "end": 3929,
           "line": 118
-        }
-      ],
-      "detection": {
-        "rule": "marker:推/步術",
-        "confidence": "high"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
-        {
-          "sections": [
-            60
-          ],
-          "role": "procedure_root",
-          "rule": "marker:推/步術"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:61",
-      "type": "procedure",
-      "sections": [
-        61
-      ],
-      "text_original": "求望、下弦，加除如前法，小分四從大分，滿蔀月從度。",
-      "text_effective": "求望、下弦，加除如前法，小分四從大分，滿蔀月從度。",
-      "source_spans": [
+        },
         {
           "section": 61,
           "text": "求望、下弦，加除如前法，小分四從大分，滿蔀月從度。",
@@ -2291,30 +2087,39 @@
         }
       ],
       "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
+        "rule": "marker:推/步術",
+        "confidence": "high"
       },
       "parameters": [],
       "relations": [],
       "member_roles": [
         {
           "sections": [
+            60,
             61
           ],
-          "role": "query_candidate",
+          "role": "procedure_root",
+          "rule": "marker:推/步術"
+        },
+        {
+          "sections": [
+            61
+          ],
+          "role": "followup",
           "rule": "marker:求"
         }
       ],
       "human_review": []
     },
     {
-      "id": "sifen:section:62",
+      "id": "sifen:sections:62-63",
       "type": "procedure",
       "sections": [
-        62
+        62,
+        63
       ],
-      "text_original": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。",
-      "text_effective": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。",
+      "text_original": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。求望、下弦，加除如前分，滿蔀月從度。",
+      "text_effective": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。求望、下弦，加除如前分，滿蔀月從度。",
       "source_spans": [
         {
           "section": 62,
@@ -2322,6 +2127,13 @@
           "start": 3968,
           "end": 4021,
           "line": 122
+        },
+        {
+          "section": 63,
+          "text": "求望、下弦，加除如前分，滿蔀月從度。",
+          "start": 4028,
+          "end": 4046,
+          "line": 124
         }
       ],
       "detection": {
@@ -2333,43 +2145,17 @@
       "member_roles": [
         {
           "sections": [
-            62
+            62,
+            63
           ],
           "role": "procedure_root",
           "rule": "marker:推/步術"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:63",
-      "type": "procedure",
-      "sections": [
-        63
-      ],
-      "text_original": "求望、下弦，加除如前分，滿蔀月從度。",
-      "text_effective": "求望、下弦，加除如前分，滿蔀月從度。",
-      "source_spans": [
-        {
-          "section": 63,
-          "text": "求望、下弦，加除如前分，滿蔀月從度。",
-          "start": 4028,
-          "end": 4046,
-          "line": 124
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
+        },
         {
           "sections": [
             63
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
         }
       ],
@@ -2410,13 +2196,15 @@
       "human_review": []
     },
     {
-      "id": "sifen:section:65",
+      "id": "sifen:sections:65-67",
       "type": "procedure",
       "sections": [
-        65
+        65,
+        66,
+        67
       ],
-      "text_original": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。",
-      "text_effective": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。",
+      "text_original": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。求後食朔及日，皆加大餘二十七，小餘六百一十五。其月餘分不滿二十者，又加大餘二十九，小餘四百九十九。其食小餘者，當以漏刻課之，夜漏未盡，以筭上為日。",
+      "text_effective": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。求後食朔及日，皆加大餘二十七，小餘六百一十五。其月餘分不滿二十者，又加大餘二十九，小餘四百九十九。其食小餘者，當以漏刻課之，夜漏未盡，以筭上為日。",
       "source_spans": [
         {
           "section": 65,
@@ -2424,6 +2212,20 @@
           "start": 4274,
           "end": 4357,
           "line": 128
+        },
+        {
+          "section": 66,
+          "text": "求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。",
+          "start": 4364,
+          "end": 4403,
+          "line": 130
+        },
+        {
+          "section": 67,
+          "text": "求後食朔及日，皆加大餘二十七，小餘六百一十五。其月餘分不滿二十者，又加大餘二十九，小餘四百九十九。其食小餘者，當以漏刻課之，夜漏未盡，以筭上為日。",
+          "start": 4410,
+          "end": 4483,
+          "line": 132
         }
       ],
       "detection": {
@@ -2435,77 +2237,25 @@
       "member_roles": [
         {
           "sections": [
-            65
+            65,
+            66,
+            67
           ],
           "role": "procedure_root",
           "rule": "marker:推/步術"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:66",
-      "type": "procedure",
-      "sections": [
-        66
-      ],
-      "text_original": "求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。",
-      "text_effective": "求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。",
-      "source_spans": [
-        {
-          "section": 66,
-          "text": "求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。",
-          "start": 4364,
-          "end": 4403,
-          "line": 130
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
+        },
         {
           "sections": [
             66
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:67",
-      "type": "procedure",
-      "sections": [
-        67
-      ],
-      "text_original": "求後食朔及日，皆加大餘二十七，小餘六百一十五。其月餘分不滿二十者，又加大餘二十九，小餘四百九十九。其食小餘者，當以漏刻課之，夜漏未盡，以筭上為日。",
-      "text_effective": "求後食朔及日，皆加大餘二十七，小餘六百一十五。其月餘分不滿二十者，又加大餘二十九，小餘四百九十九。其食小餘者，當以漏刻課之，夜漏未盡，以筭上為日。",
-      "source_spans": [
-        {
-          "section": 67,
-          "text": "求後食朔及日，皆加大餘二十七，小餘六百一十五。其月餘分不滿二十者，又加大餘二十九，小餘四百九十九。其食小餘者，當以漏刻課之，夜漏未盡，以筭上為日。",
-          "start": 4410,
-          "end": 4483,
-          "line": 132
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
+        },
         {
           "sections": [
             67
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
         }
       ],
@@ -2536,9 +2286,23 @@
       "relations": [
         {
           "kind": "alternative_of_candidate",
-          "target_id": "sifen:section:67",
           "confidence": "low",
-          "basis": "nearest preceding procedure + marker 一術"
+          "basis": "nearest preceding procedure + marker 一術",
+          "target_spans": [
+            [
+              4274,
+              4357
+            ],
+            [
+              4364,
+              4403
+            ],
+            [
+              4410,
+              4483
+            ]
+          ],
+          "target_id": "sifen:sections:65-67"
         }
       ],
       "member_roles": [],
@@ -3239,13 +3003,16 @@
       "human_review": []
     },
     {
-      "id": "sifen:section:82",
+      "id": "sifen:sections:82-85",
       "type": "alternative_procedure",
       "sections": [
-        82
+        82,
+        83,
+        84,
+        85
       ],
-      "text_original": "一術，加退歲一，以減上元，滿八十除去之，餘以沒數乘之，滿日法得一，為大餘，不盡為小餘。以甲子命大餘，則星合歲天正冬至日也。以周率小餘，并度餘，餘滿日度法從度，即正後星合日數也，命以冬至。求後合月，加合積月於入歲月，加月餘於月餘，滿其月法得一，從入歲月。入歲月滿十二去之，有閏計焉，餘命如前，筭外，後合月也。餘一加晨得夕，加夕得晨。",
-      "text_effective": "一術，加退歲一，以減上元，滿八十除去之，餘以沒數乘之，滿日法得一，為大餘，不盡為小餘。以甲子命大餘，則星合歲天正冬至日也。以周率小餘，并度餘，餘滿日度法從度，即正後星合日數也，命以冬至。求後合月，加合積月於入歲月，加月餘於月餘，滿其月法得一，從入歲月。入歲月滿十二去之，有閏計焉，餘命如前，筭外，後合月也。餘一加晨得夕，加夕得晨。",
+      "text_original": "一術，加退歲一，以減上元，滿八十除去之，餘以沒數乘之，滿日法得一，為大餘，不盡為小餘。以甲子命大餘，則星合歲天正冬至日也。以周率小餘，并度餘，餘滿日度法從度，即正後星合日數也，命以冬至。求後合月，加合積月於入歲月，加月餘於月餘，滿其月法得一，從入歲月。入歲月滿十二去之，有閏計焉，餘命如前，筭外，後合月也。餘一加晨得夕，加夕得晨。求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。求合度，以積度度餘加今所得，餘滿日度法得一從度，命如前，經斗除如周率矣。",
+      "text_effective": "一術，加退歲一，以減上元，滿八十除去之，餘以沒數乘之，滿日法得一，為大餘，不盡為小餘。以甲子命大餘，則星合歲天正冬至日也。以周率小餘，并度餘，餘滿日度法從度，即正後星合日數也，命以冬至。求後合月，加合積月於入歲月，加月餘於月餘，滿其月法得一，從入歲月。入歲月滿十二去之，有閏計焉，餘命如前，筭外，後合月也。餘一加晨得夕，加夕得晨。求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。求合度，以積度度餘加今所得，餘滿日度法得一從度，命如前，經斗除如周率矣。",
       "source_spans": [
         {
           "section": 82,
@@ -3253,6 +3020,27 @@
           "start": 5989,
           "end": 6154,
           "line": 162
+        },
+        {
+          "section": 83,
+          "text": "求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。",
+          "start": 6161,
+          "end": 6206,
+          "line": 164
+        },
+        {
+          "section": 84,
+          "text": "求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。",
+          "start": 6213,
+          "end": 6293,
+          "line": 166
+        },
+        {
+          "section": 85,
+          "text": "求合度，以積度度餘加今所得，餘滿日度法得一從度，命如前，經斗除如周率矣。",
+          "start": 6300,
+          "end": 6336,
+          "line": 168
         }
       ],
       "detection": {
@@ -3263,111 +3051,37 @@
       "relations": [
         {
           "kind": "alternative_of_candidate",
-          "target_id": "sifen:section:81",
           "confidence": "low",
-          "basis": "nearest preceding procedure + marker 一術"
+          "basis": "nearest preceding procedure + marker 一術",
+          "target_spans": [
+            [
+              5933,
+              5982
+            ]
+          ],
+          "target_id": "sifen:section:81"
         }
       ],
-      "member_roles": [],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:83",
-      "type": "procedure",
-      "sections": [
-        83
-      ],
-      "text_original": "求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。",
-      "text_effective": "求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。",
-      "source_spans": [
-        {
-          "section": 83,
-          "text": "求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。",
-          "start": 6161,
-          "end": 6206,
-          "line": 164
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
       "member_roles": [
         {
           "sections": [
             83
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:84",
-      "type": "procedure",
-      "sections": [
-        84
-      ],
-      "text_original": "求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。",
-      "text_effective": "求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。",
-      "source_spans": [
-        {
-          "section": 84,
-          "text": "求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。",
-          "start": 6213,
-          "end": 6293,
-          "line": 166
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
+        },
         {
           "sections": [
             84
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
-        }
-      ],
-      "human_review": []
-    },
-    {
-      "id": "sifen:section:85",
-      "type": "procedure",
-      "sections": [
-        85
-      ],
-      "text_original": "求合度，以積度度餘加今所得，餘滿日度法得一從度，命如前，經斗除如周率矣。",
-      "text_effective": "求合度，以積度度餘加今所得，餘滿日度法得一從度，命如前，經斗除如周率矣。",
-      "source_spans": [
-        {
-          "section": 85,
-          "text": "求合度，以積度度餘加今所得，餘滿日度法得一從度，命如前，經斗除如周率矣。",
-          "start": 6300,
-          "end": 6336,
-          "line": 168
-        }
-      ],
-      "detection": {
-        "rule": "marker:求",
-        "confidence": "medium"
-      },
-      "parameters": [],
-      "relations": [],
-      "member_roles": [
+        },
         {
           "sections": [
             85
           ],
-          "role": "query_candidate",
+          "role": "followup",
           "rule": "marker:求"
         }
       ],
@@ -3912,55 +3626,6 @@
         "note": "因為章閏。"
       }
     ],
-    "日餘": [
-      {
-        "unit_id": "sifen:section:23",
-        "sections": [
-          23
-        ],
-        "value_text": "百六十八"
-      },
-      {
-        "unit_id": "sifen:section:72",
-        "sections": [
-          72
-        ],
-        "value_text": "萬四千六百四十七",
-        "scope": "木"
-      },
-      {
-        "unit_id": "sifen:section:73",
-        "sections": [
-          73
-        ],
-        "value_text": "千八百七十二",
-        "scope": "火"
-      },
-      {
-        "unit_id": "sifen:section:74",
-        "sections": [
-          74
-        ],
-        "value_text": "二千一百六十三",
-        "scope": "土"
-      },
-      {
-        "unit_id": "sifen:section:75",
-        "sections": [
-          75
-        ],
-        "value_text": "二百八十一",
-        "scope": "金"
-      },
-      {
-        "unit_id": "sifen:section:76",
-        "sections": [
-          76
-        ],
-        "value_text": "四萬四千八百五",
-        "scope": "水"
-      }
-    ],
     "中法": [
       {
         "unit_id": "sifen:section:24",
@@ -4466,6 +4131,48 @@
         ],
         "value_text": "萬四千六百四十七",
         "scope": "木"
+      }
+    ],
+    "日餘": [
+      {
+        "unit_id": "sifen:section:72",
+        "sections": [
+          72
+        ],
+        "value_text": "萬四千六百四十七",
+        "scope": "木"
+      },
+      {
+        "unit_id": "sifen:section:73",
+        "sections": [
+          73
+        ],
+        "value_text": "千八百七十二",
+        "scope": "火"
+      },
+      {
+        "unit_id": "sifen:section:74",
+        "sections": [
+          74
+        ],
+        "value_text": "二千一百六十三",
+        "scope": "土"
+      },
+      {
+        "unit_id": "sifen:section:75",
+        "sections": [
+          75
+        ],
+        "value_text": "二百八十一",
+        "scope": "金"
+      },
+      {
+        "unit_id": "sifen:section:76",
+        "sections": [
+          76
+        ],
+        "value_text": "四萬四千八百五",
+        "scope": "水"
       }
     ],
     "木::日度法": [
@@ -5108,42 +4815,6 @@
       "candidate_target": "sifen:section:39"
     },
     {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:42",
-      "sections": [
-        42
-      ],
-      "candidate_target": "sifen:section:41",
-      "confidence": "low",
-      "left": {
-        "text": "推二十四氣術曰：置入蔀年減一，以月餘乘之，滿中法得一，名曰大餘，不滿為小餘，大餘滿六十除去之，其餘以蔀名命之，筭盡之外，則前年冬至之日也。",
-        "source_spans": [
-          [
-            2617,
-            2686
-          ]
-        ]
-      },
-      "right": {
-        "text": "求次氣，加大餘十五，小餘七，除命之如前，小寒日也。",
-        "source_spans": [
-          [
-            2693,
-            2718
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
-    },
-    {
       "kind": "confirm_alternative_relation",
       "unit_id": "sifen:section:46",
       "candidate_target": "sifen:section:45"
@@ -5154,311 +4825,19 @@
       "candidate_target": "sifen:section:47"
     },
     {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:50",
-      "sections": [
-        50
-      ],
-      "candidate_target": "sifen:section:49",
-      "confidence": "low",
-      "left": {
-        "text": "推日所在度，置入蔀積日之數，以蔀法乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一度，加十九分，以宿次除去之，則夜半日所在宿度也。",
-        "source_spans": [
-          [
-            3265,
-            3341
-          ]
-        ]
-      },
-      "right": {
-        "text": "求次日，加一度。求次月，大加三十度，小加二十九度，經斗除十〈九〉分。",
-        "source_spans": [
-          [
-            3348,
-            3382
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
-    },
-    {
       "kind": "confirm_alternative_relation",
       "unit_id": "sifen:section:51",
-      "candidate_target": "sifen:section:50"
-    },
-    {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:53",
-      "sections": [
-        53
-      ],
-      "candidate_target": "sifen:section:52",
-      "confidence": "low",
-      "left": {
-        "text": "推月所在度，置入蔀積日之數，以月周乘之，滿蔀日除去之，其餘滿蔀法得一，為積度，不盡為餘分。積度加斗二十一十〈九〉分，除如上法，則所求之日夜半月所在宿度也。",
-        "source_spans": [
-          [
-            3430,
-            3507
-          ]
-        ]
-      },
-      "right": {
-        "text": "求次日，加十三度二十八分。求次月，大加三十五度六十一分，月小二十二度三十三分，分滿法得一度，經斗除十九分。其冬下旬月在張、心署之，謂盡漏分後盡漏盡也。",
-        "source_spans": [
-          [
-            3514,
-            3589
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
+      "candidate_target": "sifen:sections:49-50"
     },
     {
       "kind": "confirm_alternative_relation",
       "unit_id": "sifen:section:54",
-      "candidate_target": "sifen:section:53"
-    },
-    {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:56",
-      "sections": [
-        56
-      ],
-      "candidate_target": "sifen:section:55",
-      "confidence": "low",
-      "left": {
-        "text": "推日明所入度分術曰：置其月節氣夜漏之數，以蔀法乘之，二百除之，得一分，即夜半到明所行分也。以增夜半日所在度分，為明所在度分也。",
-        "source_spans": [
-          [
-            3637,
-            3700
-          ]
-        ]
-      },
-      "right": {
-        "text": "求昏日所入度，以夜半到明日所行分分減蔀法，其餘即夜半到昏所行分也。以加夜半所在度分，為昏日所在度也。",
-        "source_spans": [
-          [
-            3707,
-            3757
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
-    },
-    {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:59",
-      "sections": [
-        59
-      ],
-      "candidate_target": "sifen:sections:57-58",
-      "confidence": "low",
-      "left": {
-        "text": "推月明所入度分術曰：置其節氣夜半之數，以月周乘之，以二百除之，為積分。積分滿蔀法得一，以增夜半度，即明月所在度也。",
-        "source_spans": [
-          [
-            3764,
-            3780
-          ],
-          [
-            3787,
-            3828
-          ]
-        ]
-      },
-      "right": {
-        "text": "求昏月所入度：以明積分減月周，其餘滿蔀法得一度，加夜半，則昏月所在度也。",
-        "source_spans": [
-          [
-            3835,
-            3871
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
-    },
-    {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:61",
-      "sections": [
-        61
-      ],
-      "candidate_target": "sifen:section:60",
-      "confidence": "low",
-      "left": {
-        "text": "推弦、望日所入星度術曰：置合朔度分之數，加七度三百五十九分四分之三，宿次除之，即得上弦日所入宿度分也。",
-        "source_spans": [
-          [
-            3878,
-            3929
-          ]
-        ]
-      },
-      "right": {
-        "text": "求望、下弦，加除如前法，小分四從大分，滿蔀月從度。",
-        "source_spans": [
-          [
-            3936,
-            3961
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
-    },
-    {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:63",
-      "sections": [
-        63
-      ],
-      "candidate_target": "sifen:section:62",
-      "confidence": "low",
-      "left": {
-        "text": "推弦、望月所入星度術曰：置月合朔度分之數，加度九十八，加分六百五十三半，以宿次除之，即上弦月所入宿度分也。",
-        "source_spans": [
-          [
-            3968,
-            4021
-          ]
-        ]
-      },
-      "right": {
-        "text": "求望、下弦，加除如前分，滿蔀月從度。",
-        "source_spans": [
-          [
-            4028,
-            4046
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
-    },
-    {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:66",
-      "sections": [
-        66
-      ],
-      "candidate_target": "sifen:section:65",
-      "confidence": "low",
-      "left": {
-        "text": "推月食朔日術曰：置食積月之數，以二十九乘之，為積日。又以四百九十〈九〉乘積月，滿蔀月得一，以并積日，以六十除之，其餘以所會蔀名命之，筭盡之外，則前年天正前食月朔日也。",
-        "source_spans": [
-          [
-            4274,
-            4357
-          ]
-        ]
-      },
-      "right": {
-        "text": "求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。",
-        "source_spans": [
-          [
-            4364,
-            4403
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
-    },
-    {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:67",
-      "sections": [
-        67
-      ],
-      "candidate_target": "sifen:section:66",
-      "confidence": "low",
-      "left": {
-        "text": "求食日，加大餘十四，小餘七百一十九半，小餘滿蔀月為大餘，大餘命如前，則食日也。",
-        "source_spans": [
-          [
-            4364,
-            4403
-          ]
-        ]
-      },
-      "right": {
-        "text": "求後食朔及日，皆加大餘二十七，小餘六百一十五。其月餘分不滿二十者，又加大餘二十九，小餘四百九十九。其食小餘者，當以漏刻課之，夜漏未盡，以筭上為日。",
-        "source_spans": [
-          [
-            4410,
-            4483
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
+      "candidate_target": "sifen:sections:52-53"
     },
     {
       "kind": "confirm_alternative_relation",
       "unit_id": "sifen:section:68",
-      "candidate_target": "sifen:section:67"
+      "candidate_target": "sifen:sections:65-67"
     },
     {
       "kind": "computational_text_without_explicit_procedure_marker",
@@ -5471,114 +4850,6 @@
       "kind": "confirm_alternative_relation",
       "unit_id": "sifen:section:82",
       "candidate_target": "sifen:section:81"
-    },
-    {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:83",
-      "sections": [
-        83
-      ],
-      "candidate_target": "sifen:section:82",
-      "confidence": "low",
-      "left": {
-        "text": "一術，加退歲一，以減上元，滿八十除去之，餘以沒數乘之，滿日法得一，為大餘，不盡為小餘。以甲子命大餘，則星合歲天正冬至日也。以周率小餘，并度餘，餘滿日度法從度，即正後星合日數也，命以冬至。求後合月，加合積月於入歲月，加月餘於月餘，滿其月法得一，從入歲月。入歲月滿十二去之，有閏計焉，餘命如前，筭外，後合月也。餘一加晨得夕，加夕得晨。",
-        "source_spans": [
-          [
-            5989,
-            6154
-          ]
-        ]
-      },
-      "right": {
-        "text": "求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。",
-        "source_spans": [
-          [
-            6161,
-            6206
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
-    },
-    {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:84",
-      "sections": [
-        84
-      ],
-      "candidate_target": "sifen:section:83",
-      "confidence": "low",
-      "left": {
-        "text": "求朔日，以大小餘加今所得，其月餘得一月者，又餘二十九，小飾滿蔀月得一，如大餘，大餘命如前。",
-        "source_spans": [
-          [
-            6161,
-            6206
-          ]
-        ]
-      },
-      "right": {
-        "text": "求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。",
-        "source_spans": [
-          [
-            6213,
-            6293
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
-    },
-    {
-      "kind": "confirm_followup_grouping",
-      "unit_id": "sifen:section:85",
-      "sections": [
-        85
-      ],
-      "candidate_target": "sifen:section:84",
-      "confidence": "low",
-      "left": {
-        "text": "求入月日，以入月日餘加今所得，餘滿日度法得一，從日。其前合月朔小餘不滿其虛分者，空加一日。日滿月先去二十九，其後合月朔小餘不滿四百九十九，又減一日，其餘命如前。",
-        "source_spans": [
-          [
-            6213,
-            6293
-          ]
-        ]
-      },
-      "right": {
-        "text": "求合度，以積度度餘加今所得，餘滿日度法得一從度，命如前，經斗除如周率矣。",
-        "source_spans": [
-          [
-            6300,
-            6336
-          ]
-        ]
-      },
-      "conditions": [
-        "adjacent_procedure",
-        "marker:求"
-      ],
-      "choices": [
-        "independent_procedure",
-        "followup_query"
-      ],
-      "reason": "邻接术文与求标记仅提示归属；不证明共享 base 或计算依赖。"
     },
     {
       "kind": "computational_text_without_explicit_procedure_marker",
@@ -5606,30 +4877,6 @@
       "left_section": 35,
       "right_section": 36,
       "confidence": "medium",
-      "left": {
-        "section": 35,
-        "text": "推月食所入蔀會年，以元會除去上元，其餘以蔀會除之，所得以七十二乘之，滿六十除去之，餘以二十除所得數，從天紀，筭之起外，所以入紀，不滿二十者，數從甲子蔀起，筭外，所入蔀會也。其初不滿蔀會者，入蔀會年數也，各以",
-        "start": 2247,
-        "end": 2350,
-        "line": 68
-      },
-      "right": {
-        "section": 36,
-        "text": "不入紀歲名命之，筭上，即所求年蔀。",
-        "start": 2357,
-        "end": 2374,
-        "line": 70
-      },
-      "conditions": [
-        {
-          "rule": "incomplete_suffix",
-          "match": "各以"
-        },
-        {
-          "rule": "computational_left_anaphoric_right",
-          "match": "不"
-        }
-      ],
       "reason": "nonterminal/incomplete ending + no strong new-unit marker"
     },
     {
@@ -5637,26 +4884,6 @@
       "left_section": 57,
       "right_section": 58,
       "confidence": "medium",
-      "left": {
-        "section": 57,
-        "text": "推月明所入度分術曰：置其節氣夜半",
-        "start": 3764,
-        "end": 3780,
-        "line": 112
-      },
-      "right": {
-        "section": 58,
-        "text": "之數，以月周乘之，以二百除之，為積分。積分滿蔀法得一，以增夜半度，即明月所在度也。",
-        "start": 3787,
-        "end": 3828,
-        "line": 114
-      },
-      "conditions": [
-        {
-          "rule": "computational_left_anaphoric_right",
-          "match": "之"
-        }
-      ],
       "reason": "nonterminal/incomplete ending + no strong new-unit marker"
     }
   ],
@@ -5666,30 +4893,6 @@
       "left_section": 35,
       "right_section": 36,
       "confidence": "medium",
-      "left": {
-        "section": 35,
-        "text": "推月食所入蔀會年，以元會除去上元，其餘以蔀會除之，所得以七十二乘之，滿六十除去之，餘以二十除所得數，從天紀，筭之起外，所以入紀，不滿二十者，數從甲子蔀起，筭外，所入蔀會也。其初不滿蔀會者，入蔀會年數也，各以",
-        "start": 2247,
-        "end": 2350,
-        "line": 68
-      },
-      "right": {
-        "section": 36,
-        "text": "不入紀歲名命之，筭上，即所求年蔀。",
-        "start": 2357,
-        "end": 2374,
-        "line": 70
-      },
-      "conditions": [
-        {
-          "rule": "incomplete_suffix",
-          "match": "各以"
-        },
-        {
-          "rule": "computational_left_anaphoric_right",
-          "match": "不"
-        }
-      ],
       "reason": "nonterminal/incomplete ending + no strong new-unit marker"
     },
     {
@@ -5697,27 +4900,12 @@
       "left_section": 57,
       "right_section": 58,
       "confidence": "medium",
-      "left": {
-        "section": 57,
-        "text": "推月明所入度分術曰：置其節氣夜半",
-        "start": 3764,
-        "end": 3780,
-        "line": 112
-      },
-      "right": {
-        "section": 58,
-        "text": "之數，以月周乘之，以二百除之，為積分。積分滿蔀法得一，以增夜半度，即明月所在度也。",
-        "start": 3787,
-        "end": 3828,
-        "line": 114
-      },
-      "conditions": [
-        {
-          "rule": "computational_left_anaphoric_right",
-          "match": "之"
-        }
-      ],
       "reason": "nonterminal/incomplete ending + no strong new-unit marker"
     }
-  ]
+  ],
+  "overrides": {
+    "path": "corpus-review/sifen/overrides.json",
+    "sha256": "2b42664d0ecfbc8a87e638ce5451721c5e73bde12ea1f6f8e6c503321181f832"
+  },
+  "auto_sha256": "dd3fed0e074525e460f3e71b74f0e135327335c5127c385255e7e78eed64ddf0"
 }
