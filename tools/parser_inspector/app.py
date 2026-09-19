@@ -9,8 +9,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 import streamlit as st
-from source_adapters.corpus import build_source_packet, list_procedures
-from tools.parser_inspector.runner import OUTPUT, run, text_packet, refresh_dependencies
+from tools.parser_inspector.runner import OUTPUT, run, text_packet
 from source_adapters.dependencies import validate
 from tools.parser_inspector.segmentation_review import has_unsaved_changes, guard_selection
 
@@ -29,23 +28,8 @@ if page == 'Corpus Full Text':
     st.stop()
 st.caption('直接调用当前 parser；仅显示原始 JSON。每次运行覆盖 output/current/。')
 
-source_mode = st.radio('输入来源', ['粘贴文本', 'Corpus'], horizontal=True, key='source_mode')
-if source_mode == 'Corpus':
-    procedures = {p['id']: p for p in list_procedures(ROOT)}
-    procedure_id = st.selectbox('已登记 corpus procedure', list(procedures),
-                                format_func=lambda key: procedures[key]['title'], key='procedure_id')
-    try:
-        packet = build_source_packet(ROOT, procedure_id)['source_packet']
-    except (ValueError, OSError) as error:
-        st.error(str(error))
-        st.stop()
-    for category in ('primary_documents', 'context_documents'):
-        for doc in packet[category]:
-            st.caption(f"{category} · {doc['doc_id']} · {doc['source']['path']}")
-            st.text(doc['text'])
-else:
-    text = st.text_area('原文（原样传入）', height=180, key='pasted_text')
-    packet = text_packet(text)
+text = st.text_area('原文（原样传入）', height=180, key='pasted_text')
+packet = text_packet(text)
 
 st.caption('Constructions 自动运行词项层；Compile 通过 parse_packet() 完整编译后才有 selected 状态。')
 for column, stage, label in zip(st.columns(3), ('lexical', 'constructions', 'compile'),
@@ -59,8 +43,6 @@ for column, stage, label in zip(st.columns(3), ('lexical', 'constructions', 'com
             st.session_state.snapshot_packet = packet
 
 snapshot = st.session_state.get('snapshot')
-if source_mode == 'Corpus':
-    refresh_dependencies(ROOT)
 if not snapshot:
     st.info('选择运行层级后显示原始结果。')
     st.stop()

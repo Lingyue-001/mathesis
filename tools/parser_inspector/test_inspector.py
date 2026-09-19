@@ -127,18 +127,11 @@ class AppTests(unittest.TestCase):
         self.assertFalse(app.exception)
         self.assertIsNone(json.loads((runner.OUTPUT / 'compiler_report.json').read_text(encoding='utf-8')))
 
-    def test_registered_corpus_selection_preserves_packet_and_context(self):
+    def test_inspector_has_no_registered_corpus_input(self):
         from streamlit.testing.v1 import AppTest
         app = AppTest.from_file(str(Path(__file__).with_name('app.py'))).run()
-        app.radio(key='source_mode').set_value('Corpus').run()
-        for procedure in list_procedures(ROOT):
-            app.selectbox(key='procedure_id').select(procedure['id']).run()
-            app.button(key='compile').click().run()
-            self.assertFalse(app.exception)
-            expected = build_source_packet(ROOT, procedure['id'])['source_packet']
-            self.assertEqual(json.loads((runner.OUTPUT / 'packet.json').read_text(encoding='utf-8')), expected)
-            report = json.loads((runner.OUTPUT / 'compiler_report.json').read_text(encoding='utf-8'))
-            self.assertEqual(report, parse_packet(expected))
+        self.assertFalse(any(control.key == 'source_mode' for control in app.radio))
+        self.assertFalse(any(control.key == 'procedure_id' for control in app.selectbox))
 
 
 if __name__ == '__main__':

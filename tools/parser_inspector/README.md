@@ -59,7 +59,7 @@ calendars-*.md ∩ 已登记 source_texts
   → 更新 human_review + 规范化 overrides
   → corpus_index.effective_from_auto() → effective.json
   → 四文件事务更新 manifest → Auto / Effective 与进度刷新
-  → corpus.build_source_packet() 按已有 procedure manifest 选择正文/context
+  → corpus.build_source_packet_from_units() 由调用方指定 effective unit 构造 SourcePacket
   → 原有 parser
 ```
 
@@ -81,7 +81,7 @@ python -X utf8 -B scripts/corpus/extract_sifen_units.py --source-id jiuzhi
 
 同一 source SHA 且机器单元未变时恢复已有 review；来源 SHA 或已审单元机器字段变化时阻断并保留旧文件。**auto 已包含人工审阅记录，不当作缓存忽略或删除**；新 clone 中缺少 effective 时，用上述命令或 UI 重新生成即可。
 
-已登记 procedure 的正文/context 选择仍受 manifest 的 unit ID 和文本 SHA 约束。若合拆改变了它选择的单元，旧 procedure 会明确报缺失／来源变化，不会偷偷退回 md 或采用猜测 context；本页不自动重写 procedure manifest。
+旧 Workbench preset 的正文/context 选择仍受 manifest 的 unit ID 和文本 SHA 约束。若合拆改变了它选择的单元，legacy preset 会明确报缺失／来源变化，不会偷偷退回 md 或采用猜测 context；本页不自动重写 preset manifest。
 
 检查：
 
@@ -110,8 +110,8 @@ segmentation_review.py：显示 Auto，编辑右侧 Effective
   → effective.json + manifest.json：有效素材与文件校验/审阅统计
   → 自动刷新页面（无手动 reload、无最终提交保存）
 
-effective.json + config/workbench-procedures.json (primary_units / context_units)
-  → source_adapters/corpus.py: build_source_packet()
+effective.json + 调用方指定的 source_id / unit IDs
+  → source_adapters/corpus.py: build_source_packet_from_units()
      校验原 md 的 SHA/坐标；正文/context 取自有效 unit，不重新猜切分
   → SourcePacket 3.0（每个 document 携带 unit_id + unit_index_sha256）
   ├─ Inspector runner.py → analysis_parser.inputs.documents()
@@ -151,7 +151,7 @@ source_adapters/dependencies.py（两条运行路径共享，无 parser import�
 2. 点击 Lexical、Constructions 或 Compile。后两者自动运行前置层；不需要逐个点击。
 3. 在三个标签页查看紧凑 JSON 和对应的绝对文件路径：每条的 ID、位置、性质集中一行，文本及其他内容放下一行，嵌套字段行内显示。所有字段保留；需要时展开「树状 JSON」。这只改变界面排版，输出文件仍保持原有缩进格式。
 
-调用路径：`documents()` → `tokenize_candidates(doc, {})` → `parse_syntax(tokens, doc)`；完整编译直接调用 `parse_packet(packet)`。不执行数值计算、不调用 reviewed compiler，不载入人工 reference。Corpus 输入直接来自已有 `source_adapters.corpus.build_source_packet()`；粘贴文本仅包装为 SourcePacket 3.0，不自动提供 tradition、profile 或背景。
+调用路径：`documents()` → `tokenize_candidates(doc, {})` → `parse_syntax(tokens, doc)`；完整编译直接调用 `parse_packet(packet)`。不执行数值计算、不调用 reviewed compiler，不载入人工 reference。当前 Parser Inspector 只接受粘贴文本，不显示 corpus preset；`build_source_packet_from_units()` 供后端调用方以已选择的 effective unit 构造 SourcePacket。粘贴文本不自动提供 tradition、profile 或背景。
 
 `app.py` 只负责 Streamlit 输入和 JSON 显示；`runner.py` 只负责调用现有 stage、序列化和固定路径写入。没有复制 parser 实现。
 

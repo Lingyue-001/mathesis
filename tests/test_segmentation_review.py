@@ -90,12 +90,9 @@ class ReviewTests(unittest.TestCase):
         state = review.load(self.root, 'jiuzhi')
         firsts = [u for u in state['auto']['units'] if u['sections'] == [1]]
         self.assertEqual(len(firsts), 2)
-        from source_adapters.corpus import build_source_packet
-        manifest = {'procedures': [{'id': 'repeated-sections', 'source_id': 'jiuzhi',
-            'primary_units': [{'unit_id': u['id'], 'sha256': hashlib.sha256(u['text_original'].encode()).hexdigest()} for u in firsts],
-            'context_units': [], 'provided_scope': 'fixture', 'provenance': {'actor': 'scripted_test'}}]}
-        (self.root / 'config/workbench-procedures.json').write_text(json.dumps(manifest, ensure_ascii=False), encoding='utf-8')
-        documents = build_source_packet(self.root, 'repeated-sections')['source_packet']['primary_documents']
+        from source_adapters.corpus import build_source_packet_from_units
+        documents = build_source_packet_from_units(
+            self.root, 'jiuzhi', [u['id'] for u in firsts], provided_scope='fixture')['primary_documents']
         self.assertEqual(len({d['doc_id'] for d in documents}), 2)
         result = review.apply(self.root, 'split_unit', index.unit_anchor(firsts[1]), {'boundaries': [2]},
                               source_id='jiuzhi', revision=state['revision'], actor=ACTOR)

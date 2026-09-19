@@ -1,8 +1,10 @@
 {
   "registry_version": 1,
+  "registry_kind": "legacy_regression_smoke_presets",
   "procedures": [
     {
       "id": "sifen-3-5",
+      "kind": "legacy_regression_smoke_preset",
       "title": "四分历 · 推天正術（Cullen Proc. 3.5）",
       "source_id": "sifen",
       "scholarly_locator": "Cullen, Proc. 3.5, §46, printed p. 164",
@@ -52,6 +54,7 @@
     },
     {
       "id": "sifen-3-7-alternative",
+      "kind": "legacy_regression_smoke_preset",
       "title": "四分历 · 天正朔日一术（真实待审定例）",
       "source_id": "sifen",
       "scholarly_locator": "四分历 §40",
