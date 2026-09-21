@@ -105,6 +105,13 @@ _LABEL_EN = {
 
     ('cause', 'unresolved_parser'): 'Source text not yet parsed', ('cause', 'incomplete_construction'): 'Construction incomplete',
     ('cause', 'missing_import'): 'Input source missing', ('cause', 'unknown_quantity_semantics'): 'Quantity meaning unresolved',
+    ('cause', 'incompatible_method'): 'Quantity does not meet the method contract',
+    ('cause', 'unresolved_managed_quantity'): 'Managed interpretation remains unresolved',
+    ('cause', 'invalid_term_boundary'): 'Local term boundary needs revalidation',
+    ('cause', 'invalid_term_interpretation'): 'Term interpretation needs revalidation',
+    ('cause', 'invalid_reviewed_relation'): 'Quantity relation needs revalidation',
+    ('cause', 'conflicting_quantity_facet'): 'Quantity interpretations conflict',
+    ('cause', 'incompatible_combined_quantity_assertions'): 'Combined quantity interpretation is incompatible',
     ('cause', 'unknown_quantity'): 'Quantity unidentified', ('cause', 'stale_identity'): 'Runtime version changed',
     ('cause', 'stale_source'): 'Source version changed', ('cause', 'multiple_active_decisions_for_slot'): 'Conflicting review decisions',
     ('cause', 'schema_extension_required'): 'Type system insufficient', ('cause', 'binding_not_structurally_compatible'): 'Binding incompatible',
@@ -140,6 +147,9 @@ _LABEL_EN = {
     ('action', 'resegment'): 'Change span', ('action', 'set_scope'): 'Set calculation scope',
     ('action', 'bind_value'): 'Bind quantity source', ('action', 'bind_call'): 'Bind method call',
     ('action', 'set_quantity_semantics'): 'Describe quantity', ('action', 'select_profile'): 'Select interpretation',
+    ('action', 'set_term_boundary'): 'Confirm local term boundary',
+    ('action', 'set_term_interpretation'): 'Interpret this term',
+    ('action', 'approve_reviewed_relation'): 'Approve the evidenced quantity relation',
     ('action', 'attach_context'): 'Add context source', ('action', 'declare_parameter'): 'Declare external parameter',
     ('action', 'assemble_known_structure'): 'Add known construction', ('action', 'mark_noncomputational'): 'Mark as non-computational',
     ('action', 'defer'): 'Leave unresolved', ('action', 'approve_scope'): 'Approve scope',
@@ -316,6 +326,13 @@ unresolved_parser|The current rules do not explain this source segment.
 incomplete_construction|The current construction awaits a rule-required continuation.
 missing_import|A required input has not been bound.
 unknown_quantity_semantics|The meaning of the quantity remains to be determined.
+incompatible_method|The current quantity does not satisfy the method's required unit or representation.
+unresolved_managed_quantity|An explicitly managed quantity facet lacks a valid interpretation, so dependent execution is blocked.
+invalid_term_boundary|The local term boundary no longer passes current source or grammar validation.
+invalid_term_interpretation|The local term interpretation no longer passes its source and Kernel evidence checks.
+invalid_reviewed_relation|The reviewed quantity relation no longer matches its operations, parameters or source bindings.
+conflicting_quantity_facet|Active assertions assign incompatible values to the same quantity facet.
+incompatible_combined_quantity_assertions|The combined reviewed facets cannot form a compatible quantity interpretation.
 unknown_quantity|The current structure cannot identify the referenced quantity.
 stale_identity|Existing review decisions must be revalidated because the runtime identity changed.
 stale_source|Existing review decisions must be revalidated because the source version changed.
@@ -540,6 +557,13 @@ unresolved_parser|规则未能解释|当前规则未能解释这段文字
 incomplete_construction|构式待续|当前构式尚待规则要求的后续部分
 missing_import|输入缺少来源|所需输入尚未绑定
 unknown_quantity_semantics|数量语义未定|数量含义尚待确定
+incompatible_method|数量不符合方法契约|当前数量不符合方法所需的单位或表示
+unresolved_managed_quantity|接管的解释仍未定|已接管的数量属性缺少有效解释，相关执行被阻断
+invalid_term_boundary|局部词界待重验|局部词界未通过当前原文或语法检查
+invalid_term_interpretation|词项解释待重验|词项解释未通过当前原文与领域依据检查
+invalid_reviewed_relation|数量关系待重验|当前运算参数或来源绑定不再符合已审关系
+conflicting_quantity_facet|数量属性判断冲突|活动判断对同一数量属性给出了不同取值
+incompatible_combined_quantity_assertions|数量属性组合不兼容|当前已审属性无法组成兼容的数量解释
 unknown_quantity|数量尚未识别|当前结构未能确定所引用的数量
 stale_identity|运行版本已变化|已有审定需要重新核验
 stale_source|来源版本已变化|已有审定需要重新核验
@@ -594,6 +618,9 @@ set_scope|调整范围与基态|指定已有过程范围及查询基态
 bind_value|绑定数量来源与端口|指定所需数量的生产者及输出端口
 bind_call|绑定过程调用|指定过程调用的来源
 set_quantity_semantics|说明数量含义与尺度|记录数量的类型、单位和尺度判断
+set_term_boundary|确认局部词界|只在当前原文位置确认完整词项边界
+set_term_interpretation|解释当前词项|采用排除或以已有目录局部组合当前词项解释
+approve_reviewed_relation|确认有依据的数量关系|解释当前来源运算与参数的数量关系
 select_profile|选择解释方案|选择已登记的解释方案
 attach_context|补充背景来源|将有来源的背景文档加入编译输入
 declare_parameter|声明合法根输入|声明需要外部提供的根输入

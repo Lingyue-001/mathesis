@@ -203,6 +203,11 @@ class ReadableTests(unittest.TestCase):
                 for role in ('Dividend', 'Divisor', 'Quotient', 'Remainder'):
                     self.assertIn(role, visible)
             if item['kind'] == 'method_reference':
+                if not module._events(raw, report):
+                    # Unknown remainder keeps the call unresolved; the old
+                    # corrupt replacement value must not fabricate a method.
+                    self.assertIn('No separate alias/naming event is recorded for this method reference.', visible)
+                    continue
                 self.assertIn('Inputs', visible)
                 self.assertIn('Returns', visible)
                 self.assertIn('Later use', visible)

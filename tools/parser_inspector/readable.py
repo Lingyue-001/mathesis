@@ -28,11 +28,14 @@ LAYERS = {
 }
 
 
-def compile_view(packet, *, include_term_semantics=False, term_regions=None):
-    """One automatic compile and one empty-session compile; no persisted state."""
+def compile_view(packet, *, include_term_semantics=False, term_regions=None,
+                 session=None, branch_id='main', compilation=None, effective_packet=None):
+    """Project an existing reviewed job, or the original read-only comparison."""
     automatic_report = parse_packet(packet)
-    session = new_session(packet, 'inspector:read-only')
-    compilation = compile_reviewed(packet, session)
+    session = session if session is not None else new_session(packet, 'inspector:read-only')
+    if compilation is None:
+        compilation = (compile_reviewed(packet, session) if branch_id == 'main'
+                       else compile_reviewed(packet, session, branch_id))
     automatic = project_report(automatic_report)
     graph = compilation['graph']
     # The bundle itself is not a report. Its graph has the native report schema.
@@ -41,13 +44,17 @@ def compile_view(packet, *, include_term_semantics=False, term_regions=None):
             if field not in graph:
                 raise ValueError('reviewed_report_field_missing: ' + field)
     reviewed = project_report(graph) if graph is not None else None
-    view = {'packet': packet, 'session': session, 'automatic_report': automatic_report,
+    view = {'packet': effective_packet or packet, 'session': session, 'automatic_report': automatic_report,
             'compilation': compilation, 'automatic': automatic, 'reviewed': reviewed,
             'diff': diff_projection(automatic, reviewed) if reviewed is not None else None}
     if include_term_semantics:
         try:
             from domain_kernel.engine import suggest_packet_semantics
-            view['term_semantics'] = suggest_packet_semantics(packet, term_regions=term_regions)
+            boundaries = defaultdict(list)
+            for row in compilation['replay']['effective'].get('term_boundaries', []):
+                boundaries[row['target']['doc_id']].append(row['target'])
+            view['term_semantics'] = suggest_packet_semantics(effective_packet or packet,
+                term_regions=term_regions, term_boundaries=dict(boundaries))
             view['term_semantics_status'] = {'status': 'complete'}
         except Exception as error:
             view['term_semantics'] = None
@@ -305,7 +312,8 @@ def _construction(item, raw, report, document):
         if item.get('status') == 'unresolved' or not raw:
             parts.append('<p class="gap">计算含义尚未确定。</p>')
         elif not aliases:
-            parts.append('<p>未记录独立运算结果。</p>')
+            parts.append('<p>' + _ui('No separate alias/naming event is recorded for this method reference.',
+                                     '此方法引用未记录独立的命名／别名事件。') + '</p>')
     parts.append('</div><details class="machine-evidence"><summary>'
                  + _ui('View machine evidence', '查看机器依据') + '</summary>')
     parts.append(_construction_evidence(item, raw, report, document))
@@ -372,6 +380,8 @@ def _evidence(spans, document):
     for span in sorted(spans, key=lambda row: (row.get('start', 0), row.get('end', 0))):
         start, end = span.get('start'), span.get('end')
         valid = (span.get('doc_id') == document['doc_id'] and type(start) is int and type(end) is int
+                 and span.get('reading_id', document.get('reading_id', document['doc_id'] + '.declared'))
+                     == document.get('reading_id', document['doc_id'] + '.declared')
                  and 0 <= start < end <= len(document['text'])
                  and document['text'][start:end] == span.get('quote'))
         quote = _text(span.get('quote'))
@@ -781,12 +791,15 @@ def render_html(view, language='en'):
     if language not in ('en', 'zh'):
         raise ValueError('unsupported_inspector_language: ' + language)
     document = view['packet']['primary_documents'][0]
+    contexts = view['packet'].get('context_documents', [])
+    context_label = (f'Context: {", ".join(d["doc_id"] for d in contexts)}' if contexts else _ui('No context', '无上下文'))
+    scope_label = view['packet'].get('provided_scope', {}).get('tradition', '未指定 tradition')
     source = ''.join(f'<span id="source-{i}" data-offset="{i}">{escape(char)}</span>'
                      for i, char in enumerate(document['text']))
     parts = [f'<!doctype html><html lang="en"><head><meta charset="utf-8"><style>{_STYLE}</style></head><body>',
              '<header><div id="header-meta">'
              + '<strong>' + _ui('Primary', '主文本') + f' · {_text(document["source"]["unit_id"])}</strong>'
-             + '<span> · ' + _ui('No context', '无上下文') + ' · Han_Si_fen_li</span>'
+             + '<span> · ' + (escape(context_label) if contexts else context_label) + ' · ' + _text(scope_label) + '</span>'
              + '</div>',
              f'<div id="source">{source}</div><nav>' + ''.join(f'<a href="#{key}">{key}</a>' for key in LAYERS)
              + '</nav><small id="evidence-status" aria-live="polite">'
@@ -848,10 +861,20 @@ def render_html(view, language='en'):
 
 def render(root, language='en'):
     import streamlit as st
+    from tools.parser_inspector.review_panel import render as render_review
 
-    st.caption('Read-only research view · fixed Primary §39 · source and R1–R4'
-               if language == 'en' else '只读研究视图 · 固定 Primary §39 · 原文与 R1–R4')
     try:
+        response = render_review(root, language)
+        if response is not None:
+            if response.get('graph') is not None:
+                view = compile_view(response['packet'], include_term_semantics=True,
+                    session=response['session'], branch_id=response['branch_id'],
+                    compilation=response['compilation'], effective_packet=response['effective_packet'])
+                with st.expander('Inspection / Evidence' if language == 'en' else '检查 / 依据'):
+                    st.iframe(render_html(view, language), height=850)
+            return
+        st.caption('Read-only research view · fixed Primary §39 · source and R1–R4'
+                   if language == 'en' else '只读研究视图 · 固定 Primary §39 · 原文与 R1–R4')
         packet = build_source_packet_from_units(root, 'sifen', [PRIMARY], context_unit_ids=[],
                                                 provided_scope={'tradition': 'Han_Si_fen_li'})
         view = compile_view(packet, include_term_semantics=True)

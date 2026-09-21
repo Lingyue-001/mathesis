@@ -78,8 +78,12 @@ class TestAcceptanceCore(unittest.TestCase):
                                                   {'definition_anchor': first, 'parent_definition_anchor': second}))
         append_fixture(source, session, decision(source, 'two', 'set_scope', second,
                                                   {'definition_anchor': second, 'parent_definition_anchor': first}))
-        with self.assertRaisesRegex(ValueError, 'scope_parent_cycle'):
-            compile_reviewed(source, session)
+        result = compile_reviewed(source, session)
+        for ident in ('one', 'two'):
+            state = result['replay']['decision_status'][ident]
+            self.assertEqual(state['status'], 'needs_revalidation')
+            self.assertIn('scope_parent_cycle', state['reasons'])
+        self.assertFalse(result['replay']['effective']['scopes'])
 
     def test_H08_required_control_cannot_be_noncomputational_for_complete_export(self):
         source = packet('十二以上。')

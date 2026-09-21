@@ -48,6 +48,8 @@ def _branch_ids(session, branch_id):
         raise ValueError('unknown_branch')
     result = []
     while branch_id is not None:
+        if branch_id in result or branch_id not in rows:
+            raise ValueError('invalid_branch_ancestry')
         result.append(branch_id)
         branch_id = rows[branch_id]
     return set(result)
@@ -56,22 +58,42 @@ def _branch_ids(session, branch_id):
 def validate_decision(session, packet, decision):
     required = {'decision_id', 'actor', 'created_at', 'branch_id', 'action', 'targets', 'payload',
                 'evidence_refs', 'reason', 'depends_on'}
-    missing = required - set(decision or {})
+    if not isinstance(decision, dict):
+        raise ValueError('invalid_decision_shape')
+    missing = required - set(decision)
     if missing:
         raise ValueError('missing_decision_fields:' + ','.join(sorted(missing)))
     if decision['action'] not in ACTIONS:
         raise ValueError('unsupported_decision_action')
-    if decision['actor'].get('type') not in ('human', 'agent', 'scripted_fixture') or not decision['actor'].get('id'):
+    if not isinstance(decision['actor'], dict) or decision['actor'].get('type') not in ('human', 'agent', 'scripted_fixture') or not decision['actor'].get('id'):
         raise ValueError('invalid_actor')
     if not any(row['id'] == decision['branch_id'] for row in session.get('branches', [])):
         raise ValueError('unknown_branch')
     if not isinstance(decision['targets'], list) or not decision['targets']:
         raise ValueError('decision_requires_target')
-    for target in decision['targets']:
-        validate_anchor(packet, target)
     if not isinstance(decision['payload'], dict) or not isinstance(decision['depends_on'], list):
         raise ValueError('invalid_decision_payload')
-    validate_action_payload(packet, decision['action'], decision['payload'], decision['targets'])
+    for key in ('semantic_input', 'semantic_output', 'claim'):
+        address = decision['payload'].get(key)
+        if isinstance(address, dict) and address.get('branch_id') != decision['branch_id']:
+            raise ValueError('decision_semantic_branch_mismatch')
+    if decision['action'] == 'set_term_boundary' and decision['payload'].get('branch_id', decision['branch_id']) != decision['branch_id']:
+        raise ValueError('decision_semantic_branch_mismatch')
+    if not all(isinstance(d, str) and d for d in decision['depends_on']):
+        raise ValueError('invalid_decision_dependency')
+    from .effective_packet import derive_packet, validate_context_dependencies
+    from .replay import replay_session
+    state = replay_session(session, packet, decision['branch_id'])
+    if state['status'] != 'ok':
+        raise ValueError(state['status'])
+    contexts = state['effective']['contexts']
+    catalog = derive_packet(packet, contexts)
+    validate_context_dependencies(packet, catalog, decision, contexts)
+    validate_action_payload(catalog, decision['action'], decision['payload'], decision['targets'])
+    if decision['action'] == 'retract' and decision['payload']['decision_id'] not in state['decision_status']:
+        raise ValueError('unknown_retraction_target')
+    if decision['action'] == 'attach_context':
+        derive_packet(catalog, [decision['payload']])
     if decision['action'] == 'mark_noncomputational' and (not decision['reason'] or not decision['evidence_refs']):
         raise ValueError('noncomputational_reason_and_evidence_required')
     if decision['action'] == 'set_lexical_role':
@@ -87,6 +109,9 @@ def append_decision(session, decision, *, packet):
     if any(row['decision_id'] == decision.get('decision_id') for row in session.get('decisions', [])):
         raise ValueError('duplicate_decision_id')
     decision = validate_decision(session, packet, decision)
+    from .replay import dependency_cycles
+    if dependency_cycles([*session.get('decisions', []), decision]):
+        raise ValueError('decision_dependency_cycle')
     decision['revision'] = len(session.get('decisions', [])) + 1
     session.setdefault('decisions', []).append(decision)
     return session

@@ -2074,6 +2074,12 @@ relation_kind是受分层约束的投影提示，不将expression.arguments冒�
               "items": {
                 "$ref": "kernel.schema.json#/$defs/SourceAnchor"
               }
+            },
+            "term_boundaries": {
+              "type": "array",
+              "items": {
+                "$ref": "kernel.schema.json#/$defs/SourceAnchor"
+              }
             }
           },
           "required": [

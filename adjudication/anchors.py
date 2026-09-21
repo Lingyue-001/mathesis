@@ -81,6 +81,18 @@ def validate_semantic_output_address(packet, address):
                                    address['semantic_role'])
 
 
+def validate_semantic_input_address(packet, address):
+    required = {'definition_anchor', 'construction_anchor', 'construction_role', 'semantic_role',
+                'input_slot', 'formal', 'branch_id'}
+    if not isinstance(address, dict) or not required.issubset(address):
+        raise ValueError('invalid_semantic_input_address')
+    for key in ('construction_role', 'semantic_role', 'input_slot', 'formal', 'branch_id'):
+        if not isinstance(address[key], str) or not address[key]:
+            raise ValueError('invalid_semantic_input_' + key)
+    return {**address, 'definition_anchor': validate_anchor(packet, address['definition_anchor']),
+            'construction_anchor': validate_anchor(packet, address['construction_anchor'])}
+
+
 def overlaps(left, right):
     return (left['doc_id'] == right['doc_id'] and left['reading_id'] == right['reading_id']
             and left['start'] < right['end'] and right['start'] < left['end'])

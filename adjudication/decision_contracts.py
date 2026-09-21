@@ -6,14 +6,15 @@ effective reducer cannot disagree about identity.
 """
 import json
 
-from .anchors import anchor_location, validate_anchor, validate_semantic_output_address
+from .anchors import anchor_location, validate_anchor, validate_semantic_output_address, validate_semantic_input_address
 
 
 CONTRACT_VERSION = '1.0'
 
 
 def _anchor_identity(anchor):
-    return anchor_location(anchor)
+    location = list(anchor_location(anchor))
+    return [*location, anchor['definition_kind']] if anchor.get('definition_kind') else location
 
 
 def _require(payload, *names):
@@ -25,17 +26,27 @@ def _require(payload, *names):
 def normalize_decision_target(action, payload, targets):
     """Return the canonical, serializable semantic target for one action."""
     evidence = targets[0]
+    if action == 'attach_context':
+        return {'kind': 'context_document', 'doc_id': payload['document']['doc_id']}
     if action in ('bind_value', 'bind_call'):
         return {'kind': 'binding', 'consumer': _anchor_identity(payload['consumer_definition_anchor']),
                 'formal': payload.get('formal') or payload.get('input_slot'),
                 'scope': _anchor_identity(payload['scope_anchor']) if payload.get('scope_anchor') else None}
     if action == 'set_quantity_semantics':
-        address = payload['semantic_output']
-        return {'kind': 'semantic_output', 'definition': _anchor_identity(address['definition_anchor']),
+        direction = 'input' if 'semantic_input' in payload else 'output'
+        address = payload['semantic_' + direction]
+        return {'kind': 'semantic_' + direction, 'definition': _anchor_identity(address['definition_anchor']),
                 'construction': _anchor_identity(address['construction_anchor']),
                 'construction_role': address['construction_role'], 'semantic_role': address['semantic_role'],
-                'output_port': address['output_port'], 'invocation_path': address.get('invocation_path'),
+                **({'input_slot': address['input_slot'], 'formal': address['formal']} if direction == 'input'
+                   else {'output_port': address['output_port']}),
+                'invocation_path': address.get('invocation_path') or [],
                 'branch_id': address['branch_id']}
+    if action in ('set_term_boundary', 'set_term_interpretation'):
+        return {'kind': action.removeprefix('set_'), 'source': _anchor_identity(evidence)}
+    if action == 'approve_reviewed_relation':
+        return {'kind': 'reviewed_relation', 'source': _anchor_identity(payload['division_anchor']),
+                'invocation_path': payload['invocation_path']}
     if action in ('set_scope',):
         return {'kind': 'definition_scope', 'definition': _anchor_identity(payload['definition_anchor'])}
     if action in ('select_candidate', 'reject_candidate'):
@@ -82,7 +93,33 @@ def validate_action_payload(packet, action, payload, targets):
         if payload.get('scope_anchor') is not None:
             validate_anchor(packet, payload['scope_anchor'])
     elif action == 'set_quantity_semantics':
-        validate_semantic_output_address(packet, payload.get('semantic_output'))
+        if bool(payload.get('semantic_input')) == bool(payload.get('semantic_output')):
+            raise ValueError('quantity_requires_one_semantic_address')
+        if 'semantic_input' in payload:
+            validate_semantic_input_address(packet, payload['semantic_input'])
+        else:
+            validate_semantic_output_address(packet, payload.get('semantic_output'))
+        if 'facets' in payload:
+            from .quantity_targets import validate_quantity_facets
+            validate_quantity_facets(payload['facets'])
+    elif action == 'set_term_boundary':
+        from .term_claims import validate_term_boundary
+        validate_term_boundary(packet, targets[0], payload.get('branch_id', 'main'))
+    elif action == 'set_term_interpretation':
+        _require(payload, 'claim')
+        claim = payload['claim']
+        if claim.get('schema') != 'TermInterpretationClaim/1':
+            raise ValueError('unsupported_term_interpretation_contract')
+        from .anchors import anchor_key
+        validate_anchor(packet, claim.get('anchor'))
+        if anchor_key(claim['anchor']) != anchor_key(targets[0]):
+            raise ValueError('term_interpretation_target_mismatch')
+    elif action == 'approve_reviewed_relation':
+        from .reviewed_relations import validate_relation_payload
+        validate_relation_payload(packet, payload)
+        from .anchors import anchor_key
+        if anchor_key(payload['division_anchor']) != anchor_key(targets[0]):
+            raise ValueError('relation_target_must_be_attested_division')
     elif action == 'select_profile':
         _require(payload, 'profile_id')
     elif action == 'attach_context':

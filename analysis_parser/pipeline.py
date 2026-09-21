@@ -205,7 +205,7 @@ class Parser:
         if not frames:frames=self.env.remainders[-1:]
         all_candidates=[r['event']['writes']['remainder'] for r in frames]
         expected={'小餘':'day_fraction','中餘':'medial_fraction','月餘':'month_fraction'}.get(label,UNITS.get(label))
-        unknown_units={'opaque','opaque_fraction','product'}
+        unknown_units={'opaque','opaque_fraction','product','unknown'}
         candidates=[v for v in all_candidates if expected is None or self.env.values[v]['unit']==expected or self.env.values[v]['unit'] in unknown_units]
         selected=candidates[0] if len(candidates)==1 else None
         reason=None

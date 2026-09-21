@@ -166,6 +166,31 @@ def _span_at(doc, a, b):
     return _anchor(doc, mapping[a], mapping[b-1] + 1)
 
 
+def term_tokens(doc, boundary_claims):
+    """Use the native tokenizer plus exact occurrence-specific Term edges."""
+    tokens = lexical.tokenize_candidates(doc, {})
+    ranges = []
+    for anchor in boundary_claims:
+        if anchor['doc_id'] != doc['doc_id']:
+            continue
+        _check_anchor(anchor, doc)
+        start, end = _analysis_range(anchor, doc)
+        mapped = doc['analysis_to_source'][start:end]
+        _require(bool(mapped) and all(not doc['text'][a+1:b] or doc['text'][a+1:b].isspace()
+                                      for a, b in zip(mapped, mapped[1:])), 'term_anchor_excluded_text')
+        _require(mapped[0] == anchor['start'] and mapped[-1] + 1 == anchor['end'], 'term_anchor_analysis_mapping')
+        _require(not any(start < other_end and other_start < end and (start, end) != (other_start, other_end)
+                         for other_start, other_end in ranges), 'overlapping_term_boundaries')
+        if (start, end) in ranges:
+            continue
+        ranges.append((start, end))
+        if not any(t['kind'] == 'Term' and t['start'] == start and t['end'] == end for t in tokens):
+            tokens.append({'kind': 'Term', 'text': doc['analysis_text'][start:end],
+                           'start': start, 'end': end,
+                           'source_span': inputs.span(doc, anchor['start'], anchor['end'])})
+    return sorted(tokens, key=lambda t: (t['start'], t['end'], t['kind']))
+
+
 def _regions(doc, syntax, explicit):
     regions = {}
     def add(span, analysis_range, basis, origins):
@@ -216,19 +241,30 @@ def _rule_expression(rule, children, concepts, constructors):
     return result
 
 
-def suggest_term_semantics(doc, *, registry=None, term_regions=(), max_candidates=1024):
+def suggest_term_semantics(doc, *, registry=None, term_regions=(), term_boundaries=(), max_candidates=1024):
     """Generate suggestions without mutating documents, registry or native IR."""
     _document(doc)
     _require(type(max_candidates) is int and max_candidates > 0, 'max_candidates:positive_integer')
+    term_boundaries = tuple({key: boundary[key] for key in ('doc_id', 'reading_id', 'source_sha256', 'start', 'end', 'quote')}
+                            for boundary in term_boundaries)
     registry = load_kernel() if registry is None else _registry_view(registry)
     concepts = _keyed(registry['concepts'], 'concepts')
     constructors = _keyed(registry['constructors'], 'constructors')
     cues = sorted(registry['lexical_cues'], key=lambda r: r['id'])
-    tokens = lexical.tokenize_candidates(doc, [cue['form'] for cue in cues])
+    # Boundary claims are exact local lexical edges. Cue forms still contribute
+    # ordinary suggestions, but no boundary surface enters a global lexicon.
+    tokens = term_tokens(doc, term_boundaries)
+    cue_tokens = lexical.tokenize_candidates(doc, [cue['form'] for cue in cues])
+    token_keys = {(t['start'], t['end'], t['kind']) for t in tokens}
+    tokens.extend(t for t in cue_tokens if (t['start'], t['end'], t['kind']) not in token_keys)
+    tokens.sort(key=lambda t: (t['start'], t['end'], t['kind']))
     syntax = construction_ir.parse_syntax(tokens, doc).to_dict()
-    regions = _regions(doc, syntax, term_regions)
+    explicit_regions = tuple(term_regions) + tuple(term_boundaries)
+    regions = _regions(doc, syntax, explicit_regions)
     identity = _identity(doc, registry, max_candidates)
     identity['options']['term_regions'] = sorted((deepcopy(r) for r in term_regions), key=_json)
+    if term_boundaries:
+        identity['options']['term_boundaries'] = sorted((deepcopy(r) for r in term_boundaries), key=_json)
     out = {'schema': 'TermSemanticCandidates/1', 'identity': identity, 'candidates': [],
            'fixed_expression_candidates': [], 'regions': regions, 'diagnostics': [],
            'truncated': False, 'syntax_preview': syntax}
@@ -374,15 +410,20 @@ def _validate_term_bundle(bundle, doc, registry, trusted_syntax=None):
     ident = bundle['identity']
     expected = _identity(doc, registry, ident['options']['max_candidates'])
     _require(set(ident) == set(expected) and all(ident[k] == v for k, v in expected.items() if k != 'options'), 'bundle_identity:mismatch')
-    _require(set(ident['options']) == {'max_candidates', 'term_regions'}, 'options_fields')
+    _require({'max_candidates', 'term_regions'} <= set(ident['options']) <=
+             {'max_candidates', 'term_regions', 'term_boundaries'}, 'options_fields')
     _require(type(ident['options']['max_candidates']) is int and ident['options']['max_candidates'] > 0, 'max_candidates:positive_integer')
-    for region in ident['options']['term_regions']:
+    for region in (*ident['options']['term_regions'], *ident['options'].get('term_boundaries', [])):
         _check_anchor(region, doc)
     if trusted_syntax is None:
-        tokens = lexical.tokenize_candidates(doc, [cue['form'] for cue in registry['lexical_cues']])
+        tokens = term_tokens(doc, ident['options'].get('term_boundaries', []))
+        cue_tokens = lexical.tokenize_candidates(doc, [cue['form'] for cue in registry['lexical_cues']])
+        token_keys = {(t['start'], t['end'], t['kind']) for t in tokens}
+        tokens.extend(t for t in cue_tokens if (t['start'], t['end'], t['kind']) not in token_keys)
+        tokens.sort(key=lambda t: (t['start'], t['end'], t['kind']))
         trusted_syntax = construction_ir.parse_syntax(tokens, doc).to_dict()
     _require(bundle['syntax_preview'] == trusted_syntax, 'region_syntax_preview:mismatch')
-    expected_regions = _regions(doc, trusted_syntax, ident['options']['term_regions'])
+    expected_regions = _regions(doc, trusted_syntax, (*ident['options']['term_regions'], *ident['options'].get('term_boundaries', [])))
     _require(bundle['regions'] == expected_regions, 'region_provenance:mismatch')
     regions = _keyed(bundle['regions'], 'regions')
     for region in regions.values():
@@ -455,12 +496,15 @@ def _validate_term_bundle(bundle, doc, registry, trusted_syntax=None):
                  any(d['kind'] == 'candidate_limit' for d in bundle['diagnostics'])), 'truncation_diagnostic')
 
 
-def suggest_packet_semantics(packet, *, term_regions=None, registry=None, max_candidates=1024):
+def suggest_packet_semantics(packet, *, term_regions=None, term_boundaries=None, registry=None, max_candidates=1024):
     """One independent bundle per reading; duplicate document IDs are errors."""
     docs = inputs.documents(packet)
     _require(len({d['doc_id'] for d in docs}) == len(docs), 'duplicate_doc_id')
     regions = {} if term_regions is None else term_regions
+    boundaries = {} if term_boundaries is None else term_boundaries
     _require(isinstance(regions, dict) and set(regions) <= {d['doc_id'] for d in docs}, 'term_regions:unknown_doc_id')
+    _require(isinstance(boundaries, dict) and set(boundaries) <= {d['doc_id'] for d in docs}, 'term_boundaries:unknown_doc_id')
     knowledge = load_kernel() if registry is None else _registry_view(registry)
     return {d['doc_id']: suggest_term_semantics(d, registry=knowledge,
-             term_regions=regions.get(d['doc_id'], ()), max_candidates=max_candidates) for d in docs}
+             term_regions=regions.get(d['doc_id'], ()), term_boundaries=boundaries.get(d['doc_id'], ()),
+             max_candidates=max_candidates) for d in docs}

@@ -1,0 +1,1134 @@
+{
+  "fixture_schema": "ScholarSourceProjectionGolden/1.1",
+  "fixture_id": "sifen-proc38-no-context-focused",
+  "contract_revision": "1.1",
+  "purpose": "Full authored stable scholar projection for Han Si-fen li §38 with no context and no human decisions.",
+  "comparison_policy": {
+    "exact_stable_equality_required": true,
+    "allow_extra_scholar_objects": false,
+    "allow_additional_verbose_evidence_outside_stable_view": true
+  },
+  "expected_counts": {
+    "terms": 19,
+    "constructions": 8,
+    "steps": 5,
+    "flows": 3,
+    "review_facets": 9,
+    "links": 26,
+    "projection_diagnostics": 0
+  },
+  "expected": {
+    "source": {
+      "source_id": "sifen",
+      "unit_id": "sifen:section:38",
+      "doc_id": "sifen:38",
+      "reading_id": "sifen:38.7e79b4ae7a87",
+      "text": "推天正術，置入蔀年減一，以章月乘之，滿章法得一，名為積月，不滿為閏餘，十二以上，其歲有閏。"
+    },
+    "terms": [
+      {
+        "id": "term:sifen:38:6-9",
+        "span": [
+          6,
+          9
+        ],
+        "surface": "入蔀年",
+        "display_level": "maximal",
+        "children": [
+          "term:sifen:38:6-7",
+          "term:sifen:38:7-8",
+          "term:sifen:38:8-9"
+        ],
+        "composition_alternatives": [
+          [
+            "term:sifen:38:6-7",
+            "term:sifen:38:7-8",
+            "term:sifen:38:8-9"
+          ]
+        ],
+        "semantic_candidates": [
+          {
+            "expression": "localized_quantity(scope.bu,time.civil_year)",
+            "status": "suggested",
+            "rule_id": "C06"
+          },
+          {
+            "expression": "localized_quantity(scope.bu,time.year)",
+            "status": "suggested",
+            "rule_id": "C06"
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:6-7",
+        "span": [
+          6,
+          7
+        ],
+        "surface": "入",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "relation.entry",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:7-9",
+        "span": [
+          7,
+          9
+        ],
+        "surface": "蔀年",
+        "display_level": "component",
+        "children": [
+          "term:sifen:38:7-8",
+          "term:sifen:38:8-9"
+        ],
+        "composition_alternatives": [
+          [
+            "term:sifen:38:7-8",
+            "term:sifen:38:8-9"
+          ]
+        ],
+        "semantic_candidates": [
+          {
+            "expression": "scoped_quantity(scope.bu,time.civil_year)",
+            "status": "suggested",
+            "rule_id": "C07"
+          },
+          {
+            "expression": "scoped_quantity(scope.bu,time.year)",
+            "status": "suggested",
+            "rule_id": "C07"
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:7-8",
+        "span": [
+          7,
+          8
+        ],
+        "surface": "蔀",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "scope.bu",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:8-9",
+        "span": [
+          8,
+          9
+        ],
+        "surface": "年",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "time.civil_year",
+            "status": "suggested",
+            "rule_id": null
+          },
+          {
+            "expression": "time.year",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:13-15",
+        "span": [
+          13,
+          15
+        ],
+        "surface": "章月",
+        "display_level": "maximal",
+        "children": [
+          "term:sifen:38:13-14",
+          "term:sifen:38:14-15"
+        ],
+        "composition_alternatives": [
+          [
+            "term:sifen:38:13-14",
+            "term:sifen:38:14-15"
+          ]
+        ],
+        "semantic_candidates": [
+          {
+            "expression": "scoped_quantity(scope.zhang,time.civil_month)",
+            "status": "suggested",
+            "rule_id": "C07"
+          },
+          {
+            "expression": "scoped_quantity(scope.zhang,time.lunation)",
+            "status": "suggested",
+            "rule_id": "C07"
+          },
+          {
+            "expression": "scoped_quantity(scope.zhang,time.month)",
+            "status": "suggested",
+            "rule_id": "C07"
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:13-14",
+        "span": [
+          13,
+          14
+        ],
+        "surface": "章",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "scope.zhang",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:14-15",
+        "span": [
+          14,
+          15
+        ],
+        "surface": "月",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "body.moon",
+            "status": "suggested",
+            "rule_id": null
+          },
+          {
+            "expression": "time.civil_month",
+            "status": "suggested",
+            "rule_id": null
+          },
+          {
+            "expression": "time.lunation",
+            "status": "suggested",
+            "rule_id": null
+          },
+          {
+            "expression": "time.month",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:19-21",
+        "span": [
+          19,
+          21
+        ],
+        "surface": "章法",
+        "display_level": "maximal",
+        "children": [
+          "term:sifen:38:19-20",
+          "term:sifen:38:20-21"
+        ],
+        "composition_alternatives": [
+          [
+            "term:sifen:38:19-20",
+            "term:sifen:38:20-21"
+          ]
+        ],
+        "semantic_candidates": [
+          {
+            "expression": "factor_for(scope.zhang)",
+            "status": "suggested",
+            "rule_id": "C03"
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:19-20",
+        "span": [
+          19,
+          20
+        ],
+        "surface": "章",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "scope.zhang",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:20-21",
+        "span": [
+          20,
+          21
+        ],
+        "surface": "法",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "compute.factor",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:26-28",
+        "span": [
+          26,
+          28
+        ],
+        "surface": "積月",
+        "display_level": "maximal",
+        "children": [
+          "term:sifen:38:26-27",
+          "term:sifen:38:27-28"
+        ],
+        "composition_alternatives": [
+          [
+            "term:sifen:38:26-27",
+            "term:sifen:38:27-28"
+          ]
+        ],
+        "semantic_candidates": [
+          {
+            "expression": "accumulation(time.civil_month)",
+            "status": "suggested",
+            "rule_id": "C01"
+          },
+          {
+            "expression": "accumulation(time.lunation)",
+            "status": "suggested",
+            "rule_id": "C01"
+          },
+          {
+            "expression": "accumulation(time.month)",
+            "status": "suggested",
+            "rule_id": "C01"
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:26-27",
+        "span": [
+          26,
+          27
+        ],
+        "surface": "積",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "compute.accumulation",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:27-28",
+        "span": [
+          27,
+          28
+        ],
+        "surface": "月",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "body.moon",
+            "status": "suggested",
+            "rule_id": null
+          },
+          {
+            "expression": "time.civil_month",
+            "status": "suggested",
+            "rule_id": null
+          },
+          {
+            "expression": "time.lunation",
+            "status": "suggested",
+            "rule_id": null
+          },
+          {
+            "expression": "time.month",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:32-34",
+        "span": [
+          32,
+          34
+        ],
+        "surface": "閏餘",
+        "display_level": "maximal",
+        "children": [
+          "term:sifen:38:32-33",
+          "term:sifen:38:33-34"
+        ],
+        "composition_alternatives": [
+          [
+            "term:sifen:38:32-33",
+            "term:sifen:38:33-34"
+          ]
+        ],
+        "semantic_candidates": [
+          {
+            "expression": "residual_of(calendar.intercalation)",
+            "status": "suggested",
+            "rule_id": "C02"
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:32-33",
+        "span": [
+          32,
+          33
+        ],
+        "surface": "閏",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "calendar.intercalation",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:33-34",
+        "span": [
+          33,
+          34
+        ],
+        "surface": "餘",
+        "display_level": "component",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "compute.residual",
+            "status": "suggested",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:41-42",
+        "span": [
+          41,
+          42
+        ],
+        "surface": "歲",
+        "display_level": "maximal",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "time.civil_year",
+            "status": "unresolved",
+            "rule_id": null
+          },
+          {
+            "expression": "time.solar_cycle",
+            "status": "unresolved",
+            "rule_id": null
+          }
+        ]
+      },
+      {
+        "id": "term:sifen:38:43-44",
+        "span": [
+          43,
+          44
+        ],
+        "surface": "閏",
+        "display_level": "maximal",
+        "children": [],
+        "composition_alternatives": [],
+        "semantic_candidates": [
+          {
+            "expression": "calendar.intercalation",
+            "status": "unresolved",
+            "rule_id": null
+          }
+        ]
+      }
+    ],
+    "constructions": [
+      {
+        "id": "construction:sifen:38:0-4:task_marker",
+        "span": [
+          0,
+          4
+        ],
+        "surface": "推天正術",
+        "construction_kind": "task_marker",
+        "public_kind": "Heading",
+        "parse_status": "machine_selected",
+        "slots": [
+          {
+            "name": "marker",
+            "surface": "推",
+            "span": [
+              0,
+              1
+            ]
+          },
+          {
+            "name": "target",
+            "surface": "天正術",
+            "span": [
+              1,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "id": "construction:sifen:38:5-11:load",
+        "span": [
+          5,
+          11
+        ],
+        "surface": "置入蔀年減一",
+        "construction_kind": "load",
+        "public_kind": "Load",
+        "parse_status": "machine_selected",
+        "slots": [
+          {
+            "name": "value",
+            "surface": "入蔀年",
+            "span": [
+              6,
+              9
+            ]
+          },
+          {
+            "name": "decrement",
+            "surface": "一",
+            "span": [
+              10,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "id": "construction:sifen:38:12-17:multiply",
+        "span": [
+          12,
+          17
+        ],
+        "surface": "以章月乘之",
+        "construction_kind": "multiply",
+        "public_kind": "Multiply",
+        "parse_status": "machine_selected",
+        "slots": [
+          {
+            "name": "left",
+            "surface": "章月",
+            "span": [
+              13,
+              15
+            ]
+          },
+          {
+            "name": "right",
+            "surface": "之",
+            "span": [
+              16,
+              17
+            ]
+          }
+        ]
+      },
+      {
+        "id": "construction:sifen:38:18-23:divide",
+        "span": [
+          18,
+          23
+        ],
+        "surface": "滿章法得一",
+        "construction_kind": "divide",
+        "public_kind": "DivMod",
+        "parse_status": "machine_selected",
+        "slots": [
+          {
+            "name": "divisor",
+            "surface": "章法",
+            "span": [
+              19,
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "id": "construction:sifen:38:24-28:name",
+        "span": [
+          24,
+          28
+        ],
+        "surface": "名為積月",
+        "construction_kind": "name",
+        "public_kind": "Name",
+        "parse_status": "machine_selected",
+        "slots": [
+          {
+            "name": "label",
+            "surface": "積月",
+            "span": [
+              26,
+              28
+            ]
+          }
+        ]
+      },
+      {
+        "id": "construction:sifen:38:29-34:remainder_name",
+        "span": [
+          29,
+          34
+        ],
+        "surface": "不滿為閏餘",
+        "construction_kind": "remainder_name",
+        "public_kind": "NameRemainder",
+        "parse_status": "machine_selected",
+        "slots": [
+          {
+            "name": "label",
+            "surface": "閏餘",
+            "span": [
+              32,
+              34
+            ]
+          }
+        ]
+      },
+      {
+        "id": "construction:sifen:38:35-39:threshold",
+        "span": [
+          35,
+          39
+        ],
+        "surface": "十二以上",
+        "construction_kind": "threshold",
+        "public_kind": "Threshold",
+        "parse_status": "machine_selected",
+        "slots": [
+          {
+            "name": "lower",
+            "surface": "十二",
+            "span": [
+              35,
+              37
+            ]
+          }
+        ]
+      },
+      {
+        "id": "construction:sifen:38:40-44:judgment",
+        "span": [
+          40,
+          44
+        ],
+        "surface": "其歲有閏",
+        "construction_kind": "judgment",
+        "public_kind": "Judgment",
+        "parse_status": "machine_selected",
+        "slots": []
+      }
+    ],
+    "steps": [
+      {
+        "id": "step:sifen:38:5-11:load:0",
+        "source_spans": [
+          [
+            5,
+            11
+          ]
+        ],
+        "operation": "load",
+        "construction_ids": [
+          "construction:sifen:38:5-11:load"
+        ],
+        "inputs": [
+          {
+            "role": "value",
+            "term_id": "term:sifen:38:6-9",
+            "term_link_basis": "structurally_derived",
+            "flow_id": "flow:sifen:38:入蔀年"
+          }
+        ],
+        "outputs": [
+          {
+            "port": "result",
+            "labels": [],
+            "quantity_kind": "count"
+          }
+        ]
+      },
+      {
+        "id": "step:sifen:38:5-11:subtract:0",
+        "source_spans": [
+          [
+            5,
+            11
+          ]
+        ],
+        "operation": "subtract",
+        "construction_ids": [
+          "construction:sifen:38:5-11:load"
+        ],
+        "inputs": [
+          {
+            "role": "left",
+            "from_step_id": "step:sifen:38:5-11:load:0"
+          },
+          {
+            "role": "right",
+            "literal": 1
+          }
+        ],
+        "outputs": [
+          {
+            "port": "result",
+            "labels": [],
+            "quantity_kind": "count"
+          }
+        ]
+      },
+      {
+        "id": "step:sifen:38:12-17:multiply:0",
+        "source_spans": [
+          [
+            12,
+            17
+          ]
+        ],
+        "operation": "multiply",
+        "construction_ids": [
+          "construction:sifen:38:12-17:multiply"
+        ],
+        "inputs": [
+          {
+            "role": "left",
+            "term_id": "term:sifen:38:13-15",
+            "term_link_basis": "structurally_derived",
+            "flow_id": "flow:sifen:38:章月"
+          },
+          {
+            "role": "right",
+            "from_step_id": "step:sifen:38:5-11:subtract:0",
+            "surface_reference": "之"
+          }
+        ],
+        "outputs": [
+          {
+            "port": "result",
+            "labels": [],
+            "quantity_kind": "unknown"
+          }
+        ]
+      },
+      {
+        "id": "step:sifen:38:18-23:divmod:0",
+        "source_spans": [
+          [
+            18,
+            23
+          ]
+        ],
+        "operation": "divmod",
+        "construction_ids": [
+          "construction:sifen:38:18-23:divide"
+        ],
+        "inputs": [
+          {
+            "role": "dividend",
+            "from_step_id": "step:sifen:38:12-17:multiply:0"
+          },
+          {
+            "role": "divisor",
+            "term_id": "term:sifen:38:19-21",
+            "term_link_basis": "structurally_derived",
+            "flow_id": "flow:sifen:38:章法"
+          }
+        ],
+        "outputs": [
+          {
+            "port": "quotient",
+            "labels": [
+              "積月"
+            ],
+            "naming_construction_ids": [
+              "construction:sifen:38:24-28:name"
+            ],
+            "label_term_ids": [
+              "term:sifen:38:26-28"
+            ],
+            "quantity_kind": "count"
+          },
+          {
+            "port": "remainder",
+            "labels": [
+              "閏餘"
+            ],
+            "naming_construction_ids": [
+              "construction:sifen:38:29-34:remainder_name"
+            ],
+            "label_term_ids": [
+              "term:sifen:38:32-34"
+            ],
+            "quantity_kind": "count"
+          }
+        ]
+      },
+      {
+        "id": "step:sifen:38:35-44:threshold:0",
+        "source_spans": [
+          [
+            35,
+            39
+          ],
+          [
+            40,
+            44
+          ]
+        ],
+        "operation": "threshold",
+        "construction_ids": [
+          "construction:sifen:38:35-39:threshold",
+          "construction:sifen:38:40-44:judgment"
+        ],
+        "judgment": "其歲有閏",
+        "inputs": [
+          {
+            "role": "value",
+            "from_step_id": "step:sifen:38:18-23:divmod:0",
+            "output_port": "remainder",
+            "label": "閏餘"
+          },
+          {
+            "role": "lower",
+            "literal": 12
+          }
+        ],
+        "outputs": [
+          {
+            "port": "result",
+            "labels": [],
+            "quantity_kind": "predicate"
+          }
+        ]
+      }
+    ],
+    "flows": [
+      {
+        "id": "flow:sifen:38:入蔀年",
+        "formal": "入蔀年",
+        "consumer_step_ids": [
+          "step:sifen:38:5-11:load:0"
+        ],
+        "status": "unresolved_source",
+        "producer_step_id": null,
+        "producer_source": null,
+        "selected_port": "入蔀年",
+        "output_port": "入蔀年"
+      },
+      {
+        "id": "flow:sifen:38:章月",
+        "formal": "章月",
+        "consumer_step_ids": [
+          "step:sifen:38:12-17:multiply:0"
+        ],
+        "status": "unresolved_source",
+        "producer_step_id": null,
+        "producer_source": null,
+        "selected_port": "章月",
+        "output_port": "章月"
+      },
+      {
+        "id": "flow:sifen:38:章法",
+        "formal": "章法",
+        "consumer_step_ids": [
+          "step:sifen:38:18-23:divmod:0"
+        ],
+        "status": "unresolved_source",
+        "producer_step_id": null,
+        "producer_source": null,
+        "selected_port": "章法",
+        "output_port": "章法"
+      }
+    ],
+    "review_facets": [
+      {
+        "object_id": "construction:sifen:38:5-11:load",
+        "facet": "quantity_meaning",
+        "status": "pending"
+      },
+      {
+        "object_id": "term:sifen:38:6-9",
+        "facet": "source_supply",
+        "status": "pending"
+      },
+      {
+        "object_id": "term:sifen:38:6-9",
+        "facet": "term_meaning",
+        "status": "pending"
+      },
+      {
+        "object_id": "term:sifen:38:13-15",
+        "facet": "source_supply",
+        "status": "pending"
+      },
+      {
+        "object_id": "term:sifen:38:13-15",
+        "facet": "term_meaning",
+        "status": "pending"
+      },
+      {
+        "object_id": "term:sifen:38:19-21",
+        "facet": "source_supply",
+        "status": "pending"
+      },
+      {
+        "object_id": "term:sifen:38:19-21",
+        "facet": "term_meaning",
+        "status": "pending"
+      },
+      {
+        "object_id": "term:sifen:38:26-28",
+        "facet": "term_meaning",
+        "status": "pending"
+      },
+      {
+        "object_id": "term:sifen:38:32-34",
+        "facet": "term_meaning",
+        "status": "pending"
+      }
+    ],
+    "links": [
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:13-15",
+        "to_id": "term:sifen:38:13-14",
+        "basis": "explicit",
+        "ordinal": 0
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:13-15",
+        "to_id": "term:sifen:38:14-15",
+        "basis": "explicit",
+        "ordinal": 1
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:19-21",
+        "to_id": "term:sifen:38:19-20",
+        "basis": "explicit",
+        "ordinal": 0
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:19-21",
+        "to_id": "term:sifen:38:20-21",
+        "basis": "explicit",
+        "ordinal": 1
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:26-28",
+        "to_id": "term:sifen:38:26-27",
+        "basis": "explicit",
+        "ordinal": 0
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:26-28",
+        "to_id": "term:sifen:38:27-28",
+        "basis": "explicit",
+        "ordinal": 1
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:32-34",
+        "to_id": "term:sifen:38:32-33",
+        "basis": "explicit",
+        "ordinal": 0
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:32-34",
+        "to_id": "term:sifen:38:33-34",
+        "basis": "explicit",
+        "ordinal": 1
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:6-9",
+        "to_id": "term:sifen:38:6-7",
+        "basis": "explicit",
+        "ordinal": 0
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:6-9",
+        "to_id": "term:sifen:38:7-8",
+        "basis": "explicit",
+        "ordinal": 1
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:6-9",
+        "to_id": "term:sifen:38:8-9",
+        "basis": "explicit",
+        "ordinal": 2
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:7-9",
+        "to_id": "term:sifen:38:7-8",
+        "basis": "explicit",
+        "ordinal": 0
+      },
+      {
+        "relation": "has_component",
+        "from_id": "term:sifen:38:7-9",
+        "to_id": "term:sifen:38:8-9",
+        "basis": "explicit",
+        "ordinal": 1
+      },
+      {
+        "relation": "fills_slot",
+        "from_id": "term:sifen:38:13-15",
+        "to_id": "construction:sifen:38:12-17:multiply",
+        "role": "left",
+        "basis": "structurally_derived"
+      },
+      {
+        "relation": "fills_slot",
+        "from_id": "term:sifen:38:19-21",
+        "to_id": "construction:sifen:38:18-23:divide",
+        "role": "divisor",
+        "basis": "structurally_derived"
+      },
+      {
+        "relation": "fills_slot",
+        "from_id": "term:sifen:38:26-28",
+        "to_id": "construction:sifen:38:24-28:name",
+        "role": "label",
+        "basis": "structurally_derived"
+      },
+      {
+        "relation": "fills_slot",
+        "from_id": "term:sifen:38:32-34",
+        "to_id": "construction:sifen:38:29-34:remainder_name",
+        "role": "label",
+        "basis": "structurally_derived"
+      },
+      {
+        "relation": "fills_slot",
+        "from_id": "term:sifen:38:6-9",
+        "to_id": "construction:sifen:38:5-11:load",
+        "role": "value",
+        "basis": "structurally_derived"
+      },
+      {
+        "relation": "realizes",
+        "from_id": "construction:sifen:38:12-17:multiply",
+        "to_id": "step:sifen:38:12-17:multiply:0",
+        "basis": "explicit"
+      },
+      {
+        "relation": "realizes",
+        "from_id": "construction:sifen:38:18-23:divide",
+        "to_id": "step:sifen:38:18-23:divmod:0",
+        "basis": "explicit"
+      },
+      {
+        "relation": "realizes",
+        "from_id": "construction:sifen:38:35-39:threshold",
+        "to_id": "step:sifen:38:35-44:threshold:0",
+        "basis": "explicit"
+      },
+      {
+        "relation": "realizes",
+        "from_id": "construction:sifen:38:40-44:judgment",
+        "to_id": "step:sifen:38:35-44:threshold:0",
+        "basis": "structurally_derived"
+      },
+      {
+        "relation": "realizes",
+        "from_id": "construction:sifen:38:5-11:load",
+        "to_id": "step:sifen:38:5-11:load:0",
+        "basis": "explicit"
+      },
+      {
+        "relation": "realizes",
+        "from_id": "construction:sifen:38:5-11:load",
+        "to_id": "step:sifen:38:5-11:subtract:0",
+        "basis": "explicit"
+      },
+      {
+        "relation": "names_output",
+        "from_id": "construction:sifen:38:24-28:name",
+        "to_id": "step:sifen:38:18-23:divmod:0",
+        "role": "quotient",
+        "basis": "explicit"
+      },
+      {
+        "relation": "names_output",
+        "from_id": "construction:sifen:38:29-34:remainder_name",
+        "to_id": "step:sifen:38:18-23:divmod:0",
+        "role": "remainder",
+        "basis": "explicit"
+      }
+    ]
+  },
+  "forbidden_claims": [
+    "Heading-only syntax slots are not promoted to Term objects without independent domain/review evidence.",
+    "Context-document Term/Construction objects are not mixed into the focused source projection.",
+    "Duplicate semantic links are not hidden only by stable serialization; canonical links are already unique.",
+    "Domain Kernel alternatives are not ranked by serialization order.",
+    "Runtime-value permission is not historical provenance.",
+    "No reviewed facet marks unrelated occurrences or sibling facets reviewed.",
+    "No arithmetic operation absent from the reviewed graph is created by the projection."
+  ]
+}

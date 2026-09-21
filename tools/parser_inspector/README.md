@@ -147,9 +147,25 @@ source_adapters/dependencies.py（两条运行路径共享，无 parser import�
 
 ## Parser stages
 
-当前入口为只读 R1–R4 研究视图，固定 Primary 为 `sifen:section:39`。
-通过 `build_source_packet_from_units()` 读取 effective unit，Context 为空，
-scope 为 `Han_Si_fen_li`。没有 Primary picker 或人工操作按钮。
+未选择审阅作业时保留只读研究视图；在 **Current review** 创建或恢复持久作业，选择现有 effective corpus units 作为 Primary，即进入 K2 的 source-first annotation 工作流。
+
+### K2 持久审阅与 annotation
+
+默认英文、中文原文不改。左侧阅读原文并点击待审标记，右侧一次显示一个当前问题。开启 **Adjust term span** 后直接拖选字符、**Queue selected term**，再 **Confirm term spans and re-run**。边界只进入当前 occurrence 的词法输入，复用原 grammar，不改全局 TERMS。词义可采用机器候选、排除候选，或用现有 registry 概念和规则局部组装。**Why these options?** 保留候选推导树、规则、provenance 和三轴状态；R1–R4/K 完整 evidence 在 **Inspection / Evidence**。问题与选项全部来自确定性代码与预写文案，没有运行时 LLM。
+
+标记与拖选按 `doc_id / reading_id / Unicode [start,end) / quote` 定位 Primary 或 Context。来源问题可附加 Context、绑定真实 producer/port 或声明外部输入；Context 附件不等于批准解释。Context target 与 payload 地址记录 attachment 依赖，撤销附件传播失效；过时管理范围仍可在 **Management → unmanage** 释放。最后一个问题消失后，效果、历史、撤销、管理、诊断和证据继续显示。
+
+每个作业写入 **`.local/review-jobs/<job_id>.json`**，格式为 **`ReviewJob/1`**。该目录精确 Git 忽略，属于持久研究记录，**不是缓存**。备份使用同页「导出 ReviewJob/1」；导入保留原 ID，拒绝覆盖现有文件。关闭页面或停止服务后，重开选择相同作业即可恢复；URL 的 `review_job` 参数可直接重开。
+
+Envelope 仅保存 `job_id / revision / source_selection / base_packet_identity / analysis_inputs_digest / session / branch_id / management_events / created_at / updated_at`。`session` 仍为现有 `AdjudicationSession`，不保存另一份编译模型。`source_selection` 明确包含来源、Primary/初始 Context unit IDs、provided scope 和 selected profiles；当前 UI 新建 scope/profiles 为空，不隐式批准背景。analysis digest 覆盖 packet 和 active review 代码，session 原有 runtime locks 保留；来源或代码发生变化时作业变为只读，保留历史和导出，不自动迁移。
+
+提交在每个作业的文件锁内核对**页面此前显示的** revision 和 digest，将 decisions 与 management 同时放入副本，trial compile 至失效集合稳定、检查同 facet 冲突与组合兼容性后再原子保存。manage-only / unmanage-only 也重编译。旧页面、非法 payload、编译异常和写盘失败不覆盖旧作业。合法 partial graph 可保存。retract 追加历史，重新验证前提；不会解除接管。
+
+`management_events` 是独立的 append-only 接管记录，含 action（manage/unmanage）、完整 source target、facet、branch、actor、时间、理由、依赖及可选 `semantic_target`。后者复用现有 `normalize_decision_target` 地址，明确输入或输出角色/端口，独立于 decision ID；只有原文跨度而未限定输入/输出时保守保持 pending。证据跨度或 producer 地址不能替代真正的语义目标。撤销解释不删除管理范围；显式退出必须引用已记录 scope，仍有有效语义依赖则拒绝。
+
+数量解释在运算读取之前进入 invocation-local hook。精确目标被接管但没有有效解释时保持 unresolved，抑制对应 fallback 并阻断依赖执行；只有显式 unmanage 才恢复旧路径。绑定接管也在原 linker 中抑制自动 producer 选择。**Run current reviewed model** 复用现有 executor，记录 job/revision/branch/analysis identity/inputs；判断改变后旧结果明确 STALE，重跑读取当前 reviewed graph。月→日关系验证实际 multiply/divmod/参数来源/调用和 sibling ports，分数显示为 `348/940`，不把余数当作 348 天。
+
+回归入口：`tests/adjudication/test_term_claims.py`、`test_quantity_targets.py`、`test_reviewed_relations.py`、`test_k2bc_adversarial.py`，`tests/workbench/test_review_effects.py` 和 `tools/parser_inspector/test_review_panel.py`。浏览器运行 `node tests/k2bc-review-browser.mjs`，临时 corpus/job 与当前研究记录隔离，证据在 `tmp/k2bc-review-tests/`。不恢复 Context B/C/D；不进入 K3 全局 hardcode 清理或 K4 未见语料 evaluation。
 
 `readable.compile_view()` 每次读取分别调用一次 `parse_packet(packet)` 和
 `compile_reviewed(packet, new_session(...))`。后者返回 bundle；

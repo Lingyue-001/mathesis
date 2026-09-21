@@ -1,0 +1,21 @@
+.procedure-model {color:#29343a;font-family:system-ui,sans-serif;}
+.procedure-legend {font-size:11px;color:#637078;line-height:1.8;margin:4px 0 10px;}
+.procedure-canvas {width:100%;overflow-x:auto;}
+.procedure-canvas svg {display:block;max-width:100%;height:auto;margin:0 auto;overflow:visible;}
+.procedure-edge {fill:none;stroke:#8a9398;stroke-width:1.4;}
+.procedure-edge-label {font-size:10px;fill:#59646a;paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round;}
+.procedure-node {cursor:pointer;outline:none;}
+.procedure-node rect {fill:#f7f9fa;stroke:#849299;stroke-width:1.2;}
+.procedure-node.operation rect {fill:#f1eef6;stroke:#7b698b;stroke-width:1.8;}
+.procedure-node.unresolved_input rect {fill:#fbf8ef;stroke:#b7a56c;stroke-dasharray:5 3;}
+.procedure-node.literal rect {fill:#fff;stroke:#b0b8bc;}
+.procedure-node.judgment rect {fill:#edf4ef;stroke:#6b8d77;}
+.procedure-node .procedure-inner-border {fill:none;stroke-width:.7;}
+.procedure-node:hover rect,.procedure-node.active rect,.procedure-node:focus-visible rect {stroke:#57416e;stroke-width:2.5;}
+.procedure-node.active rect {fill:#eae3f0;}
+.procedure-node-label {font-size:14px;font-weight:550;fill:#29343a;}
+.procedure-node-subtitle {font-size:10px;fill:#697276;}
+.procedure-warning {font-size:12px;color:#806329;}
+.procedure-static-detail {border-top:1px solid #dbe0e2;padding-top:12px;margin-top:16px;}
+.procedure-source-context {line-height:1.9;}
+.procedure-static-detail pre {white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;}

@@ -66,21 +66,75 @@ class ScopedParser(Parser):
     def inferred_value(self,kind,reads,spans,rule,attributes,meta,basis,evidence="scholarly_interpretation"):
         v=self.env.value(kind,reads,spans,rule,attributes,meta);self.analytical(self.env.events[self.env.values[v]['producer']],basis,evidence);return v
     def review_metadata(self, syntax_node_id, port, semantic_role):
-        return getattr(self, 'review_output_metadata', {}).get((syntax_node_id, port, semantic_role))
+        mapping = getattr(self, 'review_output_metadata', {})
+        path = tuple(getattr(self, 'review_invocation_path', ()))
+        metadata = (mapping.get((syntax_node_id, port, semantic_role, path))
+                or mapping.get((syntax_node_id, port, semantic_role, ()))
+                or mapping.get((syntax_node_id, port, semantic_role)))
+        for relation in getattr(self, 'review_relation_output_metadata', []):
+            if (relation.get('kind', 'output') == 'output'
+                    and relation['syntax_node_id'] == syntax_node_id and relation['port'] == port
+                    and relation['semantic_role'] == semantic_role
+                    and relation['call_id'] == self.env.scope.get('call_id')):
+                metadata = {**(metadata or {}), **relation['metadata'], 'reviewed_quantity': True}
+        return metadata
+    def review_relation_operation(self, syntax_node_id, semantic_role):
+        """Find a relation preflight validated for this exact lowered operation."""
+        for relation in getattr(self, 'review_relation_operation_metadata', []):
+            if (relation.get('kind') == 'operation' and relation['syntax_node_id'] == syntax_node_id
+                    and relation['semantic_role'] == semantic_role
+                    and relation['call_id'] == self.env.scope.get('call_id')):
+                return relation['metadata']
+        return None
+    def review_read(self, value_id, slot, semantic_role, spans):
+        """Create an identity view for this read, never alter its producer."""
+        candidate = self.current_candidate
+        if not candidate or not value_id:
+            return value_id
+        mapping = getattr(self, 'review_input_metadata', {})
+        path = tuple(getattr(self, 'review_invocation_path', ()))
+        key = (candidate['node_id'], slot, semantic_role)
+        metadata = mapping.get(key + (path,)) or mapping.get(key + ((),))
+        if not metadata:
+            return value_id
+        source = self.env.values[value_id]
+        meta = {key: copy.deepcopy(source[key]) for key in ('unit', 'scale', 'quantity_kind', 'representation') if key in source}
+        viewed = self.env.value('alias', {'value': value_id}, spans, 'REVIEW_QUANTITY_READ',
+                                {'reviewed_semantic_input': True, 'input_slot': slot,
+                                 'semantic_role': semantic_role}, meta)
+        self.apply_review_metadata(viewed, metadata)
+        return viewed
     def apply_review_metadata(self, value_id, metadata):
         """Apply a validated semantic decision at the value emission boundary."""
         if not metadata:
             return
         explicit = {key: value for key, value in metadata.items()
                     if key in ('unit', 'scale', 'role', 'quantity_kind', 'representation')}
+        if metadata.get('coordinate_kind') == 'ordinal' and metadata.get('step_unit') and 'unit' not in explicit:
+            explicit['unit'] = metadata['step_unit']
+        if metadata.get('unresolved_facets'):
+            for facet in metadata['unresolved_facets']:
+                if facet in explicit:
+                    explicit.pop(facet)
+            if set(metadata['unresolved_facets']) & {'unit', 'coordinate_kind', 'step_unit'}:
+                explicit['unit'] = 'unknown'
         value = self.env.reconcile_value(value_id, explicit)
-        refs = metadata.get('decision_refs') or [metadata.get('decision_id')]
+        for key in ('coordinate_kind', 'index_base', 'reference_origin', 'counting_boundary',
+                    'step_unit', 'binding', 'reviewed_quantity', 'managed_facets', 'unresolved_facets'):
+            if key in metadata:
+                value[key] = copy.deepcopy(metadata[key])
+        refs = metadata.get('decision_refs') or metadata.get('adjudication_decision_refs') or [metadata.get('decision_id')]
         value['adjudication_decision_refs'] = [ref for ref in refs if ref]
         event = self.env.events[value['producer']]
         event['adjudication_decision_refs'] = value['adjudication_decision_refs']
         event['evidence_status'] = 'scholarly_calibrated'
         value['evidence_basis'] = metadata.get('evidence_basis', 'scholarship')
         value['decision_origin'] = metadata.get('decision_origin', 'human_selection')
+        if metadata.get('unresolved_facets'):
+            event['attributes']['execution_blocked'] = 'unresolved_managed_quantity'
+            event['attributes']['unresolved_semantic_facets'] = list(metadata['unresolved_facets'])
+            value['resolution_status'] = 'unknown'
+            self.env.issue('unresolved_managed_quantity', event['source_spans'], metadata['unresolved_facets'])
     def context(self):
         decl_ids={};declared_values=[]
         for d in self.context_ir['declarations']:
@@ -112,6 +166,14 @@ class ScopedParser(Parser):
             v=self.inferred_value('parameter',{},supports,'V3_SUPPLIED',{'name':d['label'],'value':d['value'],'declaration':d},{'labels':[d['label']],'role':'parameter','unit':'integer'},d['basis'])
             self.env.parameters.setdefault(d['label'],[]).append(v)
     def get(self,name,spans,parameter=False,focus=None):
+        binding_key=(self.env.scope.get('definition_id'),name)
+        if (binding_key in getattr(self.program,'managed_bindings',{})
+                and binding_key not in getattr(self.program,'binding_constraints',{})):
+            value=self.env.value('input',{},spans,'RESCUE_ROOT',
+                {'name':name,'parameter':False,'execution_blocked':'unresolved_managed_quantity'},
+                {'labels':[name],'role':'external_input','unit':'unknown','unresolved_facets':['binding']})
+            self.env.issue('unresolved_managed_quantity',spans,['binding'])
+            return value
         allowed=getattr(self,'allowed_inputs',{})
         if name in allowed and name not in self.env.active and not parameter:
             meta=allowed[name] if isinstance(allowed[name],dict) else {}
@@ -164,6 +226,8 @@ class ScopedParser(Parser):
                     return {'from':self.env.values[medial_id]['unit'],'to':'month','basis':profile['basis'],'supporting_value_ids':values+[medial_id],'supporting_spans':sum([self.env.values[v]['source_spans'] for v in values+[medial_id]],[]),'rule_id':'RESCUE_MEDIAL_MONTH'}
         return super().medial_month_bridge(medial_id,month_id)
     def binary(self,kind,left,right,spans,rule='R02',attrs=None):
+        left=self.review_read(left,'left',kind,spans)
+        right=self.review_read(right,'right',kind,spans)
         result=super().binary(kind,left,right,spans,rule,attrs)
         if kind=='multiply' and self.env.values[left]['unit']=='integer' and self.env.values[right]['unit']=='integer':self.env.reconcile_value(result, {'unit':'integer'})
         if kind=='multiply':
@@ -201,6 +265,9 @@ class ScopedParser(Parser):
             for key in ('epoch_kind','epoch_proof'):self.env.values[result][key]=copy.deepcopy(lv[key])
         return result
     def divide(self,x,d,spans,cycle=False):
+        role='cycle_reduce' if cycle else 'divmod'
+        x=self.review_read(x,'value',role,spans)
+        d=self.review_read(d,'divisor',role,spans)
         if self.task=='era_entry':
             event=self.env.event('cycle_reduce' if cycle else 'divmod',{'dividend':x,'divisor':d},['quotient','remainder'],spans,'V3_DIV',{'integer_nonnegative':True},{'quotient':{'unit':'integer','role':'quotient'},'remainder':{'unit':'year','role':'remainder'}})
             self.env.remainders.append({'event':event,'claimed':False});self.env.focus=event['writes']['remainder' if cycle else 'quotient'];return event
@@ -210,6 +277,24 @@ class ScopedParser(Parser):
             self.env.values[event['writes']['remainder']]['epoch_kind']=source_frame['epoch']
             self.env.values[event['writes']['remainder']]['epoch_proof']={'parameter':d,'operation':event['id'],'profile':source_frame}
         if not cycle:
+            reviewed_relation = self.review_relation_operation((self.current_candidate or {}).get('node_id'), role)
+            if reviewed_relation:
+                event['attributes'].pop('execution_blocked', None)
+                event['attributes']['quantity_transition'] = {
+                    'status': 'resolved', 'transition': reviewed_relation['transition'],
+                    'decision_refs': list(reviewed_relation['decision_refs']),
+                    'evidence_basis': list(reviewed_relation['evidence_basis']),
+                }
+                event['evidence'] = [{'basis': 'scholarly_interpretation', 'source_locator': ref}
+                                     for ref in reviewed_relation['evidence_basis']]
+                for port, metadata in reviewed_relation['ports'].items():
+                    self.apply_review_metadata(event['writes'][port], metadata)
+                self.task_division[(self.task,self.env.query)] = event
+                if self.task in ('winter','nodes','qi'):
+                    self.day_denominator=d;self.task_denominators[self.task]=d
+                elif self.task=='new_moon':
+                    self.task_denominators[self.task]=d
+                return event
             numerator=self.underlying_event(x)
             matches=[]
             if numerator['kind']=='multiply':
@@ -549,10 +634,26 @@ class ScopedParser(Parser):
         if kind=='subtract':
             self.binary('subtract',self.get(slots['left']['text'],sp),self.get(slots['right']['text'],sp),sp,'V3_SUBTRACT',{'direction':'B-A'});return True
         if kind=='load':
-            source=self.get(slots['value']['text'],sp);value=self.env.values[source]
+            source=self.review_read(self.get(slots['value']['text'],sp),'value','load',sp);value=self.env.values[source]
             self.env.focus=self.env.value('load',{'value':source},sp,'V3_LOAD',{}, {'unit':value['unit'],'scale':value['scale']})
+            if value.get('reviewed_quantity'):
+                self.apply_review_metadata(self.env.focus,value)
+            output_review=self.review_metadata(c['node_id'],'result','load')
+            if output_review and output_review.get('reviewed_quantity'):
+                self.apply_review_metadata(self.env.focus,output_review)
             if 'decrement' in slots:
-                self.binary('subtract',self.env.focus,self.literal(slots['decrement']['text'],sp),sp,'V3_ORDINAL',{'ordinal_to_elapsed':True});self.env.values[self.env.focus]['unit']='year'
+                coordinate=self.env.values[self.env.focus]
+                self.binary('subtract',self.env.focus,self.literal(slots['decrement']['text'],sp),sp,'V3_ORDINAL',{'ordinal_to_elapsed':True})
+                if coordinate.get('reviewed_quantity'):
+                    if coordinate.get('coordinate_kind')=='ordinal' and coordinate.get('index_base')==1 and slots['decrement'].get('value')==1 and coordinate.get('step_unit') and not coordinate.get('unresolved_facets'):
+                        derived={key:copy.deepcopy(coordinate[key]) for key in ('step_unit','reference_origin','counting_boundary','adjudication_decision_refs') if key in coordinate}
+                        derived.update(unit=coordinate['step_unit'],coordinate_kind='elapsed',index_base=0,reviewed_quantity=True,
+                                       decision_refs=coordinate.get('adjudication_decision_refs',[]),decision_origin='automatic_derivation')
+                        self.apply_review_metadata(self.env.focus,derived)
+                    elif coordinate.get('unresolved_facets'):
+                        self.apply_review_metadata(self.env.focus,coordinate)
+                else:
+                    self.env.values[self.env.focus]['unit']='year'
             return True
         if kind=='divide':
             label=slots['value']['text'];dividend=self.get(label,sp) if label else self.env.focus
@@ -803,6 +904,7 @@ def lower_linked(linked, environment):
             p.temporal_anchor=None;p.fraction_denominator=None;p.env.query='main';p.env.scope['query']='main';p.env.active=p.env.main;p.env.remainders=[];p.env.products=[]
             last_doc=p.doc['doc_id']
         call_id='call-'+str(len(p.program.calls)+1)
+        p.review_invocation_path=(ident,)
         call={'id':call_id,'call_id':call_id,'definition_id':ident,'formal_bindings':{},'return_ports':{},'event_ids':[],'source_spans':definition['source_spans'],'body':list(linked.bodies[ident])}
         p.program.calls.append(call);calls[ident]=call
         imports=[item for item in linked.imports if item['consumer_definition_id']==ident]
@@ -860,6 +962,13 @@ def lower_linked(linked, environment):
                 # it while the event is emitted preserves type/audit execution
                 # as the sole graph construction path.
                 for port,vid in event['writes'].items():
+                    if event['kind']=='alias' and event['reads'].get('value'):
+                        source=p.env.values[event['reads']['value']]
+                        if source.get('reviewed_quantity') and not event['attributes'].get('reviewed_semantic_input'):
+                            inherited={key:copy.deepcopy(source[key]) for key in ('unit','scale','quantity_kind','representation','coordinate_kind','index_base','reference_origin','counting_boundary','step_unit','reviewed_quantity','unresolved_facets') if key in source}
+                            inherited['decision_refs']=source.get('adjudication_decision_refs',[])
+                            inherited['decision_origin']='automatic_derivation'
+                            p.apply_review_metadata(vid,inherited)
                     p.apply_review_metadata(vid, p.review_metadata(c['node_id'], port, event['kind']))
             c['status']='selected' if ok else 'unresolved';c['selection_reason']='typed slots and linked source state' if ok else 'no compatible lowering'
             p.report['coverage']['accounted_spans' if ok else 'unparsed_spans'].extend(c['source_spans'])

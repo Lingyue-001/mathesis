@@ -39,6 +39,15 @@ class ReviewTests(unittest.TestCase):
     def state(self):
         return review.load(self.root)
 
+    def test_segmentation_copy_uses_the_shared_inspector_language(self):
+        from tools.parser_inspector.segmentation_review import _description, _ui_copy
+
+        self.assertEqual(_ui_copy('en', 'Corpus Full Text', '语料全文'), 'Corpus Full Text')
+        self.assertEqual(_ui_copy('zh', 'Corpus Full Text', '语料全文'), '语料全文')
+        self.assertEqual(_ui_copy('unexpected', 'Corpus Full Text', '语料全文'), 'Corpus Full Text')
+        self.assertTrue(_description('procedure', '术文', 'en').startswith('Procedure text:'))
+        self.assertEqual(_description('procedure', '术文', 'zh'), '术文')
+
     @unittest.skipUnless(importlib.util.find_spec('streamlit'), 'Streamlit tests run with inspector venv')
     def test_full_text_reads_effective_in_source_order_and_returns_to_selected_review(self):
         from streamlit.testing.v1 import AppTest
@@ -65,6 +74,34 @@ class ReviewTests(unittest.TestCase):
         self.assertEqual(app.text_input(key='seg_reviewer').value, 'full-text-reader')
         self.assertEqual(app.selectbox(key='seg_actor').value, 'scripted_test')
         self.assertEqual(frozen, [p.read_bytes() for p in review.paths(self.root)])
+
+    @unittest.skipUnless(importlib.util.find_spec('streamlit'), 'Streamlit tests run with inspector venv')
+    def test_current_effective_unit_can_continue_to_procedure_analysis_without_a_draft(self):
+        from streamlit.testing.v1 import AppTest
+        app = AppTest.from_function(_review_app, args=(str(self.root),), default_timeout=30).run()
+        button = app.button(key='seg_continue_procedure:sifen')
+        self.assertFalse(button.disabled)
+        selected = self.state()['effective']['units'][app.selectbox(key='seg_auto:sifen').value]
+        app.button(key='seg_continue_procedure:sifen').click().run()
+        self.assertEqual(app.session_state['inspector_page'], 'Parser stages')
+        self.assertEqual(app.session_state['k2_requested_selection'],
+                         {'source_id': 'sifen', 'unit_id': selected['id']})
+
+    @unittest.skipUnless(importlib.util.find_spec('streamlit'), 'Streamlit tests run with inspector venv')
+    def test_procedure_handoff_is_blocked_for_unsaved_or_stale_segmentation(self):
+        from streamlit.testing.v1 import AppTest
+        app = AppTest.from_function(_review_app, args=(str(self.root),), default_timeout=30).run()
+        app.text_input(key='seg_reviewer').set_value('handoff-check').run()
+        type_box = next(box for box in app.selectbox if box.key.startswith('seg_type:'))
+        alternative = next(value for value in type_box.options if value != type_box.value)
+        type_box.set_value(alternative)
+        app.run()
+        self.assertTrue(app.button(key='seg_continue_procedure:sifen').disabled)
+
+        self.root.joinpath('calendars-四分历.md').write_bytes(
+            self.root.joinpath('calendars-四分历.md').read_bytes() + b'\nchanged')
+        stale = AppTest.from_function(_review_app, args=(str(self.root),), default_timeout=30).run()
+        self.assertTrue(stale.button(key='seg_continue_procedure:sifen').disabled)
 
     def test_registered_calendars_have_isolated_workspaces_and_manifest_hashes(self):
         import hashlib
@@ -371,7 +408,7 @@ class ReviewTests(unittest.TestCase):
         position = next(i for i,u in enumerate(self.state()['auto']['units']) if u['sections'] == [40])
         app.selectbox(key='seg_auto:sifen').select(position).run()
         self.assertFalse(any('关系' in item.label and '名称' in item.label for item in app.text_input))
-        self.assertTrue(any('分块类型说明' in e.label for e in app.expander))
+        self.assertTrue(any('Segmentation types' in e.label for e in app.expander))
         kinds = next(s for s in app.selectbox if s.key.startswith('seg_relation_kind:'))
         self.assertEqual(set(kinds.options), {'alternative_of_candidate', 'alternative_of'})
         kinds.select('alternative_of').run()
@@ -410,7 +447,7 @@ class ReviewTests(unittest.TestCase):
         next(s for s in app.selectbox if s.key.startswith('seg_type:')).select(new_type).run()
         self.assertTrue(app.button(key='seg_next:sifen').disabled)
         self.assertEqual(app.selectbox(key='seg_auto:sifen').value, start)
-        self.assertTrue(any('未保存' in w.value for w in app.warning))
+        self.assertTrue(any('unsaved changes' in w.value for w in app.warning))
         app.button(key='seg_save_type:sifen').click().run()
         self.assertFalse(app.exception)
         self.assertFalse(app.button(key='seg_next:sifen').disabled)
@@ -516,14 +553,14 @@ class ReviewTests(unittest.TestCase):
         self.assertFalse(app.exception)
         self.assertEqual(self.unit(layer='auto')['human_review'][-1]['status'], 'accepted')
         self.assertEqual(app.selectbox(key='seg_auto:sifen').value, position)
-        self.assertIn('已审·原样接受', app.selectbox(key='seg_auto:sifen').options[position])
+        self.assertIn('reviewed · accepted unchanged', app.selectbox(key='seg_auto:sifen').options[position])
         types = next(s for s in app.selectbox if s.key.startswith('seg_type:'))
         types.select('discourse').run()
         app.button(key='seg_save_type:sifen').click().run()
         self.assertFalse(app.exception)
         self.assertEqual(self.unit()['type'], 'discourse')
         self.assertEqual(app.selectbox(key='seg_auto:sifen').value, position)
-        self.assertIn('已审·已修改', app.selectbox(key='seg_auto:sifen').options[position])
+        self.assertIn('reviewed · modified', app.selectbox(key='seg_auto:sifen').options[position])
         self.act('accept', self.unit(15))  # A second tab/process changed the store.
         app.run()
         self.assertFalse(app.button(key='seg_merge_down:sifen').disabled)

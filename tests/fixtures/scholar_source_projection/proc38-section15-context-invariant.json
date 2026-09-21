@@ -1,0 +1,81 @@
+{
+  "fixture_schema": "ScholarSourceProjectionContextInvariant/1.1",
+  "fixture_id": "sifen-proc38-focus-with-section15-context",
+  "contract_revision": "1.1",
+  "setup": {
+    "focus_doc_id": "sifen:38",
+    "attached_context_unit": "sifen:section:15"
+  },
+  "required_equal_to_base_fixture": [
+    "source",
+    "terms",
+    "constructions",
+    "steps",
+    "links"
+  ],
+  "expected_counts": {
+    "terms": 19,
+    "constructions": 8,
+    "steps": 5,
+    "flows": 3,
+    "review_facets": 8,
+    "projection_diagnostics": 0
+  },
+  "expected_flow_patch": {
+    "flow_id": "flow:sifen:38:章法",
+    "status": "linked_source",
+    "producer_step_id": null,
+    "producer_source": {
+      "source_id": "sifen",
+      "unit_id": "sifen:section:15",
+      "doc_id": "sifen:15",
+      "reading_id": "sifen:15.e75f4776bcba",
+      "sections": [
+        15
+      ],
+      "source_spans": [
+        {
+          "doc_id": "sifen:15",
+          "reading_id": "sifen:15.e75f4776bcba",
+          "start": 0,
+          "end": 5,
+          "quote": "章法，十九"
+        }
+      ],
+      "basis": "structurally_derived"
+    },
+    "selected_port": "result",
+    "output_port": "result"
+  },
+  "facet_invariants": {
+    "must_be_absent": [
+      {
+        "object_id": "term:sifen:38:19-21",
+        "facet": "source_supply",
+        "status": "pending"
+      }
+    ],
+    "must_remain": [
+      {
+        "object_id": "term:sifen:38:19-21",
+        "facet": "term_meaning",
+        "status": "pending"
+      },
+      {
+        "object_id": "term:sifen:38:6-9",
+        "facet": "source_supply",
+        "status": "pending"
+      },
+      {
+        "object_id": "term:sifen:38:13-15",
+        "facet": "source_supply",
+        "status": "pending"
+      }
+    ]
+  },
+  "forbidden_context_leak": {
+    "term_id_prefix": "term:sifen:15:",
+    "construction_id_prefix": "construction:sifen:15:",
+    "meaning": "No §15 scholar objects may appear in the §38 focused source stack."
+  }
+}

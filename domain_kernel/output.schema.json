@@ -58,6 +58,12 @@
               "items": {
                 "$ref": "kernel.schema.json#/$defs/SourceAnchor"
               }
+            },
+            "term_boundaries": {
+              "type": "array",
+              "items": {
+                "$ref": "kernel.schema.json#/$defs/SourceAnchor"
+              }
             }
           },
           "required": [

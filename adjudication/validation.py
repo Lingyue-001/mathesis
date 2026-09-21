@@ -11,7 +11,11 @@ def validate_effective_decisions(effective):
                            'reason': 'derived quantities cannot be converted into parameters'})
     for payload in effective.get('quantity_semantics', {}).values():
         try:
-            validate_quantity_semantics(payload)
+            if 'facets' in payload:
+                from .quantity_targets import validate_quantity_facets
+                validate_quantity_facets(payload['facets'])
+            else:
+                validate_quantity_semantics(payload)
         except ValueError as error:
             issues.append({'kind': 'invalid_quantity_semantics', 'decision_id': payload['decision_id'], 'reason': str(error)})
         if payload.get('conversion') and not payload.get('conversion_evidence'):

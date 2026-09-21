@@ -1,0 +1,24 @@
+.source {width:100%; box-sizing:border-box; color:#29343a; padding:6px 0;}
+.source-row {position:relative; padding:8px 0 12px; margin:0 0 8px;}
+.glyphs {display:flex; white-space:pre; font-family:"Noto Serif CJK TC","Microsoft JhengHei",serif; font-size:26px; line-height:1.75;}
+.char {flex:none; width:1.6em; box-sizing:border-box; font:inherit; color:inherit; border:0; padding:0; background:transparent; cursor:pointer;}
+.char.term {text-decoration:underline dotted #687d88; text-underline-offset:7px;}
+.char:hover,.char.focus {background:#eff1f7;}
+.char.selected {background:#d9e8ff;}
+.probe {position:absolute;visibility:hidden;pointer-events:none;}
+.badge-layer,.rail-layer,.step-layer {position:relative;width:100%;font-family:system-ui,sans-serif;}
+.badge-group {position:absolute;display:flex;gap:4px;}
+.facet {font:10px/1.5 system-ui,sans-serif;color:#66582a;background:#faf7eb;border:1px solid #d2c6a6;border-radius:3px;padding:0 4px;cursor:pointer;white-space:nowrap;}
+.facet.reviewed {color:#345641;background:#eff5ee;border-color:#afc3ab;}
+.facet.active,.facet:focus-visible {outline:none;border-color:#817590;background:#eee8f3;}
+.rail-layer {margin-top:10px;}
+.rail {position:absolute;box-sizing:border-box;height:20px;border:0;border-top:1px solid #97a3a7;background:none;color:#5d676c;font:10px/1.6 system-ui,sans-serif;cursor:pointer;text-align:center;padding:1px 0;white-space:nowrap;}
+.rail::before,.rail::after {content:"";position:absolute;top:-4px;height:5px;border-left:1px solid #97a3a7;}
+.rail::before {left:0}.rail::after {right:0}.rail.fixed {border-top-style:dashed;}
+.rail.focus {border-color:#725489;color:#56396b;}
+.step-layer {margin-top:8px;}
+.step-token {position:absolute;font:10px/1.5 system-ui,sans-serif;color:#694e7c;border:0;background:none;padding:2px 0;cursor:pointer;white-space:normal;max-width:104px;}
+.step-token.operation {font-weight:650;}
+.step-token.broad {border-bottom:1px dashed #b8a7c1;}
+.step-token.focus {background:#f0e9f5;}
+.changed {background:#edf5e9;box-shadow:0 0 0 2px #edf5e9;}

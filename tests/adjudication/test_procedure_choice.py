@@ -54,8 +54,11 @@ class ProcedureChoiceTests(unittest.TestCase):
             'targets': [target], 'payload': {'definition_anchor': target, 'procedure_role': 'followup',
                 'parent_definition_anchor': parent, 'query_base_anchor': base},
             'reason': 'Unsupported cross-base fixture', 'evidence_refs': [base, target], 'depends_on': []}, packet=packet)
-        with self.assertRaisesRegex(ValueError, 'followup_base_must_match_parent'):
-            compile_reviewed(packet, session)
+        result = compile_reviewed(packet, session)
+        state = result['replay']['decision_status']['follow']
+        self.assertEqual(state['status'], 'needs_revalidation')
+        self.assertIn('followup_base_must_match_parent', state['reasons'])
+        self.assertFalse(result['replay']['effective']['scopes'])
 
     def test_explicit_independence_precedes_postposed_heading_heuristic(self):
         text = '推甲術，置三，名為甲量。求中部二十四氣，置五，名為乙量。'
