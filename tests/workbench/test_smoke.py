@@ -95,8 +95,7 @@ class HTTPTests(unittest.TestCase):
         api = importlib.import_module('workbench.api')
         with tempfile.TemporaryDirectory() as directory:
             site = Path(directory)
-            (site / 'adjudication').mkdir()
-            (site / 'adjudication/index.html').write_text('<html data-baseurl="/mathesis/">', encoding='utf-8')
+            (site / 'index.html').write_text('<html data-baseurl="/mathesis/">', encoding='utf-8')
             with self.assertRaisesRegex(ValueError, 'local_site_requires_root_prefix'):
                 api.make_server(ROOT, 0, site_root=site)
 
@@ -106,9 +105,7 @@ class HTTPTests(unittest.TestCase):
         directory = tempfile.TemporaryDirectory()
         self.addCleanup(directory.cleanup)
         site = Path(directory.name)
-        (site / 'adjudication').mkdir()
         (site / 'index.html').write_text('MATHesis home', encoding='utf-8')
-        (site / 'adjudication/index.html').write_text('Procedure Workbench', encoding='utf-8')
         server = api.make_server(ROOT, 0, site_root=site)
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
@@ -118,8 +115,9 @@ class HTTPTests(unittest.TestCase):
             request = Request(origin + path, data=body, headers=headers or {'Content-Type': 'application/json'})
             return urlopen(request, timeout=15)
         try:
-            with fetch('/adjudication/') as response:
-                self.assertIn('Procedure Workbench', response.read().decode())
+            with self.assertRaises(HTTPError) as error:
+                fetch('/adjudication/')
+            self.assertEqual(error.exception.code, 404)
             with fetch('/') as response:
                 self.assertEqual(response.read().decode(), 'MATHesis home')
             with fetch('/api/analysis/sifen-3-5') as response:

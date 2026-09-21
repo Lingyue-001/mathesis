@@ -42,9 +42,9 @@ class ReviewTests(unittest.TestCase):
     def test_segmentation_copy_uses_the_shared_inspector_language(self):
         from tools.parser_inspector.segmentation_review import _description, _ui_copy
 
-        self.assertEqual(_ui_copy('en', 'Corpus Full Text', '语料全文'), 'Corpus Full Text')
-        self.assertEqual(_ui_copy('zh', 'Corpus Full Text', '语料全文'), '语料全文')
-        self.assertEqual(_ui_copy('unexpected', 'Corpus Full Text', '语料全文'), 'Corpus Full Text')
+        self.assertEqual(_ui_copy('en', 'Corpus Browser', '语料浏览'), 'Corpus Browser')
+        self.assertEqual(_ui_copy('zh', 'Corpus Browser', '语料浏览'), '语料浏览')
+        self.assertEqual(_ui_copy('unexpected', 'Corpus Browser', '语料浏览'), 'Corpus Browser')
         self.assertTrue(_description('procedure', '术文', 'en').startswith('Procedure text:'))
         self.assertEqual(_description('procedure', '术文', 'zh'), '术文')
 

@@ -8,9 +8,9 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 import streamlit as st
-from tools.parser_inspector.segmentation_review import has_unsaved_changes, guard_selection
+from tools.parser_inspector.shell import render_navigation
 
-st.set_page_config(page_title='Parser Inspector', layout='wide')
+st.set_page_config(page_title='MATHesis Inspector', layout='wide')
 if 'inspector_language' not in st.session_state:
     st.session_state.inspector_language = 'en'
 
@@ -36,16 +36,7 @@ st.html('<style>div.st-key-language_' + language + ' button { font-weight: 700; 
 st.button('EN', key='language_en', on_click=set_language, args=('en',))
 st.button('CH', key='language_zh', on_click=set_language, args=('zh',))
 
-st.title('Parser Inspector')
-pages = ('Segmentation Review', 'Parser stages', 'Corpus Full Text')
-page_labels = {
-    'en': {'Segmentation Review': 'Segmentation Review', 'Parser stages': 'Parser stages', 'Corpus Full Text': 'Corpus Full Text'},
-    'zh': {'Segmentation Review': '分段审阅', 'Parser stages': 'Parser 阶段', 'Corpus Full Text': '全文语料'},
-}
-page = st.sidebar.radio('Workspace' if language == 'en' else '工作区', pages, index=1, key='inspector_page',
-                        format_func=page_labels[language].get,
-                        disabled=has_unsaved_changes(), on_change=guard_selection,
-                        args=('inspector_page', st.session_state.get('inspector_page', 'Parser stages')))
+page = render_navigation(language)
 if page == 'Segmentation Review':
     from tools.parser_inspector.segmentation_review import render
     render(ROOT)

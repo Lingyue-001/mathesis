@@ -1,0 +1,22 @@
+/* Inspector layout only; chrome/forms live in research.css, annotations in shared renderer assets. */
+.inspector {--workspace-sidebar-width:300px;}
+.inspector .research-workspace-sidebar {position:fixed; inset:0 auto 0 0; width:var(--workspace-sidebar-width); overflow-y:auto; z-index:30;}
+.inspector .research-workspace-main {margin-left:var(--workspace-sidebar-width); padding:7rem 5rem 4rem; min-width:0;}
+.inspector.sidebar-collapsed .research-workspace-main {margin-left:0;}
+.inspector #collapse-workspace {position:absolute; top:1.25rem; right:1.9rem;}
+.inspector #expand-workspace {position:absolute; top:1.25rem; left:1.25rem;}
+.inspector #source-host {min-width:0; margin-top:2.5rem;}
+.inspector #selection-detail {margin-bottom:2rem;}
+.inspector #question-detail {margin-bottom:2rem;}
+.inspector #current-question-heading {scroll-margin-top:4rem;}
+.inspector #sandbox-error {color:#9b352c;}
+.inspector .procedure-canvas svg {min-width:520px;}
+@media (max-width:1100px) {
+  .inspector .research-workspace-main {padding-inline:2rem;}
+}
+@media (max-width:800px) {
+  .inspector .research-workspace-main {margin-left:0; padding:7rem 1.25rem 3rem;}
+  .inspector .research-workspace-sidebar {max-width:calc(100vw - 2.5rem); box-shadow:6px 0 24px #29313d12;}
+  .inspector .research-master-detail {grid-template-columns:minmax(0,1fr); gap:2rem;}
+  .inspector h1 {font-size:2rem;}
+}

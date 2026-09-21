@@ -1,0 +1,104 @@
+---
+title: Inspector
+layout: base
+permalink: /inspector/
+offlineAssets: true
+---
+<link rel="stylesheet" href="{{ '/css/research.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/inspector.css' | url }}">
+<link rel="stylesheet" href="{{ '/js/inspector/scholar_ui.css' | url }}">
+<link rel="stylesheet" href="{{ '/js/inspector/source_annotation.css' | url }}">
+<link rel="stylesheet" href="{{ '/js/inspector/procedure_model.css' | url }}">
+
+<div id="scholar-sandbox" class="research-workspace-shell inspector" data-snapshot-url="{{ '/static/data/inspector/sifen-38.snapshot.json' | url }}">
+  <aside id="workspace-sidebar" class="research-workspace-sidebar">
+    <button id="collapse-workspace" class="research-icon-button" aria-label="Collapse workspace navigation" aria-controls="workspace-sidebar">‹‹</button>
+    <p class="research-app-identity">MATHesis Inspector</p>
+    <nav class="research-workspace-nav" aria-label="Workspace">
+      <p class="research-muted">Workspace</p>
+      <button type="button" data-workspace="segmentation">Segmentation Review</button>
+      <button type="button" data-workspace="parser" aria-current="page">Parser Stages</button>
+      <button type="button" data-workspace="corpus">Corpus Browser</button>
+    </nav>
+  </aside>
+  <div class="research-workspace-main">
+    <button id="expand-workspace" class="research-icon-button" aria-label="Expand workspace navigation" aria-controls="workspace-sidebar" aria-expanded="false" hidden>››</button>
+    <header>
+      <h1 id="workspace-title">Parser Stages</h1>
+      <p class="research-muted research-scope">Full workflow currently demonstrated on Han Sifen li §38; other procedures are included at their present stage of analysis.</p>
+    </header>
+    <p id="sandbox-error" role="alert" hidden></p>
+    <p id="draft-status" class="research-draft-status" role="status" hidden>Draft review · not recompiled</p>
+    <p id="sandbox-loading" role="status">Loading Inspector snapshot…</p>
+
+    <section id="parser-workspace" aria-label="Parser Stages" hidden>
+      <label class="research-field">Source<select id="parser-source" aria-label="Source"></select></label>
+      <label class="research-field">Section<select id="parser-section" aria-label="Section"><option>§38</option></select></label>
+      <details class="research-fold" id="snapshot-tools">
+        <summary>Snapshot &amp; drafts</summary>
+        <p id="snapshot-description" class="research-muted"></p>
+        <p class="research-muted">Local drafts are stored in this browser. They do not change the exported analysis.</p>
+        <div class="research-actions">
+          <button type="button" id="export-drafts" class="research-button">Export drafts</button>
+          <button type="button" id="export-snapshot" class="research-button">Export snapshot</button>
+          <label class="research-field">Import draft JSON<input id="import-drafts" type="file" accept="application/json,.json"></label>
+        </div>
+        <p id="draft-io-status" role="status" class="research-muted"></p>
+      </details>
+      <p class="research-muted" id="graph-status"></p>
+      <div class="research-master-detail">
+        <section class="research-panel" aria-label="Source and procedure">
+          <label class="research-field">Source document<select id="source-document" aria-label="Source document"></select></label>
+          <div class="research-view-switch" aria-label="Procedure presentation">
+            <button type="button" data-view="source" aria-pressed="true">Annotated Source</button>
+            <button type="button" data-view="graph" aria-pressed="false">Procedure Model</button>
+          </div>
+          <div id="annotated-view">
+            <p class="research-muted">Dotted underline · Term &nbsp; Bracket · Construction &nbsp; Lower lane · Step</p>
+            <label class="research-check"><input id="adjust-boundary" type="checkbox">Adjust term boundary</label>
+            <div id="boundary-draft" class="research-fold" hidden>
+              <p class="research-muted">Select source characters, or enter Unicode character offsets. The end offset is exclusive.</p>
+              <div class="research-actions">
+                <label class="research-field">Start offset<input type="number" id="boundary-start" min="0"></label>
+                <label class="research-field">End offset<input type="number" id="boundary-end" min="1"></label>
+              </div>
+              <p id="boundary-quote" class="source-text" aria-live="polite"></p>
+              <button type="button" id="save-boundary" class="research-button" disabled>Save boundary as draft</button>
+            </div>
+            <div id="source-host"><div class="source" role="group" aria-label="Source annotation"></div></div>
+          </div>
+          <div id="graph-view" hidden>
+            <h2>Current reviewed procedure model</h2>
+            <button type="button" id="export-model" class="research-button">Download Procedure Model JSON</button>
+            <div id="procedure-host"></div>
+          </div>
+        </section>
+        <aside class="research-panel" aria-label="Selected object and question">
+          <h2 id="current-question-heading" tabindex="-1">Current question</h2>
+          <div id="question-detail"><p class="research-note">Select a question badge to inspect its existing options.</p></div>
+          <h2>Selected source object</h2>
+          <div id="selection-detail"><p class="research-muted">Select a term, construction, or step in the source.</p></div>
+        </aside>
+      </div>
+      <details class="research-fold" id="local-drafts-panel"><summary>Local draft decisions</summary><div id="local-drafts"></div></details>
+      <details class="research-fold"><summary>Snapshot review history</summary><div id="review-history"></div></details>
+    </section>
+
+    <section id="segmentation-workspace" aria-label="Segmentation Review" hidden>
+      <label class="research-field">Source<select id="segmentation-source" aria-label="Segmentation source"></select></label>
+      <p class="research-muted">Exported segmentation · read-only</p>
+      <p id="segmentation-progress"></p>
+      <label class="research-field">Current effective unit<select id="segmentation-unit" aria-label="Current effective unit"></select></label>
+      <div class="research-actions"><button id="previous-unit" class="research-button" type="button">← Previous unit</button><button id="next-unit" class="research-button" type="button">Next unit →</button><button id="browse-corpus" class="research-button" type="button">Corpus Browser</button></div>
+      <div id="segmentation-panels" class="research-master-detail"></div>
+      <details class="research-fold"><summary>Review history</summary><div id="segmentation-history"></div></details>
+    </section>
+    <section id="corpus-workspace" aria-label="Corpus Browser" hidden>
+      <label class="research-field">Source<select id="corpus-source" aria-label="Corpus source"></select></label>
+      <button type="button" id="back-to-segmentation" class="research-button">Back to review</button>
+      <div id="corpus-content" class="research-corpus"></div>
+    </section>
+    <noscript>This Inspector requires JavaScript to read the exported snapshot and keep browser-local drafts.</noscript>
+  </div>
+</div>
+<script type="module" src="{{ '/js/scholar-sandbox.mjs' | url }}"></script>

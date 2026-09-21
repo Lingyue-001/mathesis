@@ -87,15 +87,15 @@ async function open(page, label) {
   await page.getByRole('tab').filter({hasText:label}).click();
 }
 async function ready(page) {
-  await page.getByRole('heading', { name: 'Corpus Segmentation Review' }).waitFor();
+  await page.getByRole('heading', { name: 'Segmentation Review', exact: true }).waitFor();
   await page.getByRole('tab').filter({ hasText: 'Edit relation' }).waitFor();
   assert.equal(await page.getByTestId('stException').count(), 0);
   await settled(page);
 }
 async function actor(page) {
-  await page.getByRole('textbox', { name: '审阅者', exact: true }).fill('browser-acceptance');
-  await page.getByRole('textbox', { name: '审阅者', exact: true }).press('Tab');
-  await choose(page, '操作身份', 'automated_browser');
+  await page.getByRole('textbox', { name: 'Reviewer', exact: true }).fill('browser-acceptance');
+  await page.getByRole('textbox', { name: 'Reviewer', exact: true }).press('Tab');
+  await choose(page, 'Actor', 'Automated browser');
 }
 async function click(page, label) {
   await settled(page);
@@ -141,7 +141,7 @@ try {
       return {text:style.content, background:style.backgroundColor};
     });
     const type = autoUnit(original,section).type;
-    assert.equal(badge.text, `"${type}"`, 'filtered options keep the correct type badge');
+    assert.equal(badge.text, `"${type.replaceAll('_', ' ')}"`, 'filtered options keep the correct type badge');
     typeColors[type] = badge.background;
     await input.press('Escape');
   }
@@ -159,56 +159,56 @@ try {
   }
   checks.push('Auto and Effective show the complete source and alternative target, not selector previews');
   await open(page, 'Edit relation');
-  await page.getByRole('combobox', {name:'关系 1 类型',exact:true}).waitFor();
+  await page.getByRole('combobox', {name:'Relation 1 type',exact:true}).waitFor();
   assert.equal(await page.getByRole('textbox', {name:'新增关系名称',exact:true}).count(), 0);
-  await choose(page, '关系 1 类型', 'alternative_of');
-  await click(page, '保存关系');
+  await choose(page, 'Relation 1 type', 'alternative_of');
+  await click(page, 'Save relations');
   await until(async () => autoUnit(await read(root, 'effective'),40).relations[0].kind === 'alternative_of', 'candidate confirmed');
-  await until(async () => (await page.getByRole('combobox', {name:'Current effective unit',exact:true}).inputValue()).includes('已审·已修改'), 'modified status shown in selector');
+  await until(async () => (await page.getByRole('combobox', {name:'Current effective unit',exact:true}).inputValue()).includes('reviewed · modified'), 'modified status shown in selector');
   await page.locator('.st-key-seg_auto_panel').getByText(autoUnit(original,40).text_original, {exact:true}).waitFor();
   assert.equal(autoUnit(await read(root, 'auto'),40).relations[0].kind, 'alternative_of_candidate');
   const target38 = autoUnit(original,38);
   const firstClause = target38.text_original.match(/^[^，。；：！？、,.!?;:\r\n]*/)[0];
-  await choose(page, '关系 1 对应文本块', `§38 · ${firstClause} · ${target38.source_spans[0].start}`);
-  await click(page, '保存关系');
+  await choose(page, 'Relation 1 matching text unit', `§38 · ${firstClause} · ${target38.source_spans[0].start}`);
+  await click(page, 'Save relations');
   await until(async () => autoUnit(await read(root, 'effective'),40).relations[0].target_id === 'sifen:section:38', 'target changed');
-  await click(page, '删除关系');
+  await click(page, 'Delete relation');
   await until(async () => autoUnit(await read(root, 'effective'),40).relations.length === 0, 'relation deleted');
-  await click(page, 'Undo · 撤销上次操作');
-  await click(page, 'Undo · 撤销上次操作');
-  await click(page, 'Undo · 撤销上次操作');
+  await click(page, 'Undo last action');
+  await click(page, 'Undo last action');
+  await click(page, 'Undo last action');
   await choose(page, 'Current effective unit', /^§40 ·/);
   await open(page, 'Change type');
-  await choose(page, '分块类型', 'procedure');
-  await click(page, '保存类型');
+  await choose(page, 'Segmentation type', 'procedure');
+  await click(page, 'Save type');
   await until(async () => autoUnit(await read(root, 'effective'),40).type === 'procedure', 'independent type persists');
   assert.deepEqual(autoUnit(await read(root, 'effective'),40).relations, [], 'retyping clears incompatible alternative relation');
   await open(page, 'Edit relation');
-  assert.equal(await page.getByRole('combobox', {name:'关系 1 类型',exact:true}).count(), 0, 'independent procedure cannot add alternative relation');
-  await click(page, 'Undo · 撤销上次操作');
+  assert.equal(await page.getByRole('combobox', {name:'Relation 1 type',exact:true}).count(), 0, 'independent procedure cannot add alternative relation');
+  await click(page, 'Undo last action');
   await until(async () => autoUnit(await read(root, 'effective'),40).type === 'alternative_procedure', 'undo restores original candidate');
-  await choose(page, 'Current effective unit', /^§49,50 ·/);
+  await choose(page, 'Current effective unit', /^§49 ·/);
   const beforeBoundaryMerge = await read(root, 'effective');
   await click(page, 'Merge ↑');
   const boundaryMerge = (await read(root, 'effective')).units.find(u => u.sections.includes(48) && u.sections.includes(49));
   assert.equal(boundaryMerge.type, 'procedure', 'merge-up keeps active procedure type');
   assert.deepEqual(boundaryMerge.relations, [], 'merge-up cannot import neighbor alternative relation');
-  await click(page, 'Undo · 撤销上次操作');
+  await click(page, 'Undo last action');
   assert.deepEqual((await read(root, 'effective')).units, beforeBoundaryMerge.units);
-  checks.push('Merge-up of §49–50 with §48 changes boundaries only; no alternative type or relation is imported');
+  checks.push('Merge-up of §49 with §48 changes boundaries only; no alternative type or relation is imported');
   const earlierRevisions = (await read(root, 'overrides')).history.length;
   assert.equal(earlierRevisions, 10);
   checks.push('Real §40 candidate can be confirmed, retargeted, deleted and undone through fixed relation choices');
   await choose(page, 'Current effective unit', /^§38 ·/);
   await until(async () => (await page.locator('.st-key-seg_auto_panel').innerText()).includes(autoUnit(original,38).text_original), 'section 38 loaded');
-  await page.getByRole('button', {name:'下一块 →',exact:true}).click();
+  await page.getByRole('button', {name:'Next unit →',exact:true}).click();
   await until(async () => (await page.locator('.st-key-seg_auto_panel').innerText()).includes(autoUnit(original,39).text_original), 'Next unit');
-  await page.getByRole('button', {name:'← 上一块',exact:true}).click();
+  await page.getByRole('button', {name:'← Previous unit',exact:true}).click();
   await until(async () => (await page.locator('.st-key-seg_auto_panel').innerText()).includes(autoUnit(original,38).text_original), 'Previous unit');
   await page.getByText(autoUnit(original, 38).text_original, { exact: true }).first().waitFor();
-  await click(page, 'Accept · 原样接受');
+  await click(page, 'Accept unchanged');
   await until(async () => autoUnit(await read(root, 'auto'), 38).human_review.at(-1)?.status === 'accepted', 'Accept persists');
-  await until(async () => (await page.getByRole('combobox', {name:'Current effective unit',exact:true}).inputValue()).includes('已审·原样接受'), 'accepted status shown in selector');
+  await until(async () => (await page.getByRole('combobox', {name:'Current effective unit',exact:true}).inputValue()).includes('reviewed · accepted unchanged'), 'accepted status shown in selector');
   await page.locator('.st-key-seg_auto_panel').getByText(autoUnit(original,38).text_original, {exact:true}).waitFor();
   // Explicitly rerender after status changes: selection must not reset to the first item.
   await open(page, 'Edit relation');
@@ -219,21 +219,21 @@ try {
   assert.deepEqual((await read(root, 'overrides')).operations, []);
   checks.push('Accept persists with no override operation');
   await open(page, 'Change type');
-  await page.getByText('分块类型说明 · 含义与边界', {exact:true}).click();
-  await page.getByText(/computational_exposition — 计算性说明/).waitFor();
+  await page.getByText('Segmentation types: meanings and boundaries', {exact:true}).click();
+  await page.getByText(/Computational exposition: discusses computation/).waitFor();
   for (const [type, color] of Object.entries(typeColors)) {
-    const badge = page.locator('span').filter({hasText:new RegExp(`^${type}$`)});
+    const badge = page.locator('span').filter({hasText:new RegExp(`^${type.replaceAll('_', ' ')}$`)});
     assert.equal(await badge.evaluate(el => getComputedStyle(el).backgroundColor), color, 'legend and dropdown share type colors');
   }
-  await choose(page, '分块类型', 'discourse');
-  await page.getByText(/有未保存的修改/).waitFor();
-  await until(async () => await page.getByRole('button', {name:'下一块 →',exact:true}).isDisabled(), 'type draft blocks next');
+  await choose(page, 'Segmentation type', 'discourse');
+  await page.getByText(/You have unsaved changes/).waitFor();
+  await until(async () => await page.getByRole('button', {name:'Next unit →',exact:true}).isDisabled(), 'type draft blocks next');
   await until(async () => await page.getByRole('combobox', {name:'Current effective unit',exact:true}).isDisabled(), 'unsaved changes block unit selector');
   await until(async () => await page.getByRole('combobox', {name:'Source',exact:true}).isDisabled(), 'unsaved changes block source selector');
-  assert.equal(await page.getByRole('button', {name:'Full text',exact:true}).isDisabled(), true, 'unsaved changes also block full text navigation');
-  await click(page, '保存类型');
+  assert.equal(await page.getByRole('button', {name:'Corpus Browser',exact:true}).isDisabled(), true, 'unsaved changes also block corpus browser navigation');
+  await click(page, 'Save type');
   await until(async () => autoUnit(await read(root, 'effective'), 38).type === 'discourse', 'type persists');
-  await until(async () => !(await page.getByRole('button', {name:'下一块 →',exact:true}).isDisabled()), 'navigation restored after save');
+  await until(async () => !(await page.getByRole('button', {name:'Next unit →',exact:true}).isDisabled()), 'navigation restored after save');
   const revisedIndex = (await read(root, 'effective')).units.findIndex(unit => unit.sections.length === 1 && unit.sections[0] === 38);
   const typeRules = (await page.locator('style').allTextContents()).join('\n');
   assert.match(typeRules, new RegExp(`\\[data-key="${revisedIndex}"\\][\\s\\S]*?content:"discourse"`),
@@ -247,50 +247,50 @@ try {
   const colors = await effectivePanel.locator('mark.seg-source-change').first().evaluate(el => ({background:getComputedStyle(el).backgroundColor,text:getComputedStyle(el).color}));
   assert.notEqual(colors.background, 'rgb(255, 255, 0)', 'highlight uses muted theme color');
   await effectivePanel.screenshot({path:path.join(evidence,'source-diff.png')});
-  await open(page, 'Split ·');
+  await open(page, 'Split at source boundary');
   await page.locator('button[data-boundary="3"]').click();
-  await page.getByText(/有未保存的修改/).waitFor();
-  await until(async () => await page.getByRole('button', {name:'下一块 →',exact:true}).isDisabled(), 'split draft blocks next');
+  await page.getByText(/You have unsaved changes/).waitFor();
+  await until(async () => await page.getByRole('button', {name:'Next unit →',exact:true}).isDisabled(), 'split draft blocks next');
   await open(page, 'Change type');
-  await choose(page, '分块类型', 'procedure');
-  await open(page, 'Split ·');
-  await page.getByRole('button', {name:'保存拆分',exact:true}).click();
-  await page.getByText('请先保存类型／关系，再保存拆分；已选边界会保留。', {exact:true}).waitFor();
+  await choose(page, 'Segmentation type', 'procedure');
+  await open(page, 'Split at source boundary');
+  await page.getByRole('button', {name:'Save split',exact:true}).click();
+  await page.getByText('Save type/relations before saving the split. Selected boundaries will be retained.', {exact:true}).waitFor();
   await open(page, 'Change type');
-  await click(page, '保存类型');
-  await open(page, 'Split ·');
+  await click(page, 'Save type');
+  await open(page, 'Split at source boundary');
   assert.equal(await page.locator('button[data-boundary="3"]').getAttribute('aria-pressed'), 'true');
-  await click(page, '保存拆分');
+  await click(page, 'Save split');
   await until(async () => (await read(root, 'effective')).units.filter(u => u.sections.includes(38)).length === 2, 'split merged block');
   const pieces = (await read(root, 'effective')).units.filter(u => u.sections.includes(38));
   assert.equal(pieces[0].text_original, autoUnit(original, 38).text_original.slice(0, 3));
   await click(page, 'Merge ↓');
   await until(async () => (await read(root, 'effective')).units.filter(u => u.sections.includes(38)).length === 1, 'merge derived blocks');
   checks.push('Merge → click character boundary → split → merge works on final blocks');
-  await click(page, 'Undo · 撤销上次操作');
+  await click(page, 'Undo last action');
   await until(async () => (await read(root, 'effective')).units.filter(u => u.sections.includes(38)).length === 2, 'undo restores split');
   const persisted = await read(root, 'effective');
-  await page.getByRole('button', {name:'Full text',exact:true}).click();
-  await page.getByRole('heading', {name:'Corpus Full Text',exact:true}).waitFor();
+  await page.getByRole('button', {name:'Corpus Browser',exact:true}).click();
+  await page.getByRole('heading', {name:'Corpus Browser',exact:true}).waitFor();
   await page.locator('.seg-full-text section').first().waitFor();
   const fullText = await page.locator('.seg-full-text section').evaluateAll(sections => sections.map(el => ({
     id:el.dataset.unitId, text:el.querySelector('.seg-full-text-source').textContent,
     type:el.querySelector('span').textContent,
   })));
-  assert.deepEqual(fullText, persisted.units.map(u => ({id:u.id, text:u.text_original, type:u.type})));
-  await page.getByRole('button', {name:'返回 Review',exact:true}).click();
+  assert.deepEqual(fullText, persisted.units.map(u => ({id:u.id, text:u.text_original, type:u.type.replaceAll('_', ' ')})));
+  await page.getByRole('button', {name:'Back to review',exact:true}).click();
   await ready(page);
   await page.locator('.st-key-seg_auto_panel').getByText(autoUnit(original,38).text_original, {exact:true}).waitFor();
-  assert.equal(await page.getByRole('textbox', {name:'审阅者',exact:true}).inputValue(), 'browser-acceptance');
+  assert.equal(await page.getByRole('textbox', {name:'Reviewer',exact:true}).inputValue(), 'browser-acceptance');
   assert.deepEqual(await read(root,'effective'), persisted, 'full text is read only');
-  checks.push('Full text shows every effective block and type in order; return preserves review source, unit and actor');
+  checks.push('Corpus Browser shows every effective block and type in order; return preserves review source, unit and actor');
   const history = (await read(root, 'overrides')).history;
   const lastRevision = earlierRevisions + 7;
   assert.equal(history.length, lastRevision);
   assert.equal(history.at(-1).action, 'undo');
   assert.equal(history.at(-1).reverts, lastRevision-1);
-  await page.getByText('审阅记录', {exact:true}).click();
-  await page.getByRole('button', {name:`View before / after · rev ${lastRevision}`,exact:true}).click();
+  await page.getByText('Review history', {exact:true}).click();
+  await page.getByRole('button', {name:`View before / after · revision ${lastRevision}`,exact:true}).click();
   await page.getByText('Before', {exact:true}).waitFor();
   await page.getByText('After', {exact:true}).waitFor();
   checks.push('Permanent revision history retains undone action and renders before/after');
@@ -306,21 +306,21 @@ try {
   await choose(reopened, 'Current effective unit', /^§38 ·/);
   assert.deepEqual(await read(root, 'effective'), persisted);
   await until(async () => (await reopened.locator('.st-key-seg_effective_panel').innerText()).includes(pieces[0].text_original), 'reopened selected effective block renders');
-  await reopened.getByRole('button', {name:'Resume review · 继续未审阅',exact:true}).click();
+  await reopened.getByRole('button', {name:'Resume review',exact:true}).click();
   await settled(reopened);
   await until(async () => (await reopened.locator('.st-key-seg_auto_panel').innerText()).includes(original.units[0].text_original), 'Resume renders first unreviewed unit');
   await choose(reopened, 'Current effective unit', /^§38 ·/);
   checks.push('Close browser + stop service + reopen preserves same effective and review');
-  await click(reopened, 'Reset · 恢复本区域机器结果');
+  await click(reopened, 'Reset this area to the machine result');
   await until(async () => (await read(root, 'overrides')).operations.length === 0, 'reset restores region');
   assert.deepEqual((await read(root, 'auto')).units, original.units);
   checks.push('Reset restores connected original auto units and removes active deltas');
   for (const [id, name] of [['santong', '三统历'], ['jiuzhi', '九执历']]) {
     await choose(reopened, 'Source', name);
-    await click(reopened, 'Accept · 原样接受');
+    await click(reopened, 'Accept unchanged');
     assert.equal((await read(root, 'manifest', id)).review_status.accepted, 1);
     assert.equal((await read(root, 'manifest')).review_status.reviewed, 0);
-    await click(reopened, 'Undo · 撤销上次操作');
+    await click(reopened, 'Undo last action');
     assert.equal((await read(root, 'manifest', id)).review_status.reviewed, 0);
   }
   await choose(reopened, 'Source', '四分历');
@@ -340,10 +340,10 @@ try {
   await unicodePage.goto(url);
   await ready(unicodePage);
   await actor(unicodePage);
-  await open(unicodePage, 'Split ·');
+  await open(unicodePage, 'Split at source boundary');
   await unicodePage.locator('button[data-boundary="3"]').click();
   await unicodePage.locator('button[data-boundary="5"]').click();
-  await click(unicodePage, '保存拆分');
+  await click(unicodePage, 'Save split');
   await until(async () => (await read(unicodeRoot, 'effective')).units.length === 4, 'Unicode browser split');
   const split = await read(unicodeRoot, 'effective');
   assert.deepEqual(split.units.map(u => u.text_original), ['推術𠀀', 'é', '甲。', '推術𠀀é甲。']);

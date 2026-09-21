@@ -6,6 +6,7 @@ from streamlit.components.v2 import component
 
 from source_adapters import corpus_index as index
 from source_adapters import corpus_review as store
+from tools.parser_inspector.shell import render_page_header
 
 
 def _ui_copy(language, english, chinese):
@@ -300,10 +301,11 @@ def _source_picker(root, *, full_text=False, language='en'):
                          '没有已登记的 calendars-*.md。请在现有 source_texts registry 登记 source id。'))
         return
     source, navigation = st.columns([5, 1], vertical_alignment='bottom')
-    source_id = source.selectbox(_ui_copy(language, 'Source', '来源'), list(sources), format_func=lambda key: sources[key]['label'], key='seg_source',
+    source_id = source.selectbox(_ui_copy(language, 'Source', '来源'), list(sources),
+                             format_func=lambda key: index.review_source_display_label(sources[key]), key='seg_source',
                              disabled=has_unsaved_changes(), on_change=guard_selection,
                              args=('seg_source', st.session_state.get('seg_source', next(iter(sources)))))
-    navigation.button(_ui_copy(language, 'Back to review' if full_text else 'Full text', '返回审阅' if full_text else '全文'),
+    navigation.button(_ui_copy(language, 'Back to review' if full_text else 'Corpus Browser', '返回审阅' if full_text else '语料浏览'),
                       key='seg_back_review' if full_text else 'seg_full_text',
                       disabled=has_unsaved_changes(), on_click=_select_unit,
                       args=('inspector_page', 'Segmentation Review' if full_text else 'Corpus Full Text'))
@@ -321,7 +323,7 @@ def render_full_text(root):
     """Read-only continuous view of effective units; no compiler or new data path."""
     _keep_review_state()
     language = _language()
-    st.header(_ui_copy(language, 'Corpus Full Text', '语料全文'))
+    render_page_header('Corpus Full Text', language)
     source_id = _source_picker(root, full_text=True, language=language)
     if source_id is None:
         return
@@ -356,7 +358,7 @@ def render(root):
     refresh_dependencies(root)
     _keep_review_state()
     language = _language()
-    st.header(_ui_copy(language, 'Corpus Segmentation Review', '语料分块审阅'))
+    render_page_header('Segmentation Review', language)
     dirty = has_unsaved_changes()
     if dirty:
         st.warning(_ui_copy(language, 'You have unsaved changes. Save the current type, relation, or split before changing unit/source, or explicitly discard the draft.',

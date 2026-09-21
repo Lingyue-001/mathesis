@@ -870,7 +870,9 @@ def render(root, language='en'):
                 view = compile_view(response['packet'], include_term_semantics=True,
                     session=response['session'], branch_id=response['branch_id'],
                     compilation=response['compilation'], effective_packet=response['effective_packet'])
-                with st.expander('Inspection / Evidence' if language == 'en' else '检查 / 依据'):
+                with st.expander('Inspection / Evidence (legacy diagnostic view)' if language == 'en' else '检查／依据（旧版诊断视图）'):
+                    st.caption('Diagnostic reading layer only — not a review decision, canonical scholar annotation, or projection source.'
+                               if language == 'en' else '仅供诊断阅读——不构成审阅决定、正式学者标注或 projection 来源。')
                     st.iframe(render_html(view, language), height=850)
             return
         st.caption('Read-only research view · fixed Primary §39 · source and R1–R4'

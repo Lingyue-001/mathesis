@@ -59,3 +59,61 @@
   .research-properties { grid-template-columns: minmax(0, 1fr); }
   .research-properties dd { margin-bottom: 0.7rem; }
 }
+
+/* Shared workspace chrome and review forms, independent of the rendering host. */
+.research-workspace-shell {color:#29313d; background:#fff; font:16px/1.5 system-ui,sans-serif; min-height:100vh;}
+.research-workspace-shell * {box-sizing:border-box;}
+.research-workspace-shell [hidden] {display:none !important;}
+.research-workspace-shell h1 {font-size:2.65rem; line-height:1.25; margin:0 0 1.1rem; letter-spacing:normal; text-transform:none;}
+.research-workspace-shell h2 {font-size:1.65rem; line-height:1.3; margin:0 0 1.1rem; letter-spacing:normal; text-transform:none; overflow-wrap:anywhere;}
+.research-workspace-shell h3 {font-size:1.1rem; margin:1rem 0 .6rem;}
+.research-workspace-shell p {margin:0 0 1.15rem; overflow-wrap:anywhere;}
+.research-workspace-shell pre {font-size:.8rem; white-space:pre-wrap; overflow-wrap:anywhere; max-height:28rem; overflow:auto;}
+.research-workspace-sidebar {background:#f0f2f6; padding:4.7rem 1.9rem 2rem;}
+.research-app-identity {font-size:1.25rem; font-weight:650; line-height:1.4; margin-bottom:2.8rem !important;}
+.research-muted {color:#78838f; font-size:.85rem; line-height:1.65;}
+.research-scope {margin-bottom:1.5rem !important;}
+.research-workspace-nav > p {font-size:.8rem; font-weight:600; margin-bottom:.6rem;}
+.research-workspace-nav > button {display:block; width:100%; border:0; border-radius:.4rem; padding:.75rem .8rem; margin-bottom:.4rem; background:transparent; color:inherit; font:inherit; text-align:left; cursor:pointer;}
+.research-workspace-nav > button[aria-current="page"] {background:rgba(112,130,160,.13);}
+.research-workspace-nav > button:focus-visible,.research-button:focus-visible,.research-icon-button:focus-visible {outline:2px solid #7587a2; outline-offset:2px;}
+.research-icon-button {font:1.6rem/1 system-ui,sans-serif; background:transparent; border:0; padding:.3rem; color:#78838f; cursor:pointer;}
+.research-field {display:flex; flex-direction:column; gap:.45rem; min-width:0; font-size:.9rem; margin:0 0 1.3rem;}
+.research-field select,.research-field input:not([type="file"]),.research-field textarea {width:100%; min-width:0; max-width:100%; border:1px solid transparent; background:#f0f2f6; color:#29313d; border-radius:.45rem; padding:.65rem .55rem; font:inherit;}
+.research-field input[type="file"] {max-width:100%; font:inherit;}
+.research-field textarea {min-height:4.6rem; resize:vertical;}
+.research-field select:focus,.research-field input:focus,.research-field textarea:focus {outline:2px solid #7587a2; outline-offset:1px;}
+/* Keep the picker and its highlight the same width as the field. Native OS
+   menus otherwise size/paint independently while the field is resized. */
+@supports (appearance:base-select) {
+  .research-field select,.research-field select::picker(select) {appearance:base-select;}
+  .research-field select::picker(select) {inline-size:anchor-size(width); max-inline-size:calc(100vw - 2rem); max-block-size:20rem; overflow-y:auto; margin:0; padding:.25rem; border:1px solid #d6d9df; border-radius:.45rem; background:white; color:#29313d; font:inherit; box-sizing:border-box; transition:none;}
+  .research-field select option {inline-size:100%; min-inline-size:0; padding:.5rem; white-space:normal; overflow-wrap:anywhere; border-radius:.2rem; background:transparent; transition:none;}
+  .research-field select option:is(:checked,:hover,:focus) {background:#e6e9ee;}
+}
+.research-actions {display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; margin-bottom:1rem;}
+.research-actions > .research-field {flex:1 1 10rem; margin:0;}
+.research-button {font:inherit; font-size:.85rem; color:inherit; background:white; border:1px solid #d6d9df; border-radius:.45rem; padding:.55rem .7rem; cursor:pointer; max-width:100%; overflow-wrap:anywhere;}
+.research-button:hover {background:#f5f6f9; border-color:#a1aab6;}
+.research-button:disabled {opacity:.5; cursor:default;}
+.research-fold {border:1px solid #d6d9df; border-radius:.5rem; margin:1rem 0 1.4rem; padding:.8rem 1rem; min-width:0;}
+.research-fold > summary {cursor:pointer; font-size:.85rem;}
+.research-fold[open] > summary {margin-bottom:1rem;}
+.research-master-detail {display:grid; grid-template-columns:minmax(0,7fr) minmax(0,3fr); gap:1.1rem; margin-top:1.5rem;}
+.research-view-switch {display:flex; flex-wrap:wrap; gap:1.1rem; margin:1.25rem 0 1.8rem;}
+.research-view-switch button {display:flex; gap:.45rem; align-items:center; border:0; padding:0; background:transparent; font:inherit; font-size:.85rem; color:inherit; cursor:pointer;}
+.research-view-switch button::before {content:''; width:.8rem; height:.8rem; border:1px solid #cdd1d7; border-radius:50%;}
+.research-view-switch button[aria-pressed="true"]::before {border:4px solid #fa525a;}
+.research-check {display:flex; align-items:center; gap:.5rem; font-size:.85rem; margin:1.5rem 0;}
+.research-check input,.research-options input {accent-color:#fa525a; flex-shrink:0;}
+.research-options {border:0; margin:1rem 0; padding:0; min-width:0;}
+.research-options legend {font-size:.85rem; margin-bottom:.6rem;}
+.research-options label {display:flex; gap:.4rem; align-items:baseline; font-size:.88rem; margin:.3rem 0; overflow-wrap:anywhere;}
+.research-note {background:#e8f2ff; color:#1266b2; padding:1rem; border-radius:.4rem; font-size:.9rem;}
+.research-draft-status {position:sticky; top:.6rem; z-index:10; width:fit-content; max-width:100%; padding:.3rem .6rem; border-radius:.3rem; background:#f1f4f8; color:#596b80; font-size:.82rem;}
+.research-record {margin:1rem 0; padding:1rem 0; border-bottom:1px solid #e2e5e9;}
+.research-source-card {padding:1rem; border-radius:.4rem; background:#f0f2f6; margin-bottom:1rem; line-height:1.9; overflow-wrap:anywhere;}
+.research-corpus {margin-top:2rem; line-height:2;}
+.research-corpus section {padding:1rem 0; border-bottom:1px solid #e2e5e9;}
+.research-anchor {white-space:pre-wrap; line-height:1.9; overflow-wrap:anywhere;}
+.research-anchor mark {background:#f4e6a3;}

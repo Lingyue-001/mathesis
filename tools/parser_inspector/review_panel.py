@@ -1,5 +1,6 @@
 """Source-first K2 review controls; the service owns compilation and persistence."""
 import hashlib
+from copy import deepcopy
 from html import escape
 from uuid import uuid4
 
@@ -8,7 +9,7 @@ from analysis_parser.ontology import label_en
 from adjudication.term_claims import compose_term_interpretation
 from domain_kernel.engine import load_kernel
 from source_adapters.corpus import _load_effective_index
-from source_adapters.corpus_index import list_review_sources
+from source_adapters.corpus_index import list_review_sources, review_source_display_label
 from tools.parser_inspector.source_annotation import selection_anchor, source_annotation_component, procedure_model_component
 from workbench import review_jobs, service
 from workbench.annotation_projection import diff_scholar_source, project_scholar_source
@@ -193,7 +194,7 @@ def _selection_picker(st, root):
     if not sources:
         st.info('No reviewed corpus source is available.')
         return None
-    labels = {row['id']: row['label'] for row in sources}
+    labels = {row['id']: review_source_display_label(row) for row in sources}
     source_id = st.selectbox('Source', list(labels), format_func=labels.__getitem__, key='k2_source')
     units = _units(root, source_id)
     if not units:
@@ -566,16 +567,20 @@ def _scholar_review_details(st, root, response, question, actor=None, reason='')
                  'explicit_decision_refs': selected.get('decision_refs', [])})
 
 
-def _compose_controls(st, response, question):
-    """Build a source-grounded registry expression, bounded to three levels."""
+def composition_choices(question):
+    """Source-grounded registry expressions available to a local draft.
+
+    This is presentation data over the existing finite Kernel vocabulary.  It
+    preserves the Inspector's three-level applicability and sort checks, and
+    does not validate or record a scholarly claim.
+    """
     registry = load_kernel()
     quote = question['anchor']['quote']
     applicable = [concept for concept in registry['concepts']
                   if any(cue['form'] in quote and concept['id'] in cue['sense_concept_ids']
                          for cue in registry['lexical_cues'])]
     if not applicable:
-        st.caption('The current registry cannot express a local composition here.')
-        return None
+        return []
     rules = {row['build']['op'] for row in registry['composition_rules']}
     constructors = [row for row in registry['constructors'] if row['id'] in rules]
 
@@ -598,31 +603,64 @@ def _compose_controls(st, response, question):
                     sorts.add(constructor['result_sort'])
         return sorts
 
-    def build(expected, depth, path):
+    def build(expected, depth):
         concepts = [concept for concept in applicable if accepts(expected, concept_sort(concept))]
         nested = [constructor for constructor in constructors if depth > 1 and accepts(expected, constructor['result_sort'])
                   and all(any(accepts(slot_sort, actual) for actual in available_sorts(depth - 1))
                           for slot_sort in constructor['arguments'].values())]
-        choices = [('concept', concept['id']) for concept in concepts] + [('constructor', row['id']) for row in nested]
-        if not choices:
-            return None
-        selected = st.selectbox('Composition ' + path, choices, key='k2_compose:' + question['id'] + ':' + path,
-            format_func=lambda choice: (label(next(row for row in concepts if row['id'] == choice[1]))
-                if choice[0] == 'concept' else CONSTRUCTOR_LABELS.get(choice[1], choice[1]).split('{')[0].strip()))
-        if selected[0] == 'concept':
-            return {'op': 'concept', 'concept_id': selected[1]}
-        constructor = next(row for row in nested if row['id'] == selected[1])
-        arguments = {slot: build(slot_sort, depth - 1, path + '.' + slot)
-                     for slot, slot_sort in constructor['arguments'].items()}
-        return None if any(value is None for value in arguments.values()) else {'op': constructor['id'], 'arguments': arguments}
+        return ([{'id': 'concept:' + concept['id'], 'label': label(concept),
+                  'expression': {'op': 'concept', 'concept_id': concept['id']}}
+                 for concept in concepts]
+                + [{'id': 'constructor:' + constructor['id'],
+                    'label': CONSTRUCTOR_LABELS.get(constructor['id'], constructor['id']).split('{')[0].strip(),
+                    'op': constructor['id'],
+                    'arguments': {slot: build(slot_sort, depth - 1)
+                                  for slot, slot_sort in constructor['arguments'].items()}}
+                   for constructor in nested])
 
-    expression = build('semantic_expression', 3, 'meaning')
+    return build('semantic_expression', 3)
+
+
+def _compose_controls(st, response, question):
+    """Render the existing local controls from the shared presentation tree."""
+    choices = composition_choices(question)
+    if not choices:
+        st.caption('The current registry cannot express a local composition here.')
+        return None
+
+    def build(rows, path):
+        if not rows:
+            return None
+        # Keep the established Streamlit value shape and stable widget keys.
+        # The static sandbox consumes the portable string IDs in ``rows``.
+        legacy = [('concept' if 'expression' in row else 'constructor',
+                   row['id'].split(':', 1)[1]) for row in rows]
+        by_legacy = {value: row for value, row in zip(legacy, rows)}
+        selected = st.selectbox('Composition ' + path, legacy, key='k2_compose:' + question['id'] + ':' + path,
+            format_func=lambda value: by_legacy[value]['label'])
+        row = by_legacy[selected]
+        if 'expression' in row:
+            return deepcopy(row['expression'])
+        arguments = {slot: build(children, path + '.' + slot)
+                     for slot, children in row['arguments'].items()}
+        return None if any(value is None for value in arguments.values()) else {'op': row['op'], 'arguments': arguments}
+
+    expression = build(choices, 'meaning')
     if expression is None:
         st.caption('No source-grounded registered composition is available here.')
         return None
+    concept_labels = {}
+    def collect_labels(rows):
+        for row in rows:
+            if 'expression' in row:
+                concept_labels[row['expression']['concept_id']] = row['label']
+            else:
+                for children in row['arguments'].values():
+                    collect_labels(children)
+    collect_labels(choices)
     def preview(node):
         if node['op'] == 'concept':
-            return label(next(row for row in applicable if row['id'] == node['concept_id']))
+            return concept_labels[node['concept_id']]
         return node['op'] + '(' + ', '.join(name + '=' + preview(value) for name, value in node['arguments'].items()) + ')'
     st.caption('Preview: ' + preview(expression))
     return compose_term_interpretation(question['anchor'], response['branch_id'], expression)
@@ -649,6 +687,19 @@ def _option_submission(response, question, option, actor, reason, *, context_doc
     return [decision], events
 
 
+def question_options(question):
+    """The same presentation choices for local research and static drafts."""
+    options = list({row['id']: row for row in question.get('options', [])}.values())
+    if question['kind'] == 'term_interpretation':
+        options.insert(max(0, len(options) - 1), {'id': 'local-compose',
+            'label': 'Compose a local interpretation from registered concepts',
+            'mode': 'compose', 'action': 'set_term_interpretation', 'payload': {},
+            'assertions': ['Human-authored interpretation for this occurrence only.',
+                           'No numerical value or producer is created.'],
+            'management_facets': [], 'depends_on': []})
+    return options
+
+
 def _question_controls(st, root, response, question, questions, actor, reason):
     st.subheader('Current question')
     if question is None:
@@ -662,14 +713,9 @@ def _question_controls(st, root, response, question, questions, actor, reason):
     if right.button('Next pending', key='k2_next', disabled=index == len(ids) - 1):
         st.session_state['k2_question'] = ids[index + 1]; st.rerun()
     st.write(question['title'])
-    options = list(question.get('options', []))
-    if question['kind'] == 'term_interpretation':
-        options.insert(max(0, len(options) - 1), {'id': 'local-compose',
-            'label': 'Compose a local interpretation from registered concepts',
-            'mode': 'compose', 'action': 'set_term_interpretation', 'payload': {},
-            'assertions': ['Human-authored interpretation for this occurrence only.',
-                           'No numerical value or producer is created.'],
-            'management_facets': [], 'depends_on': []})
+    # Equivalent backend actions share an ID (e.g. reject one/only candidate).
+    # A radio group must expose each value once so selection and labels agree.
+    options = question_options(question)
     if not options:
         st.caption('No supported interpretation is available for this source location yet.')
         return
@@ -682,7 +728,9 @@ def _question_controls(st, root, response, question, questions, actor, reason):
     context_document = None
     if option.get('requires_context_picker'):
         sources = list_review_sources(root)
-        source_id = st.selectbox('Additional source', [row['id'] for row in sources], key='k2_context_source')
+        source_labels = {row['id']: review_source_display_label(row) for row in sources}
+        source_id = st.selectbox('Additional source', list(source_labels), format_func=source_labels.__getitem__,
+                                 key='k2_context_source')
         unit = st.selectbox('Source section', _units(root, source_id), key='k2_context_unit')
         context_document = service.review_context_document(root, source_id, unit)
     composed = None
@@ -872,8 +920,9 @@ def _diagnostics(st, response, hidden_questions=()):
 
 def render(root, language='en'):
     import streamlit as st
+    from tools.parser_inspector.shell import render_page_header
+    render_page_header('Parser stages', language)
     st = _LocalizedStreamlit(st, language)
-    st.subheader('Parser Inspector')
     requested = st.session_state.pop('k2_requested_job', None) or st.query_params.get('review_job')
     manual_job = requested or st.session_state.get('k2_active_saved_job')
     handoff = st.session_state.pop('k2_requested_selection', None)
@@ -936,9 +985,9 @@ def render(root, language='en'):
         if st.session_state.get('k2_procedure_view') == 'Procedure Model':
             _procedure_details(st, response)
         else:
-            _scholar_review_details(st, root, response, question, actor, reason.strip())
             if question is not None or not st.session_state.get('k2_scholar_selected'):
                 _question_controls(st, root, response, question, questions, actor, reason.strip())
+            _scholar_review_details(st, root, response, question, actor, reason.strip())
     _history(st, root, response, actor)
     _management(st, root, response, question, target, actor, reason.strip())
     _diagnostics(st, response, hidden_questions)

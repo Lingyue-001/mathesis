@@ -203,3 +203,80 @@ existing `tmp/scholar-renderer-v02/protected-sha256.json` baseline.
   remain visible model gaps; no raw graph inspection or source reparsing fills them.
 - This is L2 quantity/dependency presentation. No strategy labels, historical
   transformations, pairwise comparison, K3 or K4 are inferred.
+
+## Scholar-facing interaction regression — 2026-09-21
+
+Result: **PASS**. This follow-up exercised the real Chromium/Streamlit review
+controls before treating Procedure Model acceptance as review-workflow acceptance.
+All writes used three disposable ReviewJobs in an isolated source/store. The test
+host recorded the actual response/projection used by each render; final independent
+service recompilation of all three saved jobs matched those projections, models
+and replay statuses exactly. UI clicks alone were not the acceptance criterion.
+
+| Required workflow | Result and evidence |
+| --- | --- |
+| 1. Object selection | PASS — Term 章法, DivMod Construction and Step select their correct right-pane records and source focus. |
+| 2. Facets/questions | PASS — meaning, source, count and construction context badges activate exactly one matching facet; displayed option labels match that question's unique action IDs. Draft option changes do not save. |
+| 3. Submit → recompile | PASS — 閏餘 interpretation is persisted and active, its annotation becomes reviewed, selection remains on 閏餘 and its unresolved form closes. Other terms, constructions, steps, flows and links remain unchanged for this decision. |
+| 4. Term boundary | PASS — a real pointer drag in synthetic `𠀀。以日新率乘章月。` merges the separate 日 / 新率 annotations into 日新率. Saved anchor is `sifen:900 [3,6)`, quote 日新率, exact source SHA-256, `unicode_code_point`; UTF-16 slicing would produce the wrong quote. Reviewed reparse adds Multiply with that operand. Neighbouring 章月 term records remain unchanged. |
+| 5. Context/source | PASS — existing Inspect → Add as context & re-run records only `attach_context` through the service. §15 supplies 章法 as `linked_source`; no renderer-side source patch or invented `bind_value`. Other source objects remain stable. |
+| 6. Reviewed/history | PASS — confirmed form is closed, reviewed annotation/history remains visible; retracting 閏餘 reopens its question, reconfirming creates an active interpretation while retaining retracted history. |
+| 7. Source ↔ Model | PASS — source Step selection enters the corresponding graph node; graph DivMod/章法 selections show exact source evidence and return to the matching source focus. ReviewJob bytes are unchanged by graph exploration and view switches. |
+| 8. Incomplete graph | PASS — unresolved graphs render; unresolved source, runtime permission and linked historical source stay distinct. Context attachment reduces unresolved input nodes from 3 to 2 without declaring the whole model complete. |
+| 9. Reload/persistence | PASS — `?review_job=` reload preserves decisions, projection and model for meaning/runtime, attached context and corrected boundaries. Ephemeral selection may reset. |
+| 10. Targeted no-regression | PASS — §38 full authored golden and §15 focused invariant pass; 111 existing projection/renderer/model/panel tests, 56 review service/adjudication tests, 4 Node layout tests and 2 current Inspector browser suites pass. |
+
+### Defect and minimal fix
+
+The first expanded option check exposed two radio entries sharing one option ID
+when there is only one semantic candidate: rejecting that candidate and rejecting
+all suggestions have the same backend action/payload. The radio formatter repeated
+the first label for both entries. `review_panel._question_controls` now deduplicates
+the radio input by existing option ID. No action, payload, parser rule, canonical
+projection or question-generation semantics changed. The browser checks the unique
+labels and actually selects rejection/adoption without saving the draft.
+
+The regression harness also replaced fixed-delay/column-index assumptions with
+object/facet/render-state checks, waits for stale Streamlit nodes to finish, and
+uses visible radio labels and the searchable history selector. Its read-only
+render snapshots live in the disposable test host, not production code.
+
+### Final counts and protected state
+
+- **167 Python tests passed**: 111 existing targeted tests + 56 review/service tests.
+- **4 Node layout tests passed**.
+- **2 browser suites passed**: 19 Scholar acceptance check groups, plus 3 existing
+  source/session/Segmentation handoff checks. Scholar page errors: **0**.
+- **42/42 protected file hashes unchanged** against the pre-renderer baseline.
+- No canonical source, golden fixture, parser/compiler/Kernel or semantic output
+  contract changed in this regression pass. Temporary review decisions change
+  their own reviewed output as expected.
+- Presentation job `scholar-renderer-correction-20260920` stayed byte-identical.
+  Before/after SHA-256:
+  `045954c05687a41f45fda8f11acf0abe36b9b912589e4818f0f13e945281e72e`.
+- No commit or push was executed by this regression pass. The fix and expanded
+  browser test remain working-tree changes; private NOTE/LOG were not edited.
+
+Evidence:
+
+- [Browser result and disposable store location](../tmp/scholar-renderer-v02/acceptance.json)
+- [Final browser output](../tmp/scholar-interaction-regression/final-browser.log)
+- [111-test output](../tmp/scholar-interaction-regression/final-python-tests.log)
+- [56-test output](../tmp/scholar-interaction-regression/review-service-tests.log)
+- [Protected-file verification](../tmp/scholar-interaction-regression/protected-verification.json)
+- [Reviewed/reconfirmed source](../tmp/scholar-renderer-v02/15-retract-reconfirm.png)
+- [Linked historical source in Model](../tmp/scholar-renderer-v02/16-linked-source-model.png)
+- [Corrected Unicode boundary and reviewed parse](../tmp/scholar-renderer-v02/18-unicode-boundary-reparsed.png)
+- [Corrected model after reload](../tmp/scholar-renderer-v02/19-unicode-boundary-model-reloaded.png)
+
+Additional commands (the existing 111-test/layout/Scholar commands above still apply):
+
+```powershell
+tools/parser_inspector/.venv/Scripts/python.exe -X utf8 -B -m unittest tests.workbench.test_review_jobs tests.workbench.test_review_effects tests.workbench.test_review_k2bc tests.adjudication.test_term_claims tests.adjudication.test_quantity_targets tests.adjudication.test_reviewed_relations -q
+node tests/k2-ui-slim-browser.mjs
+```
+
+Scope: this is the current local Inspector plus the existing standalone graph
+renderer. A deployed sandbox's routing, review backend and persistence still need
+verification at its actual deployment URL; a static graph alone has no review
+submission service.

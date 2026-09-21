@@ -20,9 +20,9 @@ MAX_BODY = 262144
 def make_server(root, port=8789, site_root=None):
     root = Path(root).resolve()
     site_root = Path(site_root or root / '.cache/workbench/site').resolve()
-    if root.is_relative_to(site_root) or not (site_root / 'adjudication/index.html').is_file():
+    if root.is_relative_to(site_root) or not (site_root / 'index.html').is_file():
         raise ValueError('site_build_missing: build Eleventy into .cache/workbench/site first')
-    page = (site_root / 'adjudication/index.html').read_text(encoding='utf-8')
+    page = (site_root / 'index.html').read_text(encoding='utf-8')
     prefix = re.search(r'''<html\b[^>]*\bdata-baseurl\s*=\s*["']([^"']+)["']''', page, re.IGNORECASE)
     if prefix and prefix[1] != '/':
         raise ValueError('local_site_requires_root_prefix: build Eleventy with GITHUB_ACTIONS unset')

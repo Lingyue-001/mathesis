@@ -72,6 +72,14 @@ class InspectorTests(unittest.TestCase):
 
 
 class AppTests(unittest.TestCase):
+    def test_inspection_evidence_is_explicitly_marked_as_a_legacy_diagnostic_view(self):
+        from streamlit.testing.v1 import AppTest
+
+        app = AppTest.from_file(str(Path(__file__).with_name('app.py'))).run()
+        self.assertIn('Inspection / Evidence (legacy diagnostic view)', [item.label for item in app.expander])
+        app.button(key='language_zh').click().run()
+        self.assertIn('检查／依据（旧版诊断视图）', [item.label for item in app.expander])
+
     def test_global_language_toggle_changes_shell_and_readable_view_without_writing_outputs(self):
         from streamlit.testing.v1 import AppTest
         before = {p.name: p.read_bytes() for p in runner.OUTPUT.glob('*.json')}
@@ -81,7 +89,7 @@ class AppTests(unittest.TestCase):
         self.assertEqual([button.label for button in app.button][:2], ['EN', 'CH'])
         self.assertNotIn('Create review job', [button.label for button in app.button])
         self.assertNotIn('Import job', [button.label for button in app.button])
-        self.assertEqual(app.radio[0].label, 'Workspace')
+        self.assertEqual(app.radio(key='inspector_page').label, 'Workspace')
         self.assertEqual(len(app.text_area), 0)
         frames = app.get('iframe')
         self.assertEqual(len(frames), 1)
@@ -93,10 +101,10 @@ class AppTests(unittest.TestCase):
             self.assertIn(f'id="{layer}"', html)
         app.button[1].click().run()
         self.assertEqual([button.label for button in app.button][:2], ['EN', 'CH'])
-        self.assertEqual(app.radio[0].label, '工作区')
+        self.assertEqual(app.radio(key='inspector_page').label, '工作区')
         self.assertIn('applyLanguage("zh")', app.get('iframe')[0].proto.srcdoc)
         app.button[0].click().run()
-        self.assertEqual(app.radio[0].label, 'Workspace')
+        self.assertEqual(app.radio(key='inspector_page').label, 'Workspace')
         self.assertEqual(before, {p.name: p.read_bytes() for p in runner.OUTPUT.glob('*.json')})
 
     def test_global_language_toggle_localizes_segmentation_and_full_text_chrome(self):
@@ -104,17 +112,17 @@ class AppTests(unittest.TestCase):
 
         app = AppTest.from_file(str(Path(__file__).with_name('app.py'))).run()
         app.radio(key='inspector_page').set_value('Segmentation Review').run()
-        self.assertEqual(app.header[0].value, 'Corpus Segmentation Review')
+        self.assertEqual([item.value for item in app.title], ['Segmentation Review'])
         self.assertIn('Source', [box.label for box in app.selectbox])
         app.button(key='language_zh').click().run()
-        self.assertEqual(app.header[0].value, '语料分块审阅')
+        self.assertEqual([item.value for item in app.title], ['语料分块审阅'])
         self.assertIn('来源', [box.label for box in app.selectbox])
 
         app.radio(key='inspector_page').set_value('Corpus Full Text').run()
-        self.assertEqual(app.header[0].value, '语料全文')
+        self.assertEqual([item.value for item in app.title], ['语料浏览'])
         self.assertIn('返回审阅', [button.label for button in app.button])
         app.button(key='language_en').click().run()
-        self.assertEqual(app.header[0].value, 'Corpus Full Text')
+        self.assertEqual([item.value for item in app.title], ['Corpus Browser'])
         self.assertIn('Back to review', [button.label for button in app.button])
 
     def test_inspector_has_no_registered_corpus_input(self):

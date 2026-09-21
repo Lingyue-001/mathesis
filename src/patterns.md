@@ -1,5 +1,5 @@
 ---
-title: MATHesis - Pattern Lab
+title: MATHesis - Pattern Lab (experimental)
 layout: base
 templateEngineOverride: liquid
 ---
@@ -12,7 +12,7 @@ templateEngineOverride: liquid
   </nav>
 
   <section id="pattern-lab" class="search-hero pattern-hero">
-    <h1 class="page-kicker">Pattern Lab</h1>
+    <h1 class="page-kicker">Pattern Lab (experimental)</h1>
   </section>
 
   <section class="filter-box pattern-browser">

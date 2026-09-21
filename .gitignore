@@ -41,3 +41,7 @@ LOG_按标签视图_By_Tag.md
 
 # Local Netlify folder
 .netlify
+
+# Durable local K2 ReviewJob records (not a disposable cache)
+.local/review-jobs/
+tmp/k2a-review-tests/

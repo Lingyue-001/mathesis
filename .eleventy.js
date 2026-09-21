@@ -10,6 +10,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "node_modules/leaflet/dist": "vendor/leaflet" });
   eleventyConfig.addPassthroughCopy("assets/fonts");
   eleventyConfig.addPassthroughCopy("static");
+  // The public Inspector and local Streamlit adapter use the same renderers.
+  for (const name of ["source_annotation", "scholar_ui", "procedure_model"]) {
+    for (const suffix of ["mjs", "css"]) {
+      eleventyConfig.addPassthroughCopy({
+        [`tools/parser_inspector/${name}.${suffix}`]: `js/inspector/${name}.${suffix}`
+      });
+    }
+  }
   eleventyConfig.addPassthroughCopy("src/transcriptions/tei_hanshu");
   eleventyConfig.addPassthroughCopy("src/transcriptions/tei_brhat");
   eleventyConfig.addPassthroughCopy("src/data.json");

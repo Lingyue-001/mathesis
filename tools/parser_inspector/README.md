@@ -6,7 +6,7 @@
 
 侧栏选择 **Segmentation Review**，顶部 **Source** 选择 corpus，然后填写审阅者、选择 Auto unit。来源选项来自后端对根目录 `calendars-*.md` 的扫描与既有 `config/calendrical-ir-pipeline.json → inputs.source_texts` registry 的交集；界面不维护历法名单。当前支持四分历、三统历、九执历，分别使用 `sifen / santong / jiuzhi` 稳定 ID。
 
-侧栏 **Corpus Full Text** 或 Review 的 Source 旁 **Full text** 按钮进入全文连读工作区。读取当前 `effective.json`，按 source offset 顺序完整显示所有分块，每段以同配色类型标签和节号开头；包含未审块，不另造数据或重新解析。来源已变更时明确显示 STALE。**返回 Review** 保留当前 corpus、选块与审阅者；有未保存草稿时不能跳转，先保存或放弃。
+侧栏 **Corpus Browser** 或 Review 的 Source 旁 **Corpus Browser** 按钮进入全文连读工作区。读取当前 `effective.json`，按 source offset 顺序完整显示所有分块，每段以同配色类型标签和节号开头；包含未审块，不另造数据或重新解析。来源已变更时明确显示 STALE。**返回 Review** 保留当前 corpus、选块与审阅者；有未保存草稿时不能跳转，先保存或放弃。
 
 显示 Review progress、Modified、Accepted unchanged、Unreviewed 和 Revision。重新打开默认定位首个 UNREVIEWED，也可点 **Resume review**。左边保留机器原始文本、类型、detection、relations、review queue；右边是唯一的 Effective 编辑区，包含合拆／类型／关系控件。原文使用与输入色块一致的柔和底色：合并时标出移入当前块的文字，拆分时标出归入新块的文字，按精确 source offsets 比较，重复原句不混淆。类型／关系变化用普通文字说明，不给类型标签或整段原文染色；正文不改写。来源之间的文件、锁、revision、Undo 和页面编辑状态独立。
 

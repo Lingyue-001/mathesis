@@ -8,11 +8,11 @@
   <link rel="icon" href="{{ '/assets/favicon.ico' | url }}" type="image/x-icon" />
   <link rel="preload" as="image" href="{{ '/assets/logo.png' | url }}" />
   <link rel="preload" as="image" href="{{ '/assets/logotype.svg' | url }}" />
-  <script defer src="https://cloud.umami.is/script.js"
+  {% unless offlineAssets %}<script defer src="https://cloud.umami.is/script.js"
     data-website-id="9e5b573f-91d9-4c6c-98c2-90ff046348fe"
     data-domains="mathesis.netlify.app"
     data-do-not-track="true"
-    data-exclude-search="true"></script>
+    data-exclude-search="true"></script>{% endunless %}
 </head>
 <body>
 
@@ -53,9 +53,9 @@
 <nav id="homeSideNav" class="home-side-nav" aria-label="Primary">
   <a href="{{ '/' | url }}">Home</a>
   <a href="{{ '/search/' | url }}">Search</a>
-  <a href="{{ '/patterns/' | url }}">Pattern Lab</a>
-  <a href="{{ '/adjudication/' | url }}">Procedure Workbench</a>
-  <a href="{{ '/relation-atlas/' | url }}">Visual Grammar</a>
+  <a href="{{ '/inspector/' | url }}">Inspector</a>
+  <a href="{{ '/patterns/' | url }}">Pattern Lab (experimental)</a>
+  <a href="{{ '/relation-atlas/' | url }}">Visual Grammar (experimental)</a>
   <a href="{{ '/transcriptions/' | url }}">Transcriptions</a>
   <a href="{{ '/visualization/' | url }}">Visualization</a>
   <a href="{{ '/map/' | url }}">Map</a>

@@ -11,6 +11,11 @@ import re
 
 
 SCHEMA_VERSION = 'mathesis.corpus_unit_index/1.0'
+_REVIEW_SOURCE_DISPLAY_NAMES = {
+    'santong': 'Santong li · 三統曆',
+    'sifen': 'Sifen li · 四分曆',
+    'jiuzhi': 'Jiuzhi li · 九執曆',
+}
 SECTION_RE = re.compile(r'^(?P<section>\d+)[ \t]+(?P<text>[^\r\n]+)', re.MULTILINE)
 TABLE_RE = re.compile(r'^\[TABLE\]$', re.I)
 NUMERALS = '零〇一二三四五六七八九十百千萬万億亿兆兩两半'
@@ -36,6 +41,11 @@ def list_review_sources(root):
     if len({s['id'] for s in result}) != len(result) or len({s['path'] for s in result}) != len(result):
         raise ValueError('duplicate_corpus_registration')
     return result
+
+
+def review_source_display_label(source):
+    """Return the Inspector-only, scholar-readable name for a registered source."""
+    return _REVIEW_SOURCE_DISPLAY_NAMES.get(source['id'], source['label'])
 
 
 def read_registered_source(root, source_id):

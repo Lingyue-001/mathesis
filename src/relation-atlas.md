@@ -1,5 +1,5 @@
 ---
-title: MATHesis - Visual Grammar
+title: MATHesis - Visual Grammar (experimental)
 layout: base
 templateEngineOverride: liquid
 ---
@@ -7,7 +7,7 @@ templateEngineOverride: liquid
 <div class="relation-demo-app">
   <section class="relation-demo-header">
     <div>
-      <h1>Visual Grammar</h1>
+      <h1>Visual Grammar (experimental)</h1>
       <p class="relation-demo-subtitle">
         A source-backed visual grammar for Cullen chapter 3 annotations: concepts, relation frames,
         procedure steps, role shifts, and chunk-level evidence.
@@ -37,7 +37,7 @@ templateEngineOverride: liquid
 </div>
 
 <!--
-  The route remains /relation-atlas/ for compatibility, but the user-facing page name is Visual Grammar.
+  The route remains /relation-atlas/ for compatibility, but the user-facing page name is Visual Grammar (experimental).
 -->
 
 <script type="module" src="{{ '/js/relation-atlas.js' | url }}"></script>

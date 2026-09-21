@@ -7,6 +7,7 @@ from unittest.mock import patch
 from streamlit.testing.v1 import AppTest
 
 from adjudication.anchors import anchor_for
+from source_adapters.corpus_index import list_review_sources, review_source_display_label
 from tests.workbench.test_review_jobs import isolated_source, SELECTION
 from tools.parser_inspector.review_panel import evidence_html
 from tools.parser_inspector.source_annotation import marks_for_document, selection_anchor
@@ -64,10 +65,20 @@ class ReviewPanelTests(unittest.TestCase):
         self.assertEqual(service.compile_review_job(self.root, switched)['job']['source_selection']['primary_unit_ids'],
                          ['sifen:section:39'])
 
+    def test_review_source_labels_use_pinyin_and_traditional_chinese_without_changing_ids(self):
+        sources = [{'id': 'santong', 'label': '三统历'}, {'id': 'sifen', 'label': '四分历'},
+                   {'id': 'jiuzhi', 'label': '九执历'}]
+        self.assertEqual({row['id']: review_source_display_label(row) for row in sources}, {
+            'santong': 'Santong li · 三統曆',
+            'sifen': 'Sifen li · 四分曆',
+            'jiuzhi': 'Jiuzhi li · 九執曆',
+        })
+        self.assertEqual([row['id'] for row in sources], ['santong', 'sifen', 'jiuzhi'])
+
     def test_parser_review_chrome_uses_the_selected_language_without_changing_data_values(self):
         app = AppTest.from_function(app_entry_zh, args=(str(self.root),), default_timeout=30).run()
         self.assertFalse(app.exception)
-        self.assertEqual(app.subheader[0].value, '解析检查器')
+        self.assertEqual([item.value for item in app.title], ['Parser 阶段'])
         self.assertEqual(app.selectbox(key='k2_source').label, '来源')
         self.assertEqual(app.selectbox(key='k2_section').label, '章节')
         self.assertIn('当前问题', [item.value for item in app.subheader])
@@ -95,6 +106,8 @@ class ReviewPanelTests(unittest.TestCase):
         app = self.app_for('draft-ui')
         app.session_state['k2_question'] = question['id']; app.run()
         self.assertIn('not saved', ' '.join(item.value.lower() for item in app.caption))
+        headings = [item.value for item in app.subheader]
+        self.assertLess(headings.index('Current question'), headings.index('Selected source object'))
 
     def test_next_and_previous_leave_job_bytes_and_revision_unchanged(self):
         response = service.create_review_job(self.root, 'navigation-ui',
