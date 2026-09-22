@@ -30,6 +30,109 @@ def app_entry_zh(root):
 
 
 class ReviewPanelTests(unittest.TestCase):
+    def test_selected_source_object_uses_frozen_four_layer_copy(self):
+        service.create_review_job(self.root, 'frozen-copy-ui',
+            {**SELECTION, 'primary_unit_ids': ['sifen:section:38'], 'provided_scope': {}})
+        app = self.app_for('frozen-copy-ui')
+        threshold = next(row['id'] for row in app.session_state['k2_scholar_model']['steps']
+                         if row['operation'] == 'threshold')
+        app.session_state['k2_scholar_selected'] = threshold; app.run()
+        displayed = '\n'.join(item.value for item in [*app.markdown, *app.caption])
+        for title, description in (
+            ('Term', 'What technical expression is identified here, and what might it mean?'),
+            ('Construction', 'How is the source expression structured, and what roles do its parts play?'),
+            ('Computational step', 'What operation does this construction represent, with which inputs and outputs?'),
+            ('Quantity flow', 'Where do the quantities come from, and how do they depend on other steps?'),
+        ):
+            self.assertIn(title, displayed)
+            self.assertIn(description, displayed)
+        self.assertIn('Lower bound → 12', displayed)
+        self.assertIn('Source form → 十二', displayed)
+        self.assertNotIn('No recorded terms.', displayed)
+        self.assertNotIn('Computational step ·', displayed)
+
+    def test_exact_parameter_declaration_is_a_direct_source_choice(self):
+        response = service.create_review_job(self.root, 'exact-declaration-ui',
+            {**SELECTION, 'primary_unit_ids': ['sifen:section:38'], 'provided_scope': {}})
+        question = next(q for q in response['questions'] if q.get('semantic_key', {}).get('formal') == '章月')
+        option = next(o for o in question['options'] if o.get('exact_declaration'))
+        app = self.app_for('exact-declaration-ui')
+        app.session_state['k2_question'] = question['id']; app.run()
+        app.radio(key='k2_option:' + question['id']).set_value(option['id']).run()
+        self.assertFalse(any(control.key == 'k2_context_search' for control in app.text_input))
+        self.assertFalse(app.button(key='k2_save').disabled)
+        app.button(key='k2_save').click().run()
+        updated = service.compile_review_job(self.root, 'exact-declaration-ui')
+        self.assertEqual(updated['job']['revision'], 2)
+        self.assertEqual(updated['session']['decisions'][-1]['action'], 'attach_context')
+        self.assertEqual(updated['session']['decisions'][-1]['payload']['document']['doc_id'], 'sifen:16')
+        self.assertTrue(any(q['id'] == question['id'] and q.get('recorded_decision')
+                            for q in updated['questions']))
+        self.assertIn('Recorded context ✓', [item.value for item in app.caption])
+        self.assertFalse(any(button.key == 'k2_save' for button in app.button))
+
+    def test_source_confirm_cannot_submit_a_choice_from_the_previous_render(self):
+        response = service.create_review_job(self.root, 'rapid-source',
+            {**SELECTION, 'primary_unit_ids': ['sifen:section:38'], 'provided_scope': {}})
+        question = next(q for q in response['questions'] if q['semantic_key'].get('formal') == '入蔀年')
+        app = self.app_for('rapid-source')
+        app.session_state['k2_question'] = question['id']; app.run()
+        runtime = next(o for o in question['options'] if o.get('group') == 'runtime_fallback')
+        context = next(o for o in question['options'] if o['action'] == 'attach_context')
+        app.radio(key='k2_option:' + question['id']).set_value(context['id']).run()
+        # Coalesce the changed radio and a click on the previous render's button.
+        app.radio(key='k2_fallback:' + question['id']).set_value(runtime['id'])
+        app.button(key='k2_save').click().run()
+        current = service.compile_review_job(self.root, 'rapid-source')
+        self.assertEqual(current['job']['revision'], 1)
+        self.assertFalse(app.exception)
+        self.assertIsNone(app.radio(key='k2_option:' + question['id']).value)
+        self.assertIsNone(app.radio(key='k2_fallback:' + question['id']).value)
+        self.assertTrue(app.button(key='k2_save').disabled)
+        app.radio(key='k2_fallback:' + question['id']).set_value(runtime['id']).run()
+        app.button(key='k2_save').click().run()
+        current = service.compile_review_job(self.root, 'rapid-source')
+        self.assertEqual(current['job']['revision'], 2)
+        self.assertEqual(current['session']['decisions'][-1]['action'], 'declare_parameter')
+        self.assertNotIn('document', current['session']['decisions'][-1]['payload'])
+
+    def test_source_question_is_self_contained_and_search_is_only_a_draft(self):
+        response = service.create_review_job(self.root, 'source-workspace',
+            {**SELECTION, 'primary_unit_ids': ['sifen:section:38'], 'provided_scope': {}})
+        question = next(q for q in response['questions'] if q['semantic_key'].get('formal') == '入蔀年')
+        app = self.app_for('source-workspace')
+        app.session_state['k2_question'] = question['id']; app.run()
+        visible = ' '.join(item.value for item in [*app.markdown, *app.caption])
+        for label in ('Exact parameter declarations', 'Other exact occurrences', 'Canonical producer candidates'):
+            self.assertIn(label, visible)
+        self.assertIn('No exact parameter declaration found in the indexed corpus.',
+                      [item.value for item in app.caption])
+        self.assertEqual(app.radio(key='k2_option:' + question['id']).label, 'Source resolution')
+        self.assertNotIn('Decision area', [item.label for item in app.radio])
+        self.assertFalse(any(item.label.startswith('Full source ·') for item in app.expander))
+        runtime = next(o for o in question['options'] if o.get('group') == 'runtime_fallback')
+        app.radio(key='k2_fallback:' + question['id']).set_value(runtime['id']).run()
+        self.assertIsNone(app.radio(key='k2_option:' + question['id']).value)
+        self.assertFalse(any(item.key == 'k2_context_search' for item in app.text_input))
+        visible = ' '.join(item.value for item in app.markdown)
+        for assertion in runtime['assertions']:
+            self.assertIn(assertion, visible)
+        self.assertNotIn('Add as context & re-run', [item.label for item in app.button])
+        context = next(o for o in question['options'] if o['action'] == 'attach_context')
+        app.radio(key='k2_option:' + question['id']).set_value(context['id']).run()
+        self.assertIsNone(app.radio(key='k2_fallback:' + question['id']).value)
+        visible = ' '.join(item.value for item in app.markdown)
+        for assertion in context['assertions']:
+            self.assertIn(assertion, visible)
+        self.assertTrue(any('draft · not attached' in item.value for item in app.caption))
+        all_options = list(app.selectbox(key='k2_context_unit').options)
+        app.text_input(key='k2_context_search').set_value('章法').run()
+        self.assertLess(len(app.selectbox(key='k2_context_unit').options), len(all_options))
+        self.assertFalse(app.exception)
+        self.assertEqual(service.compile_review_job(self.root, 'source-workspace')['job']['revision'], 1)
+        app.text_input(key='k2_context_search').set_value('no such chunk').run()
+        self.assertTrue(app.button(key='k2_save').disabled)
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
@@ -234,6 +337,7 @@ class ReviewPanelTests(unittest.TestCase):
         question = response['questions'][0]
         app = self.app_for('stale-ui')
         app.session_state['k2_question'] = question['id']; app.run()
+        app.radio(key='k2_option:' + question['id']).set_value(question['options'][-1]['id']).run()
         row = service.review_decision(response, 'defer', question['anchor'],
                                       {'unresolved': 'Other page'},
                                       {'type': 'scripted_fixture', 'id': 'other'}, 'Other page')
@@ -248,6 +352,8 @@ class ReviewPanelTests(unittest.TestCase):
         response = service.create_review_job(self.root, 'failure', SELECTION)
         app = self.app_for('failure')
         app.session_state['k2_question'] = response['questions'][0]['id']; app.run()
+        question = response['questions'][0]
+        app.radio(key='k2_option:' + question['id']).set_value(question['options'][-1]['id']).run()
         path = review_jobs.job_path(self.root, 'failure')
         before = path.read_bytes()
         with patch('workbench.review_jobs._atomic', side_effect=OSError('write failed')):

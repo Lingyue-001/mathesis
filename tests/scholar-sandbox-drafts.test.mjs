@@ -174,3 +174,12 @@ test("corrupt stored data is surfaced instead of silently erased", () => {
   storage.setItem(draftStorageKey(source), "not JSON");
   assert.throws(() => loadDrafts(source, storage), /valid JSON/);
 });
+
+test('scenario state changes preserve separate snapshot-bound drafts', () => {
+  const baseline=snapshot({snapshot_id:'baseline'}),successor=snapshot({snapshot_id:'successor'});
+  const storage=new MemoryStorage();
+  const saved=saveDrafts(baseline,upsertDraft(baseline,createDraftState(baseline),optionRecord(baseline)),storage);
+  saveDrafts(successor,createDraftState(successor),storage);
+  assert.deepEqual(loadDrafts(baseline,storage),saved);
+  assert.deepEqual(loadDrafts(successor,storage),createDraftState(successor));
+});

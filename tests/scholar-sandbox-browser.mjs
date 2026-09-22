@@ -6,7 +6,8 @@ import http from 'node:http';
 import {once} from 'node:events';
 import {chromium} from 'playwright';
 
-const root=path.resolve('dist'), output=path.resolve('tmp/static-scholar-sandbox');
+const candidateSnapshot=process.env.SANDBOX_SNAPSHOT;
+const root=path.resolve('dist'), output=path.resolve(candidateSnapshot?'tmp/semantic-closure/static-'+path.basename(candidateSnapshot,'.snapshot.json'):'tmp/static-scholar-sandbox');
 await fs.mkdir(output,{recursive:true});
 const types={'.html':'text/html','.css':'text/css','.mjs':'text/javascript','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.woff2':'font/woff2'};
 const server=http.createServer(async(req,res)=>{
@@ -16,7 +17,8 @@ const server=http.createServer(async(req,res)=>{
     let filename=path.resolve(root,decodeURIComponent(url.pathname.slice('/mathesis/'.length)));
     if(filename!==root&&!filename.startsWith(root+path.sep))throw Error('Outside static root');
     if((await fs.stat(filename)).isDirectory())filename=path.join(filename,'index.html');
-    res.setHeader('Content-Type',types[path.extname(filename)]||'application/octet-stream');res.end(await fs.readFile(filename));
+    res.setHeader('Content-Type',types[path.extname(filename)]||'application/octet-stream');
+    res.end(await fs.readFile(candidateSnapshot&&url.pathname==='/mathesis/static/data/inspector/sifen-38.snapshot.json'?candidateSnapshot:filename));
   }catch{res.writeHead(404);res.end('Not found');}
 });
 server.listen(0,'127.0.0.1');await once(server,'listening');
@@ -29,13 +31,22 @@ page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
 page.on('request',r=>{if(new URL(r.url()).pathname.includes('/api/'))api.push(r.url());});
 page.on('requestfailed',r=>failed.push(r.url()));
 page.on('response',r=>{if(r.status()>=400)failed.push(r.url()+': '+r.status());});
-const snapshot=JSON.parse(await fs.readFile('static/data/inspector/sifen-38.snapshot.json','utf8').catch(()=>'{}'));
+const snapshot=JSON.parse(await fs.readFile(candidateSnapshot||'static/data/inspector/sifen-38.snapshot.json','utf8'));
 const render=async()=>{await page.locator('.source .char').first().waitFor();await page.waitForTimeout(100);};
 const noOverflow=async()=>assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
 try{
   const response=await page.goto(origin+'/mathesis/inspector/');
   assert.equal(response.status(),200,'production /mathesis/inspector/ route exists');
   await render();
+  if(snapshot.schema==='ScholarSandboxScenario/1'||process.env.SANDBOX_SCENARIO_TEST){
+    const {checkPrecompiledScenario}=await import('./workbench/precompiled-scenario-static.mjs');
+    await checkPrecompiledScenario({page,scenario:snapshot,output,render,noOverflow});
+    checks.push('real precompiled successors, reset, snapshot-bound drafts, four analysis layers and 1440/768/390 verified');
+  }else if(candidateSnapshot){
+    const {checkCompiledClosure}=await import('./workbench/semantic-closure-static.mjs');
+    await checkCompiledClosure({page,snapshot,output,render,noOverflow});
+    checks.push('candidate compiled closure, clickable provenance, Procedure Model, 1440/768/390 and draft immutability verified using production assets');
+  }else{
   assert.equal(await page.locator('.glyphs:not(.probe)').allTextContents().then(rows=>rows.join('')),snapshot.source.text);
   assert.equal(await page.getByRole('heading',{level:1}).innerText(),'Parser Stages');
   assert.equal(await page.locator('#parser-source option:checked').innerText(),'Sifen li · 四分曆');
@@ -133,6 +144,7 @@ try{
   checks.push('Procedure Model and bidirectional source/graph selection preserve object identities');
   await page.getByRole('button',{name:'Annotated Source',exact:true}).click();
   await page.getByLabel('Adjust term boundary',{exact:true}).check();
+  await render(); // the shared ResizeObserver replaces glyphs after a mode switch
   const a=page.locator('.source .char[data-offset="6"]'),b=page.locator('.source .char[data-offset="8"]');
   await a.scrollIntoViewIfNeeded();const ab=await a.boundingBox(),bb=await b.boundingBox();
   await page.mouse.move(ab.x+ab.width/2,ab.y+ab.height/2);await page.mouse.down();
@@ -229,10 +241,13 @@ try{
   }
   checks.push('all workspaces, source annotations, options/drafts and graph usable at 1440/768/390 px');
   checks.push('shared traditional/pinyin source labels; open picker highlights stay aligned at full width without animation jumps; keyboard selection works');
+  }
   assert.deepEqual(api,[]);assert.deepEqual(failed,[]);assert.deepEqual(errors,[]);
   const text=await page.locator('#scholar-sandbox').innerText();assert.doesNotMatch(text,/Confirm and re-run|Execute|Retract and re-run/);
   checks.push('zero API requests, missing assets or console errors; no fake backend controls');
-  await fs.writeFile(path.join(output,'acceptance.json'),JSON.stringify({status:'passed',checks,errors,failed,api,snapshot_id:snapshot.snapshot_id},null,2));
+  await fs.writeFile(path.join(output,'acceptance.json'),JSON.stringify({status:'passed',checks,errors,failed,api,
+    snapshot_id:snapshot.snapshot_id,scenario_id:snapshot.scenario_id,
+    state_snapshot_ids:snapshot.states?Object.fromEntries(Object.entries(snapshot.states).map(([id,state])=>[id,state.snapshot_id])):undefined},null,2));
   console.log(JSON.stringify({status:'passed',checks,output},null,2));
 }catch(error){await page.screenshot({path:path.join(output,'failure.png'),fullPage:true});await fs.writeFile(path.join(output,'failure.txt'),await page.locator('body').ariaSnapshot());throw error;}
 finally{await browser.close();await new Promise(resolve=>server.close(resolve));}

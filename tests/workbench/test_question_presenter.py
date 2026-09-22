@@ -66,10 +66,17 @@ class QuestionPresenterTests(unittest.TestCase):
                 option = next(o for o in first['options'] if o.get('payload', {}).get('claim', {}).get('origin') == origin)
                 append_decision(s, decision(p, 'local', option['action'], first['anchor'], option['payload']), packet=p)
                 after = self.questions(p, s)
-                self.assertEqual(next(q for q in after if q['id'] == second['id']), second)
                 if origin == 'machine_adoption':
                     self.assertNotIn(first['id'], [q['id'] for q in after])
+                    # These two names are a real alias chain. The second may now
+                    # inherit the expression, but never a human decision record.
+                    self.assertNotIn(second['id'], [q['id'] for q in after])
+                    from adjudication.semantic_closure import term_resolution
+                    inherited = term_resolution(compile_reviewed(p, s)['semantic_closure'], second['anchor'])
+                    self.assertTrue(inherited['resolved'])
+                    self.assertTrue(all(a['authority'] == 'derived' for a in inherited['assertions']))
                 else:
+                    self.assertEqual(next(q for q in after if q['id'] == second['id']), second)
                     local = next(q for q in after if q['id'] == first['id'])
                     self.assertFalse(any(o.get('payload', {}).get('claim', {}).get('origin') == 'machine_adoption'
                                          for o in local['options']))

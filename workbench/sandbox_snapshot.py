@@ -15,17 +15,20 @@ from pathlib import Path
 import re
 
 from analysis_parser.ontology import entry
+from adjudication import append_decision, new_session
 from adjudication.anchors import anchor_for
 from source_adapters import corpus_index, corpus_review
 from tools.parser_inspector.segmentation_review import _type_badge, _type_style
-from tools.parser_inspector.review_panel import composition_choices, question_options
+from tools.parser_inspector.review_panel import composition_choices, question_options, _option_submission
 from workbench import service
 from workbench.annotation_projection import project_scholar_source
 from workbench.procedure_model import build_procedure_model
-from workbench.scholar_renderer import build_renderer_model, selection_details
+from workbench.scholar_renderer import build_renderer_model, selection_details, selected_source_object_sections
 
 
 SCHEMA = "ScholarSandboxSnapshot/1"
+SCENARIO_SCHEMA = "ScholarSandboxScenario/1"
+SCENARIO_TIME = "2026-09-22T00:00:00+00:00"
 DEFAULT_JOB_ID = "scholar-renderer-correction-20260920"
 DEFAULT_OUTPUT = Path("static/data/inspector/sifen-38.snapshot.json")
 
@@ -127,6 +130,12 @@ def build_snapshot(root=".", job_id=DEFAULT_JOB_ID):
     """Build a read-only ScholarSandboxSnapshot/1 from one current ReviewJob."""
     root = Path(root).resolve()
     response = service.compile_review_job(root, job_id)
+    return build_snapshot_from_response(root, response)
+
+
+def build_snapshot_from_response(root, response):
+    """Export one existing compiler response without changing research state."""
+    root = Path(root).resolve()
     if response.get("freshness", {}).get("status") != "current":
         raise ValueError("sandbox_snapshot_requires_current_review_job")
     projection = project_scholar_source(
@@ -141,6 +150,8 @@ def build_snapshot(root=".", job_id=DEFAULT_JOB_ID):
                       for object_id in sorted(renderer["objects"])}
     facet_details = {facet["facet_key"]: selection_details(renderer, facet["object_id"], facet["facet_key"], root=root)
                      for facet in sorted(renderer["facets"], key=lambda row: row["facet_key"])}
+    for detail in [*object_details.values(), *facet_details.values()]:
+        detail['selected_source_sections'] = selected_source_object_sections(renderer, detail['selected']['id'])
     corpora, context_catalog = _available_corpora(root)
     job = response["job"]
     source_document = next(document for document in response["effective_packet"]["primary_documents"]
@@ -211,14 +222,112 @@ def export_snapshot(snapshot, output):
     return target
 
 
+def build_scenario(root="."):
+    """Compile the approved demonstration in memory using ordinary review contracts."""
+    root = Path(root).resolve()
+    selection = {'source_id': 'sifen', 'primary_unit_ids': ['sifen:section:38'],
+                 'context_unit_ids': [], 'provided_scope': {}, 'selected_profiles': []}
+    packet = service._packet_for_job(root, selection, 'sandbox-scenario')
+    job = {'schema': 'ReviewJob/1', 'job_id': 'sandbox-scenario', 'revision': 1,
+           'source_selection': selection, 'base_packet_identity': service.packet_identity(packet),
+           'analysis_inputs_digest': service._analysis_inputs_digest(packet),
+           'session': new_session(packet, 'review:sandbox-scenario'), 'branch_id': 'main',
+           'management_events': [], 'created_at': SCENARIO_TIME, 'updated_at': SCENARIO_TIME}
+    response = service._job_response(root, job, packet)
+    baseline = build_snapshot_from_response(root, response)
+    scenario = {'schema': SCENARIO_SCHEMA, 'source': deepcopy(baseline['source']),
+                'initial_state_id': 'baseline', 'states': {'baseline': baseline}, 'transitions': []}
+    previous = 'baseline'
+    steps = [('ordinal-reviewed', None, None),
+             ('zhang-yue-attached', 'sifen:section:16', '章月'),
+             ('zhang-fa-attached', 'sifen:section:15', '章法')]
+    for state_id, unit_id, formal in steps:
+        matches = []
+        for question in response['questions']:
+            if question.get('recorded_decision'):
+                continue
+            for option in question_options(question):
+                facets = option.get('payload', {}).get('facets', {})
+                matches_ordinal = (question['kind'] == 'counting_convention'
+                    and option.get('action') == 'set_quantity_semantics'
+                    and facets.get('coordinate_kind') == 'ordinal' and facets.get('index_base') == 1)
+                matches_declaration = option.get('exact_declaration') == {'unit_id': unit_id, 'formal': formal}
+                if (unit_id is None and matches_ordinal) or (unit_id is not None and matches_declaration):
+                    matches.append((question, option))
+        if len(matches) != 1:
+            raise ValueError('sandbox_scenario_requires_unique_option:' + state_id)
+        question, option = matches[0]
+        decisions, events = _option_submission(response, question, option,
+            {'type': 'scripted_fixture', 'id': 'precompiled-conference-demonstration'},
+            'Precompiled demonstration: ' + option['label'])
+        decision = decisions[0]
+        decision.update(decision_id='scenario:' + state_id, created_at=SCENARIO_TIME)
+        for index, event in enumerate(events):
+            event.update(event_id=f'scenario:{state_id}:manage:{index}', created_at=SCENARIO_TIME)
+        append_decision(job['session'], decision, packet=packet)
+        for event in events:
+            service.review_jobs.validate_management_event(event)
+        job['management_events'].extend(events)
+        job['revision'] += 1
+        response = service._job_response(root, job, packet)
+        statuses = response['compilation']['replay']['decision_status']
+        if any(statuses[d['decision_id']]['status'] != 'active' for d in job['session']['decisions']):
+            raise ValueError('sandbox_scenario_decision_not_active:' + state_id)
+        successor = build_snapshot_from_response(root, response)
+        scenario['states'][state_id] = successor
+        scenario['transitions'].append({'id': 'confirm:' + state_id,
+            'from_state_id': previous, 'to_state_id': state_id,
+            'question_id': question['id'], 'option_id': option['id'], 'label': option['label'],
+            'decision': deepcopy(decision), 'management_events': deepcopy(events),
+            'provenance': {'compiler': 'adjudication.compile_reviewed',
+                           'snapshot_id': successor['snapshot_id']}})
+        previous = state_id
+    scenario['scenario_id'] = _sha256(scenario)
+    return scenario
+
+
+def serialize_scenario(scenario):
+    if scenario.get('schema') != SCENARIO_SCHEMA:
+        raise ValueError('sandbox_scenario_serializer_requires_v1')
+    for snapshot in scenario['states'].values():
+        serialize_snapshot(snapshot)
+    visited = {scenario['initial_state_id']}
+    current = scenario['initial_state_id']
+    identifiers = set()
+    for transition in scenario['transitions']:
+        target = transition['to_state_id']
+        if (transition['id'] in identifiers or transition['from_state_id'] != current
+                or target in visited or target not in scenario['states']):
+            raise ValueError('sandbox_scenario_invalid_transition')
+        snapshot = scenario['states'][current]
+        question = next((q for q in snapshot['questions'] if q['id'] == transition['question_id']), None)
+        if question is None or not any(o['id'] == transition['option_id'] for o in question['options']):
+            raise ValueError('sandbox_scenario_unknown_option')
+        identifiers.add(transition['id']); visited.add(target); current = target
+    if visited != set(scenario['states']):
+        raise ValueError('sandbox_scenario_unreachable_state')
+    if scenario.get('scenario_id') != _sha256({k: v for k, v in scenario.items() if k != 'scenario_id'}):
+        raise ValueError('sandbox_scenario_id_mismatch')
+    return canonical_json(scenario)
+
+
+def export_scenario(scenario, output):
+    text = serialize_scenario(scenario)
+    target = Path(output)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(text, encoding='utf-8', newline='\n')
+    return target
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Export the static Scholar Sandbox snapshot.")
     parser.add_argument("--root", default=".")
     parser.add_argument("--job-id", default=DEFAULT_JOB_ID)
+    parser.add_argument("--scenario", action="store_true", help="Export the fixed precompiled §38 demonstration.")
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT))
     args = parser.parse_args(argv)
-    snapshot = build_snapshot(args.root, args.job_id)
-    output = export_snapshot(snapshot, Path(args.root) / args.output)
+    snapshot = build_scenario(args.root) if args.scenario else build_snapshot(args.root, args.job_id)
+    output = (export_scenario if args.scenario else export_snapshot)(snapshot, Path(args.root) / args.output)
     print(output)
 
 

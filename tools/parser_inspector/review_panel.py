@@ -9,12 +9,12 @@ from analysis_parser.ontology import label_en
 from adjudication.term_claims import compose_term_interpretation
 from domain_kernel.engine import load_kernel
 from source_adapters.corpus import _load_effective_index
-from source_adapters.corpus_index import list_review_sources, review_source_display_label
+from source_adapters.corpus_index import list_review_sources, review_source_display_label, search_effective_units
 from tools.parser_inspector.source_annotation import selection_anchor, source_annotation_component, procedure_model_component
 from workbench import review_jobs, service
 from workbench.annotation_projection import diff_scholar_source, project_scholar_source
 from workbench.question_presenter import CONCEPT_LABELS, CONSTRUCTOR_LABELS, expression_label
-from workbench.scholar_renderer import build_renderer_model, selection_details
+from workbench.scholar_renderer import build_renderer_model, selection_details, selected_source_object_sections
 from workbench.procedure_model import build_procedure_model, serialize_procedure_model
 
 
@@ -153,6 +153,12 @@ def _submit(st, root, response, **changes):
                         'mode': 'saved', 'decision_ids': trigger_ids,
                         'change_kind': 'decision' if trigger_ids else 'management'}),
                 }
+                summary = st.session_state['k2_last_scholar_diff']['diff']['summary']
+                if summary.get('derived_assertions_added') or summary.get('derived_assertions_removed'):
+                    result['effects']['message_en'] += (f" {summary['derived_assertions_added']} derived facts added; "
+                        f"{summary['derived_interpretations_added']} derived Term interpretations; "
+                        f"{summary['questions_resolved_automatically']} questions resolved automatically; "
+                        f"{summary['derived_assertions_removed']} derived facts removed.")
             except (KeyError, ValueError):
                 # A source switch or unavailable focus document has no honest
                 # before/after comparison. The saved review transaction remains valid.
@@ -370,6 +376,9 @@ def _procedure_details(st, response):
     selected = st.session_state.get('k2_scholar_selected')
     nodes = [n for n in model.get('nodes', []) if selected in n['scholar_object_ids']]
     st.subheader('Source context')
+    scholar = st.session_state.get('k2_scholar_model', {})
+    if scholar:
+        _semantic_details(st, selection_details(scholar, selected), scholar['objects'])
     if not nodes:
         st.caption('Select a node to inspect its source and recorded dependencies.')
         return
@@ -405,20 +414,33 @@ def _boundary_save(st, root, response, actor, reason):
         _submit(st, root, response, decisions=decisions)
 
 
-def context_hint_attachment(root, response, question, source_id, hit):
-    """Offer only the current question's existing action and adapter document."""
-    option = next((o for o in (question or {}).get('options', []) if o['action'] == 'attach_context'), None)
-    if option is None:
-        return None
-    try:
-        document = service.review_context_document(root, source_id, hit['unit_id'])
-    except (ValueError, KeyError, OSError):
-        return None
-    existing = response.get('effective_packet', response['packet'])
-    if any(d['doc_id'] == document['doc_id'] for group in ('primary_documents', 'context_documents')
-           for d in existing.get(group, [])):
-        return None
-    return option, document
+def _semantic_details(st, details, objects):
+    """Shared provenance pane for source and Procedure Model selections."""
+    for group_index, group in enumerate(details.get('semantic_provenance', [])):
+        st.caption(group['title'])
+        if group.get('target_label'):
+            st.caption(group['target_label'])
+        st.write(group['label'])
+        st.caption('Derived from' if group['rule_id'] else 'Evidence')
+        for dep_index, dependency in enumerate(group['dependencies']):
+            ident = dependency.get('object_id')
+            if ident in objects:
+                if st.button(dependency['label'], key=f'closure:{group_index}:{dep_index}'):
+                    st.session_state['k2_scholar_selected'] = ident
+                    st.session_state['k2_scholar_facet'] = None
+                    st.session_state['k2_question'] = None
+                    st.rerun()
+            else:
+                st.caption('• ' + dependency['label'])
+        with st.expander('Semantic evidence / technical details'):
+            st.json(group['evidence'])
+    for diagnostic in details.get('semantic_diagnostics', []):
+        st.caption('Meaning remains unresolved')
+        if diagnostic['reason'] == 'missing_registered_arithmetic_semantic_relation':
+            st.write('No registered typed relation supplies an output interpretation for this operation. '
+                     'A reviewed operand meaning alone does not supply a rate, conversion, or divisor relation.')
+        else:
+            st.write(diagnostic['reason'].replace('_', ' '))
 
 
 def _scholar_review_details(st, root, response, question, actor=None, reason=''):
@@ -435,31 +457,82 @@ def _scholar_review_details(st, root, response, question, actor=None, reason='')
         return
     objects = model['objects']
 
-    def name(row):
-        if row.get('surface') or row.get('formal'):
-            return row.get('surface') or row['formal']
-        try:
-            return label_en('operation', row['operation'])
-        except (ValueError, KeyError):
-            return row.get('operation', 'Source object')
+    def label(row):
+        return row['label'] + ((' · ' + row['identity']) if row.get('label') == 'Display gap for review'
+                               and row.get('identity') else '')
 
-    def role_name(code):
-        try:
-            return label_en('port', code)
-        except ValueError:
-            return code
+    def field(heading, value):
+        st.caption(heading)
+        st.write(value)
 
-    st.write(name(selected))
-    if selected.get('gloss', {}).get('kind') == 'reviewed':
-        st.caption('Current interpretation · reviewed')
-        st.write(selected['gloss']['label'])
-    if selected.get('semantic_candidates'):
-        st.caption('Machine suggestions · unranked')
-        for candidate in selected['semantic_candidates']:
-            label = expression_label(candidate['structured_expression']) if candidate.get('structured_expression') else candidate.get('expression', '')
-            st.write('• ' + label + ' · ' + candidate.get('status', 'suggested'))
-    if selected.get('adjudication'):
-        st.caption('suggested · read-only in current adjudication schema')
+    for section in selected_source_object_sections(model, selected['id']):
+        with st.container(border=True, key='procedure-layer-' + section['key']):
+            st.markdown('#### ' + section['title'])
+            st.caption(section['description'])
+            if not section['items']:
+                st.caption(section['empty'])
+            for row in section['items']:
+                with st.container(border=row['selected'], key='procedure-object-' + row['id']):
+                    if section['key'] == 'terms':
+                        field('Surface form', row['surface_form'])
+                        if row['composition']:
+                            st.caption('Composition')
+                            for part in row['composition']:
+                                st.write(label(part))
+                        if row['machine_suggestions']:
+                            st.caption('Machine suggestions')
+                            for suggestion in row['machine_suggestions']:
+                                st.write('• ' + label(suggestion))
+                        if row['reviewed_interpretation']:
+                            field('Reviewed interpretation', row['reviewed_interpretation'])
+                    elif section['key'] == 'constructions':
+                        field('Source expression', row['source_expression'])
+                        field('Construction type', label(row['construction_type']))
+                        if row['roles']:
+                            st.caption('Roles')
+                            for role in row['roles']:
+                                st.write(label(role['role']) + ' → ' + label(role['value']))
+                        if row['slots']:
+                            st.caption('Construction slots')
+                            for slot in row['slots']:
+                                st.write(label(slot['role']) + ' → ' + slot['surface'])
+                        if row['linked_steps']:
+                            st.caption('Linked computational step')
+                            for step in row['linked_steps']:
+                                st.write('→ ' + label(step))
+                    elif section['key'] == 'steps':
+                        field('Operation', label(row['operation']))
+                        if row['inputs']:
+                            st.caption('Inputs')
+                            for item in row['inputs']:
+                                value = (str(item['normalized_value']) if item['normalized_value'] is not None
+                                         else label(item['value']) if item.get('value') else 'Display gap for review')
+                                st.write(label(item['role']) + ' → ' + value)
+                                if item['source_form']:
+                                    st.write('Source form → ' + item['source_form'])
+                                elif item['source_form_gap']:
+                                    st.caption('Display gap for review')
+                                if item.get('from'):
+                                    st.write('From → ' + label(item['from']))
+                        if row['outputs']:
+                            st.caption('Outputs')
+                            for output in row['outputs']:
+                                value = (' / '.join(label(item) for item in output['labels']) if output['labels']
+                                         else 'Display gap for review' + (' · ' + output['identity'] if output['identity'] else ''))
+                                st.write(label(output['role']) + ' → ' + value)
+                    else:
+                        st.write(row['identity'] or 'Display gap for review')
+                        if row['status']:
+                            field('Status', row['status'])
+                        if row['producer']:
+                            field('Producer', label(row['producer']))
+                        if row['consumers']:
+                            st.caption('Consumer')
+                            for consumer in row['consumers']:
+                                st.write(label(consumer))
+                        if row['historical_source']:
+                            field('Historical source', row['historical_source'])
+    _semantic_details(st, details, objects)
     if details['facets'] and not details['facet']:
         st.write('Review overview')
         for facet in details['facets']:
@@ -472,45 +545,6 @@ def _scholar_review_details(st, root, response, question, actor=None, reason='')
                 st.session_state['k2_scholar_facet'] = facet['facet_key']
                 st.session_state['k2_question'] = facet['question_id']
                 st.rerun()
-    if details['uses'] or details['steps'] or details['named_outputs']:
-        st.caption('Local computational context')
-    if details['composition']:
-        st.caption('Term composition')
-        for part in details['composition']:
-            labels = part['gloss'].get('labels', [part['gloss']['label']])
-            st.write(part['surface'] + ' · ' + ' / '.join(labels))
-    for use in details['uses']:
-        st.caption('Used in · ' + role_name(use['role']))
-        st.write(use['construction']['surface'])
-    if selected.get('slots'):
-        st.caption('Construction slots')
-        for slot in selected['slots']:
-            st.write(role_name(slot['name']) + ' → ' + slot.get('surface', ''))
-    for naming in details['naming']:
-        st.caption('Textual naming')
-        st.write(naming['surface'])
-    for output in details['named_outputs']:
-        st.caption('Computational role')
-        st.write(name(output['step']) + ' → ' + role_name(output['port']))
-    for step in details['steps']:
-        st.caption('Computational step · ' + name(step))
-        for item in step.get('inputs', []):
-            if item.get('term_id') in objects:
-                value = name(objects[item['term_id']])
-            elif item.get('from_step_id') in objects:
-                value = 'from ' + name(objects[item['from_step_id']])
-            elif 'literal' in item:
-                value = str(item['literal'])
-            else:
-                value = item.get('surface_reference', 'local source grounding unavailable')
-            st.write(role_name(item['role']) + ' → ' + value)
-        for output in step.get('outputs', []):
-            st.write(role_name(output['port']) + ' → ' + (' / '.join(output.get('labels', [])) or 'unnamed result'))
-    for flow in details['flows']:
-        st.caption(flow['formal'] + ' · ' + flow['display_status'])
-        producer = flow.get('producer_source') or {}
-        if producer.get('sections'):
-            st.caption('Historical source · §' + ', §'.join(map(str, producer['sections'])))
     if details['context_requirement']:
         context = details['context_requirement']
         st.write('Construction context requirement')
@@ -525,38 +559,18 @@ def _scholar_review_details(st, root, response, question, actor=None, reason='')
             st.caption('No canonical producer candidate is currently recorded.')
         for candidate in assistance['candidates']:
             st.write(candidate['label'])
-        st.caption('Search hints — not yet linked')
-        for heading, key in (('Registered parameter/declaration hits', 'registered'),
-                             ('Other exact source occurrences', 'other')):
-            st.write(heading)
-            if not assistance[key]:
-                st.caption('No exact hit.')
-            for hit in assistance[key]:
-                caption = '§' + ', §'.join(map(str, hit['sections'])) + ' · ' + hit['quote']
-                st.caption(caption + ' · ' + (hit.get('unit_type') or 'source'))
-                with st.expander('Inspect · ' + caption):
-                    text = hit['text']; start, end = hit['span']
-                    st.html('<div style="white-space:pre-wrap">' + escape(text[:start]) + '<mark>'
-                            + escape(text[start:end]) + '</mark>' + escape(text[end:]) + '</div>')
-                    attachment = context_hint_attachment(root, response, question, model['source'].get('source_id'), hit)
-                    if attachment:
-                        option, document = attachment
-                        if st.button('Add as context & re-run',
-                                     key='k2_hint_attach:' + details['facet']['facet_key'] + ':' + hit['unit_id'] + ':' + str(start),
-                                     disabled=not actor or not actor.get('id') or not reason):
-                            try:
-                                decisions, events = _option_submission(response, question, option, actor, reason,
-                                                                         context_document=document)
-                                _submit(st, root, response, decisions=decisions, management_events=events)
-                            except (ValueError, KeyError, TypeError) as error:
-                                st.error('Not saved: ' + str(error))
-                    else:
-                        st.caption('Read-only here: already included, or this question offers no supported context attachment.')
+        _corpus_evidence(st, {'declarations': assistance['registered'], 'occurrences': assistance['other']})
+        st.caption('Source decisions are saved in Current question.')
     last = st.session_state.get('k2_last_scholar_diff')
     if last and (last['job_id'], last['revision']) == (response['job']['job_id'], response['job']['revision']):
         delta = last['diff']
         st.subheader('Last change')
         st.caption(str(delta['summary']['semantic_change_count']) + ' source annotation changes')
+        summary = delta['summary']
+        st.caption(f"{summary.get('derived_assertions_added', 0)} derived facts added · "
+                   f"{summary.get('derived_interpretations_added', 0)} derived Term interpretations added · "
+                   f"{summary.get('questions_resolved_automatically', 0)} questions resolved automatically · "
+                   f"{summary.get('derived_assertions_removed', 0)} derived facts removed")
         for layer, changes in delta['layers'].items():
             counts = [(key, len(changes[key])) for key in ('added', 'removed', 'changed') if changes[key]]
             if counts:
@@ -700,6 +714,93 @@ def question_options(question):
     return options
 
 
+def _corpus_evidence(st, evidence, keys=('declarations', 'occurrences')):
+    for heading, key, empty in (
+        ('Exact parameter declarations', 'declarations', 'No exact parameter declaration found in the indexed corpus.'),
+        ('Other exact occurrences', 'occurrences', 'No other exact occurrence found in the indexed corpus.')):
+        if key not in keys:
+            continue
+        rows = evidence.get(key, [])
+        st.caption(heading + (' · ' + str(len(rows)) if rows else ''))
+        if not rows:
+            st.caption(empty)
+        for row in rows:
+            unit = row['unit_id']
+            label = ('§' + unit.rsplit(':', 1)[-1] if ':section:' in unit else unit)
+            label += ' · ' + (row.get('unit_type') or 'source') + ' · ' + (row['quote'] or 'Indexed declaration · exact text span unavailable')
+            with st.popover(label, width='stretch'):
+                st.text(row['text'])
+
+
+def _source_evidence(st, question):
+    evidence = question.get('source_review', {})
+    st.caption('Source provenance · ' + question['machine_context']['source_status'])
+    _corpus_evidence(st, evidence, ('declarations',))
+    st.caption('Canonical producer candidates')
+    candidates = evidence.get('producers', [])
+    if not candidates:
+        st.caption('No canonical producer candidate is currently recorded.')
+    for candidate in candidates:
+        st.write(candidate['label'])
+    _corpus_evidence(st, evidence, ('occurrences',))
+
+
+def _rule_trace(st, records):
+    stages = {'linker': 0, 'review_queue': 1, 'scholar_question': 2}
+    path = []
+    for record in sorted(records, key=lambda row: stages.get(row['stage'], 3)):
+        result = record['result']
+        value = result.get('diagnostic') or result.get('review.kind') or result.get('issue_family')
+        if record['matched'] and value:
+            path.append(record['rule_id'] + ' → ' + value)
+    if path:
+        st.caption(' → '.join(dict.fromkeys(path)))
+    for record in records:
+        with st.expander('Rule · ' + record['rule_id']):
+            st.table([{'Condition': row['key'] + ' = ' + str(row['expected']),
+                       'Current value': str(row['actual']), 'Match': '✓' if row['matched'] else '✗'}
+                      for row in record['conditions']])
+            st.write('Result')
+            st.json(record['result'])
+            if record.get('subject'):
+                st.write('Evidence identities')
+                st.json(record['subject'])
+            implementation = record['implementation']
+            st.caption(implementation['file'] + ' · ' + implementation['symbol'])
+            st.caption('Revision: ' + implementation['revision'] + ' · ' + implementation['code_state'])
+            st.caption('Content SHA-256: ' + implementation['content_sha256'])
+            with st.expander('View source'):
+                st.code(implementation['source'], language='python')
+            if record.get('evaluations'):
+                with st.expander('Literal lookup conditions by unit'):
+                    st.dataframe(record['evaluations'])
+
+
+def _context_picker(st, root):
+    literal = st.text_input('Search source chunks (literal text)', key='k2_context_search')
+    sources = list_review_sources(root)
+    source_labels = {row['id']: review_source_display_label(row) for row in sources}
+    by_id, unit_sources = {}, {}
+    for source_id in source_labels:
+        _, index = _load_effective_index(root, source_id)
+        for unit in search_effective_units(index, literal):
+            by_id[unit['id']] = unit
+            unit_sources[unit['id']] = source_id
+    if not by_id:
+        st.caption('No source chunk contains this exact text.')
+        return None
+    if st.session_state.get('k2_context_unit') not in by_id:
+        st.session_state.pop('k2_context_unit', None)
+    selected = st.selectbox('Source section', list(by_id), key='k2_context_unit',
+        format_func=lambda ident: ident + ' · ' + by_id[ident].get('type', 'source'))
+    preview = by_id[selected].get('text_effective', '')
+    st.caption(preview[:120] + ('…' if len(preview) > 120 else ''))
+    with st.expander('Full source chunk'):
+        st.text(preview)
+    st.caption(selected + ' · draft · not attached')
+    return service.review_context_document(root, unit_sources[selected], selected)
+
+
 def _question_controls(st, root, response, question, questions, actor, reason):
     st.subheader('Current question')
     if question is None:
@@ -707,32 +808,80 @@ def _question_controls(st, root, response, question, questions, actor, reason):
         return
     ids = [row['id'] for row in questions]
     index = ids.index(question['id'])
-    left, right = st.columns(2)
-    if left.button('Previous', key='k2_previous', disabled=index == 0):
-        st.session_state['k2_question'] = ids[index - 1]; st.rerun()
-    if right.button('Next pending', key='k2_next', disabled=index == len(ids) - 1):
-        st.session_state['k2_question'] = ids[index + 1]; st.rerun()
+    with st.container(horizontal=True):
+        if st.button('Previous', key='k2_previous', disabled=index == 0):
+            st.session_state['k2_question'] = ids[index - 1]; st.rerun()
+        if st.button('Next pending', key='k2_next', disabled=index == len(ids) - 1):
+            st.session_state['k2_question'] = ids[index + 1]; st.rerun()
     st.write(question['title'])
+    recorded = question.get('recorded_decision')
+    if recorded:
+        st.caption('Recorded context ✓')
+        st.write(recorded['option_label'])
+        for assertion in recorded.get('assertions', []):
+            st.write('• ' + assertion)
+        with st.expander('Why these options?'):
+            if question.get('rule_trace'):
+                _rule_trace(st, question['rule_trace'])
+            else:
+                st.write(question.get('evidence', {}))
+        st.caption('Retract this record in Decision history and retract to choose different source material.')
+        return
     # Equivalent backend actions share an ID (e.g. reject one/only candidate).
     # A radio group must expose each value once so selection and labels agree.
     options = question_options(question)
+    source_question = question.get('semantic_key', {}).get('issue_family') == 'source_supply'
+    option_label = 'Interpretation'
+    all_options = options
+    fallback_options = []
+    key = 'k2_option:' + question['id']
+    fallback_key = 'k2_fallback:' + question['id']
+    choice_revision_key = 'k2_choice_revision:' + question['id']
+    confirmation_key = 'k2_choice_confirmation:' + question['id']
+    active_group_key = 'k2_choice_group:' + question['id']
+    def clear_other(other_key):
+        st.session_state[active_group_key] = key if other_key == fallback_key else fallback_key
+        st.session_state[other_key] = None
+        st.session_state[choice_revision_key] = st.session_state.get(choice_revision_key, 0) + 1
+    def confirm_visible_choice(rendered_revision):
+        # A rapid click can arrive from the previous render while radio callbacks
+        # are clearing the other group. Never submit that obsolete choice.
+        st.session_state[confirmation_key] = rendered_revision == st.session_state.get(choice_revision_key, 0)
+        if not st.session_state[confirmation_key]:
+            # Discard stale UI state as a whole. A second click must not silently
+            # confirm whichever old group survived a coalesced client update.
+            st.session_state[key] = None
+            st.session_state[fallback_key] = None
+            st.session_state[active_group_key] = key
+    if source_question:
+        _source_evidence(st, question)
+        fallback_options = [o for o in options if o.get('group') == 'runtime_fallback']
+        options = [o for o in options if o.get('group') != 'runtime_fallback']
+        option_label = 'Source resolution'
     if not options:
         st.caption('No supported interpretation is available for this source location yet.')
         return
     option_ids = [row['id'] for row in options]
-    selected_id = st.radio('Interpretation', option_ids,
+    if key in st.session_state and st.session_state[key] is not None and st.session_state[key] not in option_ids:
+        st.session_state.pop(key)
+    selected_id = st.radio(option_label, option_ids,
         format_func=lambda ident: next(row['label'] for row in options if row['id'] == ident),
-        key='k2_option:' + question['id'])
-    option = next(row for row in options if row['id'] == selected_id)
-    st.caption('This selection is not saved. Only Confirm and re-run records a decision.')
+        key=key, **({'index': None, 'on_change': clear_other, 'args': (fallback_key,)} if source_question else {}))
+    option = next((row for row in options if row['id'] == selected_id), {})
     context_document = None
     if option.get('requires_context_picker'):
-        sources = list_review_sources(root)
-        source_labels = {row['id']: review_source_display_label(row) for row in sources}
-        source_id = st.selectbox('Additional source', list(source_labels), format_func=source_labels.__getitem__,
-                                 key='k2_context_source')
-        unit = st.selectbox('Source section', _units(root, source_id), key='k2_context_unit')
-        context_document = service.review_context_document(root, source_id, unit)
+        context_document = _context_picker(st, root)
+    if fallback_options:
+        with st.container(border=True):
+            fallback_id = st.radio('Execution fallback', [o['id'] for o in fallback_options], index=None,
+                format_func=lambda ident: next(o['label'] for o in fallback_options if o['id'] == ident),
+                key=fallback_key, on_change=clear_other, args=(key,))
+    if source_question:
+        active_id = st.session_state.get(st.session_state.get(active_group_key, key))
+        option = next((o for o in all_options if o['id'] == active_id), {})
+        if not option.get('requires_context_picker'):
+            context_document = None
+    st.caption('This selection is not saved. Only Confirm and re-run records a decision.')
     composed = None
     if option.get('mode') == 'compose':
         try:
@@ -745,9 +894,18 @@ def _question_controls(st, root, response, question, questions, actor, reason):
         for assertion in assertions:
             st.write('• ' + assertion)
     with st.expander('Why these options?'):
-        st.write(question.get('evidence', {}))
-    if st.button('Confirm and re-run', key='k2_save',
-                 disabled=not actor['id'] or not reason or option.get('mode') == 'compose' and composed is None):
+        if question.get('rule_trace'):
+            _rule_trace(st, question['rule_trace'])
+        else:
+            st.write(question.get('evidence', {}))
+    confirmed = st.button('Confirm and re-run', key='k2_save',
+                 disabled=not option or not actor['id'] or not reason or option.get('mode') == 'compose' and composed is None
+                    or bool(option.get('requires_context_picker')) and context_document is None,
+                 **({'on_click': confirm_visible_choice,
+                     'args': (st.session_state.get(choice_revision_key, 0),)} if source_question else {}))
+    if confirmed and source_question and not st.session_state.get(confirmation_key):
+        st.rerun()
+    if confirmed:
         try:
             decisions, events = _option_submission(response, question, option, actor, reason,
                                                      context_document=context_document, composed=composed)
@@ -765,7 +923,7 @@ def _history(st, root, response, actor):
         status = response['compilation']['replay']['decision_status']
         for row in decisions:
             st.write(row['targets'][0].get('quote', ''), row['reason'], status.get(row['decision_id'], {}).get('status'))
-        action_labels = {'declare_parameter': 'Standalone numerical-check value', 'set_quantity_semantics': 'Quantity interpretation',
+        action_labels = {'declare_parameter': 'Runtime test value', 'set_quantity_semantics': 'Quantity interpretation',
             'set_term_boundary': 'Term boundary', 'set_term_interpretation': 'Term interpretation',
             'bind_value': 'Source binding', 'attach_context': 'Additional context', 'retract': 'Retraction'}
         labels = {row['decision_id']: str(index + 1) + ' · ' + action_labels.get(row['action'], row['action'].replace('_', ' '))

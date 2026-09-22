@@ -18,6 +18,73 @@ from workbench.service import _review_forms
 
 
 class ScholarRendererTests(TestCase):
+    def test_selected_object_sections_use_frozen_four_layer_copy_and_pair_literal_forms(self):
+        from workbench.scholar_renderer import selected_source_object_sections
+        sections = selected_source_object_sections(self.proc38_model(), 'step:sifen:38:35-44:threshold:0')
+        self.assertEqual([(row['title'], row['description'], row['empty']) for row in sections], [
+            ('Term', 'What technical expression is identified here, and what might it mean?',
+             'No technical term is directly associated with this selection.'),
+            ('Construction', 'How is the source expression structured, and what roles do its parts play?',
+             'No textual construction is directly associated with this selection.'),
+            ('Computational step', 'What operation does this construction represent, with which inputs and outputs?',
+             'No computational step is directly associated with this selection.'),
+            ('Quantity flow', 'Where do the quantities come from, and how do they depend on other steps?',
+             'No quantity dependency is directly associated with this selection.'),
+        ])
+        step = sections[2]['items'][0]
+        self.assertEqual(step['operation']['label'], 'Test threshold')
+        lower = next(row for row in step['inputs'] if row['role']['label'] == 'Lower bound')
+        self.assertEqual(lower['normalized_value'], 12)
+        self.assertEqual(lower['source_form'], '十二')
+
+    def test_selected_object_sections_flag_unlabelled_roles_without_inventing_copy(self):
+        from copy import deepcopy
+        from workbench.scholar_renderer import selected_source_object_sections
+        model = self.proc38_model()
+        step = next(row for row in model['steps'] if row['operation'] == 'threshold')
+        step['inputs'][1]['role'] = 'unregistered_role'
+        sections = selected_source_object_sections(model, step['id'])
+        item = sections[2]['items'][0]['inputs'][1]
+        self.assertEqual(item['role'], {'label': 'Display gap for review', 'identity': 'unregistered_role'})
+
+    def test_selected_object_sections_refuse_ambiguous_literal_source_forms(self):
+        from workbench.scholar_renderer import selected_source_object_sections
+        model = self.proc38_model()
+        step = next(row for row in model['steps'] if row['operation'] == 'threshold')
+        construction = model['objects'][step['construction_ids'][0]]
+        construction['slots'].append(dict(construction['slots'][0]))
+        item = selected_source_object_sections(model, step['id'])[2]['items'][0]['inputs'][1]
+        self.assertIsNone(item['source_form'])
+        self.assertTrue(item['source_form_gap'])
+
+    def test_four_layer_context_is_identical_across_load_selections(self):
+        from workbench.scholar_renderer import procedure_context
+        model = self.proc38_model()
+        ids = ['term:sifen:38:6-9', 'construction:sifen:38:5-11:load',
+               'step:sifen:38:5-11:load:0', 'flow:sifen:38:入蔀年']
+        contexts = [procedure_context(model, ident) for ident in ids]
+        self.assertTrue(all(context == contexts[0] for context in contexts))
+        self.assertEqual(list(contexts[0]), ['terms', 'constructions', 'steps', 'flows'])
+        self.assertEqual([s['operation'] for s in contexts[0]['steps']], ['load', 'subtract'])
+        self.assertEqual([f['formal'] for f in contexts[0]['flows']], ['入蔀年'])
+
+    def test_context_does_not_join_identical_text_or_overlapping_spans(self):
+        from copy import deepcopy
+        from workbench.scholar_renderer import procedure_context
+        model = self.proc38_model()
+        unrelated = deepcopy(model['objects']['term:sifen:38:6-9'])
+        unrelated['id'] = 'unrelated'
+        model['objects']['unrelated'] = unrelated
+        context = procedure_context(model, 'unrelated')
+        self.assertEqual(context, {'terms': [unrelated], 'constructions': [], 'steps': [], 'flows': []})
+
+    def test_divide_context_includes_recorded_output_terms_and_naming(self):
+        from workbench.scholar_renderer import procedure_context
+        context = procedure_context(self.proc38_model(), 'step:sifen:38:18-23:divmod:0')
+        self.assertTrue({'章法', '積月', '閏餘'} <= {t['surface'] for t in context['terms']})
+        self.assertTrue({'divide', 'name', 'remainder_name'} <= {c['construction_kind'] for c in context['constructions']})
+        self.assertEqual([s['operation'] for s in context['steps']], ['divmod'])
+
     def proc38_model(self):
         packet = build_source_packet_from_units('.', 'sifen', ['sifen:section:38'], [], {})
         compilation = compile_reviewed(packet, new_session(packet, 'renderer-v02'))
@@ -189,7 +256,7 @@ class ScholarRendererTests(TestCase):
         with patch('workbench.scholar_renderer._load_effective_index', return_value=({'id': 'sifen'}, index)):
             hints = corpus_search_hints('.', 'sifen', '章法')
         self.assertEqual([(row['unit_id'], row['strength'], row['span']) for row in hints],
-                         [('u1', 'registered', [0, 2]), ('u2', 'hint', [0, 2])])
+                         [('u1', 'registered', [0, 5]), ('u2', 'hint', [0, 2])])
         self.assertTrue(all(row['read_only'] for row in hints))
 
     def test_proc38_uses_the_canonical_maximal_spans_and_operation_roles(self):
@@ -226,8 +293,8 @@ class ScholarRendererTests(TestCase):
         self.assertEqual([(r['label'], r['span']) for r in step_presentation(step, construction)],
                          [('multiply', [8, 9]), ('operand', [6, 8]), ('operand', [9, 11])])
 
-    def test_context_hit_reuses_only_offered_attach_action(self):
-        from tools.parser_inspector.review_panel import context_hint_attachment, _option_submission
+    def test_context_question_submits_existing_attach_contract(self):
+        from tools.parser_inspector.review_panel import _option_submission
         from workbench import service
         packet = build_source_packet_from_units('.', 'sifen', ['sifen:section:38'], [], {})
         compilation = compile_reviewed(packet, new_session(packet, 'hint-test'))
@@ -235,15 +302,12 @@ class ScholarRendererTests(TestCase):
         question = next(q for q in questions if q['semantic_key'].get('formal') == '章法')
         response = {'packet': packet, 'effective_packet': packet, 'compilation': compilation, 'branch_id': 'main'}
         hint = {'unit_id': 'sifen:section:15'}
-        attachment = context_hint_attachment('.', response, question, 'sifen', hint)
-        self.assertIsNotNone(attachment)
-        option, document = attachment
+        option = next(o for o in question['options'] if o['action'] == 'attach_context')
+        document = service.review_context_document('.', 'sifen', hint['unit_id'])
         decisions, _ = _option_submission(response, question, option, {'id': 'test', 'type': 'human'},
                                          'Inspect and attach source', context_document=document)
         self.assertEqual([d['action'] for d in decisions], ['attach_context'])
         self.assertEqual(decisions[0]['payload']['document'], service.review_context_document('.', 'sifen', hint['unit_id']))
-        self.assertIsNone(context_hint_attachment('.', response, {**question, 'options': []}, 'sifen', hint))
-        self.assertIsNone(context_hint_attachment('.', response, question, 'sifen', {'unit_id': 'sifen:section:38'}))
 
     def test_unsupported_or_inexact_cues_keep_only_broad_native_spans(self):
         construction = self.projection['constructions'][0]

@@ -135,7 +135,8 @@ def runtime_identity(packet):
     selected = {name: PROFILES[name] for name in packet.get('selected_profiles', []) if name in PROFILES}
     profile_bytes = json.dumps(selected, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode('utf-8')
     return {
-        'engine': {'sha256': _hash_files(('analysis_parser/pipeline.py', 'analysis_parser/scoped.py', 'analysis_parser/program_ir.py'))},
+        'engine': {'sha256': _hash_files(('analysis_parser/pipeline.py', 'analysis_parser/scoped.py', 'analysis_parser/program_ir.py',
+                                        'analysis_parser/semantic_rules.py', 'adjudication/semantic_closure.py'))},
         'grammar': {'sha256': _hash_files(('analysis_parser/lexical.py', 'analysis_parser/construction_ir.py'))},
         'registry': registry_identity(),
         'profiles': {'sha256': hashlib.sha256(profile_bytes).hexdigest()},

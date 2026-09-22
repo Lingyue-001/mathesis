@@ -2,6 +2,7 @@ import renderSource from './inspector/source_annotation.mjs';
 import {renderProcedureModel} from './inspector/procedure_model.mjs';
 import {createDraftState,selectOption,upsertDraft,retractDraft,exportDrafts,importDrafts,
   loadDrafts,saveDrafts,makeSourceAnchor} from './scholar-sandbox-drafts.mjs';
+import {validateScenario,initialScenarioState,transitionFor,applyTransition} from './scholar-sandbox-scenario.mjs';
 
 const root=document.querySelector('#scholar-sandbox');
 const $=id=>document.getElementById(id);
@@ -16,12 +17,11 @@ const attempt=fn=>{try{error('');return fn();}catch(e){error(e.message||String(e
 function download(filename,value){const url=URL.createObjectURL(new Blob([typeof value==='string'?value:JSON.stringify(value,null,2)],{type:'application/json'}));const link=make('a');link.href=url;link.download=filename;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 
 let snapshot,drafts,storageBlocked=false,selected=null,facetKey=null,questionId=null,editingId=null;
+let scenario=null,scenarioStateId=null;
 let draftExpression=null;
 let draftPresentationKey='';
 let workspace='parser',view='source',sourceData,disposeSource,corpusId,unitIndex=0;
 const workspaceNames={parser:'Parser Stages',segmentation:'Segmentation Review',corpus:'Corpus Browser'};
-const objectName=row=>row?(snapshot.labels?.objects?.[row.id]||row.surface||row.formal||row.operation||row.id):'';
-const roleName=role=>snapshot.labels?.roles?.[role]||role||'';
 const currentQuestion=()=>snapshot.questions.find(q=>q.id===questionId);
 const questionDraft=id=>id?drafts.decisions.find(d=>d.question_id===id):undefined;
 const draftChoice=draft=>snapshot.questions.find(q=>q.id===draft.question_id)?.options.find(o=>o.id===draft.option_id)?.label||draft.kind;
@@ -90,18 +90,76 @@ function anchorText(parent,anchor){
   else p.textContent=anchor.quote||'';
   parent.append(p);
 }
+function renderSelectedSections(host,sections){
+  const label=row=>row?.label+(row?.label==='Display gap for review'&&row.identity?' · '+row.identity:'');
+  const value=(parent,title,text)=>{paragraph(parent,title,true);paragraph(parent,text);};
+  for(const section of sections){
+    const panel=make('section',undefined,'research-record');panel.dataset.layer=section.key;
+    panel.append(make('h3',section.title));paragraph(panel,section.description,true);host.append(panel);
+    if(!section.items.length)paragraph(panel,section.empty,true);
+    for(const row of section.items){
+      const card=make('div',undefined,row.selected?'research-source-card':'research-record');
+      card.dataset.objectId=row.id;if(row.selected)card.setAttribute('aria-current','true');panel.append(card);
+      if(section.key==='terms'){
+        value(card,'Surface form',row.surface_form);
+        if(row.composition.length){paragraph(card,'Composition',true);for(const part of row.composition)paragraph(card,label(part));}
+        if(row.machine_suggestions.length){paragraph(card,'Machine suggestions',true);for(const item of row.machine_suggestions)paragraph(card,'• '+label(item));}
+        if(row.reviewed_interpretation)value(card,'Reviewed interpretation',row.reviewed_interpretation);
+      }else if(section.key==='constructions'){
+        value(card,'Source expression',row.source_expression);value(card,'Construction type',label(row.construction_type));
+        if(row.roles.length){paragraph(card,'Roles',true);for(const item of row.roles)paragraph(card,label(item.role)+' → '+label(item.value));}
+        if(row.slots.length){paragraph(card,'Construction slots',true);for(const item of row.slots)paragraph(card,label(item.role)+' → '+item.surface);}
+        if(row.linked_steps.length){paragraph(card,'Linked computational step',true);for(const item of row.linked_steps)paragraph(card,'→ '+label(item));}
+      }else if(section.key==='steps'){
+        value(card,'Operation',label(row.operation));
+        if(row.inputs.length)paragraph(card,'Inputs',true);
+        for(const item of row.inputs){
+          paragraph(card,label(item.role)+' → '+(item.normalized_value!==null?String(item.normalized_value):item.value?label(item.value):'Display gap for review'));
+          if(item.source_form)paragraph(card,'Source form → '+item.source_form);
+          else if(item.source_form_gap)paragraph(card,'Display gap for review',true);
+          if(item.from)paragraph(card,'From → '+label(item.from));
+        }
+        if(row.outputs.length)paragraph(card,'Outputs',true);
+        for(const item of row.outputs)paragraph(card,label(item.role)+' → '+(item.labels.length?item.labels.map(label).join(' / '):'Display gap for review'+(item.identity?' · '+item.identity:'')));
+      }else{
+        paragraph(card,row.identity||'Display gap for review');
+        if(row.status)value(card,'Status',row.status);
+        if(row.producer)value(card,'Producer',label(row.producer));
+        if(row.consumers.length){paragraph(card,'Consumer',true);for(const item of row.consumers)paragraph(card,label(item));}
+        if(row.historical_source)value(card,'Historical source',row.historical_source);
+      }
+    }
+  }
+}
 function renderDetails(){
   const host=$('selection-detail');host.replaceChildren();
   const details=(facetKey?snapshot.details.facets[facetKey]:snapshot.details.objects[selected])||snapshot.details.objects[selected];
   if(!details?.selected){paragraph(host,'Select a term, construction, or step in the source.',true);return;}
-  const row=details.selected;paragraph(host,objectName(row));
+  const row=details.selected;
+  renderSelectedSections(host,details.selected_source_sections||snapshot.details.objects[selected]?.selected_source_sections||[]);
   if(view==='graph'){
     const node=snapshot.procedure_model.nodes.find(n=>n.selection_object_id===selected);
     if(node){paragraph(host,node.status_label||node.status,true);for(const anchor of node.source_anchors||[])anchorText(host,anchor);if(node.anchor_scope==='supporting_step')paragraph(host,'Supporting Step source; no separate exact anchor is recorded.',true);}
   }
-  if(row.gloss){
-    paragraph(host,row.gloss.kind==='reviewed'?'Current interpretation · reviewed':'Machine suggestions · unranked',true);
+  const hasTermProvenance=details.semantic_provenance?.some(group=>group.evidence.some(a=>a.kind==='term'&&a.target.object_id===row.id));
+  if(row.gloss&&!hasTermProvenance&&!details.selected_source_sections){
+    paragraph(host,({reviewed:'Reviewed interpretation',derived:'Derived interpretation',conflicted:'Conflict'})[row.gloss.kind]||'Machine suggestions · unranked',true);
     for(const label of row.gloss.labels||[row.gloss.label])paragraph(host,'• '+label);
+  }
+  for(const group of details.semantic_provenance||[]){
+    paragraph(host,group.title,true);if(group.target_label)paragraph(host,group.target_label,true);paragraph(host,group.label);
+    paragraph(host,group.rule_id?'Derived from':'Evidence',true);
+    for(const dep of group.dependencies){
+      if(snapshot.renderer.objects[dep.object_id])action(host,dep.label,()=>choose({object_id:dep.object_id}));
+      else paragraph(host,'• '+dep.label,true);
+    }
+    const evidence=make('details');evidence.append(make('summary','Semantic evidence / technical details'),make('pre',JSON.stringify(group.evidence,null,2)));host.append(evidence);
+  }
+  for(const diagnostic of details.semantic_diagnostics||[]){
+    paragraph(host,'Meaning remains unresolved',true);
+    paragraph(host,diagnostic.reason==='missing_registered_arithmetic_semantic_relation'
+      ?'No registered typed relation supplies an output interpretation for this operation. A reviewed operand meaning alone does not supply a rate, conversion, or divisor relation.'
+      :diagnostic.reason.replaceAll('_',' '));
   }
   for(const facet of details.facets||[]){
     const record=make('div',undefined,'research-record');paragraph(record,(facet.label||facet.facet)+' · '+facet.status,true);
@@ -109,36 +167,17 @@ function renderDetails(){
     if(facet.question_id)action(record,'Review',()=>{choose({object_id:selected,facet_key:facet.facet_key,question_id:facet.question_id});focusQuestion();});
     host.append(record);
   }
-  if(details.composition?.length||details.uses?.length||details.steps?.length||details.named_outputs?.length)paragraph(host,'Local computational context',true);
-  if(details.composition?.length){paragraph(host,'Term composition',true);for(const part of details.composition)paragraph(host,part.surface+' · '+(part.gloss.labels||[part.gloss.label]).join(' / '));}
-  for(const use of details.uses||[]){paragraph(host,'Used in · '+roleName(use.role),true);paragraph(host,use.construction.surface);}
-  for(const slot of row.slots||[]){paragraph(host,'Construction slot · '+roleName(slot.name),true);paragraph(host,slot.surface);}
-  for(const naming of details.naming||[]){paragraph(host,'Textual naming',true);paragraph(host,naming.surface);}
-  for(const naming of details.named_outputs||[]){paragraph(host,'Computational role',true);paragraph(host,objectName(naming.step)+' → '+roleName(naming.port));}
-  for(const step of details.steps||[]){
-    paragraph(host,'Computational step · '+objectName(step),true);
-    for(const input of step.inputs||[]){
-      const target=snapshot.renderer.objects[input.term_id]||snapshot.renderer.objects[input.from_step_id];
-      const text=target?((input.from_step_id?'from ':'')+objectName(target)):(input.literal!==undefined?String(input.literal):input.surface_reference||'local source grounding unavailable');
-      paragraph(host,roleName(input.role)+' → '+text);
-    }
-    for(const output of step.outputs||[])paragraph(host,roleName(output.port)+' → '+(output.labels?.join(' / ')||'unnamed result'));
-  }
-  for(const flow of details.flows||[]){paragraph(host,flow.formal+' · '+flow.display_status,true);if(flow.producer_source?.sections?.length)paragraph(host,'Historical source · §'+flow.producer_source.sections.join(', §'),true);}
   if(details.context_requirement){paragraph(host,'Construction context requirement');paragraph(host,'Cause · '+details.context_requirement.cause,true);paragraph(host,'Missing inputs · '+details.context_requirement.missing_inputs.join(', '),true);}
   if(details.source_assistance){
     paragraph(host,'Canonical producer candidates');
     for(const candidate of details.source_assistance.candidates)paragraph(host,candidate.label);
     if(!details.source_assistance.candidates.length)paragraph(host,'No canonical producer candidate is currently recorded.',true);
     paragraph(host,'Search hints — not yet linked',true);
-    for(const [title,key] of [['Registered parameter/declaration hits','registered'],['Other exact source occurrences','other']]){
+    for(const [title,key] of [['Exact parameter declarations','registered'],['Other exact occurrences','other']]){
       paragraph(host,title);
       for(const hit of details.source_assistance[key]||[]){
         const detail=make('details',undefined,'research-fold');detail.append(make('summary','Inspect · §'+hit.sections.join(', §')+' · '+hit.quote));
         paragraph(detail,hit.text);
-        const context=snapshot.context_catalog.find(c=>c.unit_id===hit.unit_id&&c.source_id===snapshot.source.source_id);
-        const option=currentQuestion()?.options.find(o=>o.action==='attach_context');
-        if(context&&option)action(detail,'Add context as draft',()=>saveQuestionDraft(currentQuestion(),option,context.id));
         host.append(detail);
       }
     }
@@ -155,18 +194,47 @@ function renderQuestion(){
     return;
   }
   const navigation=make('div',undefined,'research-actions');host.append(navigation);
-  const list=snapshot.renderer.facets.filter(f=>snapshot.questions.some(q=>q.id===f.question_id));
+  const list=snapshot.renderer.facets.filter(f=>snapshot.questions.some(q=>q.id===f.question_id&&!q.recorded_decision));
   const index=list.findIndex(f=>f.facet_key===facetKey);
   const navigate=delta=>{const next=list[index+delta];choose({object_id:next.object_id,facet_key:next.facet_key,question_id:next.question_id});};
   action(navigation,'Previous',()=>navigate(-1)).disabled=index<=0;
   action(navigation,'Next pending',()=>navigate(1)).disabled=index<0||index>=list.length-1;
   paragraph(host,q.title);
+  if(q.recorded_decision){
+    paragraph(host,'Recorded context ✓',true);
+    const recorded=q.options.find(o=>o.id===q.recorded_decision.option_id);
+    paragraph(host,recorded?.label||q.recorded_decision.label);
+    evidence(host,'Recorded decision',q.recorded_decision);
+    evidence(host,'Why these options?',q.evidence||q);
+    return;
+  }
+  if(q.source_review){
+    paragraph(host,'Source provenance · '+q.machine_context.source_status,true);
+    for(const [title,key,empty] of [['Exact parameter declarations','declarations','No exact parameter declaration found in the indexed corpus.'],
+      ['Canonical producer candidates','producers','No canonical producer candidate is currently recorded.'],
+      ['Other exact occurrences','occurrences','No other exact occurrence found in the indexed corpus.']]){
+      const rows=q.source_review[key]||[];paragraph(host,title+(rows.length?' · '+rows.length:''),true);
+      if(!rows.length)paragraph(host,empty,true);
+      for(const row of rows){
+        if(key==='producers'){paragraph(host,row.label);continue;}
+        const fold=make('details',undefined,'research-fold');fold.append(make('summary','§'+row.unit_id.split(':').at(-1)+' · '+(row.unit_type||'source')+' · '+row.quote));
+        paragraph(fold,row.text);host.append(fold);
+      }
+    }
+  }
   const saved=make('p',undefined,'research-muted');saved.id='question-draft-summary';saved.setAttribute('role','status');host.append(saved);updateQuestionDraft();
   const options=make('fieldset',undefined,'research-options');options.append(make('legend','Interpretation'));host.append(options);
   for(const option of q.options){
     const label=make('label'),input=document.createElement('input');input.type='radio';input.name='sandbox-option';input.value=option.id;
     input.checked=drafts.selected_options[q.id]===option.id;
-    input.addEventListener('change',()=>attempt(()=>{commitDraftState(selectOption(snapshot,drafts,q.id,option.id));renderOption(q,option);}));
+    input.addEventListener('change',()=>attempt(()=>{
+      const next=selectOption(snapshot,drafts,q.id,option.id);
+      // A precompiled confirmation is a read-only state selection, even when
+      // browser storage is full or disabled. Draft saving remains explicit.
+      if(transitionFor(scenario,scenarioStateId,q.id,option.id))drafts=next;
+      else commitDraftState(next);
+      renderOption(q,option);
+    }));
     label.append(input,document.createTextNode(option.label));options.append(label);
   }
   host.append(make('div',undefined,'question-option-fields'));host.lastChild.id='option-fields';
@@ -175,9 +243,16 @@ function renderQuestion(){
 }
 function renderOption(question,option){
   const host=$('option-fields');host.replaceChildren();draftExpression=null;
+  const transition=transitionFor(scenario,scenarioStateId,question.id,option.id);
+  if(transition){
+    for(const assertion of option.assertions||[])paragraph(host,'• '+assertion,true);
+    paragraph(host,'Confirm loads the result previously generated by the Python compiler.',true);
+    action(host,'Confirm',()=>setActiveScenarioState(applyTransition(scenario,scenarioStateId,transition.id)));
+    return;
+  }
   paragraph(host,'This choice is local. Saving a draft does not recompile or validate the analysis.',true);
   const existing=drafts.decisions.find(d=>d.id===editingId)||drafts.decisions.find(d=>d.question_id===question.id);
-  if(option.requires_context_picker||option.action==='attach_context'){
+  if(option.requires_context_picker||(option.action==='attach_context'&&!option.payload?.document)){
     const picker=field(host,'Additional context',make('select'));picker.id='draft-context';
     choices(picker,snapshot.context_catalog.map(c=>[c.id,c.label]),existing?.context_id||snapshot.context_catalog[0]?.id);
   }
@@ -187,7 +262,8 @@ function renderOption(question,option){
   }
   for(const assertion of option.assertions||[])paragraph(host,'• '+assertion,true);
   const reason=field(host,'Draft note',make('textarea'));reason.id='draft-note';reason.value=existing?.reason||'';
-  action(host,option.action==='attach_context'?'Add context as draft':'Save as draft',()=>saveQuestionDraft(question,option,$('draft-context')?.value));
+  const exactContext=snapshot.context_catalog.find(c=>c.document.doc_id===option.payload?.document?.doc_id);
+  action(host,option.action==='attach_context'?'Add context as draft':'Save as draft',()=>saveQuestionDraft(question,option,$('draft-context')?.value||exactContext?.id));
   const status=make('p',undefined,'research-muted');status.id='draft-save-status';status.setAttribute('role','status');host.append(status);
 }
 function renderComposition(host,tree,existing){
@@ -301,19 +377,45 @@ function renderCorpus(){
   for(const unit of corpus.effective){const section=make('section');section.dataset.unitId=unit.id;section.append(typeBadge(unit),make('small',' §'+unit.sections.join(', ')));paragraph(section,unit.text_original);host.append(section);}
 }
 
-async function start(){
-  const response=await fetch(root.dataset.snapshotUrl);if(!response.ok)throw Error('Snapshot could not be loaded ('+response.status+').');
-  snapshot=await response.json();if(snapshot.schema!=='ScholarSandboxSnapshot/1')throw Error('Unsupported Inspector snapshot.');
-  root.dataset.snapshotId=snapshot.snapshot_id;
-  try{drafts=loadDrafts(snapshot,localStorage);}catch(e){drafts=createDraftState(snapshot);storageBlocked=true;error('Stored drafts were retained: '+e.message);}
-  sourceData={text:snapshot.source.text,render:snapshot.renderer,language:'en',focus:null,facet_key:null,adjust:false,changed_ids:[]};
-  $('sandbox-loading').hidden=true;$('parser-workspace').hidden=false;
+function setActiveScenarioState(nextState,{announce=true}={}){
+  const nextSnapshot=nextState.snapshot;
+  // Storage errors must retain the stored bytes; they must not leave half-switched UI.
+  let nextDrafts,blocked=false,storageError='';
+  try{nextDrafts=loadDrafts(nextSnapshot,localStorage);}
+  catch(e){nextDrafts=createDraftState(nextSnapshot);blocked=true;storageError='Stored drafts were retained: '+e.message;}
+  snapshot=nextSnapshot;scenarioStateId=nextState.state_id;drafts=nextDrafts;storageBlocked=blocked;
+  error(storageError);editingId=null;draftExpression=null;draftPresentationKey='';
+  selected=snapshot.renderer.objects[selected]?selected:null;
+  facetKey=snapshot.details.facets[facetKey]?.selected.id===selected?facetKey:null;
+  questionId=snapshot.questions.some(q=>q.id===questionId)?questionId:null;
+  root.dataset.snapshotId=snapshot.snapshot_id;root.dataset.stateId=scenarioStateId||'';
+  sourceData={text:snapshot.source.text,render:snapshot.renderer,language:'en',focus:selected,facet_key:facetKey,adjust:false,changed_ids:[]};
+  $('adjust-boundary').checked=false;$('boundary-draft').hidden=true;
+  $('boundary-start').value='';$('boundary-end').value='';updateBoundary();
   choices($('source-document'),[[snapshot.source.doc_id,snapshot.source.doc_id]]);
   choices($('parser-source'),snapshot.corpora.filter(c=>c.id===snapshot.source.source_id).map(c=>[c.id,c.label]));
   $('snapshot-description').textContent='Han Si-fen li §38 · exported review '+(snapshot.provenance.review_job_id||'')+' · revision '+(snapshot.provenance.revision??'');
   $('graph-status').textContent='Data-flow status: '+snapshot.procedure_model.status;
   refreshDraftPresentation(true);renderProcedureModel($('procedure-host'),snapshot.procedure_model,{onSelect:choose});
-  renderDrafts();renderReviewHistory();corpusId=snapshot.source.source_id;renderCorpus();
+  renderDrafts();renderReviewHistory();corpusId=corpusId||snapshot.source.source_id;renderCorpus();renderDetails();renderQuestion();syncSelection();
+  $('reset-demonstration').hidden=!scenario||scenarioStateId===scenario.initial_state_id;
+  $('scenario-status').hidden=!scenario;
+  $('scenario-status').textContent=announce?'Precompiled successor loaded.':'Precompiled demonstration. Confirm loads a previously compiled result.';
+  if(scenario){try{sessionStorage.setItem('scholar-sandbox-scenario:'+scenario.scenario_id,scenarioStateId);}catch{/* State still works in memory. */}}
+}
+
+async function start(){
+  const response=await fetch(root.dataset.snapshotUrl);if(!response.ok)throw Error('Snapshot could not be loaded ('+response.status+').');
+  const payload=await response.json();let initial;
+  if(payload.schema==='ScholarSandboxScenario/1'){
+    scenario=validateScenario(payload);initial=initialScenarioState(scenario);
+    try{const stateId=sessionStorage.getItem('scholar-sandbox-scenario:'+scenario.scenario_id);
+      if(Object.hasOwn(scenario.states,stateId))initial={state_id:stateId,snapshot:scenario.states[stateId]};}catch{/* Use baseline when storage is unavailable. */}
+  }else if(payload.schema==='ScholarSandboxSnapshot/1')initial={state_id:null,snapshot:payload};
+  else throw Error('Unsupported Inspector snapshot.');
+  $('sandbox-loading').hidden=true;$('parser-workspace').hidden=false;
+  setActiveScenarioState(initial,{announce:false});
+  $('reset-demonstration').onclick=()=>attempt(()=>setActiveScenarioState(initialScenarioState(scenario),{announce:false}));
   $('collapse-workspace').onclick=()=>sidebar(false);$('expand-workspace').onclick=()=>sidebar(true);
   const mobile=matchMedia('(max-width:800px)');sidebar(!mobile.matches);mobile.addEventListener('change',event=>sidebar(!event.matches));
   root.querySelectorAll('[data-workspace]').forEach(button=>button.onclick=()=>setWorkspace(button.dataset.workspace));

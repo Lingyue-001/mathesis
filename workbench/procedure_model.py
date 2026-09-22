@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 
 from analysis_parser.ontology import entry
+from .semantic_presentation import semantic_summary
 
 
 FLOW_LABELS = {
@@ -67,6 +68,10 @@ def build_procedure_model(scholar_projection):
                 'selection_object_id': next(iter(owners), None),
                 'source_anchors': _unique(anchors), 'anchor_scope': 'object',
                 'decision_refs': _unique(refs), **extra}
+        facts = list(extra.get('semantic_assertions', []))
+        for owner in owners:
+            facts.extend(terms.get(owner, {}).get('semantic_assertions', []))
+        node['semantic_summary'] = semantic_summary(facts)
         nodes[ident] = node
         return node
 
@@ -95,7 +100,8 @@ def build_procedure_model(scholar_projection):
     for step in steps.values():
         label, definition = _authored('operation', step['operation'])
         add_node(step['id'], 'operation', label, [step['id']], _anchors(step),
-                 step.get('decision_refs', []), operation=step['operation'], definition=definition)
+                 step.get('decision_refs', []), operation=step['operation'], definition=definition,
+                 semantic_assertions=[a for a in step.get('semantic_assertions', []) if a['target']['kind'] == 'quantity'])
 
     # Name separate output ports explicitly. Unnamed single results can be
     # drawn as direct operation dependencies without inventing quantity names.
@@ -123,6 +129,9 @@ def build_procedure_model(scholar_projection):
                          output_port=port, producer_step_id=step['id'], quantity_kind=output.get('quantity_kind'),
                          anchor_scope='object' if anchors else 'supporting_step',
                          interpretations=interpretations(term_ids))
+                nodes[ident]['semantic_assertions'] = deepcopy(output.get('semantic_assertions', []))
+                nodes[ident]['semantic_summary'] = semantic_summary([*output.get('semantic_assertions', []),
+                    *(a for t in term_ids for a in terms.get(t, {}).get('semantic_assertions', []))])
                 output_nodes[step['id'], port] = ident
                 add_edge(step['id'], ident, port, [step['id'], *owners], output_port=port)
 

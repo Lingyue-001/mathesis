@@ -1,11 +1,12 @@
 """Deterministic source-bound questions over current compiler and Kernel evidence."""
 from collections import defaultdict
 
-from adjudication.anchors import anchor_for, anchor_key
+from adjudication.anchors import anchor_for, anchor_key, validate_anchor
 from adjudication.decision_contracts import normalize_decision_target
 from adjudication.term_claims import adopt_term_candidate, reject_term_candidates
 from domain_kernel.engine import suggest_packet_semantics
 from source_adapters.dependencies import digest
+from analysis_parser.rule_trace import condition, rule
 
 
 # Authored presentation labels for the existing finite Kernel vocabulary.
@@ -53,6 +54,10 @@ def _question(kind, title, anchor, options, evidence=None, *, semantic_key=None,
     display_anchor = display_anchor or anchor
     semantic_key = semantic_key or {'issue_family': kind, 'occurrence': anchor_key(display_anchor)}
     evidence_anchors = _unique_anchors([display_anchor, *evidence_anchors])
+    deferred = rule('REVIEW-DEFER-01', 'scholar_question', [], _question,
+        result={'action': 'defer', 'result_class': 'available_action'})
+    unresolved = [_option('Leave unresolved', 'defer', {'unresolved': 'Interpretation left open'},
+                         group='source_resolution')] if deferred['matched'] else []
     return {'id': 'annotation:' + digest([kind, semantic_key])[:20], 'kind': kind, 'title': title,
             'anchor': display_anchor, 'display_anchor': display_anchor,
             'evidence_anchors': evidence_anchors, 'decision_target': decision_target or anchor,
@@ -60,8 +65,9 @@ def _question(kind, title, anchor, options, evidence=None, *, semantic_key=None,
                 'reading': 'Machine has marked this source occurrence for review.',
                 'source_status': 'unresolved',
                 'why_blocked': 'No reviewed decision has resolved this annotation facet.'},
-            'options': [*options, _option('Leave unresolved', 'defer',
-                {'unresolved': 'Interpretation left open'})], 'evidence': evidence or {}}
+            'options': [*options, *unresolved],
+            'rule_trace': [deferred] if semantic_key['issue_family'] == 'source_supply' else [],
+            'evidence': evidence or {}}
 
 
 def _anchor(packet, span):
@@ -101,7 +107,11 @@ def _source_supply_target(packet, graph, form, branch_id):
     matches = [row for row in imports if row.get('formal') == formal
                and (form.get('consumer_definition_id') is None or row.get('consumer_definition_id') == form['consumer_definition_id'])
                and (not diagnostic_nodes or diagnostic_nodes.intersection(row.get('uses', [])))]
-    if not formal or len({row['consumer_definition_id'] for row in matches}) != 1:
+    formation = rule('SOURCE-SUPPLY-01', 'scholar_question', [condition('formal exists', bool(formal)),
+        condition('canonical consumer count', len({row['consumer_definition_id'] for row in matches}), 1),
+        condition('source supply unresolved', bool(matches) and all(not row.get('selected_definition_id') for row in matches))],
+        _source_supply_target, result={'issue_family': 'source_supply', 'result_class': 'unresolved'})
+    if not formation['matched']:
         return None
     consumer = matches[0]['consumer_definition_id']
     use_nodes = {node for row in matches for node in row.get('uses', [])}
@@ -127,7 +137,7 @@ def _source_supply_target(packet, graph, form, branch_id):
     roles = sorted({slot for node in use_nodes for slot, value in constructions.get(node, {}).get('slots', {}).items()
                     if value.get('kind') == 'Term' and value.get('text') == formal})
     decision_target = form.get('consumer_anchor') or form['anchors'][0]
-    return {'semantic_key': {'branch_id': branch_id, 'issue_family': 'source_supply',
+    return {'rule_trace': [formation], 'semantic_key': {'branch_id': branch_id, 'issue_family': 'source_supply',
                              'consumer_definition_id': consumer, 'formal': formal},
             'display_anchor': display, 'evidence_anchors': _unique_anchors([*use_anchors, decision_target]),
             'decision_target': decision_target,
@@ -151,6 +161,14 @@ def _construction_context_target(form, branch_id):
                                 'source_status': 'unresolved', 'native_requirement': question['kind'],
                                 'why_blocked': details.get('reason', question.get('reason',
                                     'The current reviewed graph has no resolving context.'))}}
+
+
+def _offered_action(form, action):
+    """Trace the existing native-form presentation gate, including suppressed actions."""
+    return rule('SCHOLAR-OPTION-01', 'scholar_option',
+        [condition('action in resolving_actions', action in form['resolving_actions'])], _offered_action,
+        result={'action': action, 'result_class': 'available_action'},
+        subject={'action': action, 'resolving_actions': form['resolving_actions'], 'native_form_id': form['id']})
 
 
 def _bu_year_ordinal_candidate(bundle, formal):
@@ -204,7 +222,13 @@ def build_questions(packet, compilation, native_forms, branch_id='main'):
                 occurrences[anchor_key(span)].append(candidate)
         for key, choices in occurrences.items():
             prior = interpreted.get(key, [])
-            if any(row['claim']['origin'] != 'machine_rejection' for row in prior):
+            from adjudication.semantic_closure import term_resolution
+            resolution = term_resolution(compilation.get('semantic_closure', {}), choices[0]['span'])
+            if resolution['conflicts']:
+                continue  # explicit conflict question below, not ordinary adoption
+            if resolution['resolved']:
+                continue
+            if any(row['claim']['origin'] != 'machine_rejection' for row in prior) and not resolution['conflicts']:
                 continue
             anchor = _anchor(packet, choices[0]['span'])
             rejected = sorted({ident for row in prior for ident in row['claim'].get('candidate_ids', [])})
@@ -288,33 +312,52 @@ def build_questions(packet, compilation, native_forms, branch_id='main'):
                                  'source_status': 'unresolved',
                                  'why_blocked': 'The current parse has no legal candidate for this span.'}))
             continue
-        if form['category'] != 'scholar_actionable':
-            continue
         target = _source_supply_target(packet, graph, form, branch_id)
         if target is None:
+            if form['category'] != 'scholar_actionable':
+                continue
             target = _construction_context_target(form, branch_id)
         group = source_supply.setdefault(digest(target['semantic_key']), {'target': target, 'forms': []})
         group['forms'].append(form)
     for group in source_supply.values():
         target = group['target']
         options = []
+        traces = list(target.get('rule_trace', []))
         for form in group['forms']:
-            if 'bind_value' in form['resolving_actions']:
+            traces.extend(form.get('rule_trace', []))
+            offered_binding = _offered_action(form, 'bind_value')
+            offered_runtime = _offered_action(form, 'declare_parameter')
+            traces.extend([offered_binding, offered_runtime])
+            if offered_binding['matched']:
                 for producer in form['producers']:
                     options.append(_option('Use “' + producer['output_port'] + '” from “' + producer['anchor']['quote'] + '”',
                         'bind_value', {'consumer_definition_anchor': form['consumer_anchor'], 'formal': form['formal'],
                             'producer_definition_anchor': producer['anchor'], 'output_port': producer['output_port']},
-                        ['Use this source-derived output for the current input.']))
-            if 'declare_parameter' in form['resolving_actions']:
-                options.append(_option('Provide “' + form['formal'] + '” for this standalone numerical check', 'declare_parameter',
+                        ['Use this source-derived output for the current input.'], group='source_resolution'))
+            if offered_runtime['matched']:
+                options.append(_option('Supply a runtime test value for “' + form['formal'] + '”', 'declare_parameter',
                     {'name': form['formal'], 'unit': 'unknown', 'role': 'root_input', 'root_input': True,
                      'evidence_basis': 'Standalone runtime value permitted; historical source remains unjudged'},
-                    ['Permit a value for this standalone numerical check.',
-                     'This does not establish a historical source.', 'The quantity meaning remains unresolved.']))
-            if 'attach_context' in form['resolving_actions']:
+                    ['Permit a value for execution or testing.',
+                     'This does not establish a historical source.', 'The quantity meaning remains unresolved.'], group='runtime_fallback'))
+            if target['semantic_key']['issue_family'] != 'source_supply' and 'attach_context' in form['resolving_actions']:
                 options.append(_option('Read additional source material', 'attach_context', {},
                     ['Include the selected source as context; do not approve a binding or interpretation.'],
                     requires_context_picker=True))
+        try:
+            validate_anchor(packet, target['decision_target'])
+            valid_context_anchor = True
+        except (ValueError, KeyError, TypeError):
+            valid_context_anchor = False
+        context = rule('SOURCE-CONTEXT-01', 'scholar_question', [
+            condition('issue_family', target['semantic_key']['issue_family'], 'source_supply'),
+            condition('valid source anchor exists', valid_context_anchor)], build_questions,
+            result={'action': 'attach_context', 'result_class': 'available_action'})
+        traces.append(context)
+        if context['matched']:
+            options.append(_option('Read additional source material', 'attach_context', {},
+                ['Include the selected source as context; do not approve a binding or interpretation.'],
+                requires_context_picker=True, group='source_resolution'))
         options = list({option['id']: option for option in options}.values())
         if options:
             formal = target['semantic_key'].get('formal')
@@ -325,6 +368,11 @@ def build_questions(packet, compilation, native_forms, branch_id='main'):
                 semantic_key=target['semantic_key'], display_anchor=target['display_anchor'],
                 evidence_anchors=target['evidence_anchors'], decision_target=target['decision_target'],
                 machine_context=target['machine_context']))
+            key = target['semantic_key']
+            upstream = [r for r in compilation.get('rule_trace', [])
+                        if r['subject'].get('formal') == key.get('formal')
+                        and r['subject'].get('consumer_definition_id') == key.get('consumer_definition_id')]
+            questions[-1]['rule_trace'] = list({digest(r): r for r in [*upstream, *traces, *questions[-1]['rule_trace']]}.values())
     from adjudication.reviewed_relations import propose_reviewed_relations
     if not effective.get('reviewed_relations'):
         for payload in propose_reviewed_relations(packet, graph):
@@ -334,6 +382,43 @@ def build_questions(packet, compilation, native_forms, branch_id='main'):
                     ['Interpret the real quotient as whole days.',
                      'Interpret the real remainder as a fractional-day numerator over 蔀月.',
                      'Retain the existing multiplication and division.'])], {'relation': payload}))
+    closure = compilation.get('semantic_closure', {})
+    facts = {a['id']: a for a in closure.get('assertions', [])}
+    events = {e['id']: e for e in graph.get('events', [])}
+    values = {v['id']: v for v in graph.get('value_instances', [])}
+    for conflict in closure.get('conflicts', []):
+        target = conflict['target']
+        event = events.get(target.get('event_id') or values.get(target.get('value_id'), {}).get('producer'), {})
+        spans = [target['anchor']] if target.get('anchor') else event.get('source_spans', [])
+        if not spans:
+            continue
+        anchor = _anchor(packet, spans[0])
+        decision_ids = set(conflict.get('decision_ids', []))
+        pending, visited = list(conflict.get('assertion_ids', [])), set()
+        while pending:
+            ident = pending.pop()
+            if ident in visited or ident not in facts:
+                continue
+            visited.add(ident)
+            for proof in facts[ident]['proofs']:
+                for dep in proof['depends_on']:
+                    if dep['kind'] == 'review_decision':
+                        decision_ids.add(dep['id'])
+                    elif dep['kind'] == 'assertion':
+                        pending.append(dep['id'])
+        from .semantic_presentation import assertion_label
+        def premise_label(ident):
+            labels = [assertion_label(a) for a in facts.values() if a['authority'] == 'reviewed'
+                      and any(d['kind'] == 'review_decision' and d['id'] == ident for d in a['depends_on'])]
+            return '; '.join(dict.fromkeys(labels)) or 'explicit rejection'
+        options = [_option('Retract review: ' + premise_label(ident), 'retract', {'decision_id': ident},
+                   ['Remove this human premise and recompile; no replacement interpretation is chosen automatically.'])
+                   for i, ident in enumerate(sorted(decision_ids))]
+        questions.append(_question('semantic_conflict', 'Review conflicting semantic evidence', anchor, options,
+            {'conflict': conflict, 'assertions': [facts[i] for i in sorted(visited)]},
+            semantic_key={'issue_family': 'semantic_conflict', 'occurrence': anchor_key(anchor), 'facet': conflict['facet']},
+            machine_context={'reading': 'Independently supported facts disagree.', 'source_status': 'conflicted',
+                             'why_blocked': 'Conflicting premises cannot support downstream conclusions.'}))
     unique = {q['id']: q for q in questions}
     order = {d['doc_id']: i for i, d in enumerate(packet.get('primary_documents', []) + packet.get('context_documents', []))}
     return sorted(unique.values(), key=lambda q: (order.get(q['anchor']['doc_id'], 999), q['anchor']['start'],

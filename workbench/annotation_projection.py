@@ -510,6 +510,8 @@ def _supply_terms(flow, steps):
 
 def _review_facets(questions, decisions, statuses, terms, constructions, steps, flows, branch='main'):
     facets, active = [], _active_decisions(decisions, statuses)
+    active_by_id = {row['decision_id']: row for row in active}
+    represented_context_ids = set()
     for question in questions:
         facet = _question_facet(question)
         target = _object_for_anchor(question.get('display_anchor', question['anchor']), terms, constructions)
@@ -525,7 +527,8 @@ def _review_facets(questions, decisions, statuses, terms, constructions, steps, 
             continue
         matched = [decision for decision in active if _question_matches(decision, question, flows)]
         decision = matched[-1] if matched else None
-        if related and all(flow['status'] == 'linked_source' for flow in related) and not decision:
+        recorded = question.get('recorded_decision')
+        if related and all(flow['status'] == 'linked_source' for flow in related) and not decision and not recorded:
             continue
         semantic_target = next((normalize_decision_target(option['action'], option.get('payload', {}),
                                 [question.get('decision_target', question['anchor'])])
@@ -544,6 +547,15 @@ def _review_facets(questions, decisions, statuses, terms, constructions, steps, 
                        'action': decision['action'] if decision else None,
                        'question_id': question['id'], 'semantic_key': question.get('semantic_key', {}),
                        'evidence': question.get('evidence_anchors', [])})
+        if recorded and recorded['decision_id'] in active_by_id:
+            context = active_by_id[recorded['decision_id']]
+            represented_context_ids.add(context['decision_id'])
+            facets.append({'object_id': target['id'], 'facet': 'source_context', 'status': 'reviewed',
+                           'related_object_ids': [], 'question_id': question['id'],
+                           'decision_id': context['decision_id'], 'action': 'attach_context',
+                           'semantic_key': normalize_decision_target(context['action'], context['payload'], context['targets']),
+                           'semantic_target': normalize_decision_target(context['action'], context['payload'], context['targets']),
+                           'evidence': question.get('evidence_anchors', [])})
         if len(related) == 1:
             # Several exact occurrences can consume one formal supply. Each
             # occurrence must expose the existing question without UI traversal.
@@ -572,7 +584,7 @@ def _review_facets(questions, decisions, statuses, terms, constructions, steps, 
     # decisions retain their exact source target and must remain visible.
     for decision in active:
         family = _decision_facet(decision['action'])
-        if family == 'source_supply' or not decision.get('targets'):
+        if family == 'source_supply' or decision['decision_id'] in represented_context_ids or not decision.get('targets'):
             continue
         payload = decision.get('payload', {})
         address = payload.get('semantic_input') or payload.get('semantic_output') or {}
@@ -761,6 +773,8 @@ def project_scholar_source(packet, compilation, questions=(), decisions=(), deci
             'constructions': constructions, 'steps': steps, 'flows': flows, 'review_facets': facets,
             'links': _links(constructions, steps, terms),
             'projection_diagnostics': diagnostics + _projection_diagnostics(constructions, steps, flows)}
+    from .semantic_projection import attach_semantic_closure
+    attach_semantic_closure(projection, compilation)
     # Private indexes are implementation details, not a second copy of native IR.
     for row in [*terms, *constructions]:
         for key in list(row):
@@ -920,9 +934,19 @@ def diff_scholar_source(before, after, *, trigger=None):
                                 'changed_fields': changes})
         layers[layer] = {'added': added, 'removed': removed, 'changed': changed}
         count += len(added) + len(removed) + len(changed)
+    old_derived = {a['id']: a for a in before.get('derived_assertions', [])}
+    new_derived = {a['id']: a for a in after.get('derived_assertions', [])}
+    resolved_terms = {a['target'].get('object_id') for a in new_derived.values() if a['kind'] == 'term'}
+    automatic = {f['question_id'] for f in before['review_facets'] if f.get('question_id')
+                 and f['facet'] == 'term_meaning' and f['object_id'] in resolved_terms
+                 and not any(n.get('question_id') == f['question_id'] for n in after['review_facets'])}
     return {'schema': 'ScholarSourceDiff/1',
             'source': {key: after['source'].get(key) for key in source_fields if key != 'text'},
-            'trigger': deepcopy(trigger), 'layers': layers, 'summary': {'semantic_change_count': count}}
+            'trigger': deepcopy(trigger), 'layers': layers, 'summary': {'semantic_change_count': count,
+                'derived_assertions_added': len(new_derived.keys() - old_derived.keys()),
+                'derived_assertions_removed': len(old_derived.keys() - new_derived.keys()),
+                'derived_interpretations_added': sum(new_derived[i]['kind'] == 'term' for i in new_derived.keys() - old_derived.keys()),
+                'questions_resolved_automatically': len(automatic)}}
 
 
 def project_annotations(packet, compilation, questions, decisions=(), decision_status=None):

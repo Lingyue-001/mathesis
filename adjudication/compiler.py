@@ -459,7 +459,8 @@ def _compile_reviewed_pass(packet, session, branch_id, invalid, management=(), r
     primary_ids = {d['id'] for d in program.definitions if d['source_role'] == 'primary'}
     entries.extend(d['id'] for d in program.definitions if d['source_role'] == 'primary'
                    and d['kind'] == 'QueryDef' and d.get('parent') not in primary_ids)
-    graph = lower_linked(link_entry(program, entries, allowed), parser)
+    rule_traces = []
+    graph = lower_linked(link_entry(program, entries, allowed, rule_traces=rule_traces), parser)
     if effective.get('reviewed_relations') and relation_hooks is None:
         from .reviewed_relations import resolve_reviewed_relation
         hooks, relation_issues = [], []
@@ -521,6 +522,10 @@ def _compile_reviewed_pass(packet, session, branch_id, invalid, management=(), r
                            'source_anchors': decision_sources.get(issue['decision_id'], []),
                            'reason': issue['kind'], 'affected_outputs': [], 'details': issue,
                            'suggested_actions': ['retract']} for issue in fatal_issues)
+    from .semantic_closure import compute_semantic_closure
+    closure = compute_semantic_closure(graph, replay['effective'], conflicted_decisions=[
+        d for d in session.get('decisions', []) if replay['decision_status'].get(d['decision_id'], {}).get('status') == 'conflicted'])
     return {'schema': 'ReviewedProcedureBundle', 'schema_version': '1.0', 'session_id': session['session_id'],
+            'semantic_closure': closure, 'rule_trace': rule_traces,
             'branch_id': branch_id, 'replay': replay, 'graph': graph,
             'coverage_ledger': ledger, 'trace': trace, 'review_queue': queue}, []

@@ -1,5 +1,6 @@
 """Source identities and static definition interfaces, independent of execution."""
 import hashlib
+from .rule_trace import condition, rule
 from dataclasses import dataclass, field
 
 @dataclass
@@ -107,7 +108,7 @@ def static_interface(candidates):
     return defined,uses
 
 
-def link_entry(index, entry_id, allowed_inputs):
+def link_entry(index, entry_id, allowed_inputs, *, rule_traces=None):
     """Resolve unique source producers and schedule only demanded prefixes.
 
     No runtime numbers participate in name resolution. Unused source diagnostics
@@ -183,8 +184,17 @@ def link_entry(index, entry_id, allowed_inputs):
                 else:
                     producers=[constrained]
             if managed and not constraint:producers=[]
-            if not managed and canonical in params and (parameter_only or not producers):continue
-            if not managed and (name in linked.allowed_inputs or canonical in linked.allowed_inputs):continue
+            parameter_resolved = not managed and canonical in params and (parameter_only or not producers)
+            runtime_allowed = not managed and (name in linked.allowed_inputs or canonical in linked.allowed_inputs)
+            missing = rule('LINK-IMPORT-01', 'linker', [
+                condition('compatible producer count', len(producers), 0),
+                condition('parameter resolved', bool(parameter_resolved), False),
+                condition('runtime input allowed', bool(runtime_allowed), False)], link_entry,
+                result={'diagnostic': 'missing_import', 'result_class': 'unresolved'},
+                subject={'consumer_definition_id': ident, 'formal': name})
+            if rule_traces is not None: rule_traces.append(missing)
+            if parameter_resolved:continue
+            if runtime_allowed:continue
             item={'consumer_definition_id':ident,'formal':name,'uses':use['uses'],'candidates':[x['id'] for x in all_producers],'candidate_evidence':[{'definition_id':x['id'],'compatible':x in producers,'rejection_reason':None if x in producers else 'source query base or declared epoch frame mismatch'} for x in all_producers],'selected_definition_id':None,'selected_port':canonical,'selection_reason':None}
             if len(producers)==1:
                 source=producers[0];port=constraint.get('output_port',canonical) if constraint else canonical
@@ -193,7 +203,7 @@ def link_entry(index, entry_id, allowed_inputs):
             else:
                 item['selection_reason']='multiple source producers' if producers else 'no declared root or source producer'
                 if managed:item['selection_reason']='managed binding unresolved; automatic source selection suppressed'
-                linked.diagnostics.append({'kind':'ambiguous_import' if producers else 'missing_import','definition_id':ident,'formal':name,'candidates':item['candidates'],'source_spans':d['source_spans']})
+                linked.diagnostics.append({'kind':'missing_import' if missing['matched'] else 'ambiguous_import','definition_id':ident,'formal':name,'candidates':item['candidates'],'source_spans':d['source_spans']})
             if item not in linked.imports:linked.imports.append(item)
         visiting.pop();visited[ident]=requested[ident]
         linked.bodies[ident]=[c['node_id'] for c in body]

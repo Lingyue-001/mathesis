@@ -86,24 +86,33 @@ def _sha(text):
     return hashlib.sha256(text.encode('utf-8')).hexdigest()
 
 
-def _parameter_fields(text):
+def _parameter_fields(text, *, with_spans=False):
     """Mechanical name/value candidates kept outside the parser input."""
     value = text.strip()
+    offset = len(text) - len(text.lstrip())
+
+    def grounded(field, start, end):
+        return {**field, 'declaration_span': [offset + start, offset + end]} if with_spans else field
     match = re.match(rf'^([^，。；：]{{1,12}})，\s*([{NUMERALS}]+)(.*)$', value)
     if match:
         name, numeral, tail = (part.strip() for part in match.groups())
         if len(name) <= 8 and not any(cue in name for cue in PARAMETER_NAME_EXCLUSIONS):
-            return [{'name': name, 'value_text': numeral, 'note': tail.lstrip('，。；:：').strip() or None}]
+            return [grounded({'name': name, 'value_text': numeral, 'note': tail.lstrip('，。；:：').strip() or None},
+                             match.start(1), match.end(2))]
     match = re.match(rf'^([^零〇一二三四五六七八九十百千萬万億亿兆兩两半，。；：]{{1,8}})([{NUMERALS}]+)[。.]?$', value)
     if match and not any(cue in match.group(1) for cue in PARAMETER_NAME_EXCLUSIONS):
-        return [{'name': match.group(1).strip(), 'value_text': match.group(2).strip(), 'note': None}]
+        return [grounded({'name': match.group(1).strip(), 'value_text': match.group(2).strip(), 'note': None},
+                         match.start(1), match.end(2))]
     if value[:1] not in '木火土金水' or sum(label in value for label in PLANET_LABELS) < 3:
         return []
     fields = []
-    for sentence in (part.strip() for part in re.split(r'[。；]', value) if part.strip()):
+    for segment in re.finditer(r'[^。；]+', value):
+        sentence = segment.group().strip()
         parts = [part.strip() for part in sentence.split('，') if part.strip()]
         if len(parts) >= 2 and parts[0] in PLANET_LABELS and re.search(rf'[{NUMERALS}]', parts[1]):
-            fields.append({'scope': value[0], 'name': parts[0], 'value_text': parts[1]})
+            start = segment.start() + len(segment.group()) - len(segment.group().lstrip())
+            fields.append(grounded({'scope': value[0], 'name': parts[0], 'value_text': parts[1]},
+                                   start, start + len(sentence)))
     return fields
 
 
@@ -119,6 +128,59 @@ def _parameter_index(units):
                 entry['note'] = field['note']
             index.setdefault(field['name'], []).append(entry)
     return index
+
+
+def search_effective_units(index, literal=''):
+    """Browse all effective chunks or filter by a literal substring; no normalization."""
+    return [unit for unit in index.get('units', []) if literal in unit.get('text_effective', '')]
+
+
+def source_review_evidence(index, formal):
+    """Read exact index declarations and literal occurrences as distinct corpus facts."""
+    from analysis_parser.rule_trace import condition, rule
+    units = {unit['id']: unit for unit in index.get('units', [])}
+    hits = index.get('parameter_index', {}).get(formal, [])
+    declaration_trace = rule('PARAMETER-DECLARATION-EXACT-01', 'corpus_lookup',
+        [condition('parameter_index[formal] has hits', bool(hits))], source_review_evidence,
+        result={'result_class': 'fact', 'status': 'exact_declaration_found', 'count': len(hits)},
+        otherwise={'result_class': 'no_match', 'status': 'no_exact_declaration', 'count': 0}, subject={'formal': formal})
+    declarations = []
+    if declaration_trace['matched']:
+        for hit in hits:
+            unit = units[hit['unit_id']]
+            text = unit.get('text_effective', '')
+            fields = [field for field in _parameter_fields(text, with_spans=True)
+                      if formal in (field['name'], str(field.get('scope')) + '::' + field['name'])
+                      and (not hit.get('value_text') or hit['value_text'] == field['value_text'])
+                      and (not hit.get('scope') or hit['scope'] == field.get('scope'))]
+            for field in fields or [None]:
+                span = field['declaration_span'] if field else None
+                declarations.append({**hit, 'sections': list(unit.get('sections', [])),
+                    'unit_type': unit.get('type'), 'quote': text[span[0]:span[1]] if span else '',
+                    'text': text, 'span': span, 'grounding': 'exact_declaration' if span else 'index_only',
+                    'strength': 'registered', 'read_only': True})
+    occurrences, evaluations = [], []
+    for unit in index.get('units', []):
+        text = unit.get('text_effective', '')
+        test = condition('literal occurs in effective text', bool(formal) and formal in text)
+        evaluations.append({'unit_id': unit['id'], **test})
+        if test['matched']:
+            start = text.find(formal)
+            while start >= 0:
+                in_declaration = any(row['unit_id'] == unit['id'] and row['span']
+                    and row['span'][0] <= start and start + len(formal) <= row['span'][1] for row in declarations)
+                if not in_declaration:
+                    occurrences.append({'unit_id': unit['id'], 'sections': list(unit.get('sections', [])),
+                        'unit_type': unit.get('type'), 'quote': formal, 'text': text,
+                        'span': [start, start + len(formal)], 'strength': 'hint', 'read_only': True})
+                start = text.find(formal, start + len(formal))
+    occurrence_trace = rule('EXACT-OCCURRENCE-01', 'corpus_lookup',
+        [condition('other exact occurrences exist', bool(occurrences))], source_review_evidence,
+        result={'result_class': 'fact', 'count': len(occurrences)},
+        otherwise={'result_class': 'no_match', 'count': 0}, subject={'formal': formal})
+    occurrence_trace['evaluations'] = evaluations
+    return {'declarations': declarations, 'occurrences': occurrences,
+            'rule_trace': [declaration_trace, occurrence_trace]}
 
 
 def cue_count(text):

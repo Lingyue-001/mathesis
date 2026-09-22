@@ -645,9 +645,11 @@ class ScopedParser(Parser):
                 coordinate=self.env.values[self.env.focus]
                 self.binary('subtract',self.env.focus,self.literal(slots['decrement']['text'],sp),sp,'V3_ORDINAL',{'ordinal_to_elapsed':True})
                 if coordinate.get('reviewed_quantity'):
-                    if coordinate.get('coordinate_kind')=='ordinal' and coordinate.get('index_base')==1 and slots['decrement'].get('value')==1 and coordinate.get('step_unit') and not coordinate.get('unresolved_facets'):
-                        derived={key:copy.deepcopy(coordinate[key]) for key in ('step_unit','reference_origin','counting_boundary','adjudication_decision_refs') if key in coordinate}
-                        derived.update(unit=coordinate['step_unit'],coordinate_kind='elapsed',index_base=0,reviewed_quantity=True,
+                    from .semantic_rules import ordinal_to_elapsed
+                    transition=ordinal_to_elapsed(coordinate,slots['decrement'].get('value'))
+                    if transition is not None:
+                        derived={**transition,**({'adjudication_decision_refs':copy.deepcopy(coordinate['adjudication_decision_refs'])} if 'adjudication_decision_refs' in coordinate else {})}
+                        derived.update(reviewed_quantity=True,
                                        decision_refs=coordinate.get('adjudication_decision_refs',[]),decision_origin='automatic_derivation')
                         self.apply_review_metadata(self.env.focus,derived)
                     elif coordinate.get('unresolved_facets'):

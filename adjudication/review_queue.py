@@ -1,4 +1,5 @@
 """Compiler pause questions, produced without a UI dependency."""
+from analysis_parser.rule_trace import condition, rule
 
 def build_review_queue(graph, replay, uncovered=(), structural_diagnostics=()):
     items = []
@@ -8,7 +9,12 @@ def build_review_queue(graph, replay, uncovered=(), structural_diagnostics=()):
     for diagnostic in diagnostics:
         kind = diagnostic.get('kind')
         if kind in ('missing_import', 'ambiguous_import', 'ambiguous_operation_import', 'missing_operation_import'):
-            items.append({'kind': 'missing_input' if kind == 'missing_import' else 'producer_or_port_ambiguity',
+            missing = rule('REVIEW-MISSING-INPUT-01', 'review_queue',
+                [condition('diagnostic.kind', kind, 'missing_import')], build_review_queue,
+                result={'review.kind': 'missing_input', 'severity': 'blocking', 'result_class': 'unresolved'},
+                otherwise={'review.kind': 'producer_or_port_ambiguity', 'severity': 'blocking', 'result_class': 'unresolved'})
+            items.append({'kind': 'missing_input' if missing['matched'] else 'producer_or_port_ambiguity',
+                          'rule_trace': [missing],
                           'severity': 'blocking', 'source_spans': diagnostic.get('source_spans', []),
                           'source_anchors': diagnostic.get('source_spans', []), 'reason': kind,
                           'affected_outputs': diagnostic.get('uses', []),

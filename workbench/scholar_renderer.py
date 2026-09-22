@@ -7,12 +7,13 @@ source component can draw and select.
 from copy import deepcopy
 
 from analysis_parser.construction_ir import RULES
-from analysis_parser.ontology import entry as ontology_entry
+from analysis_parser.ontology import entry as ontology_entry, label_en
 from source_adapters.corpus import _load_effective_index
 from workbench.question_presenter import expression_label
 
 
 _FACET_LABELS = {
+    'semantic_conflict': 'conflict',
     'term_meaning': 'meaning?',
     'term_boundary': 'meaning?',
     'quantity_meaning': 'count?',
@@ -90,9 +91,14 @@ def _reviewed_expression(term):
 
 
 def _term_gloss(term):
+    if term.get('semantic_conflicts'):
+        return {'kind': 'conflicted', 'label': 'Conflicting semantic evidence'}
     reviewed = _reviewed_expression(term)
     if reviewed:
         return {'kind': 'reviewed', 'label': reviewed}
+    for assertion in term.get('derived_assertions', []):
+        if assertion['kind'] == 'term' and assertion['facet'] == 'expression':
+            return {'kind': 'derived', 'label': _label_expression(assertion['value']) or 'Registered interpretation'}
     candidates = [row for row in term.get('semantic_candidates', [])
                   if row.get('status') not in ('rejected', 'incompatible')]
     labels = []
@@ -109,8 +115,8 @@ def _term_gloss(term):
 
 def _term_hover(term):
     gloss = _term_gloss(term)
-    if gloss['kind'] == 'reviewed':
-        text = 'Reviewed interpretation\n' + gloss['label']
+    if gloss['kind'] in ('reviewed', 'derived', 'conflicted'):
+        text = {'reviewed': 'Reviewed interpretation', 'derived': 'Derived interpretation', 'conflicted': 'Conflict'}[gloss['kind']] + '\n' + gloss['label']
     elif len(gloss.get('labels', [])) > 1:
         text = str(len(gloss['labels'])) + ' machine suggestions\n' + '\n'.join('• ' + s for s in gloss['labels'])
     else:
@@ -237,19 +243,9 @@ def corpus_search_hints(root, source_id, formal):
     if not source_id or not formal:
         return []
     _source, index = _load_effective_index(root, source_id)
-    registered_units = {row.get('unit_id') for row in index.get('parameter_index', {}).get(formal, [])}
-    rows = []
-    for unit in index.get('units', []):
-        text = unit.get('text_effective', '')
-        start = text.find(formal)
-        while start >= 0:
-            end = start + len(formal)
-            registered = unit.get('id') in registered_units
-            rows.append({'unit_id': unit['id'], 'sections': list(unit.get('sections', [])),
-                         'unit_type': unit.get('type'), 'span': [start, end], 'quote': text[start:end], 'text': text,
-                         'strength': 'registered' if registered else 'hint', 'read_only': True})
-            start = text.find(formal, end)
-    return sorted(rows, key=lambda row: (row['strength'] != 'registered', row['unit_id'], row['span']))
+    from source_adapters.corpus_index import source_review_evidence
+    evidence = source_review_evidence(index, formal)
+    return [*evidence['declarations'], *evidence['occurrences']]
 
 
 def _step_span(step):
@@ -270,6 +266,11 @@ def build_renderer_model(packet, projection, questions, *, root=None):
     terms = []
     for row in projection.get('terms', []):
         object_facets = _badges(facets.get(row['id'], []), question_index)
+        gloss = _term_gloss(row)
+        if gloss['kind'] in ('derived', 'conflicted'):
+            object_facets.append({'object_id': row['id'], 'facet_key': None, 'facet': 'term_meaning',
+                'status': gloss['kind'], 'hover': _term_hover(row), 'question_id': None,
+                'label': 'derived' if gloss['kind'] == 'derived' else 'conflict', 'related_object_ids': []})
         terms.append({**deepcopy(row), 'id': row['id'], 'span': list(row['span']), 'surface': row['surface'],
                       'gloss': _term_gloss(row), 'hover': _term_hover(row), 'badges': object_facets, 'facets': object_facets,
                       'decision_refs': deepcopy(row.get('decision_refs', []))})
@@ -319,7 +320,181 @@ def build_renderer_model(packet, projection, questions, *, root=None):
             'terms': [r for r in terms if r.get('display_level') != 'component'],
             'constructions': constructions, 'steps': steps, 'flows': flows,
             'objects': objects, 'facets': bridges, 'questions': {r['id']: deepcopy(r) for r in questions},
-            'links': deepcopy(projection.get('links', []))}
+            'links': deepcopy(projection.get('links', [])), 'semantic_closure': deepcopy(projection.get('semantic_closure', {}))}
+
+
+def procedure_context(model, object_id):
+    """Local construction/step cluster, joined only by recorded projection IDs.
+
+    Close construction-realization edges only. Input producers are displayed as
+    references, not recursively expanded into the entire upstream procedure.
+    """
+    objects, links = model['objects'], model['links']
+    terms = {ident for ident, row in objects.items() if row.get('kind') == 'term' or 'gloss' in row}
+    constructions = {row['id'] for row in model['constructions']}
+    steps = {row['id'] for row in model['steps']}
+    flows = {row['id'] for row in model['flows']}
+    tids, cids, sids, fids = ({object_id} & pool for pool in (terms, constructions, steps, flows))
+    # Selecting a component follows its recorded parent, never its source span.
+    tids.update(link['from_id'] for link in links
+                if link['relation'] == 'has_component' and link['to_id'] == object_id)
+    cids.update(link['to_id'] for link in links
+                if link['relation'] == 'fills_slot' and link['from_id'] in tids)
+    cids.update(c['id'] for c in model['constructions']
+                if any(slot.get('linked_term_id') in tids for slot in c.get('slots', [])))
+    for step in model['steps']:
+        if (any(i.get('term_id') in tids or i.get('flow_id') in fids for i in step.get('inputs', []))
+                or any(tids.intersection(o.get('label_term_ids', [])) for o in step.get('outputs', []))):
+            sids.add(step['id'])
+    for flow in model['flows']:
+        if flow['id'] in fids:
+            sids.update(flow.get('consumer_step_ids', []))
+            if flow.get('producer_step_id') in steps:
+                sids.add(flow['producer_step_id'])
+    edges = {(link['from_id'], link['to_id']) for link in links if link['relation'] == 'realizes'}
+    edges.update((cid, step['id']) for step in model['steps'] for cid in step.get('construction_ids', []))
+    while True:
+        before = (set(cids), set(sids))
+        for cid, sid in edges:
+            if cid in cids or sid in sids:
+                cids.add(cid); sids.add(sid)
+        if before == (cids, sids):
+            break
+    for step in model['steps']:
+        if step['id'] in sids:
+            tids.update(i.get('term_id') for i in step.get('inputs', []))
+            fids.update(i.get('flow_id') for i in step.get('inputs', []))
+            for output in step.get('outputs', []):
+                tids.update(output.get('label_term_ids', []))
+    # Naming constructions belong to these output Terms, without following
+    # other uses of those Terms to unrelated operations.
+    cids.update(link['to_id'] for link in links if link['relation'] == 'fills_slot'
+                and link.get('role') == 'label' and link['from_id'] in tids)
+    for construction in model['constructions']:
+        if construction['id'] in cids:
+            tids.update(slot.get('linked_term_id') for slot in construction.get('slots', []))
+    fids.update(f['id'] for f in model['flows'] if sids.intersection(f.get('consumer_step_ids', []))
+                or f.get('producer_step_id') in sids)
+    return {'terms': [row for ident, row in objects.items() if ident in tids & terms],
+            'constructions': [c for c in model['constructions'] if c['id'] in cids],
+            'steps': [s for s in model['steps'] if s['id'] in sids],
+            'flows': [f for f in model['flows'] if f['id'] in fids]}
+
+
+_SELECTED_SOURCE_SECTIONS = (
+    ('terms', 'Term', 'What technical expression is identified here, and what might it mean?',
+     'No technical term is directly associated with this selection.'),
+    ('constructions', 'Construction', 'How is the source expression structured, and what roles do its parts play?',
+     'No textual construction is directly associated with this selection.'),
+    ('steps', 'Computational step', 'What operation does this construction represent, with which inputs and outputs?',
+     'No computational step is directly associated with this selection.'),
+    ('flows', 'Quantity flow', 'Where do the quantities come from, and how do they depend on other steps?',
+     'No quantity dependency is directly associated with this selection.'),
+)
+
+
+def _display_label(category, identity):
+    """Use only an authored ontology label; otherwise expose the display gap."""
+    try:
+        return {'label': label_en(category, identity), 'identity': identity}
+    except (KeyError, ValueError):
+        return {'label': 'Display gap for review', 'identity': identity}
+
+
+def _object_reference(objects, ident):
+    row = objects.get(ident)
+    if row is None:
+        return {'label': 'Display gap for review', 'identity': ident}
+    if row.get('surface'):
+        return {'label': row['surface'], 'identity': ident}
+    if row.get('formal'):
+        return {'label': row['formal'], 'identity': ident}
+    if row.get('operation'):
+        return _display_label('operation', row['operation'])
+    return {'label': 'Display gap for review', 'identity': ident}
+
+
+def selected_source_object_sections(model, object_id):
+    """Frozen four-layer display records from canonical projection relations only."""
+    objects = model['objects']
+    context = procedure_context(model, object_id)
+    links = model['links']
+    construction_by_id = {row['id']: row for row in context['constructions']}
+
+    terms = []
+    for row in context['terms']:
+        parts = [_object_reference(objects, link['to_id']) for link in links
+                 if link['relation'] == 'has_component' and link['from_id'] == row['id']]
+        suggestions = []
+        for candidate in row.get('semantic_candidates', []):
+            label = _label_expression(candidate.get('structured_expression'))
+            suggestions.append({'label': label or 'Display gap for review',
+                                'identity': candidate.get('candidate_id')})
+        gloss = row.get('gloss', {})
+        terms.append({'id': row['id'], 'selected': row['id'] == object_id, 'surface_form': row.get('surface'),
+                      'composition': parts, 'machine_suggestions': suggestions,
+                      'reviewed_interpretation': gloss.get('label') if gloss.get('kind') == 'reviewed' else None})
+
+    constructions = []
+    for row in context['constructions']:
+        roles = []
+        for link in links:
+            if link['relation'] == 'fills_slot' and link['to_id'] == row['id']:
+                roles.append({'role': _display_label('port', link.get('role')),
+                              'value': _object_reference(objects, link['from_id'])})
+        slots = [{'role': _display_label('port', slot.get('name')), 'surface': slot.get('surface')}
+                 for slot in row.get('slots', [])]
+        linked_steps = [_object_reference(objects, link['to_id']) for link in links
+                        if link['relation'] == 'realizes' and link['from_id'] == row['id']]
+        constructions.append({'id': row['id'], 'selected': row['id'] == object_id,
+                              'source_expression': row.get('surface'),
+                              'construction_type': _display_label('construction', row.get('construction_kind')),
+                              'roles': roles, 'slots': slots, 'linked_steps': linked_steps})
+
+    steps = []
+    for row in context['steps']:
+        inputs = []
+        associated = [construction_by_id[ident] for ident in row.get('construction_ids', [])
+                      if ident in construction_by_id]
+        for item in row.get('inputs', []):
+            source_slots = [slot['surface'] for construction in associated
+                            for slot in construction.get('slots', [])
+                            if slot.get('name') == item.get('role') and slot.get('surface')]
+            source_form = source_slots[0] if len(source_slots) == 1 else None
+            input_row = {'role': _display_label('port', item.get('role')),
+                         'normalized_value': item.get('literal'), 'source_form': source_form,
+                         'source_form_gap': bool(item.get('literal') is not None and source_form is None)}
+            if item.get('term_id'):
+                input_row['value'] = _object_reference(objects, item['term_id'])
+            elif item.get('from_step_id'):
+                input_row['value'] = _object_reference(objects, item['from_step_id'])
+                input_row['from'] = _object_reference(objects, item['from_step_id'])
+            elif item.get('surface_reference'):
+                input_row['value'] = {'label': item['surface_reference'], 'identity': None}
+            inputs.append(input_row)
+        outputs = []
+        for output in row.get('outputs', []):
+            labels = [_object_reference(objects, ident) for ident in output.get('label_term_ids', [])]
+            outputs.append({'role': _display_label('port', output.get('port')), 'labels': labels,
+                            'identity': output.get('value_id')})
+        steps.append({'id': row['id'], 'selected': row['id'] == object_id,
+                      'operation': _display_label('operation', row.get('operation')),
+                      'inputs': inputs, 'outputs': outputs})
+
+    flows = []
+    for row in context['flows']:
+        producer = (_object_reference(objects, row['producer_step_id'])
+                    if row.get('producer_step_id') else None)
+        consumers = [_object_reference(objects, ident) for ident in row.get('consumer_step_ids', [])]
+        source = row.get('producer_source') or {}
+        historical = ('§' + ', §'.join(map(str, source['sections'])) if source.get('sections') else None)
+        flows.append({'id': row['id'], 'selected': row['id'] == object_id, 'identity': row.get('formal'),
+                      'status': row.get('display_status'), 'producer': producer, 'consumers': consumers,
+                      'historical_source': historical})
+
+    items = {'terms': terms, 'constructions': constructions, 'steps': steps, 'flows': flows}
+    return [{'key': key, 'title': title, 'description': description, 'empty': empty, 'items': items[key]}
+            for key, title, description, empty in _SELECTED_SOURCE_SECTIONS]
 
 
 def selection_details(model, object_id, facet_key=None, *, root=None):
@@ -330,7 +505,8 @@ def selection_details(model, object_id, facet_key=None, *, root=None):
     facet = next((f for f in own_facets if f['facet_key'] == facet_key), None)
     result = {'selected': selected, 'facet': facet, 'facets': _badges(own_facets),
               'composition': [], 'uses': [], 'naming': [], 'named_outputs': [],
-              'steps': [], 'flows': [], 'source_assistance': None, 'context_requirement': None}
+              'steps': [], 'flows': [], 'source_assistance': None, 'context_requirement': None,
+              'procedure_context': procedure_context(model, object_id)}
     if selected is None:
         return result
     result['facets'] = _badges(own_facets, model['questions'])
@@ -356,6 +532,12 @@ def selection_details(model, object_id, facet_key=None, *, root=None):
             if object_id in output.get('label_term_ids', []):
                 result['named_outputs'].append({'step': step, 'port': output['port']})
     result['steps'] = [r for r in model['steps'] if r['id'] in step_ids]
+    from .semantic_presentation import provenance_blocks
+    # Quantity evidence is explicitly separate from the selected Term's meaning.
+    result['semantic_provenance'] = provenance_blocks(model.get('semantic_closure', {}),
+        {object_id, *step_ids}, objects)
+    result['semantic_diagnostics'] = [deepcopy(d) for d in model.get('semantic_closure', {}).get('unresolved', [])
+                                     if d['target'].get('object_id') in {object_id, *step_ids}]
     # Only immediate supply dependencies of the selected term/step/construction.
     flow_ids = {r['flow_id'] for step in result['steps'] for r in step.get('inputs', [])
                 if r.get('flow_id') and (selected.get('kind') != 'term' or r.get('term_id') == object_id)}
@@ -371,8 +553,9 @@ def selection_details(model, object_id, facet_key=None, *, root=None):
         question = model['questions'].get(facet.get('question_id'), {})
         candidates = [{'label': option['label'], 'evidence': deepcopy(option.get('payload', {}))}
                       for option in question.get('options', []) if option.get('action') == 'bind_value']
-        hints = []
-        if root is not None:
+        evidence = question.get('source_review')
+        hints = [*evidence['declarations'], *evidence['occurrences']] if evidence else []
+        if evidence is None and root is not None:
             for flow in result['flows']:
                 hints.extend(corpus_search_hints(root, model['source'].get('source_id'), flow['formal']))
         result['source_assistance'] = {'candidates': deepcopy(candidates),

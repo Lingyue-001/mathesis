@@ -110,11 +110,12 @@ export function renderProcedureModel(host,model,{selectedObjectId=null,onSelect=
     const label=svgEl('text',{x:p.width/2,y:25,'text-anchor':'middle',class:'procedure-node-label'});label.textContent=node.label;
     if(node.label.length>25){label.setAttribute('textLength',p.width-20);label.setAttribute('lengthAdjust','spacingAndGlyphs');}
     const subtitle=svgEl('text',{x:p.width/2,y:44,'text-anchor':'middle',class:'procedure-node-subtitle'});
-    subtitle.textContent=node.status==='runtime_value_permitted'?'Runtime value · source unresolved':node.status_label||
-      ({operation:'Operation',named_quantity:node.output_port,judgment:'Judgment',literal:'Literal',quantity:node.output_port}[node.type]||'Quantity');
+    subtitle.textContent=node.semantic_summary || (node.status==='runtime_value_permitted'?'Runtime value · source unresolved':node.status_label||
+      ({operation:'Operation',named_quantity:node.output_port,judgment:'Judgment',literal:'Literal',quantity:node.output_port}[node.type]||'Quantity'));
+    if(node.semantic_summary?.length>42)subtitle.textContent=node.semantic_summary.slice(0,39)+'…';
     if(subtitle.textContent.length>29){subtitle.setAttribute('textLength',p.width-18);subtitle.setAttribute('lengthAdjust','spacingAndGlyphs');}
     group.append(label,subtitle);svg.append(group);
-    const hover=[node.label,node.definition,node.status_label,
+    const hover=[node.label,node.definition,node.status_label,node.semantic_summary,
       ...(node.interpretations||[]).flatMap(i=>[
         i.reviewed_claim_count?'Term review records: '+i.reviewed_claim_count:null,
         i.candidate_statuses.length?'Machine candidate status: '+i.candidate_statuses.join(', '):null]),

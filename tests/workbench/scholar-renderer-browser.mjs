@@ -13,6 +13,7 @@ const repo=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const output=path.join(repo,'tmp/scholar-renderer-v02');
 const procedureOutput=path.join(repo,'tmp/procedure-model-v1');
 const shellOutput=path.join(repo,'tmp/inspector-ui');
+const closureOutput=path.join(repo,'tmp/semantic-closure');await fs.mkdir(closureOutput,{recursive:true});
 await fs.mkdir(shellOutput,{recursive:true});
 await fs.mkdir(output,{recursive:true});
 await fs.mkdir(procedureOutput,{recursive:true});
@@ -79,21 +80,37 @@ async function clickObject(id){
 async function clickFacet(id,family){
   await page.locator('.source .facet[data-object-id="'+id+'"][data-facet="'+family+'"]').first().click();
   const state=await rendered(s=>s.selected===id&&s.renderer.facets.some(f=>f.object_id===id&&f.facet===family&&f.facet_key===s.facet));
+  await settled();
   const facet=state.renderer.facets.find(f=>f.facet_key===state.facet);
   assert.equal(await page.locator('.source .facet.active').count(),1);
   const question=state.questions.find(q=>q.id===facet.question_id);
   if(question){
     await page.locator('[data-testid="stMarkdownContainer"]').getByText(question.title,{exact:true}).waitFor();
-    const options=await page.locator('[role="radiogroup"][aria-label="Interpretation"] label').allTextContents();
-    const expected=[...new Map(question.options.map(o=>[o.id,o])).values()].map(o=>o.label);
+    const sourceQuestion=question.semantic_key?.issue_family==='source_supply';
+    const area=sourceQuestion ? 'Source resolution' : 'Interpretation';
+    const options=await page.locator('[role="radiogroup"][aria-label="'+area+'"] label').allTextContents();
+    let shown=[...new Map(question.options.map(o=>[o.id,o])).values()];
+    if(sourceQuestion)shown=shown.filter(o=>(o.group==='runtime_fallback')===(area==='Execution fallback'));
+    const expected=shown.map(o=>o.label);
     if(question.kind==='term_interpretation')expected.splice(-1,0,'Compose a local interpretation from registered concepts');
     assert.deepEqual(options,expected,'radio labels and values must belong only to the selected question, without duplicate IDs');
   }
   await settled();
 }
+async function checkTopBadges(){
+  assert.ok(await page.locator('.source .facet').evaluateAll(els=>els.every(el=>{
+    const row=el.closest('.source-row'),box=el.getBoundingClientRect();
+    const glyphs=row.querySelector('.glyphs').getBoundingClientRect();
+    return el.closest('.badge-layer')&&box.bottom<=glyphs.top&&box.left>=glyphs.left-1&&box.right<=glyphs.right+1;
+  })), 'all facets must remain above their source row');
+  assert.ok(await page.locator('.source-row').evaluateAll(rows=>rows.every(row=>{
+    const boxes=Array.from(row.querySelectorAll('.facet'),el=>el.getBoundingClientRect());
+    return boxes.every((a,i)=>boxes.slice(i+1).every(b=>a.right<=b.left||b.right<=a.left||a.bottom<=b.top||b.bottom<=a.top));
+  })), 'Term and Construction badges must not overlap');
+}
 try{
   await runPython(
-    "from pathlib import Path; import sys; from tests.workbench.test_review_jobs import isolated_source, SELECTION; from workbench import service; from source_adapters import corpus_review; r=Path(sys.argv[1]); isolated_source(r); source=r/'calendars-四分历.md'; source.write_text(source.read_text(encoding='utf-8')+'\\n\\n900\\t𠀀。以日新率乘章月。\\n',encoding='utf-8'); corpus_review.regenerate(r); [service.create_review_job(r,j,{**SELECTION,'primary_unit_ids':['sifen:section:38'],'provided_scope':{}}) for j in ('renderer-browser','renderer-context-browser')]; service.create_review_job(r,'renderer-boundary-browser',{**SELECTION,'primary_unit_ids':['sifen:section:900'],'provided_scope':{}})",
+    "from pathlib import Path; import sys; from tests.workbench.test_review_jobs import isolated_source, SELECTION; from workbench import service; from source_adapters import corpus_review; r=Path(sys.argv[1]); isolated_source(r); source=r/'calendars-四分历.md'; source.write_text(source.read_text(encoding='utf-8')+'\\n\\n900\\t𠀀。以日新率乘章月。\\n\\n901\\t置章月，名為積月。\\n',encoding='utf-8'); corpus_review.regenerate(r); [service.create_review_job(r,j,{**SELECTION,'primary_unit_ids':['sifen:section:38'],'provided_scope':{}}) for j in ('renderer-browser','renderer-context-browser','closure-browser')]; service.create_review_job(r,'closure-identity-browser',{**SELECTION,'primary_unit_ids':['sifen:section:901'],'provided_scope':{}}); service.create_review_job(r,'renderer-boundary-browser',{**SELECTION,'primary_unit_ids':['sifen:section:900'],'provided_scope':{}})",
     root);
   const host=path.join(scratch,'host.py');
   await fs.writeFile(host,[
@@ -135,6 +152,127 @@ try{
   const pageErrors=[];page.on('pageerror',e=>pageErrors.push(String(e)));
   await page.goto('http://127.0.0.1:'+port+'?review_job=renderer-browser');
   await page.locator('.source .char').first().waitFor();await settled();
+  if(process.env.SOURCE_REVIEW_ONLY){
+    const before=await persisted();
+    await clickFacet('term:sifen:38:6-9','source_supply');
+    await page.getByText('No exact parameter declaration found in the indexed corpus.',{exact:true}).first().waitFor();
+    assert.equal(await page.getByRole('radiogroup',{name:'Decision area',exact:true}).count(),0);
+    assert.equal(await page.locator('[data-testid="stExpander"] summary').filter({hasText:'Full source ·'}).count(),0);
+    const sourceChoices=page.getByRole('radiogroup',{name:'Source resolution',exact:true});
+    const fallbackChoices=page.getByRole('radiogroup',{name:'Execution fallback',exact:true});
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:980});await settled();
+      const sidebar=page.getByTestId('stSidebar');
+      if(width<1000 && await sidebar.getAttribute('aria-expanded')==='true'){
+        await page.getByTestId('stSidebarCollapseButton').click();await page.waitForTimeout(350);
+      }
+      await page.getByRole('heading',{name:'Current question',exact:true}).evaluate(el=>el.scrollIntoView({block:'start'}));
+      await page.getByTestId('stMain').evaluate(el=>el.scrollTop-=65);
+      const choiceBox=await sourceChoices.boundingBox();
+      assert.ok(choiceBox.y>=0 && choiceBox.y+choiceBox.height<980,JSON.stringify({width,choiceBox}));
+      assert.equal(await page.getByTestId('stMain').evaluate(el=>el.scrollWidth>el.clientWidth+1),false);
+      await page.screenshot({path:path.join(output,'source-question-'+width+'.png')});
+      const occurrence=page.getByRole('button',{name:/^§38 · procedure · 入蔀年/}).first();
+      await occurrence.click();
+      const inspection=page.getByTestId('stPopoverBody');await inspection.waitFor();
+      assert.ok((await inspection.innerText()).includes('推天正術'));
+      const inspectionBox=await inspection.boundingBox();assert.ok(inspectionBox.x>=0&&inspectionBox.x+inspectionBox.width<=width+1);
+      await page.keyboard.press('Escape');await inspection.waitFor({state:'hidden'});
+    }
+    await fallbackChoices.locator('label').first().evaluate(el=>el.scrollIntoView({block:'center'}));
+    await fallbackChoices.locator('label').first().click();await settled();
+    await page.waitForFunction(()=>!document.querySelector('[role="radiogroup"][aria-label="Source resolution"] input:checked'));
+    assert.equal(await sourceChoices.locator('input:checked').count(),0);
+    assert.equal(await page.getByRole('textbox',{name:'Search source chunks (literal text)',exact:true}).count(),0);
+    await sourceChoices.evaluate(el=>el.scrollIntoView({block:'center'}));
+    await sourceChoices.getByText('Read additional source material',{exact:true}).click();await settled();
+    await page.waitForFunction(()=>!document.querySelector('[role="radiogroup"][aria-label="Execution fallback"] input:checked'));
+    assert.equal(await fallbackChoices.locator('input:checked').count(),0);
+    await expand('Why these options?');
+    await expand('Rule · RUNTIME-INPUT-01');
+    const why=page.locator('[data-testid="stExpander"]').filter({has:page.locator('summary').filter({hasText:'Rule · RUNTIME-INPUT-01'})}).last();
+    await why.getByText('formal in required_formals = True',{exact:true}).waitFor();
+    await why.getByText('View source',{exact:true}).click();
+    await why.locator('code').waitFor();
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:980});await settled();
+      await why.locator('summary').first().evaluate(el=>el.scrollIntoView({block:'start'}));
+      await page.locator('[data-testid="stMain"]').evaluate(el=>el.scrollTop-=72);
+      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+      await page.screenshot({path:path.join(output,'source-why-'+width+'.png')});
+      await page.getByRole('textbox',{name:'Search source chunks (literal text)',exact:true}).scrollIntoViewIfNeeded();
+      await page.screenshot({path:path.join(output,'source-controls-'+width+'.png')});
+    }
+    await page.getByText('Why these options?',{exact:true}).click();await settled();
+    const selections=[
+      ['term','term:sifen:38:6-9','.char'],
+      ['construction','construction:sifen:38:5-11:load','.rail'],
+      ['step','step:sifen:38:5-11:load:0','.step-token'],
+      ['flow','flow:sifen:38:入蔀年',null],
+    ];
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:980});
+      for(const [kind,id,selector] of selections){
+        if(selector)await page.locator('.source '+selector+'[data-object-id="'+id+'"]').first().click();
+        else await page.locator('.st-key-procedure-layer-flows').getByRole('button',{name:'入蔀年',exact:true}).click();
+        await rendered(s=>s.selected===id&&!s.facet);await settled();
+        const layers=page.locator('[class*="st-key-procedure-layer-"]');
+        const layerNames=await layers.evaluateAll(nodes=>nodes.map(n=>Array.from(n.classList).find(c=>c.startsWith('st-key-procedure-layer-'))));
+        assert.deepEqual(layerNames,['terms','constructions','steps','flows'].map(x=>'st-key-procedure-layer-'+x));
+        const termText=await layers.nth(0).innerText();assert.ok(termText.includes('入蔀年'));
+        assert.ok((await layers.nth(1).innerText()).includes('置入蔀年減一'));
+        assert.ok((await layers.nth(2).innerText()).includes('Subtract'));
+        const current=await rendered();
+        assert.ok((await layers.nth(3).innerText()).includes(current.renderer.flows.find(f=>f.formal==='入蔀年').display_status));
+        assert.equal(await layers.locator('strong').count(),1,'only selected object is emphasized');
+        const totalHeight=await layers.evaluateAll(nodes=>nodes.reduce((sum,n)=>sum+n.getBoundingClientRect().height,0));
+        await page.setViewportSize({width,height:Math.ceil(totalHeight+600)});
+        await page.getByRole('heading',{name:'Selected source object',exact:true}).evaluate(el=>el.scrollIntoView({block:'start'}));
+        await page.getByTestId('stMain').evaluate(el=>el.scrollTop-=65);
+        assert.equal(await page.getByTestId('stMain').evaluate(el=>el.scrollWidth>el.clientWidth+1),false);
+        const lastBox=await layers.last().boundingBox();assert.ok(lastBox.y+lastBox.height<page.viewportSize().height);
+        await page.mouse.move(0,0);
+        await page.screenshot({path:path.join(output,'four-layer-'+kind+'-'+width+'.png')});
+        await page.setViewportSize({width,height:980});
+      }
+    }
+    await clickFacet('term:sifen:38:13-15','source_supply');
+    const exactDeclaration=page.getByRole('radio',{name:'Use exact parameter declaration · §16',exact:true});
+    await exactDeclaration.waitFor();
+    const declarationChunk=page.getByRole('button',{name:/^§16 · parameter · 章月/}).first();
+    assert.equal(await declarationChunk.getAttribute('aria-description'),null,'full declaration is click-only, not duplicated in hover');
+    await declarationChunk.click();
+    const declarationPopover=page.getByTestId('stPopoverBody');await declarationPopover.waitFor();
+    assert.equal(await declarationPopover.getByText('章月，二百三十五。',{exact:true}).count(),1);
+    await page.keyboard.press('Escape');await declarationPopover.waitFor({state:'hidden'});
+    assert.deepEqual(await persisted(),before,'source evidence, Why and browser selection cannot save decisions');
+    checks.push('compact source decisions in first question viewport; exact declaration attaches as selectable context; click-only full chunks; mutually exclusive runtime fallback; four canonical layers for Term/Construction/Step/Flow at 1440/768/390; no writes');
+    // Deliberately do not wait between changing the radio and pressing Confirm.
+    // A stale render may refuse the click, but must never save the old choice.
+    await page.goto('http://127.0.0.1:'+port+'?review_job=renderer-context-browser');
+    await page.locator('.source .char').first().waitFor();await settled();
+    await clickFacet('term:sifen:38:6-9','source_supply');
+    await page.getByRole('radiogroup',{name:'Source resolution',exact:true}).getByText('Read additional source material',{exact:true}).click();
+    await page.getByRole('textbox',{name:'Search source chunks (literal text)',exact:true}).waitFor();await settled();
+    await page.getByRole('radiogroup',{name:'Execution fallback',exact:true}).locator('label').first().click();
+    await page.getByRole('button',{name:'Confirm and re-run',exact:true}).click();
+    await page.waitForTimeout(1000);await settled();
+    let rapid=await persisted();
+    assert.ok(rapid.session.decisions.every(d=>d.action==='declare_parameter'),'rapid confirmation must not submit the previous attach choice');
+    if(rapid.revision===1){
+      assert.equal(await page.getByRole('radiogroup',{name:'Source resolution',exact:true}).locator('input:checked').count(),0);
+      assert.equal(await page.getByRole('button',{name:'Confirm and re-run',exact:true}).isDisabled(),true);
+      await page.getByRole('radiogroup',{name:'Execution fallback',exact:true}).locator('label').first().click();
+      await page.getByRole('button',{name:'Confirm and re-run',exact:true}).waitFor();await settled();
+      await page.getByRole('button',{name:'Confirm and re-run',exact:true}).click();
+      await saveRevision(2);rapid=await persisted();
+    }
+    assert.equal(rapid.session.decisions.length,1);
+    assert.equal(rapid.session.decisions[0].action,'declare_parameter');
+    assert.equal('document' in rapid.session.decisions[0].payload,false);
+    checks.push('un-waited source-to-runtime switch plus Confirm never persists obsolete attach choice');
+  }else{
+  if(!process.env.CLOSURE_ONLY){
   const scope='Full workflow currently demonstrated on Han Sifen li §38; other procedures are included at their present stage of analysis.';
   const shellChecks=[];
   for(const width of [1440,768,390]){
@@ -275,17 +413,6 @@ try{
   await page.getByText('Annotated Source',{exact:true}).click();
   await page.locator('.source .char').first().waitFor();await settled();
   checks.push('Procedure Model: current pure JSON, exact download, 13 nodes/12 edges, source selection round-trip, ontology hover, byte-identical ReviewJob, static renderer works without review controls');
-  async function checkTopBadges(){
-    assert.ok(await page.locator('.source .facet').evaluateAll(els=>els.every(el=>{
-      const row=el.closest('.source-row'),box=el.getBoundingClientRect();
-      const glyphs=row.querySelector('.glyphs').getBoundingClientRect();
-      return el.closest('.badge-layer')&&box.bottom<=glyphs.top&&box.left>=glyphs.left-1&&box.right<=glyphs.right+1;
-    })), 'all facets must remain above their source row');
-    assert.ok(await page.locator('.source-row').evaluateAll(rows=>rows.every(row=>{
-      const boxes=Array.from(row.querySelectorAll('.facet'),el=>el.getBoundingClientRect());
-      return boxes.every((a,i)=>boxes.slice(i+1).every(b=>a.right<=b.left||b.right<=a.left||a.bottom<=b.top||b.bottom<=a.top));
-    })), 'Term and Construction badges must not overlap');
-  }
   await checkTopBadges();
   const countBadge=page.locator('.facet[data-object-id="construction:sifen:38:5-11:load"][data-facet="quantity_meaning"]');
   async function checkLoadBadgesInline(){
@@ -377,11 +504,15 @@ try{
 
   await clickObject('term:sifen:38:26-28');
   const right=page.locator('[data-testid="stColumn"]').filter({has:page.getByRole('heading',{name:'Selected source object',exact:true})});
-  await right.getByText('積月',{exact:true}).waitFor();
+  await right.locator('.st-key-procedure-layer-terms').getByText('積月',{exact:true}).first().waitFor();
+  assert.deepEqual(await right.locator('[class*="st-key-procedure-layer-"] h4').allTextContents(),
+    ['Term','Construction','Computational step','Quantity flow']);
   const visibleText=await right.locator('[data-testid="stMarkdownContainer"]').filter({visible:true}).allTextContents();
   assert.ok(visibleText.join(' ').includes('積'));
   assert.ok(!visibleText.join(' ').includes('Search hints'));
-  assert.ok(!visibleText.join(' ').includes('章法 · unresolved'));
+  const localFlows=right.locator('.st-key-procedure-layer-flows');
+  assert.ok((await localFlows.innerText()).includes('章法'));
+  assert.ok((await localFlows.innerText()).includes('unresolved'));
   assert.ok(!visibleText.join(' ').includes('term:sifen'));
   await snapshot('05-accumulated-months-local');
   for(const id of ['term:sifen:38:26-28','term:sifen:38:32-34']){
@@ -409,9 +540,17 @@ try{
   checks.push('both named outputs expose real term_meaning badges and existing interpretation options');
   checks.push('積月 selection is local with component labels and no unrelated source help');
   await clickFacet('term:sifen:38:19-21','source_supply');
-  await page.getByText('Canonical producer candidates',{exact:true}).waitFor();
-  await page.getByText('Inspect · §15 · 章法',{exact:true}).click();
-  await page.getByRole('button',{name:'Add as context & re-run',exact:true}).waitFor();
+  await page.getByText('Canonical producer candidates',{exact:true}).first().waitFor();
+  await page.getByText('Read additional source material',{exact:true}).click();
+  await page.getByRole('textbox',{name:'Search source chunks (literal text)',exact:true}).fill('章法');
+  await page.getByRole('textbox',{name:'Search source chunks (literal text)',exact:true}).blur();
+  await settled();
+  assert.equal(await page.getByRole('button',{name:'Add as context & re-run',exact:true}).count(),0);
+  assert.ok(await page.getByText(/^Exact parameter declarations/).count());
+  assert.ok(await page.getByText(/^Other exact occurrences/).count());
+  await expand('Why these options?');
+  await page.getByText('Rule · PARAMETER-DECLARATION-EXACT-01',{exact:true}).click();
+  await snapshot('source-rule-declaration');
   await snapshot('04-zhangfa-source-supply');
   checks.push('source badge selects existing source question and gates search assistance');
   // Save a real term interpretation first; its explicit refs must not spread to Steps.
@@ -428,7 +567,9 @@ try{
     root);
   checks.push(validation.trim());
   await clickFacet('term:sifen:38:19-21','source_supply');
-  await page.getByText('Provide “章法” for this standalone numerical check',{exact:true}).click();
+  await page.getByText('Supply a runtime test value for “章法”',{exact:true}).click();
+  await page.waitForFunction(()=>!document.querySelector('[role="radiogroup"][aria-label="Source resolution"] input:checked'));
+  await settled();
   await page.getByRole('button',{name:'Confirm and re-run',exact:true}).click();
   await page.locator('.source .facet[data-facet="construction_context_requirement"]').waitFor();await settled();
   const runtime=await saveRevision(4);
@@ -480,8 +621,20 @@ try{
   await page.goto('http://127.0.0.1:'+port+'?review_job=renderer-context-browser');
   await page.locator('.source .char').first().waitFor();await settled();
   await clickFacet('term:sifen:38:19-21','source_supply');
-  await page.getByText('Inspect · §15 · 章法',{exact:true}).click();
-  await page.getByRole('button',{name:'Add as context & re-run',exact:true}).click();
+  await page.getByText('Read additional source material',{exact:true}).click();
+  await page.getByRole('textbox',{name:'Search source chunks (literal text)',exact:true}).fill('章法，十九');
+  await page.getByRole('textbox',{name:'Search source chunks (literal text)',exact:true}).blur();
+  await settled();
+  await page.locator('.st-key-k2_context_unit').getByRole('combobox').click();
+  await page.getByRole('option').filter({hasText:'sifen:section:15'}).click();
+  for(const width of [1440,768,390]){
+    await page.setViewportSize({width,height:980});await settled();
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+    await page.getByRole('heading',{name:'Current question',exact:true}).scrollIntoViewIfNeeded();
+    await page.screenshot({path:path.join(output,'source-question-'+width+'.png'),fullPage:true});
+  }
+  await page.setViewportSize({width:1440,height:980});await settled();
+  await page.getByRole('button',{name:'Confirm and re-run',exact:true}).click();
   await page.getByRole('heading',{name:'Last change',exact:true}).waitFor();await settled();
   const attached=await saveRevision(2);
   const linked=attached.projection.flows.find(f=>f.formal==='章法');
@@ -489,8 +642,15 @@ try{
   assert.equal(linked.producer_source.doc_id,'sifen:15');
   for(const layer of ['terms','constructions','steps','links'])assert.deepEqual(attached.stable[layer],initialState.stable[layer]);
   await clickObject('term:sifen:38:19-21');
-  await page.getByText('章法 · linked historical source',{exact:true}).waitFor();
-  assert.equal(await page.locator('.facet[data-object-id="term:sifen:38:19-21"][data-facet="source_supply"]').count(),0);
+  await page.locator('.st-key-procedure-layer-flows').getByText('linked historical source',{exact:true}).first().waitFor();
+  assert.ok((await page.locator('.st-key-procedure-layer-flows').innerText()).includes('章法'));
+  assert.equal(await page.locator('.facet[data-object-id="term:sifen:38:19-21"][data-facet="source_supply"]').count(),1,
+    'the accepted context decision remains inspectable after attachment');
+  await page.locator('.source .facet[data-object-id="term:sifen:38:19-21"][data-facet="source_context"]').first().click();
+  await page.getByText('Recorded context ✓',{exact:true}).waitFor();
+  await settled();
+  assert.equal(await page.getByRole('button',{name:'Confirm and re-run',exact:true}).count(),0,
+    'a recorded context answer is history, not another active submit form');
   await page.getByText('Procedure Model',{exact:true}).click();await page.locator('.procedure-node').first().waitFor();
   assert.equal(await page.locator('.procedure-node.unresolved_input').count(),2);
   await snapshot('16-linked-source-model');
@@ -545,10 +705,67 @@ try{
   checks.push('real pointer span edit after astral Unicode saves exact [3,6) 日新率/hash/code-point offsets; reviewed reparse adds Multiply using that term; neighbouring 章月, reload and model verified');
   checks.push((await runPython(
     "import json, sys; from pathlib import Path; from workbench import service; from workbench.annotation_projection import project_scholar_source, stable_golden_view; from workbench.procedure_model import build_procedure_model; root=Path(sys.argv[1]);\nfor job in ('renderer-browser','renderer-context-browser','renderer-boundary-browser'):\n r=service.compile_review_job(root,job); p=project_scholar_source(r['effective_packet'],r['compilation'],r['questions'],r['session']['decisions'],r['compilation']['replay']['decision_status']); visible=json.loads((root.parent/(job+'.rendered.json')).read_text(encoding='utf-8')); assert stable_golden_view(p)==visible['stable']; assert build_procedure_model(p)==visible['model']; assert r['compilation']['replay']['decision_status']==visible['replay']['decision_status']\nprint('all three persisted jobs independently recompile to exactly the projection/model/replay actually rendered in the browser')",root)).trim());
+  }
+  // Closure benchmark: real decisions, same normal recompile, disposable jobs.
+  await page.goto('http://127.0.0.1:'+port+'?review_job=closure-browser');
+  await page.locator('.source .char').first().waitFor();await settled();
+  const closureBefore=await rendered();
+  await clickFacet('construction:sifen:38:5-11:load','quantity_meaning');
+  await page.getByRole('button',{name:'Confirm and re-run',exact:true}).click();
+  const counted=await saveRevision(2);
+  assert.ok(counted.projection.derived_assertions.some(a=>a.facet==='coordinate_kind'&&a.value==='elapsed'));
+  assert.equal(counted.projection.derived_assertions.filter(a=>a.kind==='term').length,0);
+  await page.locator('.source .step-token[data-object-id="step:sifen:38:5-11:subtract:0"]').first().click();
+  await rendered(s=>s.selected==='step:sifen:38:5-11:subtract:0');await settled();
+  await page.getByText('Derived quantity properties',{exact:true}).first().waitFor();
+  await snapshot('01-ordinal-elapsed-provenance',null,closureOutput);
+  await clickFacet('term:sifen:38:13-15','term_meaning');
+  await page.getByRole('button',{name:'Confirm and re-run',exact:true}).click();
+  const termReviewed=await saveRevision(3);
+  for(const start of [26,32])assert.ok(termReviewed.questions.some(q=>q.kind==='term_interpretation'&&q.anchor.start===start));
+  assert.ok(termReviewed.projection.semantic_closure.unresolved.some(d=>d.reason==='missing_registered_arithmetic_semantic_relation'));
+  await page.reload();await page.locator('.source .char').first().waitFor();await settled();
+  assert.deepEqual((await rendered()).projection.semantic_closure,termReviewed.projection.semantic_closure);
+  await runPython("import sys; from workbench.sandbox_snapshot import build_snapshot,export_snapshot; export_snapshot(build_snapshot(sys.argv[1],'closure-browser'),sys.argv[2])",root,path.join(closureOutput,'benchmark.snapshot.json'));
+  const closureReport={questions:{before:closureBefore.questions.length,after_count:counted.questions.length,after_term:termReviewed.questions.length},closure:termReviewed.projection.semantic_closure};
+  await fs.writeFile(path.join(closureOutput,'benchmark.json'),JSON.stringify(closureReport,null,2));
+
+  // Genuine identity entailment demonstrates a Term question disappearing.
+  await page.goto('http://127.0.0.1:'+port+'?review_job=closure-identity-browser');
+  await page.locator('.source .char').first().waitFor();await settled();
+  const identityBefore=await rendered();
+  await clickFacet('term:sifen:901:1-3','term_meaning');
+  await page.getByRole('button',{name:'Confirm and re-run',exact:true}).click();
+  const identityAfter=await saveRevision(2);
+  const inherited='term:sifen:901:6-8';
+  assert.equal(identityAfter.renderer.objects[inherited].gloss.kind,'derived');
+  assert.equal(identityAfter.questions.some(q=>q.kind==='term_interpretation'&&q.anchor.start===6),false);
+  await clickObject(inherited);
+  await page.getByText('Derived interpretation',{exact:true}).waitFor();
+  await snapshot('02-derived-term-desktop',null,closureOutput);
+  const dependency=page.getByRole('button',{name:/Derived: /}).first();
+  await dependency.click();await rendered(s=>s.selected!==inherited);await settled();
+  await clickObject(inherited);
+  for(const width of [1440,768,390]){
+    await page.setViewportSize({width,height:1000});await page.waitForTimeout(300);await settled();
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
+    await checkTopBadges();
+    await page.screenshot({path:path.join(closureOutput,'derived-term-'+width+'.png'),fullPage:true});
+  }
+  await runPython("import sys; from workbench.sandbox_snapshot import build_snapshot,export_snapshot; export_snapshot(build_snapshot(sys.argv[1],'closure-identity-browser'),sys.argv[2])",root,path.join(closureOutput,'identity.snapshot.json'));
+  await runPython("import sys; from workbench import service; from tests.workbench.test_review_jobs import ACTOR; r=service.compile_review_job(sys.argv[1],'closure-identity-browser'); d=r['session']['decisions'][0]; retract=service.review_decision(r,'retract',d['targets'][0],{'decision_id':d['decision_id']},ACTOR,'Disposable closure invalidation'); service.apply_review_job_changes(sys.argv[1],'closure-identity-browser',decisions=[retract],expected_revision=r['job']['revision'],expected_digest=r['job_digest'])",root);
+  await page.reload();await page.locator('.source .char').first().waitFor();await settled();
+  const invalidated=await rendered(s=>s.job.revision===3);
+  assert.equal(invalidated.projection.derived_assertions.length,0);
+  assert.equal(invalidated.questions.length,identityBefore.questions.length);
+  assert.equal(invalidated.renderer.objects[inherited].gloss.kind,'suggestions');
+  await fs.writeFile(path.join(closureOutput,'invalidation.json'),JSON.stringify({before:identityBefore.questions.length,reviewed:identityAfter.questions.length,retracted:invalidated.questions.length,remaining_derived:invalidated.projection.derived_assertions.length},null,2));
+  checks.push('semantic closure: reviewed ordinal → derived elapsed; arithmetic lexical gaps remain; exact identity derives a named Term; clickable provenance, 1440/768/390, reload and retract verified; candidate snapshots exported only under tmp');
+  }
   const presentationAfter=await fs.readFile(presentationPath);
   assert.deepEqual(presentationAfter,presentationBefore,'presentation ReviewJob must remain byte-identical');
   assert.deepEqual(pageErrors,[]);
-  await fs.writeFile(path.join(output,'acceptance.json'),JSON.stringify({status:'passed',checks,root,presentation:{path:presentationPath,before:sha256(presentationBefore),after:sha256(presentationAfter)},jobs:['renderer-browser','renderer-context-browser','renderer-boundary-browser'],pageErrors},null,2));
+  await fs.writeFile(path.join(output,process.env.SOURCE_REVIEW_ONLY?'source-review-acceptance.json':'acceptance.json'),JSON.stringify({status:'passed',checks,root,presentation:{path:presentationPath,before:sha256(presentationBefore),after:sha256(presentationAfter)},jobs:['renderer-browser','renderer-context-browser','renderer-boundary-browser'],pageErrors},null,2));
   console.log(JSON.stringify({status:'passed',checks,output}));
 }catch(error){
   if(page)await fs.writeFile(path.join(output,'failure-dom.txt'),await page.locator('body').ariaSnapshot()).catch(()=>{});

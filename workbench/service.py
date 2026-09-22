@@ -311,6 +311,94 @@ def _management_scope(job, packet, compilation):
     return result
 
 
+def _add_source_review_evidence(root, source_id, questions):
+    """Attach corpus presentation facts without changing question or compiler semantics."""
+    from source_adapters.corpus import _load_effective_index
+    from source_adapters.corpus_index import source_review_evidence
+    _, corpus_index = _load_effective_index(root, source_id)
+    for question in questions:
+        if question.get('semantic_key', {}).get('issue_family') != 'source_supply':
+            continue
+        evidence = source_review_evidence(corpus_index, question['semantic_key']['formal'])
+        question['rule_trace'].extend(evidence.pop('rule_trace'))
+        direct_contexts = {}
+        for declaration in evidence['declarations']:
+            document = review_context_document(root, source_id, declaration['unit_id'])
+            section = declaration.get('sections', [None])[0]
+            label = 'Use exact parameter declaration' + (' · §' + str(section) if section is not None else '')
+            payload = {'document': document,
+                       'review_record': {'schema': 'SourceQuestionRecord/1', 'question_id': question['id'],
+                                         'formal': question['semantic_key']['formal'],
+                                         'consumer_definition_id': question['semantic_key'].get('consumer_definition_id'),
+                                         'option_label': label}}
+            option = {'id': 'option:' + digest(['attach_context', payload])[:20], 'label': label,
+                      'action': 'attach_context', 'payload': payload,
+                      'assertions': ['Attach this exact declaration as source material.',
+                                     'This does not supply or interpret the input.'],
+                      'management_facets': [], 'depends_on': [], 'group': 'source_resolution',
+                      'exact_declaration': {'unit_id': declaration['unit_id'],
+                                            'formal': question['semantic_key']['formal']}}
+            direct_contexts.setdefault(option['id'], option)
+        question['options'] = [*direct_contexts.values(), *question['options']]
+        evidence['producers'] = [o for o in question['options'] if o['action'] == 'bind_value']
+        question['source_review'] = evidence
+    return questions
+
+
+def _recorded_context_questions(root, job, packet, compilation, current_questions):
+    """Restore exact-declaration prompts as recorded context, never as a new resolution.
+
+    Context documents can eliminate a compiler diagnostic on the next pass.  The
+    selected declaration still needs a visible, retractable review record.  This
+    reconstructs only the preceding source-supply question and does not change
+    the effective packet or compiler result.
+    """
+    statuses = compilation['replay']['decision_status']
+    active = [row for row in job['session']['decisions']
+              if row['action'] == 'attach_context'
+              and statuses.get(row['decision_id'], {}).get('status') == 'active']
+    if not active:
+        return []
+    context_ids = {row['decision_id'] for row in job['session']['decisions']
+                   if row['action'] == 'attach_context'}
+    historical_session = copy.deepcopy(job['session'])
+    historical_session['decisions'] = [row for row in historical_session['decisions']
+                                       if row['action'] != 'attach_context'
+                                       and not (row['action'] == 'retract'
+                                                and row.get('payload', {}).get('decision_id') in context_ids)]
+    historical = compile_reviewed(packet, historical_session, job['branch_id'])
+    if historical.get('graph') is None:
+        return []
+    catalog = derive_packet(packet, historical['replay']['effective']['contexts'])
+    from .question_presenter import build_questions
+    historical_questions = _add_source_review_evidence(root, job['source_selection']['source_id'],
+        build_questions(catalog, historical, _review_forms(catalog, historical), job['branch_id']))
+    visible_ids = {row['id'] for row in current_questions}
+    retained = []
+    for question in historical_questions:
+        if question['id'] in visible_ids or question.get('semantic_key', {}).get('issue_family') != 'source_supply':
+            continue
+        exact_options = {option.get('payload', {}).get('document', {}).get('doc_id'): option
+                         for option in question['options'] if option.get('exact_declaration')}
+        matched = []
+        for decision in active:
+            record = decision.get('payload', {}).get('review_record', {})
+            same_question = record.get('question_id') == question['id']
+            same_legacy_target = (not record and decision.get('targets')
+                                  and anchor_key(decision['targets'][0]) == anchor_key(question['decision_target']))
+            document_id = decision.get('payload', {}).get('document', {}).get('doc_id')
+            if (same_question or same_legacy_target) and document_id in exact_options:
+                matched.append((decision, exact_options[document_id]))
+        if not matched:
+            continue
+        decision, option = matched[-1]
+        question['recorded_decision'] = {'decision_id': decision['decision_id'], 'action': decision['action'],
+                                         'option_id': option['id'], 'option_label': option['label'],
+                                         'assertions': list(option['assertions']), 'status': 'recorded'}
+        retained.append(question)
+    return retained
+
+
 def _job_response(root, job, packet, compilation=None):
     compilation = compilation if compilation is not None else compile_reviewed(
         packet, job['session'], job['branch_id'], management=review_jobs.management_state(job))
@@ -324,11 +412,14 @@ def _job_response(root, job, packet, compilation=None):
     catalog = derive_packet(packet, contexts)
     forms = _review_forms(catalog, compilation)
     from .question_presenter import build_questions
+    questions = _add_source_review_evidence(root, job['source_selection']['source_id'],
+        build_questions(catalog, compilation, forms, job['branch_id']))
+    questions.extend(_recorded_context_questions(root, job, packet, compilation, questions))
     return {'job': job, 'job_digest': digest(job), 'packet': packet, 'effective_packet': catalog,
             'session': job['session'], 'branch_id': job['branch_id'], 'compilation': compilation, 'bundle': bundle,
             'graph': compilation['graph'], 'freshness': {'status': 'current'},
             'managed_scope': _management_scope(job, packet, compilation),
-            'review_forms': forms, 'questions': build_questions(catalog, compilation, forms, job['branch_id']),
+            'review_forms': forms, 'questions': questions,
             'summary': {'graph_status': compilation['coverage_ledger']['graph_status'], 'execution_status': 'not_run'}}
 
 
@@ -594,6 +685,7 @@ def classify_review_item(question, form):
 
 def _review_forms(packet, compilation):
     """Available actions come from current compiler products, never a resource catalogue."""
+    from analysis_parser.rule_trace import condition, rule
     forms = []
     graph = compilation['graph']
     questions = list(compilation['review_queue']['items'])
@@ -619,25 +711,42 @@ def _review_forms(packet, compilation):
         formal = details.get('formal')
         definitions = graph['program']['definitions']
         consumer_anchor = _review_definition_anchor(packet, definitions, consumer)
+        matching_imports = [item for item in graph['program'].get('linked', {}).get('imports', [])
+                            if item.get('consumer_definition_id') == consumer and item.get('formal') == formal]
+        evidence = details.get('candidate_evidence')
+        if evidence is None and matching_imports:
+            evidence = [candidate for item in matching_imports for candidate in item.get('candidate_evidence', [])]
+        candidates = ({c['definition_id'] for c in evidence if c.get('compatible')} if evidence is not None
+                      else set(details.get('candidates', [])))
         producers = []
         for definition in definitions:
-            evidence = details.get('candidate_evidence')
-            candidates = ({c['definition_id'] for c in evidence if c.get('compatible')} if evidence is not None
-                          else set(details.get('candidates', [])))
             if definition['id'] not in candidates:
                 continue
             producer_anchor = _review_definition_anchor(packet, definitions, definition['id'])
             if producer_anchor and definition['id'] != consumer:
                 for port in dict.fromkeys([*definition.get('return_ports', {}), *definition.get('defined_values', {})]):
-                    producers.append({'anchor': producer_anchor, 'output_port': port,
+                    producers.append({'definition_id': definition['id'], 'anchor': producer_anchor, 'output_port': port,
                         'label': f"{producer_anchor['doc_id']} · {definition['kind']} · {producer_anchor['quote']} → {port}"})
         produced_names = {name for definition in definitions for name in definition.get('defined_values', {})}
         required_formals = {name for definition in definitions for name in definition.get('formal_inputs', {})}
-        if formal and consumer and formal not in produced_names and formal in required_formals:
+        runtime = rule('RUNTIME-INPUT-01', 'review_form', [condition('formal exists', bool(formal)),
+            condition('consumer exists', bool(consumer)), condition('formal in required_formals', formal in required_formals),
+            condition('formal in produced_names', formal in produced_names, False)], _review_forms,
+            result={'action': 'declare_parameter', 'result_class': 'fallback_action'},
+            subject={'formal': formal, 'consumer_definition_id': consumer})
+        if runtime['matched']:
             actions.append('declare_parameter')
-        if consumer_anchor and producers and formal:
+        binding = rule('SOURCE-BIND-01', 'review_form', [condition('consumer anchor exists', bool(consumer_anchor)),
+            condition('compatible canonical producers exist', bool(producers)), condition('formal exists', bool(formal)),
+            condition('canonical consumer/formal import matches', bool(matching_imports))],
+            _review_forms, result={'action': 'bind_value', 'result_class': 'candidate_action'},
+            subject={'formal': formal, 'consumer_definition_id': consumer,
+                     'compatible_definition_ids': sorted(candidates), 'offered_port_count': len(producers),
+                     'candidate_evidence': evidence or []})
+        if binding['matched']:
             actions.append('bind_value')
         item = {'question': question, 'anchors': anchors, 'actions': actions,
+                'rule_trace': [*question.get('rule_trace', []), runtime, binding],
                 'consumer_definition_id': consumer, 'formal': formal,
                 'consumer_anchor': consumer_anchor, 'producers': producers,
                 'fields': {'reason': 'required', 'evidence': 'source_anchor'},
