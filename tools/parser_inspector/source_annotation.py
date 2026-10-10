@@ -70,3 +70,15 @@ def procedure_model_component():
     return component('k2_procedure_model', html='<div class="procedure-model"></div>',
                      css=scholar_component_asset('procedure_model', 'css'),
                      js=scholar_component_asset('procedure_model', 'mjs'))
+
+
+def term_index_component(term_index, *, key):
+    """Render only a supplied TermIndex/1; navigation returns to the shell."""
+    if not isinstance(term_index, dict) or term_index.get('schema') != 'TermIndex/1':
+        raise ValueError('term_index_component_requires_v1')
+    from streamlit.components.v2 import component
+    view = component('k2_term_index', html='<div class="term-index"></div>',
+                     css=scholar_component_asset('term_index', 'css'),
+                     js=scholar_component_asset('term_index', 'mjs'))
+    return view(data={'index': term_index}, default={'navigate': None}, key=key,
+                on_navigate_change=lambda: None)

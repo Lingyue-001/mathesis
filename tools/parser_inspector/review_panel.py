@@ -10,12 +10,14 @@ from adjudication.term_claims import compose_term_interpretation
 from domain_kernel.engine import load_kernel
 from source_adapters.corpus import _load_effective_index
 from source_adapters.corpus_index import list_review_sources, review_source_display_label, search_effective_units
-from tools.parser_inspector.source_annotation import selection_anchor, source_annotation_component, procedure_model_component
+from tools.parser_inspector.source_annotation import (procedure_model_component, selection_anchor,
+                                                       source_annotation_component, term_index_component)
 from workbench import review_jobs, service
 from workbench.annotation_projection import diff_scholar_source, project_scholar_source
 from workbench.question_presenter import CONCEPT_LABELS, CONSTRUCTOR_LABELS, expression_label
 from workbench.scholar_renderer import build_renderer_model, selection_details, selected_source_object_sections
 from workbench.procedure_model import build_procedure_model, serialize_procedure_model
+from workbench.term_index_corpus import baseline_corpus_inputs, collect_baseline_term_index
 
 
 _UI_ZH = {
@@ -264,7 +266,59 @@ def _session_advanced(st, root, response, selection):
     return {'type': 'human', 'id': actor_id.strip()}, reason.strip()
 
 
-def _source_view(st, root, response, question, questions):
+def _term_index_collection(st, root, *, refresh=False):
+    """Session-cache a baseline Index solely by actual admitted corpus inputs."""
+    inputs = baseline_corpus_inputs(root)
+    cached = st.session_state.get('k2_term_index_corpus')
+    if not refresh and cached and cached.get('fingerprint') == inputs['fingerprint']:
+        return cached
+    try:
+        collection = collect_baseline_term_index(root, inputs=inputs)
+    except ValueError as error:
+        collection = {'kind': 'baseline_corpus', 'index': None, 'fingerprint': inputs['fingerprint'],
+                      'included': [], 'unavailable': inputs['unavailable'], 'error': str(error)}
+    st.session_state['k2_term_index_corpus'] = collection
+    return collection
+
+
+def _consume_term_index_navigation(st, event):
+    """Keep a component navigation event as a read-only Inspector-shell target."""
+    if not isinstance(event, dict) or not event.get('nonce'):
+        return None
+    if event['nonce'] == st.session_state.get('k2_consumed_term_index_navigation'):
+        return None
+    st.session_state['k2_consumed_term_index_navigation'] = event['nonce']
+    # An occurrence is evidence, not an instruction to select a source or
+    # open/create any review session. The independent view has no projection
+    # against which it could safely resolve a local selection.
+    st.session_state['k2_term_index_foreign_target'] = deepcopy(event)
+    return 'navigation_target'
+
+
+def _term_index_view(st, root):
+    st.subheader('Term Index')
+    st.caption('Baseline corpus index: all current-effective registered units; no saved review branch is selected.')
+    collection = _term_index_collection(st, root, refresh=st.button('Refresh Term Index', key='k2_refresh_term_index'))
+    if collection.get('error'):
+        st.error('Term Index is unavailable: ' + collection['error'])
+        return None
+    for row in collection.get('unavailable', []):
+        st.warning('Excluded baseline source ' + row['source_id'] + ': ' + row['reason'])
+    index = collection.get('index')
+    if index is None:
+        st.info('No current-effective corpus unit is available for the baseline Term Index.')
+        return None
+    result = term_index_component(index, key='k2_term_index:' + collection['fingerprint'])
+    _consume_term_index_navigation(st, getattr(result, 'navigate', None))
+    foreign = st.session_state.get('k2_term_index_foreign_target')
+    if foreign:
+        st.info('Selected occurrence belongs to another source context; it remains a read-only navigation target.')
+        with st.expander('Foreign occurrence identity'):
+            st.json(foreign)
+    return None
+
+
+def _source_view(st, root, response, question, questions, view):
     packet = response['effective_packet']
     docs = {d['doc_id']: d for group in ('primary_documents', 'context_documents') for d in packet.get(group, [])}
     if not docs:
@@ -295,8 +349,6 @@ def _source_view(st, root, response, question, questions):
     st.session_state['k2_scholar_projection'] = projection
     st.session_state['k2_scholar_model'] = model
     st.session_state['k2_scholar_focus_doc'] = doc_id
-    view = st.radio('Procedure view', ['Annotated Source', 'Procedure Model'],
-                    key='k2_procedure_view', horizontal=True, label_visibility='collapsed')
     if view == 'Procedure Model':
         procedure = build_procedure_model(projection)
         st.session_state['k2_procedure_model'] = procedure
@@ -1081,6 +1133,14 @@ def render(root, language='en'):
     from tools.parser_inspector.shell import render_page_header
     render_page_header('Parser stages', language)
     st = _LocalizedStreamlit(st, language)
+    view = st.radio('Inspector view', ['Annotated Source', 'Procedure Model', 'Term Index'],
+                    key='k2_procedure_view', horizontal=True, label_visibility='collapsed')
+    if view == 'Term Index':
+        _term_index_view(st, root)
+        # ``readable.render`` treats a non-null response as a complete page;
+        # this prevents its legacy projection from becoming a hidden second
+        # consumer of the independent Index view.
+        return {'kind': 'term_index'}
     requested = st.session_state.pop('k2_requested_job', None) or st.query_params.get('review_job')
     manual_job = requested or st.session_state.get('k2_active_saved_job')
     handoff = st.session_state.pop('k2_requested_selection', None)
@@ -1119,7 +1179,7 @@ def render(root, language='en'):
             for row in response['job']['session']['decisions']:
                 st.write(row['reason'], row['targets'])
         return response
-    if st.session_state.get('k2_procedure_view') != 'Procedure Model':
+    if view == 'Annotated Source':
         st.caption('Data-flow status: ' + _data_flow_status(response['summary']['graph_status']) + ' ⓘ')
     last = st.session_state.get('k2_last_effects')
     if last and last[:2] == (job_id, response['job']['revision']):
@@ -1135,14 +1195,14 @@ def render(root, language='en'):
     question = next((row for row in questions if row['id'] == st.session_state.get('k2_question')), None)
     source_col, choice_col = st.columns([7, 3])
     with source_col:
-        target = _source_view(st, root, response, question, questions)
-        if st.session_state.get('k2_procedure_view') != 'Procedure Model':
+        target = _source_view(st, root, response, question, questions, view)
+        if view == 'Annotated Source':
             _boundary_save(st, root, response, actor, reason.strip())
     with choice_col:
         question = next((row for row in questions if row['id'] == st.session_state.get('k2_question')), None)
-        if st.session_state.get('k2_procedure_view') == 'Procedure Model':
+        if view == 'Procedure Model':
             _procedure_details(st, response)
-        else:
+        elif view == 'Annotated Source':
             if question is not None or not st.session_state.get('k2_scholar_selected'):
                 _question_controls(st, root, response, question, questions, actor, reason.strip())
             _scholar_review_details(st, root, response, question, actor, reason.strip())

@@ -260,3 +260,37 @@ The existing `.cache/scholar-source-projection/proc38.actual.json`, `proc38.stab
 Final focused tests: 42 passed. Existing no-context full golden and full §15 patched golden equality pass with the authored fixtures unchanged. Independent read-only review found no remaining in-scope defect after the repeated-occurrence bridge and ordering controls; adversarial order-only changes produce a zero-change diff.
 
 Broader regression: Workbench 107, Inspector 52, adjudication 128, parser 61, parser-v3 94, rescue 78, Kernel 25 and reconciliation 5 pass. Top-level discovery runs 87 tests, with the same two documented `test_pattern_importer` frozen-ontology errors (85 pass); their frozen input was not changed. No renderer, browser acceptance claim, source edits, private NOTE/LOG changes, commit or push in this pass.
+
+## 2026-09-26 Term Index preflight addendum
+
+**Gate A result: PASS.** The fresh preflight run completed 60 selected
+ScholarSourceProjection, Domain Kernel, term-claim, and semantic-closure
+tests with `OK`; `domain_kernel.docs --check` also passed. The protected-file
+hash comparison reports no changed semantic file, and the recorded diff scope
+contains only the permitted manifest/documentation/contract/audit work plus
+pre-existing user changes. Gate A stops here: it does not begin Term Index or
+K3 work.
+
+This is an additive preflight note. It does not rewrite or alter the earlier
+K2-B+C acceptance evidence.
+
+The preflight records the starting main/HEAD identity, existing working-tree
+changes, and SHA-256 hashes for the protected semantic files in
+`.cache/term-index-preflight/2026-09-26-baseline.json`. It separately saves
+the current §38 no-context, §38 + §15 context, and §39
+`ScholarSourceProjection/1` records. These files are audit evidence, not a
+new gold standard.
+
+The reconciled consumer ledger now records exact-occurrence term selection,
+input-count coordinates, and saved reviewed replay/recompilation as
+implemented K2 capabilities. It retains `reading_selection` as planned;
+unified authorization and global legacy cleanup remain K3, while
+unseen-corpus evaluation remains K4.
+
+The future Term Index contract is
+[`term-index-v1-contract.md`](term-index-v1-contract.md). It consumes only
+`ScholarSourceProjection/1`, indexes all admitted maximal and component
+spans separately, derives compound membership only from recorded composition
+links, and remains read-only. It does not normalize forms, rank candidates,
+promote meanings, or write semantic decisions. No Term Index code is added
+by this addendum.

@@ -1,0 +1,22 @@
+.term-index {box-sizing:border-box;color:#29343a;font-family:system-ui,sans-serif;}
+.term-index-controls {display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:4px 0 12px;}
+.term-index-search {min-width:15rem;max-width:100%;padding:5px 7px;border:1px solid #aeb8bc;border-radius:3px;font:inherit;}
+.term-index-filters {display:flex;gap:4px;flex-wrap:wrap;}
+.term-index-filter,.term-index-entry,.term-index-occurrence-link {border:1px solid #b7c0c4;border-radius:3px;background:#fff;color:#29343a;font:inherit;cursor:pointer;}
+.term-index-filter {padding:4px 7px;}
+.term-index-filter.active,.term-index-entry.active {background:#eae3f0;border-color:#7b698b;}
+.term-index-filter:focus-visible,.term-index-entry:focus-visible,.term-index-occurrence-link:focus-visible {outline:2px solid #725489;outline-offset:1px;}
+.term-index-body {display:grid;grid-template-columns:minmax(10rem,18rem) minmax(0,1fr);gap:14px;align-items:start;}
+.term-index-list {display:flex;flex-direction:column;gap:4px;max-height:38rem;overflow:auto;padding-right:3px;}
+.term-index-entry {display:flex;justify-content:space-between;align-items:center;text-align:left;padding:6px 8px;}
+.term-index-role,.term-index-role-summary {font-size:11px;color:#637078;}
+.term-index-detail {min-width:0;border-left:1px solid #dbe0e2;padding-left:14px;}
+.term-index-detail h3,.term-index-detail h4 {margin:0 0 8px;}
+.term-index-detail h4 {margin-top:14px;font-size:14px;}
+.term-index-counts {display:grid;grid-template-columns:max-content 1fr;gap:3px 10px;font-size:12px;}
+.term-index-counts dt {color:#637078;}.term-index-counts dd {margin:0;}
+.term-index-json {margin:8px 0;font-size:12px;}.term-index-json pre {max-height:14rem;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:6px;background:#f7f9fa;}
+.term-index-occurrences {display:flex;flex-direction:column;gap:8px;}.term-index-occurrence {border-top:1px solid #dbe0e2;padding-top:7px;}
+.term-index-occurrence-link {width:100%;text-align:left;padding:5px 7px;overflow-wrap:anywhere;}
+.term-index-empty {color:#637078;font-size:13px;}
+@media (max-width:640px){.term-index-body {grid-template-columns:1fr;}.term-index-list {max-height:15rem;}.term-index-detail {border-left:0;border-top:1px solid #dbe0e2;padding:12px 0 0;}}

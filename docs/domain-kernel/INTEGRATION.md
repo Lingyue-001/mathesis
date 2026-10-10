@@ -140,6 +140,33 @@ K1 没有修复既有 heading→unit、置X減一→year、profile/contextual ra
 
 现有 grammar 对极长无标点串仍可能递归失败；K1 未修改受保护的 parser，其候选分支失败通过独立 error 状态报告。候选数量上限不等于原生 grammar 的时间上限。历史解释正确性和未见语料泛化仍需独立研究验收。
 
+## 2026-09-26 current-status supersession note
+
+This additive note supersedes only earlier statements about the **current** K2
+stage. The historical K1/K1.1/K1.5 evidence below remains unchanged.
+
+The current reviewed path has implemented three bounded K2 capabilities:
+
+- exact-occurrence term candidate selection, rejection, and
+  registry-constrained composition through reviewed recompilation;
+- explicit input-count coordinates (index base, reference origin, counting
+  boundary, and step unit) for their addressed consumer; and
+- replay/recompilation of saved reviewed decisions through the current
+  ReviewJob/session path.
+
+`reading_selection` remains unfinished. `unified_authorization_gate` and
+global legacy-hardcode cleanup remain K3 work; unseen-corpus evaluation
+remains K4 work. This note does not claim ontology learning, global lexical
+promotion, a new parser/executor/review store, or general unseen-corpus
+coverage.
+
+The preflight contract for a future read-only Term Index is
+[`../term-index-v1-contract.md`](../term-index-v1-contract.md). Its sole
+canonical input is `ScholarSourceProjection/1`; R1--R4 remain evidence only.
+The Index has no current implementation and may not read raw parser, Kernel,
+or reviewed-graph internals, nor write to the Kernel, parser, compiler, or
+review store.
+
 ## K1.1 / K1.5 — 2026-09-19
 
 K1.1 仅将 `accumulation.relation_kind` 从 `has_part` 改为 `associated_with`。所有 constructor 的关系提示现在属于 semantic layer；`child_ids → has_part` 仍只表达有序构词成分。共享 schema、engine 和表达式不变。运行 registry hash 从 `14e77fcaab5f265a67076ed995988629772e38548d3c538071c3b96000ca76ec` 变为 `87f95981b45ad1bdee3a4b1254238d55d19d0912dbcf650daae8028d180a94ac`，候选 ID 重新生成；旧产物不做 ID 迁移。新增关系分层测试先失败再通过，并比较变更前后含义与构词树。

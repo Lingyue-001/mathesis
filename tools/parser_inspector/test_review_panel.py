@@ -9,7 +9,8 @@ from streamlit.testing.v1 import AppTest
 from adjudication.anchors import anchor_for
 from source_adapters.corpus_index import list_review_sources, review_source_display_label
 from tests.workbench.test_review_jobs import isolated_source, SELECTION
-from tools.parser_inspector.review_panel import evidence_html
+from tools.parser_inspector.review_panel import (_consume_term_index_navigation, _term_index_collection,
+                                                  evidence_html)
 from tools.parser_inspector.source_annotation import marks_for_document, selection_anchor
 from workbench import review_jobs, service
 
@@ -30,6 +31,75 @@ def app_entry_zh(root):
 
 
 class ReviewPanelTests(unittest.TestCase):
+    def test_independent_term_index_entry_does_not_select_or_create_a_review_job(self):
+        jobs = self.root / '.local' / 'review-jobs'
+        before = {path.name: path.read_bytes() for path in jobs.glob('*.json')} if jobs.exists() else {}
+        app = AppTest.from_function(app_entry, args=(str(self.root),), default_timeout=60)
+        app.session_state['k2_procedure_view'] = 'Term Index'
+        with patch('tools.parser_inspector.review_panel.service.resolve_current_review_job') as resolve, \
+             patch('tools.parser_inspector.review_panel.service.create_fresh_review_job') as create:
+            app.run(timeout=60)
+
+        after = {path.name: path.read_bytes() for path in jobs.glob('*.json')} if jobs.exists() else {}
+        resolve.assert_not_called()
+        create.assert_not_called()
+        self.assertEqual(after, before)
+        self.assertFalse(any(box.key == 'k2_source' for box in app.selectbox))
+        self.assertFalse(any(item.label == 'Session / Advanced' for item in app.expander))
+        self.assertFalse(app.exception)
+
+    def test_term_index_cache_uses_only_effective_corpus_fingerprint_and_explicit_refresh(self):
+        class Shell:
+            session_state = {}
+        shell = Shell()
+        first = {'units': [{'source_id': 'sifen', 'unit_id': 'sifen:38'}], 'unavailable': [], 'fingerprint': 'one'}
+        second = {**first, 'fingerprint': 'two'}
+        result_one = {'kind': 'baseline_corpus', 'index': {'schema': 'TermIndex/1'}, 'fingerprint': 'one'}
+        result_two = {**result_one, 'fingerprint': 'two'}
+        with patch('tools.parser_inspector.review_panel.baseline_corpus_inputs', side_effect=[first, first, second, second]), \
+             patch('tools.parser_inspector.review_panel.collect_baseline_term_index', side_effect=[result_one, result_two, result_two]) as collect:
+            self.assertIs(_term_index_collection(shell, self.root), result_one)
+            self.assertIs(_term_index_collection(shell, self.root), result_one)
+            self.assertIs(_term_index_collection(shell, self.root), result_two)
+            self.assertIs(_term_index_collection(shell, self.root, refresh=True), result_two)
+        self.assertEqual(collect.call_count, 3)
+        self.assertEqual(collect.call_args_list[0].kwargs['inputs'], first)
+        self.assertNotIn('k2_source', shell.session_state)
+
+    def test_term_index_navigation_records_a_read_only_target_without_selecting_a_source(self):
+        source = {'source_id': 'sifen', 'unit_id': 'sifen:section:38', 'doc_id': 'sifen:38', 'reading_id': 'r38'}
+        anchor = {'doc_id': 'sifen:38', 'reading_id': 'r38', 'start': 3, 'end': 5,
+                  'quote': '月法', 'offset_unit': 'unicode_code_point'}
+        class Shell:
+            session_state = {'k2_source': 'sifen', 'k2_section': 'sifen:section:38',
+                             'k2_procedure_view': 'Term Index'}
+        shell = Shell()
+        event = {'identity': {**source, 'start': 3, 'end': 5}, 'source_anchor': anchor, 'nonce': 'target'}
+        with patch('workbench.service.resolve_current_review_job') as resolve:
+            self.assertEqual(_consume_term_index_navigation(shell, event), 'navigation_target')
+        self.assertEqual(shell.session_state['k2_source'], 'sifen')
+        self.assertEqual(shell.session_state['k2_term_index_foreign_target'], event)
+        self.assertNotIn('k2_scholar_selected', shell.session_state)
+        self.assertEqual(shell.session_state['k2_procedure_view'], 'Term Index')
+        resolve.assert_not_called()
+
+    def test_inspector_offers_a_third_term_index_view(self):
+        app = self.app_for('term-index-view')
+        selector = app.radio(key='k2_procedure_view')
+        self.assertEqual(selector.options, ['Annotated Source', 'Procedure Model', 'Term Index'])
+
+    def test_term_index_view_uses_a_baseline_corpus_cache_without_a_selected_section(self):
+        app = AppTest.from_function(app_entry, args=(str(self.root),), default_timeout=60)
+        app.session_state['k2_procedure_view'] = 'Term Index'
+        app.run(timeout=60)
+        self.assertFalse(app.exception)
+        first = app.session_state['k2_term_index_corpus']
+        self.assertEqual(first['kind'], 'baseline_corpus')
+        self.assertEqual(first['index']['schema'], 'TermIndex/1')
+        self.assertTrue(any(item.value.startswith('Baseline corpus index') for item in app.caption))
+        self.assertFalse(any(box.key == 'k2_section' for box in app.selectbox))
+        self.assertFalse(app.exception)
+
     def test_selected_source_object_uses_frozen_four_layer_copy(self):
         service.create_review_job(self.root, 'frozen-copy-ui',
             {**SELECTION, 'primary_unit_ids': ['sifen:section:38'], 'provided_scope': {}})

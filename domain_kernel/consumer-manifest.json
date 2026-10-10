@@ -102,21 +102,39 @@
     },
     {
       "id": "term_candidate_selection",
-      "status": "planned",
-      "producer": [],
-      "validator": [],
-      "consumer": [],
-      "allowed_effect": "Future adaptation to existing adjudication/compiler inputs.",
-      "effect_test": []
+      "status": "implemented",
+      "producer": [
+        "workbench/question_presenter.py::build_questions"
+      ],
+      "validator": [
+        "adjudication/term_claims.py::revalidate_term_interpretation"
+      ],
+      "consumer": [
+        "adjudication/compiler.py::compile_reviewed"
+      ],
+      "allowed_effect": "A reviewed selection, rejection, or registry-constrained composition applies only to its exact Term occurrence during reviewed recompilation; it supplies no numerical fact, producer, or global lexical authority.",
+      "effect_test": [
+        "tests/adjudication/test_term_claims.py::TestTermClaims.test_one_occurrence_and_revalidation_does_not_self_prove",
+        "tests/adjudication/test_term_claims.py::TestTermClaims.test_interpretation_attaches_to_exact_nominal_slot_without_numeric_fact"
+      ]
     },
     {
       "id": "input_count_coordinates",
-      "status": "planned",
-      "producer": [],
-      "validator": [],
-      "consumer": [],
-      "allowed_effect": "Future explicit index base, origin and boundary inputs.",
-      "effect_test": []
+      "status": "implemented",
+      "producer": [
+        "workbench/question_presenter.py::build_questions"
+      ],
+      "validator": [
+        "adjudication/quantity_targets.py::validate_quantity_facets"
+      ],
+      "consumer": [
+        "adjudication/compiler.py::compile_reviewed"
+      ],
+      "allowed_effect": "A reviewed coordinate facet preserves its explicit index base, reference origin, counting boundary, and step unit for the addressed input consumer only; incompatible or incomplete facets do not grant execution authority.",
+      "effect_test": [
+        "tests/adjudication/test_quantity_targets.py::QuantityTargetsTests.test_real_year_ordinal_uses_one_source_subtraction",
+        "tests/adjudication/test_quantity_targets.py::QuantityTargetsTests.test_input_address_without_actual_consumer_is_rejected"
+      ]
     },
     {
       "id": "reading_selection",
@@ -138,12 +156,21 @@
     },
     {
       "id": "automatic_resume",
-      "status": "planned",
-      "producer": [],
-      "validator": [],
-      "consumer": [],
-      "allowed_effect": "Future authorized recompilation via existing compile_reviewed, not a new state machine.",
-      "effect_test": []
+      "status": "implemented",
+      "producer": [
+        "workbench/service.py::apply_review_job_changes"
+      ],
+      "validator": [
+        "adjudication/replay.py::replay_session"
+      ],
+      "consumer": [
+        "adjudication/compiler.py::compile_reviewed"
+      ],
+      "allowed_effect": "Existing saved reviewed decisions replay and recompile through the current job/session path. This is reviewed recompilation and closure only, not a new automatic decision, state machine, or unified authorization gate.",
+      "effect_test": [
+        "tests/workbench/test_review_jobs.py::ReviewJobTests.test_restart_export_import_and_base_identity",
+        "tests/workbench/test_review_jobs.py::ReviewJobTests.test_stale_revision_and_digest_cannot_overwrite"
+      ]
     }
   ]
 }
